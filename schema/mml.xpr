@@ -9,6 +9,5 @@
         <file name="../../../mml/MMLxsd/MMLxsd/mmlRd.xsd"/>
         <file name="../../../mml/MMLxsd/MMLxsd/mmlRe.xsd"/>
         <file name="mmlVs.xsd"/>
-        <file name="../../../templates/shoukaijo.oet"/>
     </projectTree>
 </project>

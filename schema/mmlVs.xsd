@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:mmlVs="http://www.medxml.net/MML/ContentModule/VitalSign/1.0"
-	targetNamespace="http://www.medxml.net/MML/ContentModule/VitalSign/1.0"
-	xmlns:mmlCm="http://www.medxml.net/MML/SharedComponent/Common/1.0"
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace">
-	<xs:import namespace="http://www.medxml.net/MML/SharedComponent/Common/1.0"
-		schemaLocation="mmlCm.xsd"/>
-	<xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="xhtml.xsd"/>
+	xmlns:mmlVs="http://www.medxml.net/MML/v4"
+	targetNamespace="http://www.medxml.net/MML/v4/vitalsign">
+	<xs:import namespace="http://www.medxml.net/MML/v4 schemaLocation" schemaLocation="mml.xsd"/>
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
 
 	<xs:element name="VitalSignModule">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="mmlVs:information"/>
-				<xs:element ref="mmlVs:vitalSign" maxOccurs="unbounded"/>
+				<xs:element ref="mmlVs:context"/>
+				<xs:element ref="mmlVs:content" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="information">
+	<xs:element name="context">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="mmlVs:reportStatus"/>
@@ -34,10 +30,11 @@
 			<xs:attribute name="reportTime" use="required" type="xs:anySimpleType"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="vitalSign">
+	<xs:element name="content">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="mmlVs:item" maxOccurs="unbounded"/>
+				<xs:element ref="mmlVs:protocol"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -65,12 +62,6 @@
 			<xs:attribute name="wardCodeId" type="xs:anySimpleType"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="laboratoryCenter">
-		<xs:complexType mixed="true">
-			<xs:attribute name="centerCode" use="required" type="xs:anySimpleType"/>
-			<xs:attribute name="centerCodeId" use="required" type="xs:anySimpleType"/>
-		</xs:complexType>
-	</xs:element>
 	<xs:element name="observer">
 		<xs:complexType mixed="true">
 			<xs:attribute name="techCode" type="xs:anySimpleType"/>
@@ -90,17 +81,17 @@
 	<xs:element name="item">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="mmlVs:itemName"/>
+				<xs:element ref="mmlVs:name"/>
 				<xs:element ref="mmlVs:value"/>
 				<xs:element ref="mmlVs:numValue" minOccurs="0"/>
 				<xs:element ref="mmlVs:unit" minOccurs="0"/>
 				<xs:element ref="mmlVs:referenceInfo" minOccurs="0"/>
-				<xs:element ref="mmlVs:itemMemo" minOccurs="0" maxOccurs="unbounded"/>
-				<xs:element ref="mmlVs:itemMemoF" minOccurs="0"/>
+				<xs:element ref="mmlVs:memo" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="mmlVs:memoF" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="itemName">
+	<xs:element name="name">
 		<xs:complexType mixed="true">
 			<xs:attribute name="itCode" use="required" type="xs:anySimpleType"/>
 			<xs:attribute name="itCodeId" use="required" type="xs:anySimpleType"/>
@@ -110,12 +101,7 @@
 		<xs:complexType mixed="true"/>
 	</xs:element>
 	<xs:element name="numValue">
-		<xs:complexType mixed="true">
-			<xs:attribute name="up" type="xs:anySimpleType"/>
-			<xs:attribute name="low" type="xs:anySimpleType"/>
-			<xs:attribute name="normal" type="xs:anySimpleType"/>
-			<xs:attribute name="out" type="xs:anySimpleType"/>
-		</xs:complexType>
+		<xs:complexType mixed="true"/>
 	</xs:element>
 	<xs:element name="unit">
 		<xs:complexType mixed="true">
@@ -130,14 +116,24 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="itemMemo">
+	<xs:element name="memo">
 		<xs:complexType mixed="true">
 			<xs:attribute name="imCodeName" type="xs:anySimpleType"/>
 			<xs:attribute name="imCode" type="xs:anySimpleType"/>
 			<xs:attribute name="imCodeId" type="xs:anySimpleType"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="itemMemoF">
+	<xs:element name="memoF">
 		<xs:complexType mixed="true"/>
+	</xs:element>
+	<xs:element name="protocol">
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:element name="procedure" type="string"/>
+				<xs:element name="position" type="string"/>
+				<xs:element name="device" type="string"/>
+				<xs:element name="bodyLocation" type="string"/>
+			</xs:sequence>
+		</xs:complexType>
 	</xs:element>
 </xs:schema>
