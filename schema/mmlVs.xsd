@@ -123,16 +123,14 @@
 			<xs:attribute name="imCodeId" type="xs:anySimpleType"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="memoF">
-		<xs:complexType mixed="true"/>
-	</xs:element>
+	<xs:element name="memoF" type="xs:string"/>
 	<xs:element name="protocol">
 		<xs:complexType mixed="true">
 			<xs:sequence>
-				<xs:element name="procedure" type="string"/>
-				<xs:element name="position" type="string"/>
-				<xs:element name="device" type="string"/>
-				<xs:element name="bodyLocation" type="string"/>
+				<xs:element name="procedure" type="xs:string"/>
+				<xs:element name="position" type="xs:string"/>
+				<xs:element name="device" type="xs:string"/>
+				<xs:element name="bodyLocation" type="xs:string"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
