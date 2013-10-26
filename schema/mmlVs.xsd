@@ -8,12 +8,12 @@
 	<xs:element name="VitalSignModule">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="mmlVs:context"/>
+				<xs:element ref="mmlVs:context" minOccurs="1"/>
 				<xs:element ref="mmlVs:content" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="context">
+	<xs:element name="mmlVs:context">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="mmlVs:reportStatus"/>
@@ -24,10 +24,10 @@
 				<xs:element ref="mmlVs:repMemo" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element ref="mmlVs:repMemoF" minOccurs="0"/>
 			</xs:sequence>
-			<xs:attribute name="registId" use="required" type="xs:anySimpleType"/>
-			<xs:attribute name="ovservedTime" type="xs:anySimpleType"/>
-			<xs:attribute name="registTime" use="required" type="xs:anySimpleType"/>
-			<xs:attribute name="reportTime" use="required" type="xs:anySimpleType"/>
+			<xs:attribute name="registId" use="required" type="xs:string"/>
+			<xs:attribute name="ovservedTime" type="xs:dateTime"/>
+			<xs:attribute name="registTime" use="required" type="xs:dateTime"/>
+			<xs:attribute name="reportTime" use="required" type="xs:dateTime"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="content">
@@ -40,39 +40,39 @@
 	</xs:element>
 	<xs:element name="reportStatus">
 		<xs:complexType mixed="true">
-			<xs:attribute name="statusCode" use="required" type="xs:anySimpleType"/>
-			<xs:attribute name="statusCodeId" use="required" type="xs:anySimpleType"/>
+			<xs:attribute name="statusCode" use="required" type="xs:string"/>
+			<xs:attribute name="statusCodeId" use="required" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="facility">
 		<xs:complexType mixed="true">
-			<xs:attribute name="facilityCode" use="required" type="xs:anySimpleType"/>
-			<xs:attribute name="facilityCodeId" use="required" type="xs:anySimpleType"/>
+			<xs:attribute name="facilityCode" use="required" type="xs:string"/>
+			<xs:attribute name="facilityCodeId" use="required" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="department">
 		<xs:complexType mixed="true">
-			<xs:attribute name="depCode" type="xs:anySimpleType"/>
-			<xs:attribute name="depCodeId" type="xs:anySimpleType"/>
+			<xs:attribute name="depCode" type="xs:string"/>
+			<xs:attribute name="depCodeId" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ward">
 		<xs:complexType mixed="true">
-			<xs:attribute name="wardCode" type="xs:anySimpleType"/>
-			<xs:attribute name="wardCodeId" type="xs:anySimpleType"/>
+			<xs:attribute name="wardCode" type="xs:string"/>
+			<xs:attribute name="wardCodeId" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="observer">
 		<xs:complexType mixed="true">
-			<xs:attribute name="techCode" type="xs:anySimpleType"/>
-			<xs:attribute name="techCodeId" type="xs:anySimpleType"/>
+			<xs:attribute name="techCode" type="xs:string"/>
+			<xs:attribute name="techCodeId" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="repMemo">
 		<xs:complexType mixed="true">
-			<xs:attribute name="repCodeName" type="xs:anySimpleType"/>
-			<xs:attribute name="repCode" type="xs:anySimpleType"/>
-			<xs:attribute name="repCodeId" type="xs:anySimpleType"/>
+			<xs:attribute name="repCodeName" type="xs:string"/>
+			<xs:attribute name="repCode" type="xs:string"/>
+			<xs:attribute name="repCodeId" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="repMemoF">
@@ -82,7 +82,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="mmlVs:name"/>
-				<xs:element ref="mmlVs:value"/>
+				<xs:element ref="mmlVs:value" minOccurs="0"/>
 				<xs:element ref="mmlVs:numValue" minOccurs="0"/>
 				<xs:element ref="mmlVs:unit" minOccurs="0"/>
 				<xs:element ref="mmlVs:referenceInfo" minOccurs="0"/>
@@ -93,20 +93,16 @@
 	</xs:element>
 	<xs:element name="name">
 		<xs:complexType mixed="true">
-			<xs:attribute name="itCode" use="required" type="xs:anySimpleType"/>
-			<xs:attribute name="itCodeId" use="required" type="xs:anySimpleType"/>
+			<xs:attribute name="itCode" use="required" type="xs:string"/>
+			<xs:attribute name="itCodeId" use="required" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="value">
-		<xs:complexType mixed="true"/>
-	</xs:element>
-	<xs:element name="numValue">
-		<xs:complexType mixed="true"/>
-	</xs:element>
+	<xs:element name="value" type="string"/>
+	<xs:element name="numValue" type="decimal" />
 	<xs:element name="unit">
 		<xs:complexType mixed="true">
-			<xs:attribute name="uCode" type="xs:anySimpleType"/>
-			<xs:attribute name="uCodeId" type="xs:anySimpleType"/>
+			<xs:attribute name="uCode" type="xs:string"/>
+			<xs:attribute name="uCodeId" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="referenceInfo">
@@ -118,9 +114,9 @@
 	</xs:element>
 	<xs:element name="memo">
 		<xs:complexType mixed="true">
-			<xs:attribute name="imCodeName" type="xs:anySimpleType"/>
-			<xs:attribute name="imCode" type="xs:anySimpleType"/>
-			<xs:attribute name="imCodeId" type="xs:anySimpleType"/>
+			<xs:attribute name="imCodeName" type="xs:string"/>
+			<xs:attribute name="imCode" type="xs:string"/>
+			<xs:attribute name="imCodeId" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="memoF" type="xs:string"/>
