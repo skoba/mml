@@ -1,8 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:mmlFs="http://www.medxml.net/MML/v4/FlowSheet" targetNamespace="http://www.medxml.net/MML/v4/FlowSheet">
   <xs:element name="FlowSheetModule">
-        <xs:complexType>
-            
-        </xs:complexType>
-  </xs:element>    
-</xs:schema>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mmlFs:context"/>
+        <xs:element ref="mmlFs:content"/>        
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="context">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mmlFs:facility" minOccurs="0"/>
+        <xs:element ref="mmlFs:department" minOccurs="0"/>
+        <xs:element ref="mmlFs:ward"></xs:element>
+        <xs:element ref="mmlFs:observer"/>
+        <xs:element ref="mmlFs:repMemo"/>
+        <xs:element ref="mmlFs:repMemoF" />
+        <xs:element ref="mmlPi:PatientModule" />
+      </xs:sequence>       
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="content">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mmlVs:VitalSignModule" />
+        <xs:element ref="mmlFs:intake" />
+        <xs:element ref="mmlFs:bodilyOutput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="repMemo">
+    <xs:complexType>
+      <xs:attribute name="repCodeName" type="xs:string"/>
+      <xs:attribute name="repCode" type="xs:string"/>
+      <xs:attribute name="repCodeId" type="xs:string"/>      
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="repMemoF" type="xs:string"/>
+  <xs:element name="facility">
+    <xs:complexType mixed="true">
+      <xs:attribute name="facilityCode" use="required" type="xs:string"/>
+      <xs:attribute name="facilityCodeId" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="department">
+    <xs:complexType mixed="true">
+      <xs:attribute name="depCode" type="xs:string"/>
+      <xs:attribute name="depCodeId" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ward">
+    <xs:complexType mixed="true">
+      <xs:attribute name="wardCode" type="xs:string"/>
+      <xs:attribute name="wardCodeId" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="observer">
+    <xs:complexType mixed="true">
+      <xs:attribute name="obsCode" type="xs:string"/>
+      <xs:attribute name="obsCodeId" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="intake">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="type" type="xs:string"/>
+        <xs:element name="volume" type="xs:decimal"/> 
+        <xs:element name="unit" type="xs:string"/>
+        <xs:element name="pathway" type="xs:string"/>
+        <xs:element name="startTime" type="xs:dateTime"/>
+        <xs:element name="endTime" type="xs:dateTime"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bodilyOutput">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="type" type="xs:string"/>
+        <xs:element name="volume" type="xs:decimal"/> 
+        <xs:element name="unit" type="xs:string"/>
+        <xs:element name="status" type="xs:string"/>
+        <xs:element name="color" type="xs:string"/>
+        <xs:element name="pathway" type="xs:string"/>
+        <xs:element name="startTime" type="xs:dateTime"/>
+        <xs:element name="endTime" type="xs:dateTime"/>     
+        <xs:element ref="mmlFs:boFrequency"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="boFrequency">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="bofTimes" type="xs:decimal"/>
+        <xs:element name="bofPeriodStart" type="xs:dateTime"/>
+        <xs:element name="bofPeriodEnd" type="xs:dateTime"/>
+        <xs:element name="bofMemo" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+ </xs:schema>

@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:mmlVs="http://www.medxml.net/MML/v4"
-	targetNamespace="http://www.medxml.net/MML/v4/vitalsign">
-	<xs:import namespace="http://www.medxml.net/MML/v4 schemaLocation" schemaLocation="mml.xsd"/>
-	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+  xmlns:mmlVs="http://www.medxml.net/MML/v4"
+  targetNamespace="http://www.medxml.net/MML/v4/vitalsign">
+  <xs:import namespace="http://www.medxml.net/MML/v4 schemaLocation" schemaLocation="mml.xsd"/>
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
 
 	<xs:element name="VitalSignModule">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="mmlVs:context" minOccurs="1"/>
+				<xs:element ref="mmlVs:context" minOccurs="1" maxOccurs="1"/>
 				<xs:element ref="mmlVs:content" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="mmlVs:context">
+	<xs:element name="context">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="mmlVs:reportStatus"/>
@@ -97,8 +97,8 @@
 			<xs:attribute name="itCodeId" use="required" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="value" type="string"/>
-	<xs:element name="numValue" type="decimal" />
+  <xs:element name="value" type="xs:string"/>
+  <xs:element name="numValue" type="xs:decimal"/>		
 	<xs:element name="unit">
 		<xs:complexType mixed="true">
 			<xs:attribute name="uCode" type="xs:string"/>
