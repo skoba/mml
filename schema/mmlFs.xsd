@@ -84,8 +84,8 @@
         <xs:element name="color" type="xs:string"/>
         <xs:element name="pathway" type="xs:string"/>
         <xs:element name="startTime" type="xs:dateTime"/>
-        <xs:element name="endTime" type="xs:dateTime"/>     
-        <xs:element ref="mmlFs:boFrequency"/>
+        <xs:element name="endTime" type="xs:dateTime"/>
+        <xs:element ref="mmlFs:boFrequency" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -95,7 +95,7 @@
         <xs:element name="bofTimes" type="xs:decimal"/>
         <xs:element name="bofPeriodStart" type="xs:dateTime"/>
         <xs:element name="bofPeriodEnd" type="xs:dateTime"/>
-        <xs:element name="bofMemo" type="xs:string"/>
+        <xs:element name="bofMemo" type="xs:string" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>

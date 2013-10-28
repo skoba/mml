@@ -17,7 +17,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="mmlVs:reportStatus"/>
-				<xs:element ref="mmlVs:facility"/>
+				<xs:element ref="mmlVs:facility" minOccurs="0"/>
 				<xs:element ref="mmlVs:department" minOccurs="0"/>
 				<xs:element ref="mmlVs:ward" minOccurs="0"/>
 				<xs:element ref="mmlVs:observer" minOccurs="0"/>
@@ -64,8 +64,8 @@
 	</xs:element>
 	<xs:element name="observer">
 		<xs:complexType mixed="true">
-			<xs:attribute name="techCode" type="xs:string"/>
-			<xs:attribute name="techCodeId" type="xs:string"/>
+			<xs:attribute name="obsCode" type="xs:string"/>
+			<xs:attribute name="obsCodeId" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="repMemo">
