@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:mmlVs="http://www.medxml.net/MML/v4"
-  targetNamespace="http://www.medxml.net/MML/v4/vitalsign">
+  targetNamespace="http://www.medxml.net/MML/v4/vitalsign/1.0">
   <xs:import namespace="http://www.medxml.net/MML/v4 schemaLocation" schemaLocation="mml.xsd"/>
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
 

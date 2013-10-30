@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:mmlFs="http://www.medxml.net/MML/v4/FlowSheet" targetNamespace="http://www.medxml.net/MML/v4/FlowSheet">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:mmlFs="http://www.medxml.net/MML/v4/FlowSheet/1.0" targetNamespace="http://www.medxml.net/MML/v4/FlowSheet/1.0"
+    xmlns:mmlCm="http://www.medxml.net/MML/SharedComponent/Common/1.0"
+    xmlns:mmlPi="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0"
+    xmlns:mmlVs="http://www.medxml.net/MML/v4/vitalsign/1.0"
+  >
+  <xs:import namespace="http://www.medxml.net/MML/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0" schemaLocation="patientinfo.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/vitalsign/1.0" schemaLocation="mmlVs.xsd" />
+  
   <xs:element name="FlowSheetModule">
     <xs:complexType>
       <xs:sequence>
@@ -13,7 +21,7 @@
       <xs:sequence>
         <xs:element ref="mmlFs:facility" minOccurs="0"/>
         <xs:element ref="mmlFs:department" minOccurs="0"/>
-        <xs:element ref="mmlFs:ward"></xs:element>
+        <xs:element ref="mmlFs:ward"/>
         <xs:element ref="mmlFs:observer"/>
         <xs:element ref="mmlFs:repMemo"/>
         <xs:element ref="mmlFs:repMemoF" />
