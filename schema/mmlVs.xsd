@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:mmlVs="http://www.medxml.net/MML/v4"
-  targetNamespace="http://www.medxml.net/MML/v4/vitalsign/1.0">
-  <xs:import namespace="http://www.medxml.net/MML/v4 schemaLocation" schemaLocation="mml.xsd"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  xmlns:mmlVs="http://www.medxml.net/MML/vaitalsign/1.0"
+  xmlns:mmlCm="http://www.medxml.net/MML/SharedComponent/Common/1.0"
+  xmlns:mmlPi="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0"
+  targetNamespace="http://www.medxml.net/MML/vitalsign/1.0">
+  <xs:import namespace="http://www.medxml.net/MML/schemaLocation" schemaLocation="mml.xsd"/>
+  <xs:import namespace="http://www.medxml.net/MML/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0" schemaLocation="patientinfo.xsd" />  
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
 
 	<xs:element name="VitalSignModule">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="mmlVs:context" minOccurs="1" maxOccurs="1"/>
-				<xs:element ref="mmlVs:content" maxOccurs="unbounded"/>
-			</xs:sequence>
+				<xs:element ref="mmlVs:context" minOccurs="0"/>
+				<xs:element ref="mmlVs:content" minOccurs="1" maxOccurs="unbounded"/>
+			  <xs:element ref="mmlVs:repMemo" minOccurs="0" maxOccurs="unbounded"/>
+			  <xs:element ref="mmlVs:repMemoF" minOccurs="0"/>			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="context">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="mmlVs:reportStatus"/>
+				<xs:element ref="mmlVs:reportStatus" minOccurs="0"/>
 				<xs:element ref="mmlVs:facility" minOccurs="0"/>
 				<xs:element ref="mmlVs:department" minOccurs="0"/>
 				<xs:element ref="mmlVs:ward" minOccurs="0"/>
 				<xs:element ref="mmlVs:observer" minOccurs="0"/>
-				<xs:element ref="mmlVs:repMemo" minOccurs="0" maxOccurs="unbounded"/>
-				<xs:element ref="mmlVs:repMemoF" minOccurs="0"/>
+			  <xs:element ref="mmlPi:PatientModule" minOccurs="1" maxOccurs="1"/>
 			</xs:sequence>
 			<xs:attribute name="registId" use="required" type="xs:string"/>
 			<xs:attribute name="ovservedTime" type="xs:dateTime"/>
@@ -33,8 +37,8 @@
 	<xs:element name="content">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="mmlVs:item" maxOccurs="unbounded"/>
-				<xs:element ref="mmlVs:protocol"/>
+				<xs:element ref="mmlVs:item" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element ref="mmlVs:protocol" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -81,11 +85,10 @@
 	<xs:element name="item">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="mmlVs:name"/>
+				<xs:element ref="mmlVs:name" minOccurs="1" maxOccurs="1"/>
 				<xs:element ref="mmlVs:value" minOccurs="0"/>
 				<xs:element ref="mmlVs:numValue" minOccurs="0"/>
-				<xs:element ref="mmlVs:unit" minOccurs="0"/>
-				<xs:element ref="mmlVs:referenceInfo" minOccurs="0"/>
+				<xs:element ref="mmlVs:unit" minOccurs="1" maxOccurs="1"/>
 				<xs:element ref="mmlVs:memo" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element ref="mmlVs:memoF" minOccurs="0"/>
 			</xs:sequence>
@@ -103,13 +106,6 @@
 		<xs:complexType mixed="true">
 			<xs:attribute name="uCode" type="xs:string"/>
 			<xs:attribute name="uCodeId" type="xs:string"/>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="referenceInfo">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="mmlCm:extRef" minOccurs="0" maxOccurs="unbounded"/>
-			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="memo">

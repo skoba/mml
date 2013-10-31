@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:mmlFs="http://www.medxml.net/MML/v4/FlowSheet/1.0" targetNamespace="http://www.medxml.net/MML/v4/FlowSheet/1.0"
-    xmlns:mmlCm="http://www.medxml.net/MML/SharedComponent/Common/1.0"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:mmlFs="http://www.medxml.net/MML/FlowSheet/1.0" targetNamespace="http://www.medxml.net/MML/FlowSheet/1.0"
     xmlns:mmlPi="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0"
-    xmlns:mmlVs="http://www.medxml.net/MML/v4/vitalsign/1.0"
+    xmlns:mmlVs="http://www.medxml.net/MML/vitalsign/1.0"
   >
-  <xs:import namespace="http://www.medxml.net/MML/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0" schemaLocation="patientinfo.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/v4/vitalsign/1.0" schemaLocation="mmlVs.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/vitalsign/1.0" schemaLocation="mmlVs.xsd" />
   
   <xs:element name="FlowSheetModule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlFs:context"/>
-        <xs:element ref="mmlFs:content"/>        
-      </xs:sequence>
+        <xs:element ref="mmlFs:context" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlVs:VitalSignModule" minOccurs="0"/>
+        <xs:element ref="mmlFs:intake" minOccurs="0" />
+        <xs:element ref="mmlFs:bodilyOutput" minOccurs="0" />        
+        <xs:element ref="mmlFs:repMemo" minOccurs="0"/>
+        <xs:element ref="mmlFs:repMemoF" minOccurs="0"/>      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="context">
@@ -21,21 +22,10 @@
       <xs:sequence>
         <xs:element ref="mmlFs:facility" minOccurs="0"/>
         <xs:element ref="mmlFs:department" minOccurs="0"/>
-        <xs:element ref="mmlFs:ward"/>
-        <xs:element ref="mmlFs:observer"/>
-        <xs:element ref="mmlFs:repMemo"/>
-        <xs:element ref="mmlFs:repMemoF" />
-        <xs:element ref="mmlPi:PatientModule" />
+        <xs:element ref="mmlFs:ward" minOccurs="0"/>
+        <xs:element ref="mmlFs:observer" minOccurs="0"/>
+        <xs:element ref="mmlPi:PatientModule" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>       
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="content">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="mmlVs:VitalSignModule" />
-        <xs:element ref="mmlFs:intake" />
-        <xs:element ref="mmlFs:bodilyOutput" />
-      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="repMemo">
@@ -73,26 +63,26 @@
   <xs:element name="intake">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="type" type="xs:string"/>
-        <xs:element name="volume" type="xs:decimal"/> 
-        <xs:element name="unit" type="xs:string"/>
-        <xs:element name="pathway" type="xs:string"/>
-        <xs:element name="startTime" type="xs:dateTime"/>
-        <xs:element name="endTime" type="xs:dateTime"/>
+        <xs:element name="intakeType" type="xs:string"/>
+        <xs:element name="intakeVolume" type="xs:decimal"/> 
+        <xs:element name="intakeUnit" type="xs:string"/>
+        <xs:element name="intakePathway" type="xs:string"/>
+        <xs:element name="intakeStartTime" type="xs:dateTime"/>
+        <xs:element name="intakeEndTime" type="xs:dateTime"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="bodilyOutput">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="type" type="xs:string"/>
-        <xs:element name="volume" type="xs:decimal"/> 
-        <xs:element name="unit" type="xs:string"/>
-        <xs:element name="status" type="xs:string"/>
-        <xs:element name="color" type="xs:string"/>
-        <xs:element name="pathway" type="xs:string"/>
-        <xs:element name="startTime" type="xs:dateTime"/>
-        <xs:element name="endTime" type="xs:dateTime"/>
+        <xs:element name="boType" type="xs:string"/>
+        <xs:element name="boVolume" type="xs:decimal"/> 
+        <xs:element name="boUnit" type="xs:string"/>
+        <xs:element name="boStatus" type="xs:string"/>
+        <xs:element name="boColor" type="xs:string"/>
+        <xs:element name="boPathway" type="xs:string"/>
+        <xs:element name="soStartTime" type="xs:dateTime"/>
+        <xs:element name="boEndTime" type="xs:dateTime"/>
         <xs:element ref="mmlFs:boFrequency" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
