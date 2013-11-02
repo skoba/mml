@@ -13,8 +13,8 @@
         <xs:element ref="mmlVs:VitalSignModule" minOccurs="0"/>
         <xs:element ref="mmlFs:intake" minOccurs="0" />
         <xs:element ref="mmlFs:bodilyOutput" minOccurs="0" />        
-        <xs:element ref="mmlFs:repMemo" minOccurs="0"/>
-        <xs:element ref="mmlFs:repMemoF" minOccurs="0"/>      </xs:sequence>
+        <xs:element ref="mmlFs:fsMemo" minOccurs="0"/>
+        <xs:element ref="mmlFs:fsMemoF" minOccurs="0"/>      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="context">
@@ -28,14 +28,14 @@
       </xs:sequence>       
     </xs:complexType>
   </xs:element>
-  <xs:element name="repMemo">
+  <xs:element name="fsMemo">
     <xs:complexType>
-      <xs:attribute name="repCodeName" type="xs:string"/>
-      <xs:attribute name="repCode" type="xs:string"/>
-      <xs:attribute name="repCodeId" type="xs:string"/>      
+      <xs:attribute name="fsCodeName" type="xs:string"/>
+      <xs:attribute name="fsCode" type="xs:string"/>
+      <xs:attribute name="fsCodeId" type="xs:string"/>      
     </xs:complexType>
   </xs:element>
-  <xs:element name="repMemoF" type="xs:string"/>
+  <xs:element name="fsMemoF" type="xs:string"/>
   <xs:element name="facility">
     <xs:complexType mixed="true">
       <xs:attribute name="facilityCode" use="required" type="xs:string"/>
@@ -69,6 +69,7 @@
         <xs:element name="intakePathway" type="xs:string"/>
         <xs:element name="intakeStartTime" type="xs:dateTime"/>
         <xs:element name="intakeEndTime" type="xs:dateTime"/>
+        <xs:element name="intakeMemo" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -84,6 +85,7 @@
         <xs:element name="soStartTime" type="xs:dateTime"/>
         <xs:element name="boEndTime" type="xs:dateTime"/>
         <xs:element ref="mmlFs:boFrequency" minOccurs="0"/>
+        <xs:element name="boMemo" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -93,7 +95,6 @@
         <xs:element name="bofTimes" type="xs:decimal"/>
         <xs:element name="bofPeriodStart" type="xs:dateTime"/>
         <xs:element name="bofPeriodEnd" type="xs:dateTime"/>
-        <xs:element name="bofMemo" type="xs:string" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
