@@ -132,6 +132,8 @@
   <xs:attributeGroup name="attlist.nationality">
     <xs:attribute name="subtype" form="qualified"/>
   </xs:attributeGroup>
+
+  <xs:element name="race" type="xs:string"/>
   
   <xs:element name="sex" type="xs:string"/>
   

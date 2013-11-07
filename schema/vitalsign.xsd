@@ -7,43 +7,27 @@
 	<xs:element name="VitalSignModule">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="mmlVs:context" minOccurs="0"/>
-				<xs:element ref="mmlVs:content" minOccurs="1" maxOccurs="unbounded"/>
-			  <xs:element ref="mmlVs:repMemo" minOccurs="0" maxOccurs="unbounded"/>
-			  <xs:element ref="mmlVs:repMemoF" minOccurs="0"/>
+				<xs:element ref="mmlVs:context" minOccurs="0" maxOccurs="1"/>
+			  <xs:element ref="mmlVs:item" minOccurs="1" maxOccurs="unbounded"/>
+			  <xs:element ref="mmlVs:protocol" minOccurs="0" maxOccurs="1"/>
+			  <xs:element ref="mmlVs:vsMemo" minOccurs="0" maxOccurs="1"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
   <xs:element name="context">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlVs:reportStatus" minOccurs="0"/>
-        <xs:element ref="mmlVs:facility" minOccurs="0"/>
-        <xs:element ref="mmlVs:department" minOccurs="0"/>
-        <xs:element ref="mmlVs:ward" minOccurs="0"/>
-        <xs:element ref="mmlVs:observer" minOccurs="0"/>
+        <xs:element ref="mmlVs:facility" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlVs:department" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlVs:ward" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlVs:observer" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPi:PatientModule" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
       <xs:attribute name="registId" use="required" type="xs:string"/>
       <xs:attribute name="ovservedTime" type="xs:dateTime"/>
       <xs:attribute name="registTime" use="required" type="xs:dateTime"/>
-      <xs:attribute name="reportTime" use="required" type="xs:dateTime"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="content">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="mmlVs:item" minOccurs="1" maxOccurs="unbounded"/>
-				<xs:element ref="mmlVs:protocol" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="reportStatus">
-		<xs:complexType mixed="true">
-			<xs:attribute name="statusCode" use="required" type="xs:string"/>
-			<xs:attribute name="statusCodeId" use="required" type="xs:string"/>
-		</xs:complexType>
-	</xs:element>
 	<xs:element name="facility">
 		<xs:complexType mixed="true">
 			<xs:attribute name="facilityCode" use="required" type="xs:string"/>
@@ -81,37 +65,19 @@
 	<xs:element name="item">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="mmlVs:name" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="mmlVs:itemName" minOccurs="1" maxOccurs="1"/>
 				<xs:element ref="mmlVs:value" minOccurs="0"/>
 				<xs:element ref="mmlVs:numValue" minOccurs="0"/>
 				<xs:element ref="mmlVs:unit" minOccurs="1" maxOccurs="1"/>
-				<xs:element ref="mmlVs:memo" minOccurs="0" maxOccurs="unbounded"/>
-				<xs:element ref="mmlVs:memoF" minOccurs="0"/>
+				<xs:element ref="mmlVs:itemMemo" minOccurs="0" maxOccurs="1"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="name">
-		<xs:complexType mixed="true">
-			<xs:attribute name="itCode" use="required" type="xs:string"/>
-			<xs:attribute name="itCodeId" use="required" type="xs:string"/>
-		</xs:complexType>
-	</xs:element>
+	<xs:element name="itemName" type="xs:string" />
   <xs:element name="value" type="xs:string"/>
   <xs:element name="numValue" type="xs:decimal"/>		
-	<xs:element name="unit">
-		<xs:complexType mixed="true">
-			<xs:attribute name="uCode" type="xs:string"/>
-			<xs:attribute name="uCodeId" type="xs:string"/>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="memo">
-		<xs:complexType mixed="true">
-			<xs:attribute name="imCodeName" type="xs:string"/>
-			<xs:attribute name="imCode" type="xs:string"/>
-			<xs:attribute name="imCodeId" type="xs:string"/>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="memoF" type="xs:string"/>
+	<xs:element name="unit" type="xs:string"/>
+  <xs:element name="itemMemo" type="xs:string"/>
 	<xs:element name="protocol">
 		<xs:complexType mixed="true">
 			<xs:sequence>
@@ -119,7 +85,9 @@
 				<xs:element name="position" type="xs:string"/>
 				<xs:element name="device" type="xs:string"/>
 				<xs:element name="bodyLocation" type="xs:string"/>
+			  <xs:element name="protMemo" type="xs:string"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+  <xs:element name="vsMemo" type="xs:string"/>
 </xs:schema>

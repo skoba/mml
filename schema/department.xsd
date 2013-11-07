@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- *************************************************** -->
+<!-- 診療科情報形式 -->
+<!-- Department XSD Version 1.0 -->
+<!-- *************************************************** -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/SharedComponent/Department/1.0" xmlns:mmlDp="http://www.medxml.net/MML/SharedComponent/Department/1.0">
+  <xs:element name="Department">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="mmlDp:name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="name">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="mmlDp:attlist.name"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:attributeGroup name="attlist.name">
+    <xs:attribute name="repCode" use="required" form="qualified">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="I"/>
+          <xs:enumeration value="A"/>
+          <xs:enumeration value="P"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="tableId" default="MML0025">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MML0025"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  
+</xs:schema>
