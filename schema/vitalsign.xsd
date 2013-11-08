@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-  xmlns:mmlVs="http://www.medxml.net/MML/vaitalsign/1.0" targetNamespace="http://www.medxml.net/MML/vaitalsign/1.0"
+  xmlns:mmlVs="http://www.medxml.net/MML/ContentModule/VitalSign/1.0" targetNamespace="http://www.medxml.net/MML/ContentModule/VaitalSign/1.0"
   xmlns:mmlPi="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0">
   <xs:import namespace="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0" schemaLocation="patientinfo.xsd" />
   
@@ -9,6 +9,7 @@
 			<xs:sequence>
 				<xs:element ref="mmlVs:context" minOccurs="0" maxOccurs="1"/>
 			  <xs:element ref="mmlVs:item" minOccurs="1" maxOccurs="unbounded"/>
+			  <xs:element ref="mmlVs:observedTime" minOccurs="1" maxOccurs="1"/>
 			  <xs:element ref="mmlVs:protocol" minOccurs="0" maxOccurs="1"/>
 			  <xs:element ref="mmlVs:vsMemo" minOccurs="0" maxOccurs="1"/>
 			</xs:sequence>
@@ -24,7 +25,6 @@
         <xs:element ref="mmlPi:PatientModule" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
       <xs:attribute name="registId" use="required" type="xs:string"/>
-      <xs:attribute name="ovservedTime" type="xs:dateTime"/>
       <xs:attribute name="registTime" use="required" type="xs:dateTime"/>
     </xs:complexType>
   </xs:element>
@@ -52,16 +52,6 @@
 			<xs:attribute name="obsCodeId" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="repMemo">
-		<xs:complexType mixed="true">
-			<xs:attribute name="repCodeName" type="xs:string"/>
-			<xs:attribute name="repCode" type="xs:string"/>
-			<xs:attribute name="repCodeId" type="xs:string"/>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="repMemoF">
-		<xs:complexType mixed="true"/>
-	</xs:element>
 	<xs:element name="item">
 		<xs:complexType>
 			<xs:sequence>
@@ -78,6 +68,7 @@
   <xs:element name="numValue" type="xs:decimal"/>		
 	<xs:element name="unit" type="xs:string"/>
   <xs:element name="itemMemo" type="xs:string"/>
+  <xs:element name="observedTime" type="xs:dateTime"/>
 	<xs:element name="protocol">
 		<xs:complexType mixed="true">
 			<xs:sequence>

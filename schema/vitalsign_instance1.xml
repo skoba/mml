@@ -33,4 +33,5 @@
     <mmlVs:numValue>80</mmlVs:numValue>
     <mmlVs:unit>mmHg</mmlVs:unit>
   </mmlVs:item>
+  <mmlVs:observedTime>2013-11-07T09:33:30</mmlVs:observedTime>
 </mmlVs:VitalSignModule>
