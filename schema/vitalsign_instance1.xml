@@ -5,7 +5,7 @@
  xmlns:mmlVs="http://www.medxml.net/MML/vaitalsign/1.0"
  xmlns:mmlPi="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.medxml.net/MML/vaitalsign/1.0 file:/C:/Users/skoba/Documents/GitHub/mml/schema/vitalsign.xsd">
+ xsi:schemaLocation="http://www.medxml.net/MML/vaitalsign/1.0">
   <mmlVs:context registId="00002" registTime="2013-11-06T01:06:30">
     <mmlPi:PatientModule>
       <mmlPi:uniqueInfo>
