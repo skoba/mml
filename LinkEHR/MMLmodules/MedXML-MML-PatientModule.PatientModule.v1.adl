@@ -1,0 +1,189 @@
+archetype (adl_version=1.4)
+    MedXML-MML-PatientModule.PatientModule.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110218">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+        >
+    >
+
+definition
+    PatientModule[at0000] occurrences matches {1..1} matches {  -- mmlPi:PatientModule
+        uniqueInfo existence matches {1..1} matches {
+            UniqueInfo[at0001] occurrences matches {1..1} matches {  -- mmlPi:uniqueInfo
+                masterId existence matches {1..1} matches {
+                    allow_archetype Id[at0015] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+                otherId existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    Id[at0003] occurrences matches {0..*} matches {  -- mmlCm:id
+                        id existence matches {0..1} matches {
+                            allow_archetype Id[at0016] occurrences matches {0..*} matches {
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                        type existence matches {1..1} matches {
+                            [ac0001]
+                        }
+                    }
+                }
+            }
+        }
+        personName existence matches {1..1} matches {
+            PersonName[at0005] occurrences matches {1..1} matches {  -- mmlPi:personName
+                name existence matches {1..1} cardinality matches {1..*; unordered} matches {
+                    allow_archetype Name[at0008] occurrences matches {0..1} matches {
+                        include
+                            archetype_id/value matches {/mmlNm:name/}
+                    }
+                }
+            }
+        }
+        birthday existence matches {1..1} matches {yyyy-mm-dd}
+        sex existence matches {1..1} matches {
+            [ac0002]
+        }
+        nationality existence matches {0..1} matches {
+            Nationality[at0007] occurrences matches {1..1} matches {  -- mmlPi:nationality
+                subtype existence matches {0..1} matches {/.*/}
+            }
+        }
+        race existence matches {0..1} matches {
+            Race[at0004] occurrences matches {1..1} matches {  -- mmlPi:race
+                raceCode existence matches {0..1} matches {/.*/}
+                raceCodeId existence matches {0..1} matches {/.*/}
+            }
+        }
+        marital existence matches {0..1} matches {
+            [ac0003]
+        }
+        addresses existence matches {0..1} matches {
+            Addresses[at0009] occurrences matches {1..1} matches {  -- mmlPi:addresses
+                address existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype Address[at0010] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/mmlAd:address/}
+                    }
+                }
+            }
+        }
+        emailAddresses existence matches {0..1} matches {
+            EmailAddresses[at0011] occurrences matches {1..1} matches {  -- mmlPi:emailAddresses
+                email existence matches {0..1} cardinality matches {0..*; unordered} matches {/.*/}
+            }
+        }
+        phones existence matches {0..1} matches {
+            Phones[at0012] occurrences matches {1..1} matches {  -- mmlPi:phones
+                phone existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype Phone[at0013] occurrences matches {0..1} matches {
+                        include
+                            archetype_id/value matches {/mmlPh:phone/}
+                    }
+                }
+            }
+        }
+        accountNumber existence matches {0..1} matches {/.*/}
+        socialIdentification existence matches {0..1} matches {/.*/}
+        death existence matches {0..1} matches {
+            Death[at0014] occurrences matches {1..1} matches {  -- mmlPi:death
+                date existence matches {0..1} matches {yyyy-MM-ddThh:mm:ss}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlPi:PatientModule">
+                    description = <"mmlPi:PatientModule">
+                >
+                ["at0001"] = <
+                    text = <"mmlPi:uniqueInfo">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"mmlCm:id">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"mmlPi:personName">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"mmlPi:nationality">
+                    description = <"String">
+                >
+                ["at0004"] = <
+                    text = <"mmlPi:race">
+                    description = <"String">
+                >
+                ["at0008"] = <
+                    text = <"mmlNm:name">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"mmlPi:addresses">
+                    description = <"">
+                >
+                ["at0010"] = <
+                    text = <"mmlAd:address">
+                    description = <"">
+                >
+                ["at0011"] = <
+                    text = <"mmlPi:emailAddresses">
+                    description = <"">
+                >
+                ["at0012"] = <
+                    text = <"mmlPi:phones">
+                    description = <"">
+                >
+                ["at0014"] = <
+                    text = <"mmlPi:death">
+                    description = <"Boolean">
+                >
+                ["at0013"] = <
+                    text = <"mmlPh:phone">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en"] = <
+            items = <
+                ["ac0001"] = <
+                    text = <"MML0009">
+                    description = <"codes from MML0009">
+                >
+                ["ac0002"] = <
+                    text = <"MML0010">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0003"] = <
+                    text = <"MML0011">
+                    description = <"This is a constraint reference">
+                >
+            >
+        >
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

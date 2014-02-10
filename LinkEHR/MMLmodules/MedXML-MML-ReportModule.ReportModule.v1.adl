@@ -1,0 +1,312 @@
+archetype (adl_version=1.4)
+    MedXML-MML-ReportModule.ReportModule.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110224">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            use = <"report information module">
+        >
+    >
+
+definition
+    ReportModule[at0000] occurrences matches {1..1} matches {  -- mmlRp:ReportModule
+        information existence matches {1..1} matches {
+            Information[at0001] occurrences matches {1..1} matches {  -- mmlRp:information
+                performTime existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                reportTime existence matches {1..1} matches {yyyy-MM-ddThh:mm:ss}
+                reportStatus existence matches {1..1} matches {
+                    ReportStatus[at0002] occurrences matches {1..1} matches {  -- mmlRp:reportStatus
+                        statusCode existence matches {1..1} matches {
+                            [ac0001]
+                        }
+                        statusCodeId existence matches {1..1} matches {/.*/}
+                    }
+                }
+                testClass existence matches {1..1} matches {
+                    TestClass[at0003] occurrences matches {1..1} matches {  -- mmlRp:testClass
+                        testClassCode existence matches {1..1} matches {
+                            [ac0002]
+                        }
+                        testClassCodeId existence matches {1..1} matches {/.*/}
+                    }
+                }
+                testSubclass existence matches {0..1} matches {
+                    TestSubclass[at0004] occurrences matches {1..1} matches {  -- mmlRp:testSubclass
+                        testSubclassCode existence matches {0..1} matches {
+                            [ac0003]
+                        }
+                        testSubclassCodeId existence matches {0..1} matches {/.*/}
+                    }
+                }
+                organ existence matches {0..1} matches {/.*/}
+                consultFrom existence matches {0..1} matches {
+                    ConsultFrom[at0005] occurrences matches {1..1} matches {  -- mmlRp:consultFrom
+                        conFacility existence matches {0..1} matches {
+                            ConFacility[at0006] occurrences matches {1..1} matches {  -- mmlRp:conFacility
+                                facilityCode existence matches {0..1} matches {/.*/}
+                                facilityCodeId existence matches {0..1} matches {
+                                    [ac0004]
+                                }
+                            }
+                        }
+                        conDepartment existence matches {0..1} matches {
+                            ConDepartment[at0007] occurrences matches {1..1} matches {  -- mmlRp:conDepartment
+                                depCode existence matches {0..1} matches {
+                                    [ac0005]
+                                }
+                                depCodeId existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                        conWard existence matches {0..1} matches {
+                            ConWard[at0008] occurrences matches {1..1} matches {  -- mmlRp:conWard
+                                wardCode existence matches {0..1} matches {
+                                    [ac0006]
+                                }
+                                wardCodeId existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                        client existence matches {0..1} matches {
+                            Client[at0009] occurrences matches {1..1} matches {  -- mmlRp:client
+                                clientCode existence matches {0..1} matches {
+                                    [ac0007]
+                                }
+                                clientCodeId existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                perfom existence matches {1..1} matches {
+                    Perfom[at0010] occurrences matches {1..1} matches {  -- mmlRp:perfom
+                        pFacility existence matches {1..1} matches {
+                            PFacility[at0011] occurrences matches {1..1} matches {  -- mmlRp:pFacility
+                                facilityCode existence matches {1..1} matches {/.*/}
+                                facilityCodeId existence matches {1..1} matches {
+                                    [ac0008]
+                                }
+                            }
+                        }
+                        pDepartment existence matches {0..1} matches {
+                            PDepartment[at0012] occurrences matches {1..1} matches {  -- mmlRp:pDepartment
+                                depCode existence matches {0..1} matches {
+                                    [ac0009]
+                                }
+                                depCodeId existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                        pWard existence matches {0..1} matches {
+                            PWard[at0013] occurrences matches {1..1} matches {  -- mmlRp:pWard
+                                wardCode existence matches {0..1} matches {
+                                    [ac0010]
+                                }
+                                wardCodeId existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                        performer existence matches {1..1} matches {
+                            Performer[at0014] occurrences matches {1..1} matches {  -- mmlRp:performer
+                                performerCode existence matches {0..1} matches {
+                                    [ac0011]
+                                }
+                                performerCodeId existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                        supervisor existence matches {0..1} matches {
+                            Supervisor[at0025] occurrences matches {1..1} matches {  -- mmlRp:supervisor
+                                supervisorCode existence matches {0..1} matches {
+                                    [ac0012]
+                                }
+                                supervisorCodeId existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        reportBody existence matches {1..1} matches {
+            ReportBody[at0026] occurrences matches {1..1} matches {  -- mmlRp:reportBody
+                chiefComplaints existence matches {0..1} matches {/.*/}
+                testPurpose existence matches {0..1} matches {/.*/}
+                testDx existence matches {0..1} matches {/.*/}
+                testNotes existence matches {0..1} matches {
+                    TestNotes[at0027] occurrences matches {0..*} matches {  -- mmlRp:testNotes
+                        extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            allow_archetype ExtRef[at0028] occurrences matches {0..*} matches {
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                testMemo existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    TestMemo[at0029] occurrences matches {0..*} matches {  -- mmlRp:testMemo
+                        tmCodeName existence matches {0..1} matches {/.*/}
+                        tmCode existence matches {0..1} matches {
+                            [ac0013]
+                        }
+                        tmCodeId existence matches {0..1} matches {/.*/}
+                    }
+                }
+                testMemoF existence matches {0..1} matches {/.*/}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlRp:ReportModule">
+                    description = <"ReportModule">
+                >
+                ["at0001"] = <
+                    text = <"mmlRp:information">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"mmlRp:reportStatus">
+                    description = <"String">
+                >
+                ["at0003"] = <
+                    text = <"mmlRp:testClass">
+                    description = <"String">
+                >
+                ["at0004"] = <
+                    text = <"mmlRp:testSubclass">
+                    description = <"String">
+                >
+                ["at0005"] = <
+                    text = <"mmlRp:consultFrom">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"mmlRp:conFacility">
+                    description = <"String">
+                >
+                ["at0007"] = <
+                    text = <"mmlRp:conDepartment">
+                    description = <"String">
+                >
+                ["at0008"] = <
+                    text = <"mmlRp:conWard">
+                    description = <"String">
+                >
+                ["at0009"] = <
+                    text = <"mmlRp:client">
+                    description = <"String">
+                >
+                ["at0010"] = <
+                    text = <"mmlRp:perfom">
+                    description = <"">
+                >
+                ["at0011"] = <
+                    text = <"mmlRp:pFacility">
+                    description = <"String">
+                >
+                ["at0012"] = <
+                    text = <"mmlRp:pDepartment">
+                    description = <"String">
+                >
+                ["at0013"] = <
+                    text = <"mmlRp:pWard">
+                    description = <"String">
+                >
+                ["at0014"] = <
+                    text = <"mmlRp:performer">
+                    description = <"String">
+                >
+                ["at0025"] = <
+                    text = <"mmlRp:supervisor">
+                    description = <"String">
+                >
+                ["at0026"] = <
+                    text = <"mmlRp:reportBody">
+                    description = <"">
+                >
+                ["at0027"] = <
+                    text = <"mmlRp:testNotes">
+                    description = <"String">
+                >
+                ["at0029"] = <
+                    text = <"mmlRp:testMemo">
+                    description = <"String">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en"] = <
+            items = <
+                ["ac0001"] = <
+                    text = <"mmlLb0001">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0002"] = <
+                    text = <"MML0033">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0003"] = <
+                    text = <"Specified by users">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0004"] = <
+                    text = <"MML0027">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0005"] = <
+                    text = <"MML0028">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0006"] = <
+                    text = <"Specified by users">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0007"] = <
+                    text = <"Specified by users">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0008"] = <
+                    text = <"MML0027">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0009"] = <
+                    text = <"MML0028">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0010"] = <
+                    text = <"Specified by users">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0011"] = <
+                    text = <"Specified by users">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0012"] = <
+                    text = <"Specified by users">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0013"] = <
+                    text = <"Specified by users">
+                    description = <"This is a constraint reference">
+                >
+            >
+        >
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

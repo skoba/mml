@@ -1,0 +1,62 @@
+archetype (adl_version=1.4)
+    MedXML-MML-Facility.Facility.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110225">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            use = <"format for indicating facilities ">
+        >
+    >
+
+definition
+    Facility[at0000] occurrences matches {1..1} matches {  -- mmlFc:Facility
+        name existence matches {1..1} cardinality matches {1..*; unordered} matches {
+            Name[at0001] occurrences matches {1..1} matches {  -- mmFc:name
+                repCode existence matches {1..1} matches {/.*/}
+                tableId existence matches {0..1} matches {/.*/}
+            }
+        }
+        id existence matches {0..1} matches {
+            allow_archetype Id[at0002] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlFc:Facility">
+                    description = <"Facility">
+                >
+                ["at0001"] = <
+                    text = <"mmFc:name">
+                    description = <"String">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

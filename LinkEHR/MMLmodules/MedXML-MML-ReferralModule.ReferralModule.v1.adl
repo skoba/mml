@@ -1,0 +1,197 @@
+archetype (adl_version=1.4)
+    MedXML-MML-ReferralModule.ReferralModule.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110225">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            use = <"A single act of a creation of a referral letter by a single doctor is described in a single module.">
+        >
+    >
+
+definition
+    ReferralModule[at0000] occurrences matches {1..1} matches {  -- mmlRe:ReferralModule
+        patientModule existence matches {1..1} matches {
+            allow_archetype PatientModule[at0001] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+        occupation existence matches {0..1} matches {/.*/}
+        referFrom existence matches {1..1} matches {
+            ReferFrom[at0002] occurrences matches {1..1} matches {  -- mmlRe:referFrom
+                personalizedInfo existence matches {0..1} matches {
+                    allow_archetype PersonalizedInfo[at0003] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+        title existence matches {1..1} matches {/.*/}
+        greeting existence matches {0..1} matches {/.*/}
+        chiefComplaints existence matches {1..1} matches {/.*/}
+        clinicalDiagnosis existence matches {0..1} matches {/.*/}
+        pastHistory existence matches {0..1} matches {
+            PastHistory[at0005] occurrences matches {1..1} matches {  -- mmlRe:pastHistory
+                extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype ExtRef[at0006] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+        familyHistory existence matches {0..1} matches {
+            FamilyHistory[at0007] occurrences matches {1..1} matches {  -- mmlRe:familyHistory
+                extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype ExtRef[at0008] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+        presentIllness existence matches {1..1} matches {
+            PresentIllness[at0009] occurrences matches {1..1} matches {  -- mmlRe:presentIllness
+                extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype ExtRef[at0011] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+        testResults existence matches {0..1} matches {
+            TestResults[at0012] occurrences matches {0..*} matches {  -- mmlRe:testResults
+                extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype ExtRef[at0013] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+        clinicalCourse existence matches {0..1} matches {
+            allow_archetype ClinicalCourse[at0014] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+        medication existence matches {0..1} matches {
+            Medication[at0015] occurrences matches {1..1} matches {  -- mmlRe:medication
+                extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype ExtRef[at0016] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+        referPurpose existence matches {1..1} matches {/.*/}
+        remarks existence matches {0..1} matches {
+            Remarks[at0018] occurrences matches {1..1} matches {  -- mmlRe:remarks
+                extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype ExtRef[at0019] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+        referToFacility existence matches {1..1} matches {
+            ReferToFacility[at0020] occurrences matches {1..1} matches {  -- mmlRe:referToFacility
+                facility existence matches {0..1} matches {
+                    allow_archetype Facility[at0021] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+        department existence matches {0..1} matches {
+            allow_archetype Department[at0022] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+        referToPerson existence matches {0..1} matches {
+            ReferToPerson[at0023] occurrences matches {1..1} matches {  -- mmlRe:referToPerson
+                personalizedInfo existence matches {1..1} matches {
+                    allow_archetype PersonalizedInfo[at0024] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+        referToUnknownName existence matches {0..1} matches {/.*/}
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlRe:ReferralModule">
+                    description = <"ReferralModule">
+                >
+                ["at0002"] = <
+                    text = <"mmlRe:referFrom">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"mmlRe:pastHistory">
+                    description = <"String">
+                >
+                ["at0007"] = <
+                    text = <"mmlRe:familyHistory">
+                    description = <"String">
+                >
+                ["at0009"] = <
+                    text = <"mmlRe:presentIllness">
+                    description = <"String">
+                >
+                ["at0012"] = <
+                    text = <"mmlRe:testResults">
+                    description = <"String">
+                >
+                ["at0015"] = <
+                    text = <"mmlRe:medication">
+                    description = <"String">
+                >
+                ["at0018"] = <
+                    text = <"mmlRe:remarks">
+                    description = <"String">
+                >
+                ["at0020"] = <
+                    text = <"mmlRe:referToFacility">
+                    description = <"">
+                >
+                ["at0023"] = <
+                    text = <"mmlRe:referToPerson">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

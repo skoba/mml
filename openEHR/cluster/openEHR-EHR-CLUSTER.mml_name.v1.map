@@ -1,0 +1,82 @@
+archetype
+    openEHR-EHR-CLUSTER.mml_name.v1
+
+description
+    original_author = <
+        ["name"] = <"">
+    >
+    lifecycle_state = <"Tentative">
+    details = <
+        ["ja"] = <
+            language = <[ISO_639-1::ja]>
+            purpose = <"MMLで人名を記録するためのアーキタイプ">
+            keywords = <"name","person">
+            copyright = <"MedXML foundation">
+        >
+        ["en-us"] = <
+            language = <[ISO_639-1::en-us]>
+            keywords = <"Person","name">
+            copyright = <"MedXML Foundation">
+            use = <"Describe personal name">
+            misuse = <"Describe organization name">
+        >
+    >
+
+objectBuilder
+    object_builder_definition = <"<?xml version='1.0' encoding='UTF-8'?><objectBuilder hasBagSemantics='false'><sourcePaths><sourcePath>/source[anySource]/type[XML]/document[anyDocument]/element[linkEHRvirtualIDPatient]</sourcePath></sourcePaths></objectBuilder>">
+mapping
+    map_definitions = <
+        ["/items[at0008]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true' isMixed='false'></attributeMapping>" >
+            >
+        >
+        ["/items[at0005]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true' isMixed='false'></attributeMapping>" >
+            >
+        >
+        ["/items[at0001]/items[at0003]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true' isMixed='false'></attributeMapping>" >
+            >
+        >
+        ["/items[at0007]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true' isMixed='false'></attributeMapping>" >
+            >
+        >
+        ["/items[at0004]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true' isMixed='false'></attributeMapping>" >
+            >
+        >
+        ["/items[at0001]"] = < 
+            items = <
+                ["."] = < "<?xml version='1.0' encoding='UTF-8'?><objectMapping><Ids></Ids></objectMapping>" >
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true' isMixed='false'></attributeMapping>" >
+            >
+        >
+        ["/items[at0001]/items[at0002]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true' isMixed='false'></attributeMapping>" >
+            >
+        >
+        ["/items[at0009]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true' isMixed='false'></attributeMapping>" >
+            >
+        >
+        ["/items[at0006]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true' isMixed='false'></attributeMapping>" >
+            >
+        >
+        ["/"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true' isMixed='false'></attributeMapping>" >
+            >
+        >
+    >
+
+

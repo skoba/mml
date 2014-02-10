@@ -1,0 +1,139 @@
+archetype (adl_version=1.4)
+    MedXML-MML-BasicClinicModule.BasicClinicModule.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110223">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            keywords = <"bloodtype","clinical information">
+            use = <"basic clinical information">
+        >
+    >
+
+definition
+    BasicClinicModule[at0000] occurrences matches {1..1} matches {  -- mmlBc:BasicClinicModule
+        allergy existence matches {0..1} matches {
+            Allergy[at0001] occurrences matches {1..1} matches {  -- mmlBc:allergy
+                allergyItem existence matches {1..1} cardinality matches {1..*; unordered} matches {
+                    AllergyItem[at0002] occurrences matches {1..*} matches {  -- mmlBc:allergyItem
+                        factor existence matches {1..1} matches {/.*/}
+                        severity existence matches {0..1} matches {
+                            [ac0001]
+                        }
+                        identifiedDate existence matches {0..1} matches {/.*/}
+                        memo existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        bloodtype existence matches {0..1} matches {
+            Bloodtype[at0003] occurrences matches {1..1} matches {  -- mmlBc:bloodtype
+                abo existence matches {1..1} matches {
+                    [ac0002]
+                }
+                rh existence matches {0..1} matches {
+                    [ac0003]
+                }
+                others existence matches {0..1} matches {
+                    Others[at0006] occurrences matches {0..*} matches {  -- mmlBc:others
+                        other existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            Other[at0007] occurrences matches {0..*} matches {  -- 
+                                typeName existence matches {1..1} matches {/.*/}
+                                typeJudgement existence matches {1..1} matches {/.*/}
+                                description existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                memo existence matches {0..1} matches {/.*/}
+            }
+        }
+        infection existence matches {0..1} matches {
+            Infection[at0008] occurrences matches {1..1} matches {  -- mmlBc:infection
+                infectionItem existence matches {0..1} cardinality matches {1..*; unordered} matches {
+                    InfectionItem[at0009] occurrences matches {1..*} matches {  -- mmlBc:infectionItem
+                        factor existence matches {1..1} matches {/.*/}
+                        examValue existence matches {1..1} matches {/.*/}
+                        identifiedDate existence matches {0..1} matches {/.*/}
+                        memo existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlBc:BasicClinicModule">
+                    description = <"BasicClinicModule">
+                >
+                ["at0001"] = <
+                    text = <"mmlBc:allergy">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"mmlBc:allergyItem">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"mmlBc:bloodtype">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"mmlBc:others">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"mmlBc:infection">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"mmlBc:infectionItem">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en"] = <
+            items = <
+                ["ac0001"] = <
+                    text = <"MML0017">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0002"] = <
+                    text = <"MML0018">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0003"] = <
+                    text = <"MML0019">
+                    description = <"This is a constraint reference">
+                >
+            >
+        >
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

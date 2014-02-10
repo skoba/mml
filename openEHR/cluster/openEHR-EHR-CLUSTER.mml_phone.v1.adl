@@ -1,0 +1,157 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.mml_phone.v1
+
+concept
+	[at0000]	-- MML phone number
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*(ja)">
+			use = <"*(ja)">
+			misuse = <"*(ja)">
+			copyright = <"*(ja)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"F8A6B46FC6C3AB812E37958F71F42927">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- MML phone number
+		items cardinality matches {3..*; unordered} matches {
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- mmlPh:telEquipType
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0003] matches {	-- mmlPh:area
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] matches {	-- mmlPh:city
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0005] matches {	-- mmlPh:number
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {	-- mmlPh:extension
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {	-- mmlPh:countrｙ
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0008] occurrences matches {0..1} matches {	-- mmlPh:memo
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML phone number">
+					description = <"MML component for phone number">
+				>
+				["at0002"] = <
+					text = <"mmlPh:telEquipType">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"mmlPh:area">
+					description = <"area number">
+				>
+				["at0004"] = <
+					text = <"mmlPh:city">
+					description = <"city number">
+				>
+				["at0005"] = <
+					text = <"mmlPh:number">
+					description = <"number ">
+				>
+				["at0006"] = <
+					text = <"mmlPh:extension">
+					description = <"extension">
+				>
+				["at0007"] = <
+					text = <"mmlPh:countrｙ">
+					description = <"country number">
+				>
+				["at0008"] = <
+					text = <"mmlPh:memo">
+					description = <"memo for phone">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML Phone number">
+					description = <"MML common component ofr phone number">
+				>
+				["at0002"] = <
+					text = <"mmlPh:telEquipType">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"mmlPh:area">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"mmlPh:city">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"mmlPh:number">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"mmlPh:extension">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"mmlPh:countrｙ">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"mmlPh:memo">
+					description = <"*">
+				>
+			>
+		>
+	>

@@ -1,0 +1,248 @@
+archetype (adl_version=1.4)
+    MedXML-MML-ProgressCourseModule.ProgressCourseModule.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110223">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            use = <"progress course information. Select either the mmlPc:FreeExpression or mmlPc: structured Expression.">
+        >
+    >
+
+definition
+    ProgressCourseModule[at0000] occurrences matches {1..1} matches {  -- mmlPc:progressCourseModule
+        freeExpression existence matches {1..1} matches {
+            FreeExpression[at0001] occurrences matches {1..1} matches {  -- mmlPc:freeExpression
+                extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype ExtRef[at0002] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+        structuredExpression existence matches {1..1} matches {
+            StructuredExpression[at0003] occurrences matches {1..1} matches {  -- mmlPc:structuredExpression
+                problemItem existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    ProblemItem[at0004] occurrences matches {0..*} matches {  -- mmlPc:problemItem
+                        problem existence matches {0..1} matches {
+                            Problem[at0005] occurrences matches {1..1} matches {  -- mmlPc:problem
+                                dxUid existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                        subjective existence matches {0..1} matches {
+                            Subjective[at0006] occurrences matches {0..*} matches {  -- mmlPc:subjective
+                                freeNotes existence matches {1..1} matches {/.*/}
+                                subjectiveItem existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                    SubjectiveItem[at0008] occurrences matches {0..*} matches {  -- mmlPc:subjectiveItem
+                                        timeExpression existence matches {0..1} matches {/.*/}
+                                        eventExpression existence matches {1..1} cardinality matches {1..*; unordered} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                        objective existence matches {0..1} matches {
+                            Objective[at0010] occurrences matches {1..1} matches {  -- mmlPc:objective
+                                objectiveNotes existence matches {0..1} matches {/.*/}
+                                physicalExam existence matches {0..1} matches {
+                                    PhysicalExam[at0012] occurrences matches {1..1} matches {  -- mmlPc:physicalExam
+                                        physicalExamItem existence matches {1..1} cardinality matches {1..*; unordered} matches {
+                                            PhysicalExamItem[at0013] occurrences matches {1..*} matches {  -- mmlPc:physicalExamItem
+                                                title existence matches {1..1} matches {/.*/}
+                                                result existence matches {1..1} matches {/.*/}
+                                                interpretation existence matches {0..1} matches {/.*/}
+                                                referenceInfo existence matches {0..1} matches {
+                                                    ReferenceInfo[at0014] occurrences matches {0..*} matches {  -- mmlPc:referenceInfo
+                                                        extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                                            allow_archetype ExtRef[at0015] occurrences matches {0..*} matches {
+                                                                include
+                                                                    archetype_id/value matches {/.*/}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                testResult existence matches {0..1} matches {
+                                    TestResult[at0009] occurrences matches {1..1} matches {  -- mmlPc:testResult
+                                        extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                            allow_archetype ExtRef[at0016] occurrences matches {0..*} matches {
+                                                include
+                                                    archetype_id/value matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                rxRecord existence matches {0..1} matches {
+                                    RxRecord[at0017] occurrences matches {1..1} matches {  -- mmlPc:rxRecord
+                                        extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                            allow_archetype ExtRef[at0018] occurrences matches {0..*} matches {
+                                                include
+                                                    archetype_id/value matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                txRecord existence matches {0..1} matches {
+                                    TxRecord[at0019] occurrences matches {1..1} matches {  -- mmlPc:txRecord
+                                        extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                            allow_archetype ExtRef[at0020] occurrences matches {0..*} matches {
+                                                include
+                                                    archetype_id/value matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        assessment existence matches {0..1} matches {
+                            Assessment[at0021] occurrences matches {1..1} matches {  -- mmlPc:assessment
+                                assessmentItem existence matches {1..1} cardinality matches {1..*; unordered} matches {/.*/}
+                            }
+                        }
+                        plan existence matches {0..1} matches {
+                            Plan[at0023] occurrences matches {0..*} matches {  -- mmlPc:plan
+                                testOrder existence matches {0..1} matches {
+                                    TestOrder[at0024] occurrences matches {1..1} matches {  -- mmlPc:testOrder
+                                        extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                            allow_archetype ExtRef[at0025] occurrences matches {0..*} matches {
+                                                include
+                                                    archetype_id/value matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                rxOrder existence matches {0..1} matches {
+                                    RxOrder[at0026] occurrences matches {1..1} matches {  -- mmlPc:rxOrder
+                                        extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                            allow_archetype ExtRef[at0027] occurrences matches {0..*} matches {
+                                                include
+                                                    archetype_id/value matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                txOrder existence matches {0..1} matches {
+                                    TxOrder[at0028] occurrences matches {1..1} matches {  -- mmlPc:txOrder
+                                        extRef existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                                            allow_archetype ExtRef[at0029] occurrences matches {0..*} matches {
+                                                include
+                                                    archetype_id/value matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                planNotes existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlPc:progressCourseModule">
+                    description = <"ProgressCourseModule">
+                >
+                ["at0001"] = <
+                    text = <"mmlPc:freeExpression">
+                    description = <"String">
+                >
+                ["at0003"] = <
+                    text = <"mmlPc:structuredExpression">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"mmlPc:problemItem">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"mmlPc:problem">
+                    description = <"String">
+                >
+                ["at0006"] = <
+                    text = <"mmlPc:subjective">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"mmlPc:subjectiveItem">
+                    description = <"">
+                >
+                ["at0010"] = <
+                    text = <"mmlPc:objective">
+                    description = <"">
+                >
+                ["at0012"] = <
+                    text = <"mmlPc:physicalExam">
+                    description = <"">
+                >
+                ["at0013"] = <
+                    text = <"mmlPc:physicalExamItem">
+                    description = <"">
+                >
+                ["at0014"] = <
+                    text = <"mmlPc:referenceInfo">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"mmlPc:testResult">
+                    description = <"String">
+                >
+                ["at0017"] = <
+                    text = <"mmlPc:rxRecord">
+                    description = <"String">
+                >
+                ["at0019"] = <
+                    text = <"mmlPc:txRecord">
+                    description = <"String">
+                >
+                ["at0021"] = <
+                    text = <"mmlPc:assessment">
+                    description = <"">
+                >
+                ["at0023"] = <
+                    text = <"mmlPc:plan">
+                    description = <"">
+                >
+                ["at0024"] = <
+                    text = <"mmlPc:testOrder">
+                    description = <"String">
+                >
+                ["at0026"] = <
+                    text = <"mmlPc:rxOrder">
+                    description = <"String">
+                >
+                ["at0028"] = <
+                    text = <"mmlPc:txOrder">
+                    description = <"String">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

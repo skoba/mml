@@ -1,0 +1,61 @@
+archetype (adl_version=1.4)
+    MedXML-MML-CreatorInfo.CreatorInfo.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110222">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            use = <"common format for indicating creators">
+        >
+    >
+
+definition
+    CreatorInfo[at0000] occurrences matches {1..1} matches {  -- mmlCi:CreatorInfo
+        personalizedInfo existence matches {1..1} matches {
+            allow_archetype PersonalizedInfo[at0001] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+        creatorLicense existence matches {0..1} matches {
+            CreatorLicense[at0002] occurrences matches {1..*} matches {  -- mmlCi:creatorLicense
+                tableId existence matches {0..1} matches {/.*/}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlCi:CreatorInfo">
+                    description = <"CreatorInfo">
+                >
+                ["at0002"] = <
+                    text = <"mmlCi:creatorLicense">
+                    description = <"String">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

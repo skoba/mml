@@ -1,0 +1,131 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.mml_id.v1
+
+concept
+	[at0000]	-- *MML 2.3 ID形式(ja)
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*(ja)">
+			use = <"*(ja)">
+			misuse = <"*(ja)">
+			copyright = <"*(ja)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"B38F7CB3CF66E1C8BC0E9C4B40EC19F4">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- *MML 2.3 ID形式(ja)
+		items cardinality matches {2; unordered} matches {
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- mmlCm:Id
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] matches {	-- mmlCm:type
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0007] matches {	-- mmlCm:tableId
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {	-- mmlCm:CheckDigit
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {	-- mmlCm:checkDigitSchema
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*MML 2.3 ID形式(ja)">
+					description = <"*MML 2.3Id形式(ja)">
+				>
+				["at0003"] = <
+					text = <"mmlCm:Id">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"mmlCm:type">
+					description = <"**(ja)">
+				>
+				["at0005"] = <
+					text = <"mmlCm:CheckDigit">
+					description = <"**(ja)">
+				>
+				["at0006"] = <
+					text = <"mmlCm:checkDigitSchema">
+					description = <"**(ja)">
+				>
+				["at0007"] = <
+					text = <"mmlCm:tableId">
+					description = <"*">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML 2.3 ID形式">
+					description = <"MML 2.3Id形式">
+				>
+				["at0003"] = <
+					text = <"mmlCm:Id">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"mmlCm:type">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"mmlCm:CheckDigit">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"mmlCm:checkDigitSchema">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+			>
+		>
+	>

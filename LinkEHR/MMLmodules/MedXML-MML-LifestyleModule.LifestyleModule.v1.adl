@@ -1,0 +1,51 @@
+archetype (adl_version=1.4)
+    MedXML-MML-LifestyleModule.LifestyleModule.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110223">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            keywords = <"tobacco","alcohol","occupation">
+            use = <"lifestyle information">
+        >
+    >
+
+definition
+    LifestyleModule[at0000] occurrences matches {1..1} matches {  -- mmlLs:LifestyleModule
+        occupation existence matches {1..1} matches {/.*/}
+        tobacco existence matches {1..1} matches {/.*/}
+        alcohol existence matches {1..1} matches {/.*/}
+        other existence matches {0..1} matches {/.*/}
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlLs:LifestyleModule">
+                    description = <"LifestyleModule">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

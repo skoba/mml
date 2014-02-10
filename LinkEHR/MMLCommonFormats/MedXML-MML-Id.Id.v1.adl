@@ -1,0 +1,67 @@
+archetype (adl_version=1.4)
+    MedXML-MML-Id.Id.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110222">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"common format for indicating IDs">
+            keywords = <"ID">
+        >
+    >
+
+definition
+    Id[at0000] occurrences matches {1..1} matches {  -- Id
+        type existence matches {1..1} matches {
+            [ac0002]
+        }
+        tableID existence matches {1..1} matches {/.*/}
+        checkDigit existence matches {0..1} matches {|-2147483647..2147483647|}
+        checkDigitSchema existence matches {0..1} matches {
+            [ac0001]
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Id">
+                    description = <"Id">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en"] = <
+            items = <
+                ["ac0001"] = <
+                    text = <"MML0001">
+                    description = <"Check digit scheme">
+                >
+                ["ac0002"] = <
+                    text = <"optional">
+                    description = <"mmlCm:type uses table MML0024 for personal IDs, table MML0027 for facility IDs and table MML0029 for the medical department IDs. The table name used is written in the mmlCm:tableId. ">
+                >
+            >
+        >
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

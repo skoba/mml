@@ -1,0 +1,177 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.mml_personalized_info.v1
+
+concept
+	[at0000]	-- MML personalized info component
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["organisation"] = <"MedXML consortium">
+		["name"] = <"Shinji KOBAYASHI">
+		["email"] = <"skoba@moss.or.jp">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To describe personal information">
+			use = <"">
+			misuse = <"*(ja)">
+			copyright = <"MedXML consortium">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"6F4FF4372F760B2A4BAE7AB972062515">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- MML personalized info component
+		items cardinality matches {1; unordered} matches {
+			allow_archetype CLUSTER[at0001] matches {	-- mmlCm:Id
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_id\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype CLUSTER[at0002] occurrences matches {1..*} matches {	-- mmlPsi:personName
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_name\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype CLUSTER[at0003] occurrences matches {0..1} matches {	-- mmlFc:Facility
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_facility\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype CLUSTER[at0004] occurrences matches {0..1} matches {	-- mmlDp:Department
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_department\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {	-- mmlPsi:addresses
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_address\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+			CLUSTER[at0008] occurrences matches {0..1} matches {	-- mmlPsi:emailAddresses
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0009] occurrences matches {0..*} matches {	-- mmlCm:email
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {	-- mmlPsi:phones
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_phone\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML personalized info component">
+					description = <"MML common component for personalized infomation">
+				>
+				["at0001"] = <
+					text = <"mmlCm:Id">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"mmlPsi:personName">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"mmlFc:Facility">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"mmlDp:Department">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"mmlPsi:addresses">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"mmlPsi:emailAddresses">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"mmlCm:email">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"mmlPsi:phones">
+					description = <"*">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"Mml personalized info">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"*Cluster(ja)">
+					description = <"**(ja)">
+				>
+				["at0002"] = <
+					text = <"*Cluster(ja)">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"*Cluster(ja)">
+					description = <"**(ja)">
+				>
+				["at0004"] = <
+					text = <"*Cluster(ja)">
+					description = <"**(ja)">
+				>
+				["at0005"] = <
+					text = <"*Cluster(ja)">
+					description = <"**(ja)">
+				>
+				["at0008"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0009"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0010"] = <
+					text = <"*Cluster(ja)">
+					description = <"**(ja)">
+				>
+			>
+		>
+	>

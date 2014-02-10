@@ -1,0 +1,122 @@
+archetype (adl_version=1.4)
+    MedXML-MML-RegisteredDiagnosisModule.RegisteredDiagnosisModule.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110223">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            use = <"diagnosis record information. Enter only one disease name in one module. If there are multiple diseases, <paragraph> should be repeated. Select either to enter a full disease name including modifiers (diagnosis) or enter a name divided into a main disease part and modifiers (diagnosisContents).">
+        >
+    >
+
+definition
+    RegisteredDiagnosisModule[at0000] occurrences matches {1..1} matches {  -- mmlRd:RegisteredDiagnosisModule
+        diagnosis existence matches {1..1} matches {
+            Diagnosis[at0001] occurrences matches {1..1} matches {  -- mmlRd:diagnosis
+                code existence matches {0..1} matches {/.*/}
+                system existence matches {0..1} matches {/.*/}
+            }
+        }
+        diagnosisContents existence matches {0..1} matches {
+            DiagnosisContents[at0002] occurrences matches {0..1} matches {  -- mmlRd:diagnosisContents
+                dxItem existence matches {1..1} cardinality matches {1..*; unordered} matches {
+                    DxItem[at0004] occurrences matches {1..*} matches {  -- mmlRd:dxItem
+                        name existence matches {1..1} matches {
+                            Name[at0005] occurrences matches {1..1} matches {  -- mmlRd:name
+                                code existence matches {0..1} matches {*}
+                                system existence matches {0..1} matches {*}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        categories existence matches {0..1} matches {
+            Categories[at0006] occurrences matches {1..1} matches {  -- mmlRd:categories
+                category existence matches {0..1} cardinality matches {1..*; unordered} matches {
+                    Category[at0007] occurrences matches {1..*} matches {  -- mmlRd:category
+                        tableId existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        startDate existence matches {0..1} matches {yyyy-mm-dd}
+        endDate existence matches {0..1} matches {yyyy-mm-dd}
+        outcome existence matches {0..1} matches {
+            [ac0002]
+        }
+        firstEncounterDate existence matches {0..1} matches {yyyy-mm-dd}
+        relatedHealthInsurance existence matches {0..1} matches {
+            RelatedHealthInsurance[at0008] occurrences matches {1..1} matches {  -- mmlRd:relatedHealthInsurance
+                uid existence matches {0..1} matches {/.*/}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlRd:RegisteredDiagnosisModule">
+                    description = <"RegisteredDiagnosisModule">
+                >
+                ["at0001"] = <
+                    text = <"mmlRd:diagnosis">
+                    description = <"String">
+                >
+                ["at0002"] = <
+                    text = <"mmlRd:diagnosisContents">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"mmlRd:dxItem">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"mmlRd:name">
+                    description = <"String">
+                >
+                ["at0006"] = <
+                    text = <"mmlRd:categories">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"mmlRd:category">
+                    description = <"String, category name. Use tables from MML0012 to MML0015">
+                >
+                ["at0008"] = <
+                    text = <"mmlRd:relatedHealthInsurance">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en"] = <
+            items = <
+                ["ac0002"] = <
+                    text = <"MML0016">
+                    description = <"This is a constraint reference">
+                >
+            >
+        >
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

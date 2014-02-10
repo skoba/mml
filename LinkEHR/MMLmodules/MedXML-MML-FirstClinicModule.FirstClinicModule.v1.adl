@@ -1,0 +1,185 @@
+archetype (adl_version=1.4)
+    MedXML-MML-FirstClinicModule.FirstClinicModule.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110223">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            use = <"initial-consultation-specific information">
+        >
+    >
+
+definition
+    FirstClinicModule[at0000] occurrences matches {1..1} matches {  -- mmlFcl:FirstClinicModule
+        familyHistory existence matches {0..1} matches {
+            Familyhistory[at0001] occurrences matches {1..1} matches {  -- mmlFcl:familyHistory
+                familyHistoryItem existence matches {1..1} cardinality matches {1..*; unordered} matches {
+                    FamilyHistoryItem[at0002] occurrences matches {1..*} matches {  -- mmlFcl:familyHistoryItem
+                        relation existence matches {1..1} matches {
+                            Relation[at0003] occurrences matches {1..1} matches {*}  -- mmlFcl:relation
+                        }
+                        registeredDiagnosisModule existence matches {1..1} matches {
+                            allow_archetype RegisteredDiagnosisModule[at0004] occurrences matches {0..*} matches {
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                        age existence matches {0..1} matches {PT0S}
+                        memo existence matches {0..1} matches {/.*/}
+                    }
+                }
+            }
+        }
+        childhood existence matches {0..1} matches {
+            Childhood[at0005] occurrences matches {1..1} matches {  -- mmlFcl:childhood
+                birthInfo existence matches {0..1} matches {
+                    BirthInfo[at0006] occurrences matches {1..1} matches {  -- mmlFcl:birthInfo
+                        facility existence matches {0..1} matches {
+                            allow_archetype Facility[at0007] occurrences matches {0..*} matches {
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                        deliveryWeeks existence matches {0..1} matches {PT0S}
+                        deliveryMethod existence matches {0..1} matches {/.*/}
+                        bodyWeight existence matches {0..1} matches {
+                            BodyWeight[at0008] occurrences matches {1..1} matches {  -- mmlFcl:bodyWeight
+                                unit existence matches {1..1} matches {/.*/}
+                            }
+                        }
+                        bodyHeight existence matches {0..1} matches {
+                            BodyHeight[at0009] occurrences matches {1..1} matches {  -- mmlFcl:bodyHeight
+                                unit existence matches {1..1} matches {/.*/}
+                            }
+                        }
+                        chestCircumference existence matches {0..1} matches {
+                            ChestCircumference[at0010] occurrences matches {1..1} matches {  -- mmlFcl:chestCircumference
+                                unit existence matches {1..1} matches {/.*/}
+                            }
+                        }
+                        headCircumference existence matches {0..1} matches {
+                            HeadCircumference[at0011] occurrences matches {1..1} matches {  -- mmlFcl:headCircumference
+                                unit existence matches {1..1} matches {/.*/}
+                            }
+                        }
+                        memo existence matches {0..1} matches {/.*/}
+                    }
+                }
+                vaccination existence matches {0..1} matches {
+                    Vaccination[at0012] occurrences matches {1..1} matches {  -- mmlFcl:vaccination
+                        vaccinationItem existence matches {0..1} cardinality matches {1..*; unordered} matches {
+                            VaccinationItem[at0013] occurrences matches {1..*} matches {  -- mmlFcl:vaccinationItem
+                                vaccine existence matches {1..1} matches {/.*/}
+                                injected existence matches {1..1} matches {true, false}
+                                age existence matches {0..1} matches {PT0S}
+                                memo existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        pastHistory existence matches {0..1} matches {
+            PastHistory[at0014] occurrences matches {1..1} matches {  -- mmlFcl:pastHistory
+                freeNotes existence matches {1..1} matches {
+                    FreeNotes[at0015] occurrences matches {1..1} matches {*}  -- mmlFcl:freeNotes
+                }
+                pastHistoryItem existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    PastHistoryItem[at0016] occurrences matches {0..*} matches {  -- mmlFcl:pastHistoryItem
+                        timeExpression existence matches {1..1} matches {/.*/}
+                        eventExpression existence matches {0..1} cardinality matches {0..*; unordered} matches {/.*/}
+                    }
+                }
+            }
+        }
+        chiefComplaints existence matches {0..1} matches {/.*/}
+        presentIllnessNotes existence matches {0..1} matches {/.*/}
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlFcl:FirstClinicModule">
+                    description = <"FirstClinicModule">
+                >
+                ["at0001"] = <
+                    text = <"mmlFcl:familyHistory">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"mmlFcl:familyHistoryItem">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"mmlFcl:relation">
+                    description = <"String, from MML0020 codes">
+                >
+                ["at0005"] = <
+                    text = <"mmlFcl:childhood">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"mmlFcl:birthInfo">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"mmlFcl:bodyWeight">
+                    description = <"Decimal">
+                >
+                ["at0009"] = <
+                    text = <"mmlFcl:bodyHeight">
+                    description = <"decimal">
+                >
+                ["at0010"] = <
+                    text = <"mmlFcl:chestCircumference">
+                    description = <"decimal">
+                >
+                ["at0011"] = <
+                    text = <"mmlFcl:headCircumference">
+                    description = <"">
+                >
+                ["at0012"] = <
+                    text = <"mmlFcl:vaccination">
+                    description = <"">
+                >
+                ["at0013"] = <
+                    text = <"mmlFcl:vaccinationItem">
+                    description = <"">
+                >
+                ["at0014"] = <
+                    text = <"mmlFcl:pastHistory">
+                    description = <"">
+                >
+                ["at0015"] = <
+                    text = <"mmlFcl:freeNotes">
+                    description = <"">
+                >
+                ["at0016"] = <
+                    text = <"mmlFcl:pastHistoryItem">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

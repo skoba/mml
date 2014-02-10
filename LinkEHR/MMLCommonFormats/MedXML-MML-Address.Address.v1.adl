@@ -1,0 +1,73 @@
+archetype (adl_version=1.4)
+    MedXML-MML-Address.Address.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110222">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            keywords = <"address">
+            use = <"common format for indicating addresses. Select the full address expression or subdivided address expression using 4 elements (prefecture, city, town, homeNumber).">
+        >
+    >
+
+definition
+    Address[at0000] occurrences matches {1..1} matches {  -- mmlAd:Address
+        repCode existence matches {1..1} matches {/.*/}
+        addressClass existence matches {0..1} matches {
+            [ac0001]
+        }
+        tableId existence matches {0..1} matches {/.*/}
+        full existence matches {0..1} matches {/.*/}
+        prefecture existence matches {0..1} matches {/.*/}
+        city existence matches {0..1} matches {/.*/}
+        town existence matches {0..1} matches {/.*/}
+        homeNumber existence matches {0..1} matches {/.*/}
+        zip existence matches {0..1} matches {/.*/}
+        countryCode existence matches {0..1} matches {
+            [ac0002]
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlAd:Address">
+                    description = <"Address">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en"] = <
+            items = <
+                ["ac0001"] = <
+                    text = <"MML0002">
+                    description = <"Address type code">
+                >
+                ["ac0002"] = <
+                    text = <"ISO3166">
+                    description = <"country code. ISO 3166 A3 code is used.">
+                >
+            >
+        >
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

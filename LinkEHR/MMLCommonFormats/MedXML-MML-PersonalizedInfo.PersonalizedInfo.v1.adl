@@ -1,0 +1,115 @@
+archetype (adl_version=1.4)
+    MedXML-MML-PersonalizedInfo.PersonalizedInfo.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110222">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            use = <"common format for indicating personal information">
+        >
+    >
+
+definition
+    PersonalizedInfo[at0000] occurrences matches {1..1} matches {  -- mmlPsi:PersonalizedInfo
+        id existence matches {1..1} matches {
+            allow_archetype Id[at0001] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+        personName existence matches {1..1} matches {
+            PersonName[at0002] occurrences matches {1..1} matches {  -- mmlPsi:personName
+                name existence matches {0..1} cardinality matches {1..*; unordered} matches {
+                    allow_archetype Name[at0003] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+        facility existence matches {0..1} matches {
+            allow_archetype Facility[at0006] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+        department existence matches {0..1} matches {
+            allow_archetype Department[at0005] occurrences matches {0..*} matches {
+                include
+                    archetype_id/value matches {/.*/}
+            }
+        }
+        addresses existence matches {0..1} matches {
+            Addresses[at0004] occurrences matches {1..1} matches {  -- mmlPsi:addresses
+                address existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                    allow_archetype Address[at0010] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+        emailAddresses existence matches {0..1} matches {
+            EmailAddresses[at0007] occurrences matches {1..1} matches {  -- mmlCm:email
+                email existence matches {0..1} cardinality matches {0..*; unordered} matches {/.*/}
+            }
+        }
+        phones existence matches {0..1} matches {
+            Phones[at0008] occurrences matches {1..1} matches {  -- mmlPsi:phones
+                phone existence matches {0..1} cardinality matches {1..*; unordered} matches {
+                    allow_archetype Phone[at0009] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlPsi:PersonalizedInfo">
+                    description = <"PersonalizedInfo">
+                >
+                ["at0002"] = <
+                    text = <"mmlPsi:personName">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"mmlPsi:addresses">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"mmlCm:email">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"mmlPsi:phones">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

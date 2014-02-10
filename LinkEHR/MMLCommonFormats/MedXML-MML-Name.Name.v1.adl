@@ -1,0 +1,55 @@
+archetype (adl_version=1.4)
+    MedXML-MML-Name.Name.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110222">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            keywords = <"name">
+            use = <"common format for indicating names. Select the separated name expression using 3 elements (family, given, middle) or full name expression (fullname).">
+        >
+    >
+
+definition
+    Name[at0000] occurrences matches {1..1} matches {  -- mmlNm:Name
+        repCode existence matches {1..1} matches {/.*/}
+        tableId existence matches {0..1} matches {/.*/}
+        family existence matches {1..1} matches {/.*/}
+        given existence matches {1..1} matches {/.*/}
+        middle existence matches {0..1} matches {/.*/}
+        fullname existence matches {1..1} matches {/.*/}
+        prefix existence matches {0..1} matches {/.*/}
+        degree existence matches {0..1} matches {/.*/}
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlNm:Name">
+                    description = <"Name">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Address xmlns="http://www.medxml.net/MML/SharedComponent/Address/1.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.medxml.net/MML/SharedComponent/Address/1.0 file:/C:/Users/skoba/Documents/GitHub/mml/schema/address.xsd" xmlns:mmlAd="http://www.medxml.net/MML/SharedComponent/Address/1.0" mmlAd:repCode="A">
+</Address>

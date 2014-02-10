@@ -1,0 +1,242 @@
+archetype (adl_version=1.4)
+    MedXML-MML-SurgeryModule.SurgeryModule.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"20110223">
+        ["email"] = <"diebosto@upv.es">
+        ["name"] = <"Diego Bosca">
+        ["organisation"] = <"IBIME UPV">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            use = <"surgery record information. Attention should be paid to the granularity of surgeries and element repetition. For the description of different surgeries with apparently different dates, <paragraph> should be repeated. A series of operations performed almost at the same time should be described in one mmlSg:SurgeryModule. If multiple surgical procedures are performed in a series of operation, the mmlSg:surgeryItem should be repeated.">
+        >
+    >
+
+definition
+    SurgeryModule[at0000] occurrences matches {1..1} matches {  -- mmlSg:surgeryModule
+        surgeryItem existence matches {1..1} cardinality matches {1..*; unordered} matches {
+            SurgeryItem[at0001] occurrences matches {1..*} matches {  -- mmlSg:surgeryItem
+                surgicalInfo existence matches {1..1} matches {
+                    SurgicalInfo[at0002] occurrences matches {1..1} matches {  -- mmlSg:surgicalInfo
+                        type existence matches {0..1} matches {
+                            [ac0001]
+                        }
+                        date existence matches {1..1} matches {yyyy-mm-dd}
+                        startTime existence matches {0..1} matches {hh:mm:ss}
+                        duration existence matches {0..1} matches {PT0S}
+                        surgicalDepartment existence matches {0..1} matches {
+                            allow_archetype Deparment[at0003] occurrences matches {0..*} matches {
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                        patientDepartment existence matches {0..1} matches {
+                            allow_archetype Department[at0004] occurrences matches {0..*} matches {
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                surgicalDiagnosis existence matches {1..1} cardinality matches {1..*; unordered} matches {
+                    allow_archetype RegisteredDiagnosisModule[at0005] occurrences matches {0..*} matches {
+                        include
+                            archetype_id/value matches {/.*/}
+                    }
+                }
+                surgicalProcedure existence matches {1..1} matches {
+                    SurgicalProcedure[at0007] occurrences matches {1..1} matches {  -- mmlPc:surgicalProcedure
+                        procedureItem existence matches {0..1} cardinality matches {1..*; unordered} matches {
+                            ProcedureItem[at0008] occurrences matches {1..*} matches {  -- mmlPc:procedureItem
+                                operation existence matches {1..1} matches {
+                                    Operation[at0009] occurrences matches {1..1} matches {  -- mmlPc:operation
+                                        code existence matches {0..1} matches {/.*/}
+                                        system existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                                operationElement existence matches {0..1} matches {
+                                    OperationElement[at0010] occurrences matches {1..1} matches {  -- mmlPc:operationElement
+                                        operationElementItem existence matches {1..1} cardinality matches {1..*; unordered} matches {
+                                            OperationElementItem[at0011] occurrences matches {1..*} matches {  -- mmlPc:operationElementItem
+                                                title existence matches {0..1} matches {
+                                                    Title[at0012] occurrences matches {1..1} matches {  -- mmlPc:title
+                                                        code existence matches {0..1} matches {/.*/}
+                                                        system existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                procedureMemo existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                surgicalStaffs existence matches {0..1} matches {
+                    SurgicalStaffs[at0014] occurrences matches {1..1} matches {  -- mmlPc:surgicalStaffs
+                        staff existence matches {0..1} cardinality matches {1..*; unordered} matches {
+                            Staff[at0015] occurrences matches {1..*} matches {  -- mmlPc:staff
+                                staffClass existence matches {0..1} matches {
+                                    [ac0002]
+                                }
+                                superiority existence matches {0..1} matches {|-2147483647..2147483647|}
+                                staffInfo existence matches {1..1} matches {
+                                    allow_archetype PersonalizedInfo[at0016] occurrences matches {0..*} matches {
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                anesthesiaProcedure existence matches {0..1} matches {
+                    AnesthesiaProcedure[at0017] occurrences matches {1..1} matches {  -- mmlPc:anesthesiaProcedure
+                        title existence matches {0..1} cardinality matches {1..*; unordered} matches {
+                            Title[at0018] occurrences matches {1..*} matches {  -- mmlPc:title
+                                code existence matches {0..1} matches {/.*/}
+                                system existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                anesthesiologists existence matches {0..1} matches {
+                    Anesthesiologists[at0019] occurrences matches {1..1} matches {  -- mmlPc:anesthesiologists
+                        staff existence matches {0..1} cardinality matches {0..*; unordered} matches {
+                            Staff[at0020] occurrences matches {0..*} matches {  -- mmlPc:staff
+                                staffClass existence matches {0..1} matches {
+                                    [ac0003]
+                                }
+                                superiority existence matches {0..1} matches {|-2147483647..2147483647|}
+                                staffInfo existence matches {1..1} matches {
+                                    allow_archetype PersonalizedInfo[at0021] occurrences matches {0..*} matches {
+                                        include
+                                            archetype_id/value matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                anesthesiaDuration existence matches {0..1} matches {PT0S}
+                operativeNotes existence matches {0..1} matches {/.*/}
+                referenceInfo existence matches {0..1} matches {
+                    ReferenceInfo[at0022] occurrences matches {1..1} matches {  -- 
+                        extRef existence matches {0..1} cardinality matches {1..*; unordered} matches {
+                            allow_archetype ExtRef[at0023] occurrences matches {0..*} matches {
+                                include
+                                    archetype_id/value matches {/.*/}
+                            }
+                        }
+                    }
+                }
+                memo existence matches {0..1} matches {/.*/}
+            }
+        }
+    }
+
+ontology
+    terminologies_available = <...>
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"mmlSg:surgeryModule">
+                    description = <"SurgeryModule">
+                >
+                ["at0001"] = <
+                    text = <"mmlSg:surgeryItem">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"mmlSg:surgicalInfo">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"mmlPc:surgicalProcedure">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"mmlPc:procedureItem">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"mmlPc:operation">
+                    description = <"String">
+                >
+                ["at0010"] = <
+                    text = <"mmlPc:operationElement">
+                    description = <"">
+                >
+                ["at0011"] = <
+                    text = <"mmlPc:operationElementItem">
+                    description = <"">
+                >
+                ["at0012"] = <
+                    text = <"mmlPc:title">
+                    description = <"String">
+                >
+                ["at0014"] = <
+                    text = <"mmlPc:surgicalStaffs">
+                    description = <"">
+                >
+                ["at0015"] = <
+                    text = <"mmlPc:staff">
+                    description = <"">
+                >
+                ["at0017"] = <
+                    text = <"mmlPc:anesthesiaProcedure">
+                    description = <"">
+                >
+                ["at0018"] = <
+                    text = <"mmlPc:title">
+                    description = <"String">
+                >
+                ["at0019"] = <
+                    text = <"mmlPc:anesthesiologists">
+                    description = <"">
+                >
+                ["at0020"] = <
+                    text = <"mmlPc:staff">
+                    description = <"">
+                >
+                ["at0022"] = <
+                    text = <"">
+                    description = <"">
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en"] = <
+            items = <
+                ["ac0001"] = <
+                    text = <"MML0021">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0002"] = <
+                    text = <"MML0022">
+                    description = <"This is a constraint reference">
+                >
+                ["ac0003"] = <
+                    text = <"MML0023">
+                    description = <"This is a constraint reference">
+                >
+            >
+        >
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >
