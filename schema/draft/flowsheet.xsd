@@ -19,10 +19,10 @@
   <xs:element name="context">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlFs:facility" minOccurs="0"/>
-        <xs:element ref="mmlFs:department" minOccurs="0"/>
-        <xs:element ref="mmlFs:ward" minOccurs="0"/>
-        <xs:element ref="mmlFs:observer" minOccurs="0"/>
+        <xs:element ref="mmlFs:facility" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlFs:department" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlFs:ward" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlFs:observer" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPi:PatientModule" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>       
       <xs:attribute name="registId" use="required" type="xs:string"/>
