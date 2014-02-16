@@ -2,7 +2,7 @@ archetype (adl_version=1.4)
 	openEHR-EHR-CLUSTER.mml_name.v1
 
 concept
-	[at0000]	-- Mml name component
+	[at0000]	-- Mml name
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -38,11 +38,11 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"E37639D8A03C1B2E8FBEAC057D938B8C">
+		["MD5-CAM-1.0.1"] = <"EDA8DA6A3BB68E8D4B2639F96EFE1190">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Mml name component
+	CLUSTER[at0000] matches {	-- Mml name
 		items cardinality matches {2..*; unordered} matches {
 			ELEMENT[at0002] matches {	-- mmlNm:family
 				value matches {
@@ -86,28 +86,28 @@ ontology
 					description = <"mmlNm:Name">
 				>
 				["at0001"] = <
-					text = <"mmlNm:given">
-					description = <"Given name">
+					text = <"*mmlNm:given(ja)">
+					description = <"*Given name(ja)">
 				>
 				["at0002"] = <
-					text = <"mmlNm:family">
-					description = <"Family name">
+					text = <"*mmlNm:family(ja)">
+					description = <"*family name(ja)">
 				>
 				["at0003"] = <
-					text = <"mmlNm:middle">
-					description = <"middle name of person">
+					text = <"*mmlNm:middle(ja)">
+					description = <"*middle name(ja)">
 				>
 				["at0004"] = <
-					text = <"mmlNm:fullname">
-					description = <"*">
+					text = <"*mmlNm:fullname(ja)">
+					description = <"*mmlNm:fullname(ja)">
 				>
 				["at0005"] = <
-					text = <"mmlNm:prefix">
-					description = <"*">
+					text = <"*mmlNm:prefix(ja)">
+					description = <"*mmlNm:prefix(ja)">
 				>
 				["at0006"] = <
-					text = <"mmlNm:degree">
-					description = <"*">
+					text = <"*mmlNm:degree(ja)">
+					description = <"*mmlNm:degree(ja)">
 				>
 			>
 		>
@@ -118,28 +118,28 @@ ontology
 					description = <"unknown">
 				>
 				["at0001"] = <
-					text = <"given">
-					description = <"*">
+					text = <"mmlNm:given">
+					description = <"Given name">
 				>
 				["at0002"] = <
-					text = <"family">
-					description = <"*">
+					text = <"mmlNm:family">
+					description = <"family name">
 				>
 				["at0003"] = <
-					text = <"*新規Element(ja)">
-					description = <"**(ja)">
+					text = <"mmlNm:middle">
+					description = <"middle name">
 				>
 				["at0004"] = <
-					text = <"*新規Element(ja)">
-					description = <"**(ja)">
+					text = <"mmlNm:fullname">
+					description = <"mmlNm:fullname">
 				>
 				["at0005"] = <
-					text = <"*新規Element(ja)">
-					description = <"**(ja)">
+					text = <"mmlNm:prefix">
+					description = <"mmlNm:prefix">
 				>
 				["at0006"] = <
-					text = <"*新規Element(ja)">
-					description = <"**(ja)">
+					text = <"mmlNm:degree">
+					description = <"mmlNm:degree">
 				>
 			>
 		>
