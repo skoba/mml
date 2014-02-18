@@ -1,0 +1,112 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-COMPOSITION.mml_test_module.v1
+
+concept
+	[at0000]	-- *Mml test module(ja)
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*(ja)">
+			use = <"*(ja)">
+			misuse = <"*(ja)">
+			copyright = <"*(ja)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"F72ACCF988626D2830709FBA2DD15C5A">
+	>
+
+definition
+	COMPOSITION[at0000] matches {	-- *Mml test module(ja)
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {[openehr::433]}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {	-- *Tree(ja)
+						items cardinality matches {0..*; unordered} matches {
+							CLUSTER[at0002] occurrences matches {0..1} matches {	-- mmlLb:information
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0003] matches {	-- mmlLb:registId
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Mml test module(ja)">
+					description = <"*unknown(ja)">
+				>
+				["at0001"] = <
+					text = <"*Tree(ja)">
+					description = <"*@ internal @(ja)">
+				>
+				["at0002"] = <
+					text = <"mmlLb:information">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"mmlLb:registId">
+					description = <"**(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"Mml test module">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"mmlLb:information">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"新規Element">
+					description = <"*">
+				>
+			>
+		>
+	>

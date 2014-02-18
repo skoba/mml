@@ -1,0 +1,390 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.mml_patient_module.v1
+
+concept
+	[at0000]	-- MML Patient Module
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["organisation"] = <"MedXML consortium">
+		["name"] = <"Shinji KOBAYASHI">
+		["email"] = <"skoba@moss.or.jp">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To describe personal information">
+			use = <"">
+			misuse = <"*(ja)">
+			copyright = <"MedXML consortium">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"B4774E6824AFB5463F3C09F452584DA5">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- MML Patient Module
+		items cardinality matches {2; unordered} matches {
+			CLUSTER[at0008] occurrences matches {0..1} matches {	-- mmlPi:uniqueInfo
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype CLUSTER[at0001] matches {	-- mmlPi:masterId
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_id\.v1/}
+						exclude
+							archetype_id/value matches {/.*/}
+					}
+					CLUSTER[at0011] occurrences matches {0..1} matches {	-- mmlPi:otherId
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0009] occurrences matches {0..*} matches {	-- mmlPi:type
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							allow_archetype CLUSTER[at0012] occurrences matches {0..*} matches {	-- mmlCm:Id
+								include
+									archetype_id/value matches {/.*/}
+							}
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0002] occurrences matches {1..*} matches {	-- mmlPsi:personName
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_name\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[at0014] matches {	-- mmlPi:birthday
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
+			ELEMENT[at0015] occurrences matches {0..1} matches {	-- mmlPi:sex
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0017] occurrences matches {0..1} matches {	-- nationality
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0018] occurrences matches {0..1} matches {	-- mmlPi:nationality
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0019] occurrences matches {0..1} matches {	-- mmlPi:subtype
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0020] occurrences matches {0..1} matches {	-- race
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0021] occurrences matches {0..1} matches {	-- mmlPi:race
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0022] occurrences matches {0..1} matches {	-- mmlPi:raceCode
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0023] occurrences matches {0..1} matches {	-- mmlPi:raceCodeId
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			ELEMENT[at0024] occurrences matches {0..1} matches {	-- mmlPi:marital
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {	-- mmlPsi:addresses
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_address\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+			CLUSTER[at0025] occurrences matches {0..1} matches {	-- mmlPi:emailAddresses
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0026] occurrences matches {0..*} matches {	-- mmlCm:email
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0010] occurrences matches {0..*} matches {	-- mmlPsi:phones
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_phone\.v1/}
+				exclude
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[at0027] occurrences matches {0..1} matches {	-- mmlPi:accountNumber
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0028] occurrences matches {0..1} matches {	-- mmlPi:socialIdentification
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0029] occurrences matches {0..1} matches {	-- death
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0030] occurrences matches {0..1} matches {	-- mmlPi:death
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0031] occurrences matches {0..1} matches {	-- mmlPi:date
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML personalized info component">
+					description = <"MML common component for personalized infomation">
+				>
+				["at0001"] = <
+					text = <"mmlPi:masterId">
+					description = <"***(ja)(ja)">
+				>
+				["at0002"] = <
+					text = <"mmlPsi:personName">
+					description = <"***(ja)(ja)">
+				>
+				["at0005"] = <
+					text = <"mmlPsi:addresses">
+					description = <"***(ja)(ja)">
+				>
+				["at0008"] = <
+					text = <"mmlPi:uniqueInfo">
+					description = <"***(ja)(ja)">
+				>
+				["at0009"] = <
+					text = <"mmlPi:type">
+					description = <"***(ja)(ja)">
+				>
+				["at0010"] = <
+					text = <"mmlPsi:phones">
+					description = <"***(ja)(ja)">
+				>
+				["at0011"] = <
+					text = <"mmlPi:otherId">
+					description = <"**(ja)">
+				>
+				["at0012"] = <
+					text = <"mmlCm:Id">
+					description = <"**(ja)">
+				>
+				["at0014"] = <
+					text = <"mmlPi:birthday">
+					description = <"***(ja)(ja)">
+				>
+				["at0015"] = <
+					text = <"*mmlPi:sex(ja)">
+					description = <"**(ja)">
+				>
+				["at0017"] = <
+					text = <"*nationality(ja)">
+					description = <"**(ja)">
+				>
+				["at0018"] = <
+					text = <"*mmlPi:nationality(ja)">
+					description = <"**(ja)">
+				>
+				["at0019"] = <
+					text = <"*mmlPi:subtype(ja)">
+					description = <"**(ja)">
+				>
+				["at0020"] = <
+					text = <"*race(ja)">
+					description = <"**(ja)">
+				>
+				["at0021"] = <
+					text = <"*mmlPi:race(ja)">
+					description = <"**(ja)">
+				>
+				["at0022"] = <
+					text = <"*mmlPi:raceCode(ja)">
+					description = <"**(ja)">
+				>
+				["at0023"] = <
+					text = <"*mmlPi:raceCodeId(ja)">
+					description = <"**(ja)">
+				>
+				["at0024"] = <
+					text = <"*mmlPi:marital(ja)">
+					description = <"**(ja)">
+				>
+				["at0025"] = <
+					text = <"*mmlPi:emailAddresses(ja)">
+					description = <"**(ja)">
+				>
+				["at0026"] = <
+					text = <"*mmlCm:email(ja)">
+					description = <"**(ja)">
+				>
+				["at0027"] = <
+					text = <"*mmlPi:accountNumber(ja)">
+					description = <"**(ja)">
+				>
+				["at0028"] = <
+					text = <"*mmlPi:socialIdentification(ja)">
+					description = <"**(ja)">
+				>
+				["at0029"] = <
+					text = <"*death(ja)">
+					description = <"**(ja)">
+				>
+				["at0030"] = <
+					text = <"*mmlPi:death(ja)">
+					description = <"**(ja)">
+				>
+				["at0031"] = <
+					text = <"*mmlPi:date(ja)">
+					description = <"**(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML Patient Module">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"mmlPi:masterId">
+					description = <"**(ja)">
+				>
+				["at0002"] = <
+					text = <"mmlPsi:personName">
+					description = <"**(ja)">
+				>
+				["at0005"] = <
+					text = <"mmlPsi:addresses">
+					description = <"**(ja)">
+				>
+				["at0008"] = <
+					text = <"mmlPi:uniqueInfo">
+					description = <"**(ja)">
+				>
+				["at0009"] = <
+					text = <"mmlPi:type">
+					description = <"**(ja)">
+				>
+				["at0010"] = <
+					text = <"mmlPsi:phones">
+					description = <"**(ja)">
+				>
+				["at0011"] = <
+					text = <"mmlPi:otherId">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"mmlCm:Id">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"mmlPi:birthday">
+					description = <"**(ja)">
+				>
+				["at0015"] = <
+					text = <"mmlPi:sex">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"nationality">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"mmlPi:nationality">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"mmlPi:subtype">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"race">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"mmlPi:race">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"mmlPi:raceCode">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"mmlPi:raceCodeId">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"mmlPi:marital">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"mmlPi:emailAddresses">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"mmlCm:email">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"mmlPi:accountNumber">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"mmlPi:socialIdentification">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"death">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"mmlPi:death">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"mmlPi:date">
+					description = <"*">
+				>
+			>
+		>
+	>

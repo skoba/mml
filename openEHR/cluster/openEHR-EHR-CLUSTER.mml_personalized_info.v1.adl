@@ -2,7 +2,7 @@ archetype (adl_version=1.4)
 	openEHR-EHR-CLUSTER.mml_personalized_info.v1
 
 concept
-	[at0000]	-- MML personalized info component
+	[at0000]	-- Mml personalized info
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -38,12 +38,12 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"6F4FF4372F760B2A4BAE7AB972062515">
+		["MD5-CAM-1.0.1"] = <"719BE778DD8B83A517DA5C17878F89EB">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- MML personalized info component
-		items cardinality matches {1; unordered} matches {
+	CLUSTER[at0000] matches {	-- Mml personalized info
+		items cardinality matches {2; unordered} matches {
 			allow_archetype CLUSTER[at0001] matches {	-- mmlCm:Id
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_id\.v1/}
@@ -102,35 +102,35 @@ ontology
 				>
 				["at0001"] = <
 					text = <"mmlCm:Id">
-					description = <"*">
+					description = <"***(ja)(ja)">
 				>
 				["at0002"] = <
 					text = <"mmlPsi:personName">
-					description = <"*">
+					description = <"***(ja)(ja)">
 				>
 				["at0003"] = <
 					text = <"mmlFc:Facility">
-					description = <"*">
+					description = <"***(ja)(ja)">
 				>
 				["at0004"] = <
 					text = <"mmlDp:Department">
-					description = <"*">
+					description = <"***(ja)(ja)">
 				>
 				["at0005"] = <
 					text = <"mmlPsi:addresses">
-					description = <"*">
+					description = <"***(ja)(ja)">
 				>
 				["at0008"] = <
 					text = <"mmlPsi:emailAddresses">
-					description = <"*">
+					description = <"***(ja)(ja)">
 				>
 				["at0009"] = <
 					text = <"mmlCm:email">
-					description = <"*">
+					description = <"***(ja)(ja)">
 				>
 				["at0010"] = <
 					text = <"mmlPsi:phones">
-					description = <"*">
+					description = <"***(ja)(ja)">
 				>
 			>
 		>
@@ -141,35 +141,35 @@ ontology
 					description = <"unknown">
 				>
 				["at0001"] = <
-					text = <"*Cluster(ja)">
+					text = <"mmlCm:Id">
 					description = <"**(ja)">
 				>
 				["at0002"] = <
-					text = <"*Cluster(ja)">
+					text = <"mmlPsi:personName">
 					description = <"**(ja)">
 				>
 				["at0003"] = <
-					text = <"*Cluster(ja)">
+					text = <"mmlFc:Facility">
 					description = <"**(ja)">
 				>
 				["at0004"] = <
-					text = <"*Cluster(ja)">
+					text = <"mmlDp:Department">
 					description = <"**(ja)">
 				>
 				["at0005"] = <
-					text = <"*Cluster(ja)">
+					text = <"mmlPsi:addresses">
 					description = <"**(ja)">
 				>
 				["at0008"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"mmlPsi:emailAddresses">
 					description = <"**(ja)">
 				>
 				["at0009"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlCm:email">
 					description = <"**(ja)">
 				>
 				["at0010"] = <
-					text = <"*Cluster(ja)">
+					text = <"mmlPsi:phones">
 					description = <"**(ja)">
 				>
 			>
