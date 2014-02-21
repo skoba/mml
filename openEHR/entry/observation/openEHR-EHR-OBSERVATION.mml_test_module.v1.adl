@@ -1,0 +1,1140 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.mml_test_module.v1
+
+concept
+	[at0000]	-- MML検歴モジュール
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["organisation"] = <"MedXML consortium">
+		["name"] = <"Shinji KOBAYASHI">
+		["email"] = <"skoba@moss.or.jp">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*(ja)">
+			use = <"*(ja)">
+			misuse = <"*(ja)">
+			copyright = <"*(ja)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"検査データを記録するモジュール">
+			use = <"検査データの記録のために用いられる">
+			misuse = <"検査以外のデータの記録には使われない">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"F8F2AAE71B975F544DD62518E98BB24D">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- MML検歴モジュール
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- 任意のイベント(Event)
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {4..*; unordered} matches {
+									CLUSTER[at0004] matches {	-- mmlLb:information
+										items cardinality matches {3..*; unordered} matches {
+											ELEMENT[at0005] matches {	-- mmlLb:registId
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- mmlLb:sampleTime
+												value matches {
+													DV_DATE_TIME matches {*}
+												}
+											}
+											ELEMENT[at0007] matches {	-- mmlLb:registTime
+												value matches {
+													DV_DATE_TIME matches {*}
+												}
+											}
+											ELEMENT[at0008] matches {	-- mmlLb:reportTime
+												value matches {
+													DV_DATE_TIME matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0009] occurrences matches {0..1} matches {	-- reportStatus
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0010] occurrences matches {0..1} matches {	-- mmlLb:reportStatus
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0011] occurrences matches {0..1} matches {	-- mmlLb:statusCode
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0012] occurrences matches {0..1} matches {	-- mmlLb:statusCodeId
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0013] occurrences matches {0..1} matches {	-- set
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0014] occurrences matches {0..1} matches {	-- mmlLb:set
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0015] occurrences matches {0..1} matches {	-- mmlLb:setCode
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- mmlLb:setCodeId
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0017] matches {	-- facility
+										items cardinality matches {2..*; unordered} matches {
+											ELEMENT[at0018] matches {	-- mmlLb:facility
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0019] matches {	-- mmlLb:facilityCode
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0020] occurrences matches {0..1} matches {	-- mmlLb:facilityCodeId
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0021] occurrences matches {0..1} matches {	-- department
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0023] occurrences matches {0..1} matches {	-- mmlLb:department
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0022] occurrences matches {0..1} matches {	-- mmlLb:depCode
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0024] occurrences matches {0..1} matches {	-- mmlLb:depCodeId
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0025] occurrences matches {0..1} matches {	-- ward
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0026] occurrences matches {0..1} matches {	-- mmlLb:ward
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0027] occurrences matches {0..1} matches {	-- mmlLb:wardCode
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0028] occurrences matches {0..1} matches {	-- mmlLb:wardCodeId
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0029] occurrences matches {0..1} matches {	-- client
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0030] occurrences matches {0..1} matches {	-- mmlLb:client
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0031] occurrences matches {0..1} matches {	-- mmlLb:clientCode
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0032] occurrences matches {0..1} matches {	-- mmlLb:clientCodeId
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0033] matches {	-- laboratoryCenter
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0034] occurrences matches {0..1} matches {	-- mmlLb:laboratoryCenter
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0035] occurrences matches {0..1} matches {	-- mmlLb:centerCode
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0036] occurrences matches {0..1} matches {	-- mmlLb:centerCodeId
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0037] occurrences matches {0..1} matches {	-- technician
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0038] occurrences matches {0..1} matches {	-- mmlLb:technician
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0039] occurrences matches {0..1} matches {	-- mmlLb:techCode
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0040] occurrences matches {0..1} matches {	-- mmlLb:techCodeId
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									CLUSTER[at0041] occurrences matches {0..*} matches {	-- repMemo
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0042] occurrences matches {0..1} matches {	-- mmlLb:repMemo
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0043] occurrences matches {0..1} matches {	-- mmlLb:repCodeName
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0044] occurrences matches {0..1} matches {	-- mmlLb:repCode
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0045] occurrences matches {0..1} matches {	-- mmlLb:repCodeId
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+									ELEMENT[at0047] occurrences matches {0..1} matches {	-- mmlLb:repMemoF
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									CLUSTER[at0048] occurrences matches {1..*} matches {	-- mmlLb:laboTest
+										items cardinality matches {1..*; unordered} matches {
+											CLUSTER[at0049] occurrences matches {0..1} matches {	-- mmlLb:specimen
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0051] occurrences matches {0..1} matches {	-- mmlLb:specimenName
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0052] occurrences matches {0..1} matches {	-- mmlLb:spCode
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0053] occurrences matches {0..1} matches {	-- mmlLb:spCodeId
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													CLUSTER[at0054] occurrences matches {0..1} matches {	-- spcMemo
+														items cardinality matches {1..*; unordered} matches {
+															ELEMENT[at0055] occurrences matches {0..1} matches {	-- mmlLb:spcMemo
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0056] occurrences matches {0..1} matches {	-- mmlLb:smCodeName
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0057] occurrences matches {0..1} matches {	-- mmlLb:smCode
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0058] occurrences matches {0..1} matches {	-- mmlLb:smCodeId
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													ELEMENT[at0059] occurrences matches {0..1} matches {	-- mmlLb:spcMemoF
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											CLUSTER[at0060] occurrences matches {1..*} matches {	-- mmlLb:item
+												items cardinality matches {3..*; unordered} matches {
+													CLUSTER[at0071] occurrences matches {0..1} matches {	-- itemName
+														items cardinality matches {3..*; unordered} matches {
+															ELEMENT[at0061] matches {	-- mmlLb:itemName
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0062] matches {	-- mmlLb:itCode
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0063] matches {	-- mmlLb:itCodeId
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0064] occurrences matches {0..1} matches {	-- mmlLb:Acode
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0065] occurrences matches {0..1} matches {	-- mmlLb:Icode
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0066] occurrences matches {0..1} matches {	-- mmlLb:Scode
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0067] occurrences matches {0..1} matches {	-- mmlLb:Mcode
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0068] occurrences matches {0..1} matches {	-- mmlLb:Rcode
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+													ELEMENT[at0069] occurrences matches {0..1} matches {	-- mmlLb:value
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													CLUSTER[at0072] occurrences matches {0..1} matches {	-- numValue
+														items cardinality matches {1..*; unordered} matches {
+															ELEMENT[at0070] occurrences matches {0..1} matches {	-- mmlLb:numValue
+																value matches {
+																	C_DV_QUANTITY <
+																	>
+																}
+															}
+															ELEMENT[at0073] occurrences matches {0..1} matches {	-- mmlLb:up
+																value matches {
+																	C_DV_QUANTITY <
+																	>
+																}
+															}
+															ELEMENT[at0074] occurrences matches {0..1} matches {	-- mmlLb:low
+																value matches {
+																	C_DV_QUANTITY <
+																	>
+																}
+															}
+														}
+													}
+													CLUSTER[at0075] occurrences matches {0..1} matches {	-- unit
+														items cardinality matches {1..*; unordered} matches {
+															ELEMENT[at0076] occurrences matches {0..1} matches {	-- mmlLb:unit
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0077] occurrences matches {0..1} matches {	-- mmlLb:uCode
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0078] occurrences matches {0..1} matches {	-- mmlLb:uCodeId
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+														}
+													}
+												}
+											}
+											CLUSTER[at0079] occurrences matches {0..1} matches {	-- mmlLb:referenceInfo
+												items cardinality matches {1..*; unordered} matches {
+													allow_archetype ITEM[at0080] occurrences matches {0..*} matches {	-- mmlCm:extRef
+														include
+															archetype_id/value matches {/.*/}
+													}
+												}
+											}
+											CLUSTER[at0081] occurrences matches {0..1} matches {	-- itemMemo
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0082] occurrences matches {0..1} matches {	-- mmlLb:itemMemo
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0083] occurrences matches {0..1} matches {	-- mmlLb:imCodeName
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0084] occurrences matches {0..1} matches {	-- mmlLb:imCode
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+													ELEMENT[at0085] occurrences matches {0..1} matches {	-- mmlLb:imCodeId
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
+												}
+											}
+											ELEMENT[at0086] occurrences matches {0..1} matches {	-- mmlLb:itemMemoF
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML test module">
+					description = <"Laboratory test">
+				>
+				["at0001"] = <
+					text = <"*Event Series(ja)">
+					description = <"*@ internal @(ja)">
+				>
+				["at0002"] = <
+					text = <"*任意のイベント(Event)(ja)">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"*Tree(ja)">
+					description = <"*@ internal @(ja)">
+				>
+				["at0004"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0005"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0006"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0007"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0008"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0009"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0010"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0011"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0012"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0013"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0014"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0015"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0016"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0017"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0018"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0019"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0020"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0021"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0022"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0023"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0024"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0025"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0026"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0027"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0028"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0029"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0030"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0031"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0032"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0033"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0034"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0035"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0036"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0037"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0038"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0039"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0040"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0041"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0042"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0043"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0044"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0045"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0047"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0048"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0049"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0051"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0052"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0053"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0054"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0055"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0056"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0057"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0058"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0059"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0060"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0061"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0062"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0063"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0064"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0065"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0066"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0067"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0068"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0069"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0070"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0071"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0072"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0073"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0074"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0075"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0076"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0077"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0078"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0079"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0080"] = <
+					text = <"*ITEM(ja)">
+					description = <"**(ja)">
+				>
+				["at0081"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0082"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0083"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0084"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0085"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0086"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML検歴モジュール">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"任意のイベント(Event)">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"mmlLb:information">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"mmlLb:registId">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"mmlLb:sampleTime">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"mmlLb:registTime">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"mmlLb:reportTime">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"reportStatus">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"mmlLb:reportStatus">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"mmlLb:statusCode">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"mmlLb:statusCodeId">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"set">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"mmlLb:set">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"mmlLb:setCode">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"mmlLb:setCodeId">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"facility">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"mmlLb:facility">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"mmlLb:facilityCode">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"mmlLb:facilityCodeId">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"department">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"mmlLb:depCode">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"mmlLb:department">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"mmlLb:depCodeId">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"ward">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"mmlLb:ward">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"mmlLb:wardCode">
+					description = <"*">
+				>
+				["at0028"] = <
+					text = <"mmlLb:wardCodeId">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"client">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"mmlLb:client">
+					description = <"*">
+				>
+				["at0031"] = <
+					text = <"mmlLb:clientCode">
+					description = <"*">
+				>
+				["at0032"] = <
+					text = <"mmlLb:clientCodeId">
+					description = <"*">
+				>
+				["at0033"] = <
+					text = <"laboratoryCenter">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"mmlLb:laboratoryCenter">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"mmlLb:centerCode">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"mmlLb:centerCodeId">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"technician">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"mmlLb:technician">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"mmlLb:techCode">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"mmlLb:techCodeId">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"repMemo">
+					description = <"*">
+				>
+				["at0042"] = <
+					text = <"mmlLb:repMemo">
+					description = <"*">
+				>
+				["at0043"] = <
+					text = <"mmlLb:repCodeName">
+					description = <"*">
+				>
+				["at0044"] = <
+					text = <"mmlLb:repCode">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"mmlLb:repCodeId">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"mmlLb:repMemoF">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"mmlLb:laboTest">
+					description = <"*">
+				>
+				["at0049"] = <
+					text = <"mmlLb:specimen">
+					description = <"*">
+				>
+				["at0051"] = <
+					text = <"mmlLb:specimenName">
+					description = <"*">
+				>
+				["at0052"] = <
+					text = <"mmlLb:spCode">
+					description = <"*">
+				>
+				["at0053"] = <
+					text = <"mmlLb:spCodeId">
+					description = <"*">
+				>
+				["at0054"] = <
+					text = <"spcMemo">
+					description = <"*">
+				>
+				["at0055"] = <
+					text = <"mmlLb:spcMemo">
+					description = <"*">
+				>
+				["at0056"] = <
+					text = <"mmlLb:smCodeName">
+					description = <"*">
+				>
+				["at0057"] = <
+					text = <"mmlLb:smCode">
+					description = <"*">
+				>
+				["at0058"] = <
+					text = <"mmlLb:smCodeId">
+					description = <"*">
+				>
+				["at0059"] = <
+					text = <"mmlLb:spcMemoF">
+					description = <"*">
+				>
+				["at0060"] = <
+					text = <"mmlLb:item">
+					description = <"*">
+				>
+				["at0061"] = <
+					text = <"mmlLb:itemName">
+					description = <"*">
+				>
+				["at0062"] = <
+					text = <"mmlLb:itCode">
+					description = <"*">
+				>
+				["at0063"] = <
+					text = <"mmlLb:itCodeId">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"mmlLb:Acode">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"mmlLb:Icode">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"mmlLb:Scode">
+					description = <"*">
+				>
+				["at0067"] = <
+					text = <"mmlLb:Mcode">
+					description = <"*">
+				>
+				["at0068"] = <
+					text = <"mmlLb:Rcode">
+					description = <"*">
+				>
+				["at0069"] = <
+					text = <"mmlLb:value">
+					description = <"*">
+				>
+				["at0070"] = <
+					text = <"mmlLb:numValue">
+					description = <"*">
+				>
+				["at0071"] = <
+					text = <"itemName">
+					description = <"*">
+				>
+				["at0072"] = <
+					text = <"numValue">
+					description = <"*">
+				>
+				["at0073"] = <
+					text = <"mmlLb:up">
+					description = <"*">
+				>
+				["at0074"] = <
+					text = <"mmlLb:low">
+					description = <"*">
+				>
+				["at0075"] = <
+					text = <"unit">
+					description = <"*">
+				>
+				["at0076"] = <
+					text = <"mmlLb:unit">
+					description = <"*">
+				>
+				["at0077"] = <
+					text = <"mmlLb:uCode">
+					description = <"*">
+				>
+				["at0078"] = <
+					text = <"mmlLb:uCodeId">
+					description = <"*">
+				>
+				["at0079"] = <
+					text = <"mmlLb:referenceInfo">
+					description = <"*">
+				>
+				["at0080"] = <
+					text = <"mmlCm:extRef">
+					description = <"*">
+				>
+				["at0081"] = <
+					text = <"itemMemo">
+					description = <"*">
+				>
+				["at0082"] = <
+					text = <"mmlLb:itemMemo">
+					description = <"*">
+				>
+				["at0083"] = <
+					text = <"mmlLb:imCodeName">
+					description = <"*">
+				>
+				["at0084"] = <
+					text = <"mmlLb:imCode">
+					description = <"*">
+				>
+				["at0085"] = <
+					text = <"mmlLb:imCodeId">
+					description = <"*">
+				>
+				["at0086"] = <
+					text = <"mmlLb:itemMemoF">
+					description = <"*">
+				>
+			>
+		>
+	>
