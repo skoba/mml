@@ -2,7 +2,7 @@ archetype (adl_version=1.4)
 	openEHR-EHR-CLUSTER.mml_facility.v1
 
 concept
-	[at0000]	-- MML Facility information
+	[at0000]	-- MML 施設情報形式
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -37,11 +37,11 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"59F7C035BC4884C77AAF3E100DEDD4FD">
+		["MD5-CAM-1.0.1"] = <"E19F3601A8F7B3130DD683DF3F347BC1">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- MML Facility information
+	CLUSTER[at0000] matches {	-- MML 施設情報形式
 		items cardinality matches {1..*; unordered} matches {
 			CLUSTER[at0003] occurrences matches {0..1} matches {	-- mmlFc:Facility
 				items cardinality matches {1..*; unordered} matches {
@@ -64,7 +64,7 @@ definition
 			}
 			allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {	-- mmlCm:Id
 				include
-					archetype_id/value matches {/.*/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_id\.v1/}
 			}
 		}
 	}
