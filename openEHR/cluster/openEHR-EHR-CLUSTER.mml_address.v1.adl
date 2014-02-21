@@ -36,7 +36,7 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"D54C2753CAB5F6ED802CDA71632BC631">
+		["MD5-CAM-1.0.1"] = <"55400DF0B18F32C444CC48AF6DEF3EFC">
 	>
 
 definition
@@ -74,32 +74,32 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0005] occurrences matches {0..1} matches {	-- *新規Element(ja)
+			ELEMENT[at0005] occurrences matches {0..1} matches {	-- mmlAd:prefecture
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0006] occurrences matches {0..1} matches {	-- *新規Element(ja)
+			ELEMENT[at0006] occurrences matches {0..1} matches {	-- mmlAd:city
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0007] occurrences matches {0..1} matches {	-- *新規Element(ja)
+			ELEMENT[at0007] occurrences matches {0..1} matches {	-- mmlAd:town
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0008] occurrences matches {0..1} matches {	-- *新規Element(ja)
+			ELEMENT[at0008] occurrences matches {0..1} matches {	-- mmlAd:homeNumber
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0009] occurrences matches {0..1} matches {	-- *新規Element(ja)
+			ELEMENT[at0009] occurrences matches {0..1} matches {	-- mmlAd:zip
 				value matches {
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0010] occurrences matches {0..1} matches {	-- *新規Element(ja)
+			ELEMENT[at0010] occurrences matches {0..1} matches {	-- mmlAd:countryCode
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -129,31 +129,31 @@ ontology
 				>
 				["at0004"] = <
 					text = <"mmlAd:full">
-					description = <"">
+					description = <"*">
 				>
 				["at0005"] = <
-					text = <"mmlAd:prefecture">
-					description = <"*">
+					text = <"*mmlAd:prefecture(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0006"] = <
-					text = <"mmlAd:city">
-					description = <"*">
+					text = <"*mmlAd:city(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0007"] = <
-					text = <"mmlAd:town">
-					description = <"*">
+					text = <"*mmlAd:town(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0008"] = <
-					text = <"mmlAd:homeNumber">
-					description = <"*">
+					text = <"*mmlAd:homeNumber(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0009"] = <
-					text = <"mmlAd:zip">
-					description = <"*">
+					text = <"*mmlAd:zip(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0010"] = <
-					text = <"mmlAd:countryCode">
-					description = <"*">
+					text = <"*mmlAd:countryCode(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0011"] = <
 					text = <"current">
@@ -212,27 +212,27 @@ ontology
 					description = <"*">
 				>
 				["at0005"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlAd:prefecture">
 					description = <"**(ja)">
 				>
 				["at0006"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlAd:city">
 					description = <"**(ja)">
 				>
 				["at0007"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlAd:town">
 					description = <"**(ja)">
 				>
 				["at0008"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlAd:homeNumber">
 					description = <"**(ja)">
 				>
 				["at0009"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlAd:zip">
 					description = <"**(ja)">
 				>
 				["at0010"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlAd:countryCode">
 					description = <"**(ja)">
 				>
 				["at0011"] = <

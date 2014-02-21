@@ -2,7 +2,7 @@ archetype (adl_version=1.4)
 	openEHR-EHR-CLUSTER.mml_patient_module.v1
 
 concept
-	[at0000]	-- MML Patient Module
+	[at0000]	-- MML患者情報モジュール
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -22,9 +22,9 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"To describe personal information">
-			use = <"">
-			misuse = <"*(ja)">
+			purpose = <"To describe patient information">
+			use = <"To describe patient information">
+			misuse = <"Not to describe medical staff information">
 			copyright = <"MedXML consortium">
 		>
 		["ja"] = <
@@ -38,11 +38,11 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"B4774E6824AFB5463F3C09F452584DA5">
+		["MD5-CAM-1.0.1"] = <"88615D3C626317DA1C41FA92846A4432">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- MML Patient Module
+	CLUSTER[at0000] matches {	-- MML患者情報モジュール
 		items cardinality matches {2; unordered} matches {
 			CLUSTER[at0008] occurrences matches {0..1} matches {	-- mmlPi:uniqueInfo
 				items cardinality matches {1..*; unordered} matches {
@@ -174,8 +174,8 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"MML personalized info component">
-					description = <"MML common component for personalized infomation">
+					text = <"*MML患者情報モジュール(ja)">
+					description = <"*unknown(ja)">
 				>
 				["at0001"] = <
 					text = <"mmlPi:masterId">
@@ -214,67 +214,67 @@ ontology
 					description = <"***(ja)(ja)">
 				>
 				["at0015"] = <
-					text = <"*mmlPi:sex(ja)">
+					text = <"mmlPi:sex">
 					description = <"**(ja)">
 				>
 				["at0017"] = <
-					text = <"*nationality(ja)">
+					text = <"nationality">
 					description = <"**(ja)">
 				>
 				["at0018"] = <
-					text = <"*mmlPi:nationality(ja)">
+					text = <"mmlPi:nationality">
 					description = <"**(ja)">
 				>
 				["at0019"] = <
-					text = <"*mmlPi:subtype(ja)">
+					text = <"mmlPi:subtype">
 					description = <"**(ja)">
 				>
 				["at0020"] = <
-					text = <"*race(ja)">
+					text = <"race">
 					description = <"**(ja)">
 				>
 				["at0021"] = <
-					text = <"*mmlPi:race(ja)">
+					text = <"mmlPi:race">
 					description = <"**(ja)">
 				>
 				["at0022"] = <
-					text = <"*mmlPi:raceCode(ja)">
+					text = <"mmlPi:raceCode">
 					description = <"**(ja)">
 				>
 				["at0023"] = <
-					text = <"*mmlPi:raceCodeId(ja)">
+					text = <"mmlPi:raceCodeId">
 					description = <"**(ja)">
 				>
 				["at0024"] = <
-					text = <"*mmlPi:marital(ja)">
+					text = <"mmlPi:marital">
 					description = <"**(ja)">
 				>
 				["at0025"] = <
-					text = <"*mmlPi:emailAddresses(ja)">
+					text = <"mmlPi:emailAddresses">
 					description = <"**(ja)">
 				>
 				["at0026"] = <
-					text = <"*mmlCm:email(ja)">
+					text = <"mmlCm:email">
 					description = <"**(ja)">
 				>
 				["at0027"] = <
-					text = <"*mmlPi:accountNumber(ja)">
+					text = <"mmlPi:accountNumber">
 					description = <"**(ja)">
 				>
 				["at0028"] = <
-					text = <"*mmlPi:socialIdentification(ja)">
+					text = <"mmlPi:socialIdentification">
 					description = <"**(ja)">
 				>
 				["at0029"] = <
-					text = <"*death(ja)">
+					text = <"death">
 					description = <"**(ja)">
 				>
 				["at0030"] = <
-					text = <"*mmlPi:death(ja)">
+					text = <"mmlPi:death">
 					description = <"**(ja)">
 				>
 				["at0031"] = <
-					text = <"*mmlPi:date(ja)">
+					text = <"mmlPi:date">
 					description = <"**(ja)">
 				>
 			>
@@ -282,7 +282,7 @@ ontology
 		["ja"] = <
 			items = <
 				["at0000"] = <
-					text = <"MML Patient Module">
+					text = <"MML患者情報モジュール">
 					description = <"unknown">
 				>
 				["at0001"] = <

@@ -36,7 +36,7 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"0CE4F28BD697F414B95CD7090E0814C9">
+		["MD5-CAM-1.0.1"] = <"59B10BA1203F9C6532B41FB34B758095">
 	>
 
 definition
@@ -77,19 +77,19 @@ ontology
 				>
 				["at0001"] = <
 					text = <"mmlPsi:PersonalizedInfo">
-					description = <"*">
+					description = <"***(ja)(ja)">
 				>
 				["at0002"] = <
 					text = <"creatorLicense">
-					description = <"*">
+					description = <"***(ja)(ja)">
 				>
 				["at0003"] = <
 					text = <"mmlCi:tableId">
-					description = <"*">
+					description = <"***(ja)(ja)">
 				>
 				["at0004"] = <
 					text = <"mmlCi:creatorLicense">
-					description = <"*">
+					description = <"***(ja)(ja)">
 				>
 			>
 		>
@@ -100,19 +100,19 @@ ontology
 					description = <"unknown">
 				>
 				["at0001"] = <
-					text = <"*Cluster(ja)">
+					text = <"mmlPsi:PersonalizedInfo">
 					description = <"**(ja)">
 				>
 				["at0002"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"creatorLicense">
 					description = <"**(ja)">
 				>
 				["at0003"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlCi:tableId">
 					description = <"**(ja)">
 				>
 				["at0004"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlCi:creatorLicense">
 					description = <"**(ja)">
 				>
 			>

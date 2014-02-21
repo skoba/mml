@@ -2,7 +2,7 @@ archetype (adl_version=1.4)
 	openEHR-EHR-CLUSTER.mml_personalized_info.v1
 
 concept
-	[at0000]	-- Mml personalized info
+	[at0000]	-- MML personalized info component
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -23,8 +23,8 @@ description
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To describe personal information">
-			use = <"">
-			misuse = <"*(ja)">
+			use = <"To describe personal informaiton with other MML components and/or modules">
+			misuse = <"Not to describe patient information only by this module">
 			copyright = <"MedXML consortium">
 		>
 		["ja"] = <
@@ -38,11 +38,11 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"719BE778DD8B83A517DA5C17878F89EB">
+		["MD5-CAM-1.0.1"] = <"EDA05DC98A5D1E3B32BF3B2E6155F91C">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Mml personalized info
+	CLUSTER[at0000] matches {	-- MML personalized info component
 		items cardinality matches {2; unordered} matches {
 			allow_archetype CLUSTER[at0001] matches {	-- mmlCm:Id
 				include
@@ -102,7 +102,7 @@ ontology
 				>
 				["at0001"] = <
 					text = <"mmlCm:Id">
-					description = <"***(ja)(ja)">
+					description = <"Personal ID">
 				>
 				["at0002"] = <
 					text = <"mmlPsi:personName">

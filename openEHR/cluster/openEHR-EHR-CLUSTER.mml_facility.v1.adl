@@ -2,7 +2,7 @@ archetype (adl_version=1.4)
 	openEHR-EHR-CLUSTER.mml_facility.v1
 
 concept
-	[at0000]	-- MML Facility
+	[at0000]	-- MML Facility information
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -15,14 +15,15 @@ language
 	>
 description
 	original_author = <
-		["name"] = <"">
+		["name"] = <"Shinji KOBAYASHI">
+		["email"] = <"skoba@moss.or.jp">
 	>
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"*(ja)">
-			use = <"*(ja)">
-			misuse = <"*(ja)">
+			purpose = <"To record facility information">
+			use = <"To record facility information with other MML components and modules">
+			misuse = <"Not to record other provider information">
 			copyright = <"*(ja)">
 		>
 		["ja"] = <
@@ -36,11 +37,11 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"23E755A712A6020BD6DE965910463E0F">
+		["MD5-CAM-1.0.1"] = <"59F7C035BC4884C77AAF3E100DEDD4FD">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- MML Facility
+	CLUSTER[at0000] matches {	-- MML Facility information
 		items cardinality matches {1..*; unordered} matches {
 			CLUSTER[at0003] occurrences matches {0..1} matches {	-- mmlFc:Facility
 				items cardinality matches {1..*; unordered} matches {
@@ -73,8 +74,8 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"MML Facility">
-					description = <"Facility information">
+					text = <"MML Facility information">
+					description = <"Fa">
 				>
 				["at0003"] = <
 					text = <"mmlFc:Facility">
@@ -102,7 +103,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"MML 施設情報形式">
-					description = <"F">
+					description = <"Fa">
 				>
 				["at0003"] = <
 					text = <"mmlFc:Facility">

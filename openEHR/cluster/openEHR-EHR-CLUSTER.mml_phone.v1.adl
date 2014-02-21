@@ -15,15 +15,16 @@ language
 	>
 description
 	original_author = <
-		["name"] = <"">
+		["name"] = <"Shinji KOBAYASHI">
+		["email"] = <"skoba@moss.or.jp">
 	>
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"*(ja)">
-			use = <"*(ja)">
-			misuse = <"*(ja)">
-			copyright = <"*(ja)">
+			purpose = <"電話番号を記録する">
+			use = <"他のMMLモジュールやコンポーネントと併せて電話番号を記録する">
+			misuse = <"電話番号以外の形式の記録には用いられない">
+			copyright = <"MedXML consortium">
 		>
 		["ja"] = <
 			language = <[ISO_639-1::ja]>
@@ -33,7 +34,7 @@ description
 			copyright = <"">
 		>
 	>
-	lifecycle_state = <"0">
+	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
 		["MD5-CAM-1.0.1"] = <"F8A6B46FC6C3AB812E37958F71F42927">

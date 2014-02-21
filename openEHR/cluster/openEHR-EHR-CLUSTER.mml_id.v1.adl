@@ -2,7 +2,7 @@ archetype (adl_version=1.4)
 	openEHR-EHR-CLUSTER.mml_id.v1
 
 concept
-	[at0000]	-- *MML 2.3 ID形式(ja)
+	[at0000]	-- MML ID形式
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -15,15 +15,16 @@ language
 	>
 description
 	original_author = <
-		["name"] = <"">
+		["name"] = <"Shinji KOBAYASHI">
+		["email"] = <"skoba@moss.or.jp">
 	>
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"*(ja)">
-			use = <"*(ja)">
-			misuse = <"*(ja)">
-			copyright = <"*(ja)">
+			purpose = <"To describe identification tags">
+			use = <"To record MML ID information with ohter MML components and/or modules">
+			misuse = <"Not to record other information">
+			copyright = <"MedXML consortium">
 		>
 		["ja"] = <
 			language = <[ISO_639-1::ja]>
@@ -33,14 +34,14 @@ description
 			copyright = <"">
 		>
 	>
-	lifecycle_state = <"0">
+	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"B38F7CB3CF66E1C8BC0E9C4B40EC19F4">
+		["MD5-CAM-1.0.1"] = <"40ADEA06B89A6EF278CB36FF29777D8C">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- *MML 2.3 ID形式(ja)
+	CLUSTER[at0000] matches {	-- MML ID形式
 		items cardinality matches {2; unordered} matches {
 			ELEMENT[at0003] occurrences matches {0..1} matches {	-- mmlCm:Id
 				value matches {
@@ -75,8 +76,8 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"*MML 2.3 ID形式(ja)">
-					description = <"*MML 2.3Id形式(ja)">
+					text = <"MML ID形式">
+					description = <"MML ID formalism">
 				>
 				["at0003"] = <
 					text = <"mmlCm:Id">
@@ -95,15 +96,15 @@ ontology
 					description = <"**(ja)">
 				>
 				["at0007"] = <
-					text = <"mmlCm:tableId">
-					description = <"*">
+					text = <"*mmlCm:tableId(ja)">
+					description = <"***(ja)(ja)">
 				>
 			>
 		>
 		["ja"] = <
 			items = <
 				["at0000"] = <
-					text = <"MML 2.3 ID形式">
+					text = <"MML ID形式">
 					description = <"MML 2.3Id形式">
 				>
 				["at0003"] = <
@@ -123,7 +124,7 @@ ontology
 					description = <"*">
 				>
 				["at0007"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlCm:tableId">
 					description = <"**(ja)">
 				>
 			>

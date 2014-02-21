@@ -38,7 +38,7 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"EDA8DA6A3BB68E8D4B2639F96EFE1190">
+		["MD5-CAM-1.0.1"] = <"3D8AC99E4F0DF9DA7F2002B51E55D4D4">
 	>
 
 definition
@@ -82,31 +82,31 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Mml name component">
-					description = <"mmlNm:Name">
+					text = <"*Mml name(ja)">
+					description = <"*MML 名前表現(ja)">
 				>
 				["at0001"] = <
-					text = <"*mmlNm:given(ja)">
+					text = <"mmlNm:given">
 					description = <"*Given name(ja)">
 				>
 				["at0002"] = <
-					text = <"*mmlNm:family(ja)">
+					text = <"mmlNm:family">
 					description = <"*family name(ja)">
 				>
 				["at0003"] = <
-					text = <"*mmlNm:middle(ja)">
+					text = <"mmlNm:middle">
 					description = <"*middle name(ja)">
 				>
 				["at0004"] = <
-					text = <"*mmlNm:fullname(ja)">
+					text = <"mmlNm:fullname">
 					description = <"*mmlNm:fullname(ja)">
 				>
 				["at0005"] = <
-					text = <"*mmlNm:prefix(ja)">
+					text = <"mmlNm:prefix">
 					description = <"*mmlNm:prefix(ja)">
 				>
 				["at0006"] = <
-					text = <"*mmlNm:degree(ja)">
+					text = <"mmlNm:degree">
 					description = <"*mmlNm:degree(ja)">
 				>
 			>
@@ -115,7 +115,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Mml name">
-					description = <"unknown">
+					description = <"MML 名前表現">
 				>
 				["at0001"] = <
 					text = <"mmlNm:given">
