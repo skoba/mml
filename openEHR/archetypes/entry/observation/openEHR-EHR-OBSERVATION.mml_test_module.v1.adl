@@ -2,7 +2,7 @@ archetype (adl_version=1.4)
 	openEHR-EHR-OBSERVATION.mml_test_module.v1
 
 concept
-	[at0000]	-- MML検歴モジュール
+	[at0000]	-- MML test module
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -38,17 +38,17 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"F8F2AAE71B975F544DD62518E98BB24D">
+		["MD5-CAM-1.0.1"] = <"7448BA941F8839E85739C37E5CD9B56A">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- MML検歴モジュール
+	OBSERVATION[at0000] matches {	-- MML test module
 		data matches {
-			HISTORY[at0001] matches {	-- Event Series
+			HISTORY[at0001] matches {	-- *Event Series(ja)
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..1} matches {	-- 任意のイベント(Event)
+					EVENT[at0002] occurrences matches {0..1} matches {	-- *任意のイベント(Event)(ja)
 						data matches {
-							ITEM_TREE[at0003] matches {	-- Tree
+							ITEM_TREE[at0003] matches {	-- *Tree(ja)
 								items cardinality matches {4..*; unordered} matches {
 									CLUSTER[at0004] matches {	-- mmlLb:information
 										items cardinality matches {3..*; unordered} matches {
@@ -468,327 +468,327 @@ ontology
 					description = <"*@ internal @(ja)">
 				>
 				["at0004"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"mmlLb:information">
 					description = <"**(ja)">
 				>
 				["at0005"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:registId">
 					description = <"**(ja)">
 				>
 				["at0006"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:sampleTime">
 					description = <"**(ja)">
 				>
 				["at0007"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:registTime">
 					description = <"**(ja)">
 				>
 				["at0008"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:reportTime">
 					description = <"**(ja)">
 				>
 				["at0009"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"reportStatus">
 					description = <"**(ja)">
 				>
 				["at0010"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:reportStatus">
 					description = <"**(ja)">
 				>
 				["at0011"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:statusCode">
 					description = <"**(ja)">
 				>
 				["at0012"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:statusCodeId">
 					description = <"**(ja)">
 				>
 				["at0013"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"set">
 					description = <"**(ja)">
 				>
 				["at0014"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:set">
 					description = <"**(ja)">
 				>
 				["at0015"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:setCode">
 					description = <"**(ja)">
 				>
 				["at0016"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:setCodeId">
 					description = <"**(ja)">
 				>
 				["at0017"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"facility">
 					description = <"**(ja)">
 				>
 				["at0018"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:facility">
 					description = <"**(ja)">
 				>
 				["at0019"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:facilityCode">
 					description = <"**(ja)">
 				>
 				["at0020"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:facilityCodeId">
 					description = <"**(ja)">
 				>
 				["at0021"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"department">
 					description = <"**(ja)">
 				>
 				["at0022"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:depCode">
 					description = <"**(ja)">
 				>
 				["at0023"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:department">
 					description = <"**(ja)">
 				>
 				["at0024"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:depCodeId">
 					description = <"**(ja)">
 				>
 				["at0025"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"ward">
 					description = <"**(ja)">
 				>
 				["at0026"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:ward">
 					description = <"**(ja)">
 				>
 				["at0027"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:wardCode">
 					description = <"**(ja)">
 				>
 				["at0028"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:wardCodeId">
 					description = <"**(ja)">
 				>
 				["at0029"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"client">
 					description = <"**(ja)">
 				>
 				["at0030"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:client">
 					description = <"**(ja)">
 				>
 				["at0031"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:clientCode">
 					description = <"**(ja)">
 				>
 				["at0032"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:clientCodeId">
 					description = <"**(ja)">
 				>
 				["at0033"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"laboratoryCenter">
 					description = <"**(ja)">
 				>
 				["at0034"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:laboratoryCenter">
 					description = <"**(ja)">
 				>
 				["at0035"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:centerCode">
 					description = <"**(ja)">
 				>
 				["at0036"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:centerCodeId">
 					description = <"**(ja)">
 				>
 				["at0037"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"technician">
 					description = <"**(ja)">
 				>
 				["at0038"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:technician">
 					description = <"**(ja)">
 				>
 				["at0039"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:techCode">
 					description = <"**(ja)">
 				>
 				["at0040"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:techCodeId">
 					description = <"**(ja)">
 				>
 				["at0041"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"repMemo">
 					description = <"**(ja)">
 				>
 				["at0042"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:repMemo">
 					description = <"**(ja)">
 				>
 				["at0043"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:repCodeName">
 					description = <"**(ja)">
 				>
 				["at0044"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:repCode">
 					description = <"**(ja)">
 				>
 				["at0045"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:repCodeId">
 					description = <"**(ja)">
 				>
 				["at0047"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:repMemoF">
 					description = <"**(ja)">
 				>
 				["at0048"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"mmlLb:laboTest">
 					description = <"**(ja)">
 				>
 				["at0049"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"mmlLb:specimen">
 					description = <"**(ja)">
 				>
 				["at0051"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:specimenName">
 					description = <"**(ja)">
 				>
 				["at0052"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:spCode">
 					description = <"**(ja)">
 				>
 				["at0053"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:spCodeId">
 					description = <"**(ja)">
 				>
 				["at0054"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"spcMemo">
 					description = <"**(ja)">
 				>
 				["at0055"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:spcMemo">
 					description = <"**(ja)">
 				>
 				["at0056"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:smCodeName">
 					description = <"**(ja)">
 				>
 				["at0057"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:smCode">
 					description = <"**(ja)">
 				>
 				["at0058"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:smCodeId">
 					description = <"**(ja)">
 				>
 				["at0059"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:spcMemoF">
 					description = <"**(ja)">
 				>
 				["at0060"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"mmlLb:item">
 					description = <"**(ja)">
 				>
 				["at0061"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:itemName">
 					description = <"**(ja)">
 				>
 				["at0062"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:itCode">
 					description = <"**(ja)">
 				>
 				["at0063"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:itCodeId">
 					description = <"**(ja)">
 				>
 				["at0064"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:Acode">
 					description = <"**(ja)">
 				>
 				["at0065"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:Icode">
 					description = <"**(ja)">
 				>
 				["at0066"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:Scode">
 					description = <"**(ja)">
 				>
 				["at0067"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:Mcode">
 					description = <"**(ja)">
 				>
 				["at0068"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:Rcode">
 					description = <"**(ja)">
 				>
 				["at0069"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:value">
 					description = <"**(ja)">
 				>
 				["at0070"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:numValue">
 					description = <"**(ja)">
 				>
 				["at0071"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"itemName">
 					description = <"**(ja)">
 				>
 				["at0072"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"numValue">
 					description = <"**(ja)">
 				>
 				["at0073"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:up">
 					description = <"**(ja)">
 				>
 				["at0074"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:low">
 					description = <"**(ja)">
 				>
 				["at0075"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"unit">
 					description = <"**(ja)">
 				>
 				["at0076"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:unit">
 					description = <"**(ja)">
 				>
 				["at0077"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:uCode">
 					description = <"**(ja)">
 				>
 				["at0078"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:uCodeId">
 					description = <"**(ja)">
 				>
 				["at0079"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"mmlLb:referenceInfo">
 					description = <"**(ja)">
 				>
 				["at0080"] = <
-					text = <"*ITEM(ja)">
+					text = <"mmlCm:extRef">
 					description = <"**(ja)">
 				>
 				["at0081"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"itemMemo">
 					description = <"**(ja)">
 				>
 				["at0082"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:itemMemo">
 					description = <"**(ja)">
 				>
 				["at0083"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:imCodeName">
 					description = <"**(ja)">
 				>
 				["at0084"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:imCode">
 					description = <"**(ja)">
 				>
 				["at0085"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:imCodeId">
 					description = <"**(ja)">
 				>
 				["at0086"] = <
-					text = <"*新規Element(ja)">
+					text = <"mmlLb:itemMemoF">
 					description = <"**(ja)">
 				>
 			>
