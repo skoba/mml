@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>59db1b1d-ca57-4228-af28-0bb9f11297c6</id>
+  <name>mml_summary_module</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.summary.v1" concept_name="Summary">
+    <Content xsi:type="ADMIN_ENTRY" archetype_id="openEHR-EHR-ADMIN_ENTRY.admission.v1" concept_name="Patient admission" path="/content" />
+    <Content xsi:type="ADMIN_ENTRY" archetype_id="openEHR-EHR-ADMIN_ENTRY.patient_discharge.v1" concept_name="Patient discharge" path="/content">
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_professional.v1" concept_name="Professional Individual demographics" path="/data[at0001]/items[at0003]">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name.v1" concept_name="Person name" path="/items[at0015]" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" path="/items[at0003]/items[at0018]" />
+      </Items>
+    </Content>
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.discharge_findings.v1" concept_name="Discharge findings" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.story.v1" concept_name="Story/History" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.exam.v1" concept_name="Physical Examination Findings" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.progress_note.v1" concept_name="Progress Note" path="/content" />
+    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" path="/content" />
+    <Content xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.medication_order.v1" concept_name="Medication order" path="/content" />
+    <Content xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.care_plan.v1" concept_name="Care Plan" path="/content" />
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.lab_test.v1" concept_name="Laboratory test" path="/content" />
+    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.reason_for_encounter.v1" concept_name="Reason for Encounter" path="/content" />
+    <Context>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_professional.v1" concept_name="Professional Individual demographics" path="/context/other_context[at0001]/items[at0003]">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name.v1" concept_name="Person name" path="/items[at0015]" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.professional_role.v1" concept_name="Professional role" path="/items[at0003]/items[at0016]" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" path="/items[at0003]/items[at0018]" />
+      </Items>
+    </Context>
+  </definition>
+</template>

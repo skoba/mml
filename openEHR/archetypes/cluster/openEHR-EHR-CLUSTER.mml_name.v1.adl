@@ -38,7 +38,7 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"3D8AC99E4F0DF9DA7F2002B51E55D4D4">
+		["MD5-CAM-1.0.1"] = <"A8EA69D09E1D50887CA7EBBE5BDCDCBD">
 	>
 
 definition
@@ -86,28 +86,28 @@ ontology
 					description = <"*MML 名前表現(ja)">
 				>
 				["at0001"] = <
-					text = <"mmlNm:given">
-					description = <"*Given name(ja)">
+					text = <"*mmlNm:given(ja)">
+					description = <"*名(ja)">
 				>
 				["at0002"] = <
-					text = <"mmlNm:family">
-					description = <"*family name(ja)">
+					text = <"*mmlNm:family(ja)">
+					description = <"*姓(ja)">
 				>
 				["at0003"] = <
-					text = <"mmlNm:middle">
-					description = <"*middle name(ja)">
+					text = <"*mmlNm:middle(ja)">
+					description = <"*ミドルネーム(ja)">
 				>
 				["at0004"] = <
-					text = <"mmlNm:fullname">
-					description = <"*mmlNm:fullname(ja)">
+					text = <"*mmlNm:fullname(ja)">
+					description = <"*フルネーム。構造化しない場合にはこちらを選択する(ja)">
 				>
 				["at0005"] = <
-					text = <"mmlNm:prefix">
-					description = <"*mmlNm:prefix(ja)">
+					text = <"*mmlNm:prefix(ja)">
+					description = <"*名前に付ける敬称(ja)">
 				>
 				["at0006"] = <
-					text = <"mmlNm:degree">
-					description = <"*mmlNm:degree(ja)">
+					text = <"*mmlNm:degree(ja)">
+					description = <"*学位など(ja)">
 				>
 			>
 		>
@@ -119,27 +119,27 @@ ontology
 				>
 				["at0001"] = <
 					text = <"mmlNm:given">
-					description = <"Given name">
+					description = <"名">
 				>
 				["at0002"] = <
 					text = <"mmlNm:family">
-					description = <"family name">
+					description = <"姓">
 				>
 				["at0003"] = <
 					text = <"mmlNm:middle">
-					description = <"middle name">
+					description = <"ミドルネーム">
 				>
 				["at0004"] = <
 					text = <"mmlNm:fullname">
-					description = <"mmlNm:fullname">
+					description = <"フルネーム。構造化しない場合にはこちらを選択する">
 				>
 				["at0005"] = <
 					text = <"mmlNm:prefix">
-					description = <"mmlNm:prefix">
+					description = <"名前に付ける敬称">
 				>
 				["at0006"] = <
 					text = <"mmlNm:degree">
-					description = <"mmlNm:degree">
+					description = <"学位など">
 				>
 			>
 		>

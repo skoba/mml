@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>270fca77-5e26-41a8-9c0c-17351d29e0aa</id>
+  <name>mml_patient_infomation</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.patient_module.v1" concept_name="Patient module">
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_personal-mml.v1" concept_name="Individual's personal demographics for MML expression" path="/items[at0001]">
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name.v1" concept_name="Person name" path="/items[at0013]" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0014]" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0015.1]" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.free_text.v1" concept_name="Free text" path="/items[at0018]" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.free_text.v1" concept_name="Free text" path="/items[at0019]" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" max="1" path="/items[at0.2]" name="Facility">
+        <Rule path="/items[at0001]" name="Name of facility" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" max="1" path="/items[at0.3]" name="Department">
+        <Rule path="/items[at0001]" name="Name of Department" />
+      </Items>
+    </Items>
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.death.v1" concept_name="Death" path="/items[at0002]" />
+  </definition>
+</template>
