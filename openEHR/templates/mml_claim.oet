@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>eefb8b45-b17c-4b07-939d-3bae65e1f1a2</id>
+  <name>mml_claim</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.mml-claim.v1" concept_name="MML CLAIM">
+    <Content xsi:type="ADMIN_ENTRY" archetype_id="openEHR-EHR-ADMIN_ENTRY.mml_claim_component.v1" concept_name="claim:status" path="/content" />
+    <Context>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mmlheader.v1" concept_name="MML Header" path="/context/other_context[at0001]/items[at0002]">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_creator_info.v1" concept_name="Mml creator info" path="/items[at0001]">
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_personalized_info.v1" concept_name="Mml personalized info" path="/items[at0001]">
+            <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_id.v1" concept_name="MML ID形式" path="/items[at0001]" />
+            <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_name.v1" concept_name="Mml name" path="/items[at0002]" />
+            <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_facility.v1" concept_name="MML 施設情報形式" path="/items[at0003]">
+              <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_id.v1" concept_name="MML ID形式" path="/items[at0008]" />
+            </Items>
+            <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_department.v1" concept_name="MML department component" path="/items[at0004]">
+              <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_id.v1" concept_name="MML ID形式" path="/items[at0005]" />
+            </Items>
+            <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_address.v1" concept_name="MML Address description" path="/items[at0005]" />
+            <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_phone.v1" concept_name="MML Phone number" path="/items[at0010]" />
+          </Items>
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_id.v1" concept_name="MML ID形式" path="/items[at0003]" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_docinfo.v1" concept_name="MML docinfo" path="/context/other_context[at0001]/items[at0003]" />
+    </Context>
+  </definition>
+</template>

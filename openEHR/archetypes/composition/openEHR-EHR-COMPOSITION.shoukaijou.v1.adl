@@ -1,0 +1,103 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-COMPOSITION.shoukaijou.v1
+
+concept
+	[at0000]	-- 紹介状
+language
+	original_language = <[ISO_639-1::ja]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"EA606CC6607F3A0D3896C2CC3C020152">
+	>
+
+definition
+	COMPOSITION[at0000] matches {	-- 紹介状
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {[openehr::433]}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {	-- Tree
+						items cardinality matches {0..*; unordered} matches {
+							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {	-- 紹介元
+								include
+									archetype_id/value matches {/.*/}
+							}
+							allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {	-- 紹介先
+								include
+									archetype_id/value matches {/.*/}
+							}
+							ELEMENT[at0005] occurrences matches {0..1} matches {	-- 作成日
+								value matches {
+									DV_DATE matches {*}
+								}
+							}
+							allow_archetype CLUSTER[at0007] occurrences matches {0..*} matches {	-- 患者情報
+								include
+									archetype_id/value matches {/.*/}
+							}
+						}
+					}
+				}
+			}
+		}
+		content cardinality matches {1..*; unordered} matches {
+			allow_archetype SECTION[at0006] occurrences matches {0..*} matches {	-- 診療情報
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"紹介状">
+					description = <"紹介状のためのフォーマット">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"紹介元">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"紹介先">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"作成日">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"診療情報">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"患者情報">
+					description = <"*">
+				>
+			>
+		>
+	>
