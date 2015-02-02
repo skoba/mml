@@ -77,8 +77,8 @@
         <Rule path="/activities[at0001]/description[at0002]/items[at0018]" max="0" />
         <Rule path="/activities[at0001]/description[at0002]/items[at0023]/items[at0025]" max="0" />
         <Rule path="/activities[at0001]/description[at0002]/items[at0023]/items[at0046]" max="0" />
-        <Rule path="/activities[at0001]/description[at0002]/items[at0023]/items[at0026]" max="0" />
         <Rule path="/activities[at0001]/description[at0002]/items[at0023]/items[at0028]" max="0" />
+        <Rule path="/protocol[at0031]" hide_on_form="true" />
         <Rule path="/protocol[at0031]/items[at0038]" max="0" />
         <Rule path="/protocol[at0031]/items[at0032]" max="0" />
         <Rule path="/protocol[at0031]/items[at0042]" max="0" />
