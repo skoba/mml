@@ -1,8 +1,10 @@
 archetype (adl_version=1.4)
+	openEHR-EHR-COMPOSITION.mml-claim.v1
+specialize
 	openEHR-EHR-COMPOSITION.mml.v1
 
 concept
-	[at0000]	-- MML base
+	[at0000.1]	-- MML CLAIM
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -39,11 +41,11 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"635873C7372935864B282CBCC852B013">
+		["MD5-CAM-1.0.1"] = <"E59B21746CB561C33E14715F248CFB89">
 	>
 
 definition
-	COMPOSITION[at0000] matches {	-- MML base
+	COMPOSITION[at0000.1] matches {	-- MML CLAIM
 		category matches {
 			DV_CODED_TEXT matches {
 				defining_code matches {[openehr::433]}
@@ -77,6 +79,10 @@ ontology
 					text = <"MML base">
 					description = <"MML base">
 				>
+				["at0000.1"] = <
+					text = <"*MML CLAIM(ja)">
+					description = <"*CLAIM(ja)">
+				>
 				["at0001"] = <
 					text = <"Tree">
 					description = <"@ internal @">
@@ -96,6 +102,10 @@ ontology
 				["at0000"] = <
 					text = <"MML base">
 					description = <"unknown">
+				>
+				["at0000.1"] = <
+					text = <"MML CLAIM">
+					description = <"CLAIM">
 				>
 				["at0001"] = <
 					text = <"*Tree(ja)">

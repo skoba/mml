@@ -1,0 +1,115 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.patient_module.v1
+
+concept
+	[at0000]	-- *Patient module(ja)
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Shinji KOBAYASHI">
+		["email"] = <"skoba@moss.or.jp">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record patient information">
+			use = <"patient demograpihcs">
+			misuse = <"*(ja)">
+			copyright = <"MedXML consortium">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"4D59AFA87CF69290A681B21637509148">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- *Patient module(ja)
+		items cardinality matches {1..*; unordered} matches {
+			allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {	-- MML Header
+				include
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {	-- *MML docInfo(ja)
+				include
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype CLUSTER[at0001] occurrences matches {0..*} matches {	-- Personal information
+				include
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {	-- Death data
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Patient module(ja)">
+					description = <"*MML information module(ja)">
+				>
+				["at0001"] = <
+					text = <"Personal information">
+					description = <"**(ja)">
+				>
+				["at0002"] = <
+					text = <"Death data">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"MML Header">
+					description = <"**(ja)">
+				>
+				["at0004"] = <
+					text = <"*MML docInfo(ja)">
+					description = <"***(ja)(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"Patient module">
+					description = <"MML information module">
+				>
+				["at0001"] = <
+					text = <"Personal information">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Death data">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"MML Header">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"MML docInfo">
+					description = <"**(ja)">
+				>
+			>
+		>
+	>
