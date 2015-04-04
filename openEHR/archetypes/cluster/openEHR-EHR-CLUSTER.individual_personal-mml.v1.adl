@@ -46,7 +46,7 @@ description
 	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
 	other_details = <
 		["references"] = <"From NHS Scotland SCI-XML messaging standards http://www.isdscotland.org/isd/files/general-v2-7.xsd NHS Scotland Interoperability Working Group http://www.isdscotland.org/isd/5194.html and based on a  structure for personal data pertaining to a person.  ENV 13606 - 4:2000 7.6.12-14">
-		["MD5-CAM-1.0.1"] = <"DBD358DDAA7219FC2204C1755D893753">
+		["MD5-CAM-1.0.1"] = <"BCFD28A6B8B5882EA46C843CD3FDEFD7">
 	>
 
 definition
@@ -59,6 +59,11 @@ definition
 					archetype_id/value matches {/.*/}
 			}
 			ELEMENT[at0016] occurrences matches {0..1} matches {	-- Identifier
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0.5] occurrences matches {0..*} matches {	-- otherId
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -135,6 +140,10 @@ ontology
 					text = <"marital">
 					description = <"*">
 				>
+				["at0.5"] = <
+					text = <"otherId">
+					description = <"*">
+				>
 				["at0000"] = <
 					text = <"Individual's personal demographics">
 					description = <"Personal demographics including name(s) , addresse(s) and telecommunication contact details.">
@@ -209,6 +218,10 @@ ontology
 				>
 				["at0.4"] = <
 					text = <"*marital(en)">
+					description = <"**(en)">
+				>
+				["at0.5"] = <
+					text = <"*otherId(en)">
 					description = <"**(en)">
 				>
 				["at0000"] = <
