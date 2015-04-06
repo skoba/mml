@@ -79,7 +79,7 @@ description
 Aligned with openEHR-DEMOGRAPHICS-person_name.v1 http://www.openehr.org/ckm/#showArchetype_1013.1.477_9
 
 ISO/TS 22220:2008(E) - Identification of Subject of Care - Technical Specification- International Organization for Standardization.">
-		["MD5-CAM-1.0.1"] = <"8D7B921CFDA3EA008FE8DC34DB2C03CC">
+		["MD5-CAM-1.0.1"] = <"C7149BB8107A830B96B6EE90F3BC7FD0">
 	>
 
 definition
@@ -102,7 +102,7 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0.23] occurrences matches {0..1} matches {	-- Neme representation
+			ELEMENT[at0.23] occurrences matches {0..1} matches {	-- Name representation
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
@@ -182,7 +182,7 @@ ontology
 		["ar-sy"] = <
 			items = <
 				["at0.23"] = <
-					text = <"*Neme representation(en)">
+					text = <"*Name representation(en)">
 					description = <"**(en)">
 				>
 				["at0.24"] = <
@@ -258,14 +258,14 @@ ontology
 					description = <"التاريخ الذي أصبح فيه الاسم صالحا للاستخدام">
 				>
 				["at0017"] = <
-					description = <"*The prefix or title used by the subject.(en)">
-					text = <"*Title(en)">
 					comment = <"*e.g. 'Mr', 'Mrs', 'Ms', 'Dr', 'Lord'(en)">
+					text = <"*Title(en)">
+					description = <"*The prefix or title used by the subject.(en)">
 				>
 				["at0018"] = <
-					description = <"*Additional term used following a person name.(en)">
-					text = <"*Suffix(en)">
 					comment = <"*e.g. 'Snr'(en)">
+					text = <"*Suffix(en)">
+					description = <"*Additional term used following a person name.(en)">
 				>
 				["at0019"] = <
 					text = <"*Professional name(en)">
@@ -288,7 +288,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0.23"] = <
-					text = <"Neme representation">
+					text = <"Name representation">
 					description = <"*">
 				>
 				["at0.24"] = <
@@ -364,14 +364,14 @@ ontology
 					description = <"The date interval at which this name was valid.">
 				>
 				["at0017"] = <
-					description = <"The prefix or title used by the subject.">
-					text = <"Title">
 					comment = <"e.g. 'Mr', 'Mrs', 'Ms', 'Dr', 'Lord'">
+					text = <"Title">
+					description = <"The prefix or title used by the subject.">
 				>
 				["at0018"] = <
-					description = <"Additional term used following a person name.">
-					text = <"Suffix">
 					comment = <"e.g. 'Snr'">
+					text = <"Suffix">
+					description = <"Additional term used following a person name.">
 				>
 				["at0019"] = <
 					text = <"Professional name">
@@ -394,7 +394,7 @@ ontology
 		["de"] = <
 			items = <
 				["at0.23"] = <
-					text = <"*Neme representation(en)">
+					text = <"*Name representation(en)">
 					description = <"**(en)">
 				>
 				["at0.24"] = <
@@ -470,14 +470,14 @@ ontology
 					description = <"*The date interval at which this name was valid.(en)">
 				>
 				["at0017"] = <
-					description = <"**(en)">
-					text = <"*Title(en)">
 					comment = <"*e.g. 'Mr', 'Mrs', 'Ms', 'Dr', 'Lord'(en)">
+					text = <"*Title(en)">
+					description = <"**(en)">
 				>
 				["at0018"] = <
-					description = <"*Additional term used following a person name.(en)">
-					text = <"*Suffix(en)">
 					comment = <"*e.g. 'Snr'(en)">
+					text = <"*Suffix(en)">
+					description = <"*Additional term used following a person name.(en)">
 				>
 				["at0019"] = <
 					text = <"*Professional name(en)">
@@ -500,7 +500,7 @@ ontology
 		["es-ar"] = <
 			items = <
 				["at0.23"] = <
-					text = <"*Neme representation(en)">
+					text = <"*Name representation(en)">
 					description = <"**(en)">
 				>
 				["at0.24"] = <
@@ -576,14 +576,14 @@ ontology
 					description = <"La fecha a partir de la cual este nombre se tornó válido.">
 				>
 				["at0017"] = <
-					description = <"*The prefix or title used by the subject.(en)">
-					text = <"*Title(en)">
 					comment = <"*e.g. 'Mr', 'Mrs', 'Ms', 'Dr', 'Lord'(en)">
+					text = <"*Title(en)">
+					description = <"*The prefix or title used by the subject.(en)">
 				>
 				["at0018"] = <
-					description = <"*Additional term used following a person name.(en)">
-					text = <"*Suffix(en)">
 					comment = <"*e.g. 'Snr'(en)">
+					text = <"*Suffix(en)">
+					description = <"*Additional term used following a person name.(en)">
 				>
 				["at0019"] = <
 					text = <"*Professional name(en)">
