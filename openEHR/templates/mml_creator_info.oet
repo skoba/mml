@@ -60,16 +60,19 @@
       </item>
     </other_details>
   </description>
-  <definition xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_professional.v1" concept_name="Professional Individual demographics">
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name.v1" concept_name="Person name" path="/items[at0015]" />
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.professional_role.v1" concept_name="Professional role" path="/items[at0003]/items[at0016]" />
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0003]/items[at0017]" />
+  <definition xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_professional-mml.v1" concept_name="Professional Individual demographics for MML">
+    <Rule path="/items[at0003]/items[at0013]" max="0" />
+    <Rule path="/items[at0003]/items[at0005]" max="0" />
+    <Rule path="/items[at0003]/items[at0006]" max="0" />
+    <Rule path="/items[at0003]/items[at0012]" max="0" />
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name-mml.v1" concept_name="Person name for MML expression" path="/items[at0015.1]" />
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-mml.v1" concept_name="Telecom details for MML" path="/items[at0003]/items[at0017]">
+      <Rule path="/items[at0010]" max="0" />
+    </Items>
     <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0003]/items[at0019]" />
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" max="1" path="/items[at0003]/items[at0018]" name="Facility">
-      <Rule path="/items[at0001]" name="Name of facility" />
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/items[at0003]/items[at0018]" name="Facility">
+      <Rule path="/items[at0005]" max="0" />
     </Items>
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" max="1" path="/items[at0003]/items[at0018]" name="Department">
-      <Rule path="/items[at0001]" name="Name of department" />
-    </Items>
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/items[at0003]/items[at0018]" name="Department" />
   </definition>
 </template>
