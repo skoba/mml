@@ -60,11 +60,72 @@
       </item>
     </other_details>
   </description>
-  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.report.v1" concept_name="Report">
-    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.adverse_reaction_fhir.v1" concept_name="Adverse Reaction (FHIR/openEHR)" path="/content" />
-    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.lab_test-blood_match.v1" concept_name="Blood matching" path="/content" />
-    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.lab_test-immunology.v1" concept_name="Immunology titres" path="/content" />
-    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.lab_test-microbiology.v1" concept_name="Microbiolology" path="/content" />
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.review.v1" concept_name="Review">
+    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.adverse_reaction_fhir-mml.v1" concept_name="Adverse Reaction (FHIR/openEHR) for MML" path="/content">
+      <Rule path="/data[at0001]/items[at0063]">
+        <constraint xsi:type="textConstraint">
+          <excludedValues>local::at0064</excludedValues>
+          <excludedValues>local::at0066</excludedValues>
+          <excludedValues>local::at0067</excludedValues>
+        </constraint>
+      </Rule>
+      <Rule path="/data[at0001]/items[at0101]" max="0" />
+      <Rule path="/data[at0001]/items[at0058]">
+        <constraint xsi:type="textConstraint">
+          <excludedValues>local::at0060</excludedValues>
+        </constraint>
+      </Rule>
+      <Rule path="/data[at0001]/items[at0009]/items[at0010]" max="0" />
+      <Rule path="/data[at0001]/items[at0009]/items[at0021]" max="0" />
+      <Rule path="/data[at0001]/items[at0009]/items[at0111]" max="0" />
+      <Rule path="/data[at0001]/items[at0009]/items[at0012]" max="0" />
+      <Rule path="/data[at0001]/items[at0009]/items[at0027]" max="0" />
+      <Rule path="/data[at0001]/items[at0009]/items[at0028]" max="0" />
+      <Rule path="/data[at0001]/items[at0009]/items[at0025]" max="0" />
+      <Rule path="/data[at0001]/items[at0009]/items[at0106]" max="0" />
+      <Rule path="/data[at0001]/items[at0009]/items[at0020]" max="0" />
+      <Rule path="/data[at0001]/items[at0009]/items[at0018]" max="0" />
+      <Rule path="/data[at0001]/items[at0009]/items[at0040]" max="0" />
+      <Rule path="/data[at0001]/items[at0009]/items[at0031]" max="0" />
+      <Rule path="/data[at0001]/items[at0009]/items[at0032]" max="0" />
+      <Rule path="/protocol[at0042]/items[at0062]" max="0" />
+      <Rule path="/protocol[at0042]/items[at0047]" max="0" />
+      <Rule path="/protocol[at0042]/items[at0099]" max="0" />
+      <Rule path="/protocol[at0042]/items[at0098]" max="0" />
+    </Content>
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.lab_test-blood_match-mml.v1" concept_name="Blood matching for MML" path="/content">
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0077]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0073]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0.90]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0.91]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0057]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0010]" max="0" />
+      <Rule path="/protocol[at0004]/items[at0062]" max="0" />
+      <Rule path="/protocol[at0004]/items[at0063]" max="0" />
+      <Rule path="/protocol[at0004]/items[at0068]" max="0" />
+      <Rule path="/protocol[at0004]/items[at0075]" max="0" />
+    </Content>
+    <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.lab_test-microbiology-mml.v1" concept_name="Microbiolology for MML" path="/content">
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0073]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0077]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0.25]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0.26]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0.34]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0.27]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078]">
+        <constraint xsi:type="multipleConstraint">
+          <includedTypes>Text</includedTypes>
+        </constraint>
+      </Rule>
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0057]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0010]" max="0" />
+      <Rule path="/protocol[at0004]/items[at0062]" max="0" />
+      <Rule path="/protocol[at0004]/items[at0063]" max="0" />
+      <Rule path="/protocol[at0004]/items[at0068]" max="0" />
+      <Rule path="/protocol[at0004]/items[at0075]" max="0" />
+    </Content>
     <Context />
   </definition>
 </template>
