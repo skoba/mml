@@ -62,7 +62,14 @@
   </description>
   <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.problem_list.v1" concept_name="Problem List">
     <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis-mml.v1" concept_name="Problem/Diagnosis for MML adaptation" path="/content[at0002]">
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.insurance.v1" concept_name="Insurance" path="/data[at0001]/items[at0.52]" />
+      <Rule path="/data[at0001]/items[at0009]" max="0" />
+      <Rule path="/data[at0001]/items[at0005]" max="0" />
+      <Rule path="/data[at0001]/items[at0004]" max="0" />
+      <Rule path="/data[at0001]/items[at0012]" max="0" />
+      <Rule path="/data[at0001]/items[at0018]" max="0" />
+      <Rule path="/data[at0001]/items[at0027]" max="0" />
+      <Rule path="/data[at0001]/items[at0031]" max="0" />
+      <Rule path="/protocol[at0032]/items[at0035]" max="0" />
     </Content>
   </definition>
 </template>
