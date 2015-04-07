@@ -61,14 +61,28 @@
     </other_details>
   </description>
   <definition xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.insurance.v1" concept_name="Insurance">
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name.v1" concept_name="Person name" path="/items[at0012]/items[at0013]" />
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0012]/items[at0014]" />
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name-mml.v1" concept_name="Person name for MML expression" path="/items[at0012]/items[at0013]" />
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0012]/items[at0014]">
+      <Rule path="/items[at0001]/items[at0015]" max="0" />
+    </Items>
     <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0012]/items[at0015]" />
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" path="/items[at0020]/items[at0021]" />
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0020]/items[at0022]" />
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0020]/items[at0023]" />
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0024]/items[at0026]" />
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" path="/items[at0024]/items[at0025]" />
-    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0024]/items[at0027]" />
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" path="/items[at0020]/items[at0021]">
+      <Rule path="/items[at0005]" max="0" />
+    </Items>
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0020]/items[at0022]">
+      <Rule path="/items[at0001]/items[at0015]" max="0" />
+    </Items>
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0020]/items[at0023]">
+      <Rule path="/items[at0010]" max="0" />
+      <Rule path="/items[at0009]" max="0" />
+    </Items>
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" path="/items[at0024]/items[at0026]">
+      <Rule path="/items[at0005]" max="0" />
+    </Items>
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0024]/items[at0025]" />
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0024]/items[at0027]">
+      <Rule path="/items[at0010]" max="0" />
+      <Rule path="/items[at0009]" max="0" />
+    </Items>
   </definition>
 </template>
