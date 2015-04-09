@@ -353,7 +353,7 @@
                         <xs:attribute name="valueType" fixed="DV_TEXT" />
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="Overall_Description">
+                    <xs:element name="Overall_Description" minOccurs="0">
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element name="name">
@@ -429,6 +429,28 @@
                                 <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
                                 <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
                               </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Description" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="name">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="value" type="xs:string" default="Description" />
+                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:choice>
+                                  <xs:element name="value" type="oe:DV_TEXT" />
+                                  <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                </xs:choice>
+                              </xs:sequence>
+                              <xs:attribute fixed="at0013" name="archetype_node_id" type="oe:archetypeNodeId" />
+                              <xs:attribute fixed="ELEMENT" name="type" />
+                              <xs:attribute name="valueType" fixed="DV_TEXT" />
                             </xs:complexType>
                           </xs:element>
                         </xs:sequence>
@@ -737,7 +759,7 @@
                         <xs:attribute name="valueType" fixed="DV_CODED_TEXT" />
                       </xs:complexType>
                     </xs:element>
-                    <xs:element name="Consumption_Summary" minOccurs="1" maxOccurs="unbounded">
+                    <xs:element name="Consumption_Summary">
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element name="name">
@@ -747,160 +769,6 @@
                                 <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
                                 <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
                               </xs:sequence>
-                            </xs:complexType>
-                          </xs:element>
-                          <xs:element name="Form" minOccurs="0">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="name">
-                                  <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element name="value" type="xs:string" default="Form" />
-                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
-                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
-                                    </xs:sequence>
-                                  </xs:complexType>
-                                </xs:element>
-                                <xs:choice>
-                                  <xs:element name="value" type="oe:DV_TEXT" />
-                                  <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
-                                </xs:choice>
-                              </xs:sequence>
-                              <xs:attribute fixed="at0008" name="archetype_node_id" type="oe:archetypeNodeId" />
-                              <xs:attribute fixed="ELEMENT" name="type" />
-                              <xs:attribute name="valueType" fixed="DV_TEXT" />
-                            </xs:complexType>
-                          </xs:element>
-                          <xs:element name="Method_of_use" minOccurs="0">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="name">
-                                  <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element name="value" type="xs:string" default="Method of use" />
-                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
-                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
-                                    </xs:sequence>
-                                  </xs:complexType>
-                                </xs:element>
-                                <xs:choice>
-                                  <xs:element name="value" type="oe:DV_TEXT" />
-                                  <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
-                                </xs:choice>
-                              </xs:sequence>
-                              <xs:attribute fixed="at0015" name="archetype_node_id" type="oe:archetypeNodeId" />
-                              <xs:attribute fixed="ELEMENT" name="type" />
-                              <xs:attribute name="valueType" fixed="DV_TEXT" />
-                            </xs:complexType>
-                          </xs:element>
-                          <xs:element name="Date_commenced" minOccurs="0">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="name">
-                                  <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element name="value" type="xs:string" default="Date commenced" />
-                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
-                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
-                                    </xs:sequence>
-                                  </xs:complexType>
-                                </xs:element>
-                                <xs:choice>
-                                  <xs:element name="value" type="oe:DV_DATE_TIME" />
-                                  <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
-                                </xs:choice>
-                              </xs:sequence>
-                              <xs:attribute fixed="at0009" name="archetype_node_id" type="oe:archetypeNodeId" />
-                              <xs:attribute fixed="ELEMENT" name="type" />
-                              <xs:attribute name="valueType" fixed="DV_DATE_TIME" />
-                            </xs:complexType>
-                          </xs:element>
-                          <xs:element name="Age_commenced" minOccurs="0">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="name">
-                                  <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element name="value" type="xs:string" default="Age commenced" />
-                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
-                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
-                                    </xs:sequence>
-                                  </xs:complexType>
-                                </xs:element>
-                                <xs:choice>
-                                  <xs:element name="value" type="oe:DV_DURATION" />
-                                  <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
-                                </xs:choice>
-                              </xs:sequence>
-                              <xs:attribute fixed="at0010" name="archetype_node_id" type="oe:archetypeNodeId" />
-                              <xs:attribute fixed="ELEMENT" name="type" />
-                              <xs:attribute name="valueType" fixed="DV_DURATION" />
-                            </xs:complexType>
-                          </xs:element>
-                          <xs:element name="Date_ceased" minOccurs="0">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="name">
-                                  <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element name="value" type="xs:string" default="Date ceased" />
-                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
-                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
-                                    </xs:sequence>
-                                  </xs:complexType>
-                                </xs:element>
-                                <xs:choice>
-                                  <xs:element name="value" type="oe:DV_DATE_TIME" />
-                                  <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
-                                </xs:choice>
-                              </xs:sequence>
-                              <xs:attribute fixed="at0011" name="archetype_node_id" type="oe:archetypeNodeId" />
-                              <xs:attribute fixed="ELEMENT" name="type" />
-                              <xs:attribute name="valueType" fixed="DV_DATE_TIME" />
-                            </xs:complexType>
-                          </xs:element>
-                          <xs:element name="Age_ceased" minOccurs="0">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="name">
-                                  <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element name="value" type="xs:string" default="Age ceased" />
-                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
-                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
-                                    </xs:sequence>
-                                  </xs:complexType>
-                                </xs:element>
-                                <xs:choice>
-                                  <xs:element name="value" type="oe:DV_DURATION" />
-                                  <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
-                                </xs:choice>
-                              </xs:sequence>
-                              <xs:attribute fixed="at0012" name="archetype_node_id" type="oe:archetypeNodeId" />
-                              <xs:attribute fixed="ELEMENT" name="type" />
-                              <xs:attribute name="valueType" fixed="DV_DURATION" />
-                            </xs:complexType>
-                          </xs:element>
-                          <xs:element name="Comment" minOccurs="0">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="name">
-                                  <xs:complexType>
-                                    <xs:sequence>
-                                      <xs:element name="value" type="xs:string" default="Comment" />
-                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
-                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
-                                    </xs:sequence>
-                                  </xs:complexType>
-                                </xs:element>
-                                <xs:choice>
-                                  <xs:element name="value" type="oe:DV_TEXT" />
-                                  <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
-                                </xs:choice>
-                              </xs:sequence>
-                              <xs:attribute fixed="at0013" name="archetype_node_id" type="oe:archetypeNodeId" />
-                              <xs:attribute fixed="ELEMENT" name="type" />
-                              <xs:attribute name="valueType" fixed="DV_TEXT" />
                             </xs:complexType>
                           </xs:element>
                         </xs:sequence>

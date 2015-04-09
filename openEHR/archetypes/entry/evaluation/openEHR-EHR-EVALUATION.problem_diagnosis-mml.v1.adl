@@ -118,7 +118,7 @@ Some examples:
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <"Koray Atalag, University of Auckland, New Zealand", "Steve Bentley, NHS CfH, United Kingdom", "Ian Bull, ACT Health, Australia", "Sergio Carmona, Chile", "Rong Chen, Cambio Healthcare Systems, Sweden", "Stephen Chu, NeHTA, Australia", "Ed Conley, Cardiff University", "Paul Donaldson, Nursing Informatics Australia, Australia", "Anneke Goossen, Results 4 Care, Netherlands", "Heather Grain, Llewelyn Grain Informatics, Australia", "Sam Heard, Ocean Informatics, Australia", "Evelyn Hovenga, EJSH Consulting, Australia", "Eugene Igras, IRIS Systems, Inc., Canada", "Eizen Kimura, Ehime Univ., Japan", "Shinji Kobayashi, Ehime University, Japan", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Rohan Martin, Ambulance Victoria, Australia", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)", "Jörg Niggemann, compugroup, Germany", "Andrej Orel, Marand d.o.o., Slovenia">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"B7D0FA4172F565B7A8A7ED06E0B1D468">
+		["MD5-CAM-1.0.1"] = <"6DE2FF227B831E83ED513E8ED73D98C0">
 	>
 
 definition
@@ -268,9 +268,14 @@ definition
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0.52] occurrences matches {0..*} matches {	-- related health insurance
-						include
-							archetype_id/value matches {/.*/}
+					CLUSTER[at0.53] occurrences matches {0..1} matches {	-- related health insurance
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0.54] occurrences matches {0..1} matches {	-- uid
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
 					}
 					ELEMENT[at0.49] occurrences matches {0..1} matches {	-- firstEncounterDate
 						value matches {
@@ -328,6 +333,14 @@ ontology
 				>
 				["at0.52"] = <
 					text = <"*related health insurance(en)">
+					description = <"**(en)">
+				>
+				["at0.53"] = <
+					text = <"*related health insurance(en)">
+					description = <"**(en)">
+				>
+				["at0.54"] = <
+					text = <"*uid(en)">
 					description = <"**(en)">
 				>
 				["at0000"] = <
@@ -470,6 +483,14 @@ ontology
 					text = <"related health insurance">
 					description = <"*">
 				>
+				["at0.53"] = <
+					text = <"related health insurance">
+					description = <"*">
+				>
+				["at0.54"] = <
+					text = <"uid">
+					description = <"*">
+				>
 				["at0000"] = <
 					text = <"Problem/Diagnosis for MML adaptation">
 					description = <"An issue or obstacle which adversely impacts on the physical, mental and/or social well-being of an individual. The definition of a problem is deliberately kept rather loose and inclusive of a formal biomedical diagnosis so as to capture any real or perceived concerns that may adversely affect an individual's wellbeing to any degree.">
@@ -495,9 +516,9 @@ ontology
 					description = <"The age of the individual when the problem was first identified by the individual.">
 				>
 				["at0005"] = <
-					comment = <" Coding of the severity with a terminology is preferred, where possible.">
-					text = <"Severity">
 					description = <"The assessed overall severity of the index problem.">
+					text = <"Severity">
+					comment = <" Coding of the severity with a terminology is preferred, where possible.">
 				>
 				["at0009"] = <
 					text = <"Description">
@@ -609,6 +630,14 @@ ontology
 				>
 				["at0.52"] = <
 					text = <"*related health insurance(en)">
+					description = <"**(en)">
+				>
+				["at0.53"] = <
+					text = <"*related health insurance(en)">
+					description = <"**(en)">
+				>
+				["at0.54"] = <
+					text = <"*uid(en)">
 					description = <"**(en)">
 				>
 				["at0000"] = <
@@ -751,6 +780,14 @@ ontology
 					text = <"*related health insurance(en)">
 					description = <"**(en)">
 				>
+				["at0.53"] = <
+					text = <"*related health insurance(en)">
+					description = <"**(en)">
+				>
+				["at0.54"] = <
+					text = <"*uid(en)">
+					description = <"**(en)">
+				>
 				["at0000"] = <
 					text = <"*Problem/Diagnosis for MML adaptation(en)">
 					description = <"*An issue or obstacle which adversely impacts on the physical, mental and/or social well-being of an individual. The definition of a problem is deliberately kept rather loose and inclusive of a formal biomedical diagnosis so as to capture any real or perceived concerns that may adversely affect an individual's wellbeing to any degree.(en)">
@@ -889,6 +926,14 @@ ontology
 				>
 				["at0.52"] = <
 					text = <"*related health insurance(en)">
+					description = <"**(en)">
+				>
+				["at0.53"] = <
+					text = <"*related health insurance(en)">
+					description = <"**(en)">
+				>
+				["at0.54"] = <
+					text = <"*uid(en)">
 					description = <"**(en)">
 				>
 				["at0000"] = <

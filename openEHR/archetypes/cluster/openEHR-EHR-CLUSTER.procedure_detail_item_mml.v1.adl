@@ -1,0 +1,80 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.procedure_detail_item_mml.v1
+
+concept
+	[at0000]	-- Procedure detail item for mml
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["organisation"] = <"openEHR.jp">
+		["name"] = <"Shinji KOBAYASHI">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*(ja)">
+			use = <"*(ja)">
+			misuse = <"*(ja)">
+			copyright = <"*(ja)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"To record operational items.">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"ACDC87EFBEA7BCCAD42B3EA801B52F8C">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Procedure detail item for mml
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..*} matches {	-- title
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Procedure detail item for MML">
+					description = <"Procedure datails for MML">
+				>
+				["at0001"] = <
+					text = <"*title(ja)">
+					description = <"***(ja)(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"Procedure detail item for mml">
+					description = <"Procedure datails for MML">
+				>
+				["at0001"] = <
+					text = <"title">
+					description = <"**(ja)">
+				>
+			>
+		>
+	>

@@ -51,7 +51,7 @@ Nicht zur Identifikation von Einrichtungen zu benutzen, die eindeutig Registern 
 	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
 	other_details = <
 		["references"] = <"From NHS Scotland SCI-XML messaging standards http://www.isdscotland.org/isd/files/general-v2-7.xsd NHS Scotland Interoperability Working Group http://www.isdscotland.org/isd/5194.html">
-		["MD5-CAM-1.0.1"] = <"3CEBB35DD80BF05F86FCAC5A7EDB341F">
+		["MD5-CAM-1.0.1"] = <"A697B204109C5D66F8C2C368E6DEC560">
 	>
 
 definition
@@ -95,9 +95,9 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			allow_archetype CLUSTER[at0008] occurrences matches {0..1} matches {	-- Address details
+			allow_archetype CLUSTER[at0008.1] occurrences matches {0..1} matches {	--  Address details
 				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.address\.v1/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.address(-[a-zA-Z0-9_]+)*\.v1/}
 				exclude
 					archetype_id/value matches {/.*/}
 			}
@@ -179,6 +179,10 @@ ontology
 					text = <"Address details">
 					description = <"Details about Address">
 				>
+				["at0008.1"] = <
+					text = <" Address details">
+					description = <"Details about Address">
+				>
 				["at0009"] = <
 					text = <"Telecom details">
 					description = <"Details about telecommunications">
@@ -246,6 +250,10 @@ ontology
 				["at0008"] = <
 					text = <"Adressangaben">
 					description = <"Angaben zur Adresse">
+				>
+				["at0008.1"] = <
+					text = <"* Address details(en)">
+					description = <"*Details about Address(en)">
 				>
 				["at0009"] = <
 					text = <"Kontaktdetails">
