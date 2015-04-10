@@ -71,7 +71,6 @@
           <includedTypes>Ordinal</includedTypes>
         </constraint>
       </Rule>
-      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0010]" max="0" />
       <Rule path="/protocol[at0004]/items[at0062]" max="0" />
       <Rule path="/protocol[at0004]/items[at0063]" max="0" />
       <Rule path="/protocol[at0004]/items[at0068]" max="0" />
@@ -119,6 +118,7 @@
         <Rule path="/items[at0005]" max="0" />
       </Items>
     </Content>
+    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" path="/content" />
     <Context>
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_professional.v1" concept_name="Professional Individual demographics" max="1" path="/context/other_context[at0001]/items" name="Performed technician">
         <Rule path="/items[at0003]/items[at0013]" max="0" />
@@ -132,7 +132,6 @@
           <Rule path="/items[at0014]" max="0" />
         </Items>
       </Items>
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.free_text.v1" concept_name="Free text" max="1" path="/context/other_context[at0001]/items" name="Report memo" />
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.free_text.v1" concept_name="Free text" max="1" path="/context/other_context[at0001]/items" name="Lab test set">
         <Rule path="/items[at0001]" max="1" name="name" />
       </Items>

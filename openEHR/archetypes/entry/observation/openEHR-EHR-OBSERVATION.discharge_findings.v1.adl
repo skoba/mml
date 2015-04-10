@@ -1,0 +1,141 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.discharge_findings.v1
+
+concept
+	[at0000]	-- Discharge findings
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*(ja)">
+			use = <"*(ja)">
+			misuse = <"*(ja)">
+			copyright = <"*(ja)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"FB3EAB14BCA0B503DFF5B2F4BEA1CDD7">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Discharge findings
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- 任意のイベント(Event)
+						data matches {
+							ITEM_TREE[at0003] matches {	-- *Tree(ja)
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- discharge condition
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- outcome
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- findings
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Discharge findings">
+					description = <"findings at discharge for MML summary module">
+				>
+				["at0001"] = <
+					text = <"*Event Series(ja)">
+					description = <"*@ internal @(ja)">
+				>
+				["at0002"] = <
+					text = <"*任意のイベント(Event)(ja)">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"*discharge condition(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0005"] = <
+					text = <"*outcome(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0006"] = <
+					text = <"*findings(ja)">
+					description = <"***(ja)(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"Discharge findings">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"任意のイベント(Event)">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"*Tree(ja)">
+					description = <"*@ internal @(ja)">
+				>
+				["at0004"] = <
+					text = <"discharge condition">
+					description = <"**(ja)">
+				>
+				["at0005"] = <
+					text = <"outcome">
+					description = <"**(ja)">
+				>
+				["at0006"] = <
+					text = <"findings">
+					description = <"**(ja)">
+				>
+			>
+		>
+	>

@@ -1,0 +1,86 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-COMPOSITION.summary.v1
+
+concept
+	[at0000]	-- Summary
+language
+	original_language = <[ISO_639-1::ja]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"31131744ECE6487150FBEA2028CD0A20">
+	>
+
+definition
+	COMPOSITION[at0000] matches {	-- Summary
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {[openehr::433]}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {	-- Tree
+						items cardinality matches {0..*; unordered} matches {
+							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {	-- authors
+								include
+									archetype_id/value matches {/.*/}
+							}
+							ELEMENT[at0004] occurrences matches {0..1} matches {	-- start
+								value matches {
+									DV_DATE matches {*}
+								}
+							}
+							ELEMENT[at0005] occurrences matches {0..1} matches {	-- end
+								value matches {
+									DV_DATE matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"Summary">
+					description = <"To record summary of outpatinet/inpatient in period">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"authors">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"start">
+					description = <"start date for summary">
+				>
+				["at0005"] = <
+					text = <"end">
+					description = <"end date for summary">
+				>
+			>
+		>
+	>
