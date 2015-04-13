@@ -1,0 +1,94 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.outpatient_recod_item_mml.v1
+
+concept
+	[at0000]	-- Outpatient recod item for MML
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Shinji KOBAYASHI">
+		["organisation"] = <"openEHR.jp">
+		["email"] = <"skoba@moss.or.jp">
+		["date"] = <"2015-04-13">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record outpatient record items in MML summary module">
+			use = <"*(ja)">
+			misuse = <"*(ja)">
+			copyright = <"">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"45EDC5695FDD2368D37101A042C706B6">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Outpatient recod item for MML
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- patient condition
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {	-- staffInfo
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Outpatient recod item for MML">
+					description = <"record outpatient record for MML mapping">
+				>
+				["at0001"] = <
+					text = <"patient condition">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"staffInfo">
+					description = <"*">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"Outpatient recod item mml">
+					description = <"record outpatient record for MML">
+				>
+				["at0001"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0002"] = <
+					text = <"*Cluster(ja)">
+					description = <"**(ja)">
+				>
+			>
+		>
+	>

@@ -74,7 +74,12 @@
     <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.progress_note.v1" concept_name="Progress Note" path="/content" />
     <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" path="/content" />
     <Content xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.medication_order.v1" concept_name="Medication order" path="/content" />
-    <Content xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.care_plan.v1" concept_name="Care Plan" path="/content" />
+    <Content xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.care_plan.v1" concept_name="Care Plan" path="/content">
+      <Rule path="/activities[at0001]/description[at0004]/items[at0017]" max="0" />
+      <Rule path="/activities[at0001]/description[at0004]/items[at0011]" max="0" />
+      <Rule path="/activities[at0001]/description[at0004]/items[at0018]" max="0" />
+      <Rule path="/activities[at0001]/description[at0004]/items[at0019]" max="0" />
+    </Content>
     <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.lab_test.v1" concept_name="Laboratory test" path="/content" />
     <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.reason_for_encounter.v1" concept_name="Reason for Encounter" path="/content" />
     <Context>
