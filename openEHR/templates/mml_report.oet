@@ -61,19 +61,94 @@
     </other_details>
   </description>
   <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.report-result.v1" concept_name="Result Report">
-    <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.procedure.v1" concept_name="Procedure" path="/content">
-      <Rule path="/description[at0001]/items[at0061]" max="0" />
-      <Rule path="/description[at0001]/items[at0058]" max="0" />
-      <Rule path="/description[at0001]/items[at0048]" max="0" />
-      <Rule path="/description[at0001]/items[at0006]" max="0" />
-      <Rule path="/protocol[at0053]/items[at0054]" max="0" />
-      <Rule path="/protocol[at0053]/items[at0056]" max="0" />
+    <Content xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.request.v1" concept_name="Healthcare service request" path="/content">
+      <Rule path="/activities[at0001]/description[at0009]/items[at0064]" max="0" />
+      <Rule path="/activities[at0001]/description[at0009]/items[at0065]" max="0" />
+      <Rule path="/activities[at0001]/description[at0009]/items[at0068]" max="0" />
+      <Rule path="/activities[at0001]/description[at0009]/items[at0040]" max="0" />
+      <Rule path="/activities[at0001]/description[at0009]/items[at0144]" max="0" />
+      <Rule path="/activities[at0001]/description[at0009]/items[at0076]" max="0" />
+      <Rule path="/activities[at0001]/description[at0009]/items[at0078]" max="0" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/protocol[at0008]/items[at0141]" name="Facility">
+        <Rule path="/items[at0.15]" max="0" />
+        <Rule path="/items[at0.13]" max="0" />
+        <Rule path="/items[at0.14]" max="0" />
+        <Rule path="/items[at0005]" max="0" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/protocol[at0008]/items[at0141]" name="Department">
+        <Rule path="/items[at0.15]" max="0" />
+        <Rule path="/items[at0.13]" max="0" />
+        <Rule path="/items[at0.14]" max="0" />
+        <Rule path="/items[at0005]" max="0" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/protocol[at0008]/items[at0141]" name="Ward">
+        <Rule path="/items[at0.15]" max="0" />
+        <Rule path="/items[at0.13]" max="0" />
+        <Rule path="/items[at0.14]" max="0" />
+        <Rule path="/items[at0005]" max="0" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_professional-mml.v1" concept_name="Professional Individual demographics for MML" max="1" path="/protocol[at0008]/items[at0141]" name="client">
+        <Rule path="/items[at0003]/items[at0013]" max="0" />
+        <Rule path="/items[at0003]/items[at0005]" max="0" />
+        <Rule path="/items[at0003]/items[at0006]" max="0" />
+        <Rule path="/items[at0003]/items[at0012]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name-mml.v1" concept_name="Person name for MML expression" path="/items[at0015.1]">
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0.23]" max="0" />
+          <Rule path="/items[at0022]" max="0" />
+          <Rule path="/items[at0002]" max="0" />
+          <Rule path="/items[at0014]" max="0" />
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/protocol[at0008]/items[at0142]" name="Facility">
+        <Rule path="/items[at0.15]" max="0" />
+        <Rule path="/items[at0.13]" max="0" />
+        <Rule path="/items[at0.14]" max="0" />
+        <Rule path="/items[at0005]" max="0" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/protocol[at0008]/items[at0142]" name="Department">
+        <Rule path="/items[at0.15]" max="0" />
+        <Rule path="/items[at0.13]" max="0" />
+        <Rule path="/items[at0.14]" max="0" />
+        <Rule path="/items[at0005]" max="0" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/protocol[at0008]/items[at0142]" name="Ward">
+        <Rule path="/items[at0.15]" max="0" />
+        <Rule path="/items[at0.13]" max="0" />
+        <Rule path="/items[at0.14]" max="0" />
+        <Rule path="/items[at0005]" max="0" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_professional-mml.v1" concept_name="Professional Individual demographics for MML" max="1" path="/protocol[at0008]/items[at0142]" name="performer">
+        <Rule path="/items[at0003]/items[at0013]" max="0" />
+        <Rule path="/items[at0003]/items[at0005]" max="0" />
+        <Rule path="/items[at0003]/items[at0006]" max="0" />
+        <Rule path="/items[at0003]/items[at0012]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name-mml.v1" concept_name="Person name for MML expression" path="/items[at0015.1]">
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0.23]" max="0" />
+          <Rule path="/items[at0022]" max="0" />
+          <Rule path="/items[at0002]" max="0" />
+          <Rule path="/items[at0014]" max="0" />
+        </Items>
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_professional-mml.v1" concept_name="Professional Individual demographics for MML" max="1" path="/protocol[at0008]/items[at0142]" name="supervisor">
+        <Rule path="/items[at0003]/items[at0013]" max="0" />
+        <Rule path="/items[at0003]/items[at0005]" max="0" />
+        <Rule path="/items[at0003]/items[at0006]" max="0" />
+        <Rule path="/items[at0003]/items[at0012]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name-mml.v1" concept_name="Person name for MML expression" path="/items[at0015.1]">
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0.23]" max="0" />
+          <Rule path="/items[at0022]" max="0" />
+          <Rule path="/items[at0002]" max="0" />
+          <Rule path="/items[at0014]" max="0" />
+        </Items>
+      </Items>
     </Content>
-    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.reason_for_encounter.v1" concept_name="Reason for Encounter" max="1" path="/content" name="Chief complaits">
+    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.reason_for_encounter.v1" concept_name="Reason for Encounter" max="1" path="/content" name="Chief complaints">
       <Rule path="/data[at0001]/items[at0002]" max="0" />
     </Content>
     <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1" concept_name="Problem/Diagnosis" path="/content">
-      <Rule path="/data[at0001]/items[at0009]" max="0" />
       <Rule path="/data[at0001]/items[at0005]" max="0" />
       <Rule path="/data[at0001]/items[at0003]" max="0" />
       <Rule path="/data[at0001]/items[at0004]" max="0" />
@@ -85,10 +160,13 @@
     </Content>
     <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/content">
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]">
+        <Rule path="/items[at0004]" max="0" />
         <Rule path="/items[at0003]" max="0" />
       </Items>
     </Content>
     <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" path="/content" />
-    <Context />
+    <Context>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.mml_report_metadata.v1" concept_name="MML Report module meta-data" path="/context/other_context[at0001]/items" />
+    </Context>
   </definition>
 </template>

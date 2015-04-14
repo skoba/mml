@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
   <id>54b1f6b6-3e3c-4724-a299-0178f92ec6ca</id>
-  <name>mml_summary_module</name>
+  <name>mml_outpatient_summary_module</name>
   <description>
     <lifecycle_state>Initial</lifecycle_state>
     <details>
