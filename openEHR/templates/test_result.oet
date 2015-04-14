@@ -114,7 +114,7 @@
           <Rule path="/items[at0005]" max="0" />
         </Items>
       </Items>
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" path="/protocol[at0004]/items[at0017]">
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" max="1" path="/protocol[at0004]/items[at0017]" name="Laboratory center">
         <Rule path="/items[at0005]" max="0" />
       </Items>
     </Content>
