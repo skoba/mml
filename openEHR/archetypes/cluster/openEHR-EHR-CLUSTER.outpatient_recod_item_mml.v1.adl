@@ -2,7 +2,7 @@
 	openEHR-EHR-CLUSTER.outpatient_recod_item_mml.v1
 
 concept
-	[at0000]	-- Outpatient recod item for MML
+	[at0000]	-- Outpatient recod item mml
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -39,15 +39,34 @@ description
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"45EDC5695FDD2368D37101A042C706B6">
+		["MD5-CAM-1.0.1"] = <"8F93661773D84DC79F7A65EAB880A861">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- Outpatient recod item for MML
+	CLUSTER[at0000] matches {	-- Outpatient recod item mml
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0001] occurrences matches {0..1} matches {	-- patient condition
 				value matches {
 					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {	-- Emergency
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True, False}
+					}
+				}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {	-- first encounter
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True, False}
+					}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- date
+				value matches {
+					DV_DATE matches {*}
 				}
 			}
 			allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {	-- staffInfo
@@ -67,11 +86,23 @@ ontology
 				>
 				["at0001"] = <
 					text = <"patient condition">
-					description = <"*">
+					description = <"*Patient condition(ja)">
 				>
 				["at0002"] = <
 					text = <"staffInfo">
+					description = <"***(ja)(ja)">
+				>
+				["at0003"] = <
+					text = <"date">
+					description = <"**(ja)">
+				>
+				["at0004"] = <
+					text = <"emergency">
 					description = <"*">
+				>
+				["at0005"] = <
+					text = <"*first encounter(ja)">
+					description = <"***(ja)(ja)">
 				>
 			>
 		>
@@ -82,11 +113,23 @@ ontology
 					description = <"record outpatient record for MML">
 				>
 				["at0001"] = <
-					text = <"*新規Element(ja)">
-					description = <"**(ja)">
+					text = <"patient condition">
+					description = <"Patient condition">
 				>
 				["at0002"] = <
-					text = <"*Cluster(ja)">
+					text = <"staffInfo">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"date">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Emergency">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"first encounter">
 					description = <"**(ja)">
 				>
 			>

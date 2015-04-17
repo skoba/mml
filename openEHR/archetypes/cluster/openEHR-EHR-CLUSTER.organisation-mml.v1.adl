@@ -51,7 +51,7 @@ Nicht zur Identifikation von Einrichtungen zu benutzen, die eindeutig Registern 
 	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
 	other_details = <
 		["references"] = <"From NHS Scotland SCI-XML messaging standards http://www.isdscotland.org/isd/files/general-v2-7.xsd NHS Scotland Interoperability Working Group http://www.isdscotland.org/isd/5194.html">
-		["MD5-CAM-1.0.1"] = <"A697B204109C5D66F8C2C368E6DEC560">
+		["MD5-CAM-1.0.1"] = <"7A343177B1258125EE16BEF2E425D41A">
 	>
 
 definition
@@ -120,6 +120,20 @@ definition
 					}
 				}
 			}
+			CLUSTER[at0.19] occurrences matches {0..*} matches {	-- Other identifiers
+				items cardinality matches {1..*; unordered} matches {
+					use_node ELEMENT occurrences matches {0..1} /items[at0011]	-- /items[Identifier]
+					use_node ELEMENT occurrences matches {0..1} /items[at0.12]	-- /items[Identifier type]
+					use_node ELEMENT occurrences matches {0..1} /items[at0.14]	-- /items[Identifier check digit schema]
+					use_node ELEMENT occurrences matches {0..1} /items[at0.13]	-- /items[Identifier check digit]
+				}
+			}
+			CLUSTER[at0.20] occurrences matches {0..*} matches {	-- Other names
+				items cardinality matches {1..*; unordered} matches {
+					use_node ELEMENT /items[at0001]	-- /items[Name of Organisation]
+					use_node ELEMENT occurrences matches {0..1} /items[at0.15]	-- /items[Name representation]
+				}
+			}
 		}
 	}
 
@@ -154,6 +168,14 @@ ontology
 				["at0.18"] = <
 					text = <"P">
 					description = <"Phonetic">
+				>
+				["at0.19"] = <
+					text = <"Other identifiers">
+					description = <"*">
+				>
+				["at0.20"] = <
+					text = <"Other names">
+					description = <"*">
 				>
 				["at0000"] = <
 					text = <"Organisation">
@@ -226,6 +248,14 @@ ontology
 				["at0.18"] = <
 					text = <"*P(en)">
 					description = <"*Phonetic(en)">
+				>
+				["at0.19"] = <
+					text = <"*Other identifiers(en)">
+					description = <"**(en)">
+				>
+				["at0.20"] = <
+					text = <"*Other names(en)">
+					description = <"**(en)">
 				>
 				["at0000"] = <
 					text = <"Einrichtung">

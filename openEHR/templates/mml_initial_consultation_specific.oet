@@ -109,6 +109,8 @@
         </Item>
         <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.chest_expansion-birth.v1" concept_name="Measurement of chest and expansion at birth" max="1" path="/items" name="Chest circumference at birth">
           <Rule path="/data[at0001]/events[at0002]/state[at0005]/items[at0006]" max="0" />
+          <Rule path="/data[at0001]/events[at0010]/data[at0003]/items[at0011]" max="0" />
+          <Rule path="/data[at0001]/events[at0010]/state[at0005]/items[at0006]" max="0" />
         </Item>
         <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.height-birth.v1" concept_name="Height/Length at birth" path="/items">
           <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0018]" max="0" />

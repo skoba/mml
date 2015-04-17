@@ -64,6 +64,7 @@
     <Rule path="/items[at0003]/items[at0013]" max="0" />
     <Rule path="/items[at0003]/items[at0005]" max="0" />
     <Rule path="/items[at0003]/items[at0006]" max="0" />
+    <Rule path="/items[at0003]/items[at0011.1]" max="0" />
     <Rule path="/items[at0003]/items[at0012]" max="0" />
     <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name-mml.v1" concept_name="Person name for MML expression" path="/items[at0015.1]" />
     <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-mml.v1" concept_name="Telecom details for MML" path="/items[at0003]/items[at0017]">

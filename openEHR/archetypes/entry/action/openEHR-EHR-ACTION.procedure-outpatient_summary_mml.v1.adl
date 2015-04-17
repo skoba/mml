@@ -4,7 +4,7 @@ specialize
 	openEHR-EHR-ACTION.procedure.v1
 
 concept
-	[at0000.1]	-- Procedure!
+	[at0000.1]	-- Procedure record for outpatient service for MML
 language
 	original_language = <[ISO_639-1::en]>
 description
@@ -53,11 +53,11 @@ Not to be used to record a whole operation or procedure report.">
 	other_details = <
 		["references"] = <"Procedure, Draft Archetype [Internet]. National eHealth Transition Authority, Australia, NEHTA Clinical Knowledge Manager [cited: 2015-03-21]. Available from: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.936.">
 		["current_contact"] = <"Heather Leslie, Ocean Informatics, heather.leslie@oceaninformatics.com">
-		["MD5-CAM-1.0.1"] = <"67866A549FE0B032D09F02FD41D11D2F">
+		["MD5-CAM-1.0.1"] = <"33DF26789BA73E8AC8D7D162F680BB4F">
 	>
 
 definition
-	ACTION[at0000.1] matches {	-- Procedure!
+	ACTION[at0000.1] matches {	-- Procedure record for outpatient service for MML
 		ism_transition matches {
 			ISM_TRANSITION[at0034] matches {	-- Procedure planned
 				current_state matches {
@@ -207,6 +207,13 @@ definition
 							DV_TEXT matches {*}
 						}
 					}
+					ELEMENT[at0.2] occurrences matches {0..1} matches {	-- Initial encounter
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
 					allow_archetype CLUSTER[at0062] occurrences matches {0..*} matches {	-- Multimedia
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1/}
@@ -264,31 +271,35 @@ ontology
 	term_definitions = <
 		["en"] = <
 			items = <
+				["at0.2"] = <
+					text = <"Initial encounter">
+					description = <"*">
+				>
 				["at0000"] = <
 					text = <"Procedure">
 					description = <"A clinical activity carried out for screening, investigative, diagnostic, curative, therapeutic, evaluative or palliative purposes.">
 				>
 				["at0000.1"] = <
-					text = <"Procedure!">
-					description = <"A clinical activity carried out for screening, investigative, diagnostic, curative, therapeutic, evaluative or palliative purposes.!">
+					text = <"Procedure record for outpatient service for MML">
+					description = <"A clinical activity carried out for outpatient service.">
 				>
 				["at0001"] = <
 					text = <"Tree">
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					comment = <"Coding of the specific procedure with a terminology is preferred, where possible.">
-					text = <"Procedure name">
 					description = <"Identification of the procedure by name.">
+					text = <"Procedure name">
+					comment = <"Coding of the specific procedure with a terminology is preferred, where possible.">
 				>
 				["at0002.1"] = <
 					text = <"Procedure name">
 					description = <"Identification of the procedure by name.">
 				>
 				["at0003"] = <
-					comment = <"Use to capture detailed, structured information about anatomical location, method & technique, equipment used, devices implanted, results, findings etc.">
-					text = <"Procedure detail">
 					description = <"Structured information about the procedure.">
+					text = <"Procedure detail">
+					comment = <"Use to capture detailed, structured information about anatomical location, method & technique, equipment used, devices implanted, results, findings etc.">
 				>
 				["at0005"] = <
 					text = <"Comment">
@@ -299,9 +310,9 @@ ontology
 					description = <"Details about any complication arising from the procedure.">
 				>
 				["at0014"] = <
-					comment = <"For example: the reason for the cancellation or suspension of the procedure.">
-					text = <"Reason">
 					description = <"Reason that the activity or care pathway step for the identified procedure was carried out.">
+					text = <"Reason">
+					comment = <"For example: the reason for the cancellation or suspension of the procedure.">
 				>
 				["at0034"] = <
 					text = <"Procedure planned">
@@ -340,14 +351,14 @@ ontology
 					description = <"The procedure has been performed.">
 				>
 				["at0048"] = <
-					comment = <"Coding with a terminology is preferred, where possible.">
-					text = <"Outcome">
 					description = <"Outcome of procedure performed.">
+					text = <"Outcome">
+					comment = <"Coding with a terminology is preferred, where possible.">
 				>
 				["at0049"] = <
-					comment = <"For example: description about the performance and findings from the the procedure, the failed attempt or the cancellation of the procedure.">
-					text = <"Description">
 					description = <"Narrative description about the procedure, as appropriate for the pathway step.">
+					text = <"Description">
+					comment = <"For example: description about the performance and findings from the the procedure, the failed attempt or the cancellation of the procedure.">
 				>
 				["at0053"] = <
 					text = <"Tree">
@@ -370,14 +381,14 @@ ontology
 					description = <"Details about the healthcare provider or organisation receiving the request for service.">
 				>
 				["at0058"] = <
-					comment = <"Coding with a terminology is preferred, where possible.">
-					text = <"Urgency">
 					description = <"Urgency of the procedure.">
+					text = <"Urgency">
+					comment = <"Coding with a terminology is preferred, where possible.">
 				>
 				["at0059"] = <
-					comment = <"This will indicate the scheduled date/time when recorded against the Scheduled care pathway step or the actual Start date/time in the Procedure performed step.">
-					text = <"Start date/time">
 					description = <"The start date and/or time for the procedure.">
+					text = <"Start date/time">
+					comment = <"This will indicate the scheduled date/time when recorded against the Scheduled care pathway step or the actual Start date/time in the Procedure performed step.">
 				>
 				["at0060"] = <
 					text = <"Finish date/time">
