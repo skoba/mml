@@ -91,6 +91,10 @@
         <Rule path="/data[at0001]/items[at0027]" max="0" />
         <Rule path="/data[at0001]/items[at0031]" max="0" />
       </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.progress_note.v1" concept_name="Progress Note" path="/items[at0004]/items" />
+      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/items[at0004]/items">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
+      </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.reason_for_encounter.v1" concept_name="Reason for Encounter" path="/items[at0005]/items">
         <Rule path="/data[at0001]/items[at0004]" max="0" />
       </Item>
@@ -109,11 +113,18 @@
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" max="1" path="/items[at0008]/items" name="Related document">
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
       </Item>
-      <Item xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.care_plan.v1" concept_name="Care Plan" path="/items[at0008]/items">
-        <Rule path="/activities[at0001]/description[at0004]/items[at0017]" max="0" />
-        <Rule path="/activities[at0001]/description[at0004]/items[at0011]" max="0" />
-        <Rule path="/activities[at0001]/description[at0004]/items[at0018]" max="0" />
-        <Rule path="/activities[at0001]/description[at0004]/items[at0019]" max="0" />
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.global.v1" concept_name="Global assessment" path="/items[at0009]/items">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0064]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0089]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0129]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0065]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0011]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0038]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0069]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0092]" max="0" />
+      </Item>
+      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/items[at0009]/items">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
       </Item>
       <Item xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.medication_order.v1" concept_name="Medication order" path="/items[at0010]/items">
         <Rule path="/activities[at0001]/description[at0002]/items[at0003]">
@@ -137,6 +148,15 @@
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
       </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" max="1" path="/items[at0011]/items" name="Remarks" />
+      <Item xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.care_plan.v1" concept_name="Care Plan" path="/items[at0012]/items">
+        <Rule path="/activities[at0001]/description[at0004]/items[at0017]" max="0" />
+        <Rule path="/activities[at0001]/description[at0004]/items[at0011]" max="0" />
+        <Rule path="/activities[at0001]/description[at0004]/items[at0018]" max="0" />
+        <Rule path="/activities[at0001]/description[at0004]/items[at0019]" max="0" />
+      </Item>
+      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/items[at0012]/items">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
+      </Item>
     </Content>
     <Context>
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.duration.v1" concept_name="Duration" path="/context/other_context[at0001]/items" />
