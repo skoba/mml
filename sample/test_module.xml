@@ -315,86 +315,46 @@
       <mmlLb:value>0.22</mmlLb:value>
       <mmlLb:numValue mmlLb:out="N">0.22</mmlLb:numValue>
     </mmlLb:item>
-
-<mmlLb:item>
-
-<mmlLb:itemName mmlLb:itCode="913" mmlLb:itCodeId="KRTKC">HBsAg</mmlLb:itemName>
-
-<mmlLb:value>インセイ</mmlLb:value>
-
-<mmlLb:numValue mmlLb:out="N"/>
-
-</mmlLb:item>
-
-<mmlLb:item>
-
-<mmlLb:itemName mmlLb:itCode="914" mmlLb:itCodeId="KRTKC">sAgCI</mmlLb:itemName>
-
-<mmlLb:value>0.00</mmlLb:value>
-
-<mmlLb:numValue mmlLb:out="N">0</mmlLb:numValue>
-
-</mmlLb:item>
-
-<mmlLb:item>
-
-<mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
-
-<mmlLb:value>ヨウセイ</mmlLb:value>
-
-<mmlLb:numValue mmlLb:out="N"/>
-
-</mmlLb:item>
-
-<mmlLb:item>
-
-<mmlLb:itemName mmlLb:itCode="916" mmlLb:itCodeId="KRTKC">mIUml</mmlLb:itemName>
-
-<mmlLb:value>42.9</mmlLb:value>
-
-<mmlLb:numValue mmlLb:out="N">42.9</mmlLb:numValue>
-
-</mmlLb:item>
-
-<mmlLb:item>
-
-<mmlLb:itemName mmlLb:itCode="921" mmlLb:itCodeId="KRTKC">HBcAb</mmlLb:itemName>
-
-<mmlLb:value>ヨウセイ</mmlLb:value>
-
-<mmlLb:numValue mmlLb:out="N"/>
-
-</mmlLb:item>
-
-<mmlLb:item>
-
-<mmlLb:itemName mmlLb:itCode="922" mmlLb:itCodeId="KRTKC">cAb%I</mmlLb:itemName>
-
-<mmlLb:value>68.03</mmlLb:value>
-
-<mmlLb:numValue mmlLb:out="N">68.03</mmlLb:numValue>
-
-</mmlLb:item>
-
-<mmlLb:item>
-
-<mmlLb:itemName mmlLb:itCode="923" mmlLb:itCodeId="KRTKC">cAb20</mmlLb:itemName>
-
-<mmlLb:value>0.00</mmlLb:value>
-
-<mmlLb:numValue mmlLb:out="N">0</mmlLb:numValue>
-
-</mmlLb:item>
-
-<mmlLb:item>
-
-<mmlLb:itemName mmlLb:itCode="931" mmlLb:itCodeId="KRTKC">IgG</mmlLb:itemName>
-
-<mmlLb:value>1030</mmlLb:value>
-
-<mmlLb:numValue mmlLb:out="N">1030</mmlLb:numValue>
-
-</mmlLb:item>
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="913" mmlLb:itCodeId="KRTKC">HBsAg</mmlLb:itemName>
+      <mmlLb:value>インセイ</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N"/>
+    </mmlLb:item>
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="914" mmlLb:itCodeId="KRTKC">sAgCI</mmlLb:itemName>
+      <mmlLb:value>0.00</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N">0</mmlLb:numValue>
+    </mmlLb:item>
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
+      <mmlLb:value>ヨウセイ</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N"/>
+    </mmlLb:item>
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="916" mmlLb:itCodeId="KRTKC">mIUml</mmlLb:itemName>
+      <mmlLb:value>42.9</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N">42.9</mmlLb:numValue>
+    </mmlLb:item>
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="921" mmlLb:itCodeId="KRTKC">HBcAb</mmlLb:itemName>
+      <mmlLb:value>ヨウセイ</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N"/>
+    </mmlLb:item>
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="922" mmlLb:itCodeId="KRTKC">cAb%I</mmlLb:itemName>
+      <mmlLb:value>68.03</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N">68.03</mmlLb:numValue>
+    </mmlLb:item>
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="923" mmlLb:itCodeId="KRTKC">cAb20</mmlLb:itemName>
+      <mmlLb:value>0.00</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N">0</mmlLb:numValue>
+    </mmlLb:item>
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="931" mmlLb:itCodeId="KRTKC">IgG</mmlLb:itemName>
+      <mmlLb:value>1030</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N">1030</mmlLb:numValue>
+    </mmlLb:item>
 
 <mmlLb:item>
 

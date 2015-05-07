@@ -118,7 +118,7 @@
           <upper_unbounded>true</upper_unbounded>
           <lower>0</lower>
         </occurrences>
-        <node_id>at0000.1</node_id>
+        <node_id>at0000</node_id>
         <attributes xsi:type="C_SINGLE_ATTRIBUTE">
           <rm_attribute_name>data</rm_attribute_name>
           <existence>
@@ -192,7 +192,7 @@
                   <upper_included>true</upper_included>
                   <lower_unbounded>false</lower_unbounded>
                   <upper_unbounded>false</upper_unbounded>
-                  <lower>1</lower>
+                  <lower>0</lower>
                   <upper>1</upper>
                 </occurrences>
                 <node_id>at0063</node_id>
@@ -242,6 +242,56 @@
                           <value>local</value>
                         </terminology_id>
                         <code_list>at0065</code_list>
+                      </children>
+                    </attributes>
+                  </children>
+                </attributes>
+                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                  <rm_attribute_name>null_flavour</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>0</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id />
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>defining_code</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>1</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_CODE_PHRASE">
+                        <rm_type_name>CODE_PHRASE</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                        <terminology_id>
+                          <value>openehr</value>
+                        </terminology_id>
+                        <code_list>253</code_list>
                       </children>
                     </attributes>
                   </children>
@@ -417,13 +467,11 @@
                     <rm_type_name>ELEMENT</rm_type_name>
                     <occurrences>
                       <lower_included>true</lower_included>
-                      <upper_included>true</upper_included>
                       <lower_unbounded>false</lower_unbounded>
-                      <upper_unbounded>false</upper_unbounded>
-                      <lower>0</lower>
-                      <upper>1</upper>
+                      <upper_unbounded>true</upper_unbounded>
+                      <lower>1</lower>
                     </occurrences>
-                    <node_id>at0.117</node_id>
+                    <node_id>at0011</node_id>
                     <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                       <rm_attribute_name>value</rm_attribute_name>
                       <existence>
@@ -436,6 +484,41 @@
                       </existence>
                       <children xsi:type="C_COMPLEX_OBJECT">
                         <rm_type_name>DV_TEXT</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0027</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>0</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_DATE_TIME</rm_type_name>
                         <occurrences>
                           <lower_included>true</lower_included>
                           <upper_included>true</upper_included>
@@ -534,7 +617,7 @@
                         <right_operand xsi:type="EXPR_LEAF">
                           <type>C_STRING</type>
                           <item xsi:type="C_STRING">
-                            <pattern>openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1</pattern>
+                            <pattern>openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.multimedia(-[a-zA-Z0-9_]+)*\.v1</pattern>
                           </item>
                           <reference_type>constraint</reference_type>
                         </right_operand>
@@ -550,6 +633,35 @@
                       <lower>0</lower>
                     </occurrences>
                     <node_id>at0096</node_id>
+                    <includes>
+                      <expression xsi:type="EXPR_BINARY_OPERATOR">
+                        <type>Boolean</type>
+                        <operator>2007</operator>
+                        <precedence_overridden>false</precedence_overridden>
+                        <left_operand xsi:type="EXPR_LEAF">
+                          <type>String</type>
+                          <item xsi:type="xsd:string">archetype_id/value</item>
+                          <reference_type>attribute</reference_type>
+                        </left_operand>
+                        <right_operand xsi:type="EXPR_LEAF">
+                          <type>C_STRING</type>
+                          <item xsi:type="C_STRING">
+                            <pattern>openEHR-EHR-CLUSTER\.citation(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.amount(-[a-zA-Z0-9_]+)*\.v1</pattern>
+                          </item>
+                          <reference_type>constraint</reference_type>
+                        </right_operand>
+                      </expression>
+                    </includes>
+                  </children>
+                  <children xsi:type="ARCHETYPE_SLOT">
+                    <rm_type_name>CLUSTER</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
+                      <lower>0</lower>
+                    </occurrences>
+                    <node_id>at0119</node_id>
                     <includes>
                       <expression xsi:type="EXPR_BINARY_OPERATOR">
                         <type>Boolean</type>
@@ -684,6 +796,375 @@
                 <lower>0</lower>
                 <upper>1</upper>
               </existence>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>ELEMENT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>0</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id>at0062</node_id>
+                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                  <rm_attribute_name>value</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>0</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>DV_DATE_TIME</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id />
+                  </children>
+                </attributes>
+              </children>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>ELEMENT</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>0</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id>at0047</node_id>
+                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                  <rm_attribute_name>value</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>0</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>DV_EHR_URI</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id />
+                  </children>
+                </attributes>
+              </children>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>CLUSTER</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>0</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id>at0099</node_id>
+                <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+                  <rm_attribute_name>items</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0044</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>0</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_BOOLEAN</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>value</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_PRIMITIVE_OBJECT">
+                            <rm_type_name>BOOLEAN</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                            <item xsi:type="C_BOOLEAN">
+                              <true_valid>true</true_valid>
+                              <false_valid>true</false_valid>
+                            </item>
+                          </children>
+                        </attributes>
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0048</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>0</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_TEXT</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
+                      <lower>0</lower>
+                    </occurrences>
+                    <node_id>at0045</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>0</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_URI</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                      </children>
+                    </attributes>
+                  </children>
+                  <cardinality>
+                    <is_ordered>false</is_ordered>
+                    <is_unique>false</is_unique>
+                    <interval>
+                      <lower_included>true</lower_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
+                      <lower>1</lower>
+                    </interval>
+                  </cardinality>
+                </attributes>
+              </children>
+              <children xsi:type="C_COMPLEX_OBJECT">
+                <rm_type_name>CLUSTER</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <upper_included>true</upper_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>false</upper_unbounded>
+                  <lower>0</lower>
+                  <upper>1</upper>
+                </occurrences>
+                <node_id>at0098</node_id>
+                <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+                  <rm_attribute_name>items</rm_attribute_name>
+                  <existence>
+                    <lower_included>true</lower_included>
+                    <upper_included>true</upper_included>
+                    <lower_unbounded>false</lower_unbounded>
+                    <upper_unbounded>false</upper_unbounded>
+                    <lower>1</lower>
+                    <upper>1</upper>
+                  </existence>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>1</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0068</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>0</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_URI</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
+                      <lower>0</lower>
+                    </occurrences>
+                    <node_id>at0050</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>0</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_IDENTIFIER</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                      </children>
+                    </attributes>
+                  </children>
+                  <children xsi:type="C_COMPLEX_OBJECT">
+                    <rm_type_name>ELEMENT</rm_type_name>
+                    <occurrences>
+                      <lower_included>true</lower_included>
+                      <upper_included>true</upper_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>false</upper_unbounded>
+                      <lower>0</lower>
+                      <upper>1</upper>
+                    </occurrences>
+                    <node_id>at0069</node_id>
+                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                      <rm_attribute_name>value</rm_attribute_name>
+                      <existence>
+                        <lower_included>true</lower_included>
+                        <upper_included>true</upper_included>
+                        <lower_unbounded>false</lower_unbounded>
+                        <upper_unbounded>false</upper_unbounded>
+                        <lower>0</lower>
+                        <upper>1</upper>
+                      </existence>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_URI</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
+                      </children>
+                    </attributes>
+                  </children>
+                  <cardinality>
+                    <is_ordered>false</is_ordered>
+                    <is_unique>false</is_unique>
+                    <interval>
+                      <lower_included>true</lower_included>
+                      <lower_unbounded>false</lower_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
+                      <lower>1</lower>
+                    </interval>
+                  </cardinality>
+                </attributes>
+              </children>
               <cardinality>
                 <is_ordered>false</is_ordered>
                 <is_unique>false</is_unique>
@@ -698,161 +1179,141 @@
           </children>
         </attributes>
         <archetype_id>
-          <value>openEHR-EHR-EVALUATION.adverse_reaction_fhir-mml.v1</value>
+          <value>openEHR-EHR-EVALUATION.adverse_reaction_fhir.v1</value>
         </archetype_id>
-        <term_definitions code="at0.117">
-          <items id="description">narrative description of onset, such as "childhood", or " approx. 20 years ago"</items>
-          <items id="text">Onset description</items>
-        </term_definitions>
         <term_definitions code="at0000">
-          <items id="comment">Substances include: a therapeutic substance administered correctly at an appropriate dosage for the individual; food; material derived from plants or animals; or venom from insect stings.</items>
-          <items id="description">Harmful or undesirable, physiological response which is unique to an individual and associated with exposure to an identified substance.</items>
+          <items id="comment">Substances include, but are not limited to: a therapeutic substance administered correctly at an appropriate dosage for the individual; food; material derived from plants or animals; or venom from insect stings.</items>
+          <items id="description">Risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance.</items>
           <items id="source">openEHR,FHIR</items>
-          <items id="text">Adverse Reaction (FHIR/openEHR) for MML</items>
-        </term_definitions>
-        <term_definitions code="at0000.1">
-          <items id="comment">Substances include: a therapeutic substance administered correctly at an appropriate dosage for the individual; food; material derived from plants or animals; or venom from insect stings.!</items>
-          <items id="description">Harmful or undesirable, physiological response which is unique to an individual and associated with exposure to an identified substance.</items>
-          <items id="source">openEHR,FHIR!</items>
-          <items id="text">Adverse Reaction (FHIR/openEHR) for MML</items>
+          <items id="text">Adverse Reaction Risk(FHIR/openEHR)</items>
         </term_definitions>
         <term_definitions code="at0001">
           <items id="description">@ internal @</items>
           <items id="text">Tree</items>
         </term_definitions>
         <term_definitions code="at0002">
-          <items id="comment">It is strongly recommended that Substance be coded with a terminology, where possible. Plain text is allowed only if there is no appropriate terminology available.</items>
-          <items id="description">Identification of a substance, or a group of substances, that is considered to be responsible for the Adverse Reaction.</items>
+          <items id="comment">The Substance field allows for the use of a either specific substance (for example 'Amoxycillin') or a group or class of substances (for example 'Penicillins'). 
+Duplication in the 'Substance' and 'Specific substance' fields is acceptable if clinically appropriate. It is strongly recommended that both 'Substance' and 'Specific substance' be coded with a terminology capable of triggering decision support, where possible. For example: including but not limited to RxNorm, Snomed CT, DM+D, NDFRT, ICD-9, IDC-10, UNI, ATC and CPT. Plain text should be used only if there is no appropriate terminology available. </items>
+          <items id="description">Identification of a substance, or a class of substances, that is considered to be responsible for the adverse reaction.</items>
           <items id="source">openEHR,FHIR,DAM</items>
           <items id="text">Substance</items>
         </term_definitions>
         <term_definitions code="at0006">
-          <items id="comment">For example: including reason for flagging a Seriousness of 'High Risk'; and instructions related to future exposure or administration of the Substance, such as administration within an Intensive Care Unit or under corticosteroid cover.</items>
-          <items id="description">Additional narrative about the propensity for the Adverse Reaction, not captured in other fields.</items>
+          <items id="comment">For example: including reason for flagging a 'Criticality' of 'High risk'; and instructions related to future exposure or administration of the Substance, such as administration within an Intensive Care Unit or under corticosteroid cover.</items>
+          <items id="description">Additional narrative about the propensity for the adverse reaction, not captured in other fields.</items>
           <items id="source">openEHR</items>
           <items id="text">Comment</items>
         </term_definitions>
         <term_definitions code="at0009">
-          <items id="description">Details about each Adverse Reaction Event linked to exposure to the identified Substance.</items>
+          <items id="description">Details about each adverse reaction event linked to exposure to the identified 'Substance'.</items>
           <items id="source">openEHR,FHIR,DAM</items>
-          <items id="text">Reaction Event</items>
+          <items id="text">Reaction event</items>
         </term_definitions>
         <term_definitions code="at0010">
-          <items id="comment">Coding of the Specific Substance with a terminology is preferred, where possible. This data element should only differ to the 'Substance' data element when the value for the 'Substance' is a general group of substances, for example, Amoxycillin when the 'Substance' is the class of Penicillins.</items>
-          <items id="description">Specific identification of the Substance considered to be responsible for the Adverse Reaction event.</items>
+          <items id="comment">For example: 'Amoxycillin'. Duplication of the value recorded in the 'Substance' and 'Specific substance' fields is acceptable if clinically appropriate. It is strongly recommended that 'Specific substance' be coded with a terminology capable of triggering decision support, where possible.  For example: including but not limited to RxNorm, Snomed CT, DM+D, NDFRT, ICD-9, IDC-10, UNI, ATC and CPT. Plain text should be used only if there is no appropriate terminology available. </items>
+          <items id="description">Identification of the specific substance considered to be responsible for the adverse reaction event.</items>
           <items id="source">FHIR, openEHR,DAM</items>
-          <items id="text">Specific Substance</items>
+          <items id="text">Specific substance</items>
         </term_definitions>
         <term_definitions code="at0011">
-          <items id="comment">Manifestation can be expressed as a single word, phrase or brief description. For example: nausea, rash or no reaction. It is preferable that Manifestation should be coded with a terminology, where possible. The values entered here may be used to display on an application screen as part of a list of adverse reactions, as recommended in the UK NHS CUI guidelines.
+          <items id="comment">Manifestation can be expressed as a single word, phrase or brief description. For example: nausea, rash or no reaction. It is preferable that 'Manifestation' should be coded with a terminology, where possible. The values entered here may be used to display on an application screen as part of a list of adverse reactions, as recommended in the UK NHS CUI guidelines.
 
-</items>
-          <items id="description">Clinical manifestation of the Adverse Reaction.</items>
+
+
+Terminologies commonly used include, but are not limited to, SNOMED-CT or ICD10.</items>
+          <items id="description">Clinical symptoms and/or signs that are observed or associated with the adverse reaction.</items>
           <items id="source">FHIR, openEHR,DAM</items>
           <items id="text">Manifestation</items>
         </term_definitions>
         <term_definitions code="at0012">
-          <items id="description">Narrative description about the Reaction.</items>
+          <items id="description">Narrative description about the adverse reaction as a whole, including details of the manifestation if required.</items>
           <items id="source">FHIR, openEHR</items>
-          <items id="text">Reaction Description</items>
+          <items id="text">Reaction description</items>
         </term_definitions>
         <term_definitions code="at0018">
-          <items id="description">Narrative description about exposure to the Substance.</items>
+          <items id="description">Narrative description about exposure to the identified 'Specific substance'.</items>
           <items id="source">openEHR</items>
-          <items id="text">Exposure Description</items>
+          <items id="text">Exposure description</items>
         </term_definitions>
         <term_definitions code="at0020">
-          <items id="comment">[Note: FHIR - Maps to AdverseReaction/exposure/date.
- DAM - Maps to Exposure/exposureDate.]</items>
-          <items id="description">Record of the date and/or time of the first exposure to the Substance.</items>
+          <items id="comment">Exposure can be more complicated by more than one exposure events leading to a reaction. Further details about the nature of the exposure can be provided by use of additional archetypes in the 'Exposure details' SLOT or as text in the 'Exposure description'.</items>
+          <items id="description">Record of the date and/or time of the first exposure to the Substance for this Reaction Event.</items>
           <items id="source">FHIR, openEHR,DAM</items>
-          <items id="text">Initial Exposure</items>
+          <items id="text">Initial exposure</items>
         </term_definitions>
         <term_definitions code="at0021">
-          <items id="comment">[**Note: openEHR - 'Certainty' applies to the whole reaction, not to a specific agent.
- FHIR - A statement of how confident that the recorder was that this exposure caused the reaction.
- FHIR - 'unknown' is captured as an openEHR 'null flavour'. 
-DAM - not captured.]</items>
-          <items id="description">Statement about the degree of clinical certainty that the Specific Substance was the cause of the Manifestation in this reaction event.</items>
+          <items id="description">Statement about the degree of clinical certainty that the identified'Specific substance' was the cause of the 'Manifestation' in this reaction event.</items>
           <items id="source">FHIR</items>
           <items id="text">Certainty</items>
         </term_definitions>
         <term_definitions code="at0023">
-          <items id="description">There is a high level of certainty that the reaction was caused by the identified Substance.</items>
+          <items id="description">There is a high level of clinical certainty that the reaction was caused by the identified 'Specific substance'.</items>
           <items id="source">openEHR</items>
-          <items id="text">High</items>
+          <items id="text">Likely</items>
         </term_definitions>
         <term_definitions code="at0025">
-          <items id="description">The amount of time the individual was exposed to the Substance.</items>
+          <items id="description">The total amount of time the individual was exposed to the identified 'Specific substance'.</items>
           <items id="source">openEHR</items>
-          <items id="text">Duration of Exposure</items>
+          <items id="text">Duration of exposure</items>
         </term_definitions>
         <term_definitions code="at0027">
-          <items id="comment">[Note: FHIR - Maps to AdverseReaction/date
-. DAM - Maps to AdverseReaction/occurrenceDate.]</items>
-          <items id="description">Record of the date and/or time of the onset of the Reaction.</items>
+          <items id="description">Record of the date and/or time of the onset of the reaction.</items>
           <items id="source">openEHR,FHIR, DAM</items>
-          <items id="text">Onset of Reaction</items>
+          <items id="text">Onset of the reaction</items>
         </term_definitions>
         <term_definitions code="at0028">
-          <items id="description">The amount of time that the Adverse Reaction persisted.</items>
+          <items id="description">The total amount of time that the manifestation of the adverse reaction persisted.</items>
           <items id="source">openEHR</items>
-          <items id="text">Duration of Reaction</items>
+          <items id="text">Duration of reaction</items>
         </term_definitions>
         <term_definitions code="at0029">
-          <items id="comment">[Note: FHIR - These would be extensions as specified in a profile.]</items>
-          <items id="description">Additional detail about the Adverse Reaction, including anatomical location and Common Toxicity Criteria.</items>
+          <items id="comment">For example, photos captured using the Multimedia CLUSTER archetype. [Note: FHIR - These would be extensions as specified in a profile.]</items>
+          <items id="description">Additional details about the adverse reaction, including anatomical location and Common Toxicity Criteria, can be provided by inclusion of specific archetypes in this SLOT.</items>
           <items id="source">FHIR, openEHR</items>
-          <items id="text">Reaction Details</items>
-        </term_definitions>
-        <term_definitions code="at0031">
-          <items id="comment">For example: a digital photograph of a rash or presentation with angioneurotic oedema.</items>
-          <items id="description">Multimedia representation to support the Adverse Reaction Event record.</items>
-          <items id="source">openEHR</items>
-          <items id="text">Multimedia</items>
+          <items id="text">Reaction details</items>
         </term_definitions>
         <term_definitions code="at0032">
-          <items id="description">Additional narrative about the Adverse Reaction event not captured in other fields.</items>
+          <items id="description">Additional narrative about the adverse reaction event not captured in other fields.</items>
           <items id="source">openEHR</items>
-          <items id="text">Reaction Comment</items>
+          <items id="text">Reaction comment</items>
         </term_definitions>
         <term_definitions code="at0040">
           <items id="description">Narrative description about the clinical management provided.</items>
           <items id="source">openEHR</items>
-          <items id="text">Clinical Management Description</items>
+          <items id="text">Clinical management description</items>
         </term_definitions>
         <term_definitions code="at0041">
           <items id="comment">[Note: FHIR - These would be extensions as specified in a profile.]</items>
-          <items id="description">Additional details required for reporting to regulatory bodies.</items>
+          <items id="description">Additional structured details required for reporting to regulatory bodies can be provided by inclusion of specific archetypes in this SLOT.</items>
           <items id="source">FHIR, openEHR</items>
-          <items id="text">Reporting Details</items>
+          <items id="text">Reporting details</items>
         </term_definitions>
         <term_definitions code="at0042">
           <items id="description">@ internal @</items>
           <items id="text">Tree</items>
         </term_definitions>
         <term_definitions code="at0044">
-          <items id="description">Was the Adverse Reaction reported to a regulatory body?</items>
+          <items id="description">Was the adverse reaction reported to a regulatory body?</items>
           <items id="source">openEHR</items>
-          <items id="text">Reaction Reported?</items>
+          <items id="text">Reaction reported?</items>
         </term_definitions>
         <term_definitions code="at0045">
-          <items id="description">Link to an Adverse Reaction Report sent to a regulatory body.</items>
+          <items id="description">Link to an adverse reaction Report sent to a regulatory body.</items>
           <items id="source">openEHR</items>
-          <items id="text">Adverse Reaction Report</items>
+          <items id="text">Adverse reaction report</items>
         </term_definitions>
         <term_definitions code="at0047">
           <items id="comment">For example, presenting symptoms, examination findings, diagnosis etc.
  [Note: FHIR,DAM: Maps to Sensitivity Test.]</items>
           <items id="description">Link to further information about the presentation and findings that exist elsewhere in the health record, including allergy test reports.</items>
           <items id="source">FHIR, openEHR, DAM</items>
-          <items id="text">Supporting Clinical Record Information</items>
+          <items id="text">Supporting clinical record information</items>
         </term_definitions>
         <term_definitions code="at0048">
           <items id="comment">For example, the reason for non-reporting.</items>
-          <items id="description">Additional narrative about the Adverse Reaction Report or reporting process.</items>
+          <items id="description">Additional narrative about the adverse reaction report or reporting process.</items>
           <items id="source">openEHR</items>
-          <items id="text">Report Comment</items>
+          <items id="text">Report comment</items>
         </term_definitions>
         <term_definitions code="at0050">
           <items id="comment">openEHR: implicit in the reference model ENTRY/id.</items>
@@ -861,47 +1322,51 @@ DAM - not captured.]</items>
           <items id="text">Identifier</items>
         </term_definitions>
         <term_definitions code="at0058">
-          <items id="comment">[Note: FHIR: Mandatory and includes 'unknown'.]</items>
-          <items id="description">Identification of the underlying physiological mechanism for the Reaction.</items>
+          <items id="comment">Immune-mediated responses have been traditionally regarded as an indicator for escalation of significant future risk. Contemporary knowledge suggests that some reactions previously thought to be immune and non-immune and still carry life threatening risk. 
+
+It is acknowledged that many clinicians may not be in a position to distinguish the mechanism of a particular reaction.  This data element is included nevertheless because many legacy systems have captured this attribute.
+
+Immunological testing may provide supporting evidence for the basis and causative substance , but no tests are 100% sensitive or specific for a sensitivity.</items>
+          <items id="description">Identification of the underlying physiological mechanism for the adverse reaction.</items>
           <items id="source">FHIR,DAM</items>
-          <items id="text">Reaction Type</items>
+          <items id="text">Reaction type</items>
         </term_definitions>
         <term_definitions code="at0059">
           <items id="description">Immune mediated reaction, including allergic reactions and hypersensitivities.</items>
           <items id="text">Immune mediated</items>
         </term_definitions>
         <term_definitions code="at0060">
-          <items id="description">A non-immune mediated reaction, which can include pseudoallergic reactions, side effects, intolerances, drug toxicities (eg to Gentamicin), drug-drug interactions, food-drug interactions, and drug-disease interactions.</items>
+          <items id="description">A non-immune mediated reaction, which can include pseudo-allergic reactions, side effects, intolerances, drug toxicities (for example, to Gentamicin), drug-drug interactions, food-drug interactions, and drug-disease interactions.</items>
           <items id="text">Non-immune mediated</items>
         </term_definitions>
         <term_definitions code="at0062">
           <items id="comment">[Note: FHIR - maps to recordedDate in FHIR.]</items>
-          <items id="description">Date when the sensitivity was recorded.</items>
+          <items id="description">Date when the propensity/reaction event was recorded or revised.</items>
           <items id="source">openEHR,FHIR.DAM</items>
-          <items id="text">Date Recorded</items>
+          <items id="text">Date recorded</items>
         </term_definitions>
         <term_definitions code="at0063">
-          <items id="comment">
-
-</items>
-          <items id="description">Assertion about the propensity, or potential risk, of a reaction to the identified Substance.</items>
+          <items id="comment">Decision support would typically raise alerts for 'Unconfirmed', 'Confirmed', and 'Resolved' and ignore a 'Refuted' reaction.
+In particular, 'Refuted' may be useful for reconciliation of the adverse reaction list.
+Some implementations may choose to make this field mandatory.</items>
+          <items id="description">Assertion about the propensity, or potential risk, of a reaction to the identified 'Substance'.</items>
           <items id="source">FHIR,DAM</items>
           <items id="text">Status</items>
         </term_definitions>
         <term_definitions code="at0064">
-          <items id="description">A suspected but unconfirmed propensity for a reaction to the identified Substance.</items>
+          <items id="description">A low level of certainty about the propensity for a reaction to the identified 'Substance'.</items>
           <items id="text">Unconfirmed</items>
         </term_definitions>
         <term_definitions code="at0065">
-          <items id="description">A propensity for a reaction to the identified Substance has been confirmed with a high level of clinical certainty, which may include clinical evidence by testing or rechallenge.</items>
+          <items id="description">A high level of certainty about the propensity for a reaction to the identified 'Substance', which may include clinical evidence by testing or re-challenge.</items>
           <items id="text">Confirmed</items>
         </term_definitions>
         <term_definitions code="at0066">
-          <items id="description">A propensity for a reaction to the identified Substance has been disproven with a high level of clinical certainty, which may include testing or rechallenge, and is refuted.</items>
+          <items id="description">A propensity for a reaction to the identified 'Substance' has been reassessed by testing and/or re-challenge, and has been disproved with a high level of clinical certainty.</items>
           <items id="text">Refuted</items>
         </term_definitions>
         <term_definitions code="at0067">
-          <items id="description">A reaction to the identified Substance has been clinically reassessed by testing or rechallenge and considered to be resolved.</items>
+          <items id="description">A previously known reaction to the identified 'Substance' has been clinically reassessed by testing and/or re-challenge and considered no longer to be an active risk.</items>
           <items id="text">Resolved</items>
         </term_definitions>
         <term_definitions code="at0068">
@@ -917,10 +1382,11 @@ DAM - not captured.]</items>
           <items id="text">Recorder</items>
         </term_definitions>
         <term_definitions code="at0089">
-          <items id="comment">[Note: DAM - An overall assessment of the severity of the reaction.]</items>
+          <items id="comment">It is acknowledged that this assessment is very subjective. There may be some some specific practice domains where objective scales have been applied.
+Objective scales can be included in this model using the 'Reaction details' Cluster in openEHR or extensions in FHIR.</items>
           <items id="description">Clinical assessment of the severity of the reaction event as a whole, potentially considering multiple different manifestations.</items>
           <items id="source">DAM</items>
-          <items id="text">Severity of Reaction</items>
+          <items id="text">Severity of reaction</items>
         </term_definitions>
         <term_definitions code="at0090">
           <items id="description">Causes severe physiological effects.</items>
@@ -938,70 +1404,79 @@ DAM - not captured.]</items>
           <items id="text">Mild</items>
         </term_definitions>
         <term_definitions code="at0095">
-          <items id="description">There is a low level of certainty that the reaction was caused by the identified Substance.</items>
-          <items id="text">Low</items>
+          <items id="description">There is a low level of clinical certainty that the reaction was caused by the identified 'Specific substance'.</items>
+          <items id="text">Unlikely</items>
         </term_definitions>
         <term_definitions code="at0096">
           <items id="comment">[Note: FHIR - These would be extensions as specified in a profile.]</items>
-          <items id="description">Additional details about the exposure, especially in situations where there may have been multiple, or cumulative, exposures.</items>
-          <items id="text">Exposure Details</items>
+          <items id="description">Additional details about exposure to the 'Specific substance', especially in situations where there may have been multiple or cumulative exposures can be provided by inclusion of specific archetypes in this SLOT.</items>
+          <items id="text">Exposure details</items>
         </term_definitions>
         <term_definitions code="at0098">
-          <items id="description">FHIR elements that are carried implicity in the openEHR reference model.</items>
+          <items id="description">FHIR elements that are carried implicitly in the openEHR reference model.</items>
           <items id="text">FHIR record provenance</items>
         </term_definitions>
         <term_definitions code="at0099">
-          <items id="description">Details related to public health / safety reporting.</items>
-          <items id="text">Reporting Details</items>
+          <items id="description">Additional structured details required for reporting to regulatory bodies can be provided by inclusion of specific archetypes in this SLOT.</items>
+          <items id="text">Reporting details</items>
         </term_definitions>
         <term_definitions code="at0101">
-          <items id="comment">The default Seriousness value for any propensity to an Adverse Reaction should be 'Low Risk', indicating at the very least a relative contraindication to deliberate or voluntary exposure to the Substance. 'High Risk' is flagged if the clinician has identified a propensity for a more serious or potentially life-threatening reaction, such as anaphylaxis, and implies an absolute contraindication to deliberate or voluntary exposure to the substance.</items>
-          <items id="description">Estimate of the potential clinical impact, or seriousness, of the reaction to the identified Substance.</items>
+          <items id="comment">The default Criticality value for any propensity to an adverse reaction should be 'Low risk', indicating at the very least a relative contraindication to deliberate or voluntary exposure to the identified 'Substance'. 'High risk' is flagged if the clinician has identified a propensity for a more serious or potentially life-threatening reaction, such as anaphylaxis, and implies an absolute contraindication to deliberate or voluntary exposure to the substance.</items>
+          <items id="description">Estimate of the potential clinical harm, or seriousness, of the reaction to the identified 'Substance'.</items>
           <items id="source">DAM, openEHR</items>
-          <items id="text">Seriousness</items>
+          <items id="text">Criticality</items>
         </term_definitions>
         <term_definitions code="at0102">
-          <items id="description">The potential clinical impact of a future reaction is estimated as low risk. Future exposure to the Substance is considered a relative contra-indication.</items>
-          <items id="text">Low Risk</items>
+          <items id="description">The potential clinical impact of a future reaction is estimated as low risk. Future exposure to the identified 'Substance' is considered a relative contra-indication.</items>
+          <items id="text">Low risk</items>
         </term_definitions>
         <term_definitions code="at0103">
-          <items id="description">The potential clinical impact of a future reaction is estimated as high risk. Future exposure to the Substance may be considered an absolute contra-indication.</items>
-          <items id="text">High Risk</items>
+          <items id="description">The potential clinical impact of a future reaction is estimated as high risk. Future exposure to the identified 'Substance' may be considered an absolute contra-indication.</items>
+          <items id="text">High risk</items>
         </term_definitions>
         <term_definitions code="at0106">
-          <items id="comment">[Note: DAM - Maps to Exposure/exposureType.]
-
-The intent of this data element is not clear. The value set confuses different axes. Unless this data element can be clarified and justified the intent is to delete it.</items>
-          <items id="description">Identification of the category of exposure.</items>
+          <items id="comment">Coding of the Route of Exposure with a terminology should be used wherever possible.</items>
+          <items id="description">Identification of the route by which the subject was exposed to the identified 'Specific substance'.</items>
           <items id="source">FHIR,DAM</items>
-          <items id="text">**Exposure Category</items>
-        </term_definitions>
-        <term_definitions code="at0107">
-          <items id="description">Exposure was related ot administration of a drug.</items>
-          <items id="text">Drug administration</items>
-        </term_definitions>
-        <term_definitions code="at0108">
-          <items id="description">Exposure was related to Immunisation.</items>
-          <items id="text">Immunisation</items>
-        </term_definitions>
-        <term_definitions code="at0109">
-          <items id="description">Exposure was accidental.</items>
-          <items id="text">Accidental</items>
-        </term_definitions>
-        <term_definitions code="at0110">
-          <items id="comment"> If the severity is sufficiently specified in the Manifestation, then this additional data is not needed.</items>
-          <items id="description">Clinical assessment of the severity of the identified Manifestation.</items>
-          <items id="source">FHIR,DAM</items>
-          <items id="text">Severity</items>
-        </term_definitions>
-        <term_definitions code="at0111">
-          <items id="description">Details of each manifestation for this Reaction Event.</items>
-          <items id="text">Manifestation Details</items>
+          <items id="text">Route of exposure</items>
         </term_definitions>
         <term_definitions code="at0116">
-          <items id="comment">[Note: FHIR - These would be in a provenance resource.]</items>
-          <items id="description">Details about the provenance of the information.</items>
-          <items id="text">Information Source</items>
+          <items id="comment">This SLOT is for FHIR purposes only - the data would be defined in a provenance resource.</items>
+          <items id="description">Details about the provenance of the information can be provided by inclusion of specific archetypes in this SLOT.</items>
+          <items id="text">Information source</items>
+        </term_definitions>
+        <term_definitions code="at0117">
+          <items id="comment">This date may be replicated by one of the Onset of Reaction dates.
+Where a textual representation of the date of last occurrence is required e.g 'In Childhood, '10 years ago' the Comment element should be used.</items>
+          <items id="description">Represents the date and/or time of the last known occurrence of a reaction event.</items>
+          <items id="source">IMH</items>
+          <items id="text">Date of last reaction</items>
+        </term_definitions>
+        <term_definitions code="at0118">
+          <items id="description">There is a very high level of clinical certainty that the reaction was due to the identified 'Substance', which may include clinical evidence by testing or re-challenge.</items>
+          <items id="text">Confirmed</items>
+        </term_definitions>
+        <term_definitions code="at0119">
+          <items id="comment">[Note: FHIR - These would be extensions as specified in a profile.]</items>
+          <items id="description">Additional structured details about clinical management for this reaction event can be provided by inclusion of specific archetypes in this SLOT.</items>
+          <items id="text">Clinical management details</items>
+        </term_definitions>
+        <term_definitions code="at0120">
+          <items id="comment">This data element has been included because it is currently being captured in some clinical systems. This data can be derived from the Substance where coding systems are used, and is effectively redundant in that situation.</items>
+          <items id="description">Category of the identified 'Substance'.</items>
+          <items id="text">Substance category</items>
+        </term_definitions>
+        <term_definitions code="at0121">
+          <items id="description">Any substance consumed to provide nutritional support for the body.</items>
+          <items id="text">Food</items>
+        </term_definitions>
+        <term_definitions code="at0122">
+          <items id="description">Any substance administered to achieve a physiological effect.</items>
+          <items id="text">Medication</items>
+        </term_definitions>
+        <term_definitions code="at0123">
+          <items id="description">Any substance encountered in the environment.</items>
+          <items id="text">Environment</items>
         </term_definitions>
       </children>
       <children xsi:type="C_ARCHETYPE_ROOT">
@@ -2442,4 +2917,11 @@ useful for version control and cumulative results for the report.</items>
       <items id="text">Review</items>
     </term_definitions>
   </definition>
+  <view>
+    <constraints path="/content[openEHR-EHR-EVALUATION.adverse_reaction_fhir.v1]/data[at0001]/items[at0009]/items[at0011]">
+      <items id="pass_through">
+        <value>true</value>
+      </items>
+    </constraints>
+  </view>
 </template>
