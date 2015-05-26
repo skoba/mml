@@ -5,11 +5,26 @@ concept
 	[at0000]	-- Insurance
 language
 	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
 description
 	original_author = <
 		["name"] = <"">
 	>
 	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*(ja)">
+			use = <"*(ja)">
+			misuse = <"*(ja)">
+			copyright = <"*(ja)">
+		>
 		["ja"] = <
 			language = <[ISO_639-1::ja]>
 			purpose = <"">
@@ -21,7 +36,7 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"429D96827A64B17184AAA496544C8180">
+		["MD5-CAM-1.0.1"] = <"85F7846C91565C739C0A6151977DB053">
 	>
 
 definition
@@ -93,14 +108,26 @@ definition
 					}
 				}
 			}
+			ELEMENT[at0019] occurrences matches {0..1} matches {	-- expired date
+				value matches {
+					DV_DATE matches {*}
+				}
+			}
 			ELEMENT[at0018] occurrences matches {0..1} matches {	-- start date
 				value matches {
 					DV_DATE matches {*}
 				}
 			}
-			ELEMENT[at0019] occurrences matches {0..1} matches {	-- expired date
+			ELEMENT[at0038] occurrences matches {0..1} matches {	-- paimentInRatio
 				value matches {
-					DV_DATE matches {*}
+					C_DV_QUANTITY <
+					>
+				}
+			}
+			ELEMENT[at0039] occurrences matches {0..1} matches {	-- paymentOutRatio
+				value matches {
+					C_DV_QUANTITY <
+					>
 				}
 			}
 			CLUSTER[at0020] occurrences matches {0..1} matches {	-- insured info
@@ -331,6 +358,14 @@ ontology
 					text = <"*新規Element(ja)">
 					description = <"**(ja)">
 				>
+				["at0038"] = <
+					text = <"*paimentInRatio(ja)">
+					description = <"**(ja)">
+				>
+				["at0039"] = <
+					text = <"*paymentOutRatio(ja)">
+					description = <"**(ja)">
+				>
 			>
 		>
 		["ja"] = <
@@ -473,6 +508,14 @@ ontology
 				>
 				["at0037"] = <
 					text = <"ratio type">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"paimentInRatio">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"paymentOutRatio">
 					description = <"*">
 				>
 			>

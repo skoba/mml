@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
-  <id>25815f39-6833-462c-a6a9-943058c843ab</id>
-  <name>mml_infusion</name>
+  <id>ade70b1a-88e5-4fe2-8d43-9f0b2b3fa85c</id>
+  <name>mml_injection</name>
   <description>
     <lifecycle_state>Initial</lifecycle_state>
     <details>
@@ -60,38 +60,25 @@
       </item>
     </other_details>
   </description>
-  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.report-procedure.v1" concept_name="Procedure Report">
-    <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.medication.v1" concept_name="Medication action" path="/content">
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.medication_list.v1" concept_name="Medication List">
+    <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.medication.v1" concept_name="Medication action" path="/content[at0001]">
       <Rule path="/description[at0017]/items[at0020]">
         <constraint xsi:type="multipleConstraint">
           <includedTypes>Text</includedTypes>
         </constraint>
       </Rule>
       <Rule path="/description[at0017]/items[at0021]" max="0" />
-      <Rule path="/protocol[at0030]/items[at0026]" max="0" />
+      <Rule path="/description[at0017]/items[at0036]" max="0" />
       <Rule path="/protocol[at0030]/items[at0040]" max="0" />
       <Rule path="/protocol[at0030]/items[at0031]" max="0" />
       <Rule path="/protocol[at0030]/items[at0037]" max="0" />
       <Rule path="/protocol[at0030]/items[at0032]" max="0" />
       <Rule path="/protocol[at0030]/items[at0038]" max="0" />
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_ingredients.v1" concept_name="Medication ingredients" path="/description[at0017]/items[at0023]">
-        <Rule path="/items[at0010]" max="0" />
-        <Rule path="/items[at0005]" max="0" />
-        <Rule path="/items[at0001]/items[at0010]" max="0" />
-        <Rule path="/items[at0001]/items[at0005]" max="0" />
-        <Rule path="/items[at0001]/items[at0003]" max="0" />
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_amount.v1" concept_name="Medication amount" path="/items[at0001 and name/value='Ingredient']/items[at0024]">
-          <Rule path="/items[at0001]">
-            <constraint xsi:type="multipleConstraint">
-              <includedTypes>Quantity (??????)</includedTypes>
-            </constraint>
-          </Rule>
-          <Rule path="/items[at0008]" max="0" />
-          <Rule path="/items[at0007]" max="0" />
-        </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_amount.v1" concept_name="Medication amount" path="/description[at0017]/items[at0022]">
+        <Rule path="/items[at0008]" max="0" />
+        <Rule path="/items[at0007]" max="0" />
       </Items>
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_admin.v1" concept_name="Medication administration" path="/description[at0017]/items[at0027]" />
     </Content>
-    <Context />
   </definition>
 </template>
