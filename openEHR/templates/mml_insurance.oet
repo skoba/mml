@@ -89,7 +89,6 @@
     </Items>
     <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0024]/items[at0027]">
       <Rule path="/items[at0010]" max="0" />
-      <Rule path="/items[at0009]" max="0" />
     </Items>
   </definition>
 </template>

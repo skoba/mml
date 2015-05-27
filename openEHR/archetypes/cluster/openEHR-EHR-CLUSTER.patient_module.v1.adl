@@ -2,7 +2,7 @@ archetype (adl_version=1.4)
 	openEHR-EHR-CLUSTER.patient_module.v1
 
 concept
-	[at0000]	-- *Patient module(ja)
+	[at0000]	-- Patient module
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -37,20 +37,12 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"4D59AFA87CF69290A681B21637509148">
+		["MD5-CAM-1.0.1"] = <"403E807C54B32C2B4AB0C7351103F51A">
 	>
 
 definition
-	CLUSTER[at0000] matches {	-- *Patient module(ja)
+	CLUSTER[at0000] matches {	-- Patient module
 		items cardinality matches {1..*; unordered} matches {
-			allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {	-- MML Header
-				include
-					archetype_id/value matches {/.*/}
-			}
-			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {	-- *MML docInfo(ja)
-				include
-					archetype_id/value matches {/.*/}
-			}
 			allow_archetype CLUSTER[at0001] occurrences matches {0..*} matches {	-- Personal information
 				include
 					archetype_id/value matches {/.*/}
@@ -78,14 +70,6 @@ ontology
 					text = <"Death data">
 					description = <"**(ja)">
 				>
-				["at0003"] = <
-					text = <"MML Header">
-					description = <"**(ja)">
-				>
-				["at0004"] = <
-					text = <"*MML docInfo(ja)">
-					description = <"***(ja)(ja)">
-				>
 			>
 		>
 		["ja"] = <
@@ -101,14 +85,6 @@ ontology
 				["at0002"] = <
 					text = <"Death data">
 					description = <"*">
-				>
-				["at0003"] = <
-					text = <"MML Header">
-					description = <"*">
-				>
-				["at0004"] = <
-					text = <"MML docInfo">
-					description = <"**(ja)">
 				>
 			>
 		>
