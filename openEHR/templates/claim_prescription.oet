@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>05601269-73e9-4d56-aa89-009bc0c9cf89</id>
+  <name>mml_prescription</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.medication_list.v1" concept_name="Medication List">
+    <Content xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.medication_order.v1" concept_name="Medication order" path="/content[at0002]">
+      <Rule path="/activities[at0001]/description[at0002]/items[at0003]">
+        <constraint xsi:type="multipleConstraint">
+          <includedTypes>Coded_text</includedTypes>
+        </constraint>
+      </Rule>
+      <Rule path="/activities[at0001]/description[at0002]/items[at0005]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0008]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0010]/items[at0011]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0010]/items[at0016]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0010]/items[at0013]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0010]/items[at0047]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0010]/items[at0017]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0044]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0018]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0023]/items[at0025]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0023]/items[at0046]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0023]/items[at0028]" max="0" />
+      <Rule path="/protocol[at0031]/items[at0038]" max="0" />
+      <Rule path="/protocol[at0031]/items[at0042]" max="0" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_amount.v1" concept_name="Medication amount" path="/activities[at0001]/description[at0002]/items[at0006]">
+        <Rule path="/items[at0001]">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity (??????)</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/items[at0003]" max="0" />
+        <Rule path="/items[at0008]" max="0" />
+        <Rule path="/items[at0007]" max="0" />
+      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_admin.v1" concept_name="Medication administration" path="/activities[at0001]/description[at0002]/items[at0043]">
+        <Rule path="/items[at0001]" max="0" />
+        <Rule path="/items[at0003]" max="0" />
+        <Rule path="/items[at0004]" max="0" />
+      </Items>
+    </Content>
+  </definition>
+</template>
