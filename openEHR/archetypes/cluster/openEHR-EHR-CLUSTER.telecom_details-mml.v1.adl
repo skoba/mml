@@ -46,7 +46,7 @@ description
 	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
 	other_details = <
 		["references"] = <"Telephone, facsimile or similar telecommunications type/number for a patient.  ENV 13606 - 4:2000 7.11.14 From NHS Scotland SCI-XML messaging standards http://www.isdscotland.org/isd/files/general-v2-7.xsd NHS Scotland Interoperability Working Group http://www.isdscotland.org/isd/5194.html.">
-		["MD5-CAM-1.0.1"] = <"70C38C65EA8D7BA159BD2F896AC24094">
+		["MD5-CAM-1.0.1"] = <"208D38D9CE4DDC91DA5BF68FC95AF261">
 	>
 
 definition
@@ -79,7 +79,7 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Unstuctured telecoms
+					ELEMENT[at0002.1] occurrences matches {0..1} matches {	-- Unstructured telecoms
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -154,6 +154,10 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Unstuctured telecoms">
+					description = <"An unstructured description of telecoms.">
+				>
+				["at0002.1"] = <
+					text = <"Unstructured telecoms">
 					description = <"An unstructured description of telecoms.">
 				>
 				["at0003"] = <
@@ -243,6 +247,10 @@ ontology
 				["at0002"] = <
 					text = <"Unstrukturierte Kontaktadresse">
 					description = <"Unstrukturierte Kontaktadresse">
+				>
+				["at0002.1"] = <
+					text = <"*Unstructured telecoms(en)">
+					description = <"*An unstructured description of telecoms.(en)">
 				>
 				["at0003"] = <
 					text = <"Strukturierte Kontaktadresse">

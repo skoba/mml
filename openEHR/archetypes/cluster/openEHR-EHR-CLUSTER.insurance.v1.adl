@@ -36,7 +36,7 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"85F7846C91565C739C0A6151977DB053">
+		["MD5-CAM-1.0.1"] = <"FC729844412E464D78006B909E60C023">
 	>
 
 definition
@@ -57,7 +57,7 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0004] occurrences matches {0..1} matches {	-- insrance number
+			ELEMENT[at0004] occurrences matches {0..1} matches {	-- insurance number
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -235,7 +235,7 @@ ontology
 					description = <"**(ja)">
 				>
 				["at0004"] = <
-					text = <"*insrance number(ja)">
+					text = <"*insurance number(ja)">
 					description = <"**(ja)">
 				>
 				["at0008"] = <
@@ -387,7 +387,7 @@ ontology
 					description = <"*">
 				>
 				["at0004"] = <
-					text = <"insrance number">
+					text = <"insurance number">
 					description = <"*">
 				>
 				["at0008"] = <
