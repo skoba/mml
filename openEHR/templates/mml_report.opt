@@ -331,11 +331,11 @@
                 </term_definitions>
                 <term_definitions code="at0001">
                   <items id="description">**(ja)</items>
-                  <items id="text">perform time</items>
+                  <items id="text">performed time</items>
                 </term_definitions>
                 <term_definitions code="at0002">
                   <items id="description">**(ja)</items>
-                  <items id="text">report time</items>
+                  <items id="text">reported time</items>
                 </term_definitions>
               </children>
               <cardinality>
@@ -514,7 +514,7 @@
                         <right_operand xsi:type="EXPR_LEAF">
                           <type>C_STRING</type>
                           <item xsi:type="C_STRING">
-                            <pattern>.*</pattern>
+                            <pattern>openEHR-EHR-CLUSTER\.catheter(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1</pattern>
                           </item>
                           <reference_type>constraint</reference_type>
                         </right_operand>
@@ -742,7 +742,7 @@
                       <lower>0</lower>
                       <upper>1</upper>
                     </occurrences>
-                    <node_id>at0011</node_id>
+                    <node_id>at0011.1</node_id>
                     <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                       <rm_attribute_name>value</rm_attribute_name>
                       <existence>
@@ -754,7 +754,7 @@
                         <upper>1</upper>
                       </existence>
                       <children xsi:type="C_COMPLEX_OBJECT">
-                        <rm_type_name>DV_TEXT</rm_type_name>
+                        <rm_type_name>DV_IDENTIFIER</rm_type_name>
                         <occurrences>
                           <lower_included>true</lower_included>
                           <upper_included>true</upper_included>
@@ -974,6 +974,14 @@
                   <items id="description">Phonetic</items>
                   <items id="text">P</items>
                 </term_definitions>
+                <term_definitions code="at0.19">
+                  <items id="description">*</items>
+                  <items id="text">Other identifiers</items>
+                </term_definitions>
+                <term_definitions code="at0.20">
+                  <items id="description">*</items>
+                  <items id="text">Other names</items>
+                </term_definitions>
                 <term_definitions code="at0000">
                   <items id="description">Details of an organisation </items>
                   <items id="text">Organisation</items>
@@ -1011,6 +1019,14 @@
                   <items id="text">Contact person's name</items>
                 </term_definitions>
                 <term_definitions code="at0011">
+                  <items id="description">Identifier of organisation</items>
+                  <items id="text">Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.1">
+                  <items id="description">Identifier of organisation</items>
+                  <items id="text">Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.2">
                   <items id="description">Identifier of organisation</items>
                   <items id="text">Identifier</items>
                 </term_definitions>
@@ -1081,7 +1097,7 @@
                       <lower>0</lower>
                       <upper>1</upper>
                     </occurrences>
-                    <node_id>at0011</node_id>
+                    <node_id>at0011.1</node_id>
                     <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                       <rm_attribute_name>value</rm_attribute_name>
                       <existence>
@@ -1093,7 +1109,7 @@
                         <upper>1</upper>
                       </existence>
                       <children xsi:type="C_COMPLEX_OBJECT">
-                        <rm_type_name>DV_TEXT</rm_type_name>
+                        <rm_type_name>DV_IDENTIFIER</rm_type_name>
                         <occurrences>
                           <lower_included>true</lower_included>
                           <upper_included>true</upper_included>
@@ -1313,6 +1329,14 @@
                   <items id="description">Phonetic</items>
                   <items id="text">P</items>
                 </term_definitions>
+                <term_definitions code="at0.19">
+                  <items id="description">*</items>
+                  <items id="text">Other identifiers</items>
+                </term_definitions>
+                <term_definitions code="at0.20">
+                  <items id="description">*</items>
+                  <items id="text">Other names</items>
+                </term_definitions>
                 <term_definitions code="at0000">
                   <items id="description">Details of an organisation </items>
                   <items id="text">Organisation</items>
@@ -1350,6 +1374,14 @@
                   <items id="text">Contact person's name</items>
                 </term_definitions>
                 <term_definitions code="at0011">
+                  <items id="description">Identifier of organisation</items>
+                  <items id="text">Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.1">
+                  <items id="description">Identifier of organisation</items>
+                  <items id="text">Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.2">
                   <items id="description">Identifier of organisation</items>
                   <items id="text">Identifier</items>
                 </term_definitions>
@@ -1420,7 +1452,7 @@
                       <lower>0</lower>
                       <upper>1</upper>
                     </occurrences>
-                    <node_id>at0011</node_id>
+                    <node_id>at0011.1</node_id>
                     <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                       <rm_attribute_name>value</rm_attribute_name>
                       <existence>
@@ -1432,7 +1464,7 @@
                         <upper>1</upper>
                       </existence>
                       <children xsi:type="C_COMPLEX_OBJECT">
-                        <rm_type_name>DV_TEXT</rm_type_name>
+                        <rm_type_name>DV_IDENTIFIER</rm_type_name>
                         <occurrences>
                           <lower_included>true</lower_included>
                           <upper_included>true</upper_included>
@@ -1652,6 +1684,14 @@
                   <items id="description">Phonetic</items>
                   <items id="text">P</items>
                 </term_definitions>
+                <term_definitions code="at0.19">
+                  <items id="description">*</items>
+                  <items id="text">Other identifiers</items>
+                </term_definitions>
+                <term_definitions code="at0.20">
+                  <items id="description">*</items>
+                  <items id="text">Other names</items>
+                </term_definitions>
                 <term_definitions code="at0000">
                   <items id="description">Details of an organisation </items>
                   <items id="text">Organisation</items>
@@ -1692,6 +1732,14 @@
                   <items id="description">Identifier of organisation</items>
                   <items id="text">Identifier</items>
                 </term_definitions>
+                <term_definitions code="at0011.1">
+                  <items id="description">Identifier of organisation</items>
+                  <items id="text">Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.2">
+                  <items id="description">Identifier of organisation</items>
+                  <items id="text">Identifier</items>
+                </term_definitions>
               </children>
               <children xsi:type="C_ARCHETYPE_ROOT">
                 <rm_type_name>CLUSTER</rm_type_name>
@@ -1718,11 +1766,9 @@
                     <rm_type_name>CLUSTER</rm_type_name>
                     <occurrences>
                       <lower_included>true</lower_included>
-                      <upper_included>true</upper_included>
                       <lower_unbounded>false</lower_unbounded>
-                      <upper_unbounded>false</upper_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
                       <lower>0</lower>
-                      <upper>1</upper>
                     </occurrences>
                     <node_id>at0000.1</node_id>
                     <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
@@ -1962,7 +2008,7 @@
                           <lower_included>true</lower_included>
                           <lower_unbounded>false</lower_unbounded>
                           <upper_unbounded>true</upper_unbounded>
-                          <lower>1</lower>
+                          <lower>0</lower>
                         </occurrences>
                         <node_id>at0.2</node_id>
                         <attributes xsi:type="C_SINGLE_ATTRIBUTE">
@@ -1976,7 +2022,85 @@
                             <upper>1</upper>
                           </existence>
                           <children xsi:type="C_COMPLEX_OBJECT">
-                            <rm_type_name>DV_TEXT</rm_type_name>
+                            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                              <rm_attribute_name>defining_code</rm_attribute_name>
+                              <existence>
+                                <lower_included>true</lower_included>
+                                <upper_included>true</upper_included>
+                                <lower_unbounded>false</lower_unbounded>
+                                <upper_unbounded>false</upper_unbounded>
+                                <lower>1</lower>
+                                <upper>1</upper>
+                              </existence>
+                              <children xsi:type="C_CODE_PHRASE">
+                                <rm_type_name>CODE_PHRASE</rm_type_name>
+                                <occurrences>
+                                  <lower_included>true</lower_included>
+                                  <upper_included>true</upper_included>
+                                  <lower_unbounded>false</lower_unbounded>
+                                  <upper_unbounded>false</upper_unbounded>
+                                  <lower>1</lower>
+                                  <upper>1</upper>
+                                </occurrences>
+                                <node_id />
+                                <terminology_id>
+                                  <value>local</value>
+                                </terminology_id>
+                                <code_list>at0.3</code_list>
+                                <code_list>at0.4</code_list>
+                                <code_list>at0.5</code_list>
+                                <code_list>at0.6</code_list>
+                                <code_list>at0.7</code_list>
+                                <code_list>at0.8</code_list>
+                                <code_list>at0.9</code_list>
+                                <code_list>at0.10</code_list>
+                                <code_list>at0.11</code_list>
+                                <code_list>at0.12</code_list>
+                                <code_list>at0.13</code_list>
+                                <code_list>at0.14</code_list>
+                                <code_list>at0.15</code_list>
+                                <code_list>at0.16</code_list>
+                                <code_list>at0.17</code_list>
+                                <code_list>at0.18</code_list>
+                                <code_list>at0.19</code_list>
+                                <code_list>at0.20</code_list>
+                                <code_list>at0.21</code_list>
+                              </children>
+                            </attributes>
+                          </children>
+                        </attributes>
+                      </children>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>ELEMENT</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>true</upper_unbounded>
+                          <lower>0</lower>
+                        </occurrences>
+                        <node_id>at0011.2</node_id>
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>value</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>0</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_COMPLEX_OBJECT">
+                            <rm_type_name>DV_IDENTIFIER</rm_type_name>
                             <occurrences>
                               <lower_included>true</lower_included>
                               <upper_included>true</upper_included>
@@ -1999,7 +2123,7 @@
                           <lower>0</lower>
                           <upper>1</upper>
                         </occurrences>
-                        <node_id>at0011</node_id>
+                        <node_id>at0.22</node_id>
                         <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                           <rm_attribute_name>value</rm_attribute_name>
                           <existence>
@@ -2186,9 +2310,97 @@
                 <archetype_id>
                   <value>openEHR-EHR-CLUSTER.individual_professional-mml.v1</value>
                 </archetype_id>
+                <term_definitions code="at0.10">
+                  <items id="description">*</items>
+                  <items id="text">pt</items>
+                </term_definitions>
+                <term_definitions code="at0.11">
+                  <items id="description">*</items>
+                  <items id="text">ot</items>
+                </term_definitions>
+                <term_definitions code="at0.12">
+                  <items id="description">*</items>
+                  <items id="text">psy</items>
+                </term_definitions>
+                <term_definitions code="at0.13">
+                  <items id="description">*</items>
+                  <items id="text">cps</items>
+                </term_definitions>
+                <term_definitions code="at0.14">
+                  <items id="description">*</items>
+                  <items id="text">nutritionist</items>
+                </term_definitions>
+                <term_definitions code="at0.15">
+                  <items id="description">*</items>
+                  <items id="text">dentalHygienist</items>
+                </term_definitions>
+                <term_definitions code="at0.16">
+                  <items id="description">*</items>
+                  <items id="text">dentalTechnician</items>
+                </term_definitions>
+                <term_definitions code="at0.17">
+                  <items id="description">*</items>
+                  <items id="text">clinicalEngineer</items>
+                </term_definitions>
+                <term_definitions code="at0.18">
+                  <items id="description">*</items>
+                  <items id="text">careManager</items>
+                </term_definitions>
+                <term_definitions code="at0.19">
+                  <items id="description">*</items>
+                  <items id="text">other</items>
+                </term_definitions>
                 <term_definitions code="at0.2">
                   <items id="description">*</items>
                   <items id="text">License</items>
+                </term_definitions>
+                <term_definitions code="at0.20">
+                  <items id="description">*</items>
+                  <items id="text">acupuncturist</items>
+                </term_definitions>
+                <term_definitions code="at0.21">
+                  <items id="description">*</items>
+                  <items id="text">patient</items>
+                </term_definitions>
+                <term_definitions code="at0.22">
+                  <items id="description">*</items>
+                  <items id="text">Professional Identifier type</items>
+                </term_definitions>
+                <term_definitions code="at0.23">
+                  <items id="description">*</items>
+                  <items id="text">Professional Identifier check digit</items>
+                </term_definitions>
+                <term_definitions code="at0.24">
+                  <items id="description">*</items>
+                  <items id="text">Professional Identifier check digit schema</items>
+                </term_definitions>
+                <term_definitions code="at0.3">
+                  <items id="description">*</items>
+                  <items id="text">doctor</items>
+                </term_definitions>
+                <term_definitions code="at0.4">
+                  <items id="description">*</items>
+                  <items id="text">dentist</items>
+                </term_definitions>
+                <term_definitions code="at0.5">
+                  <items id="description">*</items>
+                  <items id="text">nurse</items>
+                </term_definitions>
+                <term_definitions code="at0.6">
+                  <items id="description">*</items>
+                  <items id="text">assistantNurse</items>
+                </term_definitions>
+                <term_definitions code="at0.7">
+                  <items id="description">*</items>
+                  <items id="text">lab</items>
+                </term_definitions>
+                <term_definitions code="at0.8">
+                  <items id="description">*</items>
+                  <items id="text">rad</items>
+                </term_definitions>
+                <term_definitions code="at0.9">
+                  <items id="description">*</items>
+                  <items id="text">pharmacist</items>
                 </term_definitions>
                 <term_definitions code="at0000">
                   <items id="description">Professional demographics details including name(s) , addresse(s) and telecommunication contact details.</items>
@@ -2211,6 +2423,14 @@
                   <items id="text">Specialty</items>
                 </term_definitions>
                 <term_definitions code="at0011">
+                  <items id="description">Professional identifier of the individual.</items>
+                  <items id="text">Professional Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.1">
+                  <items id="description">Professional identifier of the individual.</items>
+                  <items id="text">Other identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.2">
                   <items id="description">Professional identifier of the individual.</items>
                   <items id="text">Professional Identifier</items>
                 </term_definitions>
@@ -2352,7 +2572,7 @@
                       <lower>0</lower>
                       <upper>1</upper>
                     </occurrences>
-                    <node_id>at0011</node_id>
+                    <node_id>at0011.1</node_id>
                     <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                       <rm_attribute_name>value</rm_attribute_name>
                       <existence>
@@ -2364,7 +2584,7 @@
                         <upper>1</upper>
                       </existence>
                       <children xsi:type="C_COMPLEX_OBJECT">
-                        <rm_type_name>DV_TEXT</rm_type_name>
+                        <rm_type_name>DV_IDENTIFIER</rm_type_name>
                         <occurrences>
                           <lower_included>true</lower_included>
                           <upper_included>true</upper_included>
@@ -2584,6 +2804,14 @@
                   <items id="description">Phonetic</items>
                   <items id="text">P</items>
                 </term_definitions>
+                <term_definitions code="at0.19">
+                  <items id="description">*</items>
+                  <items id="text">Other identifiers</items>
+                </term_definitions>
+                <term_definitions code="at0.20">
+                  <items id="description">*</items>
+                  <items id="text">Other names</items>
+                </term_definitions>
                 <term_definitions code="at0000">
                   <items id="description">Details of an organisation </items>
                   <items id="text">Organisation</items>
@@ -2621,6 +2849,14 @@
                   <items id="text">Contact person's name</items>
                 </term_definitions>
                 <term_definitions code="at0011">
+                  <items id="description">Identifier of organisation</items>
+                  <items id="text">Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.1">
+                  <items id="description">Identifier of organisation</items>
+                  <items id="text">Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.2">
                   <items id="description">Identifier of organisation</items>
                   <items id="text">Identifier</items>
                 </term_definitions>
@@ -2691,7 +2927,7 @@
                       <lower>0</lower>
                       <upper>1</upper>
                     </occurrences>
-                    <node_id>at0011</node_id>
+                    <node_id>at0011.1</node_id>
                     <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                       <rm_attribute_name>value</rm_attribute_name>
                       <existence>
@@ -2703,7 +2939,7 @@
                         <upper>1</upper>
                       </existence>
                       <children xsi:type="C_COMPLEX_OBJECT">
-                        <rm_type_name>DV_TEXT</rm_type_name>
+                        <rm_type_name>DV_IDENTIFIER</rm_type_name>
                         <occurrences>
                           <lower_included>true</lower_included>
                           <upper_included>true</upper_included>
@@ -2923,6 +3159,14 @@
                   <items id="description">Phonetic</items>
                   <items id="text">P</items>
                 </term_definitions>
+                <term_definitions code="at0.19">
+                  <items id="description">*</items>
+                  <items id="text">Other identifiers</items>
+                </term_definitions>
+                <term_definitions code="at0.20">
+                  <items id="description">*</items>
+                  <items id="text">Other names</items>
+                </term_definitions>
                 <term_definitions code="at0000">
                   <items id="description">Details of an organisation </items>
                   <items id="text">Organisation</items>
@@ -2960,6 +3204,14 @@
                   <items id="text">Contact person's name</items>
                 </term_definitions>
                 <term_definitions code="at0011">
+                  <items id="description">Identifier of organisation</items>
+                  <items id="text">Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.1">
+                  <items id="description">Identifier of organisation</items>
+                  <items id="text">Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.2">
                   <items id="description">Identifier of organisation</items>
                   <items id="text">Identifier</items>
                 </term_definitions>
@@ -3030,7 +3282,7 @@
                       <lower>0</lower>
                       <upper>1</upper>
                     </occurrences>
-                    <node_id>at0011</node_id>
+                    <node_id>at0011.1</node_id>
                     <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                       <rm_attribute_name>value</rm_attribute_name>
                       <existence>
@@ -3042,7 +3294,7 @@
                         <upper>1</upper>
                       </existence>
                       <children xsi:type="C_COMPLEX_OBJECT">
-                        <rm_type_name>DV_TEXT</rm_type_name>
+                        <rm_type_name>DV_IDENTIFIER</rm_type_name>
                         <occurrences>
                           <lower_included>true</lower_included>
                           <upper_included>true</upper_included>
@@ -3262,6 +3514,14 @@
                   <items id="description">Phonetic</items>
                   <items id="text">P</items>
                 </term_definitions>
+                <term_definitions code="at0.19">
+                  <items id="description">*</items>
+                  <items id="text">Other identifiers</items>
+                </term_definitions>
+                <term_definitions code="at0.20">
+                  <items id="description">*</items>
+                  <items id="text">Other names</items>
+                </term_definitions>
                 <term_definitions code="at0000">
                   <items id="description">Details of an organisation </items>
                   <items id="text">Organisation</items>
@@ -3302,6 +3562,14 @@
                   <items id="description">Identifier of organisation</items>
                   <items id="text">Identifier</items>
                 </term_definitions>
+                <term_definitions code="at0011.1">
+                  <items id="description">Identifier of organisation</items>
+                  <items id="text">Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.2">
+                  <items id="description">Identifier of organisation</items>
+                  <items id="text">Identifier</items>
+                </term_definitions>
               </children>
               <children xsi:type="C_ARCHETYPE_ROOT">
                 <rm_type_name>CLUSTER</rm_type_name>
@@ -3328,11 +3596,9 @@
                     <rm_type_name>CLUSTER</rm_type_name>
                     <occurrences>
                       <lower_included>true</lower_included>
-                      <upper_included>true</upper_included>
                       <lower_unbounded>false</lower_unbounded>
-                      <upper_unbounded>false</upper_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
                       <lower>0</lower>
-                      <upper>1</upper>
                     </occurrences>
                     <node_id>at0000.1</node_id>
                     <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
@@ -3572,9 +3838,122 @@
                           <lower_included>true</lower_included>
                           <lower_unbounded>false</lower_unbounded>
                           <upper_unbounded>true</upper_unbounded>
-                          <lower>1</lower>
+                          <lower>0</lower>
                         </occurrences>
                         <node_id>at0.2</node_id>
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>value</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>0</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_COMPLEX_OBJECT">
+                            <rm_type_name>DV_CODED_TEXT</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                              <rm_attribute_name>defining_code</rm_attribute_name>
+                              <existence>
+                                <lower_included>true</lower_included>
+                                <upper_included>true</upper_included>
+                                <lower_unbounded>false</lower_unbounded>
+                                <upper_unbounded>false</upper_unbounded>
+                                <lower>1</lower>
+                                <upper>1</upper>
+                              </existence>
+                              <children xsi:type="C_CODE_PHRASE">
+                                <rm_type_name>CODE_PHRASE</rm_type_name>
+                                <occurrences>
+                                  <lower_included>true</lower_included>
+                                  <upper_included>true</upper_included>
+                                  <lower_unbounded>false</lower_unbounded>
+                                  <upper_unbounded>false</upper_unbounded>
+                                  <lower>1</lower>
+                                  <upper>1</upper>
+                                </occurrences>
+                                <node_id />
+                                <terminology_id>
+                                  <value>local</value>
+                                </terminology_id>
+                                <code_list>at0.3</code_list>
+                                <code_list>at0.4</code_list>
+                                <code_list>at0.5</code_list>
+                                <code_list>at0.6</code_list>
+                                <code_list>at0.7</code_list>
+                                <code_list>at0.8</code_list>
+                                <code_list>at0.9</code_list>
+                                <code_list>at0.10</code_list>
+                                <code_list>at0.11</code_list>
+                                <code_list>at0.12</code_list>
+                                <code_list>at0.13</code_list>
+                                <code_list>at0.14</code_list>
+                                <code_list>at0.15</code_list>
+                                <code_list>at0.16</code_list>
+                                <code_list>at0.17</code_list>
+                                <code_list>at0.18</code_list>
+                                <code_list>at0.19</code_list>
+                                <code_list>at0.20</code_list>
+                                <code_list>at0.21</code_list>
+                              </children>
+                            </attributes>
+                          </children>
+                        </attributes>
+                      </children>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>ELEMENT</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>true</upper_unbounded>
+                          <lower>0</lower>
+                        </occurrences>
+                        <node_id>at0011.2</node_id>
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>value</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>0</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_COMPLEX_OBJECT">
+                            <rm_type_name>DV_IDENTIFIER</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                          </children>
+                        </attributes>
+                      </children>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>ELEMENT</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>0</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id>at0.22</node_id>
                         <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                           <rm_attribute_name>value</rm_attribute_name>
                           <existence>
@@ -3609,7 +3988,42 @@
                           <lower>0</lower>
                           <upper>1</upper>
                         </occurrences>
-                        <node_id>at0011</node_id>
+                        <node_id>at0.23</node_id>
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>value</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>0</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_DV_QUANTITY">
+                            <rm_type_name>DV_QUANTITY</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                          </children>
+                        </attributes>
+                      </children>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>ELEMENT</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>0</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id>at0.24</node_id>
                         <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                           <rm_attribute_name>value</rm_attribute_name>
                           <existence>
@@ -3622,6 +4036,39 @@
                           </existence>
                           <children xsi:type="C_COMPLEX_OBJECT">
                             <rm_type_name>DV_TEXT</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <upper_included>true</upper_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>false</upper_unbounded>
+                              <lower>1</lower>
+                              <upper>1</upper>
+                            </occurrences>
+                            <node_id />
+                          </children>
+                        </attributes>
+                      </children>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>ELEMENT</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>true</upper_unbounded>
+                          <lower>0</lower>
+                        </occurrences>
+                        <node_id>at0011.1</node_id>
+                        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                          <rm_attribute_name>value</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>0</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_COMPLEX_OBJECT">
+                            <rm_type_name>DV_IDENTIFIER</rm_type_name>
                             <occurrences>
                               <lower_included>true</lower_included>
                               <upper_included>true</upper_included>
@@ -3796,9 +4243,97 @@
                 <archetype_id>
                   <value>openEHR-EHR-CLUSTER.individual_professional-mml.v1</value>
                 </archetype_id>
+                <term_definitions code="at0.10">
+                  <items id="description">*</items>
+                  <items id="text">pt</items>
+                </term_definitions>
+                <term_definitions code="at0.11">
+                  <items id="description">*</items>
+                  <items id="text">ot</items>
+                </term_definitions>
+                <term_definitions code="at0.12">
+                  <items id="description">*</items>
+                  <items id="text">psy</items>
+                </term_definitions>
+                <term_definitions code="at0.13">
+                  <items id="description">*</items>
+                  <items id="text">cps</items>
+                </term_definitions>
+                <term_definitions code="at0.14">
+                  <items id="description">*</items>
+                  <items id="text">nutritionist</items>
+                </term_definitions>
+                <term_definitions code="at0.15">
+                  <items id="description">*</items>
+                  <items id="text">dentalHygienist</items>
+                </term_definitions>
+                <term_definitions code="at0.16">
+                  <items id="description">*</items>
+                  <items id="text">dentalTechnician</items>
+                </term_definitions>
+                <term_definitions code="at0.17">
+                  <items id="description">*</items>
+                  <items id="text">clinicalEngineer</items>
+                </term_definitions>
+                <term_definitions code="at0.18">
+                  <items id="description">*</items>
+                  <items id="text">careManager</items>
+                </term_definitions>
+                <term_definitions code="at0.19">
+                  <items id="description">*</items>
+                  <items id="text">other</items>
+                </term_definitions>
                 <term_definitions code="at0.2">
                   <items id="description">*</items>
                   <items id="text">License</items>
+                </term_definitions>
+                <term_definitions code="at0.20">
+                  <items id="description">*</items>
+                  <items id="text">acupuncturist</items>
+                </term_definitions>
+                <term_definitions code="at0.21">
+                  <items id="description">*</items>
+                  <items id="text">patient</items>
+                </term_definitions>
+                <term_definitions code="at0.22">
+                  <items id="description">*</items>
+                  <items id="text">Professional Identifier type</items>
+                </term_definitions>
+                <term_definitions code="at0.23">
+                  <items id="description">*</items>
+                  <items id="text">Professional Identifier check digit</items>
+                </term_definitions>
+                <term_definitions code="at0.24">
+                  <items id="description">*</items>
+                  <items id="text">Professional Identifier check digit schema</items>
+                </term_definitions>
+                <term_definitions code="at0.3">
+                  <items id="description">*</items>
+                  <items id="text">doctor</items>
+                </term_definitions>
+                <term_definitions code="at0.4">
+                  <items id="description">*</items>
+                  <items id="text">dentist</items>
+                </term_definitions>
+                <term_definitions code="at0.5">
+                  <items id="description">*</items>
+                  <items id="text">nurse</items>
+                </term_definitions>
+                <term_definitions code="at0.6">
+                  <items id="description">*</items>
+                  <items id="text">assistantNurse</items>
+                </term_definitions>
+                <term_definitions code="at0.7">
+                  <items id="description">*</items>
+                  <items id="text">lab</items>
+                </term_definitions>
+                <term_definitions code="at0.8">
+                  <items id="description">*</items>
+                  <items id="text">rad</items>
+                </term_definitions>
+                <term_definitions code="at0.9">
+                  <items id="description">*</items>
+                  <items id="text">pharmacist</items>
                 </term_definitions>
                 <term_definitions code="at0000">
                   <items id="description">Professional demographics details including name(s) , addresse(s) and telecommunication contact details.</items>
@@ -3821,6 +4356,14 @@
                   <items id="text">Specialty</items>
                 </term_definitions>
                 <term_definitions code="at0011">
+                  <items id="description">Professional identifier of the individual.</items>
+                  <items id="text">Professional Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.1">
+                  <items id="description">Professional identifier of the individual.</items>
+                  <items id="text">Other identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.2">
                   <items id="description">Professional identifier of the individual.</items>
                   <items id="text">Professional Identifier</items>
                 </term_definitions>
@@ -3886,11 +4429,9 @@
                     <rm_type_name>CLUSTER</rm_type_name>
                     <occurrences>
                       <lower_included>true</lower_included>
-                      <upper_included>true</upper_included>
                       <lower_unbounded>false</lower_unbounded>
-                      <upper_unbounded>false</upper_unbounded>
+                      <upper_unbounded>true</upper_unbounded>
                       <lower>0</lower>
-                      <upper>1</upper>
                     </occurrences>
                     <node_id>at0000.1</node_id>
                     <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
@@ -4130,9 +4671,9 @@
                           <lower_included>true</lower_included>
                           <lower_unbounded>false</lower_unbounded>
                           <upper_unbounded>true</upper_unbounded>
-                          <lower>1</lower>
+                          <lower>0</lower>
                         </occurrences>
-                        <node_id>at0.2</node_id>
+                        <node_id>at0011.2</node_id>
                         <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                           <rm_attribute_name>value</rm_attribute_name>
                           <existence>
@@ -4144,7 +4685,7 @@
                             <upper>1</upper>
                           </existence>
                           <children xsi:type="C_COMPLEX_OBJECT">
-                            <rm_type_name>DV_TEXT</rm_type_name>
+                            <rm_type_name>DV_IDENTIFIER</rm_type_name>
                             <occurrences>
                               <lower_included>true</lower_included>
                               <upper_included>true</upper_included>
@@ -4167,7 +4708,7 @@
                           <lower>0</lower>
                           <upper>1</upper>
                         </occurrences>
-                        <node_id>at0011</node_id>
+                        <node_id>at0.22</node_id>
                         <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                           <rm_attribute_name>value</rm_attribute_name>
                           <existence>
@@ -4354,9 +4895,97 @@
                 <archetype_id>
                   <value>openEHR-EHR-CLUSTER.individual_professional-mml.v1</value>
                 </archetype_id>
+                <term_definitions code="at0.10">
+                  <items id="description">*</items>
+                  <items id="text">pt</items>
+                </term_definitions>
+                <term_definitions code="at0.11">
+                  <items id="description">*</items>
+                  <items id="text">ot</items>
+                </term_definitions>
+                <term_definitions code="at0.12">
+                  <items id="description">*</items>
+                  <items id="text">psy</items>
+                </term_definitions>
+                <term_definitions code="at0.13">
+                  <items id="description">*</items>
+                  <items id="text">cps</items>
+                </term_definitions>
+                <term_definitions code="at0.14">
+                  <items id="description">*</items>
+                  <items id="text">nutritionist</items>
+                </term_definitions>
+                <term_definitions code="at0.15">
+                  <items id="description">*</items>
+                  <items id="text">dentalHygienist</items>
+                </term_definitions>
+                <term_definitions code="at0.16">
+                  <items id="description">*</items>
+                  <items id="text">dentalTechnician</items>
+                </term_definitions>
+                <term_definitions code="at0.17">
+                  <items id="description">*</items>
+                  <items id="text">clinicalEngineer</items>
+                </term_definitions>
+                <term_definitions code="at0.18">
+                  <items id="description">*</items>
+                  <items id="text">careManager</items>
+                </term_definitions>
+                <term_definitions code="at0.19">
+                  <items id="description">*</items>
+                  <items id="text">other</items>
+                </term_definitions>
                 <term_definitions code="at0.2">
                   <items id="description">*</items>
                   <items id="text">License</items>
+                </term_definitions>
+                <term_definitions code="at0.20">
+                  <items id="description">*</items>
+                  <items id="text">acupuncturist</items>
+                </term_definitions>
+                <term_definitions code="at0.21">
+                  <items id="description">*</items>
+                  <items id="text">patient</items>
+                </term_definitions>
+                <term_definitions code="at0.22">
+                  <items id="description">*</items>
+                  <items id="text">Professional Identifier type</items>
+                </term_definitions>
+                <term_definitions code="at0.23">
+                  <items id="description">*</items>
+                  <items id="text">Professional Identifier check digit</items>
+                </term_definitions>
+                <term_definitions code="at0.24">
+                  <items id="description">*</items>
+                  <items id="text">Professional Identifier check digit schema</items>
+                </term_definitions>
+                <term_definitions code="at0.3">
+                  <items id="description">*</items>
+                  <items id="text">doctor</items>
+                </term_definitions>
+                <term_definitions code="at0.4">
+                  <items id="description">*</items>
+                  <items id="text">dentist</items>
+                </term_definitions>
+                <term_definitions code="at0.5">
+                  <items id="description">*</items>
+                  <items id="text">nurse</items>
+                </term_definitions>
+                <term_definitions code="at0.6">
+                  <items id="description">*</items>
+                  <items id="text">assistantNurse</items>
+                </term_definitions>
+                <term_definitions code="at0.7">
+                  <items id="description">*</items>
+                  <items id="text">lab</items>
+                </term_definitions>
+                <term_definitions code="at0.8">
+                  <items id="description">*</items>
+                  <items id="text">rad</items>
+                </term_definitions>
+                <term_definitions code="at0.9">
+                  <items id="description">*</items>
+                  <items id="text">pharmacist</items>
                 </term_definitions>
                 <term_definitions code="at0000">
                   <items id="description">Professional demographics details including name(s) , addresse(s) and telecommunication contact details.</items>
@@ -4379,6 +5008,14 @@
                   <items id="text">Specialty</items>
                 </term_definitions>
                 <term_definitions code="at0011">
+                  <items id="description">Professional identifier of the individual.</items>
+                  <items id="text">Professional Identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.1">
+                  <items id="description">Professional identifier of the individual.</items>
+                  <items id="text">Other identifier</items>
+                </term_definitions>
+                <term_definitions code="at0011.2">
                   <items id="description">Professional identifier of the individual.</items>
                   <items id="text">Professional Identifier</items>
                 </term_definitions>
@@ -4418,41 +5055,6 @@
                   <items id="description">Address details of the individual.</items>
                   <items id="text">Address</items>
                 </term_definitions>
-              </children>
-              <children xsi:type="C_COMPLEX_OBJECT">
-                <rm_type_name>ELEMENT</rm_type_name>
-                <occurrences>
-                  <lower_included>true</lower_included>
-                  <upper_included>true</upper_included>
-                  <lower_unbounded>false</lower_unbounded>
-                  <upper_unbounded>false</upper_unbounded>
-                  <lower>0</lower>
-                  <upper>1</upper>
-                </occurrences>
-                <node_id>at0127</node_id>
-                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-                  <rm_attribute_name>value</rm_attribute_name>
-                  <existence>
-                    <lower_included>true</lower_included>
-                    <upper_included>true</upper_included>
-                    <lower_unbounded>false</lower_unbounded>
-                    <upper_unbounded>false</upper_unbounded>
-                    <lower>0</lower>
-                    <upper>1</upper>
-                  </existence>
-                  <children xsi:type="C_COMPLEX_OBJECT">
-                    <rm_type_name>DV_TEXT</rm_type_name>
-                    <occurrences>
-                      <lower_included>true</lower_included>
-                      <upper_included>true</upper_included>
-                      <lower_unbounded>false</lower_unbounded>
-                      <upper_unbounded>false</upper_unbounded>
-                      <lower>1</lower>
-                      <upper>1</upper>
-                    </occurrences>
-                    <node_id />
-                  </children>
-                </attributes>
               </children>
               <children xsi:type="ARCHETYPE_SLOT">
                 <rm_type_name>CLUSTER</rm_type_name>
@@ -4529,7 +5131,8 @@
           <value>openEHR-EHR-INSTRUCTION.request.v1</value>
         </archetype_id>
         <term_definitions code="at0000">
-          <items id="description">Generic request for a range of different healthcare services e.g referral, lab request, equipment request.</items>
+          <items id="comment">For example: a request for post-operative observations; or a request for home help services to be supplied on discharge from hospital.</items>
+          <items id="description">Request for a healthcare service to be supplied by another healthcare provider or support agency.</items>
           <items id="text">Healthcare service request</items>
         </term_definitions>
         <term_definitions code="at0001">
@@ -4553,19 +5156,22 @@
           <items id="text">Receiver identifier</items>
         </term_definitions>
         <term_definitions code="at0040">
-          <items id="description">The date and time that the service should be performed or completed.</items>
-          <items id="text">Date &amp;/or time service required</items>
+          <items id="comment">In practice, clinicians will often think in terms of ordering services in inexact terms, for example: review in 3 months, 6 months or 12 months. As clinical systems need more exact parameters to operate on, this '3 month' will be converted to an exact date 3 months from the date of recording and stored using this data element.</items>
+          <items id="description">The date and/or time when the service is due.</items>
+          <items id="text">Date/time service due</items>
         </term_definitions>
         <term_definitions code="at0062">
-          <items id="description">A short description of the reason for the request.  This is often coded with an external terminology.</items>
+          <items id="comment">Coding of the 'Reason for request' with a coding system is desirable, if available</items>
+          <items id="description">Phrase or code providing the reason or indication for the request.</items>
           <items id="text">Reason for request</items>
         </term_definitions>
         <term_definitions code="at0064">
-          <items id="description">A narrative description explaining the reason for request.</items>
+          <items id="description">Narrative description about the reason or indication for request.</items>
           <items id="text">Reason description</items>
         </term_definitions>
         <term_definitions code="at0065">
-          <items id="description">Stated intent of the request by the referrer.</items>
+          <items id="comment">For example: palliative care or active treatment.</items>
+          <items id="description">Stated intent for the request by the referrer.</items>
           <items id="text">Intent</items>
         </term_definitions>
         <term_definitions code="at0068">
@@ -4581,16 +5187,18 @@
           <items id="text">Supplementary information expected</items>
         </term_definitions>
         <term_definitions code="at0112">
-          <items id="description">Local detailed information such as billing requirements.</items>
-          <items id="text">Localisation</items>
+          <items id="comment">For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.</items>
+          <items id="description">Additional information required to capture local content or to align with other reference models/formalisms.</items>
+          <items id="text">Extension</items>
         </term_definitions>
         <term_definitions code="at0116">
           <items id="description">Language, transport or other personal requirements to support the patient's attendance or participation in provision of the service.</items>
           <items id="text">Patient requirements</items>
         </term_definitions>
         <term_definitions code="at0121">
-          <items id="description">Identification of the service requested. This is often coded with an external terminology.</items>
-          <items id="text">Service requested</items>
+          <items id="comment">Coding of the 'Service name' with a coding system is desirable, if available</items>
+          <items id="description">Identification of the service requested, by name.</items>
+          <items id="text">Service name</items>
         </term_definitions>
         <term_definitions code="at0127">
           <items id="description">The status of the request for service as indicated by the requester. Status is used to denote whether this is the initial request, or a follow-up request to change or provide supplementary information.</items>
@@ -4601,12 +5209,13 @@
           <items id="text">Distribution list for response</items>
         </term_definitions>
         <term_definitions code="at0132">
-          <items id="description">Structured detail defining the service requested eg CLUSTER archetype specifying the specific catheter that is to be inserted.</items>
+          <items id="comment">For example: insert the CLUSTER archetype specifying the specific catheter that is to be inserted.</items>
+          <items id="description">Structured additional detail about the service requested.</items>
           <items id="text">Specific details</items>
         </term_definitions>
         <term_definitions code="at0135">
-          <items id="description">A detailed narrative description of the service requested.</items>
-          <items id="text">Description of service</items>
+          <items id="description">Narrative description of the service requested.</items>
+          <items id="text">Description</items>
         </term_definitions>
         <term_definitions code="at0136">
           <items id="description">The request is an emergency.</items>
@@ -4629,6 +5238,7 @@
           <items id="text">Receiver</items>
         </term_definitions>
         <term_definitions code="at0144">
+          <items id="comment">For example: a service may be required to be completed before another event, such as scheduled surgery.</items>
           <items id="description">The latest date that is acceptable for the service to be completed.</items>
           <items id="text">Latest date service required</items>
         </term_definitions>
@@ -4774,23 +5384,24 @@
           <value>openEHR-EHR-EVALUATION.reason_for_encounter.v1</value>
         </archetype_id>
         <term_definitions code="at0000">
-          <items id="description">Record the administrative and/or clinical reason/s for initiation of a healthcare encounter or contact.</items>
-          <items id="text">Reason for Encounter</items>
+          <items id="description">The reason for initiation of any healthcare encounter or contact by the individual who is the subject of care.</items>
+          <items id="text">Reason for encounter</items>
         </term_definitions>
         <term_definitions code="at0001">
           <items id="description">@ internal @</items>
           <items id="text">Tree</items>
         </term_definitions>
         <term_definitions code="at0002">
-          <items id="comment">For example, a clinical consultation, emergency consultation, pre-employment medical, routine antenatal visit, women's health check, pre-operative assessment, or annual medical check-up. Coding of the Reason for Encounter with a terminology is desirable, where possible.</items>
-          <items id="description">Identification of administrative reason for seeking healthcare.</items>
-          <items id="text">Reason for Contact</items>
+          <items id="comment">oding of the Reason for Contact with a terminology is desirable, where possible. Examples include: pre-employment medical, routine antenatal visit, women's health check, pre-operative assessment, or annual medical check-up.
+</items>
+          <items id="description">Identification of the type, or administrative category, of healthcare sought or required by the subject of care.</items>
+          <items id="text">Contact type</items>
         </term_definitions>
         <term_definitions code="at0004">
-          <items id="comment">Clinical reasons for seeking healthcare can include health issues, symptoms or physical signs. Examples: health issues - desire to quit smoking or to lose weight; symptoms - abdominal pain or shortness of breath; physical signs - an altered conscious state. May also be referred to as Presenting Complaint.
- Coding of the Presentic Problem with a terminology is desirable, where possible.</items>
-          <items id="description">Identification of the clinical reason for seeking healthcare.</items>
-          <items id="text">Presenting Problem</items>
+          <items id="comment">Coding of the Presenting Problem with a terminology is desirable, where possible. Clinical or social reasons for seeking healthcare can include health issues, symptoms or physical signs. Examples: health issues - desire to quit smoking, domestic violence; symptoms - abdominal pain , shortness of breath; physical signs - an altered conscious state. 'Chief complaint' may be used as a valid synonym for Presenting Problem in templates.
+ </items>
+          <items id="description">Identification of the clinical or social problem motivating the subject of care to seeking healthcare.</items>
+          <items id="text">Presenting problem</items>
         </term_definitions>
       </children>
       <children xsi:type="C_ARCHETYPE_ROOT">
@@ -4907,11 +5518,9 @@
                 <rm_type_name>ELEMENT</rm_type_name>
                 <occurrences>
                   <lower_included>true</lower_included>
-                  <upper_included>true</upper_included>
                   <lower_unbounded>false</lower_unbounded>
-                  <upper_unbounded>false</upper_unbounded>
+                  <upper_unbounded>true</upper_unbounded>
                   <lower>0</lower>
-                  <upper>1</upper>
                 </occurrences>
                 <node_id>at0012</node_id>
                 <attributes xsi:type="C_SINGLE_ATTRIBUTE">
@@ -4942,11 +5551,9 @@
                 <rm_type_name>CLUSTER</rm_type_name>
                 <occurrences>
                   <lower_included>true</lower_included>
-                  <upper_included>true</upper_included>
                   <lower_unbounded>false</lower_unbounded>
-                  <upper_unbounded>false</upper_unbounded>
+                  <upper_unbounded>true</upper_unbounded>
                   <lower>0</lower>
-                  <upper>1</upper>
                 </occurrences>
                 <node_id>at0039</node_id>
                 <includes>
@@ -4962,38 +5569,7 @@
                     <right_operand xsi:type="EXPR_LEAF">
                       <type>C_STRING</type>
                       <item xsi:type="C_STRING">
-                        <pattern>openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1</pattern>
-                      </item>
-                      <reference_type>constraint</reference_type>
-                    </right_operand>
-                  </expression>
-                </includes>
-              </children>
-              <children xsi:type="ARCHETYPE_SLOT">
-                <rm_type_name>CLUSTER</rm_type_name>
-                <occurrences>
-                  <lower_included>true</lower_included>
-                  <upper_included>true</upper_included>
-                  <lower_unbounded>false</lower_unbounded>
-                  <upper_unbounded>false</upper_unbounded>
-                  <lower>0</lower>
-                  <upper>1</upper>
-                </occurrences>
-                <node_id>at0042</node_id>
-                <includes>
-                  <expression xsi:type="EXPR_BINARY_OPERATOR">
-                    <type>Boolean</type>
-                    <operator>2007</operator>
-                    <precedence_overridden>false</precedence_overridden>
-                    <left_operand xsi:type="EXPR_LEAF">
-                      <type>String</type>
-                      <item xsi:type="xsd:string">archetype_id/value</item>
-                      <reference_type>attribute</reference_type>
-                    </left_operand>
-                    <right_operand xsi:type="EXPR_LEAF">
-                      <type>C_STRING</type>
-                      <item xsi:type="C_STRING">
-                        <pattern>.*</pattern>
+                        <pattern>openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.relative_location(-[a-zA-Z0-9_]+)*\.v1</pattern>
                       </item>
                       <reference_type>constraint</reference_type>
                     </right_operand>
@@ -5028,6 +5604,54 @@
                     </right_operand>
                   </expression>
                 </includes>
+              </children>
+              <children xsi:type="ARCHETYPE_SLOT">
+                <rm_type_name>CLUSTER</rm_type_name>
+                <occurrences>
+                  <lower_included>true</lower_included>
+                  <lower_unbounded>false</lower_unbounded>
+                  <upper_unbounded>true</upper_unbounded>
+                  <lower>0</lower>
+                </occurrences>
+                <node_id>at0046</node_id>
+                <includes>
+                  <expression xsi:type="EXPR_BINARY_OPERATOR">
+                    <type>Boolean</type>
+                    <operator>2007</operator>
+                    <precedence_overridden>false</precedence_overridden>
+                    <left_operand xsi:type="EXPR_LEAF">
+                      <type>String</type>
+                      <item xsi:type="xsd:string">archetype_id/value</item>
+                      <reference_type>attribute</reference_type>
+                    </left_operand>
+                    <right_operand xsi:type="EXPR_LEAF">
+                      <type>C_STRING</type>
+                      <item xsi:type="C_STRING">
+                        <pattern>.*</pattern>
+                      </item>
+                      <reference_type>constraint</reference_type>
+                    </right_operand>
+                  </expression>
+                </includes>
+                <excludes>
+                  <expression xsi:type="EXPR_BINARY_OPERATOR">
+                    <type>Boolean</type>
+                    <operator>2007</operator>
+                    <precedence_overridden>false</precedence_overridden>
+                    <left_operand xsi:type="EXPR_LEAF">
+                      <type>String</type>
+                      <item xsi:type="xsd:string">archetype_id/value</item>
+                      <reference_type>attribute</reference_type>
+                    </left_operand>
+                    <right_operand xsi:type="EXPR_LEAF">
+                      <type>C_STRING</type>
+                      <item xsi:type="C_STRING">
+                        <pattern>openEHR-EHR-CLUSTER\.problem_status(-[a-zA-Z0-9_]+)*\.v1</pattern>
+                      </item>
+                      <reference_type>constraint</reference_type>
+                    </right_operand>
+                  </expression>
+                </excludes>
               </children>
               <cardinality>
                 <is_ordered>true</is_ordered>
@@ -5081,7 +5705,7 @@
                   <upper_unbounded>true</upper_unbounded>
                   <lower>0</lower>
                 </occurrences>
-                <node_id>at0046</node_id>
+                <node_id>at0071</node_id>
                 <includes>
                   <expression xsi:type="EXPR_BINARY_OPERATOR">
                     <type>Boolean</type>
@@ -5119,113 +5743,118 @@
           <value>openEHR-EHR-EVALUATION.problem_diagnosis.v1</value>
         </archetype_id>
         <term_definitions code="at0000">
-          <items id="description">An issue or obstacle which adversely impacts on the physical, mental and/or social well-being of an individual. The definition of a problem is deliberately kept rather loose and inclusive of a formal biomedical diagnosis so as to capture any real or perceived concerns that may adversely affect an individual's wellbeing to any degree.</items>
-          <items id="text">Problem/Diagnosis</items>
+          <items id="comment">Clear delineation between the scope of a problem versus a diagnosis is not easy to achieve in practice. For the purposes of clinical documentation with this archetype, problem and diagnosis are regarded as a continuum with increasing levels of detail and supportive evidence usually required to support a diagnosis.</items>
+          <items id="description">Details about a single identified health condition, injury or issue which impacts on the physical, mental and/or social well-being of an individual.</items>
+          <items id="text">Problem/diagnosis</items>
         </term_definitions>
         <term_definitions code="at0001">
           <items id="description">@ internal @</items>
           <items id="text">structure</items>
         </term_definitions>
         <term_definitions code="at0002">
-          <items id="description">Identification of the index problem, issue or diagnosis.</items>
-          <items id="text">Problem/Diagnosis</items>
+          <items id="comment">Coding of the name of the problem or diagnosis with a terminology is preferred, where possible.</items>
+          <items id="description">Identification, by name and or code, of the problem or diagnosis.</items>
+          <items id="text">Problem/diagnosis name</items>
         </term_definitions>
         <term_definitions code="at0003">
-          <items id="description">The date / time when the problem was first identified by the individual.</items>
-          <items id="text">Date of Onset</items>
-        </term_definitions>
-        <term_definitions code="at0004">
-          <items id="description">The age of the individual when the problem was first identified by the individual.</items>
-          <items id="text">Age at Onset</items>
+          <items id="comment">Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.</items>
+          <items id="description">Estimated or actual date/time the diagnosis or problem was recognised by a healthcare professional.</items>
+          <items id="text">Date/time clinically recognised</items>
         </term_definitions>
         <term_definitions code="at0005">
-          <items id="comment"> Coding of the severity with a terminology is preferred, where possible.</items>
-          <items id="description">The assessed overall severity of the index problem.</items>
+          <items id="comment">If severity is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. Note: more specific grading of severity can be recorded using the Specific details SLOT.</items>
+          <items id="description">An assessment of the overall severity of the problem or diagnosis.</items>
           <items id="text">Severity</items>
         </term_definitions>
         <term_definitions code="at0009">
-          <items id="description">A narrative description of the  issue, problem or diagnosis.</items>
-          <items id="text">Description</items>
+          <items id="comment">Use to provide background and context, including evolution, episodes or exacerbations, progress and any other relevant details, about the problem or diagnosis.</items>
+          <items id="description">Narrative description about the problem or diagnosis.</items>
+          <items id="text">Clinical description</items>
         </term_definitions>
         <term_definitions code="at0012">
-          <items id="description">The body site affected.</items>
-          <items id="text">Body Site</items>
-        </term_definitions>
-        <term_definitions code="at0018">
-          <items id="description">Grouping of information about individual occurrences or exacerbations.</items>
-          <items id="text">Previous Occurrences</items>
-        </term_definitions>
-        <term_definitions code="at0019">
-          <items id="description">The frequency of individual occurrences of the problem.</items>
-          <items id="text">Frequency</items>
-        </term_definitions>
-        <term_definitions code="at0020">
-          <items id="description">The date / time of the last occurrence of the problem.</items>
-          <items id="text">Date of last Occurrence</items>
-        </term_definitions>
-        <term_definitions code="at0022">
-          <items id="description">A description of the exacerbation or occurrence.</items>
-          <items id="text">Description</items>
-        </term_definitions>
-        <term_definitions code="at0025">
-          <items id="description">Number of times this problem has occurred or been apparent.</items>
-          <items id="text">Number</items>
+          <items id="comment">Occurrences for this data element are unbounded to allow for clinical scenarios such as describing a rash in multiple locations but where all of the other attributes are identical. If the requirements for recording the anatomical location are determined at run-time by the application or require more complex modelling such as relative locations then use the CLUSTER.anatomical_location or CLUSTER.relative_location within the 'Structured anatomical location' SLOT in this archetype.
+ Use this data element to record precoordinated anatomical locations. If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. </items>
+          <items id="description">Record of a simple body site where the problem or diagnosis was located.</items>
+          <items id="text">Anatomical location</items>
         </term_definitions>
         <term_definitions code="at0027">
-          <items id="description">A group of characteristics of the problem complicating the index problem.</items>
-          <items id="text">Related Item</items>
+          <items id="description">Identification of other diagnoses and problems that have a relationship to the  diagnosis or problem recorded using this archetype instance.</items>
+          <items id="text">Related item</items>
         </term_definitions>
         <term_definitions code="at0028">
-          <items id="description">Identification of a related problem as text,coded text or link within the EHR.</items>
+          <items id="comment">Record as text, coded text or a link within the EHR.</items>
+          <items id="description">Identification of the related problem or diagnosis.</items>
           <items id="text">Item</items>
         </term_definitions>
         <term_definitions code="at0029">
-          <items id="description">The type of relationship that this problem/diagnosis has to the related item.</items>
-          <items id="text">Relationship Type</items>
+          <items id="comment">Where no causality or sequence of events is known, this relationship type should be left blank.</items>
+          <items id="description">The type of relationship that this problem or diagnosis has to the item.</items>
+          <items id="text">Relationship</items>
         </term_definitions>
         <term_definitions code="at0030">
-          <items id="description">The date that the problem resolved or went into remission.</items>
-          <items id="text">Date of Resolution</items>
-        </term_definitions>
-        <term_definitions code="at0031">
-          <items id="description">The age of the person at the resolution of the problem.</items>
-          <items id="text">Age at Resolution</items>
+          <items id="comment">Partial dates are acceptable. If the subject of care is under the age of one year, then the complete date or a minimum of the month and year is necessary to enable accurate age calculations - for example, if used to drive decision support.</items>
+          <items id="description">Estimated or actual date/time of resolution or remission for this problem or diagnosis, as determined by a healthcare professional.</items>
+          <items id="text">Date/time of resolution</items>
         </term_definitions>
         <term_definitions code="at0032">
           <items id="description">@ internal @</items>
           <items id="text">Tree</items>
         </term_definitions>
-        <term_definitions code="at0035">
-          <items id="description">Useful information on the internet about this condition.</items>
-          <items id="text">Supporting clinical evidence</items>
-        </term_definitions>
         <term_definitions code="at0039">
-          <items id="description">Details of the body site concerned.</items>
-          <items id="text">Body Site Details</items>
+          <items id="comment">If the anatomical location is included in the Problem/diagnosis name via precoordinated codes, use of this SLOT becomes redundant.</items>
+          <items id="description">Slot to contain detailed and structured anatomical location details.</items>
+          <items id="text">Structured anatomical location</items>
         </term_definitions>
         <term_definitions code="at0040">
-          <items id="description">This concept identifies the direct cause or causative agent of a Problem/Diagnosis. The concept includes the idea of ‘complications’, ‘causative agent’ and ‘due to’. Note: Where no causality or sequence of events is known, this relationship type should be left blank.</items>
+          <items id="description">This concept identifies the direct cause or causative agent of a Problem/Diagnosis. The concept includes the idea of ‘complications’, ‘causative agent’ and ‘due to’.</items>
           <items id="text">Caused by</items>
         </term_definitions>
         <term_definitions code="at0041">
-          <items id="description">This value identifies the sequence of events between the related items, but does not assert causality. This can be used for sequelae or late effects. Note: Where no causality or sequence of events is known, this relationship type should be left blank.</items>
+          <items id="description">This value identifies the sequence of events between the related items, but does not assert causality. This can be used for sequelae or late effects.</items>
           <items id="text">Following</items>
         </term_definitions>
-        <term_definitions code="at0042">
-          <items id="description">The criteria on which the problem/diagnosis is based.</items>
-          <items id="text">Diagnostic Criteria</items>
-        </term_definitions>
         <term_definitions code="at0043">
-          <items id="description">Clinical stage or grade of a problem/diagnosis. Note: May include formal severity assessments.</items>
-          <items id="text">Clinical Stage/Grade</items>
+          <items id="comment">May include structured detail about the grading or staging of the diagnosis; diagnostic criteria, classification criteria or formal severity assessments such as Common Terminology Criteria for Adverse Events.</items>
+          <items id="description">Details that are additionally required to record as unique attributes of this problem or diagnosis.</items>
+          <items id="text">Specific details</items>
         </term_definitions>
         <term_definitions code="at0044">
-          <items id="description">A narrative description of the related item.</items>
+          <items id="description">Narrative description about the item.</items>
           <items id="text">Description</items>
         </term_definitions>
         <term_definitions code="at0046">
-          <items id="description">Descriptor for context- or use-case specific label or workflow-related aspect of the diagnostic process which may not be safe to exchange between systems or use in a shared environment. Examples include: active/inactive; primary/secondary; preliminary/provisional/working/final.</items>
+          <items id="comment">Use status or context qualifiers with care, as they are avariably used in practic and interoperability cannot be assured unless usage is clearly defined with the community of use. For example: active status - active, inactive, resolved, in remission; evolution status - initial, interim/working, final; temporal status - current, past; episodicity status - first, new, ongoing; admission status - admission, discharge; or priority status - primary, secondary.</items>
+          <items id="description">Structured details for location-, domain-, episode- or workflow-specific aspects of the diagnostic process.</items>
           <items id="text">Status</items>
+        </term_definitions>
+        <term_definitions code="at0047">
+          <items id="description">The problem or diagnosis does not interfere with normal activity.</items>
+          <items id="text">Mild</items>
+        </term_definitions>
+        <term_definitions code="at0048">
+          <items id="description">The problem or diagnosis causes interference with normal activity.</items>
+          <items id="text">Moderate</items>
+        </term_definitions>
+        <term_definitions code="at0049">
+          <items id="description">The problem or diagnosis prevents normal activity.</items>
+          <items id="text">Severe</items>
+        </term_definitions>
+        <term_definitions code="at0069">
+          <items id="description">Additional narrative about the problem or diagnosis not captured in other fields.</items>
+          <items id="text">Comment</items>
+        </term_definitions>
+        <term_definitions code="at0070">
+          <items id="description">The date this problem or diagnosis was last updated.</items>
+          <items id="text">Last updated</items>
+        </term_definitions>
+        <term_definitions code="at0071">
+          <items id="comment">For example: local information requirements or additional metadata to align with FHIR or CIMI equivalents.</items>
+          <items id="description">Additional information required to capture local content or to align with other reference models/formalisms.</items>
+          <items id="text">Extension</items>
+        </term_definitions>
+        <term_definitions code="at0072">
+          <items id="description">Narrative description about the course of the problem or diagnosis since onset.</items>
+          <items id="text">Course description</items>
         </term_definitions>
       </children>
       <children xsi:type="C_ARCHETYPE_ROOT">

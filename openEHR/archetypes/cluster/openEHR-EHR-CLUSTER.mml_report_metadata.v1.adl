@@ -39,18 +39,18 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"D8F624E06AF984662C88AF3222073DF2">
+		["MD5-CAM-1.0.1"] = <"3250DFB8B5C68F0F8A14632AD0ACE5FF">
 	>
 
 definition
 	CLUSTER[at0000] matches {	-- MML Report module meta-data
 		items cardinality matches {2..*; unordered} matches {
-			ELEMENT[at0001] matches {	-- perform time
+			ELEMENT[at0001] matches {	-- performed time
 				value matches {
 					DV_DATE_TIME matches {*}
 				}
 			}
-			ELEMENT[at0002] matches {	-- report time
+			ELEMENT[at0002] matches {	-- reported time
 				value matches {
 					DV_DATE_TIME matches {*}
 				}
@@ -67,11 +67,11 @@ ontology
 					description = <"*MML report metadata(ja)">
 				>
 				["at0001"] = <
-					text = <"*perform time(ja)">
+					text = <"*performed time(ja)">
 					description = <"***(ja)(ja)">
 				>
 				["at0002"] = <
-					text = <"*report time(ja)">
+					text = <"*reported time(ja)">
 					description = <"***(ja)(ja)">
 				>
 			>
@@ -83,11 +83,11 @@ ontology
 					description = <"MML report metadata">
 				>
 				["at0001"] = <
-					text = <"perform time">
+					text = <"performed time">
 					description = <"**(ja)">
 				>
 				["at0002"] = <
-					text = <"report time">
+					text = <"reported time">
 					description = <"**(ja)">
 				>
 			>
