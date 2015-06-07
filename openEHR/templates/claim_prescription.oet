@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
   <id>05601269-73e9-4d56-aa89-009bc0c9cf89</id>
-  <name>mml_prescription</name>
+  <name>claim_prescription</name>
   <description>
     <lifecycle_state>Initial</lifecycle_state>
     <details>
