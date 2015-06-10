@@ -151,6 +151,10 @@
       <Rule path="/data[at0001]/items[at0004]" max="1" />
     </Content>
     <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.story.v1" concept_name="Story/History" max="1" path="/content" name="Present illness" />
-    <Context />
+    <Context>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.free_text.v1" concept_name="Free text" max="1" path="/context/other_context[at0001]/items[at0002]" name="Health insurance">
+        <Rule path="/items[at0001]" max="1" name="related uid" />
+      </Items>
+    </Context>
   </definition>
 </template>

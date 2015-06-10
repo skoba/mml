@@ -2,7 +2,7 @@ archetype (adl_version=1.4)
 	openEHR-EHR-SECTION.summary_outline.v1
 
 concept
-	[at0000]	-- *Summary outline(ja)
+	[at0000]	-- Summary outline MML
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -36,13 +36,13 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"F458FA3BDD9E10C39E8B7BED3AAE073A">
+		["MD5-CAM-1.0.1"] = <"C759C09E7E412DB87C0C2824B42EE2B3">
 	>
 
 definition
-	SECTION[at0000] matches {	-- *Summary outline(ja)
+	SECTION[at0000] matches {	-- Summary outline MML
 		items cardinality matches {1..*; unordered} matches {
-			SECTION[at0002] occurrences matches {0..1} matches {*}
+			SECTION[at0013] occurrences matches {0..1} matches {*}
 			SECTION[at0003] occurrences matches {0..1} matches {*}
 			SECTION[at0004] occurrences matches {0..1} matches {*}
 			SECTION[at0005] occurrences matches {0..1} matches {*}
@@ -64,10 +64,6 @@ ontology
 					text = <"*Summary outline(ja)">
 					description = <"*headings fo rMML summary module(ja)">
 				>
-				["at0002"] = <
-					text = <"Service history">
-					description = <"**(ja)">
-				>
 				["at0003"] = <
 					text = <"Diagnosis">
 					description = <"**(ja)">
@@ -106,6 +102,10 @@ ontology
 				>
 				["at0012"] = <
 					text = <"Plan">
+					description = <"**(ja)">
+				>
+				["at0013"] = <
+					text = <"*Out patient(ja)">
 					description = <"**(ja)">
 				>
 			>
@@ -113,12 +113,8 @@ ontology
 		["ja"] = <
 			items = <
 				["at0000"] = <
-					text = <"Summary outline">
-					description = <"headings fo rMML summary module">
-				>
-				["at0002"] = <
-					text = <"Service history">
-					description = <"*">
+					text = <"Summary outline MML">
+					description = <"headings for MML summary module">
 				>
 				["at0003"] = <
 					text = <"Diagnosis">
@@ -158,6 +154,10 @@ ontology
 				>
 				["at0012"] = <
 					text = <"Plan">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Out patient">
 					description = <"*">
 				>
 			>
