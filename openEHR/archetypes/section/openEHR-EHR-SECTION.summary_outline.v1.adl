@@ -36,13 +36,14 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"C759C09E7E412DB87C0C2824B42EE2B3">
+		["MD5-CAM-1.0.1"] = <"BFBE92B0A18A1AA1E1C0C669EC9979C2">
 	>
 
 definition
 	SECTION[at0000] matches {	-- Summary outline MML
 		items cardinality matches {1..*; unordered} matches {
 			SECTION[at0013] occurrences matches {0..1} matches {*}
+			SECTION[at0014] occurrences matches {0..1} matches {*}
 			SECTION[at0003] occurrences matches {0..1} matches {*}
 			SECTION[at0004] occurrences matches {0..1} matches {*}
 			SECTION[at0005] occurrences matches {0..1} matches {*}
@@ -51,8 +52,9 @@ definition
 			SECTION[at0008] occurrences matches {0..1} matches {*}
 			SECTION[at0009] occurrences matches {0..1} matches {*}
 			SECTION[at0010] occurrences matches {0..1} matches {*}
-			SECTION[at0011] occurrences matches {0..1} matches {*}
+			SECTION[at0015] occurrences matches {0..1} matches {*}
 			SECTION[at0012] occurrences matches {0..1} matches {*}
+			SECTION[at0011] occurrences matches {0..1} matches {*}
 		}
 	}
 
@@ -89,7 +91,7 @@ ontology
 					description = <"**(ja)">
 				>
 				["at0009"] = <
-					text = <"Examination findings">
+					text = <"*Discharge findings(ja)">
 					description = <"**(ja)">
 				>
 				["at0010"] = <
@@ -105,7 +107,15 @@ ontology
 					description = <"**(ja)">
 				>
 				["at0013"] = <
-					text = <"*Out patient(ja)">
+					text = <"*Outpatient(ja)">
+					description = <"**(ja)">
+				>
+				["at0014"] = <
+					text = <"*Inpatient(ja)">
+					description = <"**(ja)">
+				>
+				["at0015"] = <
+					text = <"*Test result(ja)">
 					description = <"**(ja)">
 				>
 			>
@@ -141,7 +151,7 @@ ontology
 					description = <"*">
 				>
 				["at0009"] = <
-					text = <"Examination findings">
+					text = <"Discharge findings">
 					description = <"*">
 				>
 				["at0010"] = <
@@ -157,7 +167,15 @@ ontology
 					description = <"*">
 				>
 				["at0013"] = <
-					text = <"Out patient">
+					text = <"Outpatient">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Inpatient">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Test result">
 					description = <"*">
 				>
 			>

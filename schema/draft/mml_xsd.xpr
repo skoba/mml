@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="12.2">
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="mml_xsd.xpr">
+        <file name="address.xsd"/>
+        <file name="baseclinic.xsd"/>
+        <file name="claim.xsd"/>
+        <file name="claimamount.xsd"/>
+        <file name="common.xsd"/>
+        <file name="creatorinfo.xsd"/>
+        <file name="department.xsd"/>
+        <file name="facility.xsd"/>
+        <file name="firstclinic.xsd"/>
+        <file name="flowsheet.xsd"/>
+        <file name="healthinsurance.xsd"/>
+        <file name="lifestyle.xsd"/>
+        <file name="mml_xsd.xpr"/>
+        <file name="mml.xsd"/>
+        <file name="name.xsd"/>
+        <file name="patientinfo.xsd"/>
+        <file name="personalizedinfo.xsd"/>
+        <file name="phone.xsd"/>
+        <file name="progresscourse.xsd"/>
+        <file name="referral.xsd"/>
+        <file name="registereddiagnosis.xsd"/>
+        <file name="report.xsd"/>
+        <file name="security.xsd"/>
+        <file name="summary.xsd"/>
+        <file name="surgery.xsd"/>
+        <file name="testhistory.xsd"/>
+        <file name="vitalsign.xsd"/>
+    </projectTree>
+</project>
