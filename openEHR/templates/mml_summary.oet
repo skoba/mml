@@ -194,7 +194,9 @@
             <Rule path="/items[at0002]/items[at0018]" max="0" />
             <Rule path="/items[at0014]" max="0" />
           </Items>
-          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-mml.v1" concept_name="Telecom details for MML" path="/items[at0003]/items[at0017]" />
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-mml.v1" concept_name="Telecom details for MML" path="/items[at0003]/items[at0017]">
+            <Rule path="/items[at0010]" max="0" />
+          </Items>
           <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0003]/items[at0019]">
             <Rule path="/items[at0001]/items[at0015]" max="0" />
           </Items>
@@ -236,53 +238,23 @@
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0006]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0011]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/state[at0009]/items[at0008]" max="0" />
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/events[at0002 and name/value='Any event']/data[at0003]/items[at0005]">
-          <Rule path="/items[at0001]">
-            <constraint xsi:type="multipleConstraint">
-              <includedTypes>MultiMedia</includedTypes>
-            </constraint>
-          </Rule>
-        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/events[at0002 and name/value='Any event']/data[at0003]/items[at0005]" />
       </Item>
       <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.progress_note.v1" concept_name="Progress Note" path="/items[at0008]/items" />
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/items[at0008]/items">
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]">
-          <Rule path="/items[at0001]">
-            <constraint xsi:type="multipleConstraint">
-              <includedTypes>MultiMedia</includedTypes>
-            </constraint>
-          </Rule>
-        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
       </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" path="/items[at0009]/items" />
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/items[at0009]/items">
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]">
-          <Rule path="/items[at0001]">
-            <constraint xsi:type="multipleConstraint">
-              <includedTypes>MultiMedia</includedTypes>
-            </constraint>
-          </Rule>
-        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
       </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" path="/items[at0010]/items" />
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/items[at0010]/items">
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]">
-          <Rule path="/items[at0001]">
-            <constraint xsi:type="multipleConstraint">
-              <includedTypes>MultiMedia</includedTypes>
-            </constraint>
-          </Rule>
-        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
       </Item>
       <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.progress_note.v1" concept_name="Progress Note" path="/items[at0015]/items" />
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/items[at0015]/items">
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]">
-          <Rule path="/items[at0001]">
-            <constraint xsi:type="multipleConstraint">
-              <includedTypes>MultiMedia</includedTypes>
-            </constraint>
-          </Rule>
-        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
       </Item>
       <Item xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.care_plan.v1" concept_name="Care Plan" path="/items[at0012]/items">
         <Rule path="/activities[at0001]/description[at0004]/items[at0017]" max="0" />
@@ -291,13 +263,7 @@
         <Rule path="/activities[at0001]/description[at0004]/items[at0019]" max="0" />
       </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/items[at0012]/items">
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]">
-          <Rule path="/items[at0001]">
-            <constraint xsi:type="multipleConstraint">
-              <includedTypes>MultiMedia</includedTypes>
-            </constraint>
-          </Rule>
-        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
       </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" path="/items[at0011]/items" />
     </Content>

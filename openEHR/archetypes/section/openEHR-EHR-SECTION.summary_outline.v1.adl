@@ -2,7 +2,7 @@ archetype (adl_version=1.4)
 	openEHR-EHR-SECTION.summary_outline.v1
 
 concept
-	[at0000]	-- Summary outline MML
+	[at0000]	-- Summary outline
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -36,11 +36,11 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"BFBE92B0A18A1AA1E1C0C669EC9979C2">
+		["MD5-CAM-1.0.1"] = <"D514E5892FE7597A1DDEAFFA802B100C">
 	>
 
 definition
-	SECTION[at0000] matches {	-- Summary outline MML
+	SECTION[at0000] matches {	-- Summary outline
 		items cardinality matches {1..*; unordered} matches {
 			SECTION[at0013] occurrences matches {0..1} matches {*}
 			SECTION[at0014] occurrences matches {0..1} matches {*}
@@ -63,8 +63,8 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"*Summary outline(ja)">
-					description = <"*headings fo rMML summary module(ja)">
+					text = <"Summary outline">
+					description = <"headings for MML summary module">
 				>
 				["at0003"] = <
 					text = <"Diagnosis">
@@ -91,7 +91,7 @@ ontology
 					description = <"**(ja)">
 				>
 				["at0009"] = <
-					text = <"*Discharge findings(ja)">
+					text = <"Discharge findings">
 					description = <"**(ja)">
 				>
 				["at0010"] = <
@@ -104,18 +104,18 @@ ontology
 				>
 				["at0012"] = <
 					text = <"Plan">
-					description = <"**(ja)">
+					description = <"">
 				>
 				["at0013"] = <
-					text = <"*Outpatient(ja)">
+					text = <"Outpatient">
 					description = <"**(ja)">
 				>
 				["at0014"] = <
-					text = <"*Inpatient(ja)">
+					text = <"Inpatient">
 					description = <"**(ja)">
 				>
 				["at0015"] = <
-					text = <"*Test result(ja)">
+					text = <"Test result">
 					description = <"**(ja)">
 				>
 			>
