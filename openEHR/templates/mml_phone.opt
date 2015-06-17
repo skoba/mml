@@ -216,7 +216,7 @@
               <lower>0</lower>
               <upper>1</upper>
             </occurrences>
-            <node_id>at0002</node_id>
+            <node_id>at0002.1</node_id>
             <attributes xsi:type="C_SINGLE_ATTRIBUTE">
               <rm_attribute_name>value</rm_attribute_name>
               <existence>
@@ -569,6 +569,10 @@
     <term_definitions code="at0002">
       <items id="description">An unstructured description of telecoms.</items>
       <items id="text">Unstuctured telecoms</items>
+    </term_definitions>
+    <term_definitions code="at0002.1">
+      <items id="description">An unstructured description of telecoms.</items>
+      <items id="text">Unstructured telecoms</items>
     </term_definitions>
     <term_definitions code="at0003">
       <items id="description">A structure for telephone numbers composed of separately identifiable elements. ENV13606-4:2000 7.11.18.</items>
