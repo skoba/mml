@@ -60,5 +60,7 @@
       </item>
     </other_details>
   </description>
-  <definition xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" />
+  <definition xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan">
+    <Rule path="/items[at0001]/items[at0015]" max="0" />
+  </definition>
 </template>
