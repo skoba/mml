@@ -49,7 +49,7 @@
       <lower>1</lower>
       <upper>1</upper>
     </occurrences>
-    <node_id>at0000</node_id>
+    <node_id>at0000.1</node_id>
     <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
       <rm_attribute_name>items</rm_attribute_name>
       <existence>
@@ -70,7 +70,7 @@
           <lower>0</lower>
           <upper>1</upper>
         </occurrences>
-        <node_id>at0006</node_id>
+        <node_id>at0.23</node_id>
         <attributes xsi:type="C_SINGLE_ATTRIBUTE">
           <rm_attribute_name>value</rm_attribute_name>
           <existence>
@@ -116,76 +116,9 @@
                 <terminology_id>
                   <value>local</value>
                 </terminology_id>
-                <code_list>at0020</code_list>
-                <code_list>at0008</code_list>
-                <code_list>at0009</code_list>
-                <code_list>at0010</code_list>
-                <code_list>at0011</code_list>
-                <code_list>at0012</code_list>
-                <code_list>at0019</code_list>
-                <code_list>at0021</code_list>
-              </children>
-            </attributes>
-          </children>
-        </attributes>
-      </children>
-      <children xsi:type="C_COMPLEX_OBJECT">
-        <rm_type_name>ELEMENT</rm_type_name>
-        <occurrences>
-          <lower_included>true</lower_included>
-          <upper_included>true</upper_included>
-          <lower_unbounded>false</lower_unbounded>
-          <upper_unbounded>false</upper_unbounded>
-          <lower>0</lower>
-          <upper>1</upper>
-        </occurrences>
-        <node_id>at0022</node_id>
-        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-          <rm_attribute_name>value</rm_attribute_name>
-          <existence>
-            <lower_included>true</lower_included>
-            <upper_included>true</upper_included>
-            <lower_unbounded>false</lower_unbounded>
-            <upper_unbounded>false</upper_unbounded>
-            <lower>0</lower>
-            <upper>1</upper>
-          </existence>
-          <children xsi:type="C_COMPLEX_OBJECT">
-            <rm_type_name>DV_BOOLEAN</rm_type_name>
-            <occurrences>
-              <lower_included>true</lower_included>
-              <upper_included>true</upper_included>
-              <lower_unbounded>false</lower_unbounded>
-              <upper_unbounded>false</upper_unbounded>
-              <lower>1</lower>
-              <upper>1</upper>
-            </occurrences>
-            <node_id />
-            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-              <rm_attribute_name>value</rm_attribute_name>
-              <existence>
-                <lower_included>true</lower_included>
-                <upper_included>true</upper_included>
-                <lower_unbounded>false</lower_unbounded>
-                <upper_unbounded>false</upper_unbounded>
-                <lower>1</lower>
-                <upper>1</upper>
-              </existence>
-              <children xsi:type="C_PRIMITIVE_OBJECT">
-                <rm_type_name>BOOLEAN</rm_type_name>
-                <occurrences>
-                  <lower_included>true</lower_included>
-                  <upper_included>true</upper_included>
-                  <lower_unbounded>false</lower_unbounded>
-                  <upper_unbounded>false</upper_unbounded>
-                  <lower>1</lower>
-                  <upper>1</upper>
-                </occurrences>
-                <node_id />
-                <item xsi:type="C_BOOLEAN">
-                  <true_valid>true</true_valid>
-                  <false_valid>false</false_valid>
-                </item>
+                <code_list>at0.24</code_list>
+                <code_list>at0.25</code_list>
+                <code_list>at0.26</code_list>
               </children>
             </attributes>
           </children>
@@ -421,7 +354,7 @@
               <lower>0</lower>
               <upper>1</upper>
             </occurrences>
-            <node_id>at0018</node_id>
+            <node_id>at0.27</node_id>
             <attributes xsi:type="C_SINGLE_ATTRIBUTE">
               <rm_attribute_name>value</rm_attribute_name>
               <existence>
@@ -458,87 +391,6 @@
           </cardinality>
         </attributes>
       </children>
-      <children xsi:type="C_COMPLEX_OBJECT">
-        <rm_type_name>ELEMENT</rm_type_name>
-        <occurrences>
-          <lower_included>true</lower_included>
-          <upper_included>true</upper_included>
-          <lower_unbounded>false</lower_unbounded>
-          <upper_unbounded>false</upper_unbounded>
-          <lower>0</lower>
-          <upper>1</upper>
-        </occurrences>
-        <node_id>at0014</node_id>
-        <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-          <rm_attribute_name>value</rm_attribute_name>
-          <existence>
-            <lower_included>true</lower_included>
-            <upper_included>true</upper_included>
-            <lower_unbounded>false</lower_unbounded>
-            <upper_unbounded>false</upper_unbounded>
-            <lower>0</lower>
-            <upper>1</upper>
-          </existence>
-          <children xsi:type="C_COMPLEX_OBJECT">
-            <rm_type_name>DV_INTERVAL&lt;DV_DATE_TIME&gt;</rm_type_name>
-            <occurrences>
-              <lower_included>true</lower_included>
-              <upper_included>true</upper_included>
-              <lower_unbounded>false</lower_unbounded>
-              <upper_unbounded>false</upper_unbounded>
-              <lower>1</lower>
-              <upper>1</upper>
-            </occurrences>
-            <node_id />
-            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-              <rm_attribute_name>upper</rm_attribute_name>
-              <existence>
-                <lower_included>true</lower_included>
-                <upper_included>true</upper_included>
-                <lower_unbounded>false</lower_unbounded>
-                <upper_unbounded>false</upper_unbounded>
-                <lower>1</lower>
-                <upper>1</upper>
-              </existence>
-              <children xsi:type="C_COMPLEX_OBJECT">
-                <rm_type_name>DV_DATE_TIME</rm_type_name>
-                <occurrences>
-                  <lower_included>true</lower_included>
-                  <upper_included>true</upper_included>
-                  <lower_unbounded>false</lower_unbounded>
-                  <upper_unbounded>false</upper_unbounded>
-                  <lower>1</lower>
-                  <upper>1</upper>
-                </occurrences>
-                <node_id />
-              </children>
-            </attributes>
-            <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-              <rm_attribute_name>lower</rm_attribute_name>
-              <existence>
-                <lower_included>true</lower_included>
-                <upper_included>true</upper_included>
-                <lower_unbounded>false</lower_unbounded>
-                <upper_unbounded>false</upper_unbounded>
-                <lower>1</lower>
-                <upper>1</upper>
-              </existence>
-              <children xsi:type="C_COMPLEX_OBJECT">
-                <rm_type_name>DV_DATE_TIME</rm_type_name>
-                <occurrences>
-                  <lower_included>true</lower_included>
-                  <upper_included>true</upper_included>
-                  <lower_unbounded>false</lower_unbounded>
-                  <upper_unbounded>false</upper_unbounded>
-                  <lower>1</lower>
-                  <upper>1</upper>
-                </occurrences>
-                <node_id />
-              </children>
-            </attributes>
-          </children>
-        </attributes>
-      </children>
       <cardinality>
         <is_ordered>false</is_ordered>
         <is_unique>false</is_unique>
@@ -551,14 +403,38 @@
       </cardinality>
     </attributes>
     <archetype_id>
-      <value>openEHR-EHR-CLUSTER.person_name.v1</value>
+      <value>openEHR-EHR-CLUSTER.person_name-mml.v1</value>
     </archetype_id>
     <template_id>
       <value>mml_name</value>
     </template_id>
+    <term_definitions code="at0.23">
+      <items id="description">*</items>
+      <items id="text">Name representation</items>
+    </term_definitions>
+    <term_definitions code="at0.24">
+      <items id="description">Ideographic</items>
+      <items id="text">I</items>
+    </term_definitions>
+    <term_definitions code="at0.25">
+      <items id="description">Alphabetic</items>
+      <items id="text">A</items>
+    </term_definitions>
+    <term_definitions code="at0.26">
+      <items id="description">Phonetic</items>
+      <items id="text">P</items>
+    </term_definitions>
+    <term_definitions code="at0.27">
+      <items id="description">MD, PhD like</items>
+      <items id="text">degree</items>
+    </term_definitions>
     <term_definitions code="at0000">
       <items id="description">Details of personal name of an individual, provider or third party.</items>
       <items id="text">Person name</items>
+    </term_definitions>
+    <term_definitions code="at0000.1">
+      <items id="description">Details of personal name of an individual, provider or third party for mml expression.</items>
+      <items id="text">Person name for MML expression</items>
     </term_definitions>
     <term_definitions code="at0001">
       <items id="description">Name in free text unstructured format.</items>

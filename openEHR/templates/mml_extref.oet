@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
-  <id>2b2b1dce-1b14-4e55-ad9c-3f005e3cc3e9</id>
-  <name>mml_name</name>
+  <id>03549bb9-53f1-463a-abf4-e7867338b874</id>
+  <name>mml_extref</name>
   <description>
     <lifecycle_state>Initial</lifecycle_state>
     <details>
@@ -60,10 +60,5 @@
       </item>
     </other_details>
   </description>
-  <definition xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name-mml.v1" concept_name="Person name for MML expression">
-    <Rule path="/items[at0006]" max="0" />
-    <Rule path="/items[at0022]" max="0" />
-    <Rule path="/items[at0002]/items[at0018]" max="0" />
-    <Rule path="/items[at0014]" max="0" />
-  </definition>
+  <definition xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" />
 </template>
