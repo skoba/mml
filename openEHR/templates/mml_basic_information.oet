@@ -106,11 +106,11 @@
         </constraint>
       </Rule>
       <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0057]" max="0" />
+      <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0.0.40]" max="0" />
       <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0010]" max="0" />
       <Rule path="/protocol[at0004]/items[at0062]" max="0" />
       <Rule path="/protocol[at0004]/items[at0063]" max="0" />
       <Rule path="/protocol[at0004]/items[at0068]" max="0" />
-      <Rule path="/protocol[at0004]/items[at0075]" max="0" />
     </Content>
     <Context />
   </definition>
