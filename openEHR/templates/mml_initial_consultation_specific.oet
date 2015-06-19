@@ -80,6 +80,8 @@
           <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0006]" max="0" />
           <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" name="Facility">
             <Rule path="/items[at0005]" max="0" />
+            <Rule path="/items[at0.19]" max="0" />
+            <Rule path="/items[at0.20]" max="0" />
           </Items>
           <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.delivery_of_infant.v1" concept_name="Delivery of infant" path="/data[at0001]/events[at0002]/data[at0003]/items[at0007]">
             <Rule path="/items[at0001]" max="0" />
@@ -87,7 +89,7 @@
             <Rule path="/items[at0006]/items[at0005]" max="0" />
             <Rule path="/items[at0006]/items[at0004]" max="0" />
             <Rule path="/items[at0006]/items[at0007]/items[at0008]" max="0" />
-            <Rule path="/items[at0009]/items[at0010]" max="0" />
+            <Rule path="/items[at0009]" max="0" />
           </Items>
         </Item>
         <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.body_segment-birth.v1" concept_name="Measurement of Body Segment at birth" max="1" path="/items" name="Head circumference at birth">
