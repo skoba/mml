@@ -97,7 +97,9 @@
             <Rule path="/items[at0022]" max="0" />
             <Rule path="/items[at0014]" max="0" />
           </Items>
-          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-mml.v1" concept_name="Telecom details for MML" path="/items[at0003]/items[at0017]" />
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0003]/items[at0017]">
+            <Rule path="/items[at0010]" max="0" />
+          </Items>
           <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0003]/items[at0019]">
             <Rule path="/items[at0001]/items[at0015]" max="0" />
           </Items>
@@ -106,8 +108,8 @@
             <Rule path="/items[at0.19]" max="0" />
             <Rule path="/items[at0.20]" max="0" />
           </Items>
-          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/items[at0003]/items[at0018]" name="Departiment">
-            <Rule path="/items[at0005]/items[at0007]" max="0" />
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/items[at0003]/items[at0018]" name="Department">
+            <Rule path="/items[at0005]" max="0" />
             <Rule path="/items[at0.19]" max="0" />
             <Rule path="/items[at0.20]" max="0" />
           </Items>
@@ -120,7 +122,9 @@
             <Rule path="/items[at0022]" max="0" />
             <Rule path="/items[at0014]" max="0" />
           </Items>
-          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0003]/items[at0017]" />
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0003]/items[at0017]">
+            <Rule path="/items[at0010]" max="0" />
+          </Items>
           <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0003]/items[at0019]">
             <Rule path="/items[at0001]/items[at0015]" max="0" />
           </Items>
@@ -198,8 +202,12 @@
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0014]" />
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0015.1]" />
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.race.v1" concept_name="Race" path="/items[at0018]" />
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" path="/items[at0.2]" />
-        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" path="/items[at0.3]" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" max="1" path="/items[at0.2]" name="Facility">
+          <Rule path="/items[at0005]" max="0" />
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" max="1" path="/items[at0.3]" name="Department">
+          <Rule path="/items[at0005]" max="0" />
+        </Items>
       </Items>
     </Context>
   </definition>
