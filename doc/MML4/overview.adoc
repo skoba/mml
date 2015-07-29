@@ -1,9 +1,10 @@
 MML構造概説
-============
+======
 
 MMLはheader部分とbody部分の2つのブロックで構成される。Header部分にはすべてのMMLインスタンスに共通の個別のユースケー
 スに対応したコンテンツモジュールが定義されており、それらのモジュールで
 共通して使われる形式が別途定義されている。
 
-MML Headerブロック
+== MML Headerブロック
 
+MML HeaderにはMML作成者情報(mmlCi:CreatorInfo)、患者ID()、
