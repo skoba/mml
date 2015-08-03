@@ -1,0 +1,30 @@
+= 基本方針
+
+モジュールのバージョンはnamespace宣言の末尾の数字で示される。たとえば、バイタルサインモジュールのnamespace宣言が
+
+----
+xmlns:mmlVs="http://www.medxml.net/MML/ContentModule/vitalsign/4.0"
+----
+であれば、このバイタルサインモジュールのバージョンは4.0である。
+
+MMLインスタンスには複数のアイテムを組み合わせて用いることができるため、作成日や作成者の異なる複数のアイテムによりインスタンスが構成されることがある。そのためMMLインスタンス全体および各アイテムを生成したスキーマのバージョンを明示しておく必要がある。
+
+MML Version 4.0で使用する各モジュールとnamespace宣言を以下に示す。
+
+|==============================
+|MmlHeader および docInfo構造モジュール|xmlns:mml ="http://www.medxml.net/MML/base/4.0"
+|患者情報モジュール|xmlns:mmlPi ="http://www.medxml.net/MML/ContentModule/PatientInfo/4.0"
+|健康保険情報モジュール|xmlns:mmlHi ="http://www.medxml.net/MML/ContentModule/HealthInsurance/4.0"
+|診断履歴情報モジュール|xmlns:mmlRd ="http://www.medxml.net/MML/ContentModule/RegisteredDiagnosis/4.0"
+|生活習慣情報モジュール|xmlns:mmlLs ="http://www.medxml.net/MML/ContentModule/Lifestyle/4.0"
+|基礎的診療情報モジュール|xmlns:mmlBc ="http://www.medxml.net/MML/ContentModule/BaseClinic/4.0"
+|初診時特有情報モジュール|xmlns:mmlFcl ="http://www.medxml.net/MML/ContentModule/FirstClinic/4.0"
+|経過記録情報モジュール|xmlns:mmlPc ="http://www.medxml.net/MML/ContentModule/ProgressCourse/4.0"
+|手術記録情報モジュール|xmlns:mmlSg ="http://www.medxml.net/MML/ContentModule/Surgery/4.0"
+|臨床サマリー情報モジュール|xmlns:mmlSm ="http://www.medxml.net/MML/ContentModule/Summary/4.0"
+|検歴情報モジュール|xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/Test/4.0"
+|報告書情報モジュール|xmlns:mmlRp="http://www.medxml.net/MML/ContentModule/Report/4.0"
+|紹介状モジュール|xmlns:mmlRe="http://www.medxml.net/MML/ContentModule/Referral/4.0"
+|バイタルサインモジュール|xmlns:mmlRe="http://www.medxml.net/MML/ContentModule/VitalSign/4.0"
+|体温表モジュール|xmlns:mmlRe="http://www.medxml.net/MML/ContentModule/FlowSheet/4.0"
+|==============================
