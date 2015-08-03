@@ -7,6 +7,7 @@ MMLはheader部分とbody部分の2つのブロックで構成される。Header
 
 == MML headerブロック
 
-MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)、toc(Table of Contents)情報およびセキュリティ情報から成り立っている。SAXパーサではこのtoc情報を見ることで、MML bodyブロックに記載されるコンテンツモジュールの内容を認識し、条件分岐させることができる。
+MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)、toc(Table of Contents)情報およびセキュリティ情報から成り立っている。SAXパーサはこのtoc情報を見ることで、MML bodyブロックに記載されるコンテンツモジュールの内容を認識し、条件分岐させることができる。
 
 == MML body
+MML bodyには1つ以上のコンテンツモジュールが格納される。
