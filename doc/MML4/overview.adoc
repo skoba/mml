@@ -1,8 +1,10 @@
 = MML構造概説
 
 MMLはheader部分とbody部分の2つのブロックで構成される(図1)。Header部分にはすべてのMMLインスタンスに共通の個別のユースケースに対応したコンテンツモジュールが定義されており、それらのモジュールで共通して使われる形式が別途定義されている。
+
 image:mml_structure.png[]
 図1 MMLの構造
+
 == MML headerブロック
 
 MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)、toc(Table of Contents)情報で構成される。SAXパーサではこのtoc情報を見ることで、MML bodyブロックに記載されるコンテンツモジュールの内容を認識し、それに応じて条件分岐させることができる。
