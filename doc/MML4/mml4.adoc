@@ -1,5 +1,4 @@
-MML 4.0
-======
+= MML 4.0
 
 :Author: Shinji KOBAYASHI
 :Email: skoba@moss.gr.jp
@@ -39,3 +38,5 @@ MMLは医療情報の交換規格として1995年より開発されてきた。�
 include::references.adoc[]
 
 include::overview.adoc[]
+
+include::principle.adoc[]
