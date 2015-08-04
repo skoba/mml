@@ -1,5 +1,7 @@
 = 基本方針
 
+== モジュールのnamespace宣言とバージョン管理
+
 モジュールのバージョンはnamespace宣言の末尾の数字で示される。たとえば、バイタルサインモジュールのnamespace宣言が
 
 ----
@@ -25,6 +27,47 @@ MML Version 4.0で使用する各モジュールとnamespace宣言を以下に�
 |検歴情報モジュール|xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/Test/4.0"
 |報告書情報モジュール|xmlns:mmlRp="http://www.medxml.net/MML/ContentModule/Report/4.0"
 |紹介状モジュール|xmlns:mmlRe="http://www.medxml.net/MML/ContentModule/Referral/4.0"
-|バイタルサインモジュール|xmlns:mmlRe="http://www.medxml.net/MML/ContentModule/VitalSign/4.0"
-|体温表モジュール|xmlns:mmlRe="http://www.medxml.net/MML/ContentModule/FlowSheet/4.0"
+|バイタルサインモジュール|xmlns:mmlVs="http://www.medxml.net/MML/ContentModule/VitalSign/4.0"
+|体温表モジュール|xmlns:mmlFs="http://www.medxml.net/MML/ContentModule/FlowSheet/4.0"
 |==============================
+
+== MMLにおけるデータ定義
+
+=== 時刻の種類と定義
+
+MMLでは情報の粒度および性質に応じてさまざまな時刻が定義されている。以下にそれを列記する。
+
+. createDate(MML基本構造 Mmlの属性) +
+MMLインスタンスの生成時刻を示す。MMLの生成処理をする際にタイムスタンプとして自動的にに入力されることを想定している。したがって、MMLインスタンスに記載される内容の時刻とは原則として無関係であり、その内容が10年前であっても今日の時刻でMMLインスタンス化されたのであれば、生成された時点での時刻が記載される。
+
+. start(MML基本構造 scopePeriodの属性) +
+MMLインスタンス記載内容全体を通した期間の開始日である。MmlModuleItemが複数存在する場合ははすべてのMmlModuleItemを含めた期間とする。
+
+. end(MML基本構造scopePeriodの属性) +
+MMLインスタンス記載内容全体を通した期間の終了日である。MmlModuleItemが複数素材する場合はすべてのMmlModuleItemを含めた期間とする。
+
+. confirmDate(MML基本構造) +
+一つのcontentの記載内容が確定された日付である。通常は診療録が電子的に記録されて確定した日に相当する。記載確定日は、イベントが発生し文書が記載された日と一致することが運用上好ましい。しかしながら、運用上数日前のイベントを遅れて記載したような場合には、記載された日付をconfirmDateとして記録する。MMLではイベントが発生した正確な日付は文書内容を解析しなければわからない。文書内にエレメントとして明示的にイベント発生日時が記載されていることもあるが、文脈などから判断するしかない場合もある。これは、現在の診療録の運用上、やむを得ないことである。
+
+. start(MML基本構造confirmDateの属性) +
+contentの記載内容が複数の日付にまたがる情報(たとえばサマリー）である場合は記載内容が対象とする期間の開始日を記載する。上記(2)のscopePeriodがMMLインスタンス全体が対象期間であるのに対して、こちらは対応する一つのMmlModuleItemが対象期間である。
+
+. end(MML基本構造cinfirmDateの属性) +
+ 上記同様にcontentの記載内容が複数の日付にまたがる情報であれば、対応する一つのMmlModuleItemが対象とする期間の終了日を記載する。
+
+ . mmlHi:startDate(健康保健情報) +
+ 健康保険の交付年月日である。この日付は診療イベントと関係がないため上記(2)(3)(5)(6)の対象とはしない。
+ . mmlHi:expiredDate(健康保健情報) +
+ 健康保険の有効期限である。この日付も診療イベントとは関係ないため、上記(2)(3)(5)(6)の対象とはしない。
+ . mmlRd:startDate(診断履歴情報) +
+ この日付は疾患の発症年月日ではなく、保険請求上の開始日であり診療イベントとは関係ないことが多いため、上記(2)(3)(5)(6)の対象とはしない。
+ . mmlRd:endDate +
+ この日付は疾患が治癒した日ではなく、保険請求上の終了日であり、診療イベントとは関係しないことが多いため、上記(2)(3)(5)(6)の対象とはしない。
+ . mmlRd:firstEncounterDate(診断履歴情報)
+ 疾患の初診日であり、最初の保険医療行為の対象となった日である。疾患自体の発症や治癒と関係のないイベントであるため、この日付も上記(2)(3)(5)(6)の対象とはしない。
+ . mmlSg:date(手術記録情報) +
+ 手術施行日(イベント発生日)であり、記載日ではない。記載日は(4)MML基本構造のconfirmDateとして記録する。手術施行日に記載が完了しない場合もあるため、mmlSg:dateとconfirmDateは必ずしも一致しない。
+ . mmlSm:start(臨床サマリー情報 mmlSm:serviceHistoryの属性) +
+ サマリー対象期間の開始日である。通常はMML基本構造confirmDateのstart属性と同じ値となる。
+ . mmlSm:end(臨床サマリー情報mmlSm:serviceHistoryの属性) +
+ サマリー対象期間御終了日である。通常はMML基本構造confirmDateのend属性と同じ値となる。
