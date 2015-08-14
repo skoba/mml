@@ -71,3 +71,21 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
  サマリー対象期間の開始日である。通常はMML基本構造confirmDateのstart属性と同じ値となる。
  . mmlSm:end(臨床サマリー情報mmlSm:serviceHistoryの属性) +
  サマリー対象期間御終了日である。通常はMML基本構造confirmDateのend属性と同じ値となる。
+
+== エレメント粒度
+
+患者氏名を構造化せずに一つのエレメントとするか、姓・名などのエレメントに分割して取り扱うかといったエレメント粒度はしばしば問題となる。本来であれば、細粒度のデータモデルによって情報が規定されていることが望ましいが、既存の情報システムからデータを収集することも想定する必要もある。粒度の異なる情報システムからデータを収集する際のミスマッチによる情報劣化を抑制するために、MMLではいくつかのエレメントにおいて、粒度の異なるエレメントを選択できるように配慮している。具体例を以下に示す。
+
+. 住所表現形式における非構造化住所（mmlAd:full）と構造化形式で示された住所（mmlAd:prefecture， mmlAd:city，mmlAd:town，mmlAd:homeNumber）
+
+. 人名表現形式における非構造化名前表現（mmlNm:fullname）と構造化形式による名前表現（mmlNm:family，mmlNm:given，mmlNm:middle）
+
+. 診断履歴情報における非構造化病名（mmlRd:diagnosis）と構造化病名形式（mmlRd:diagnosisContents）
+
+. 初診時特有情報における自由文章表現（mmlFcl:freeNotes）と時間表現併用型記載（mmlFcl:pastHistoryItem）
+
+. 経過記録情報における自由記載（mmlPc:FreeExpression）と構造化記載（mmlPc:structuredExpression）
+
+. 経過記録情報－Subject情報における自由記載（mmlPc:freeNotes）と時間表現併用型記載（mmlPc:subjectiveItem）
+
+. 手術記録情報における手術法一連表記（mmlSg:operation）と要素分割表記（mmlSg:operationElement）
