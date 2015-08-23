@@ -29,10 +29,10 @@ description
 		>
 		["ja"] = <
 			language = <[ISO_639-1::ja]>
-			purpose = <"">
-			use = <"">
-			misuse = <"">
-			copyright = <"">
+			purpose = <"名前を記録するため">
+			use = <"個人の名前を表現する">
+			misuse = <"団体の名前には用いられない">
+			copyright = <"MedXML consortium">
 		>
 	>
 	lifecycle_state = <"Initial">
