@@ -1,0 +1,124 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-COMPOSITION.mml-claim.v1
+specialize
+	openEHR-EHR-COMPOSITION.mml.v1
+
+concept
+	[at0000.1]	-- MML CLAIM
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Shinji KOBAYASHI">
+		["organisation"] = <"openEHR.jp">
+		["email"] = <"skoba@moss.or.jp">
+		["date"] = <"2014-11-26">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To define MML">
+			use = <"">
+			misuse = <"">
+			copyright = <"MedXML consortium">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"To define MML">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"E59B21746CB561C33E14715F248CFB89">
+	>
+
+definition
+	COMPOSITION[at0000.1] matches {	-- MML CLAIM
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {[openehr::433]}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {	-- *Tree(ja)
+						items cardinality matches {0..*; unordered} matches {
+							allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {	-- MML header
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.mmlheader(-[a-zA-Z0-9_]+)*\.v1/}
+							}
+							allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {	-- MML docInfo
+								include
+									archetype_id/value matches {/openEHR-EHR-CLUSTER\.mml_docinfo(-[a-zA-Z0-9_]+)*\.v1/}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML base">
+					description = <"MML base">
+				>
+				["at0000.1"] = <
+					text = <"*MML CLAIM(ja)">
+					description = <"*CLAIM(ja)">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"*MML header(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0003"] = <
+					text = <"*MML docInfo(ja)">
+					description = <"***(ja)(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML base">
+					description = <"unknown">
+				>
+				["at0000.1"] = <
+					text = <"MML CLAIM">
+					description = <"CLAIM">
+				>
+				["at0001"] = <
+					text = <"*Tree(ja)">
+					description = <"*@ internal @(ja)">
+				>
+				["at0002"] = <
+					text = <"MML header">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"MML docInfo">
+					description = <"**(ja)">
+				>
+			>
+		>
+	>

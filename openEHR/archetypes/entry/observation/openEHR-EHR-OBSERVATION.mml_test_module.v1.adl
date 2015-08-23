@@ -2,7 +2,7 @@ archetype (adl_version=1.4)
 	openEHR-EHR-OBSERVATION.mml_test_module.v1
 
 concept
-	[at0000]	-- MML test module
+	[at0000]	-- MML検歴モジュール
 language
 	original_language = <[ISO_639-1::ja]>
 	translations = <
@@ -38,17 +38,17 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"7448BA941F8839E85739C37E5CD9B56A">
+		["MD5-CAM-1.0.1"] = <"A9FAC91A93C9D7F46C06E0A2D290614A">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- MML test module
+	OBSERVATION[at0000] matches {	-- MML検歴モジュール
 		data matches {
-			HISTORY[at0001] matches {	-- *Event Series(ja)
+			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..1} matches {	-- *任意のイベント(Event)(ja)
+					EVENT[at0002] occurrences matches {0..1} matches {	-- 任意のイベント(Event)
 						data matches {
-							ITEM_TREE[at0003] matches {	-- *Tree(ja)
+							ITEM_TREE[at0003] matches {	-- Tree
 								items cardinality matches {4..*; unordered} matches {
 									CLUSTER[at0004] matches {	-- mmlLb:information
 										items cardinality matches {3..*; unordered} matches {
@@ -374,6 +374,16 @@ definition
 																value matches {
 																	C_DV_QUANTITY <
 																	>
+																}
+															}
+															ELEMENT[at0087] occurrences matches {0..1} matches {	-- mmlLb:normal
+																value matches {
+																	DV_TEXT matches {*}
+																}
+															}
+															ELEMENT[at0088] occurrences matches {0..1} matches {	-- mmlLb:out
+																value matches {
+																	DV_TEXT matches {*}
 																}
 															}
 														}
@@ -791,6 +801,14 @@ ontology
 					text = <"mmlLb:itemMemoF">
 					description = <"**(ja)">
 				>
+				["at0087"] = <
+					text = <"mmlLb:normal">
+					description = <"**(ja)">
+				>
+				["at0088"] = <
+					text = <"*mmlLb:out(ja)">
+					description = <"**(ja)">
+				>
 			>
 		>
 		["ja"] = <
@@ -1133,6 +1151,14 @@ ontology
 				>
 				["at0086"] = <
 					text = <"mmlLb:itemMemoF">
+					description = <"*">
+				>
+				["at0087"] = <
+					text = <"mmlLb:normal">
+					description = <"*">
+				>
+				["at0088"] = <
+					text = <"mmlLb:out">
 					description = <"*">
 				>
 			>

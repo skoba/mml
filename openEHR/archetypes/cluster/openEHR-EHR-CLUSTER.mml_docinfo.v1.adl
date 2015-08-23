@@ -1,0 +1,596 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.mml_docinfo.v1
+
+concept
+	[at0000]	-- MML docinfo
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*(ja)">
+			use = <"*(ja)">
+			misuse = <"*(ja)">
+			copyright = <"*(ja)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"789A70BD4FB57DE552AC9534499F38C1">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- MML docinfo
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- contentModuleType
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- moduleVersion
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {	-- securityLevel
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0003] occurrences matches {1..*} matches {	-- accessRight
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0005] occurrences matches {0..1} matches {	-- Permit
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- startDate
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- endDate
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					CLUSTER[at0010] occurrences matches {1..*} matches {	-- mmlSc:facility
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0009] matches {	-- mmlSc:facilityName
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0011] occurrences matches {0..1} matches {	-- mmlSc:facilityCode
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0014, 	-- all
+											at0015, 	-- creator
+											at0016, 	-- experience
+											at0017]	-- individual
+										}
+									}
+								}
+							}
+							ELEMENT[at0012] occurrences matches {0..1} matches {	-- mmlSc:facilityId
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0013] occurrences matches {0..1} matches {	-- mmlSc:facilityIdType
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0019] occurrences matches {0..*} matches {	-- mmlSc:department
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0020] occurrences matches {0..1} matches {	-- mmlSc:departmentName
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0021] occurrences matches {0..1} matches {	-- mmlSc:departmentCode
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0022] occurrences matches {0..1} matches {	-- mmlSc:tableId
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0023] occurrences matches {0..*} matches {	-- mmlSc:license
+						items cardinality matches {2..*; unordered} matches {
+							ELEMENT[at0024] matches {	-- mmlSc:licenseName
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0025] matches {	-- mmlSc:licenseCode
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0026] occurrences matches {0..1} matches {	-- mmlSc:tableId
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0028] occurrences matches {0..*} matches {	-- mmlSc:person
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0027] occurrences matches {0..1} matches {	-- mmlSc:personName
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0029] occurrences matches {0..1} matches {	-- mmlSc:personCode
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0033, 	-- *all(ja)
+											at0034, 	-- *creator(ja)
+											at0035, 	-- *patient(ja)
+											at0036]	-- *individual(ja)
+										}
+									}
+								}
+							}
+							ELEMENT[at0030] occurrences matches {0..1} matches {	-- mmlSc:tableId
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0031] occurrences matches {0..1} matches {	-- mmlSc:personId
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0032] occurrences matches {0..1} matches {	-- mmlSc:personIdType
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+			ELEMENT[at0037] occurrences matches {0..1} matches {	-- title
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0038] occurrences matches {0..1} matches {	-- docId
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0039] occurrences matches {0..1} matches {	-- uid
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0040] occurrences matches {0..1} matches {	-- parentId
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0041] occurrences matches {0..1} matches {	-- groupId
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0045] occurrences matches {0..1} matches {	-- confirmDate
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0046] occurrences matches {0..1} matches {	-- start
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0047] occurrences matches {0..1} matches {	-- end
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0048] occurrences matches {0..1} matches {	-- firstConfirmDate
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML docinfo">
+					description = <"MML docInfo">
+				>
+				["at0001"] = <
+					text = <"contentModuleType">
+					description = <"***(ja)(ja)">
+				>
+				["at0002"] = <
+					text = <"moduleVersion">
+					description = <"***(ja)(ja)">
+				>
+				["at0003"] = <
+					text = <"accessRight">
+					description = <"***(ja)(ja)">
+				>
+				["at0004"] = <
+					text = <"securityLevel">
+					description = <"***(ja)(ja)">
+				>
+				["at0005"] = <
+					text = <"Permit">
+					description = <"***(ja)(ja)">
+				>
+				["at0006"] = <
+					text = <"startDate">
+					description = <"***(ja)(ja)">
+				>
+				["at0007"] = <
+					text = <"endDate">
+					description = <"***(ja)(ja)">
+				>
+				["at0009"] = <
+					text = <"mmlSc:facilityName">
+					description = <"**(ja)">
+				>
+				["at0010"] = <
+					text = <"*mmlSc:facility(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0011"] = <
+					text = <"*mmlSc:facilityCode(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0012"] = <
+					text = <"*mmlSc:facilityId(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0013"] = <
+					text = <"*mmlSc:facilityIdType(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0014"] = <
+					text = <"*all(ja)">
+					description = <"*アクセスを行うすべての施設を対象とする(ja)">
+				>
+				["at0015"] = <
+					text = <"*creator(ja)">
+					description = <"*記載者と同じ施設を対象とする(ja)">
+				>
+				["at0016"] = <
+					text = <"experience">
+					description = <"被記載者 (患者) の診療歴のある施設を対象とする．診療歴のある施設の選別法は，各アプリケーションに委ねられる．">
+				>
+				["at0017"] = <
+					text = <"individual">
+					description = <"施設 ID を個別に指定し，対象とする">
+				>
+				["at0019"] = <
+					text = <"*mmlSc:department(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0020"] = <
+					text = <"*mmlSc:departmentName(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0021"] = <
+					text = <"*mmlSc:departmentCode(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0022"] = <
+					text = <"*mmlSc:tableId(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0023"] = <
+					text = <"*mmlSc:license(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0024"] = <
+					text = <"*mmlSc:licenseName(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0025"] = <
+					text = <"*mmlSc:licenseCode(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0026"] = <
+					text = <"*mmlSc:tableId(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0027"] = <
+					text = <"*mmlSc:personName(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0028"] = <
+					text = <"*mmlSc:person(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0029"] = <
+					text = <"*mmlSc:personCode(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0030"] = <
+					text = <"*mmlSc:tableId(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0031"] = <
+					text = <"*mmlSc:personId(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0032"] = <
+					text = <"*mmlSc:personIdType(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0033"] = <
+					text = <"all">
+					description = <"*">
+				>
+				["at0034"] = <
+					text = <"creator">
+					description = <"*">
+				>
+				["at0035"] = <
+					text = <"patient">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"individual">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"title">
+					description = <"**(ja)">
+				>
+				["at0038"] = <
+					text = <"docId">
+					description = <"**(ja)">
+				>
+				["at0039"] = <
+					text = <"uid">
+					description = <"**(ja)">
+				>
+				["at0040"] = <
+					text = <"parentId">
+					description = <"**(ja)">
+				>
+				["at0041"] = <
+					text = <"groupId">
+					description = <"**(ja)">
+				>
+				["at0045"] = <
+					text = <"confirmDate">
+					description = <"**(ja)">
+				>
+				["at0046"] = <
+					text = <"start">
+					description = <"**(ja)">
+				>
+				["at0047"] = <
+					text = <"end">
+					description = <"**(ja)">
+				>
+				["at0048"] = <
+					text = <"firstConfirmDate">
+					description = <"**(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML docinfo">
+					description = <"MML docInfo">
+				>
+				["at0001"] = <
+					text = <"contentModuleType">
+					description = <"**(ja)">
+				>
+				["at0002"] = <
+					text = <"moduleVersion">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"accessRight">
+					description = <"**(ja)">
+				>
+				["at0004"] = <
+					text = <"securityLevel">
+					description = <"**(ja)">
+				>
+				["at0005"] = <
+					text = <"Permit">
+					description = <"**(ja)">
+				>
+				["at0006"] = <
+					text = <"startDate">
+					description = <"**(ja)">
+				>
+				["at0007"] = <
+					text = <"endDate">
+					description = <"**(ja)">
+				>
+				["at0009"] = <
+					text = <"mmlSc:facilityName">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"mmlSc:facility">
+					description = <"**(ja)">
+				>
+				["at0011"] = <
+					text = <"mmlSc:facilityCode">
+					description = <"**(ja)">
+				>
+				["at0012"] = <
+					text = <"mmlSc:facilityId">
+					description = <"**(ja)">
+				>
+				["at0013"] = <
+					text = <"mmlSc:facilityIdType">
+					description = <"**(ja)">
+				>
+				["at0014"] = <
+					text = <"all">
+					description = <"アクセスを行うすべての施設を対象とする">
+				>
+				["at0015"] = <
+					text = <"creator">
+					description = <"記載者と同じ施設を対象とする">
+				>
+				["at0016"] = <
+					text = <"experience">
+					description = <"被記載者 (患者) の診療歴のある施設を対象とする．診療歴のある施設の選別法は，各アプリケーションに委ねられる．">
+				>
+				["at0017"] = <
+					text = <"individual">
+					description = <"施設 ID を個別に指定し，対象とする">
+				>
+				["at0019"] = <
+					text = <"mmlSc:department">
+					description = <"**(ja)">
+				>
+				["at0020"] = <
+					text = <"mmlSc:departmentName">
+					description = <"**(ja)">
+				>
+				["at0021"] = <
+					text = <"mmlSc:departmentCode">
+					description = <"**(ja)">
+				>
+				["at0022"] = <
+					text = <"mmlSc:tableId">
+					description = <"**(ja)">
+				>
+				["at0023"] = <
+					text = <"mmlSc:license">
+					description = <"**(ja)">
+				>
+				["at0024"] = <
+					text = <"mmlSc:licenseName">
+					description = <"**(ja)">
+				>
+				["at0025"] = <
+					text = <"mmlSc:licenseCode">
+					description = <"**(ja)">
+				>
+				["at0026"] = <
+					text = <"mmlSc:tableId">
+					description = <"**(ja)">
+				>
+				["at0027"] = <
+					text = <"mmlSc:personName">
+					description = <"**(ja)">
+				>
+				["at0028"] = <
+					text = <"mmlSc:person">
+					description = <"**(ja)">
+				>
+				["at0029"] = <
+					text = <"mmlSc:personCode">
+					description = <"**(ja)">
+				>
+				["at0030"] = <
+					text = <"mmlSc:tableId">
+					description = <"**(ja)">
+				>
+				["at0031"] = <
+					text = <"mmlSc:personId">
+					description = <"**(ja)">
+				>
+				["at0032"] = <
+					text = <"mmlSc:personIdType">
+					description = <"**(ja)">
+				>
+				["at0033"] = <
+					text = <"*all(ja)">
+					description = <"**(ja)">
+				>
+				["at0034"] = <
+					text = <"*creator(ja)">
+					description = <"**(ja)">
+				>
+				["at0035"] = <
+					text = <"*patient(ja)">
+					description = <"**(ja)">
+				>
+				["at0036"] = <
+					text = <"*individual(ja)">
+					description = <"**(ja)">
+				>
+				["at0037"] = <
+					text = <"title">
+					description = <"*">
+				>
+				["at0038"] = <
+					text = <"docId">
+					description = <"*">
+				>
+				["at0039"] = <
+					text = <"uid">
+					description = <"*">
+				>
+				["at0040"] = <
+					text = <"parentId">
+					description = <"*">
+				>
+				["at0041"] = <
+					text = <"groupId">
+					description = <"*">
+				>
+				["at0045"] = <
+					text = <"confirmDate">
+					description = <"*">
+				>
+				["at0046"] = <
+					text = <"start">
+					description = <"*">
+				>
+				["at0047"] = <
+					text = <"end">
+					description = <"*">
+				>
+				["at0048"] = <
+					text = <"firstConfirmDate">
+					description = <"*">
+				>
+			>
+		>
+	>

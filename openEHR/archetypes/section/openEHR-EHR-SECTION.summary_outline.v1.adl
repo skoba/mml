@@ -1,0 +1,183 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.summary_outline.v1
+
+concept
+	[at0000]	-- Summary outline
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*(ja)">
+			use = <"*(ja)">
+			misuse = <"*(ja)">
+			copyright = <"*(ja)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"D514E5892FE7597A1DDEAFFA802B100C">
+	>
+
+definition
+	SECTION[at0000] matches {	-- Summary outline
+		items cardinality matches {1..*; unordered} matches {
+			SECTION[at0013] occurrences matches {0..1} matches {*}
+			SECTION[at0014] occurrences matches {0..1} matches {*}
+			SECTION[at0003] occurrences matches {0..1} matches {*}
+			SECTION[at0004] occurrences matches {0..1} matches {*}
+			SECTION[at0005] occurrences matches {0..1} matches {*}
+			SECTION[at0006] occurrences matches {0..1} matches {*}
+			SECTION[at0007] occurrences matches {0..1} matches {*}
+			SECTION[at0008] occurrences matches {0..1} matches {*}
+			SECTION[at0009] occurrences matches {0..1} matches {*}
+			SECTION[at0010] occurrences matches {0..1} matches {*}
+			SECTION[at0015] occurrences matches {0..1} matches {*}
+			SECTION[at0012] occurrences matches {0..1} matches {*}
+			SECTION[at0011] occurrences matches {0..1} matches {*}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Summary outline">
+					description = <"headings for MML summary module">
+				>
+				["at0003"] = <
+					text = <"Diagnosis">
+					description = <"**(ja)">
+				>
+				["at0004"] = <
+					text = <"Surgical operation">
+					description = <"**(ja)">
+				>
+				["at0005"] = <
+					text = <"Chief complaints">
+					description = <"**(ja)">
+				>
+				["at0006"] = <
+					text = <"History">
+					description = <"**(ja)">
+				>
+				["at0007"] = <
+					text = <"Physical Examination">
+					description = <"**(ja)">
+				>
+				["at0008"] = <
+					text = <"Clinical course">
+					description = <"**(ja)">
+				>
+				["at0009"] = <
+					text = <"Discharge findings">
+					description = <"**(ja)">
+				>
+				["at0010"] = <
+					text = <"Medication">
+					description = <"**(ja)">
+				>
+				["at0011"] = <
+					text = <"Remarks">
+					description = <"**(ja)">
+				>
+				["at0012"] = <
+					text = <"Plan">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Outpatient">
+					description = <"**(ja)">
+				>
+				["at0014"] = <
+					text = <"Inpatient">
+					description = <"**(ja)">
+				>
+				["at0015"] = <
+					text = <"Test result">
+					description = <"**(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"Summary outline MML">
+					description = <"headings for MML summary module">
+				>
+				["at0003"] = <
+					text = <"Diagnosis">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Surgical operation">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Chief complaints">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"History">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Physical Examination">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Clinical course">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Discharge findings">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Medication">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Remarks">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Plan">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Outpatient">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Inpatient">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Test result">
+					description = <"*">
+				>
+			>
+		>
+	>

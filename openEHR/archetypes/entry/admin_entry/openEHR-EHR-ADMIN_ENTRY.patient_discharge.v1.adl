@@ -1,0 +1,103 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-ADMIN_ENTRY.patient_discharge.v1
+
+concept
+	[at0000]	-- *Patient discharge(ja)
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*(ja)">
+			use = <"*(ja)">
+			misuse = <"*(ja)">
+			copyright = <"*(ja)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"16874C6749F91E35E77DCF2161608CFD">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {	-- *Patient discharge(ja)
+		data matches {
+			ITEM_TREE[at0001] matches {	-- *Tree(ja)
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- discharge date
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {	-- refer to
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Patient discharge(ja)">
+					description = <"*This is the administration entry to record discharge section for MML(ja)">
+				>
+				["at0001"] = <
+					text = <"*Tree(ja)">
+					description = <"*@ internal @(ja)">
+				>
+				["at0002"] = <
+					text = <"discharge date">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"refer to">
+					description = <"refer to doctor">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"Patient discharge">
+					description = <"This is the administration entry to record discharge section for MML">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"discharge date">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"referTo">
+					description = <"refer">
+				>
+			>
+		>
+	>

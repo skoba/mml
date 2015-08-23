@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
+  <id>809cb527-c483-45a5-89fb-abd77fad1e47</id>
+  <name>mml_personalized_info</name>
+  <description>
+    <lifecycle_state>Initial</lifecycle_state>
+    <details>
+      <purpose />
+      <use />
+      <misuse />
+    </details>
+    <other_details>
+      <item>
+        <key>MetaDataSet:Sample Set </key>
+        <value>Template metadata sample set </value>
+      </item>
+      <item>
+        <key>Acknowledgements</key>
+        <value />
+      </item>
+      <item>
+        <key>Business Process Level</key>
+        <value />
+      </item>
+      <item>
+        <key>Care setting</key>
+        <value />
+      </item>
+      <item>
+        <key>Client group</key>
+        <value />
+      </item>
+      <item>
+        <key>Clinical Record Element</key>
+        <value />
+      </item>
+      <item>
+        <key>Copyright</key>
+        <value />
+      </item>
+      <item>
+        <key>Issues</key>
+        <value />
+      </item>
+      <item>
+        <key>Owner</key>
+        <value />
+      </item>
+      <item>
+        <key>Sign off</key>
+        <value />
+      </item>
+      <item>
+        <key>Speciality</key>
+        <value />
+      </item>
+      <item>
+        <key>User roles</key>
+        <value />
+      </item>
+    </other_details>
+  </description>
+  <definition xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.individual_personal-mml.v1" concept_name="Individual's personal demographics for MML expression">
+    <Rule path="/items[at0017]" max="0" />
+    <Rule path="/items[at0007]" max="0" />
+    <Rule path="/items[at0008]" max="0" />
+    <Rule path="/items[at0.4]" max="0" />
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.person_name-mml.v1" concept_name="Person name for MML expression" path="/items[at0013.1]">
+      <Rule path="/items[at0022]" max="0" />
+      <Rule path="/items[at0002]/items[at0018]" max="0" />
+      <Rule path="/items[at0014]" max="0" />
+    </Items>
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0014]">
+      <Rule path="/items[at0001]/items[at0003]/items[at0009]" max="0" />
+      <Rule path="/items[at0001]/items[at0015]" max="0" />
+    </Items>
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0015.1]">
+      <Rule path="/items[at0010]" max="0" />
+    </Items>
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/items[at0.2]" name="Facility">
+      <Rule path="/items[at0005]" max="0" />
+      <Rule path="/items[at0.19]" max="0" />
+      <Rule path="/items[at0.20]" max="0" />
+    </Items>
+    <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/items[at0.3]" name="Department">
+      <Rule path="/items[at0005]" max="0" />
+      <Rule path="/items[at0.19]" max="0" />
+      <Rule path="/items[at0.20]" max="1" />
+    </Items>
+  </definition>
+</template>

@@ -1,0 +1,109 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.death.v1
+
+concept
+	[at0000]	-- *Death(ja)
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"*(ja)">
+			use = <"*(ja)">
+			misuse = <"*(ja)">
+			copyright = <"*(ja)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"9E8F4E5023848566A479B11DB2F8B1D8">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- *Death(ja)
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {	-- Death
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True, False}
+					}
+				}
+			}
+			ELEMENT[at0002] occurrences matches {0..1} matches {	-- Date time
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {	-- *Autopsy(ja)
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True, False}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*Death(ja)">
+					description = <"*unknown(ja)">
+				>
+				["at0001"] = <
+					text = <"Death">
+					description = <"*Death or alive(ja)">
+				>
+				["at0002"] = <
+					text = <"Date time">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"*Autopsy(ja)">
+					description = <"**(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"Death">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Death">
+					description = <"Death or alive">
+				>
+				["at0002"] = <
+					text = <"Date time">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Autopsy">
+					description = <"*">
+				>
+			>
+		>
+	>

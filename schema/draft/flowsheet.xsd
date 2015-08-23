@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:mmlFs="http://www.medxml.net/MML/ContentModule/FlowSheet/1.0" targetNamespace="http://www.medxml.net/MML/ContentModule/FlowSheet/1.0"
-    xmlns:mmlPi="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0"
-    xmlns:mmlVs="http://www.medxml.net/MML/ContentModule/VitalSign/1.0">
-  <xs:import namespace="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0" schemaLocation="patientinfo.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/ContentModule/VitalSign/1.0" schemaLocation="vitalsign.xsd" />
-  
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  xmlns:mmlFs="http://www.medxml.net/MML/ContentModule/FlowSheet/1.0"
+  targetNamespace="http://www.medxml.net/MML/ContentModule/FlowSheet/1.0"
+  xmlns:mmlPi="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0"
+  xmlns:mmlVs="http://www.medxml.net/MML/ContentModule/VitalSign/1.0">
+  <xs:import namespace="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0"
+    schemaLocation="patientinfo.xsd"/>
+  <xs:import namespace="http://www.medxml.net/MML/ContentModule/VitalSign/1.0"
+    schemaLocation="vitalsign.xsd"/>
+
   <xs:element name="FlowSheetModule">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="mmlFs:context" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="mmlVs:VitalSignModule" minOccurs="0"/>
-        <xs:element ref="mmlFs:intake" minOccurs="0" />
-        <xs:element ref="mmlFs:bodilyOutput" minOccurs="0" />        
+        <xs:element ref="mmlFs:intake" minOccurs="0"/>
+        <xs:element ref="mmlFs:bodilyOutput" minOccurs="0"/>
         <xs:element ref="mmlFs:fsMemo" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
@@ -23,8 +27,7 @@
         <xs:element ref="mmlFs:department" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlFs:ward" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlFs:observer" minOccurs="0" maxOccurs="1"/>
-        <xs:element ref="mmlPi:PatientModule" minOccurs="1" maxOccurs="1"/>
-      </xs:sequence>       
+      </xs:sequence>
       <xs:attribute name="registId" use="required" type="xs:string"/>
       <xs:attribute name="ovservedTime" type="xs:dateTime"/>
       <xs:attribute name="registTime" use="required" type="xs:dateTime"/>
@@ -58,7 +61,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="intakeType" type="xs:string"/>
-        <xs:element name="intakeVolume" type="xs:decimal"/> 
+        <xs:element name="intakeVolume" type="xs:decimal"/>
         <xs:element name="intakeUnit" type="xs:string"/>
         <xs:element name="intakePathway" type="xs:string"/>
         <xs:element name="intakeStartTime" type="xs:dateTime"/>
@@ -71,7 +74,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="boType" type="xs:string"/>
-        <xs:element name="boVolume" type="xs:decimal"/> 
+        <xs:element name="boVolume" type="xs:decimal"/>
         <xs:element name="boUnit" type="xs:string"/>
         <xs:element name="boStatus" type="xs:string"/>
         <xs:element name="boColor" type="xs:string"/>

@@ -1,0 +1,95 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.mml_report_metadata.v1
+
+concept
+	[at0000]	-- MML Report module meta-data
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Shinji KOBAYASHI">
+		["organisation"] = <"openEHR.jp">
+		["email"] = <"skoba@moss.or.jp">
+		["date"] = <"2015-04-15">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record mml report module information">
+			use = <"To record MML report module metadata">
+			misuse = <"">
+			copyright = <"Shinji KOBAYASHI">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"3250DFB8B5C68F0F8A14632AD0ACE5FF">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- MML Report module meta-data
+		items cardinality matches {2..*; unordered} matches {
+			ELEMENT[at0001] matches {	-- performed time
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+			ELEMENT[at0002] matches {	-- reported time
+				value matches {
+					DV_DATE_TIME matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*MML Report module meta-data(ja)">
+					description = <"*MML report metadata(ja)">
+				>
+				["at0001"] = <
+					text = <"*performed time(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0002"] = <
+					text = <"*reported time(ja)">
+					description = <"***(ja)(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML Report module meta-data">
+					description = <"MML report metadata">
+				>
+				["at0001"] = <
+					text = <"performed time">
+					description = <"**(ja)">
+				>
+				["at0002"] = <
+					text = <"reported time">
+					description = <"**(ja)">
+				>
+			>
+		>
+	>

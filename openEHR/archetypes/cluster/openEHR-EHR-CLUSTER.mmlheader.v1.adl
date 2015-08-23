@@ -1,0 +1,212 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.mmlheader.v1
+
+concept
+	[at0000]	-- MML Header
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To describe MML Header">
+			use = <"MML Header">
+			misuse = <"">
+			copyright = <"*(ja)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"DE13E4AD45F27741705761201B9CD042">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- MML Header
+		items cardinality matches {1..*; unordered} matches {
+			allow_archetype CLUSTER[at0001] occurrences matches {0..*} matches {	-- mmlCi:CreatorInfo
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[at0002] matches {	-- masterId
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {	-- mmlCm:Id
+				include
+					archetype_id/value matches {/.*/}
+			}
+			ELEMENT[at0004] occurrences matches {0..*} matches {	-- tocItem
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0005] occurrences matches {0..1} matches {	-- scopePeriod
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- start
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- end
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {	-- hasOhterInfo
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {	-- isExtract
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- extractPolicy
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+				}
+			}
+			ELEMENT[at0011] occurrences matches {0..1} matches {	-- encryptInfo
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"*MML Header(ja)">
+					description = <"*MML Header(ja)">
+				>
+				["at0001"] = <
+					text = <"*mmlCi:CreatorInfo(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0002"] = <
+					text = <"*masterId(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0003"] = <
+					text = <"*mmlCm:Id(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0004"] = <
+					text = <"*tocItem(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0005"] = <
+					text = <"*scopePeriod(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0006"] = <
+					text = <"*start(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0007"] = <
+					text = <"*end(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0008"] = <
+					text = <"*hasOhterInfo(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0009"] = <
+					text = <"*isExtract(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0010"] = <
+					text = <"*extractPolicy(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0011"] = <
+					text = <"*encryptInfo(ja)">
+					description = <"***(ja)(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"MML Header">
+					description = <"MML Header">
+				>
+				["at0001"] = <
+					text = <"mmlCi:CreatorInfo">
+					description = <"**(ja)">
+				>
+				["at0002"] = <
+					text = <"masterId">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"mmlCm:Id">
+					description = <"**(ja)">
+				>
+				["at0004"] = <
+					text = <"tocItem">
+					description = <"**(ja)">
+				>
+				["at0005"] = <
+					text = <"scopePeriod">
+					description = <"**(ja)">
+				>
+				["at0006"] = <
+					text = <"start">
+					description = <"**(ja)">
+				>
+				["at0007"] = <
+					text = <"end">
+					description = <"**(ja)">
+				>
+				["at0008"] = <
+					text = <"hasOhterInfo">
+					description = <"**(ja)">
+				>
+				["at0009"] = <
+					text = <"isExtract">
+					description = <"**(ja)">
+				>
+				["at0010"] = <
+					text = <"extractPolicy">
+					description = <"**(ja)">
+				>
+				["at0011"] = <
+					text = <"encryptInfo">
+					description = <"**(ja)">
+				>
+			>
+		>
+	>

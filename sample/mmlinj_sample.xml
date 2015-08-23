@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlInj:InjectionModule>
+  <mmlInj:medication>
+    <mmlInj:medicine>
+      <mmlInj:name>ラクテック 500ml</mmlInj:name>
+      <mmlInj:code system="YJ">12304155</mmlInj:code>
+    </mmlInj:medicine>
+    <mmlInj:dose>500</mmlInj:dose>
+    <mmlInj:doseUnit>ml</mmlInj:doseUnit>
+    <mmlInj:startDateTime>2015-05-13T13:00:00</mmlInj:startDateTime>
+    <mmlInj:endDateTime>2015-05-13T15:00:00</mmlInj:endDateTime>
+    <mmlInj:instruction>2時間で投与する</mmlInj:instruction>
+    <mmlInj:route>右前腕静脈ルート</mmlInj:route>
+    <mmlInj:site>右前腕</mmlInj:site>
+    <mmlInj:deliveryMethod>点滴静注</mmlInj:deliveryMethod>
+    <mmlInj:batchNo>1</mmlInj:batchNo>
+  </mmlInj:medication>
+  <mmlInj:medication>
+    <mmlInj:medicine>
+      <mmlInj:name>ビタメジン静注用</mmlInj:name>
+      <mmlInj:code system="YJ">553300555</mmlInj:code>
+    </mmlInj:medicine>
+    <mmlInj:dose>1</mmlInj:dose>
+    <mmlInj:doseUnit>V</mmlInj:doseUnit>
+    <mmlInj:batchNo>1</mmlInj:batchNo>
+  </mmlInj:medication>
+  <mmlInj:medication>
+    <mmlInj:medicine>
+      <mmlInj:name>セファメジンα 2g キット</mmlInj:name>
+      <mmlInj:code system="YJ">14433344</mmlInj:code>
+    </mmlInj:medicine>
+    <mmlInj:dose>1</mmlInj:dose>
+    <mmlInj:doseUnit>V</mmlInj:doseUnit>
+    <mmlInj:startDateTime>2015-05-13T16:00:00</mmlInj:startDateTime>
+    <mmlInj:endDateTime>2015-05-13T17:00:00</mmlInj:endDateTime>
+    <mmlInj:instruction>1時間で投与する</mmlInj:instruction>
+    <mmlInj:route>右前腕静脈ルート</mmlInj:route>
+    <mmlInj:site>右前腕</mmlInj:site>
+    <mmlInj:deliveryMethod>点滴静注</mmlInj:deliveryMethod>
+    <mmlInj:batchNo>2</mmlInj:batchNo>
+  </mmlInj:medication>
+</mmlInj:InjectionModule>
