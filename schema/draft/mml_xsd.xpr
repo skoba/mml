@@ -5,6 +5,12 @@
         <options/>
     </meta>
     <projectTree name="mml_xsd.xpr">
+        <folder name="sample">
+            <file name="sample/flowsheet_instance.xml"/>
+            <file name="sample/mmlinj_sample.xml"/>
+            <file name="sample/mmlps_sample.xml"/>
+            <file name="sample/test_module.xml"/>
+        </folder>
         <file name="address.xsd"/>
         <file name="baseclinic.xsd"/>
         <file name="claim.xsd"/>
@@ -16,6 +22,7 @@
         <file name="firstclinic.xsd"/>
         <file name="flowsheet.xsd"/>
         <file name="healthinsurance.xsd"/>
+        <file name="injection.xsd"/>
         <file name="lifestyle.xsd"/>
         <file name="mml_xsd.xpr"/>
         <file name="mml.xsd"/>
@@ -23,6 +30,7 @@
         <file name="patientinfo.xsd"/>
         <file name="personalizedinfo.xsd"/>
         <file name="phone.xsd"/>
+        <file name="prescription.xsd"/>
         <file name="progresscourse.xsd"/>
         <file name="referral.xsd"/>
         <file name="registereddiagnosis.xsd"/>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************** -->
 <!-- 生活習慣情報 -->
-<!-- LifestyleModule XSD Version 1.0 -->
+<!-- LifestyleModule XSD Version 4.0 -->
 <!-- *************************************************** -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/ContentModule/Lifestyle/1.0" 
-  xmlns:mmlLs="http://www.medxml.net/MML/ContentModule/Lifestyle/1.0"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0" 
+  xmlns:mmlLs="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   >
   <xs:element name="LifestyleModule">

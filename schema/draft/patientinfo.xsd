@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************** -->
 <!-- 患者情報 -->
-<!-- PatientModule XSD Version 1.0 -->
+<!-- PatientModule XSD Version 4.0 -->
 <!-- *************************************************** -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0" 
-  xmlns:mmlPi="http://www.medxml.net/MML/ContentModule/PatientInfo/1.0"
-  xmlns:mmlCm="http://www.medxml.net/MML/SharedComponent/Common/1.0"
-  xmlns:mmlPh="http://www.medxml.net/MML/SharedComponent/Phone/1.0"
-  xmlns:mmlAd="http://www.medxml.net/MML/SharedComponent/Address/1.0"
-  xmlns:mmlNm="http://www.medxml.net/MML/SharedComponent/Name/1.0"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0" 
+  xmlns:mmlPi="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
+  xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
   >
   
-  <xs:import namespace="http://www.medxml.net/MML/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/SharedComponent/Phone/1.0" schemaLocation="phone.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/SharedComponent/Address/1.0" schemaLocation="address.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/SharedComponent/Name/1.0" schemaLocation="name.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0" schemaLocation="phone.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0" schemaLocation="address.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0" schemaLocation="name.xsd" />
   
   <xs:element name="PatientModule">
     <xs:complexType>

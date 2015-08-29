@@ -1,6 +1,8 @@
-<mmlLb:TestModule>
-  <mmlLb:information mmlLb:registId="0002228" mmlLb:registTime="2002-07-25T00:00:00" mmlLb:reportTime="2002-07-25T11:15:00" mmlLb:sampleTime="2002-07-25T06:00:00">
-    <mmlLb:reportStatus mmlLb:statusCode="final" mmlLb:statusCodeId="mmlLB0001">最終報告</mmlLb:reportStatus>
+<?xml version="1.0" encoding="UTF-8"?>
+<mml>
+  <mmlLb:TestModule>
+    <mmlLb:information mmlLb:registId="0002228" mmlLb:registTime="2002-07-25T00:00:00" mmlLb:reportTime="2002-07-25T11:15:00" mmlLb:sampleTime="2002-07-25T06:00:00">
+      <mmlLb:reportStatus mmlLb:statusCode="final" mmlLb:statusCodeId="mmlLB0001">最終報告</mmlLb:reportStatus>
     <mmlLb:facility mmlLb:facilityCode="JPN432101234567" mmlLb:facilityCodeId="JMARI">テスト病院</mmlLb:facility>
     <mmlLb:department mmlLb:depCode="3" mmlLb:depCodeId="MML0028">第三内科</mmlLb:department>
     <mmlLb:client mmlLb:clientCode="facility" mmlLb:clientCodeId="JPN432101234567">87654321</mmlLb:client>
@@ -355,36 +357,21 @@
       <mmlLb:value>1030</mmlLb:value>
       <mmlLb:numValue mmlLb:out="N">1030</mmlLb:numValue>
     </mmlLb:item>
-
-<mmlLb:item>
-
-<mmlLb:itemName mmlLb:itCode="932" mmlLb:itCodeId="KRTKC">IgA</mmlLb:itemName>
-
-<mmlLb:value>667</mmlLb:value>
-
-<mmlLb:numValue mmlLb:out="H">667</mmlLb:numValue>
-
-</mmlLb:item>
-
-<mmlLb:item>
-
-<mmlLb:itemName mmlLb:itCode="933" mmlLb:itCodeId="KRTKC">IgM</mmlLb:itemName>
-
-<mmlLb:value>44</mmlLb:value>
-
-<mmlLb:numValue mmlLb:out="L">44</mmlLb:numValue>
-
-</mmlLb:item>
-
-<mmlLb:item>
-
-<mmlLb:itemName mmlLb:itCode="1021" mmlLb:itCodeId="KRTKC">PIVKA2</mmlLb:itemName>
-
-<mmlLb:value>11</mmlLb:value>
-
-<mmlLb:numValue mmlLb:out="N">11</mmlLb:numValue>
-
-</mmlLb:item>
-
-</mmlLb:laboTest>
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="932" mmlLb:itCodeId="KRTKC">IgA</mmlLb:itemName>
+      <mmlLb:value>667</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="H">667</mmlLb:numValue>
+    </mmlLb:item>
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="933" mmlLb:itCodeId="KRTKC">IgM</mmlLb:itemName>
+      <mmlLb:value>44</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="L">44</mmlLb:numValue>
+    </mmlLb:item>
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="1021" mmlLb:itCodeId="KRTKC">PIVKA2</mmlLb:itemName>
+      <mmlLb:value>11</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N">11</mmlLb:numValue>
+    </mmlLb:item>
+  </mmlLb:laboTest>
 </mmlLb:TestModule>
+</mml>

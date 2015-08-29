@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************** -->
 <!-- 報告書情報 -->
-<!-- ReportModule XSD Version 1.0 -->
+<!-- ReportModule XSD Version 4.0 -->
 <!-- *************************************************** -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/ContentModule/report/1.0" xmlns:mmlRp="http://www.medxml.net/MML/ContentModule/report/1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/ContentModule/report/1.0" xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0">
   <xs:element name="ReportModule">
     <xs:complexType>
       <xs:sequence>

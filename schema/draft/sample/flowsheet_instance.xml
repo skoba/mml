@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlFs:FlowSheetModule xmlns:mmlPi="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
+ xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+ xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
+ xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+ xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+ xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"
+ xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0">
+  <mmlFs:context registId="registId0" registTime="2006-05-04T18:13:51.0Z">
+    <mmlFs:facility facilityCode="facilityCode0" facilityCodeId="facilityCodeId0">
+    </mmlFs:facility>
+  </mmlFs:context>
+</mmlFs:FlowSheetModule>

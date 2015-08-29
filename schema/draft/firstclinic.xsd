@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************** -->
 <!-- 初診時特有情報 -->
-<!-- FirstClinicModule XSD Version 1.0 -->
+<!-- FirstClinicModule XSD Version 4.0 -->
 <!-- *************************************************** -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/ContentModule/FirstClinic/1.0" 
-  xmlns:mmlFcl="http://www.medxml.net/MML/ContentModule/FirstClinic/1.0"
-  xmlns:mmlRd="http://www.medxml.net/MML/ContentModule/RegisteredDiagnosis/1.0"
-  xmlns:mmlFc="http://www.medxml.net/MML/SharedComponent/Facility/1.0"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0" 
+  xmlns:mmlFcl="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"
+  xmlns:mmlRd="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
+  xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   >
   
-  <xs:import namespace="http://www.medxml.net/MML/ContentModule/RegisteredDiagnosis/1.0" schemaLocation="registereddiagnosis.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/SharedComponent/Facility/1.0" schemaLocation="facility.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0" schemaLocation="registereddiagnosis.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0" schemaLocation="facility.xsd" />
   
   <xs:element name="FirstClinicModule">
     <xs:complexType>

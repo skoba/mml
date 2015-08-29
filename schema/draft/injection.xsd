@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
+  targetNamespace="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0">
+
+  <xs:element name="InjectionModule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mmlInj:medication" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>    
+  </xs:element>
+  <xs:element name="medication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mmlInj:medicine" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlInj:dose" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlInj:doseUnit" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlInj:startDateTime" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlInj:endDateTime" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlInj:instruction" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="medicine">
+      <xs:complexType mixed="true">
+        <xs:sequence>
+          <xs:element ref="mmlInj:name" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mmlInj:code" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+    <xs:element name="name" type="xs:string"/>
+    <xs:element name="code" type="xs:string"/>
+    <xs:element name="dose" type="xs:decimal"/>
+    <xs:element name="doseUnit" type="xs:string"/>
+    <xs:element name="frequencyPerDay" type="xs:string"/>
+    <xs:element name="startDateTime" type="xs:date"/>
+    <xs:element name="endDateTime" type="xs:date"/>
+    <xs:element name="instruction" type="xs:string"/>
+</xs:schema>
