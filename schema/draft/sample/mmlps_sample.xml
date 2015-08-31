@@ -1,4 +1,5 @@
-<mmlPs:PrescriptionModule>
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlPs:PrescriptionModule xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0">
   <mmlPs:issuedTo>external</mmlPs:issuedTo>
 	<mmlPs:medication>
 	  <mmlPs:batchNo>1</mmlPs:batchNo>

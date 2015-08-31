@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mmlInj:InjectionModule>
+<mmlInj:InjectionModule xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0">
   <mmlInj:medication>
     <mmlInj:medicine>
       <mmlInj:name>ラクテック 500ml</mmlInj:name>

@@ -1,77 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mml>
-  <mmlLb:TestModule>
+  <mmlLb:TestModule
+    xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
+    xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0">
     <mmlLb:information mmlLb:registId="0002228" mmlLb:registTime="2002-07-25T00:00:00" mmlLb:reportTime="2002-07-25T11:15:00" mmlLb:sampleTime="2002-07-25T06:00:00">
       <mmlLb:reportStatus mmlLb:statusCode="final" mmlLb:statusCodeId="mmlLB0001">最終報告</mmlLb:reportStatus>
-    <mmlLb:facility mmlLb:facilityCode="JPN432101234567" mmlLb:facilityCodeId="JMARI">テスト病院</mmlLb:facility>
-    <mmlLb:department mmlLb:depCode="3" mmlLb:depCodeId="MML0028">第三内科</mmlLb:department>
-    <mmlLb:client mmlLb:clientCode="facility" mmlLb:clientCodeId="JPN432101234567">87654321</mmlLb:client>
-    <mmlLb:laboratoryCenter mmlLb:centerCode="JPN432101234567" mmlLb:centerCodeId="JMARI">テスト病院</mmlLb:laboratoryCenter>
-  </mmlLb:information>
-  <mmlLb:laboTest>
-    <mmlLb:specimen>
-      <mmlLb:specimenName mmlLb:spCode="00050" mmlLb:spCodeId="KRTZR">血液</mmlLb:specimenName>
-    </mmlLb:specimen>
-    <mmlLb:item>
-      <mmlLb:itemName mmlLb:itCode="292" mmlLb:itCodeId="KRTKC">BTR</mmlLb:itemName>
-      <mmlLb:value>3.08</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="L">3.08</mmlLb:numValue>
-    </mmlLb:item>
-    <mmlLb:item>
-      <mmlLb:itemName mmlLb:itCode="290" mmlLb:itCodeId="KRTKC">BCAA</mmlLb:itemName>
-      <mmlLb:value>342</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="L">342</mmlLb:numValue>
-    </mmlLb:item>
-    <mmlLb:item>
-      <mmlLb:itemName mmlLb:itCode="291" mmlLb:itCodeId="KRTKC">Tyr</mmlLb:itemName>
-      <mmlLb:value>111</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="H">111</mmlLb:numValue>
-    </mmlLb:item>
-    <mmlLb:item>
-      <mmlLb:itemName mmlLb:itCode="391" mmlLb:itCodeId="KRTKC">WBC</mmlLb:itemName>
-      <mmlLb:value>5.9</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="N">5.9</mmlLb:numValue>
-    </mmlLb:item>
-    <mmlLb:item>
-      <mmlLb:itemName mmlLb:itCode="390" mmlLb:itCodeId="KRTKC">RBC</mmlLb:itemName>
-      <mmlLb:value>3.24</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="L">3.24</mmlLb:numValue>
-    </mmlLb:item>
-    <mmlLb:item>
-      <mmlLb:itemName mmlLb:itCode="392" mmlLb:itCodeId="KRTKC">Hgb</mmlLb:itemName>
-      <mmlLb:value>10.3</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="L">10.3</mmlLb:numValue>
-    </mmlLb:item>
-    <mmlLb:item>
-      <mmlLb:itemName mmlLb:itCode="393" mmlLb:itCodeId="KRTKC">Hct</mmlLb:itemName>
-      <mmlLb:value>30.0</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="L">30</mmlLb:numValue>
-    </mmlLb:item>
-    <mmlLb:item>
-      <mmlLb:itemName mmlLb:itCode="394" mmlLb:itCodeId="KRTKC">MCV</mmlLb:itemName>
-      <mmlLb:value>92.6</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="N">92.6</mmlLb:numValue>
-    </mmlLb:item>
-    <mmlLb:item>
-      <mmlLb:itemName mmlLb:itCode="395" mmlLb:itCodeId="KRTKC">MCH</mmlLb:itemName>
-      <mmlLb:value>31.8</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="N">31.8</mmlLb:numValue>
-    </mmlLb:item>
-    <mmlLb:item>
-      <mmlLb:itemName mmlLb:itCode="396" mmlLb:itCodeId="KRTKC">MCHC</mmlLb:itemName>
-      <mmlLb:value>34.3</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="N">34.3</mmlLb:numValue>
-    </mmlLb:item>
-    <mmlLb:item>
-      <mmlLb:itemName mmlLb:itCode="397" mmlLb:itCodeId="KRTKC">RDW</mmlLb:itemName>
-      <mmlLb:value>13.6</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="N">13.6</mmlLb:numValue>
-    </mmlLb:item>
-    <mmlLb:item>
-      <mmlLb:itemName mmlLb:itCode="398" mmlLb:itCodeId="KRTKC">PLT</mmlLb:itemName>
-      <mmlLb:value>142</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="N">142</mmlLb:numValue>
-    </mmlLb:item>
+      <mmlLb:facility mmlLb:facilityCode="JPN432101234567" mmlLb:facilityCodeId="JMARI">テスト病院</mmlLb:facility>
+      <mmlLb:department mmlLb:depCode="3" mmlLb:depCodeId="MML0028">第三内科</mmlLb:department>
+      <mmlLb:client mmlLb:clientCode="facility" mmlLb:clientCodeId="JPN432101234567">87654321</mmlLb:client>
+      <mmlLb:laboratoryCenter mmlLb:centerCode="JPN432101234567" mmlLb:centerCodeId="JMARI">テスト病院</mmlLb:laboratoryCenter>
+    </mmlLb:information>
+    <mmlLb:laboTest>
+      <mmlLb:specimen>
+        <mmlLb:specimenName mmlLb:spCode="00050" mmlLb:spCodeId="KRTZR">血液</mmlLb:specimenName>
+      </mmlLb:specimen>
+      <mmlLb:item>
+        <mmlLb:itemName mmlLb:itCode="292" mmlLb:itCodeId="KRTKC">BTR</mmlLb:itemName>
+        <mmlLb:value>3.08</mmlLb:value>
+        <mmlLb:numValue mmlLb:out="L">3.08</mmlLb:numValue>
+      </mmlLb:item>
+      <mmlLb:item>
+        <mmlLb:itemName mmlLb:itCode="290" mmlLb:itCodeId="KRTKC">BCAA</mmlLb:itemName>
+        <mmlLb:value>342</mmlLb:value>
+        <mmlLb:numValue mmlLb:out="L">342</mmlLb:numValue>
+      </mmlLb:item>
+      <mmlLb:item>
+        <mmlLb:itemName mmlLb:itCode="291" mmlLb:itCodeId="KRTKC">Tyr</mmlLb:itemName>
+        <mmlLb:value>111</mmlLb:value>
+        <mmlLb:numValue mmlLb:out="H">111</mmlLb:numValue>
+      </mmlLb:item>
+      <mmlLb:item>
+        <mmlLb:itemName mmlLb:itCode="391" mmlLb:itCodeId="KRTKC">WBC</mmlLb:itemName>
+        <mmlLb:value>5.9</mmlLb:value>
+       <mmlLb:numValue mmlLb:out="N">5.9</mmlLb:numValue>
+      </mmlLb:item>
+      <mmlLb:item>
+        <mmlLb:itemName mmlLb:itCode="390" mmlLb:itCodeId="KRTKC">RBC</mmlLb:itemName>
+        <mmlLb:value>3.24</mmlLb:value>
+        <mmlLb:numValue mmlLb:out="L">3.24</mmlLb:numValue>
+      </mmlLb:item>
+      <mmlLb:item>
+        <mmlLb:itemName mmlLb:itCode="392" mmlLb:itCodeId="KRTKC">Hgb</mmlLb:itemName>
+        <mmlLb:value>10.3</mmlLb:value>
+        <mmlLb:numValue mmlLb:out="L">10.3</mmlLb:numValue>
+      </mmlLb:item>
+      <mmlLb:item>
+        <mmlLb:itemName mmlLb:itCode="393" mmlLb:itCodeId="KRTKC">Hct</mmlLb:itemName>
+        <mmlLb:value>30.0</mmlLb:value>
+        <mmlLb:numValue mmlLb:out="L">30</mmlLb:numValue>
+      </mmlLb:item>
+      <mmlLb:item>
+        <mmlLb:itemName mmlLb:itCode="394" mmlLb:itCodeId="KRTKC">MCV</mmlLb:itemName>
+        <mmlLb:value>92.6</mmlLb:value>
+        <mmlLb:numValue mmlLb:out="N">92.6</mmlLb:numValue>
+      </mmlLb:item>
+      <mmlLb:item>
+        <mmlLb:itemName mmlLb:itCode="395" mmlLb:itCodeId="KRTKC">MCH</mmlLb:itemName>
+        <mmlLb:value>31.8</mmlLb:value>
+        <mmlLb:numValue mmlLb:out="N">31.8</mmlLb:numValue>
+      </mmlLb:item>
+      <mmlLb:item>
+        <mmlLb:itemName mmlLb:itCode="396" mmlLb:itCodeId="KRTKC">MCHC</mmlLb:itemName>
+        <mmlLb:value>34.3</mmlLb:value>
+        <mmlLb:numValue mmlLb:out="N">34.3</mmlLb:numValue>
+      </mmlLb:item>
+      <mmlLb:item>
+        <mmlLb:itemName mmlLb:itCode="397" mmlLb:itCodeId="KRTKC">RDW</mmlLb:itemName>
+        <mmlLb:value>13.6</mmlLb:value>
+        <mmlLb:numValue mmlLb:out="N">13.6</mmlLb:numValue>
+      </mmlLb:item>
+      <mmlLb:item>
+        <mmlLb:itemName mmlLb:itCode="398" mmlLb:itCodeId="KRTKC">PLT</mmlLb:itemName>
+        <mmlLb:value>142</mmlLb:value>
+        <mmlLb:numValue mmlLb:out="N">142</mmlLb:numValue>
+      </mmlLb:item>
     <mmlLb:item>
       <mmlLb:itemName mmlLb:itCode="399" mmlLb:itCodeId="KRTKC">NEUT</mmlLb:itemName>
       <mmlLb:value>58.6</mmlLb:value>
@@ -371,7 +372,7 @@
       <mmlLb:itemName mmlLb:itCode="1021" mmlLb:itCodeId="KRTKC">PIVKA2</mmlLb:itemName>
       <mmlLb:value>11</mmlLb:value>
       <mmlLb:numValue mmlLb:out="N">11</mmlLb:numValue>
-    </mmlLb:item>
-  </mmlLb:laboTest>
-</mmlLb:TestModule>
+      </mmlLb:item>
+    </mmlLb:laboTest>
+  </mmlLb:TestModule>
 </mml>
