@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <mmlPs:PrescriptionModule>
+  <mmlPs:issuedTo>external</mmlPs:issuedTo>
 	<mmlPs:medication>
 	  <mmlPs:batchNo>1</mmlPs:batchNo>
 	  <mmlPs:medicine>

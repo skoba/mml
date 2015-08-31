@@ -12,6 +12,7 @@
   <xs:element name="medication">
     <xs:complexType>
       <xs:sequence>
+        <xs:element ref="mmlPs:issuedTo" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:medicine" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="mmlPs:dose" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="mmlPs:doseUnit" minOccurs="1" maxOccurs="1"/>
@@ -23,6 +24,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="issuedTo">
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="internal"/>
+        <xs:enumeration value="external"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
   <xs:element name="medicine">
     <xs:complexType mixed="true">
       <xs:sequence>
@@ -33,7 +42,15 @@
   </xs:element>
   <xs:element name="batchNo" type="xs:integer"/>
   <xs:element name="name" type="xs:string"/>
-  <xs:element name="code" type="xs:string"/>
+  <xs:element name="code">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="system" type="xs:string" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="dose" type="xs:decimal"/>
   <xs:element name="doseUnit" type="xs:string"/>
   <xs:element name="frequencyPerDay" type="xs:string"/>

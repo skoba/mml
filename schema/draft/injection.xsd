@@ -23,19 +23,28 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="medicine">
-      <xs:complexType mixed="true">
-        <xs:sequence>
-          <xs:element ref="mmlInj:name" minOccurs="1" maxOccurs="1"/>
-          <xs:element ref="mmlInj:code" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:complexType>
-    </xs:element>
-    <xs:element name="name" type="xs:string"/>
-    <xs:element name="code" type="xs:string"/>
-    <xs:element name="dose" type="xs:decimal"/>
-    <xs:element name="doseUnit" type="xs:string"/>
-    <xs:element name="frequencyPerDay" type="xs:string"/>
-    <xs:element name="startDateTime" type="xs:date"/>
-    <xs:element name="endDateTime" type="xs:date"/>
-    <xs:element name="instruction" type="xs:string"/>
-</xs:schema>
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="mmlInj:name" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlInj:code" minOccurs="0" maxOccurs="unbounded">
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="code">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="system" type="xs:string" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dose" type="xs:decimal"/>
+  <xs:element name="doseUnit" type="xs:string"/>
+  <xs:element name="frequencyPerDay" type="xs:string"/>
+  <xs:element name="startDateTime" type="xs:date"/>
+  <xs:element name="endDateTime" type="xs:date"/>
+  <xs:element name="instruction" type="xs:string"/>
+  </xs:schema>
