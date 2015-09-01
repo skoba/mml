@@ -42,3 +42,5 @@ include::references.adoc[]
 include::overview.adoc[]
 
 include::principle.adoc[]
+
+include::common_components.adoc[]
