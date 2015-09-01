@@ -7,14 +7,16 @@
     <projectTree name="mml_xsd.xpr">
         <folder name="sample">
             <file name="sample/flowsheet_instance.xml"/>
+            <file name="sample/mmlad_structured_sample.xml"/>
+            <file name="sample/mmlad_unstructured_sample.xml"/>
             <file name="sample/mmlinj_sample.xml"/>
             <file name="sample/mmlps_sample.xml"/>
             <file name="sample/test_module.xml"/>
         </folder>
         <file name="address.xsd"/>
         <file name="baseclinic.xsd"/>
-        <file name="claim.xsd"/>
-        <file name="claimamount.xsd"/>
+        <file fileMissing="true" name="claim.xsd"/>
+        <file fileMissing="true" name="claimamount.xsd"/>
         <file name="common.xsd"/>
         <file name="creatorinfo.xsd"/>
         <file name="department.xsd"/>
