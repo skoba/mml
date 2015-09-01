@@ -45,4 +45,6 @@ include::principle.adoc[]
 
 include::header.adoc[]
 
+include::docinfo.adoc[]
+
 include::common_components.adoc[]
