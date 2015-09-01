@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.2">
+<meta name="author" content="toc::[]">
+<title>MML 4.0</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
+<link rel="stylesheet" href="./asciidoctor.css">
+</head>
+<body class="book toc2 toc-right">
+<div id="header">
+<h1>MML 4.0</h1>
+<div class="details">
+<span id="author" class="author">Shinji KOBAYASHI</span><br>
+<span id="email" class="email"><a href="mailto:skoba@moss.gr.jp">skoba@moss.gr.jp</a></span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">1. はじめに</a></li>
+<li><a href="#_mml_4_0改定方針">2. MML 4.0改定方針</a></li>
+<li><a href="#_知的所有権について">3. 知的所有権について</a></li>
+<li><a href="#_参考文献">4. 参考文献</a></li>
+<li><a href="#_mml構造概説">5. MML構造概説</a>
+<ul class="sectlevel2">
+<li><a href="#_mml_headerブロック">5.1. MML headerブロック</a></li>
+<li><a href="#_mml_bodyブロック">5.2. MML bodyブロック</a></li>
+<li><a href="#_mml共通形式">5.3. MML共通形式</a></li>
+</ul>
+</li>
+<li><a href="#_基本方針">6. 基本方針</a>
+<ul class="sectlevel2">
+<li><a href="#_モジュールのnamespace宣言とバージョン管理">6.1. モジュールのnamespace宣言とバージョン管理</a></li>
+<li><a href="#_mmlにおける各種のデータ定義">6.2. MMLにおける各種のデータ定義</a></li>
+<li><a href="#_モジュール等のバージョン管理とnamespaces宣言">6.3. モジュール等のバージョン管理とnamespaces宣言</a></li>
+<li><a href="#_xhtmlの取り扱い">6.4. XHTMLの取り扱い</a></li>
+</ul>
+</li>
+<li><a href="#_mmlheader_形式詳説">7. MmlHeader 形式詳説</a>
+<ul class="sectlevel2">
+<li><a href="#_mmlheader_に関して">7.1. MmlHeader に関して</a></li>
+</ul>
+</li>
+<li><a href="#_docinfo構造詳説">8. docInfo構造詳説</a>
+<ul class="sectlevel2">
+<li><a href="#_docinfoとは">8.1. docInfoとは</a></li>
+</ul>
+</li>
+<li><a href="#_共通形式">9. 共通形式</a>
+<ul class="sectlevel2">
+<li><a href="#_住所表現形式">9.1. 住所表現形式</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_はじめに">1. はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>MMLは医療情報の交換規格として1995年より開発されてきた。当初はSGMLとして、version 2からはXMLを形式として採用し、臨床現場のユースケースに応じたモジュールの開発と、関連するテーブルの整備が行われてきた。2004年にはHL7 CDA rel1形式とのハーモナイズを行い、国際標準との相互運用性を向上させる試みが行われた。</p>
+</div>
+<div class="paragraph">
+<p>2007年より次世代のEHR標準と期待されているISO 13606標準とのハーモナイズについての研究が行われ、その成果を元に2013年にバイタルサインモジュール、体温表モジュールが設計され、2015年には内服・外用処方モジュール、注射モジュールが公開された。</p>
+</div>
+<div class="paragraph">
+<p>これらの成果ならびに透析SIGにおいて開発されてきた透析モジュールを加え、スキーマ定義言語をVer 3までのDTDからW3C XML Schema 1.1に変更してMML ver 4として改定し公開することとした。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mml_4_0改定方針">2. MML 4.0改定方針</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>前述の通り、今回の改定はW3C XML Schema 1.1に対応することが一番大きな改定である。XML Schemaはデータ型やデータ構造についての定義を細かく行うことができ、関連するツールも多様に存在することから開発者にとってより利便性が高まるよう意図している。</p>
+</div>
+<div class="paragraph">
+<p>さらに、冗長であったHL7 CDA関連のタグ情報を排除することとし、構造を簡素化することとした。一方でNamespaceやタグ名は維持することとし、意味論的には等価でありxpath構造も維持することとし、バージョンアップに伴うコストを低減することとした。</p>
+</div>
+<div class="paragraph">
+<p>文字コードはVer 3まではShift JISが正式であったがVer 4ではUTF-8とし、利便性を高めるとともに他の標準との相互運用性を向上させることとした。</p>
+</div>
+<div class="paragraph">
+<p>さらにB案として検討されてきた下記のモジュールも正式に追加することとした。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>透析モジュール</p>
+</li>
+<li>
+<p>バイタルサインモジュール</p>
+</li>
+<li>
+<p>体温表モジュール</p>
+</li>
+<li>
+<p>処方箋モジュール</p>
+</li>
+<li>
+<p>注射モジュール</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>なお、MML 2.3で定義されていたData Exchange Specificationは廃止する。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_知的所有権について">3. 知的所有権について</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>本仕様のすべての著作権は，特定非営利活動法人 MedXML コンソーシアムに帰属する．よって，その利用に当っては，以下の特定非営利活動法人 MedXML コンソーシアムのポリシーに従うものとする。</p>
+</div>
+<div class="listingblock">
+<div class="title">成果物に関する，特定非営利活動法人 MedXML コンソーシアムのポリシー</div>
+<div class="content">
+<pre>本法人によって作成された成果物は，原則としてインターネット上に公開し，パブリックドメインとして取り扱う．従って，会員，非会員にかかわらず成果物を利用し，営利，学術活動に利用することが出来る．ただし，その利用にあたっては著作権，優先権に配慮，製品，論文などで本法人の成果物を利用したことを明記し，本法人への報告を義務付けるものとする</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考文献">4. 参考文献</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>MedXML コンソーシアム <a href="http://www.medxml.net/" class="bare">http://www.medxml.net/</a></p>
+</li>
+<li>
+<p>吉原博幸, 大江和彦, 大橋克洋, 山本隆一, 山崎俊司, 廣瀬康行, 松井くにお, 日紫喜　光良, 山下芳範, 皆川和史, 小山博史：医療情報の交換手順の標準化に関する研究報告書, 1997. ,
+<a href="http://www.miyazaki-med.ac.jp/medinfo/SGmeeting/document/mml9702/techcore.html" class="bare">http://www.miyazaki-med.ac.jp/medinfo/SGmeeting/document/mml9702/techcore.html</a></p>
+</li>
+<li>
+<p>Hiroyuki Yoshihara, Kazuhiko Ohe, Katsuhiro Ohashi, Ryuichi Yamamoto, Shunji Yamazaki, Yasuyuki Hirose, Kunio Matsui, Teruyoshi Hishiki, Yoshinori Yamashita, Kazush Minagawa: Studies on the standardization of exchange procedures of medical information,
+<a href="http://www.miyazaki-med.ac.jp/medinfo/SGmeeting/document/mml9702/techcore_E.html" class="bare">http://www.miyazaki-med.ac.jp/medinfo/SGmeeting/document/mml9702/techcore_E.html</a></p>
+</li>
+<li>
+<p>Extensible Markup Language (XML) 1.0 W3C Recommendation 10-February-1998,
+<a href="http://www.w3.org/TR/1998/REC-xml-19980210" class="bare">http://www.w3.org/TR/1998/REC-xml-19980210</a></p>
+</li>
+<li>
+<p>Namespaces in XML World Wide Web Consortium 14-January-1999,
+<a href="http://www.w3.org/TR/1999/REC-xml-names-19990114/" class="bare">http://www.w3.org/TR/1999/REC-xml-names-19990114/</a></p>
+</li>
+<li>
+<p>Date elements and interchange formats - Information interchange - Representation of dates and times, <a href="http://www.iso.ch/markete/8601.pdf" class="bare">http://www.iso.ch/markete/8601.pdf</a>
+brief overview of the ISO 8601 standard
+<a href="http://www.cl.cam.ac.uk/~mgk25/iso-time.html" class="bare">http://www.cl.cam.ac.uk/~mgk25/iso-time.html</a></p>
+</li>
+<li>
+<p>Seagaia Meetingホームページ：http://www.seagaia.org/</p>
+</li>
+<li>
+<p>Kenji Araki, Katsuhiro Ohashi, Shunji Yamazaki, Yasuyuki Hirose, Yoshinori Yamashita, Ryuichi Yamamoto, Kazushi Minagawa, Norihiro Sakamoto, and Hiroyuki Yoshihara: Medical Markup Language (MML) for XML-based Hospital Information Interchange, Journal of Medical Systems; Vol.24, No3, 2000</p>
+</li>
+<li>
+<p>荒木賢二，大橋克洋，山崎俊司，廣瀬康行，山下芳範，山本隆一，皆川和史，坂本憲広，吉原博幸： Medical Markup Language (MML) バージョン2.21－XMLを用いた医療情報交換規約－，医療情報学; Vol.20(2): 79-85, 2000</p>
+</li>
+<li>
+<p>HL7：Version 3 Standard: Clinical Document Architecture Framework
+Release 1.0, 2000</p>
+</li>
+<li>
+<p>HL7 Modeling &amp; Methodology Committee ：Hl7 Version3 Message Development Framework, V3.3, Dec 1999</p>
+</li>
+<li>
+<p>ANSI/HL7 Standard version 2.4, The Global Healthcare Messaging Standard, Oct 2000</p>
+</li>
+<li>
+<p>ISO 13606-1:2008, Electronic health record communication&#8201;&#8212;&#8201;Part 1: Reference model, 2008</p>
+</li>
+<li>
+<p>ISO 13606-2:2008, Electronic health record communication&#8201;&#8212;&#8201;Part 2: Archetype interchange specification, 2008</p>
+</li>
+<li>
+<p>The openEHR Project, <a href="http://www.openehr.org/" class="bare">http://www.openehr.org/</a></p>
+</li>
+<li>
+<p>XML Schema 1.1, World Wide Web Consortium, 2004, <a href="http://www.w3.org/XML/Schema" class="bare">http://www.w3.org/XML/Schema</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mml構造概説">5. MML構造概説</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>MMLはheader部分とbody部分の2つのブロックで構成される(<a href="#図1 MMLの構造">図1</a>)。Header部分にはすべてのMMLインスタンスに共通の個別のユースケースに対応したコンテンツモジュールが定義されており、それらのモジュールで共通して使われる形式が別途定義されている。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./figures/mml_structure.png" alt="mml_structure"></span></p>
+</div>
+<div class="paragraph">
+<p>[[図1 MMLの構造]]</p>
+</div>
+<div class="sect2">
+<h3 id="_mml_headerブロック">5.1. MML headerブロック</h3>
+<div class="paragraph">
+<p>MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)、toc(Table of Contents)情報で構成される。SAXパーサではこのtoc情報を見ることで、MML bodyブロックに記載されるコンテンツモジュールの内容を認識し、それに応じて条件分岐させることができる。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mml_bodyブロック">5.2. MML bodyブロック</h3>
+<div class="paragraph">
+<p>MML bodyブロックは複数のitemブロック（MｍｌModuleItem)で構成されており、各itemブロックにはヘッダ情報（docInfo)とその内容を表すコンテンツモジュールが配置される。</p>
+</div>
+<div class="paragraph">
+<p>docInfoには、記載日、記載者、文書種別、タイトル、文書ID、親文書ID、グループID、アクセス権、外部参照リストが記載されている。</p>
+</div>
+<div class="paragraph">
+<p>各itemブロックには下記のモジュールのいずれか一つが格納される。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>患者情報モジュール</p>
+</li>
+<li>
+<p>健康保健情報</p>
+</li>
+<li>
+<p>診断履歴情報</p>
+</li>
+<li>
+<p>生活習慣情報</p>
+</li>
+<li>
+<p>基礎的診療情報</p>
+</li>
+<li>
+<p>初診時特有情報</p>
+</li>
+<li>
+<p>経過記録情報</p>
+</li>
+<li>
+<p>手術記録情報</p>
+</li>
+<li>
+<p>臨床サマリー情報</p>
+</li>
+<li>
+<p>研歴情報</p>
+</li>
+<li>
+<p>報告書情報</p>
+</li>
+<li>
+<p>紹介状</p>
+</li>
+<li>
+<p>バイタルサイン</p>
+</li>
+<li>
+<p>体温表</p>
+</li>
+<li>
+<p>内服・外用処方</p>
+</li>
+<li>
+<p>注射実施記録</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mml共通形式">5.3. MML共通形式</h3>
+<div class="paragraph">
+<p>複数のモジュールで共通して利用される情報モデルは以下のMML共通形式としてまとめられている。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>住所表現形式</p>
+</li>
+<li>
+<p>電話番号表現形式</p>
+</li>
+<li>
+<p>Id形式</p>
+</li>
+<li>
+<p>外部参照形式</p>
+</li>
+<li>
+<p>人名表現形式</p>
+</li>
+<li>
+<p>施設情報形式</p>
+</li>
+<li>
+<p>個人情報形式</p>
+</li>
+<li>
+<p>作成者情報形式</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ただし、上位モジュールの違いにより使用するテーブルが異なることがあるため、実装の際には各モジュールの解説で確認しなければならない。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_基本方針">6. 基本方針</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_モジュールのnamespace宣言とバージョン管理">6.1. モジュールのnamespace宣言とバージョン管理</h3>
+<div class="paragraph">
+<p>モジュールのバージョンはnamespace宣言の末尾の数字で示される。たとえば、バイタルサインモジュールのnamespace宣言が</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>xmlns:mmlVs="http://www.medxml.net/MML/ContentModule/vitalsign/4.0"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>であれば、このバイタルサインモジュールのバージョンは4.0である。</p>
+</div>
+<div class="paragraph">
+<p>MMLインスタンスには複数のアイテムを組み合わせて用いることができるため、作成日や作成者の異なる複数のアイテムによりインスタンスが構成されることがある。そのためMMLインスタンス全体および各アイテムを生成したスキーマのバージョンを明示しておく必要がある。</p>
+</div>
+<div class="paragraph">
+<p>MML Version 4.0で使用する各モジュールとnamespace宣言を以下に示す。</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MmlHeader および docInfo構造モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mml ="http://www.medxml.net/MML/base/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">患者情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlPi ="http://www.medxml.net/MML/ContentModule/PatientInfo/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">健康保険情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlHi ="http://www.medxml.net/MML/ContentModule/HealthInsurance/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">診断履歴情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlRd ="http://www.medxml.net/MML/ContentModule/RegisteredDiagnosis/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">生活習慣情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlLs ="http://www.medxml.net/MML/ContentModule/Lifestyle/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">基礎的診療情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlBc ="http://www.medxml.net/MML/ContentModule/BaseClinic/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">初診時特有情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlFcl ="http://www.medxml.net/MML/ContentModule/FirstClinic/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">経過記録情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlPc ="http://www.medxml.net/MML/ContentModule/ProgressCourse/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">手術記録情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlSg ="http://www.medxml.net/MML/ContentModule/Surgery/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">臨床サマリー情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlSm ="http://www.medxml.net/MML/ContentModule/Summary/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">検歴情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/Test/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">報告書情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlRp="http://www.medxml.net/MML/ContentModule/Report/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">紹介状モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlRe="http://www.medxml.net/MML/ContentModule/Referral/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">バイタルサインモジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlVs="http://www.medxml.net/MML/ContentModule/VitalSign/4.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">体温表モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlFs="http://www.medxml.net/MML/ContentModule/FlowSheet/4.0"</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_mmlにおける各種のデータ定義">6.2. MMLにおける各種のデータ定義</h3>
+<div class="sect3">
+<h4 id="_時刻の種類と定義">6.2.1. 時刻の種類と定義</h4>
+<div class="paragraph">
+<p>MMLでは情報の粒度および性質に応じてさまざまな時刻が定義されている。以下にそれを列記する。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>createDate(MML基本構造 Mmlの属性)<br>
+MMLインスタンスの生成時刻を示す。MMLの生成処理をする際にタイムスタンプとして自動的にに入力されることを想定している。したがって、MMLインスタンスに記載される内容の時刻とは原則として無関係であり、その内容が10年前であっても今日の時刻でMMLインスタンス化されたのであれば、生成された時点での時刻が記載される。</p>
+</li>
+<li>
+<p>start(MML基本構造 scopePeriodの属性)<br>
+MMLインスタンス記載内容全体を通した期間の開始日である。MmlModuleItemが複数存在する場合ははすべてのMmlModuleItemを含めた期間とする。</p>
+</li>
+<li>
+<p>end(MML基本構造scopePeriodの属性)<br>
+MMLインスタンス記載内容全体を通した期間の終了日である。MmlModuleItemが複数素材する場合はすべてのMmlModuleItemを含めた期間とする。</p>
+</li>
+<li>
+<p>confirmDate(MML基本構造)<br>
+一つのcontentの記載内容が確定された日付である。通常は診療録が電子的に記録されて確定した日に相当する。記載確定日は、イベントが発生し文書が記載された日と一致することが運用上好ましい。しかしながら、運用上数日前のイベントを遅れて記載したような場合には、記載された日付をconfirmDateとして記録する。MMLではイベントが発生した正確な日付は文書内容を解析しなければわからない。文書内にエレメントとして明示的にイベント発生日時が記載されていることもあるが、文脈などから判断するしかない場合もある。これは、現在の診療録の運用上、やむを得ないことである。</p>
+</li>
+<li>
+<p>start(MML基本構造confirmDateの属性)<br>
+contentの記載内容が複数の日付にまたがる情報(たとえばサマリー）である場合は記載内容が対象とする期間の開始日を記載する。上記(2)のscopePeriodがMMLインスタンス全体が対象期間であるのに対して、こちらは対応する一つのMmlModuleItemが対象期間である。</p>
+</li>
+<li>
+<p>end(MML基本構造cinfirmDateの属性)<br>
+上記同様にcontentの記載内容が複数の日付にまたがる情報であれば、対応する一つのMmlModuleItemが対象とする期間の終了日を記載する。</p>
+</li>
+<li>
+<p>mmlHi:startDate(健康保健情報)<br>
+健康保険の交付年月日である。この日付は診療イベントと関係がないため上記(2)(3)(5)(6)の対象とはしない。</p>
+</li>
+<li>
+<p>mmlHi:expiredDate(健康保健情報)<br>
+健康保険の有効期限である。この日付も診療イベントとは関係ないため、上記(2)(3)(5)(6)の対象とはしない。</p>
+</li>
+<li>
+<p>mmlRd:startDate(診断履歴情報)<br>
+この日付は疾患の発症年月日ではなく、保険請求上の開始日であり診療イベントとは関係ないことが多いため、上記(2)(3)(5)(6)の対象とはしない。</p>
+</li>
+<li>
+<p>mmlRd:endDate<br>
+この日付は疾患が治癒した日ではなく、保険請求上の終了日であり、診療イベントとは関係しないことが多いため、上記(2)(3)(5)(6)の対象とはしない。</p>
+</li>
+<li>
+<p>mmlRd:firstEncounterDate(診断履歴情報)
+疾患の初診日であり、最初の保険医療行為の対象となった日である。疾患自体の発症や治癒と関係のないイベントであるため、この日付も上記(2)(3)(5)(6)の対象とはしない。</p>
+</li>
+<li>
+<p>mmlSg:date(手術記録情報)<br>
+手術施行日(イベント発生日)であり、記載日ではない。記載日は(4)MML基本構造のconfirmDateとして記録する。手術施行日に記載が完了しない場合もあるため、mmlSg:dateとconfirmDateは必ずしも一致しない。</p>
+</li>
+<li>
+<p>mmlSm:start(臨床サマリー情報 mmlSm:serviceHistoryの属性)<br>
+サマリー対象期間の開始日である。通常はMML基本構造confirmDateのstart属性と同じ値となる。</p>
+</li>
+<li>
+<p>mmlSm:end(臨床サマリー情報mmlSm:serviceHistoryの属性)<br>
+サマリー対象期間御終了日である。通常はMML基本構造confirmDateのend属性と同じ値となる。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_エレメント粒度">6.2.2. エレメント粒度</h4>
+<div class="paragraph">
+<p>患者氏名を構造化せずに一つのエレメントとするか、姓・名などのエレメントに分割して取り扱うかといったエレメント粒度はしばしば問題となる。本来であれば、細粒度のデータモデルによって情報が規定されていることが望ましいが、既存の情報システムからデータを収集することも想定する必要もある。粒度の異なる情報システムからデータを収集する際のミスマッチによる情報劣化を抑制するために、MMLではいくつかのエレメントにおいて、粒度の異なるエレメントを選択できるように配慮している。具体例を以下に示す。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>住所表現形式における非構造化住所（mmlAd:full）と構造化形式で示された住所（mmlAd:prefecture， mmlAd:city，mmlAd:town，mmlAd:homeNumber）</p>
+</li>
+<li>
+<p>人名表現形式における非構造化名前表現（mmlNm:fullname）と構造化形式による名前表現（mmlNm:family，mmlNm:given，mmlNm:middle）</p>
+</li>
+<li>
+<p>診断履歴情報における非構造化病名（mmlRd:diagnosis）と構造化病名形式（mmlRd:diagnosisContents）</p>
+</li>
+<li>
+<p>初診時特有情報における自由文章表現（mmlFcl:freeNotes）と時間表現併用型記載（mmlFcl:pastHistoryItem）</p>
+</li>
+<li>
+<p>経過記録情報における自由記載（mmlPc:FreeExpression）と構造化記載（mmlPc:structuredExpression）</p>
+</li>
+<li>
+<p>経過記録情報－Subject情報における自由記載（mmlPc:freeNotes）と時間表現併用型記載（mmlPc:subjectiveItem）</p>
+</li>
+<li>
+<p>手術記録情報における手術法一連表記（mmlSg:operation）と要素分割表記（mmlSg:operationElement）</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>ただし，MMLインスタンスを正確に生成できても、MMLインスタンスとローカルデータベースのスキーマとの相互変換は、ローカルデータベースの情報粒度に大きく依存する。情報粒度のミスマッチが生じている場合は、情報の損失が起きないように配慮する必要がある．相対的に、MML側の粒度が荒い（分割されていない）場合は、正確な変換は困難である。相対的にMML側の粒度が細かい（分割されている）場合は、情報量を落とさないためにタグをつけたままローカルデータベースに格納することも考えられるが現実的ではない。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_文書の粒度">6.2.3. 文書の粒度</h4>
+<div class="paragraph">
+<p>一つのMMLモジュールアイテム(MML基本構造MmlModuleItem)には、一つのcontentしか記載されないのが原則であり、さらに一つのcontentには一つのMMLモジュールしか記載されない。よって、一つのモジュールアイテムを、一つの文書として見なすことができる。しかし、一つの文書が意味する文書粒度は文書の種別ごとに定義しておく必要がある。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>患者情報<br>
+患者情報は，蓄積型の情報であり，最新の情報のみが意味を持つ場合が多いので，複数の患者情報文書が意味を持って同時に出現することは考えにくく，文書粒度が問題になることはない．</p>
+</li>
+<li>
+<p>健康保険情報<br>
+一つの使用可能保険・公費の組合せを一文書とする．詳細はエレメント解説を参照．</p>
+</li>
+<li>
+<p>診断履歴情報<br>
+一つの病名を一文書とする．主たる病名に対する合併症や続発症は，別の文書に記載する．病名を，幹病名と修飾語に分けた場合は，合わせて一文書とする．詳細はエレメント解説を参照．</p>
+</li>
+<li>
+<p>生活習慣情報<br>
+患者情報とほぼ同じで，複数の生活習慣情報文書が意味を持って同時に出現することは考えにくく，文書粒度が問題になることはない．</p>
+</li>
+<li>
+<p>基礎的診療情報<br>
+患者情報と同様である．</p>
+</li>
+<li>
+<p>初診時特有情報<br>
+一回の初診（入院）で取得した一連の情報を一文書とする．ただし，情報の取得が段階的に行われて，複数のインスタンスに分かれることはありうる．複数の初診（入院）で取得した情報をまとめて一文書にしてはならない．</p>
+</li>
+<li>
+<p>経過記録情報<br>
+プログレスノートに相当する文書であり，一回の記述を一文書とする．よって，記載者が複数存在することはない．また，通常は記載日が複数日にまたがることもない．</p>
+</li>
+<li>
+<p>手術記録情報<br>
+手術室に入室し，退室するまでの一連の情報を一文書とする．一旦手術室を退室し，時間をあけずに再び入室して再手術を施行した場合は，二文書とするべきである．逆に，手術途中で術者や担当診療科が変わったり，術創が変わっても，一文書とすべきである．</p>
+</li>
+<li>
+<p>臨床サマリー情報<br>
+ユーザーが定義する対象期間のサマリーを一文書とする．通常，退院時サマリーの場合は，一回の入院で一文書と考えられる．入院途中で転科し，複数診療科にまたがった場合に，サマリーを分けるか，一つにするかは，ユーザーによって定義される</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parentidによる文書間の関連付け">6.2.4. parentIdによる文書間の関連付け</h4>
+<div class="paragraph">
+<p>一つのモジュールアイテム（MML基本構造 MmlModuleItem）には，一つのユニークな文書ID（uid）が割り付けられる．uidはUUIDとする．uidは必須エレメントであり，MMLプロセッサーは，MMLインスタンス生成時に必ずuidを附番しなければならない．また，MMLプロセッサーは，MMLインスタンスを受け取った時に，何らかの手段でuidをローカルに保存しておくことを強く推奨する．</p>
+</div>
+<div class="paragraph">
+<p>MMLでは，関連親文書ID（MML基本構造parentId）を記載し，文書をポイントすることにより，文書間の関連付けを行うことができる．</p>
+</div>
+<div class="paragraph">
+<p>親文書IDによるポイントは，次のような利用法が考えられる．</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>文書の訂正（テーブルMML0008　 oldEdition）<br>
+すでに生成した文書を訂正，更新したい時に，前文書のuidをポイントする．ただし，前文書を物理的に消去する必要はなく，ユーザーインターフェイス上見えなくするに留めておくことが望ましい．</p>
+</li>
+<li>
+<p>オーダーとその結果の関連付け（テーブルMML0008　 order）<br>
+一つのオーダー文書を，複数の結果文書（通常どちらも経過記録情報モジュールを用いる）からポイントすることにより，検査結果のグルーピングが可能である．
+質問とその返答の関連付け（テーブルMML0008　 consult）
+電子メールのスレッド管理と同じ機能が可能である．</p>
+</li>
+<li>
+<p>病名の変遷（テーブルMML0008　 originalDiagnosis）
+病名の時系列的な変遷を表すことが可能である．病名の終了（前病名文書と同じ病名で転記を終了とした新病名文書を生成），変化（前病名文書と異なる病名の新病名文書を生成），分離（前病名文書に対して，病名の異なる複数の新病名文書を生成），併合（複数の前病名文書に対して，一つの新病名文書を生成）を表すことができる．</p>
+</li>
+<li>
+<p>病名に対する適用健康保険（テーブルMML0008　 healthInsurance）
+医事会計上必要である場合に，対応可能である．</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>補足：MMLインスタンスを受け取るMMLプロセッサは，受け取ったMMLインスタンスの関連親文書IDから，該当する文書を検索できることが望ましい．しかし，受信側MMLプロセッサが検索できる保証がない場合は，送信側MMLプロセッサは，過去にすでに送った文書に対してのみ，親文書IDによるポイントを行うべきである．</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_groupidによる文書間の関連付け">6.2.5. groupIdによる文書間の関連付け</h4>
+<div class="paragraph">
+<p>複数のモジュールを組み合わせて，要約や紹介状等を構築するためには，グループID （1.2.1.1.3.3. groupId）を用いる．モジュール単位で情報を管理する場合には，全く対等でまとまりのあるモジュール群は，同じ文書IDで管理されていた方が，検索抽出が容易であり，文書としてまとめる必要のある複数モジュールには，文書IDとは別個に，同じID（すなわちgroupId）を設定可能とする．</p>
+</div>
+<div class="paragraph">
+<p>具体的には，MML文書ヘッダ（docInfo）内のdocIdの下位エレメントとして，uid（文書ユニークID），parentId（関連親文書ID）に続いて，groupIdエレメントを追加する．さらに，属性として，groupClassを置き，モジュール群の文書の種別（例えば紹介状）を設定可能とする．</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_データ型">6.2.6. データ型</h4>
+<div class="paragraph">
+<p>MML Ver 4のデータ型はW3C XML Schema Ver 1.1に準拠する。具体的には以下の通りである。Ver 3までのtimePeriod型はxs:duration型で代用する。</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xs:string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">文字列</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xs:integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">整数</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xs:decimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10進数</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xs:boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">真偽値(true or false)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xs:date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">日付型。ISO8601形式(CCYY-MM-DD)で表記する</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xs:time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">時刻型。ISO8601形式(hh:mmLss[Z|(+|-)hh:mm])で表記する</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xs:dateTIme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">日付時刻型。ISO8601形式(CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm])で表記する</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xs:duration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">期間型。ISO8601形式に週（W)を加えたPnYnMnWnDTnHnMnS形式で表記する。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xs:token</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">空白置換と空白縮小が行われた文字列。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_アクセス権と暗号化">6.2.7. アクセス権と暗号化</h4>
+<div class="paragraph">
+<p>MMLインスタンス生成者の判断により，一文書ごとにアクセス権を記載することができる（MML基本構造accessRight）．ただし，このアクセス権は，インスタンス生成時において，インスタンス生成者の判断により記載されるものであり，インスタンスを受ける側が，記載されたアクセス権をどのように利用するかは，MMLでは定義されない．すなわち，実際のアクセスコントロールは，ユーザーのアプリケーションに委ねられる．</p>
+</div>
+<div class="paragraph">
+<p>MMLでは，インスタンスの暗号化を規定しない．暗号化の具体的な方法はユーザーによって選択される．しかし，暗号化情報エレメント（MML基本構造encryptInfo）に，暗号化に関する情報を記載することは可能である．記載方法は規定しない．</p>
+</div>
+<div class="paragraph">
+<p>暗号化の想定される一つの方法として，MMLインスタンスの本文（MML基本構造MmlBody）のみを公開鍵方式により暗号化し，暗号化に関する情報（用いた暗号化方法）を暗号化情報エレメントに記載することが考えられる．生成者情報（MML基本構造mmlCi:CreatorInfo）の生成者ＩＤから生成者の公開鍵を取得し，復号化できれば，電子署名となる．</p>
+</div>
+<div class="paragraph">
+<p>MMLインスタンスの一部またはすべてを暗号化したものは，厳密にはMMLの規格外であり，復号化されたもののみに対し，ＭＭＬの規格は適用される．</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_モジュール等のバージョン管理とnamespaces宣言">6.3. モジュール等のバージョン管理とnamespaces宣言</h3>
+<div class="paragraph">
+<p>MML Ver 4リリースに伴い、これまでバージョン間で共有されていたnamespaces宣言をバージョンごとに分離する。</p>
+</div>
+<div class="paragraph">
+<p>Ver 3まではモジュールのバージョンは，namespaces宣言の末尾の整数によって表されていた</p>
+</div>
+<div class="paragraph">
+<p>例えば，検歴情報のnamespaces宣言が</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/test/1.0"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>であれば，MML ver 2.3であっても、MML ver 3.0であってもこの検歴情報モジュールのバージョンは，1.0である。</p>
+</div>
+<div class="paragraph">
+<p>混乱を避けるためにVer 4以降ではURLを示すhttp://www.medxml.net/MMLの後にMMLのバージョンを以下のように記載する。</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>xmlns:mml="http://www.medxml.net/MML/v4"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>各モジュールのバージョンはURLの末尾に付与する。MMLの同一バージョンで小規模の修正が加わった場合末尾のバージョンを変更するものとする。</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>　xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/test/1.0"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>以下にMML ver 4での各モジュールのnamespaces宣言を一覧する。</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">患者情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlPi ="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">健康保険情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlHi ="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">診断履歴情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlRd ="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">生活習慣情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlLs ="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">基礎的診療情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlBc ="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">初診時特有情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlFcl ="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">経過記録情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlPc ="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">手術記録情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlSg ="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">臨床サマリー情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlSm ="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">検歴情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">報告書情報モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">紹介状モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">バイタルサインモジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">体温表モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">処方箋モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">注射記録モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_xhtmlの取り扱い">6.4. XHTMLの取り扱い</h3>
+<div class="paragraph">
+<p>MMLでは，文章として記述すべき情報を多く含んでいるため，書式情報を交換しなければ，正確に意味が伝わらないことがある．よって，データ型がstringであるエレメントのいくつかには，XHTMLが使用できることを定義し、改行書式“&lt;br/&gt;”のみを必須の書式としてきた。他の要素は処理系依存であり、必ずしも処理する必要はないとしたが、XHTML部分に書式以外の情報が入る余地を残したことで、この部分にMMLでは規定していないさまざまな情報が構造化されて記載されて運用されることになった。</p>
+</div>
+<div class="paragraph">
+<p>XHTML部分の扱いについてVer 4ではこれまで通りとするが、内容については精査しできる限り構造化して取り入れるように今後のバージョンで検討していくこととする。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mmlheader_形式詳説">7. MmlHeader 形式詳説</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_mmlheader_に関して">7.1. MmlHeader に関して</h3>
+<div class="paragraph">
+<p>MML Ver 4のMmlHeader 内のタグはすべて，xmlns:mml ="http://www.medxml.net/MML/v4" の Namespace に属す．(ここでは，xmlns="http://www.medxml.net/MML/v4" とデフォルト化したものとして記述することとする)</p>
+</div>
+<div class="sect3">
+<h4 id="_mmlheader">7.1.1. MmlHeader</h4>
+<div class="paragraph">
+<p>【内容】ヘッダー情報</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mmlci_creatorinfo">7.1.2. mmlCi:CreatorInfo</h4>
+<div class="paragraph">
+<p>【内容】生成者識別情報．構造は MML 共通形式 (作成者情報形式) 参照．<br>
+【省略】不可</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_masterid">7.1.3. masterId</h4>
+<div class="paragraph">
+<p>【内容】患者主 ID．<br>
+【省略】不可</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mmlcm_id">7.1.4. mmlCm:Id</h4>
+<div class="paragraph">
+<p>【内容】構造は MML 共通形式 (Id 形式) 参照．<br>
+【省略】不可</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_toc">7.1.5. toc</h4>
+<div class="paragraph">
+<p>【内容】table of content ．header 内の「toc」のチェックをシステムで行うことで、どのようなデータが入っているかを認識することができる。冗長ではあるが、SAX系の処理には有効であるためv4でも存続させた。<br>
+【省略】不可</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tocitem">7.1.6. tocItem</h4>
+<div class="paragraph">
+<p>【内容】本 MML 文書で使われている全ての DTD をリストアップする．冗長ではあるが、SAX系の処理には有効であるためv4でも存続させた。 <br>
+【データ型】string<br>
+【省略】不可<br>
+【繰り返し設定】繰り返しあり．使用した DTD の種類だけ繰り返す．</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_scopeperiod">7.1.7. scopePeriod</h4>
+<div class="paragraph">
+<p>【内容】MML 本文全体の対象期間<br>
+【省略】省略可<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">開始日</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">end</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">終了日</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hasOtherInfo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">期間外情報の有無．true：あり，false：なし</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">isExtract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">情報抽出の有無．true：あり，false：なし</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extractPolicy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0004</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">抽出のポリシー</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>start と end で示される MML 全体の対象期間に対して，送信側の施設に，対象期間外の患者診療情報があれば，hasOtherInfo の値を true とする．また，送信側施設の対象期間内のすべての患者情報を MML インスタンスに記載しておれば，isExtract の値を false に，何からの抽出を行なっておれば，true にする．さらに，抽出を行なっている場合は，抽出の基準を extractPolicy に記載する．これらは，MML インスタンスを受け取った側が，患者情報のすべてを受け取っているのか，一部分を受け取っているのかを明確にするためのものである．一部を受け取っているにもかかわらず，すべてを受け取っていると誤解した場合には，診療行為に重大な過ちが生じる可能性があるからである．</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_encryptinfo">7.1.8. encryptInfo</h4>
+<div class="paragraph">
+<p>【内容】電子署名などの暗号化情報．記載方法を特に定めない．基本方針の「アクセス権と暗号化」を参照．<br>
+【データ型】string<br>
+【省略】省略可</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_docinfo構造詳説">8. docInfo構造詳説</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_docinfoとは">8.1. docInfoとは</h3>
+<div class="paragraph">
+<p>docInfoはOverviewで記述したとおり、各MmmModuleItemの先頭に記載され、各Itemに関する作成者やアクセス権の範囲などが記載される。</p>
+</div>
+<div class="sect3">
+<h4 id="_docinfo">8.1.1. docInfo</h4>
+<div class="paragraph">
+<p>【内容】個々の文書のヘッダー情報<br>
+【省略】通常は省略不可だが，モジュールを指定したクエリや，クエリの返答で該当するモジュールがなかった場合のみ省略可．<br>
+【属性】文書ヘッダーの参照だけで，使用したモジュールの種別とバージョンが分かるように属性を設定する．</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contentModuleType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0005</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">文書の種類コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">moduleVersion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用モジュールのDTDのURIを記載</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_securitylevel">8.1.2. securityLevel</h4>
+<div class="paragraph">
+<p>【内容】 アクセス権種別．MML インスタンス生成者が，生成時に判断したアクセス権を記載する．実際のアクセス コントロールは，インスタンスを受けたアプリケーション (およびその管理者) に委ねられる．<br>
+【省略】不可</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_accessright">8.1.3. accessRight</h4>
+<div class="paragraph">
+<p>【内容】アクセス権<br>
+【省略】不可<br>
+【繰り返し設定】繰り返しあり．設定するアクセス権の数だけ繰り返す．少なくとも，記載者が参照できないことがないように，記載者のアクセス権設定は必須．</p>
+</div>
+<div class="paragraph">
+<p>複数の accessRight エレメントが存在する場合は，accessRight エレメント同士は "OR" 条件となる．1 つの accessRight エレメント直下に，施設，診療科，職種，個人の内 2 つ以上が存在するときは，"AND" 条件となる．この AND 条件を満たすものが実在しない場合には，アクセス権は認められない．<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">permit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0034</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">参照の権利．<br>
+none：すべてのアクセスを不許可<br>
+read：参照を許可<br>
+write：参照，修正を許可<br>
+delete：参照，削除を許可<br>
+all：参照，修正，削除を許可<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">startDate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">アクセス許可開始日</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">endDate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">アクセス許可終了日</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>参照を許可しないことを明示的に示したい場合には，permit 属性に none を設定する．</p>
+</div>
+<div class="paragraph">
+<p>MML では，削除可能文書に対して，削除要求が出されたときの具体的な処理方法を規定しないが，1 つの想定される実装として，診療記録の修正履歴を残すことが重要と考えられる場合は，物理的削除ではなく，参照者の通常アクセスにおいて非表示とするに留めることが考えられる．</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mmlsc_facility">8.1.4. mmlSc:facility</h4>
+<div class="paragraph">
+<p>【内容】施設．施設単位でのアクセス権を設定する．<br>
+【省略】可</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mmlsc_facilityname">8.1.5. mmlSc:facilityName</h4>
+<div class="paragraph">
+<p>【内容】施設名<br>
+【データ型】string<br>
+【省略】不可<br>
+【繰り返し設定】繰り返しあり．アクセス権を設定する施設の数だけ繰り返す．<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlSc:facilityCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0035</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">施設アクセス権定義</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlSc:tableId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">施設アクセス権定義に用いられたテーブル名．上記の通りMML0035 と記載</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlSc:facilityId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">施設コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlSc:facilityIdType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0027</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">施設コードのマスタ名</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>施設アクセス権定義における各値の意味は以下の通りである．</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">アクセスを行う全ての施設を対象とする．</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">記載者と同じ施設を対象とする．</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">experience</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">被記載者 (患者) の診療歴のある施設を対象とする．<br>
+診療歴のある施設の選別法は，各アプリケーションに委ねられる．</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">individual</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">施設 ID を個別に指定し，対象とする．+
+mmlSc:facilityId，mmlSc:facilityIdType に対象施設を記載する．</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_mmlsc_department">8.1.6. mmlSc:department</h4>
+<div class="paragraph">
+<p>【内容】診療科<br>
+【省略】可<br></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mmlsc_departmentname">8.1.7. mmlSc:departmentName</h4>
+<div class="paragraph">
+<p>【内容】診療科名<br>
+【省略】不可<br>
+【繰り返し設定】繰り返しあり．アクセス権を設定する診療科の数だけ繰り返す．<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlSc:departmentCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0028</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">診療科コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlSc:tableId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">診療科コード名．MML0028 と記載</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_mmlsc_license">8.1.8. mmlSc:license</h4>
+<div class="paragraph">
+<p>【内容】職種<br>
+【省略】可<br></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mmlsc_licensename">8.1.9. mmlSc:licenseName</h4>
+<div class="paragraph">
+<p>【内容】職種名<br>
+【省略】不可<br>
+【繰り返し設定】繰り返しあり．アクセス権を設定する職種の数だけ繰り返す．<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlSc:licenseCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0026</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">職種コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlSc:tableId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">職種コード名．MML0026 と記載．</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_mmlsc_person">8.1.10. mmlSc:person</h4>
+<div class="paragraph">
+<p>【内容】個人<br>
+【省略】可</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mmlsc_personname">8.1.11. mmlSc:personName</h4>
+<div class="paragraph">
+<p>【内容】個人名<br>
+【データ型】string<br>
+【省略】不可<br>
+【繰り返し設定】繰り返しあり．アクセス権を設定する個人の数だけ繰り返す．<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlSc:personCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0036</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">個人アクセス権定義</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlSc:tableId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">個人アクセス権定義に用いられたテーブル名．MML0036 と記載</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlSc:personId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">個人 ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlSc:personIdType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">個人 ID のマスタ名</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>個人アクセス権定義における各値の意味は以下の通りである．</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">アクセスを行う全ての個人を対象とする．</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">記載者を対象とする．</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">patient</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">被記載者 (患者) 本人を対象とする</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">individual</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">個人 ID を個別に指定し，対象とする．<br>
+mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<div class="title">【例】securityLevel (アクセス権種別) 記載例</div>
+<p>宮崎医科大学附属病院の内科，医師に2001年10月1日から2001年12月31日まで参照，修正，削除の権利を与える場合</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;securityLevel&gt;
+  &lt;accessRight
+    permit="all"
+    startDate="2001-10-01"
+    endDate="2001-12-31"&gt;
+    &lt;mmlSc:facility&gt;
+      &lt;mmlSc:facilityName
+        mmlSc:facilityCode="individual"
+        mmlSc:tableId="MML0035"
+        mmlSc:facilityId="JPN453010100003"
+        mmlSc:facilityIdType="JMARI"&gt;
+        宮崎医科大学附属病院
+      &lt;/mmlSc:facilityName&gt;
+    &lt;/mmlSc:facility&gt;
+    &lt;mmlSc:department&gt;
+      &lt;mmlSc:departmentName
+      mmlSc:departmentCode="01"
+      mmlSc:tableId="MML0028"/&gt;
+    &lt;/mmlSc:department&gt;
+    &lt;mmlSc:license&gt;
+      &lt;mmlSc:licenseName
+        mmlSc:licenseCode="doctor"
+        mmlSc:tableId="MML0026"/&gt;
+    &lt;/mmlSc:license&gt;
+  &lt;/accessRight&gt;
+&lt;/securityLevel&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>記載者施設に無期限の全ての権利と，患者 (患者太郎) に 2001 年 10 月 1 日から 2001 年 12 月 31 日まで参照の権利を与える場合</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;securityLevel&gt;
+  &lt;accessRight permit="all"&gt;
+    &lt;mmlSc:facility&gt;
+      &lt;mmlSc:facilityName
+        mmlSc:facilityCode="creator"
+        mmlSc:tableId="MML0035"&gt;
+        記載者施設
+      &lt;/mmlSc:facilityName&gt;
+    &lt;/mmlSc:facility&gt;
+  &lt;/accessRight&gt;
+  &lt;accessRight
+    permit="read"
+    startDate="2001-10-01"
+    endDate="2001-12-31"&gt;
+    &lt;mmlSc:person&gt;
+      &lt;mmlSc:personName
+        mmlSc:personCode="patient"
+        mmlSc:tableId="MML0036"
+        mmlSc:personId="4500001234"
+        mmlSc:personIdType="dolphinUserid_2001-10-03"&gt;
+        患者太郎
+      &lt;/mmlSc:personName&gt;
+    &lt;/mmlSc:person&gt;
+  &lt;/accessRight&gt;
+&lt;/securityLevel&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_title">8.1.12. title</h4>
+<div class="paragraph">
+<p>【内容】文書タイトル<br>
+【データ型】string<br>
+【省略】不可<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generationPurpose</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0007</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">文書詳細種別</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_docid">8.1.13. docId</h4>
+<div class="paragraph">
+<p>【内容】文書 ID 情報<br>
+【省略】不可<br></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_uid">8.1.14. uid</h4>
+<div class="paragraph">
+<p>【内容】文書ユニーク ID．ユニーク番号の形式は UUID とする ( UUID はハイフンを含めた形式とする)．MML プロセッサーは，MML インスタンスを受け取った時に，何らかの手段で uid をローカルに保存しておくことを強く推奨する．<br>
+【データ型】string<br>
+【省略】不可<br>
+【例】</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;uid&gt;0aae5960-667c-11d3-9751-00105a6792e7&lt;/uid&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parentid">8.1.15. parentId</h4>
+<div class="paragraph">
+<p>【内容】関連親文書の ID．活用法については，基本方針の「文書間の関連付け」を参照すること．<br>
+【データ型】string<br>
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．親文書が複数の場合に繰り返す．<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">relation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0008</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">関連の種別</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>【例】親文書に対する訂正文書 (新しい版) である場合</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;parentId relation = "oldEdition"&gt;0aae5960-667c-11d3-9751-00105a6792e8&lt;/parentId&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_groupid">8.1.16. groupId</h4>
+<div class="paragraph">
+<p>【内容】グループ ID．活用法については，基本方針の「groupId による文書間の関連付け」を参照すること．<br>
+【データ型】string<br>
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．複数のグループに属する場合に繰り返す．<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groupClass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0007</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">モジュールグループの種別</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_confirmdate">8.1.17. confirmDate</h4>
+<div class="paragraph">
+<p>【内容】カルテ電子保存の確定日時<br>
+【データ型】dateTime ISO8610形式書式：CCYY-MM-DDThh:mm:ss<br>
+【省略】不可<br>
+【属性】時系列情報が 1 文書となっている場合は，次の属性で開始日時と終了日時を記載する． scopePeriod が MML 文書全体の対象期間であるのに対し，こちらは，1 つの MmlModuleItemの期間を表していることに注意．</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">時系列情報場合の開始日時．</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">end</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">時系列情報場合の終了日時．</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">firstConfirmDate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">修正が発生した場合の，初回確定日時</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eventDate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">実際に記載された診療イベントが発生した日時</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_mmlci_creatorinfo_2">8.1.18. mmlCi:CreatorInfo</h4>
+<div class="paragraph">
+<p>【内容】個々の文書の作成者情報．構造は MML 共通形式 (作成者情報形式) 参照．<br>
+【省略】不可</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_extrefs">8.1.19. extRefs</h4>
+<div class="paragraph">
+<p>【内容】content 内に記載されているすべての外部リンク情報のリスト．content 内を解析しなくても，外部参照ファイルのリストを得ることができる．<br>
+【省略】不可</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mmlcm_extref">8.1.20. mmlCm:extRef</h4>
+<div class="paragraph">
+<p>【内容】外部リンク情報．構造は MML 共通形式 (外部参照形式) 参照．<br>
+【省略】省略可<br>
+【繰り返し設定】記載されている外部リンク情報の数だけ繰り返す．</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_共通形式">9. 共通形式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>MMLではモジュール間で再利用されることの多いコンポーネントを共通形式として定義している。以下にそのコンポーネントを示す。各コンポーネントの詳細については、それぞれの解説を参照すること。</p>
+</div>
+<div class="paragraph">
+<p>.</p>
+</div>
+<div class="sect2">
+<h3 id="_住所表現形式">9.1. 住所表現形式</h3>
+<div class="imageblock">
+<div class="content">
+<img src="./figures/mmlad.jpg" alt="mmlad">
+</div>
+<div class="title">Figure 1. エレメント構造図</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. エレメント一覧表</caption>
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datatypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Occurence</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TableId</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:Address</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:repCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:addressClass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0002</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:tableId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:full</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:prefecture</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:city</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:town</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:homeNumber</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:zip</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:countryCode</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現</p>
+</div>
+<div class="paragraph">
+<p>#REQUIRED:必須属性，#IMPLIED:省略可能属性</p>
+</div>
+<div class="sect3">
+<h4 id="_エレメント解説">9.1.1. エレメント解説</h4>
+<div class="sect4">
+<h5 id="_mmlad_address_住所表現形式">mmlAd:Address (住所表現形式)</h5>
+<div class="paragraph">
+<p>【内容】住所を表現する共通形式．一連住所もしくはその直下の 4 エレメント (1.2. から1.5.) のどちらかを選択．</p>
+</div>
+<div class="paragraph">
+<p>【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:repCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">表記法</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:addressClass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0002</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">住所の種類コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:tableId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">上記の表記法を規定するテーブル名</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>【例】アルファベット表記，職場住所の場合</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025"&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmlad_full">mmlAd:full</h5>
+<div class="paragraph">
+<p>【内容】一連住所．<br>
+【データ型】string<br>
+【省略】省略可</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmlad_prefecture">mmlAd:prefecture</h5>
+<div class="paragraph">
+<p>【内容】都道府県<br>
+【データ型】string<br>
+【省略】省略可<br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmlad_city">mmlAd:city</h5>
+<div class="paragraph">
+<p>【内容】市，区，郡<br>
+【データ型】string<br>
+【省略】省略可<br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmlad_town">mmlAd:town</h5>
+<div class="paragraph">
+<p>【内容】町，村<br>
+【データ型】string<br>
+【省略】省略可<br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmlad_homenumber">mmlAd:homeNumber</h5>
+<div class="paragraph">
+<p>【内容】番地，丁目，マンション名，部屋番号など残りすべて．<br>
+【データ型】string<br>
+【省略】省略可</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmlad_zip">mmlAd:zip</h5>
+<div class="paragraph">
+<p>【内容】郵便番号<br>
+【データ型】string<br>
+【省略】省略可</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmlad_countrycode">mmlAd:countryCode</h5>
+<div class="paragraph">
+<p>【内容】国コード．ISO 3166 A3 コード使用．<br>
+【データ型】string<br>
+【省略】省略可</p>
+</div>
+<div class="paragraph">
+<div class="title">mmlAd:Address (住所表現形式) サンプル インスタンス</div>
+<p>一連住所の場合</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025"&gt;
+  &lt;mmlAd:full&gt;5200 Kihara, Kiyotake-cho, Miyazaki-gun, Miyazaki-prefecture&lt;/mmlAd:full&gt;
+  &lt;mmlAd:zip&gt;889-1692&lt;/mmlAd:zip&gt;
+  &lt;mmlAd:countryCode&gt;JPN&lt;/mmlAd:countryCode&gt;
+&lt;/mmlAd:Address&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>分割して表記する場合</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025"&gt;
+  &lt;mmlAd:prefecture&gt;Miyazaki&lt;/mmlAd:prefecture&gt;
+  &lt;mmlAd:city&gt;Miyazaki&lt;/mmlAd:city&gt;
+  &lt;mmlAd:town&gt;Kiyotake&lt;/mmlAd:town&gt;
+  &lt;mmlAd:homeNumber&gt;5200 Kihara&lt;/mmlAd:homeNumber&gt;
+  &lt;mmlAd:zip&gt;889-1692&lt;/mmlAd:zip&gt;
+  &lt;mmlAd:countryCode&gt;JPN&lt;/mmlAd:countryCode&gt;
+&lt;/mmlAd:Address&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2015-09-02 02:13:53 JST
+</div>
+</div>
+</body>
+</html>

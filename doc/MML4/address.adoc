@@ -25,7 +25,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ==== エレメント解説
 
-===== 1.mmlAd:Address (住所表現形式)
+===== mmlAd:Address (住所表現形式)
 【内容】住所を表現する共通形式．一連住所もしくはその直下の 4 エレメント (1.2. から1.5.) のどちらかを選択．
 
 【属性】
@@ -40,37 +40,37 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
  <mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
 
-===== 1.1.mmlAd:full
+===== mmlAd:full
 【内容】一連住所． +
 【データ型】string +
 【省略】省略可
 
-===== 1.2.mmlAd:prefecture
+===== mmlAd:prefecture
 【内容】都道府県 +
 【データ型】string +
 【省略】省略可 +
 
-===== 1.3.mmlAd:city
+===== mmlAd:city
 【内容】市，区，郡 +
 【データ型】string +
 【省略】省略可 +
 
-===== 1.4.mmlAd:town
+===== mmlAd:town
 【内容】町，村 +
 【データ型】string +
 【省略】省略可 +
 
-===== 1.5.mmlAd:homeNumber
+===== mmlAd:homeNumber
 【内容】番地，丁目，マンション名，部屋番号など残りすべて． +
 【データ型】string +
 【省略】省略可
 
-===== 1.6.mmlAd:zip
+===== mmlAd:zip
 【内容】郵便番号 +
 【データ型】string +
 【省略】省略可
 
-===== 1.7.mmlAd:countryCode
+===== mmlAd:countryCode
 【内容】国コード．ISO 3166 A3 コード使用． +
 【データ型】string +
 【省略】省略可

@@ -1,7 +1,15 @@
-= MML 4.0
-
 :Author: Shinji KOBAYASHI
 :Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+= MML 4.0
+toc::[]
 
 == はじめに
 

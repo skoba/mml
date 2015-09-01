@@ -2,7 +2,7 @@
 === docInfoとは
 docInfoはOverviewで記述したとおり、各MmmModuleItemの先頭に記載され、各Itemに関する作成者やアクセス権の範囲などが記載される。
 
-===== docInfo
+==== docInfo
 
 【内容】個々の文書のヘッダー情報 +
 【省略】通常は省略不可だが，モジュールを指定したクエリや，クエリの返答で該当するモジュールがなかった場合のみ省略可． +
@@ -13,11 +13,11 @@ docInfoはOverviewで記述したとおり、各MmmModuleItemの先頭に記載�
 |moduleVersion|uri|#IMPLIED| |使用モジュールのDTDのURIを記載
 |=======
 
-===== securityLevel
+==== securityLevel
 【内容】 アクセス権種別．MML インスタンス生成者が，生成時に判断したアクセス権を記載する．実際のアクセス コントロールは，インスタンスを受けたアプリケーション (およびその管理者) に委ねられる． +
 【省略】不可
 
-=====  accessRight
+====  accessRight
 【内容】アクセス権 +
 【省略】不可 +
 【繰り返し設定】繰り返しあり．設定するアクセス権の数だけ繰り返す．少なくとも，記載者が参照できないことがないように，記載者のアクセス権設定は必須．
@@ -39,11 +39,11 @@ all：参照，修正，削除を許可 +
 
 MML では，削除可能文書に対して，削除要求が出されたときの具体的な処理方法を規定しないが，1 つの想定される実装として，診療記録の修正履歴を残すことが重要と考えられる場合は，物理的削除ではなく，参照者の通常アクセスにおいて非表示とするに留めることが考えられる．
 
-===== mmlSc:facility
+==== mmlSc:facility
 【内容】施設．施設単位でのアクセス権を設定する． +
 【省略】可
 
-===== mmlSc:facilityName
+==== mmlSc:facilityName
 【内容】施設名 +
 【データ型】string +
 【省略】不可 +
@@ -67,11 +67,11 @@ MML では，削除可能文書に対して，削除要求が出されたとき�
 mmlSc:facilityId，mmlSc:facilityIdType に対象施設を記載する．
 |=====
 
-===== mmlSc:department
+==== mmlSc:department
 【内容】診療科 +
 【省略】可 +
 
-===== mmlSc:departmentName
+==== mmlSc:departmentName
 【内容】診療科名 +
 【省略】不可 +
 【繰り返し設定】繰り返しあり．アクセス権を設定する診療科の数だけ繰り返す． +
@@ -82,11 +82,11 @@ mmlSc:facilityId，mmlSc:facilityIdType に対象施設を記載する．
 |mmlSc:tableId|string|#IMPLIED| |診療科コード名．MML0028 と記載
 |=====
 
-===== mmlSc:license
+==== mmlSc:license
 【内容】職種 +
 【省略】可 +
 
-===== mmlSc:licenseName
+==== mmlSc:licenseName
 【内容】職種名 +
 【省略】不可 +
 【繰り返し設定】繰り返しあり．アクセス権を設定する職種の数だけ繰り返す． +
@@ -97,11 +97,11 @@ mmlSc:facilityId，mmlSc:facilityIdType に対象施設を記載する．
 |mmlSc:tableId|string|#IMPLIED| |職種コード名．MML0026 と記載．
 |=====
 
-===== mmlSc:person
+==== mmlSc:person
 【内容】個人 +
 【省略】可
 
-===== mmlSc:personName
+==== mmlSc:personName
 【内容】個人名 +
 【データ型】string +
 【省略】不可 +
@@ -183,7 +183,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
    </accessRight>
  </securityLevel>
 
-===== title
+==== title
 【内容】文書タイトル +
 【データ型】string +
 【省略】不可 +
@@ -193,11 +193,11 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 |generationPurpose|string|#IMPLIED|MML0007|文書詳細種別
 |=====
 
-===== docId
+==== docId
 【内容】文書 ID 情報 +
 【省略】不可 +
 
-====== uid
+==== uid
 【内容】文書ユニーク ID．ユニーク番号の形式は UUID とする ( UUID はハイフンを含めた形式とする)．MML プロセッサーは，MML インスタンスを受け取った時に，何らかの手段で uid をローカルに保存しておくことを強く推奨する． +
 【データ型】string +
 【省略】不可 +
@@ -205,7 +205,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 
  <uid>0aae5960-667c-11d3-9751-00105a6792e7</uid>
 
-===== parentId
+==== parentId
 【内容】関連親文書の ID．活用法については，基本方針の「文書間の関連付け」を参照すること． +
 【データ型】string +
 【省略】省略可 +
@@ -219,7 +219,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 
  <parentId relation = "oldEdition">0aae5960-667c-11d3-9751-00105a6792e8</parentId>
 
-===== groupId
+==== groupId
 【内容】グループ ID．活用法については，基本方針の「groupId による文書間の関連付け」を参照すること． +
 【データ型】string +
 【省略】省略可 +
@@ -230,7 +230,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 |groupClass|string|#IMPLIED|MML0007| モジュールグループの種別
 |=====
 
-===== confirmDate
+==== confirmDate
 【内容】カルテ電子保存の確定日時 +
 【データ型】dateTime ISO8610形式書式：CCYY-MM-DDThh:mm:ss +
 【省略】不可 +
@@ -243,17 +243,17 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 |eventDate|dateTime| |#IMPLIED|実際に記載された診療イベントが発生した日時
 |=====
 
-===== mmlCi:CreatorInfo
+==== mmlCi:CreatorInfo
 【内容】個々の文書の作成者情報．構造は MML 共通形式 (作成者情報形式) 参照． +
 【省略】不可
 
 
-===== extRefs
+==== extRefs
 【内容】content 内に記載されているすべての外部リンク情報のリスト．content 内を解析しなくても，外部参照ファイルのリストを得ることができる． +
 【省略】不可
 
 
-===== mmlCm:extRef
+==== mmlCm:extRef
 【内容】外部リンク情報．構造は MML 共通形式 (外部参照形式) 参照． +
 【省略】省略可 +
 【繰り返し設定】記載されている外部リンク情報の数だけ繰り返す．
