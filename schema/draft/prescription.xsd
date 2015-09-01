@@ -5,14 +5,14 @@
   <xs:element name="PrescriptionModule">
     <xs:complexType>
       <xs:sequence>
-         <xs:element ref="mmlPs:medication" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element ref="mmlPs:issuedTo" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPs:medication" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="medication">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlPs:issuedTo" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:medicine" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="mmlPs:dose" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="mmlPs:doseUnit" minOccurs="1" maxOccurs="1"/>
