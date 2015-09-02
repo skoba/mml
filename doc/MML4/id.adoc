@@ -1,0 +1,62 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+=== Id 形式
+
+.エレメント一覧表
+|=====
+| |Elements|Attribute|Datatypes|Occurrence|Table id
+|3.|mmlCm:Id| |string| |
+| | |mmlCm:type|string|#REQUIRED|optional
+| | |mmlCm:tableId|string|#REQUIRED|
+| | |mmlCm:checkDigit|integer|#IMPLIED|
+| | |mmlCm:checkDigitSchema|string|#IMPLIED|MML0001
+|=====
+Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== エレメント解説
+===== mmlCm:Id (Id 形式)
+【内容】ID を表現する共通形式． +
+【データ型】string +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlCm:type|string|#REQUIRED|optional|ID の種類コード
+|mmlCm:tableId|string|#REQUIRED| |上記 ID の種類コードを規定するテーブル名．施設固有の個人 ID の場合に限り，施設 ID を記載することができる．
+|mmlCm:checkDigit|integer|#IMPLIED| |チェックディジット
+|mmlCm:checkDigitSchema|string|#IMPLIED|MML0001|チェックディジット方式
+|=====
+注釈 1：mmlCm:type は原則として，個人 ID に対しては MML0024 テーブルを，施設 ID に対しては MML0027 テーブルを，診療科 ID に対しては MML0029 を使用し，mmlCm:tableId に使用したテーブル名を記載する．
+
+注釈 2：個人 ID が施設固有のものである場合に限り，mmlCm:tableId に施設 ID を記載し，「施設 ID＋施設固有個人 ID」の組み合わせで個人 ID を記載することを可能とする．
+
+.mmlCm:Id(Id 形式)サンプルインスタンス
+
+個人 ID の場合
+
+ <mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10" mmlCm:checkDigit = "5"
+   mmlCm:tableId = "MML0024">12345</mmlCm:Id>
+
+
+個人 ID の場合 (「施設 ID＋施設固有個人 ID」で記載する場合)
+
+ <mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10" mmlCm:checkDigit = "5"
+   mmlCm:tableId = "JPN452015100001">12345</mmlCm:Id>
+
+
+施設 ID の場合
+
+ <mmlCm:Id mmlCm:type = "insurance" mmlCm:tableId = " MML0027">12345</mmlCm:Id>
+
+
+診療科 ID の場合
+
+ <mmlCm:Id mmlCm:type = "medical" mmlCm:tableId = "MML0029">16</mmlCm:Id>

@@ -9,6 +9,10 @@
             <file name="sample/flowsheet_instance.xml"/>
             <file name="sample/mmlad_structured_sample.xml"/>
             <file name="sample/mmlad_unstructured_sample.xml"/>
+            <file name="sample/mmlcm_department_id_sample.xml"/>
+            <file name="sample/mmlcm_facility_id_sample.xml"/>
+            <file name="sample/mmlcm_personal_id_sample.xml"/>
+            <file name="sample/mmlcm_personal_id_with_facility_sample.xml"/>
             <file name="sample/mmlinj_sample.xml"/>
             <file name="sample/mmlph_structured_sample.xml"/>
             <file name="sample/mmlph_unstructured_sample.xml"/>
