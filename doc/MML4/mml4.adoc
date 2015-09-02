@@ -56,3 +56,5 @@ include::common_components.adoc[]
 include::header.adoc[]
 
 include::docinfo.adoc[]
+
+include::contents_modules.adoc[]

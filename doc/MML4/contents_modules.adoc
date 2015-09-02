@@ -1,0 +1,15 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+== MMLコンテンツ モジュール詳説
+
+toc::[]
+
+　MMLではユースケースに応じて設計された下記のモジュールを一単位としてMmlItemに記載することにしている。詳細はドキュメントおよびスキーマを参照すること。

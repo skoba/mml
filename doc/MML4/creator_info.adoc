@@ -31,6 +31,7 @@ Occurrence なし：必ず 1 回出現，?： 0 回もしくは 1 回出現，+�
 ===== mmlPsi:PersonalizedInfo
 【内容】作成者の個人情報．構造は MML 共通形式 (個人情報形式) 参照． +
 【省略】不可
+
 ===== mmlCi:creatorLicense
 【内容】生成者の資格 +
 【データ型】string．属性で指定されたテーブルの値を入れる． +
