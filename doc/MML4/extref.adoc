@@ -1,0 +1,75 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+=== 外部参照形式
+.エレメント一覧表
+|=====
+| |Elements|Attribute|Datatypes|Occurrence|Table id
+|4.|mmlCm:extRef| | | |
+| | |mmlCm:contentType|string|#IMPLIED|
+| | |mmlCm:medicalRole|string|#IMPLIED|
+| | |mmlCm:title|string|#IMPLIED|
+| | |mmlCm:href|string|#REQUIRED|
+|=====
+Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+
+==== エレメント解説
+===== mmlCm:extRef(外部参照形式)
+【内容】外部参照を表現する共通形式． +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlCm:contentType|string|#IMPLIED|外部参照情報の種類コード
+|mmlCm:medicalRole|string|#IMPLIED|外部参照情報の詳細種別
+|mmlCm:title|string|#IMPLIED|タイトル
+|mmlCm:href|string|#REQUIRED|外部参照情報の所在
+|=====
+画像や心電図波形などバイナリデータについては，(1) HL7 や DICOM などの規格が存在する，(2) バイナリデータ形式がデータ交換上効率がよい，(3) 独立したデータファイルで管理されることが多い，などの理由から，これらは MMLインスタンスから独立したデータファイルとし，MMLからそれらを外部参照する方式を強く推奨する．MMLインスタンスにこれらのデータを直接埋め込む方法は，十分に検討されていないので本規格書では外部参照する方式とする．
+
+外部参照形式は以下のような記述形式をとる．
+
+====== mmlCm:contentType
+
+contentType は，MIME (RFC 2045,2046,2047) の Content-Type に準拠しており，"TEXT/PLAIN" などの他に，MERIT-9 (医療情報交換規約運用指針) において，"IMAGE/DICOM"，"APPLICATION/HL72.3-HL7ER2.3" などが定義されている．詳細については，MERIT-9 の CONTENT-TYPE を参照されたい．
+
+画像についても同様の方法で，"IMAGE/ JPEG "，"IMAGE/ GIF "，"IMAGE/TIFF"，など複数のフォーマットの外部ファイルを参照可能とする．
+
+====== mmlCm:medicalRole
+
+ユーザーの実装アプリケーションにおいて，外部参照ファイルが分類されておれば，効率よく整理され，参照が容易となる．よって，medicalRole では，MML で想定されるあらゆる外部ファイルを分類するための種別を記載する．MML0033 テーブルを用いる．
+
+====== mmlCm:title
+
+個々の外部参照ファイルの内容を，具体的に表す短い文字列を記載する．以下のような使用を想定している．
+
+【例】
+
+* 胸腔ドレナージ後の胸部レントゲン写真
+* 化学療法直後の胸部CTスキャン
+* 冠動脈造影スケッチ
+* 類似症例の文献(PDF)
+
+====== mmlCm:href
+
+MML インスタンスからの相対的 uri 記述．外部参照ファイルは，MML インスタンスに添付して送られることを想定しているため，絶対的 uri は使用しない．ファイルの名称や，ディレクトリの設定は，ユーザーにより定義される．
+
+
+.mmlCm:extRef (外部参照形式) サンプルインスタンス
+
+ <mml:extRefs>
+   <mmlCm:extRef
+     mmlCm:contentType = "APPLICATION/HL72.3-HL7ER2.3"
+     mmlCm:medicalRole = "prescription"
+     mmlCm:title = "Prescription on discharge"
+     mmlCm:href = "patient1234/prescription831.HL7"/>
+ </mml:extRefs>

@@ -16,3 +16,7 @@ MMLではモジュール間で再利用されることの多いコンポーネ�
 include::address.adoc[]
 
 include::phone.adoc[]
+
+include::id.adoc[]
+
+include::extref.adoc[]
