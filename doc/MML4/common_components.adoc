@@ -20,3 +20,5 @@ include::phone.adoc[]
 include::id.adoc[]
 
 include::extref.adoc[]
+
+include::name.adoc[]
