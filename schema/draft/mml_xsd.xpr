@@ -14,6 +14,7 @@
             <file name="sample/mmlcm_facility_id_sample.xml"/>
             <file name="sample/mmlcm_personal_id_sample.xml"/>
             <file name="sample/mmlcm_personal_id_with_facility_sample.xml"/>
+            <file name="sample/mmldp_sample.xml"/>
             <file name="sample/mmlinj_sample.xml"/>
             <file name="sample/mmlnm_structured_sample.xml"/>
             <file name="sample/mmlnm_unstructured_sample.xml"/>

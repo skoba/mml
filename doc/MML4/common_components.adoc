@@ -26,3 +26,5 @@ include::name.adoc[]
 include::facility.adoc[]
 
 include::department.adoc[]
+
+include::personalized_info.adoc[]
