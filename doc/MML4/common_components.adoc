@@ -22,3 +22,5 @@ include::id.adoc[]
 include::extref.adoc[]
 
 include::name.adoc[]
+
+include::facility.adoc[]

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlFc:Facility>
+  <mmlFc:name mmlFc:repCode = "A" mmlFc:tableId = "MML0025">
+    New Millenium Medical College Hospital
+  </mmlFc:name>
+  <mmlCm:Id mmlCm:type = "insurance" mmlCm:checkDigitSchema = "MD10"
+    mmlCm:checkDigit = "5" mmlCm:tableId = "MML0027">12345</mmlCm:Id>
+</mmlFc:Facility>
+
