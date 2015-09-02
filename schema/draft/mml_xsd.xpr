@@ -9,6 +9,7 @@
             <file name="sample/flowsheet_instance.xml"/>
             <file name="sample/mmlad_structured_sample.xml"/>
             <file name="sample/mmlad_unstructured_sample.xml"/>
+            <file name="sample/mmlci_sample.xml"/>
             <file name="sample/mmlcm_department_id_sample.xml"/>
             <file name="sample/mmlcm_extref_sample.xml"/>
             <file name="sample/mmlcm_facility_id_sample.xml"/>
@@ -21,6 +22,7 @@
             <file name="sample/mmlph_structured_sample.xml"/>
             <file name="sample/mmlph_unstructured_sample.xml"/>
             <file name="sample/mmlps_sample.xml"/>
+            <file name="sample/mmlpsi_sample.xml"/>
             <file name="sample/test_module.xml"/>
         </folder>
         <file name="address.xsd"/>
