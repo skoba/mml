@@ -1,0 +1,57 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+===  診療科情報形式
+.エレメント構造図
+image::mmldp.jpg[]
+
+.エレメント一覧表
+|=====
+| |Elements|Attribute|Datatypes|Occurrence|Table id
+|7.|mmlDp:Department| | | |
+|7.1.|mmlDp:name| |string|+|
+| | |mmlDp:repCode|string|#REQUIRED|optional
+| | |mmlDp:tableId|string|#IMPLIED|
+|7.2.|mmlCm:Id| |string|?|
+|=====
+Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== エレメント解説
+===== mmlDp:Department(診療科情報形式)
+【内容】診療科を表現する共通形式．
+
+===== mmlDp:name
+【内容】診療科名称． +
+【データ型】string +
+【省略】不可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す． +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlDp:repCode|string|#REQUIRED|optional|表記法
+|mmlDp:tableId|string|#IMPLIED| |表記法を規定するテーブル名
+|=====
+
+===== mmlCm:Id
+【内容】診療科 ID．構造は MML 共通形式 (Id 形式) 参照． +
+【省略】省略可 +
+
+.mmlDp:Department (診療科情報形式) サンプルインスタンス
+
+ <mmlDp:Department>
+   <mmlDp:name mmlDp:repCode = "A" mmlDp:tableId = "MML0025">
+     Cardiovascular　Surgery
+   </mmlDp:name>
+   <mmlCm:Id mmlCm:type = "medical"　 mmlCm:tableId = "MML0029">16</mmlCm:Id>
+ </mmlDp:Department>
+
+注釈：診療科 ID に MML0029 テーブルの医科診療科コードを用いた．

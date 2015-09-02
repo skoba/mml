@@ -24,3 +24,5 @@ include::extref.adoc[]
 include::name.adoc[]
 
 include::facility.adoc[]
+
+include::department.adoc[]
