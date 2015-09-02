@@ -1,4 +1,17 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
 == docInfo構造詳説
+
+toc::[]
+
 === docInfoとは
 docInfoはOverviewで記述したとおり、各MmmModuleItemの先頭に記載され、各Itemに関する作成者やアクセス権の範囲などが記載される。
 

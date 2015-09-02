@@ -1,7 +1,18 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
 == 共通形式
+:toc[]
 
 MMLではモジュール間で再利用されることの多いコンポーネントを共通形式として定義している。以下にそのコンポーネントを示す。各コンポーネントの詳細については、それぞれの解説を参照すること。
 
-. 
-
 include::address.adoc[]
+
+include::phone.adoc[]

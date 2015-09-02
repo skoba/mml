@@ -1,4 +1,16 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
 == 基本方針
+
+toc::[]
 
 === モジュールのnamespace宣言とバージョン管理
 
