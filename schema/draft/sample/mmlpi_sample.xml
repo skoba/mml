@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mmlPi:PatientModule>
+<mmlPi:PatientModule
+  xmlns:mmlPi= "http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+  xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+  xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0">
   <mmlPi:uniqueInfo>
     <mmlPi:masterId>
       <mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10"
