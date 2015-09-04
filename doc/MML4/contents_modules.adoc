@@ -17,3 +17,5 @@ toc::[]
 include::patient_module.adoc[]
 
 include::health_insurance.adoc[]
+
+include::registered_diagnosis.adoc[]

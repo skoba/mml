@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mmlHi:HealthInsuranceModule mmlHi:countryType="JPN">
+<mmlHi:HealthInsuranceModule
+  xmlns:mmlHi="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
+  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+  xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+  xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
+  xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
+  mmlHi:countryType="JPN">
   <mmlHi:insuranceClass mmlHi:ClassCode="10" mmlHi:tableId="MMC0002">国７</mmlHi:insuranceClass>
   <mmlHi:insuranceNumber>8001</mmlHi:insuranceNumber>
   <mmlHi:clientId>
@@ -25,4 +31,4 @@
       <mmlHi:paymentRatio mmlHi:ratioType="fix">10000</mmlHi:paymentRatio>
     </mmlHi:publicInsuranceItem>
   </mmlHi:publicInsurance>
-</mmlHi:HealthInsuranceModule><
+</mmlHi:HealthInsuranceModule>

@@ -25,6 +25,7 @@
             <file name="sample/mmlpi_sample.xml"/>
             <file name="sample/mmlps_sample.xml"/>
             <file name="sample/mmlpsi_sample.xml"/>
+            <file name="sample/mmlrd_sample.xml"/>
             <file name="sample/test_module.xml"/>
         </folder>
         <file name="address.xsd"/>
