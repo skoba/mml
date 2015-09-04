@@ -17,6 +17,7 @@
             <file name="sample/mmlcm_personal_id_sample.xml"/>
             <file name="sample/mmlcm_personal_id_with_facility_sample.xml"/>
             <file name="sample/mmldp_sample.xml"/>
+            <file name="mmlfcl_sample.xml"/>
             <file name="sample/mmlhi_sample.xml"/>
             <file name="sample/mmlinj_sample.xml"/>
             <file name="mmlls_sample.xml"/>
