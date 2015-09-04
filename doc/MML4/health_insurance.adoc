@@ -1,0 +1,369 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+=== 保険情報モジュール
+.エレメント構造図
+image::mmlhi.jpg[]
+
+==== namespaces 宣言
+本モジュールのnamespaces宣言は，以下とする．
+
+ xmlns:mmlHi= "http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
+
+
+.エレメント一覧表
+|=====
+| |Elements|Attribute|Datatypes|Occurence|TableId
+|1.|mmlHi:HealthInsuranceModule| | | |
+| | |mmlHi:countryType|string|#IMPLIED|
+|1.1.|mmlHi:insuranceClass| |string|?|
+| | |mmlHi:ClassCode|string|#REQUIRED|
+| | |mmlHi:tableId|string|#REQUIRED|MML0031
+|1.2.|mmlHi:insuranceNumber| |string| |
+|1.3.|mmlHi:clientId| | | |
+|1.3.1.|mmlHi:group| |string| |
+|1.3.2.|mmlHi:number| |string| |
+|1.4.|mmlHi:familyClass| |boolean| |
+|1.5.|mmlHi:clientInfo| | |?|
+|1.5.1.|mmlHi:personName| | |?|
+|1.5.1.1.|mmlNm:Name| | |*|
+|1.5.2.|mmlHi:addresses| | |?|
+|1.5.2.1.|mmlAd:Address| | |*|
+|1.5.3.|mmlHi:phones| | |?|
+|1.5.3.1.|mmlPh:Phone| | |*|
+|1.6.|mmlHi:continuedDiseases| | |?|
+|1.6.1.|mmlHi:diseases| |string|+|
+|1.7.|mmlHi:startDate| |date| |
+|1.8.|mmlHi:expiredDate| |date| |
+|1.9.|mmlHi:paymentInRatio| |decimal|?|
+|1.10.|mmlHi:paymentOutRatio| |decimal|?|
+|1.11.|mmlHi:insuredInfo| | |?|
+|1.11.1.|mmlHi:facility| | |?|
+|1.11.1.1.|mmlFc:Facility| | |?|
+|1.11.2.|mmlHi:addresses| | |?|
+|1.11.2.1.|mmlAd:Address| | |*|
+|1.11.3.|mmlHi:phones| | |?|
+|1.11.3.1.|mmlPh:Phone| | |*|
+|1.12.|mmlHi:workInfo| | |?|
+|1.12.1.|mmlHi:facility| | |?|
+|1.12.1.1.|mmlFc:Facility| | |?|
+|1.12.2.|mmlHi:addresses| | |?|
+|1.12.2.1.|mmlAd:Address| | |*|
+|1.12.3.|mmlHi:phones| | |?|
+|1.12.3.1.|mmlPh:Phone| | |*|
+|1.13.|mmlHi:publicInsurance| | |?|
+|1.13.1.|mmlHi:publicInsuranceItem| | |+|
+| | |mmlHi:priority|string|#REQUIRED|
+|1.13.1.1.|mmlHi:providerName| |string|?|
+|1.13.1.2.|mmlHi:provider| |string| |
+|1.13.1.3.|mmlHi:recipient| |string| |
+|1.13.1.4.|mmlHi:startDate| |date| |
+|1.13.1.5.|mmlHi:expiredDate| |date| |
+|1.13.1.6.|mmlHi:paymentRatio| |decimal|?|
+| | |mmlHi:ratioType|string|#REQUIRED|MML0032
+|=====
+Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+
+==== エレメント解説
+===== mmlHi:HealthInsuranceModule
+【内容】使用可能保険・公費の組合せ． +
+【省略】不可 +
+【繰り返し設定】組み合わせが複数ある場合は，MmlModuleItemの繰り返しで対応する．
+
+たとえば，以下の 3 通りの保険が使われておれば，
+
+1．国保のみ
+
+2．国保と公費 (結核)
+
+3．社保継続
+
+<MmlModuleItem>を 3 回繰り返して，3 つを別個に記載する．
+
+【属性】本モジュールが日本固有のものであることを明示するために，以下の属性を設ける．
+|=====
+|属性名|データ型|省略|説明
+|MmlHi:countryType|string|#IMPLIED|国タイプ．日本JPN
+|=====
+
+【例】
+
+ <mmlHi:HealthInsuranceModule mmlHi:countryType = "JPN">
+
+
+===== mmlHi:insuranceClass
+【内容】 健康保険種別．原則としてテーブル MML0031 を用いるが，地方公費等でユーザー固有の拡張が必要なときは，別テーブルとし，別のテーブル名を記載する． +
+【データ型】string +
+【省略】可 +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル
+|mmlHi:ClassCode|string|#REQUIRED|
+|mmlHi:tableId|string|#REQUIRED|MML0031
+|=====
+
+【例】
+
+ <mmlHi:insuranceClass mmlHi:ClassCode="00" mmlHi:tableId="MML0031">国保</mmlHi:insuranceClass>
+
+===== mmlHi:insuranceNumber
+【内容】健康保険者番号 +
+【データ型】string +
+【省略】不可 +
+【例】
+ <mmlHi:insuranceNumber>8001</mmlHi:insuranceNumber>
+
+===== mmlHi:clientId
+【内容】被保険者情報 +
+【省略】不可
+
+===== mmlHi:group
+【内容】被保険者記号 +
+【データ型】string +
+【省略】不可
+
+===== mmlHi:number
+【内容】被保険者番号 +
+【データ型】string +
+【省略】不可 +
+【例】
+
+ <mmlHi:clientId>
+   <mmlHi:group>宮市みへし</mmlHi:group>
+   <mmlHi:number>421</mmlHi:number>
+ </mmlHi:clientId>
+
+===== mmlHi:familyClass
+【内容】本人家族区分．true：本人，false：家族 +
+【データ型】boolean +
+【省略】不可 +
+【例】本人
+
+ <mmlHi:familyClass>true</mmlHi:familyClass>
+
+【例】家族
+
+ <mmlHi:familyClass>false</mmlHi:familyClass>
+
+===== mmlHi:clientInfo
+【内容】被保険者情報 +
+【省略】可
+
+===== mmlHi:personName
+【内容】下記の被保険者氏名を入れる親エレメント +
+【省略】可.
+
+===== mmlNm:Name
+【内容】氏名．構造は MML 共通形式 (人名表現形式参照) +
+【省略】可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+
+===== mmlHi:addresses
+【内容】下記の被保険住所を入れる親エレメント +
+【省略】可
+
+===== mmlAd:Address
+【内容】住所．構造は MML 共通形式 (住所表現形式参照) +
+【省略】可 +
+【繰り返し設定】繰り返しあり．住所の種類あるいは，表記法が複数あれば繰り返す．
+
+===== mmlHi:phones
+【内容】下記の被保険電話番号を入れる親エレメント +
+【省略】可
+
+===== mmlPh:Phone
+【内容】電話番号．構造は MML 共通形式 (電話番号表現形式参照) +
+【省略】可 +
+【繰り返し設定】繰り返しあり．電話番号が複数あれば繰り返す．
+
+===== mmlHi:continuedDiseases
+【内容】継続疾患情報 +
+【省略】省略可
+
+===== mmlHi:diseases
+【内容】継続適応疾患名 +
+【データ型】string +
+【省略】不可 +
+【繰り返し設定】繰り返しあり．継続疾患が複数あれば繰り返す． +
+【例】糖尿病と高血圧
+
+ <mmlHi:continuedDiseases>
+   <mmlHi:diseases>diabetes mellitus</mmlHi:diseases>
+   <mmlHi:diseases>hypertension</mmlHi:diseases>
+ </mmlHi:continuedDiseases>
+
+===== mmlHi:startDate
+【内容】開始日 (交付年月日) +
+【データ型】date 書式：CCYY-MM-DD +
+【省略】不可 +
+【例】
+
+ <mmlHi:startDate>1995-04-01</mmlHi:startDate>
+
+===== mmlHi:expiredDate
+【内容】有効期限 +
+【データ型】date 書式：CCYY-MM-DD +
+【省略】不可 +
+【例】
+
+ <mmlHi:expiredDate>1999-09-30</mmlHi:expiredDate>
+
+===== mmlHi:paymentInRatio
+【内容】入院時の負担率．0[.0][0]_1[.0][0] (例：3 割負担ならば 0.3) +
+【データ型】decimal +
+【省略】省略可 +
+【例】負担率 2 割．
+
+ <mmlHi:paymentInRatio>0.2</mmlHi:paymentInRatio>
+
+===== mmlHi:paymentOutRatio
+【内容】外来時の負担率．0[.0][0]_1[.0][0] (例：3 割負担ならば 0.3) +
+【データ型】decimal +
+【省略】省略可 +
+【例】負担率 2 割．
+
+ <mmlHi:paymentOutRatio>0.2</mmlHi:paymentOutRatio>
+
+===== mmlHi:insuredInfo
+【内容】保険者情報 +
+【省略】可
+
+===== mmlHi:facility
+【内容】下記の保険者情報を入れる親エレメント
+【省略】可.
+
+===== mmlFc:Facility
+【内容】施設情報．構造は MML 共通形式 (施設情報表現形式参照) +
+【省略】可
+
+===== mmlHi:addresses
+【内容】下記の保険者住所を入れる親エレメント +
+【省略】可
+
+===== mmlAd:Address
+【内容】住所．構造は MML 共通形式 (住所表現形式参照) +
+【省略】可 +
+【繰り返し設定】繰り返しあり．住所の種類あるいは，表記法が複数あれば繰り返す．
+
+===== mmlHi:phones
+【内容】下記の保険者電話番号を入れる親エレメント +
+【省略】可
+
+===== mmlPh:Phone
+【内容】電話番号．構造は MML 共通形式 (電話番号表現形式参照) +
+【省略】可 +
+【繰り返し設定】繰り返しあり．電話番号が複数あれば繰り返す．
+
+===== mmlHi:workInfo
+【内容】被保険者の所属する事業所情報 +
+【省略】可
+
+===== mmlHi:facility
+【内容】下記の事業所情報を入れる親エレメント +
+【省略】可.
+
+===== mmlFc:Facility
+【内容】施設情報．構造は MML 共通形式 (施設情報表現形式参照) +
+【省略】可
+
+===== mmlHi:addresses
+【内容】下記の事業所住所を入れる親エレメント +
+【省略】可
+
+===== mmlAd:Address
+【内容】住所．構造は MML 共通形式 (住所表現形式参照) +
+【省略】可 +
+【繰り返し設定】繰り返しあり．住所の種類あるいは，表記法が複数あれば繰り返す．
+
+===== mmlHi:phones
+【内容】下記の事業所電話番号を入れる親エレメント +
+【省略】可
+
+===== mmlPh:Phone
+【内容】電話番号．構造は MML 共通形式 (電話番号表現形式参照) +
+【省略】可 +
+【繰り返し設定】繰り返しあり．電話番号が複数あれば繰り返す．
+
+===== mmlHi:publicInsurance
+【内容】公費負担医療情報 +
+【省略】省略可
+
+===== mmlHi:publicInsuranceItem
+【内容】公費負担 +
+【省略】不可 +
+【繰り返し設定】繰り返しあり．公費が複数あれば繰り返す． +
+【属性】
+|=====
+|属性名|データ型|省略|説明
+|mmlHi:priority|string|#REQUIRED|複数公費の優先順位 +
+1から始まる整数
+|=====
+【例】
+
+ <mmlHi:publicInsuranceItem mmlHi:priority = "1">
+
+===== mmlHi:providerName
+【内容】公費負担名称 +
+【データ型】string +
+【省略】可
+
+===== mmlHi:provider
+【内容】負担者番号 +
+【データ型】string +
+【省略】不可
+
+===== mmlHi:recipient
+【内容】受給者番号 +
+【データ型】string +
+【省略】不可
+
+===== mmlHi:startDate
+【内容】開始日 +
+【データ型】date +
+【省略】不可
+
+===== mmlHi:expireDate
+【内容】有効期限 +
+【データ型】date +
+【省略】不可
+
+===== mmlHi:paymentRatio
+【内容】負担率または負担金 +
+【データ型】decimal +
+【省略】可 +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlHi:ratioType|String|#REQUIRED|MML0032|負担率または負担金
+|=====
+【例】 +
+負担が定額 10,000 円の場合
+
+ <mmlHi:paymentRatio mmlHi:ratioType="fix">10000</ mmlHi:paymentRatio>
+
+負担が比率 5 %の場合
+
+ <mmlHi:paymentRatio mmlHi:ratioType="ratio">0.05</ mmlHi:paymentRatio>
+
+【例】
+
+ <mmlHi:publicInsurance>
+   <mmlHi:publicInsuranceItem mmlHi:priority = "1">
+     <mmlHi:providerName>公費</mmlHi:providerName>
+     <mmlHi:provider>15450034</mmlHi:provider>
+     <mmlHi:recipient>0009043</mmlHi:recipient>
+     <mmlHi:startDate>1997-09-30</mmlHi:startDate>
+     <mmlHi:expiredDate>1999-09-30</mmlHi:expiredDate>
+     <mmlHi:paymentRatio mmlHi:ratioType="fix">10000</mmlHi:paymentRatio>
+   </mmlHi:publicInsuranceItem>
+ </mmlHi:publicInsurance>
