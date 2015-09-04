@@ -15,7 +15,7 @@ image::mmlrd.jpg[]
 ==== namespaces 宣言
 本モジュールのnamespaces宣言は，以下とする．
 
- xmlns:mmlHi= "http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
+ xmlns:mmlRd= "http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
 
 
 .エレメント一覧表
@@ -149,4 +149,3 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【例】
 
  <mmlRd:relatedHealthInsurance mmlRd:uid = "0aae5960-667c-11d3-9751-00105a6792e8"/>
- 
