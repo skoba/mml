@@ -9,6 +9,7 @@
             <file name="sample/flowsheet_instance.xml"/>
             <file name="sample/mmlad_structured_sample.xml"/>
             <file name="sample/mmlad_unstructured_sample.xml"/>
+            <file name="mmlbc_sample.xml"/>
             <file name="sample/mmlci_sample.xml"/>
             <file name="sample/mmlcm_department_id_sample.xml"/>
             <file name="sample/mmlcm_extref_sample.xml"/>
