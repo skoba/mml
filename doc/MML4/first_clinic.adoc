@@ -154,7 +154,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |=====
 【例】3270グラム
 
- <mmlFcl:bodyWeight mmlFcl:unit = "g">3270</mmlFcl:bodyWeight>
+ <mmlFcl:bodyWeight mmlFcl:unit="g">3270</mmlFcl:bodyWeight>
 
 ===== mmlFcl:bodyHeight
 【内容】出生時身長 +

@@ -19,3 +19,11 @@ include::patient_module.adoc[]
 include::health_insurance.adoc[]
 
 include::registered_diagnosis.adoc[]
+
+include::lifestyle.adoc[]
+
+include::base_clinic.adoc[]
+
+include::first_clinic.adoc[]
+
+include::progress_course.adoc[]

@@ -23,6 +23,7 @@
             <file name="mmlls_sample.xml"/>
             <file name="sample/mmlnm_structured_sample.xml"/>
             <file name="sample/mmlnm_unstructured_sample.xml"/>
+            <file name="mmlpc_sample.xml"/>
             <file name="sample/mmlph_structured_sample.xml"/>
             <file name="sample/mmlph_unstructured_sample.xml"/>
             <file name="sample/mmlpi_sample.xml"/>
