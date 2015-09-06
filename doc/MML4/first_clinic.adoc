@@ -8,7 +8,7 @@
 :imagesdir: ./figures
 :linkcss:
 
-=== 基礎的診療情報モジュール
+=== 初診時特有情報モジュール
 .エレメント構造図
 image::mmlfcl.jpg[]
 

@@ -7,6 +7,7 @@
     <projectTree name="mml_xsd.xpr">
         <folder name="sample">
             <file name="sample/flowsheet_instance.xml"/>
+            <file name="mml4_sample1.xml"/>
             <file name="sample/mmlad_structured_sample.xml"/>
             <file name="sample/mmlad_unstructured_sample.xml"/>
             <file name="mmlbc_sample.xml"/>
@@ -30,6 +31,7 @@
             <file name="sample/mmlps_sample.xml"/>
             <file name="sample/mmlpsi_sample.xml"/>
             <file name="sample/mmlrd_sample.xml"/>
+            <file name="mmlsg_sample.xml"/>
             <file name="sample/test_module.xml"/>
         </folder>
         <file name="address.xsd"/>

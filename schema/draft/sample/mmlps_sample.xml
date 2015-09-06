@@ -11,7 +11,7 @@
 		<mmlPs:doseUnit>錠</mmlPs:doseUnit>
 		<mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
 		<mmlPs:startDate>2015-05-13</mmlPs:startDate>
-		<mmlPs:duration>14</mmlPs:duration>
+		<mmlPs:duration>P14D</mmlPs:duration>
 		<mmlPs:instruction>内服 1回 朝食前</mmlPs:instruction>
 		<mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
 	</mmlPs:medication>
@@ -25,7 +25,7 @@
 		<mmlPs:doseUnit>錠</mmlPs:doseUnit>
 		<mmlPs:frequencyPerDay>2</mmlPs:frequencyPerDay>
 		<mmlPs:startDate>2015-05-13</mmlPs:startDate>
-		<mmlPs:duration>14</mmlPs:duration>
+		<mmlPs:duration>P14D</mmlPs:duration>
 		<mmlPs:instruction>内服 2回 朝夕食後</mmlPs:instruction>
 		<mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
 	</mmlPs:medication>
@@ -39,7 +39,7 @@
 		<mmlPs:doseUnit>g</mmlPs:doseUnit>
 		<mmlPs:frequencyPerDay>2</mmlPs:frequencyPerDay>
 		<mmlPs:startDate>2015-05-13</mmlPs:startDate>
-		<mmlPs:duration>14</mmlPs:duration>
+		<mmlPs:duration>P14D</mmlPs:duration>
 		<mmlPs:instruction>内服 2回 朝夕食後</mmlPs:instruction>
 		<mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
 	</mmlPs:medication>

@@ -2,6 +2,7 @@
 <mmlPc:ProgressCourseModule
   xmlns:mmlPc="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <mmlPc:structuredExpression>
     <mmlPc:problemItem>
@@ -38,7 +39,7 @@
       </mmlPc:assessment>
       <mmlPc:plan>
         <mmlPc:rxOrder>
-          <mmlPs:PrescriptionModule xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0">
+          <mmlPs:PrescriptionModule>
             <mmlPs:issuedTo>external</mmlPs:issuedTo>
             <mmlPs:medication>
               <mmlPs:batchNo>1</mmlPs:batchNo>
@@ -50,7 +51,7 @@
               <mmlPs:doseUnit>錠</mmlPs:doseUnit>
               <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
               <mmlPs:startDate>2015-05-13</mmlPs:startDate>
-              <mmlPs:duration>14</mmlPs:duration>
+              <mmlPs:duration>P14D</mmlPs:duration>
               <mmlPs:instruction>内服 1回 朝食前</mmlPs:instruction>
               <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
             </mmlPs:medication>
@@ -64,7 +65,7 @@
               <mmlPs:doseUnit>錠</mmlPs:doseUnit>
               <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
               <mmlPs:startDate>2015-05-13</mmlPs:startDate>
-              <mmlPs:duration>14</mmlPs:duration>
+              <mmlPs:duration>P14D</mmlPs:duration>
               <mmlPs:instruction>内服 1回 昼食後</mmlPs:instruction>
               <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
             </mmlPs:medication>
@@ -78,7 +79,7 @@
               <mmlPs:doseUnit>錠</mmlPs:doseUnit>
               <mmlPs:frequencyPerDay>2</mmlPs:frequencyPerDay>
               <mmlPs:startDate>2015-05-13</mmlPs:startDate>
-              <mmlPs:duration>14</mmlPs:duration>
+              <mmlPs:duration>P14D</mmlPs:duration>
               <mmlPs:instruction>内服 2回 朝夕食後</mmlPs:instruction>
               <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
             </mmlPs:medication>
@@ -92,7 +93,7 @@
               <mmlPs:doseUnit>g</mmlPs:doseUnit>
               <mmlPs:frequencyPerDay>2</mmlPs:frequencyPerDay>
               <mmlPs:startDate>2015-05-13</mmlPs:startDate>
-              <mmlPs:duration>14</mmlPs:duration>
+              <mmlPs:duration>P14D</mmlPs:duration>
               <mmlPs:instruction>内服 2回 朝夕食後</mmlPs:instruction>
               <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
             </mmlPs:medication>
