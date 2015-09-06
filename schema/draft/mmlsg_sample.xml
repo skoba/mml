@@ -4,6 +4,7 @@
   xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0"
   xmlns:mmlRd="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
   xmlns:mmlPsi="http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0"
+  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0">
   <mmlSg:surgeryItem>
     <mmlSg:surgicalInfo mmlSg:type="elective">
@@ -71,6 +72,7 @@
                 <mmlNm:degree>M.D.</mmlNm:degree>
               </mmlNm:Name>
             </mmlPsi:personName>
+          </mmlPsi:PersonalizedInfo>
         </mmlSg:staffInfo>
       </mmlSg:staff>
     </mmlSg:surgicalStaffs>
@@ -92,6 +94,7 @@
                 <mmlNm:degree>M.D.</mmlNm:degree>
               </mmlNm:Name>
             </mmlPsi:personName>
+          </mmlPsi:PersonalizedInfo>
         </mmlSg:staffInfo>
       </mmlSg:staff>
     </mmlSg:anesthesiologists>
