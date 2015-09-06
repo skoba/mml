@@ -7,10 +7,10 @@
     <projectTree name="mml_xsd.xpr">
         <folder name="sample">
             <file name="sample/flowsheet_instance.xml"/>
-            <file name="mml4_sample1.xml"/>
+            <file name="sample/mml4_sample1.xml"/>
             <file name="sample/mmlad_structured_sample.xml"/>
             <file name="sample/mmlad_unstructured_sample.xml"/>
-            <file name="mmlbc_sample.xml"/>
+            <file name="sample/mmlbc_sample.xml"/>
             <file name="sample/mmlci_sample.xml"/>
             <file name="sample/mmlcm_department_id_sample.xml"/>
             <file name="sample/mmlcm_extref_sample.xml"/>
@@ -18,20 +18,20 @@
             <file name="sample/mmlcm_personal_id_sample.xml"/>
             <file name="sample/mmlcm_personal_id_with_facility_sample.xml"/>
             <file name="sample/mmldp_sample.xml"/>
-            <file name="mmlfcl_sample.xml"/>
+            <file name="sample/mmlfcl_sample.xml"/>
             <file name="sample/mmlhi_sample.xml"/>
             <file name="sample/mmlinj_sample.xml"/>
-            <file name="mmlls_sample.xml"/>
+            <file name="sample/mmlls_sample.xml"/>
             <file name="sample/mmlnm_structured_sample.xml"/>
             <file name="sample/mmlnm_unstructured_sample.xml"/>
-            <file name="mmlpc_sample.xml"/>
+            <file name="sample/mmlpc_sample.xml"/>
             <file name="sample/mmlph_structured_sample.xml"/>
             <file name="sample/mmlph_unstructured_sample.xml"/>
             <file name="sample/mmlpi_sample.xml"/>
             <file name="sample/mmlps_sample.xml"/>
             <file name="sample/mmlpsi_sample.xml"/>
             <file name="sample/mmlrd_sample.xml"/>
-            <file name="mmlsg_sample.xml"/>
+            <file name="sample/mmlsg_sample.xml"/>
             <file name="sample/test_module.xml"/>
         </folder>
         <file name="address.xsd"/>
