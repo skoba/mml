@@ -29,3 +29,5 @@ include::first_clinic.adoc[]
 include::progress_course.adoc[]
 
 include::surgery.adoc[]
+
+include::summary.adoc[]
