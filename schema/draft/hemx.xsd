@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HeMX version 0.94b converted from DTD  2015-09-09 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="HeMX">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="HDHeader"/>
+        <xs:element ref="HDBody"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.HeMX"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.HeMX">
+    <xs:attribute name="version" use="required"/>
+    <xs:attribute name="createDate" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="HDHeader">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="facility"/>
+        <xs:element minOccurs="0" ref="patient"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="facility">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="facilityName"/>
+        <xs:element minOccurs="0" ref="facilityId"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="facilityName" type="xs:string"/>
+  <xs:element name="facilityId">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.facilityId"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.facilityId">
+    <xs:attribute name="type" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="patient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="patientId"/>
+        <xs:element minOccurs="0" ref="personName"/>
+        <xs:element minOccurs="0" ref="birthday"/>
+        <xs:element minOccurs="0" ref="sex"/>
+        <xs:element minOccurs="0" ref="address"/>
+        <xs:element minOccurs="0" ref="note"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="patientId">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.patientId"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.patientId">
+    <xs:attribute name="type" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="personName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="familyName"/>
+        <xs:element minOccurs="0" ref="givenName"/>
+        <xs:element minOccurs="0" ref="middleName"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="familyName" type="xs:string"/>
+  <xs:element name="givenName" type="xs:string"/>
+  <xs:element name="middleName" type="xs:string"/>
+  <xs:element name="birthday" type="xs:string"/>
+  <xs:element name="sex" type="xs:string"/>
+  <xs:element name="address">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="countryCode"/>
+        <xs:element minOccurs="0" ref="zip"/>
+        <xs:element minOccurs="0" ref="prefecture"/>
+        <xs:element minOccurs="0" ref="city"/>
+        <xs:element minOccurs="0" ref="otherDescriptor"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="countryCode" type="xs:string"/>
+  <xs:element name="zip" type="xs:string"/>
+  <xs:element name="prefecture" type="xs:string"/>
+  <xs:element name="city" type="xs:string"/>
+  <xs:element name="otherDescriptor" type="xs:string"/>
+  <xs:element name="note" type="xs:string"/>
+  <xs:element name="HDBody">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="HDHistorySection"/>
+        <xs:element minOccurs="0" ref="HDOrderSection"/>
+        <xs:element minOccurs="0" ref="HDProgressSection"/>
+        <xs:element minOccurs="0" ref="HDTestResultSection"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HDHistorySection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="hdIntroduction"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="bloodAccess"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hdIntroduction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="hdDiagnosis"/>
+        <xs:element minOccurs="0" ref="hdIntroDate"/>
+        <xs:element minOccurs="0" ref="facility"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hdDiagnosis">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.hdDiagnosis"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.hdDiagnosis">
+    <xs:attribute name="code"/>
+    <xs:attribute name="system" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="hdIntroDate" type="xs:string"/>
+  <xs:element name="bloodAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="dateMade"/>
+        <xs:element minOccurs="0" ref="dateFirstUse"/>
+        <xs:element minOccurs="0" ref="dateEnd"/>
+        <xs:element minOccurs="0" ref="location"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.bloodAccess"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.bloodAccess">
+    <xs:attribute name="baStatus"/>
+  </xs:attributeGroup>
+  <xs:element name="dateMade" type="xs:string"/>
+  <xs:element name="dateFirstUse" type="xs:string"/>
+  <xs:element name="dateEnd" type="xs:string"/>
+  <xs:element name="location">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.location"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.location">
+    <xs:attribute name="code"/>
+    <xs:attribute name="tableId" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="HDOrderSection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="hdOrders"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="hdDailyOrder"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hdOrders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="orderGroups"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.hdOrders"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.hdOrders">
+    <xs:attribute name="orderStatus" use="required"/>
+    <xs:attribute name="dateOrdered"/>
+    <xs:attribute name="dateEffective"/>
+  </xs:attributeGroup>
+  <xs:element name="orderGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="effectiveDays"/>
+        <xs:element minOccurs="0" ref="timeShift"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="hdMethod"/>
+        <xs:element minOccurs="0" ref="dryWeight"/>
+        <xs:element minOccurs="0" ref="weightCorrection"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="bloodFlow"/>
+        <xs:element minOccurs="0" ref="dialyser"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="dialysate"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="dialysateFlow"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="dialysateTemp"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="needle"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="medication"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="injection"/>
+        <xs:element minOccurs="0" ref="note"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="effectiveDays">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="weekDay"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="weekDay">
+    <xs:complexType>
+      <xs:attributeGroup ref="attlist.weekDay"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.weekDay">
+    <xs:attribute name="hdDay" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="月"/>
+          <xs:enumeration value="火"/>
+          <xs:enumeration value="水"/>
+          <xs:enumeration value="木"/>
+          <xs:enumeration value="金"/>
+          <xs:enumeration value="土"/>
+          <xs:enumeration value="日"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:element name="timeShift">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.timeShift"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.timeShift">
+    <xs:attribute name="code"/>
+    <xs:attribute name="tableId" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="hdMethod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="hdMethodName"/>
+        <xs:element minOccurs="0" ref="timeHdStart"/>
+        <xs:element minOccurs="0" ref="timeHdEnd"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hdMethodName">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.hdMethodName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.hdMethodName">
+    <xs:attribute name="code"/>
+    <xs:attribute name="tableId" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="timeHdStart">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.timeHdStart"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.timeHdStart">
+    <xs:attribute name="timeDirection" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="timeHdEnd">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.timeHdEnd"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.timeHdEnd">
+    <xs:attribute name="timeDirection" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="dryWeight">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.dryWeight"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.dryWeight">
+    <xs:attribute name="unit" default="kg"/>
+  </xs:attributeGroup>
+  <xs:element name="weightCorrection">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.weightCorrection"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.weightCorrection">
+    <xs:attribute name="unit" default="kg"/>
+    <xs:attribute name="cnote"/>
+  </xs:attributeGroup>
+  <xs:element name="bloodFlow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="flowRate"/>
+        <xs:element minOccurs="0" ref="timeHdStart"/>
+        <xs:element minOccurs="0" ref="timeHdEnd"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="flowRate">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.flowRate"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.flowRate">
+    <xs:attribute name="unit" default="mL/min"/>
+  </xs:attributeGroup>
+  <xs:element name="dialyser">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.dialyser"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.dialyser">
+    <xs:attribute name="code"/>
+    <xs:attribute name="type"/>
+    <xs:attribute name="membraneArea"/>
+    <xs:attribute name="unit" default="m2"/>
+  </xs:attributeGroup>
+  <xs:element name="dialysate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dialysateName"/>
+        <xs:element minOccurs="0" ref="timeHdStart"/>
+        <xs:element minOccurs="0" ref="timeHdEnd"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dialysateName">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.dialysateName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.dialysateName">
+    <xs:attribute name="code"/>
+    <xs:attribute name="type"/>
+    <xs:attribute name="modification"/>
+  </xs:attributeGroup>
+  <xs:element name="dialysateFlow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="flowRate"/>
+        <xs:element minOccurs="0" ref="timeHdStart"/>
+        <xs:element minOccurs="0" ref="timeHdEnd"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dialysateTemp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dialysateTempValue"/>
+        <xs:element minOccurs="0" ref="timeHdStart"/>
+        <xs:element minOccurs="0" ref="timeHdEnd"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dialysateTempValue">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.dialysateTempValue"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.dialysateTempValue">
+    <xs:attribute name="unit" default="C"/>
+  </xs:attributeGroup>
+  <xs:element name="needle">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.needle"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.needle">
+    <xs:attribute name="code"/>
+    <xs:attribute name="type"/>
+    <xs:attribute name="position"/>
+  </xs:attributeGroup>
+  <xs:element name="medication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="drugName"/>
+        <xs:element minOccurs="0" ref="dose"/>
+        <xs:element minOccurs="0" ref="timeHd"/>
+        <xs:element minOccurs="0" ref="note"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="drugName">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.drugName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.drugName">
+    <xs:attribute name="code"/>
+    <xs:attribute name="type" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="dose">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.dose"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.dose">
+    <xs:attribute name="unit"/>
+  </xs:attributeGroup>
+  <xs:element name="timeHd">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.timeHd"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.timeHd">
+    <xs:attribute name="timeDirection" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="injection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="drugName"/>
+        <xs:element minOccurs="0" ref="dose"/>
+        <xs:element minOccurs="0" ref="timeHdStart"/>
+        <xs:element minOccurs="0" ref="timeHdEnd"/>
+        <xs:element minOccurs="0" ref="routeName"/>
+        <xs:element minOccurs="0" ref="note"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="routeName">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.routeName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.routeName">
+    <xs:attribute name="code"/>
+    <xs:attribute name="tableId" use="required"/>
+  </xs:attributeGroup>
+  <xs:element name="hdDailyOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="timeShift"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="hdMethod"/>
+        <xs:element minOccurs="0" ref="targetWeight"/>
+        <xs:element minOccurs="0" ref="targetUF"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ufrPlan"/>
+        <xs:element minOccurs="0" ref="weightCorrection"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="bloodFlow"/>
+        <xs:element minOccurs="0" ref="dialyser"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="dialysate"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="dialysateFlow"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="dialysateTemp"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="needle"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="medication"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="injection"/>
+        <xs:element minOccurs="0" ref="note"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.hdDailyOrder"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.hdDailyOrder">
+    <xs:attribute name="orderDateTime"/>
+    <xs:attribute name="dateEffective"/>
+  </xs:attributeGroup>
+  <xs:element name="targetWeight">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.targetWeight"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.targetWeight">
+    <xs:attribute name="unit" default="kg"/>
+  </xs:attributeGroup>
+  <xs:element name="targetUF">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.targetUF"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.targetUF">
+    <xs:attribute name="unit" default="kg"/>
+  </xs:attributeGroup>
+  <xs:element name="ufrPlan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ufRate"/>
+        <xs:element minOccurs="0" ref="timeHdStart"/>
+        <xs:element minOccurs="0" ref="timeHdEnd"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ufRate">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.ufRate"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.ufRate">
+    <xs:attribute name="unit" default="kg/h"/>
+  </xs:attributeGroup>
+  <xs:element name="HDProgressSection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="dailyHDRecord"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dailyHDRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="hdMethodRecord"/>
+        <xs:element minOccurs="0" ref="dryWeight"/>
+        <xs:element minOccurs="0" ref="preWeight"/>
+        <xs:element minOccurs="0" ref="postWeight"/>
+        <xs:element minOccurs="0" ref="totalUF"/>
+        <xs:element minOccurs="0" ref="weightCorrection"/>
+        <xs:element minOccurs="0" ref="dialyser"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="dialysate"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="needle"/>
+        <xs:element minOccurs="0" ref="hdMachine"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="observation"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="medication"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="injection"/>
+        <xs:element minOccurs="0" ref="note"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.dailyHDRecord"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.dailyHDRecord">
+    <xs:attribute name="calendarDate"/>
+    <xs:attribute name="serialNumber"/>
+  </xs:attributeGroup>
+  <xs:element name="hdMethodRecord">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.hdMethodRecord"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.hdMethodRecord">
+    <xs:attribute name="code"/>
+    <xs:attribute name="tableId"/>
+    <xs:attribute name="startDateTime"/>
+    <xs:attribute name="endDateTime"/>
+  </xs:attributeGroup>
+  <xs:element name="preWeight">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.preWeight"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.preWeight">
+    <xs:attribute name="unit" default="kg"/>
+  </xs:attributeGroup>
+  <xs:element name="postWeight">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.postWeight"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.postWeight">
+    <xs:attribute name="unit" default="kg"/>
+  </xs:attributeGroup>
+  <xs:element name="totalUF">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.totalUF"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.totalUF">
+    <xs:attribute name="unit" default="kg"/>
+  </xs:attributeGroup>
+  <xs:element name="hdMachine">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.hdMachine"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.hdMachine">
+    <xs:attribute name="code"/>
+    <xs:attribute name="tableId"/>
+  </xs:attributeGroup>
+  <xs:element name="observation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="timeHd"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="observationItem"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="staffName"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="machineName"/>
+        <xs:element minOccurs="0" ref="note"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="observationItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="obItemName"/>
+        <xs:element minOccurs="0" ref="value"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obItemName">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.obItemName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.obItemName">
+    <xs:attribute name="code"/>
+    <xs:attribute name="tableId"/>
+  </xs:attributeGroup>
+  <xs:element name="value">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.value"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.value">
+    <xs:attribute name="unit"/>
+  </xs:attributeGroup>
+  <xs:element name="staffName">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.staffName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.staffName">
+    <xs:attribute name="code"/>
+    <xs:attribute name="type"/>
+  </xs:attributeGroup>
+  <xs:element name="machineName">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.machineName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.machineName">
+    <xs:attribute name="code"/>
+    <xs:attribute name="tableId"/>
+  </xs:attributeGroup>
+  <xs:element name="HDTestResultSection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="testResultItem"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="testResultItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="testCondition"/>
+        <xs:element minOccurs="0" ref="timeHd"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="testItemGroup"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="attlist.testResultItem"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.testResultItem">
+    <xs:attribute name="calendarDate"/>
+  </xs:attributeGroup>
+  <xs:element name="testCondition">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.testCondition"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.testCondition">
+    <xs:attribute name="code"/>
+    <xs:attribute name="tableId"/>
+  </xs:attributeGroup>
+  <xs:element name="testItemGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="testName"/>
+        <xs:element minOccurs="0" ref="value"/>
+        <xs:element minOccurs="0" ref="note"/>
+        <xs:element minOccurs="0" ref="extRef"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="testName">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.testName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.testName">
+    <xs:attribute name="code"/>
+    <xs:attribute name="type"/>
+  </xs:attributeGroup>
+  <xs:element name="extRef">
+    <xs:complexType>
+      <xs:attributeGroup ref="attlist.extRef"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.extRef">
+    <xs:attribute name="contentType"/>
+    <xs:attribute name="medicalRole"/>
+    <xs:attribute name="title"/>
+    <xs:attribute name="href"/>
+  </xs:attributeGroup>
+</xs:schema>
