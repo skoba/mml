@@ -21,6 +21,7 @@
             <file name="sample/mmlfcl_sample.xml"/>
             <file name="sample/mmlhi_sample.xml"/>
             <file name="sample/mmlinj_sample.xml"/>
+            <file name="sample/mmllb_sample.xml"/>
             <file name="sample/mmlls_sample.xml"/>
             <file name="sample/mmlnm_structured_sample.xml"/>
             <file name="sample/mmlnm_unstructured_sample.xml"/>
@@ -31,13 +32,8 @@
             <file name="sample/mmlps_sample.xml"/>
             <file name="sample/mmlpsi_sample.xml"/>
             <file name="sample/mmlrd_sample.xml"/>
-<<<<<<< HEAD
-            <file name="mmlsg_sample.xml"/>
-            <file name="sample/mmlsm_sample.xml"/>
-=======
             <file name="sample/mmlsg_sample.xml"/>
->>>>>>> origin/master
-            <file name="sample/test_module.xml"/>
+            <file name="sample/mmlsm_sample.xml"/>
         </folder>
         <file name="address.xsd"/>
         <file name="baseclinic.xsd"/>

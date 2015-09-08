@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <mmlLb:TestModule
+<mmlLb:TestModule
     xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
     xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0">
     <mmlLb:information mmlLb:registId="0002228" mmlLb:registTime="2002-07-25T00:00:00" mmlLb:reportTime="2002-07-25T11:15:00" mmlLb:sampleTime="2002-07-25T06:00:00">
@@ -374,5 +374,5 @@
       <mmlLb:numValue mmlLb:out="N">11</mmlLb:numValue>
       </mmlLb:item>
     </mmlLb:laboTest>
-  </mmlLb:TestModule>
-</mml>
+</mmlLb:TestModule>
+
