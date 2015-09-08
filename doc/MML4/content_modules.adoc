@@ -31,3 +31,5 @@ include::progress_course.adoc[]
 include::surgery.adoc[]
 
 include::summary.adoc[]
+
+include::labtest.adoc[]
