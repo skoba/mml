@@ -25,7 +25,7 @@ MMLインスタンスには複数のアイテムを組み合わせて用いる�
 
 MML Version 4.0で使用する各モジュールとnamespace宣言を以下に示す。
 
-|==============================
+|===
 |MmlHeader および docInfo構造モジュール|xmlns:mml ="http://www.medxml.net/MML/base/4.0"
 |患者情報モジュール|xmlns:mmlPi ="http://www.medxml.net/MML/ContentModule/PatientInfo/4.0"
 |健康保険情報モジュール|xmlns:mmlHi ="http://www.medxml.net/MML/ContentModule/HealthInsurance/4.0"
@@ -41,7 +41,7 @@ MML Version 4.0で使用する各モジュールとnamespace宣言を以下に�
 |紹介状モジュール|xmlns:mmlRe="http://www.medxml.net/MML/ContentModule/Referral/4.0"
 |バイタルサインモジュール|xmlns:mmlVs="http://www.medxml.net/MML/ContentModule/VitalSign/4.0"
 |体温表モジュール|xmlns:mmlFs="http://www.medxml.net/MML/ContentModule/FlowSheet/4.0"
-|==============================
+|===
 
 === MMLにおける各種のデータ定義
 
@@ -157,7 +157,7 @@ MMLでは，関連親文書ID（MML基本構造parentId）を記載し，文書�
 ==== データ型
 MML Ver 4のデータ型はW3C XML Schema Ver 1.1に準拠する。具体的には以下の通りである。Ver 3までのtimePeriod型はxs:duration型で代用する。
 
-|=======================
+|===
 |xs:string | 文字列
 |xs:integer | 整数
 |xs:decimal | 10進数
@@ -167,7 +167,7 @@ MML Ver 4のデータ型はW3C XML Schema Ver 1.1に準拠する。具体的に�
 |xs:dateTIme | 日付時刻型。ISO8601形式(CCYY-MM-DDThh:mm:ss[Z\|(+\|-)hh:mm])で表記する
 |xs:duration|期間型。ISO8601形式に週（W)を加えたPnYnMnWnDTnHnMnS形式で表記する。
 |xs:token|空白置換と空白縮小が行われた文字列。
-|=======================
+|===
 
 ==== アクセス権と暗号化
 
@@ -200,7 +200,7 @@ Ver 3まではモジュールのバージョンは，namespaces宣言の末尾�
 
 以下にMML ver 4での各モジュールのnamespaces宣言を一覧する。
 
-|========
+|===
 |患者情報モジュール|xmlns:mmlPi ="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
 |健康保険情報モジュール|xmlns:mmlHi ="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
 |診断履歴情報モジュール|xmlns:mmlRd ="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
@@ -217,7 +217,7 @@ Ver 3まではモジュールのバージョンは，namespaces宣言の末尾�
 |体温表モジュール|xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"
 |処方箋モジュール|xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
 |注射記録モジュール|xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
-|========
+|===
 
 === XHTMLの取り扱い
 MMLでは，文章として記述すべき情報を多く含んでいるため，書式情報を交換しなければ，正確に意味が伝わらないことがある．よって，データ型がstringであるエレメントのいくつかには，XHTMLが使用できることを定義し、改行書式“<br/>”のみを必須の書式としてきた。他の要素は処理系依存であり、必ずしも処理する必要はないとしたが、XHTML部分に書式以外の情報が入る余地を残したことで、この部分にMMLでは規定していないさまざまな情報が構造化されて記載されて運用されることになった。

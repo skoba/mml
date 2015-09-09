@@ -33,3 +33,6 @@ include::surgery.adoc[]
 include::summary.adoc[]
 
 include::labtest.adoc[]
+
+include::report.adoc[]
+
