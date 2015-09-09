@@ -1,0 +1,94 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+=== 電話番号表現形式
+.エレメント構造図
+image::mmlph.jpg[]
+
+.エレメント一覧表
+|=====
+| |Elements|Attribute|Datatypes|Occurence|TableId
+|2.|mmlPh:Phone| | | |
+| | |mmlPh:telEquipType|string|#IMPLIED|MML0003
+|2.1.|mmlPh:area| |string|?|
+|2.2.|mmlPh:city| |string|?|
+|2.3.|mmlPh:number| |string|?|
+|2.4.|mmlPh:extension| |string|?|
+|2.5.|mmlPh:full| |string|?|
+|2.6.|mmlPh:country| |string|?|
+|2.7.|mmlPh:memo| |string|?|
+|=====
+Occurrence　　なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== エレメント解説
+===== mmlPh:Phone (電話番号表現形式)
+【内容】電話番号を表現する共通形式．分割電話番号 (2.1. から 2.4.) もしくは一連電話番 (2.5.) のどちらかを選択． +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlPh:telEquipType|string|#IMPLIED|MML0003|装置の種類コード
+|=====
+
+===== mmlPh:area
+【内容】市外局番 +
+【データ型】string +
+【省略】省略可
+
+===== mmlPh:city
+【内容】局番 +
+【データ型】string +
+【省略】省略可
+
+===== mmlPh:number
+【内容】加入番号 +
+【データ型】string +
+【省略】省略可
+
+===== mmlPh:extension
+【内容】内線番号 +
+【データ型】string +
+【省略】省略可
+
+===== mmlPh:full
+【内容】一連電話番号 +
+【データ型】string +
+【省略】省略可
+
+===== mmlPh:country
+【内容】国番号 +
+【データ型】string +
+【省略】省略可
+
+===== mmlPh:memo
+【内容】使用時間帯などを記載 +
+【データ型】string +
+【省略】省略可
+
+.mmlPh:Phone(電話番号表現形式)サンプルインスタンス
+
+構造化電話番号表記
+
+ <mmlPh:Phone mmlPh:telEquipType = "PH">
+   <mmlPh:area>0985</mmlPh:area>
+   <mmlPh:city>85</mmlPh:city>
+   <mmlPh:number>1500</mmlPh:number>
+   <mmlPh:extension>2067</mmlPh:extension>
+   <mmlPh:country>81</mmlPh:country>
+   <mmlPh:memo>daytime</mmlPh:memo>
+ </mmlPh:Phone>
+
+非構造化電話番号表記
+
+ <mmlPh:Phone mmlPh:telEquipType = "PH">
+   <mmlPh:full>0985-85-1500(2067)< /mmlPh:full >
+   <mmlPh:country>81</mmlPh:country>
+ <mmlPh:memo>daytime</mmlPh:memo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlPi:PatientModule
+  xmlns:mmlPi= "http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+  xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+  xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0">
+  <mmlPi:uniqueInfo>
+    <mmlPi:masterId>
+      <mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10"
+        mmlCm:checkDigit = "5" mmlCm:tableId = "MML0024">12345</mmlCm:Id>
+    </mmlPi:masterId>
+    <mmlPi:otherId type="otherPatientId">
+      <mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10" mmlCm:checkDigit = "5"
+        mmlCm:tableId = "JPN452015100001">678910</mmlCm:Id>
+    </mmlPi:otherId>
+  </mmlPi:uniqueInfo>
+  <mmlPi:personName>
+    <mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025">
+      <mmlNm:family>Araki</mmlNm:family>
+      <mmlNm:given>Kenji</mmlNm:given>
+      <mmlNm:degree>M.D.</mmlNm:degree>
+    </mmlNm:Name>      
+  </mmlPi:personName>
+  <mmlPi:birthday>1958-10-21</mmlPi:birthday>
+  <mmlPi:sex>male</mmlPi:sex>
+  <mmlPi:nationality mmlPi:subtype = "USA">JPN</mmlPi:nationality>
+  <mmlPi:marital>married</mmlPi:marital>
+  <mmlPi:addresses>
+    <mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
+      <mmlAd:prefecture>Miyazaki</mmlAd:prefecture>
+      <mmlAd:city>Miyazaki</mmlAd:city>
+      <mmlAd:town>Kiyotake</mmlAd:town>
+      <mmlAd:homeNumber>5200 Kihara</mmlAd:homeNumber>
+      <mmlAd:zip>889-1692</mmlAd:zip>
+      <mmlAd:countryCode>JPN</mmlAd:countryCode>
+    </mmlAd:Address>
+  </mmlPi:addresses>
+  <mmlPi:emailAddresses>
+    <mmlCm:email>aaaaa@bbb.com</mmlCm:email>
+  </mmlPi:emailAddresses>
+  <mmlPi:phones>
+    <mmlPh:Phone mmlPh:telEquipType = "PH">
+      <mmlPh:area>0985</mmlPh:area>
+      <mmlPh:city>85</mmlPh:city>
+      <mmlPh:number>1500</mmlPh:number>
+      <mmlPh:extension>2067</mmlPh:extension>
+      <mmlPh:country>81</mmlPh:country>
+      <mmlPh:memo>daytime</mmlPh:memo>
+    </mmlPh:Phone>
+  </mmlPi:phones>
+  <mmlPi:accountNumber>35</mmlPi:accountNumber>
+  <mmlPi:death mmlPi:date="1999-09-01">true</mmlPi:death>
+</mmlPi:PatientModule>

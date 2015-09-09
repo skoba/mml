@@ -1,6 +1,9 @@
-<mmlPs:PrescriptionModule>
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlPs:PrescriptionModule xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0">
+  <mmlPs:issuedTo>external</mmlPs:issuedTo>
 	<mmlPs:medication>
-		<mmlPs:medicine>
+	  <mmlPs:batchNo>1</mmlPs:batchNo>
+	  <mmlPs:medicine>
 			<mmlPs:name>メプチン錠　０．０５ｍｇ</mmlPs:name>
 			<mmlPs:code system="YJ">61222033</mmlPs:code>
 		</mmlPs:medicine>
@@ -8,43 +11,46 @@
 		<mmlPs:doseUnit>錠</mmlPs:doseUnit>
 		<mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
 		<mmlPs:startDate>2015-05-13</mmlPs:startDate>
-		<mmlPs:duration>14</mmlPs:duration>
+		<mmlPs:duration>P14D</mmlPs:duration>
 		<mmlPs:instruction>内服 1回 朝食前</mmlPs:instruction>
 		<mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
 	</mmlPs:medication>
 	<mmlPs:medication>
-		<mmlPs:medicine>
+	  <mmlPs:batchNo>2</mmlPs:batchNo>
+	  <mmlPs:medicine>
 			<mmlPs:name>メトリジン錠２ｍｇ</mmlPs:name>
 			<mmlPs:code system="YJ">612160027</mmlPs:code>
 		</mmlPs:medicine>
 		<mmlPs:dose>1</mmlPs:dose>
-				<mmlPs:doseUnit>錠</mmlPs:doseUnit>
+		<mmlPs:doseUnit>錠</mmlPs:doseUnit>
 		<mmlPs:frequencyPerDay>2</mmlPs:frequencyPerDay>
 		<mmlPs:startDate>2015-05-13</mmlPs:startDate>
-		<mmlPs:duration>14</mmlPs:duration>
+		<mmlPs:duration>P14D</mmlPs:duration>
 		<mmlPs:instruction>内服 2回 朝夕食後</mmlPs:instruction>
 		<mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
 	</mmlPs:medication>
 	<mmlPs:medication>
-		<mmlPs:medicine>
+	  <mmlPs:batchNo>2</mmlPs:batchNo>
+	  <mmlPs:medicine>
 			<mmlPs:name>マーズレンＳ顆粒</mmlPs:name>
 			<mmlPs:code system="YJ">612160027</mmlPs:code>
 		</mmlPs:medicine>
 		<mmlPs:dose>0.5</mmlPs:dose>
-				<mmlPs:doseUnit>g</mmlPs:doseUnit>
+		<mmlPs:doseUnit>g</mmlPs:doseUnit>
 		<mmlPs:frequencyPerDay>2</mmlPs:frequencyPerDay>
 		<mmlPs:startDate>2015-05-13</mmlPs:startDate>
-		<mmlPs:duration>14</mmlPs:duration>
+		<mmlPs:duration>P14D</mmlPs:duration>
 		<mmlPs:instruction>内服 2回 朝夕食後</mmlPs:instruction>
 		<mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
 	</mmlPs:medication>
 	<mmlPs:medication>
-		<mmlPs:medicine>
+	  <mmlPs:batchNo>3</mmlPs:batchNo>
+	  <mmlPs:medicine>
 			<mmlPs:name>ジクロフェナクnaゲル</mmlPs:name>
 			<mmlPs:code system="YJ">612320261"</mmlPs:code>
 		</mmlPs:medicine>
 		<mmlPs:dose>50</mmlPs:dose>
-				<mmlPs:doseUnit>g</mmlPs:doseUnit>
+		<mmlPs:doseUnit>g</mmlPs:doseUnit>
 		<mmlPs:startDate>2015-05-13</mmlPs:startDate>
 		<mmlPs:instruction>一日３回左膝に塗布</mmlPs:instruction>
 		<mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>

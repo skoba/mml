@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!-- edited with XML Spy v3.0 (http://www.xmlspy.com) by Kiyohide Fushimi (Tokyo Medical and Dental University) -->
+<!-- HeMX version 0.94b DTD 2000/5/23 -->
+<!ELEMENT HeMX (HDHeader, HDBody)>
+<!ATTLIST HeMX
+	version CDATA #REQUIRED
+	createDate CDATA #REQUIRED
+>
+<!ELEMENT HDHeader (facility?, patient?)>
+<!ELEMENT facility (facilityName, facilityId?)>
+<!ELEMENT facilityName (#PCDATA)>
+<!ELEMENT facilityId (#PCDATA)>
+<!ATTLIST facilityId
+	type CDATA #REQUIRED
+>
+<!ELEMENT patient (patientId?, personName?, birthday?, sex?, address?, note?)>
+<!ELEMENT patientId (#PCDATA)>
+<!ATTLIST patientId
+	type CDATA #REQUIRED
+>
+<!ELEMENT personName (familyName, givenName?, middleName?)>
+<!ELEMENT familyName (#PCDATA)>
+<!ELEMENT givenName (#PCDATA)>
+<!ELEMENT middleName (#PCDATA)>
+<!ELEMENT birthday (#PCDATA)>
+<!ELEMENT sex (#PCDATA)>
+<!ELEMENT address (countryCode?, zip?, prefecture?, city?, otherDescriptor?)>
+<!ELEMENT countryCode (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT prefecture (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT otherDescriptor (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT HDBody (HDHistorySection?, HDOrderSection?, HDProgressSection?, HDTestResultSection?)>
+<!ELEMENT HDHistorySection (hdIntroduction*, bloodAccess*)>
+<!ELEMENT hdIntroduction (hdDiagnosis*, hdIntroDate?, facility?)>
+<!ELEMENT hdDiagnosis (#PCDATA)>
+<!ATTLIST hdDiagnosis
+	code CDATA #IMPLIED
+	system CDATA #REQUIRED
+>
+<!ELEMENT hdIntroDate (#PCDATA)>
+<!ELEMENT bloodAccess (dateMade?, dateFirstUse?, dateEnd?, location?)>
+<!ATTLIST bloodAccess
+	baStatus CDATA #IMPLIED
+>
+<!ELEMENT dateMade (#PCDATA)>
+<!ELEMENT dateFirstUse (#PCDATA)>
+<!ELEMENT dateEnd (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ATTLIST location
+	code CDATA #IMPLIED
+	tableId CDATA #REQUIRED
+>
+<!ELEMENT HDOrderSection (hdOrders*, hdDailyOrder*)>
+<!ELEMENT hdOrders (orderGroups+)>
+<!ATTLIST hdOrders
+	orderStatus CDATA #REQUIRED
+	dateOrdered CDATA #IMPLIED
+	dateEffective CDATA #IMPLIED
+>
+<!ELEMENT orderGroups (effectiveDays?, timeShift?, hdMethod*, dryWeight?, weightCorrection?, bloodFlow*, dialyser?, dialysate*, dialysateFlow*, dialysateTemp*, needle*, medication*, injection*, note?)>
+<!ELEMENT effectiveDays (weekDay*)>
+<!ELEMENT weekDay EMPTY>
+<!ATTLIST weekDay
+	hdDay (月 | 火 | 水 | 木 | 金 | 土 | 日) #REQUIRED
+>
+<!ELEMENT timeShift (#PCDATA)>
+<!ATTLIST timeShift
+	code CDATA #IMPLIED
+	tableId CDATA #REQUIRED
+>
+<!ELEMENT hdMethod (hdMethodName, timeHdStart?, timeHdEnd?)>
+<!ELEMENT hdMethodName (#PCDATA)>
+<!ATTLIST hdMethodName
+	code CDATA #IMPLIED
+	tableId CDATA #REQUIRED
+>
+<!ELEMENT timeHdStart (#PCDATA)>
+<!ATTLIST timeHdStart
+	timeDirection CDATA #REQUIRED
+>
+<!ELEMENT timeHdEnd (#PCDATA)>
+<!ATTLIST timeHdEnd
+	timeDirection CDATA #REQUIRED
+>
+<!ELEMENT dryWeight (#PCDATA)>
+<!ATTLIST dryWeight
+	unit CDATA "kg"
+>
+<!ELEMENT weightCorrection (#PCDATA)>
+<!ATTLIST weightCorrection
+	unit CDATA "kg"
+	cnote CDATA #IMPLIED
+>
+<!ELEMENT bloodFlow (flowRate, timeHdStart?, timeHdEnd?)>
+<!ELEMENT flowRate (#PCDATA)>
+<!ATTLIST flowRate
+	unit CDATA "mL/min"
+>
+<!ELEMENT dialyser (#PCDATA)>
+<!ATTLIST dialyser
+	code CDATA #IMPLIED
+	type CDATA #IMPLIED
+	membraneArea CDATA #IMPLIED
+	unit CDATA "m2"
+>
+<!ELEMENT dialysate (dialysateName, timeHdStart?, timeHdEnd?)>
+<!ELEMENT dialysateName (#PCDATA)>
+<!ATTLIST dialysateName
+	code CDATA #IMPLIED
+	type CDATA #IMPLIED
+	modification CDATA #IMPLIED
+>
+<!ELEMENT dialysateFlow (flowRate, timeHdStart?, timeHdEnd?)>
+<!ELEMENT dialysateTemp (dialysateTempValue, timeHdStart?, timeHdEnd?)>
+<!ELEMENT dialysateTempValue (#PCDATA)>
+<!ATTLIST dialysateTempValue
+	unit CDATA "C"
+>
+<!ELEMENT needle (#PCDATA)>
+<!ATTLIST needle
+	code CDATA #IMPLIED
+	type CDATA #IMPLIED
+	position CDATA #IMPLIED
+>
+<!ELEMENT medication (drugName?, dose?, timeHd?, note?)>
+<!ELEMENT drugName (#PCDATA)>
+<!ATTLIST drugName
+	code CDATA #IMPLIED
+	type CDATA #REQUIRED
+>
+<!ELEMENT dose (#PCDATA)>
+<!ATTLIST dose
+	unit CDATA #IMPLIED
+>
+<!ELEMENT timeHd (#PCDATA)>
+<!ATTLIST timeHd
+	timeDirection CDATA #REQUIRED
+>
+<!ELEMENT injection (drugName?, dose?, timeHdStart?, timeHdEnd?, routeName?, note?)>
+<!ELEMENT routeName (#PCDATA)>
+<!ATTLIST routeName
+	code CDATA #IMPLIED
+	tableId CDATA #REQUIRED
+>
+<!ELEMENT hdDailyOrder (timeShift?, hdMethod*, targetWeight?, targetUF?, ufrPlan*, weightCorrection?, bloodFlow*, dialyser?, dialysate*, dialysateFlow*, dialysateTemp*, needle*, medication*, injection*, note?)>
+<!ATTLIST hdDailyOrder
+	orderDateTime CDATA #IMPLIED
+	dateEffective CDATA #IMPLIED
+>
+<!ELEMENT targetWeight (#PCDATA)>
+<!ATTLIST targetWeight
+	unit CDATA "kg"
+>
+<!ELEMENT targetUF (#PCDATA)>
+<!ATTLIST targetUF
+	unit CDATA "kg"
+>
+<!ELEMENT ufrPlan (ufRate, timeHdStart?, timeHdEnd?)>
+<!ELEMENT ufRate (#PCDATA)>
+<!ATTLIST ufRate
+	unit CDATA "kg/h"
+>
+<!ELEMENT HDProgressSection (dailyHDRecord*)>
+<!ELEMENT dailyHDRecord (hdMethodRecord*, dryWeight?, preWeight?, postWeight?, totalUF?, weightCorrection?, dialyser?, dialysate*, needle*, hdMachine?, observation*, medication*, injection*, note?)>
+<!ATTLIST dailyHDRecord
+	calendarDate CDATA #IMPLIED
+	serialNumber CDATA #IMPLIED
+>
+<!ELEMENT hdMethodRecord (#PCDATA)>
+<!ATTLIST hdMethodRecord
+	code CDATA #IMPLIED
+	tableId CDATA #IMPLIED
+	startDateTime CDATA #IMPLIED
+	endDateTime CDATA #IMPLIED
+>
+<!ELEMENT preWeight (#PCDATA)>
+<!ATTLIST preWeight
+	unit CDATA "kg"
+>
+<!ELEMENT postWeight (#PCDATA)>
+<!ATTLIST postWeight
+	unit CDATA "kg"
+>
+<!ELEMENT totalUF (#PCDATA)>
+<!ATTLIST totalUF
+	unit CDATA "kg"
+>
+<!ELEMENT hdMachine (#PCDATA)>
+<!ATTLIST hdMachine
+	code CDATA #IMPLIED
+	tableId CDATA #IMPLIED
+>
+<!ELEMENT observation (timeHd?, observationItem*, staffName*, machineName*, note?)>
+<!ELEMENT observationItem (obItemName, value?)>
+<!ELEMENT obItemName (#PCDATA)>
+<!ATTLIST obItemName
+	code CDATA #IMPLIED
+	tableId CDATA #IMPLIED
+>
+<!ELEMENT value (#PCDATA)>
+<!ATTLIST value
+	unit CDATA #IMPLIED
+>
+<!ELEMENT staffName (#PCDATA)>
+<!ATTLIST staffName
+	code CDATA #IMPLIED
+	type CDATA #IMPLIED
+>
+<!ELEMENT machineName (#PCDATA)>
+<!ATTLIST machineName
+	code CDATA #IMPLIED
+	tableId CDATA #IMPLIED
+>
+<!ELEMENT HDTestResultSection (testResultItem*)>
+<!ELEMENT testResultItem (testCondition?, timeHd?, testItemGroup*)>
+<!ATTLIST testResultItem
+	calendarDate CDATA #IMPLIED
+>
+<!ELEMENT testCondition (#PCDATA)>
+<!ATTLIST testCondition
+	code CDATA #IMPLIED
+	tableId CDATA #IMPLIED
+>
+<!ELEMENT testItemGroup (testName?, value?, note?, extRef?)>
+<!ELEMENT testName (#PCDATA)>
+<!ATTLIST testName
+	code CDATA #IMPLIED
+	type CDATA #IMPLIED
+>
+<!ELEMENT extRef EMPTY>
+<!ATTLIST extRef
+	contentType CDATA #IMPLIED
+	medicalRole CDATA #IMPLIED
+	title CDATA #IMPLIED
+	href CDATA #IMPLIED
+>

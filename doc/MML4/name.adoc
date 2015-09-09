@@ -1,0 +1,87 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+=== 人名表現形式
+.エレメント構造図
+image::mmlnm.jpg[]
+
+.エレメント一覧表
+|=====
+| |Elements|Attribute|Datatypes|Occurrence|Table id
+|5.|mmlNm:Name| | | |
+| | |mmlNm:repCode|string|#REQUIRED|optional
+| | |mmlNm:tableId|string|#IMPLIED|
+|5.1.|mmlNm:family| |string|?|
+|5.2.|mmlNm:given| |string|?|
+|5.3.|mmlNm:middle| |string|?|
+|5.4.|mmlNm:fullname| |string|?|
+|5.5.|mmlNm:prefix| |string|?|
+|5.6.|mmlNm:degree| |string|?|
+|=====
+Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== エレメント解説
+===== mmlNm:Name(人名表現形式)
+【内容】人名を表現する共通形式．5.1. から 5.3. の 3 エレメントもしくは 5.4. フルネームのどちらかを選択． +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlNm:repCode|string|#REQUIRED|optional|表記法
+|mmlNm:tableId|string|#IMPLIED| |表記法を規定するテーブル名
+|=====
+
+===== mmlNm:family
+【内容】姓 +
+【データ型】string +
+【省略】上記参照
+
+===== mmlNm:given
+【内容】名 +
+【データ型】string +
+【省略】上記参照
+
+===== mmlNm:middle
+【内容】ミドルネーム +
+【データ型】string +
+【省略】省略可
+
+===== mmlNm:fullname
+【内容】フルネーム． +
+【データ型】string +
+【省略】上記参照
+
+===== mmlNm:prefix
+【内容】肩書きなど +
+【データ型】string +
+【省略】省略可
+
+===== mmlNm:degree
+【内容】学位 +
+【データ型】string +
+【省略】省略可
+
+.mmlNm:Name (人名表現形式) サンプルインスタンス
+
+姓名を分ける場合
+
+ <mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025">
+   <mmlNm:family>Araki</mmlNm:family>
+   <mmlNm:given>Kenji</mmlNm:given>
+   <mmlNm:degree>M.D.</mmlNm:degree>
+ </mmlNm:Name>
+
+姓名を分けない場合
+
+ <mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025">
+  <mmlNm:fullname>Araki Kenji</mmlNm:fullname>
+  <mmlNm:degree>M.D.</mmlNm:degree>
+ </mmlNm:Name>

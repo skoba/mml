@@ -1,0 +1,107 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+=== 住所表現形式
+
+.エレメント構造図
+image::mmlad.jpg[]
+
+.エレメント一覧表
+|=====
+| |Elements|Attribute|Datatypes|Occurence|TableId
+|1.|mmlAd:Address| | | |
+| | |mmlAd:repCode|string|#REQUIRED|optional
+| | |mmlAd:addressClass|string|#IMPLIED|MML0002
+| | |mmlAd:tableId|string|#IMPLIED|
+|1.1. |mmlAd:full| |string|?|
+|1.2.|mmlAd:prefecture| |string|?|
+|1.3.|mmlAd:city| |string|?|
+|1.4.|mmlAd:town| |string|?|
+|1.5.|mmlAd:homeNumber| |string|?|
+|1.6.|mmlAd:zip| |string|?|
+|1.7.|mmlAd:countryCode| |string|?|
+|=====
+
+Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== エレメント解説
+
+===== mmlAd:Address (住所表現形式)
+【内容】住所を表現する共通形式．一連住所もしくはその直下の 4 エレメント (1.2. から1.5.) のどちらかを選択．
+
+【属性】
+|======
+|属性名|データ型|省略|使用テーブル|説明
+|mmlAd:repCode|string|#REQUIRED|optional|表記法
+|mmlAd:addressClass|string|#IMPLIED|MML0002|住所の種類コード
+|mmlAd:tableId|string|#IMPLIED| |上記の表記法を規定するテーブル名
+|======
+
+【例】アルファベット表記，職場住所の場合
+
+ <mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
+
+===== mmlAd:full
+【内容】一連住所． +
+【データ型】string +
+【省略】省略可
+
+===== mmlAd:prefecture
+【内容】都道府県 +
+【データ型】string +
+【省略】省略可 +
+
+===== mmlAd:city
+【内容】市，区，郡 +
+【データ型】string +
+【省略】省略可 +
+
+===== mmlAd:town
+【内容】町，村 +
+【データ型】string +
+【省略】省略可 +
+
+===== mmlAd:homeNumber
+【内容】番地，丁目，マンション名，部屋番号など残りすべて． +
+【データ型】string +
+【省略】省略可
+
+===== mmlAd:zip
+【内容】郵便番号 +
+【データ型】string +
+【省略】省略可
+
+===== mmlAd:countryCode
+【内容】国コード．ISO 3166 A3 コード使用． +
+【データ型】string +
+【省略】省略可
+
+.mmlAd:Address (住所表現形式) サンプル インスタンス
+
+一連住所の場合
+
+ <mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
+   <mmlAd:full>5200 Kihara, Kiyotake-cho, Miyazaki-gun, Miyazaki-prefecture</mmlAd:full>
+   <mmlAd:zip>889-1692</mmlAd:zip>
+   <mmlAd:countryCode>JPN</mmlAd:countryCode>
+ </mmlAd:Address>
+
+分割して表記する場合
+
+ <mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
+   <mmlAd:prefecture>Miyazaki</mmlAd:prefecture>
+   <mmlAd:city>Miyazaki</mmlAd:city>
+   <mmlAd:town>Kiyotake</mmlAd:town>
+   <mmlAd:homeNumber>5200 Kihara</mmlAd:homeNumber>
+   <mmlAd:zip>889-1692</mmlAd:zip>
+   <mmlAd:countryCode>JPN</mmlAd:countryCode>
+ </mmlAd:Address>

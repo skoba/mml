@@ -1,0 +1,60 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+== MmlHeader 形式詳説
+=== MmlHeader に関して
+
+MML Ver 4のMmlHeader 内のタグはすべて，xmlns:mml ="http://www.medxml.net/MML/v4" の Namespace に属す．(ここでは，xmlns="http://www.medxml.net/MML/v4" とデフォルト化したものとして記述することとする)
+
+==== MmlHeader
+【内容】ヘッダー情報
+
+==== mmlCi:CreatorInfo
+
+【内容】生成者識別情報．構造は MML 共通形式 (作成者情報形式) 参照． +
+【省略】不可
+
+==== masterId
+【内容】患者主 ID． +
+【省略】不可
+
+==== mmlCm:Id
+【内容】構造は MML 共通形式 (Id 形式) 参照． +
+【省略】不可
+
+==== toc
+【内容】table of content ．header 内の「toc」のチェックをシステムで行うことで、どのようなデータが入っているかを認識することができる。冗長ではあるが、SAX系の処理には有効であるためv4でも存続させた。 +
+【省略】不可
+
+==== tocItem
+【内容】本 MML 文書で使われている全ての DTD をリストアップする．冗長ではあるが、SAX系の処理には有効であるためv4でも存続させた。  +
+【データ型】string +
+【省略】不可 +
+【繰り返し設定】繰り返しあり．使用した DTD の種類だけ繰り返す．
+
+==== scopePeriod
+【内容】MML 本文全体の対象期間 +
+【省略】省略可 +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|start|date|#IMPLIED| |開始日
+|end|date|#IMPLIED| |終了日
+|hasOtherInfo|boolean|#IMPLIED| |期間外情報の有無．true：あり，false：なし
+|isExtract|boolean|#IMPLIED| |情報抽出の有無．true：あり，false：なし
+|extractPolicy|string|#IMPLIED|MML0004|抽出のポリシー
+|=====
+
+start と end で示される MML 全体の対象期間に対して，送信側の施設に，対象期間外の患者診療情報があれば，hasOtherInfo の値を true とする．また，送信側施設の対象期間内のすべての患者情報を MML インスタンスに記載しておれば，isExtract の値を false に，何からの抽出を行なっておれば，true にする．さらに，抽出を行なっている場合は，抽出の基準を extractPolicy に記載する．これらは，MML インスタンスを受け取った側が，患者情報のすべてを受け取っているのか，一部分を受け取っているのかを明確にするためのものである．一部を受け取っているにもかかわらず，すべてを受け取っていると誤解した場合には，診療行為に重大な過ちが生じる可能性があるからである．
+
+==== encryptInfo
+【内容】電子署名などの暗号化情報．記載方法を特に定めない．基本方針の「アクセス権と暗号化」を参照． +
+【データ型】string +
+【省略】省略可

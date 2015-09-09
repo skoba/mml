@@ -1,7 +1,15 @@
-= MML 4.0
-
 :Author: Shinji KOBAYASHI
 :Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+= MML 4.0(Draft)
+toc::[]
 
 == はじめに
 
@@ -16,6 +24,8 @@ MMLは医療情報の交換規格として1995年より開発されてきた。�
 前述の通り、今回の改定はW3C XML Schema 1.1に対応することが一番大きな改定である。XML Schemaはデータ型やデータ構造についての定義を細かく行うことができ、関連するツールも多様に存在することから開発者にとってより利便性が高まるよう意図している。
 
 さらに、冗長であったHL7 CDA関連のタグ情報を排除することとし、構造を簡素化することとした。一方でNamespaceやタグ名は維持することとし、意味論的には等価でありxpath構造も維持することとし、バージョンアップに伴うコストを低減することとした。
+
+文字コードはVer 3まではShift JISが正式であったがVer 4ではUTF-8とし、利便性を高めるとともに他の標準との相互運用性を向上させることとした。
 
 さらにB案として検討されてきた下記のモジュールも正式に追加することとした。
 
@@ -40,3 +50,11 @@ include::references.adoc[]
 include::overview.adoc[]
 
 include::principle.adoc[]
+
+include::common_components.adoc[]
+
+include::header.adoc[]
+
+include::docinfo.adoc[]
+
+include::content_modules.adoc[]

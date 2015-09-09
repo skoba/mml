@@ -1,0 +1,272 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+== docInfo構造詳説
+
+toc::[]
+
+=== docInfoとは
+docInfoはOverviewで記述したとおり、各MmmModuleItemの先頭に記載され、各Itemに関する作成者やアクセス権の範囲などが記載される。
+
+==== docInfo
+
+【内容】個々の文書のヘッダー情報 +
+【省略】通常は省略不可だが，モジュールを指定したクエリや，クエリの返答で該当するモジュールがなかった場合のみ省略可． +
+【属性】文書ヘッダーの参照だけで，使用したモジュールの種別とバージョンが分かるように属性を設定する．
+|=======
+|属性名|データ型|省略|使用テーブル|説明
+|contentModuleType|string|#IMPLIED|MML0005|文書の種類コード
+|moduleVersion|uri|#IMPLIED| |使用モジュールのDTDのURIを記載
+|=======
+
+==== securityLevel
+【内容】 アクセス権種別．MML インスタンス生成者が，生成時に判断したアクセス権を記載する．実際のアクセス コントロールは，インスタンスを受けたアプリケーション (およびその管理者) に委ねられる． +
+【省略】不可
+
+====  accessRight
+【内容】アクセス権 +
+【省略】不可 +
+【繰り返し設定】繰り返しあり．設定するアクセス権の数だけ繰り返す．少なくとも，記載者が参照できないことがないように，記載者のアクセス権設定は必須．
+
+複数の accessRight エレメントが存在する場合は，accessRight エレメント同士は "OR" 条件となる．1 つの accessRight エレメント直下に，施設，診療科，職種，個人の内 2 つ以上が存在するときは，"AND" 条件となる．この AND 条件を満たすものが実在しない場合には，アクセス権は認められない． +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|permit|string|#REQUIRED|MML0034|参照の権利． +
+none：すべてのアクセスを不許可 +
+read：参照を許可 +
+write：参照，修正を許可 +
+delete：参照，削除を許可 +
+all：参照，修正，削除を許可 +
+|startDate|date|#IMPLIED| |アクセス許可開始日
+|endDate|date|#IMPLIED| |アクセス許可終了日
+|=====
+参照を許可しないことを明示的に示したい場合には，permit 属性に none を設定する．
+
+MML では，削除可能文書に対して，削除要求が出されたときの具体的な処理方法を規定しないが，1 つの想定される実装として，診療記録の修正履歴を残すことが重要と考えられる場合は，物理的削除ではなく，参照者の通常アクセスにおいて非表示とするに留めることが考えられる．
+
+==== mmlSc:facility
+【内容】施設．施設単位でのアクセス権を設定する． +
+【省略】可
+
+==== mmlSc:facilityName
+【内容】施設名 +
+【データ型】string +
+【省略】不可 +
+【繰り返し設定】繰り返しあり．アクセス権を設定する施設の数だけ繰り返す． +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlSc:facilityCode|string|#REQUIRED|MML0035|施設アクセス権定義
+|mmlSc:tableId|string|#IMPLIED| |施設アクセス権定義に用いられたテーブル名．上記の通りMML0035 と記載
+|mmlSc:facilityId|string|#IMPLIED| |施設コード
+|mmlSc:facilityIdType|string|#IMPLIED|MML0027|施設コードのマスタ名
+|=====
+
+施設アクセス権定義における各値の意味は以下の通りである．
+|=====
+|all|アクセスを行う全ての施設を対象とする．
+|creator|記載者と同じ施設を対象とする．
+|experience|被記載者 (患者) の診療歴のある施設を対象とする． +
+診療歴のある施設の選別法は，各アプリケーションに委ねられる．
+|individual|施設 ID を個別に指定し，対象とする．+
+mmlSc:facilityId，mmlSc:facilityIdType に対象施設を記載する．
+|=====
+
+==== mmlSc:department
+【内容】診療科 +
+【省略】可 +
+
+==== mmlSc:departmentName
+【内容】診療科名 +
+【省略】不可 +
+【繰り返し設定】繰り返しあり．アクセス権を設定する診療科の数だけ繰り返す． +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlSc:departmentCode|string|#REQUIRED|MML0028|診療科コード
+|mmlSc:tableId|string|#IMPLIED| |診療科コード名．MML0028 と記載
+|=====
+
+==== mmlSc:license
+【内容】職種 +
+【省略】可 +
+
+==== mmlSc:licenseName
+【内容】職種名 +
+【省略】不可 +
+【繰り返し設定】繰り返しあり．アクセス権を設定する職種の数だけ繰り返す． +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlSc:licenseCode|string|#REQUIRED|MML0026|職種コード
+|mmlSc:tableId|string|#IMPLIED| |職種コード名．MML0026 と記載．
+|=====
+
+==== mmlSc:person
+【内容】個人 +
+【省略】可
+
+==== mmlSc:personName
+【内容】個人名 +
+【データ型】string +
+【省略】不可 +
+【繰り返し設定】繰り返しあり．アクセス権を設定する個人の数だけ繰り返す． +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlSc:personCode|string|#REQUIRED|MML0036|個人アクセス権定義
+|mmlSc:tableId|string|#IMPLIED| |個人アクセス権定義に用いられたテーブル名．MML0036 と記載
+|mmlSc:personId|string|#IMPLIED| |個人 ID
+|mmlSc:personIdType|string|#IMPLIED| |個人 ID のマスタ名
+|=====
+
+個人アクセス権定義における各値の意味は以下の通りである．
+|=====
+|all|アクセスを行う全ての個人を対象とする．
+|creator|記載者を対象とする．
+|patient|被記載者 (患者) 本人を対象とする
+|individual|個人 ID を個別に指定し，対象とする． +
+mmlSc:personId，mmlSc:personIdType に対象者を記載する．
+|=====
+
+.【例】securityLevel (アクセス権種別) 記載例
+
+宮崎医科大学附属病院の内科，医師に2001年10月1日から2001年12月31日まで参照，修正，削除の権利を与える場合
+
+ <securityLevel>
+   <accessRight
+     permit="all"
+     startDate="2001-10-01"
+     endDate="2001-12-31">
+     <mmlSc:facility>
+       <mmlSc:facilityName
+         mmlSc:facilityCode="individual"
+         mmlSc:tableId="MML0035"
+         mmlSc:facilityId="JPN453010100003"
+         mmlSc:facilityIdType="JMARI">
+         宮崎医科大学附属病院
+       </mmlSc:facilityName>
+     </mmlSc:facility>
+     <mmlSc:department>
+       <mmlSc:departmentName
+       mmlSc:departmentCode="01"
+       mmlSc:tableId="MML0028"/>
+     </mmlSc:department>
+     <mmlSc:license>
+       <mmlSc:licenseName
+         mmlSc:licenseCode="doctor"
+         mmlSc:tableId="MML0026"/>
+     </mmlSc:license>
+   </accessRight>
+ </securityLevel>
+
+記載者施設に無期限の全ての権利と，患者 (患者太郎) に 2001 年 10 月 1 日から 2001 年 12 月 31 日まで参照の権利を与える場合
+
+ <securityLevel>
+   <accessRight permit="all">
+     <mmlSc:facility>
+       <mmlSc:facilityName
+         mmlSc:facilityCode="creator"
+         mmlSc:tableId="MML0035">
+         記載者施設
+       </mmlSc:facilityName>
+     </mmlSc:facility>
+   </accessRight>
+   <accessRight
+     permit="read"
+     startDate="2001-10-01"
+     endDate="2001-12-31">
+     <mmlSc:person>
+       <mmlSc:personName
+         mmlSc:personCode="patient"
+         mmlSc:tableId="MML0036"
+         mmlSc:personId="4500001234"
+         mmlSc:personIdType="dolphinUserid_2001-10-03">
+         患者太郎
+       </mmlSc:personName>
+     </mmlSc:person>
+   </accessRight>
+ </securityLevel>
+
+==== title
+【内容】文書タイトル +
+【データ型】string +
+【省略】不可 +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|generationPurpose|string|#IMPLIED|MML0007|文書詳細種別
+|=====
+
+==== docId
+【内容】文書 ID 情報 +
+【省略】不可 +
+
+==== uid
+【内容】文書ユニーク ID．ユニーク番号の形式は UUID とする ( UUID はハイフンを含めた形式とする)．MML プロセッサーは，MML インスタンスを受け取った時に，何らかの手段で uid をローカルに保存しておくことを強く推奨する． +
+【データ型】string +
+【省略】不可 +
+【例】
+
+ <uid>0aae5960-667c-11d3-9751-00105a6792e7</uid>
+
+==== parentId
+【内容】関連親文書の ID．活用法については，基本方針の「文書間の関連付け」を参照すること． +
+【データ型】string +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．親文書が複数の場合に繰り返す． +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|relation|string|#IMPLIED|MML0008|関連の種別
+|=====
+【例】親文書に対する訂正文書 (新しい版) である場合
+
+ <parentId relation = "oldEdition">0aae5960-667c-11d3-9751-00105a6792e8</parentId>
+
+==== groupId
+【内容】グループ ID．活用法については，基本方針の「groupId による文書間の関連付け」を参照すること． +
+【データ型】string +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．複数のグループに属する場合に繰り返す． +
+【属性】
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|groupClass|string|#IMPLIED|MML0007| モジュールグループの種別
+|=====
+
+==== confirmDate
+【内容】カルテ電子保存の確定日時 +
+【データ型】dateTime ISO8610形式書式：CCYY-MM-DDThh:mm:ss +
+【省略】不可 +
+【属性】時系列情報が 1 文書となっている場合は，次の属性で開始日時と終了日時を記載する． scopePeriod が MML 文書全体の対象期間であるのに対し，こちらは，1 つの MmlModuleItemの期間を表していることに注意．
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|start|dateTime|#IMPLIED| |時系列情報場合の開始日時．
+|end|dateTime|#IMPLIED| |時系列情報場合の終了日時．
+|firstConfirmDate|dateTime| |#IMPLIED|修正が発生した場合の，初回確定日時
+|eventDate|dateTime| |#IMPLIED|実際に記載された診療イベントが発生した日時
+|=====
+
+==== mmlCi:CreatorInfo
+【内容】個々の文書の作成者情報．構造は MML 共通形式 (作成者情報形式) 参照． +
+【省略】不可
+
+
+==== extRefs
+【内容】content 内に記載されているすべての外部リンク情報のリスト．content 内を解析しなくても，外部参照ファイルのリストを得ることができる． +
+【省略】不可
+
+
+==== mmlCm:extRef
+【内容】外部リンク情報．構造は MML 共通形式 (外部参照形式) 参照． +
+【省略】省略可 +
+【繰り返し設定】記載されている外部リンク情報の数だけ繰り返す．

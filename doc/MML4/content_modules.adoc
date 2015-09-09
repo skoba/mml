@@ -1,0 +1,35 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+== MMLコンテンツ モジュール詳説
+
+toc::[]
+
+　MMLではユースケースに応じて設計された下記のモジュールを一単位としてMmlItemに記載することにしている。詳細はドキュメントおよびスキーマを参照すること。
+
+include::patient_module.adoc[]
+
+include::health_insurance.adoc[]
+
+include::registered_diagnosis.adoc[]
+
+include::lifestyle.adoc[]
+
+include::base_clinic.adoc[]
+
+include::first_clinic.adoc[]
+
+include::progress_course.adoc[]
+
+include::surgery.adoc[]
+
+include::summary.adoc[]
+
+include::labtest.adoc[]

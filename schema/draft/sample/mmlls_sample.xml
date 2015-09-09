@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlLs:Lifestyle  xmlns:mmlLs="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <mmlLs:occupation>Doctor</mmlLs:occupation>
+  <mmlLs:tobbaco>None</mmlLs:tobbaco>
+  <mmlLs:alcohol>Beer 350ml/day</mmlLs:alcohol>
+  <mmlLs:other>walking</mmlLs:other>
+</mmlLs:Lifestyle>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************** -->
-<!-- Security XSD Version 1.0 -->
+<!-- Security XSD Version 4.0 -->
 <!-- *************************************************** -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/SharedComponent/Security/1.0" xmlns:mmlSc="http://www.medxml.net/MML/SharedComponent/Security/1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/SharedComponent/Security/1.0" xmlns:mmlSc="http://www.medxml.net/MML/v4/SharedComponent/Security/1.0">
   <xs:group name="securityLevel">
     <xs:sequence>
       <xs:element name="securityLevel" form="unqualified">

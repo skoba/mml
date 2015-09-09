@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlDp:Department>
+  <mmlDp:name mmlDp:repCode = "A" mmlDp:tableId = "MML0025">
+    Cardiovascular　Surgery
+  </mmlDp:name>
+  <mmlCm:Id mmlCm:type = "medical"　 mmlCm:tableId = "MML0029">16</mmlCm:Id>
+</mmlDp:Department>
+

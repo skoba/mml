@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlPh:Phone mmlPh:telEquipType = "PH">
+  <mmlPh:area>0985</mmlPh:area>
+  <mmlPh:city>85</mmlPh:city>
+  <mmlPh:number>1500</mmlPh:number>
+  <mmlPh:extension>2067</mmlPh:extension>
+  <mmlPh:country>81</mmlPh:country>
+  <mmlPh:memo>daytime</mmlPh:memo>
+</mmlPh:Phone>

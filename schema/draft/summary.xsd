@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************** -->
 <!-- 臨床サマリー情報 -->
-<!-- SummaryModule XSD Version 1.0 -->
+<!-- SummaryModule XSD Version 4.0 -->
 <!-- *************************************************** -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/ContentModule/Summary/1.0" 
-  xmlns:mmlSm="http://www.medxml.net/MML/ContentModule/Summary/1.0"
-  xmlns:mmlRd="http://www.medxml.net/MML/ContentModule/RegisteredDiagnosis/1.0"
-  xmlns:mmlSg="http://www.medxml.net/MML/ContentModule/Surgery/1.0"
-  xmlns:mmlPsi="http://www.medxml.net/MML/SharedComponent/PersonalizedInfo/1.0"
-  xmlns:mmlCi="http://www.medxml.net/MML/SharedComponent/CreatorInfo/1.0"
-  xmlns:mmlCm="http://www.medxml.net/MML/SharedComponent/Common/1.0"
-  >
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0" 
+  xmlns:mmlSm="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0"
+  xmlns:mmlRd="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
+  xmlns:mmlSg="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"
+  xmlns:mmlPsi="http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0"
+  xmlns:mmlCi="http://www.medxml.net/MML/v4/SharedComponent/CreatorInfo/1.0"
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0">
   
-  <xs:import namespace="http://www.medxml.net/MML/ContentModule/RegisteredDiagnosis/1.0" schemaLocation="registereddiagnosis.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/ContentModule/Surgery/1.0" schemaLocation="surgery.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/SharedComponent/PersonalizedInfo/1.0" schemaLocation="personalizedinfo.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/SharedComponent/CreatorInfo/1.0" schemaLocation="creatorinfo.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0" schemaLocation="registereddiagnosis.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0" schemaLocation="surgery.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0" schemaLocation="personalizedinfo.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/CreatorInfo/1.0" schemaLocation="creatorinfo.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0" schemaLocation="prescription.xsd"/>
  
   <xs:element name="SummaryModule">
     <xs:complexType>
@@ -260,6 +261,7 @@
   <xs:element name="medication">
     <xs:complexType mixed="true">
       <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlPs:PrescriptionModule"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
     </xs:complexType>

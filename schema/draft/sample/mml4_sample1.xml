@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mml version="4.0" createDate="2015-09-05T20:28:45" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+  xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
+  xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0"
+  xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+  xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
+  xmlns:mmlPsi="http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0"
+  xmlns:mmlCi="http://www.medxml.net/MML/v4/SharedComponent/CreatorInfo/1.0"
+  xmlns:mmlPi="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
+  xmlns:mmlBc="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"
+  xmlns:mmlFcl="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"
+  xmlns:mmlHi="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
+  xmlns:mmlLs="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"
+  xmlns:mmlPc="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0" 
+  xmlns:mmlRd="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
+  xmlns:mmlSg="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"
+  xmlns:mmlSm="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0" 
+  xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
+  xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
+  xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
+  xmlns:mmlSc="http://www.medxml.net/MML/v4/SharedComponent/Security/1.0"
+  xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
+  xmlns:claim="http://www.medxml.net/claim/claimModule/2.1" xmlns:claimA="http://www.medxml.net/claim/claimAmountModule/2.1">
+  <MmlHeader>
+    <mmlCi:CreatorInfo>
+      <mmlPsi:PersonalizedInfo>
+        <mmlCm:Id mmlCm:type="facility" mmlCm:tableId="JPN999999900009">89812068</mmlCm:Id>
+        <mmlPsi:personName>
+          <mmlNm:Name mmlNm:repCode="I" mmlNm:tableId="MML0025">
+            <mmlNm:fullname>医師氏名3</mmlNm:fullname>
+            <mmlNm:prefix>肩書き</mmlNm:prefix>
+            <mmlNm:degree>M.D.</mmlNm:degree>
+          </mmlNm:Name>
+        </mmlPsi:personName>
+        <mmlFc:Facility>
+          <mmlFc:name mmlFc:repCode="I" mmlFc:tableId="MML0025">病院1</mmlFc:name>
+          <mmlCm:Id mmlCm:type="JMARI" mmlCm:tableId="MML0027">JPN999999900009</mmlCm:Id>
+        </mmlFc:Facility>
+        <mmlPsi:addresses>
+          <mmlAd:Address mmlAd:repCode="I" mmlAd:addressClass="business" mmlAd:tableId="MML0025">
+            <mmlAd:full>宮崎郡＊＊＊＊＊＊＊＊＊＊</mmlAd:full>
+            <mmlAd:zip>郵便番号</mmlAd:zip>
+            <mmlAd:countryCode>JPN</mmlAd:countryCode>
+          </mmlAd:Address>
+        </mmlPsi:addresses>
+        <mmlPsi:phones>
+          <mmlPh:Phone mmlPh:telEquipType="PH">
+            <mmlPh:area>市外局番</mmlPh:area>
+            <mmlPh:city>電話番号A</mmlPh:city>
+            <mmlPh:number>電話番号B</mmlPh:number>
+            <mmlPh:country>81</mmlPh:country>
+          </mmlPh:Phone>
+        </mmlPsi:phones>
+      </mmlPsi:PersonalizedInfo>
+      <mmlCi:creatorLicense mmlCi:tableId="MML0026">doctor</mmlCi:creatorLicense>
+    </mmlCi:CreatorInfo>
+    <masterId>
+      <mmlCm:Id mmlCm:type="facility" mmlCm:tableId="JPN999999900009">0000469905</mmlCm:Id>
+    </masterId>
+    <toc>
+      <tocItem>http://www.w3.org/1999/xhtml</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Common/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Name/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Department/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Address/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/CreatorInfo/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Security/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/ContentModule/Summary/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/ContentModule/test/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/ContentModule/report/1.0</tocItem>
+      <tocItem>http://www.medxml.net/MML/v4/ContentModule/Referral/1.0</tocItem>
+    </toc>
+  </MmlHeader>
+  <MmlBody>
+    <MmlModuleItem>
+      <docInfo contentModuleType="progressCourse">
+        <securityLevel>
+          <accessRight permit="all">
+            <mmlSc:facility>
+              <mmlSc:facilityName mmlSc:facilityCode="creator">記載者施設</mmlSc:facilityName>
+            </mmlSc:facility>
+          </accessRight>
+        </securityLevel>
+        <title generationPurpose="record">プログレスノート</title>
+        <docId>
+          <uid>JPN999999900009AC1F1B696FE337200202081013220003</uid>
+          <parentId relation="oldEdition">JPN999999900009AC1F1B696FE337200202081013220002</parentId></docId>
+        <confirmDate>2015-05-13</confirmDate>
+        <mmlCi:CreatorInfo>
+          <mmlPsi:PersonalizedInfo>
+            <mmlCm:Id mmlCm:type="facility" mmlCm:tableId="JPN999999900009">41603232</mmlCm:Id>
+            <mmlPsi:personName>
+              <mmlNm:Name mmlNm:repCode="I" mmlNm:tableId="MML0025">
+                <mmlNm:fullname>医師氏名4</mmlNm:fullname>
+                <mmlNm:prefix>医師</mmlNm:prefix>
+              </mmlNm:Name>
+            </mmlPsi:personName>
+            <mmlFc:Facility>
+              <mmlFc:name mmlFc:repCode="I" mmlFc:tableId="MML0025">病院1</mmlFc:name>
+              <mmlCm:Id mmlCm:type="JMARI" mmlCm:tableId="MML0027">JPN999999900009</mmlCm:Id>
+            </mmlFc:Facility>
+            <mmlDp:Department>
+              <mmlDp:name mmlDp:repCode="I" mmlDp:tableId="MML0025">第一内科</mmlDp:name>
+              <mmlCm:Id mmlCm:type="facility" mmlCm:tableId="MMC0001">001</mmlCm:Id>
+            </mmlDp:Department>
+          </mmlPsi:PersonalizedInfo>
+          <mmlCi:creatorLicense mmlCi:tableId="MML0026">doctor</mmlCi:creatorLicense>
+        </mmlCi:CreatorInfo>
+        <extRefs>
+        </extRefs>
+      </docInfo>
+      <content>
+        <mmlPc:ProgressCourseModule>
+          <mmlPc:structuredExpression>
+            <mmlPc:problemItem>
+              <mmlPc:subjective>
+                <mmlPc:freeNotes>
+          先月は受診翌日に再発熱。<xhtml:br/>
+          病院2でレントゲンを撮り肺炎と診断された。<xhtml:br/>
+          同時に貧血ありとされてフェジン注計８回施行予定。<xhtml:br/>
+          治癒後の喘息悪化無し。<xhtml:br/>
+                </mmlPc:freeNotes>
+              </mmlPc:subjective>
+              <mmlPc:objective>
+                <mmlPc:objectiveNotes>
+            検尿　糖(-)蛋白(1)潜血(2)<xhtml:br/>
+            心音呼吸音正常（usually piping rales)<xhtml:br/>
+            118/86<xhtml:br/>
+                </mmlPc:objectiveNotes>
+              </mmlPc:objective>
+              <mmlPc:assessment>
+                <mmlPc:assessmentItem>
+              貧血はHb10程度らしい。鉄剤終了後に再検されるだろう。<xhtml:br/>
+              全身的には安定。関節症状も無し。<xhtml:br/>
+                </mmlPc:assessmentItem>
+              </mmlPc:assessment>
+              <mmlPc:plan>
+                <mmlPc:rxOrder>
+                  <mmlPs:PrescriptionModule>
+                    <mmlPs:issuedTo>external</mmlPs:issuedTo>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>1</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>プレドニゾロン錠 5mg</mmlPs:name>
+                        <mmlPs:code system="YJ">61222033</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>3</mmlPs:dose>
+                      <mmlPs:doseUnit>錠</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>14</mmlPs:duration>
+                      <mmlPs:instruction>内服 1回 朝食後</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>2</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>プレドニゾロン錠 5mg</mmlPs:name>
+                        <mmlPs:code system="YJ">61222033</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>2</mmlPs:dose>
+                      <mmlPs:doseUnit>錠</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>P15D</mmlPs:duration>
+                      <mmlPs:instruction>内服 1回 朝食後</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>3</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>アルファロールカプセル（１μｇ）</mmlPs:name>
+                        <mmlPs:code system="YJ">61222044</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>1</mmlPs:dose>
+                      <mmlPs:doseUnit>C</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>P30D</mmlPs:duration>
+                      <mmlPs:instruction>内服 1回 朝食前</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>4</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>セルベックスカプセル（５０㎎）</mmlPs:name>
+                        <mmlPs:code system="YJ">61222085</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>3</mmlPs:dose>
+                      <mmlPs:doseUnit>C</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>P30D</mmlPs:duration>
+                      <mmlPs:instruction>内服3回 各食後</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>5</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>パナルジン錠（１００㎎）</mmlPs:name>
+                        <mmlPs:code system="YJ">61222085</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>2</mmlPs:dose>
+                      <mmlPs:doseUnit>錠</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>P30D</mmlPs:duration>
+                      <mmlPs:instruction>内服2回 朝夕食後</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>5</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>アゼプチン錠（１㎎）</mmlPs:name>
+                        <mmlPs:code system="YJ">334422085</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>2</mmlPs:dose>
+                      <mmlPs:doseUnit>錠</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>P30D</mmlPs:duration>
+                      <mmlPs:instruction>内服2回 朝夕食後</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>5</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>メプチン錠（５０μｇ）</mmlPs:name>
+                        <mmlPs:code system="YJ">6122333344</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>2</mmlPs:dose>
+                      <mmlPs:doseUnit>錠</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>P30D</mmlPs:duration>
+                      <mmlPs:instruction>内服2回 朝夕食後</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>5</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>タガメット錠（２００㎎）</mmlPs:name>
+                        <mmlPs:code system="YJ">61222043</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>2</mmlPs:dose>
+                      <mmlPs:doseUnit>錠</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>P30D</mmlPs:duration>
+                      <mmlPs:instruction>内服2回 朝夕食後</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>6</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>ビソルボン錠（４㎎）</mmlPs:name>
+                        <mmlPs:code system="YJ">61222043</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>2</mmlPs:dose>
+                      <mmlPs:doseUnit>錠</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>P30D</mmlPs:duration>
+                      <mmlPs:instruction>内服1回 夕食後</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>7</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>マーロックス懸濁内服用(1.2ｇ/包)</mmlPs:name>
+                        <mmlPs:code system="YJ">124455553</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>3</mmlPs:dose>
+                      <mmlPs:doseUnit>包</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>P30D</mmlPs:duration>
+                      <mmlPs:instruction>内服3回 各食直前</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>8</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>ツムラ葛根湯エキス顆粒〔１〕</mmlPs:name>
+                        <mmlPs:code system="YJ">124455553</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>3</mmlPs:dose>
+                      <mmlPs:doseUnit>包</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>P7D</mmlPs:duration>
+                      <mmlPs:instruction>内服3回 各食直前</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>9</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>レニベース錠（５㎎）</mmlPs:name>
+                        <mmlPs:code system="YJ">3345455553</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>1</mmlPs:dose>
+                      <mmlPs:doseUnit>錠</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>P7D</mmlPs:duration>
+                      <mmlPs:instruction>内服1回 朝食後</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                    <mmlPs:medication>
+                      <mmlPs:batchNo>10</mmlPs:batchNo>
+                      <mmlPs:medicine>
+                        <mmlPs:name>ハルシオン錠（０．２５㎎）</mmlPs:name>
+                        <mmlPs:code system="YJ">33222255553</mmlPs:code>
+                      </mmlPs:medicine>
+                      <mmlPs:dose>1</mmlPs:dose>
+                      <mmlPs:doseUnit>錠</mmlPs:doseUnit>
+                      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+                      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+                      <mmlPs:duration>P7D</mmlPs:duration>
+                      <mmlPs:instruction>内服1回 寝る前</mmlPs:instruction>
+                      <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
+                    </mmlPs:medication>
+                  </mmlPs:PrescriptionModule>
+                </mmlPc:rxOrder>
+                <mmlPc:planNotes>
+                ステロイド減量<xhtml:br/>
+                15/10ｍｇに挑戦。<xhtml:br/>
+                難病外来指導料(２５０）；服薬および生活指導<xhtml:br/>
+                  <xhtml:u>
+                    <xhtml:b>再診予約オーダ</xhtml:b>
+                  （2015年06月06日）
+                  </xhtml:u>
+                <xhtml:br/>
+                <xhtml:br/>
+                <xhtml:font xhtml:color="#0000ff"><xhtml:b>オーダ内容</xhtml:b></xhtml:font>
+                <xhtml:br/>
+                <xhtml:font xhtml:color="#000000">医師氏名4</xhtml:font>
+                <xhtml:font xhtml:color="#000000">
+                </xhtml:font>
+                <xhtml:font xhtml:color="#000000">
+                </xhtml:font>
+                <xhtml:br/>
+                <xhtml:font xhtml:color="#000000">尿検査が終わったら連絡をしてください</xhtml:font>
+                <xhtml:font xhtml:color="#000000">
+                </xhtml:font>
+                <xhtml:font xhtml:color="#000000">
+                </xhtml:font>
+                <xhtml:br/>
+                <xhtml:br/>
+                </mmlPc:planNotes>
+              </mmlPc:plan>
+            </mmlPc:problemItem>
+          </mmlPc:structuredExpression>
+        </mmlPc:ProgressCourseModule>
+      </content>
+    </MmlModuleItem>
+  </MmlBody>
+</Mml>
+

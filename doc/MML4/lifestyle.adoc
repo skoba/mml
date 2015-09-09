@@ -1,0 +1,60 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+=== 生活習慣情報モジュール
+.エレメント構造図
+image::mmlls.jpg[]
+
+==== namespaces 宣言
+本モジュールのnamespaces宣言は，以下とする．
+
+ xmlns:mmlLs= "http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"
+
+
+.エレメント一覧表
+|=====
+| |Elements|Attribute|Datatypes|Occurence|TableId
+|1.|mmlLs:LifestyleModule| | | |
+|1.1.|mmlLs:occupation| |string| |
+|1.2.|mmlLs:tobacco| |string| |
+|1.3.|mmlLs:alcohol| |string| |
+|1.4.|mmlLs:other| |string|?|
+|=====
+Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== エレメント解説
+===== mmlLs:LifestyleModule
+【内容】生活習慣情報
+
+===== mmlLs:occupation
+【内容】職業 +
+【データ型】string +
+【省略】不可 +
+【文書のレイアウト】XHTML 使用可
+
+===== mmlLs:tobacco
+【内容】喫煙歴 +
+【データ型】string +
+【省略】不可 +
+【文書のレイアウト】XHTML 使用可
+
+===== mmlLs:alcohol
+【内容】飲酒歴 +
+【データ型】string +
+【省略】不可 +
+【文書のレイアウト】XHTML 使用可
+
+===== mmlLs:other
+【内容】その他の生活習慣．宗教，スポーツ歴など． +
+【データ型】string +
+【省略】省略可 +
+【文書のレイアウト】XHTML 使用可

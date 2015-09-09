@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************** -->
 <!-- 検歴情報 -->
-<!-- TestModule XSD Version 1.0 -->
+<!-- TestModule XSD Version 4.0 -->
 <!-- *************************************************** -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/ContentModule/test/1.0" 
-  xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/test/1.0"
-  xmlns:mmlCm="http://www.medxml.net/MML/SharedComponent/Common/1.0"
-  >
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="http://www.medxml.net/MML/v4/ContentModule/test/1.0" 
+  xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0">
   
-  <xs:import namespace="http://www.medxml.net/MML/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
   
   <xs:element name="TestModule">
     <xs:complexType>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************** -->
 <!-- 基礎的診療情報 -->
-<!-- BaseClinicModule XSD Version 1.0 -->
+<!-- BaseClinicModule XSD Version 4.0 -->
 <!-- *************************************************** -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/ContentModule/BaseClinic/1.0" 
-  xmlns:mmlBc="http://www.medxml.net/MML/ContentModule/BaseClinic/1.0"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0" 
+  xmlns:mmlBc="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   >
   <xs:element name="BaseClinicModule">
