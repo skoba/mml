@@ -37,3 +37,7 @@ include::labtest.adoc[]
 include::report.adoc[]
 
 include::referral.adoc[]
+
+include::vitalsign.adoc[]
+
+include::flowsheet.adoc[]
