@@ -41,3 +41,7 @@ include::referral.adoc[]
 include::vitalsign.adoc[]
 
 include::flowsheet.adoc[]
+
+include::prescription.adoc[]
+
+include::injection.adoc[]
