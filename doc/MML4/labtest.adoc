@@ -114,6 +114,7 @@
 | | |mmlLb:imCodeId|string|#IMPLIED|
 |1.2.2.7.|mmlLb:itemMemoF| |string|?|
 |=====
+
 Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
 
 #REQUIRED:必須属性，#IMPLIED:省略可能属性
@@ -133,6 +134,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlLb:registTime|dateTime|#REQUIRED| |受付日時
 |mmlLb:reportTime|dateTime|#REQUIRED| |報告日時
 |=====
+
 
 ===== mmlLb:reportStatus
 【内容】報告状態 +

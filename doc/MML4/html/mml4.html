@@ -6,13 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.2">
 <meta name="author" content="toc::[]">
-<title>MML 4.0</title>
+<title>MML 4.0(Draft)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
 <link rel="stylesheet" href="./asciidoctor.css">
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>MML 4.0</h1>
+<h1>MML 4.0(Draft)</h1>
 <div class="details">
 <span id="author" class="author">Shinji KOBAYASHI</span><br>
 <span id="email" class="email"><a href="mailto:skoba@moss.gr.jp">skoba@moss.gr.jp</a></span><br>
@@ -808,9 +808,7 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 <div class="sect1">
 <h2 id="_共通形式">7. 共通形式</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>:toc[]</p>
-</div>
+<!-- toc disabled -->
 <div class="paragraph">
 <p>MMLではモジュール間で再利用されることの多いコンポーネントを共通形式として定義している。以下にそのコンポーネントを示す。各コンポーネントの詳細については、それぞれの解説を参照すること。</p>
 </div>
@@ -8357,7 +8355,1131 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </p><p class="tableblock">===== mmlSg:memo
 【内容】手術に関する追加事項．<br>
 【データ型】string<br>
-【省略】省略可<br></p></td>
+【省略】省略可<br>
+</p><p class="tableblock">:Author: Shinji KOBAYASHI
+:Email: <a href="mailto:skoba@moss.gr.jp">skoba@moss.gr.jp</a>
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+</p><p class="tableblock">=== 臨床サマリー情報モジュール
+image::mmlsm1.jpg[]
+image::mmlsm2.jpg[]
+.エレメント構造図
+image::mmlsm3.jpg[]
+</p><p class="tableblock">==== namespaces 宣言
+本モジュールのnamespaces宣言は，以下とする．
+</p><p class="tableblock"> xmlns:mmlSm= "http://www.medxml.net/MML/v4/ContentModule/Summaryr/1.0"
+</p><p class="tableblock"></p><p class="tableblock">.エレメント一覧表</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>| |Elements|Attribute|Datatypes|Occurence|Table
+|1.|mmlSm:SummaryModule| | | |
+|1.1.|mmlSm:serviceHistory| | | |
+| | |mmlSm:start|date|#IMPLIED|
+| | |mmlSm:end|date|#IMPLIED|
+|1.1.1.|mmlSm:outPatient| | |?|
+|1.1.1.1.|mmlSm:outPatientItem| | |<strong>|
+|1.1.1.1.1.|mmlSm:date| |date| |
+|1.1.1.1.2.|mmlSm:outPatientCondition| |string|?|
+| | |mmlSm:first|boolean|#IMPLIED|
+| | |mmlSm:emergency|boolean|#IMPLIED|
+|1.1.1.1.3.|mmlSm:staffs| | |?|
+|1.1.1.1.3.1.|mmlSm:staffInfo| | ||
+|1.1.1.1.3.1.1.|mmlPsi:PersonalizedInfo| | | |
+|1.1.1.1.3.1.2.|mmlCi:creatorLicense| | ||
+|1.1.2.|mmlSm:inPatient| | |?|
+|1.1.2.1.|mmlSm:inPatientItem| | |</strong>|
+|1.1.2.1.1.|mmlSm:admission| | | |
+|1.1.2.1.1.1.|mmlSm:date| |date| |
+|1.1.2.1.1.2.|mmlSm:admissionCondition| |string|?|
+| | |mmlSm:emergency|boolean|#IMPLIED|
+|1.1.2.1.1.3.|mmlSm:referFrom| | |?|
+|1.1.2.1.1.3.1.|mmlPsi:PersonalizedInfo| | | |
+|1.1.2.1.2.|mmlSm:discharge| | | |
+|1.1.2.1.2.1.|mmlSm:date| |date| |
+|1.1.2.1.2.2.|mmlSm:dischargeCondition| |string|?|
+| | |mmlSm:outcome|string|#IMPLIED|MML0016
+|1.1.2.1.2.3.|mmlSm:referTo| | |?|
+|1.1.2.1.2.3.1.|mmlPsi:PersonalizedInfo| | | |　
+|1.1.2.1.3.|mmlSm:staffs| | |?|
+|1.1.2.1.3.1.|mmlSm:staffInfo| | ||
+|1.1.2.1.3.1.1.|mmlPsi:PersonalizedInfo| | | |
+|1.1.2.1.3.1.2.|mmlCi:creatorLicense| | ||
+|1.2.|mmlRd:RegisteredDiagnosisModule| | |<strong>|
+|1.3.|mmlSm:deathInfo| | |?|
+| | |mmlSm:date|date/dateTime|#IMPLIED|
+| | |mmlSm:autopsy|boolean|#IMPLIED|
+|1.4.|mmlSg:SurgeryModule| | |</strong>|
+|1.5.|mmlSm:chiefComplaints| |string|?|
+|1.6.|mmlSm:patientProfile| |string|?|
+|1.7.|mmlSm:history| |string|?|
+|1.8.|mmlSm:physicalExam| |string|?|
+|1.8.1.|mmlCm:extRef| | |<strong>|
+|1.9.|mmlSm:clinicalCourse| | |?|
+|1.9.1.|mmlSm:clinicalRecord| |string||
+| | |mmlSm:date|date/dateTime|#IMPLIED|
+|1.9.1.1.|mmlCm:extRef| | |*|
+|1.9.1.2.|mmlSm:relatedDoc| |string|*|
+| | |mmlSm:relation|string|#IMPLIED|MML0008
+|1.10.|mmlSm:dischargeFindings| |string|?|
+|1.10.1.|mmlCm:extRef| | |*|
+|1.11.|mmlSm:medication| |string|?|
+|1.11.1.|mmlPs:PrescriptionModule| | |*|
+|1.11.2.|mmlCm:extRef| | |*|
+|1.12.|mmlSm:testResults| | |?|
+|1.12.1.|mmlSm:testResult| |string||
+| | |mmlSm:date|date/dateTime|#IMPLIED|
+|1.12.1.1.|mmlCm:extRef| | |</strong>|
+|1.13.|mmlSm:plan| |string|?
+|1.13.1.|mmlCm:extRef| | |*|
+|1.14.|mmlSm:remarks| |string|?|</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== 運用
+臨床サマリー情報は，多くの情報の集合体 (臨床経過，患者情報，病名，手術など) である．集合体を構築する方法としては，次のものがある．
+
+===== 構築法 1：
+病名，手術は，外部参照やリンクではなく，mmlSm:SummaryModule 内に記載することができる．
+
+===== 構築法 2：
+外部参照やリンクを用いず，mmlSm:SummaryModule および関連モジュール (患者情報，病名，手術など) を，&lt;paragraph&gt; の繰り返しにより，1 つの MML インスタンスとしてまとめることができる．この場合，extractPolicy ( MML ヘッダー モジュール scopePeriod 内にあり) に summary と記載し，全体としてサマリー情報であることを明確にしておく．
+
+===== 構築法 3：
+MML の groupId による文書間関連付け機能を用いる．すなわち，mmlSm:SummaryModule を含む関連モジュール (他に患者情報，病名，手術など) の groupId に同一の uid を記載する．1 つの MML インスタンスとしてまとめる必要はない．groupId の属性 groupClass に該当する文書詳細種別を記載する．
+
+構築法 3 が最も推奨される．構築法 1 により，mmlSm:SummaryModule 内に記載された病名や手術の情報は，検索，再利用の対象となりにくいこと，構築法 2 では，モジュール単位での管理が難しいことなどの理由による．構築法 3 では，病名や手術を独立したモジュールとして扱っているために，検索や再利用の対象としやすく，groupId により，モジュール単位で情報を管理していても，関連付けを失うことがない．
+
+==== エレメント解説
+===== mmlSm:SummaryModule
+【内容】臨床経過サマリー情報
+
+===== mmlSm:serviceHistory
+【内容】期間情報．本モジュールは，対象を必ずしも一回の入院に限定していない．複数入院，複数外来，および両者の組み合わせを対象とすることもできる．<br>
+【省略】不可<br>
+【属性】</th>
+</tr>
+</thead>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|説明
+|mmlSm:start|date|#IMPLIED|サマリー対象期間の開始日．
+|mmlSm:end|date|#IMPLIED|サマリー対象期間の終了日．</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">通常は，start，end (docInfo モジュールの confirmDate の属性) と同じ値をとる．
+
+【例】
+
+ &lt;mmlSm:serviceHistory mmlSm:start = "1999-08-25" mmlSm:end = "1999-08-31"&gt;
+
+【例】一年間のサマリー
+
+ &lt;mmlSm:serviceHistory mmlSm:start = "1998-01-01" mmlSm:end = "1998-12-31"&gt;
+
+===== mmlSm:outPatient
+【内容】外来受診歴情報<br>
+【省略】省略可
+
+===== mmlSm:outPatientItem
+【内容】個々の外来受診歴<br>
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．外来受診が複数あれば繰り返す．
+
+===== mmlSm:date
+【内容】外来受診日<br>
+【データ型】date　書式：CCYY-MM-DD<br>
+【省略】不可<br>
+【例】8月25日，外来受診
+
+ &lt;mmlSm:date&gt;1999-08-25&lt;/mmlSm:date&gt;
+
+===== mmlSm:outPatientCondition
+【内容】外来受診状態．<br>
+【データ型】string<br>
+【省略】省略可<br>
+【属性】</th>
+</tr>
+</thead>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|説明
+|mmlSm:first|boolean|#IMPLIED|初診．true：初診，false：再診
+|mmlSm:emergency|boolean|#IMPLIED|救急受診．true：救急，false：通常</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">【例】初診，緊急受診の場合
+
+ &lt;mmlSm:outPatientCondition mmlSm:first = "true" mmlSm:emergency = "true"&gt;
+   10A.M.the patient was put into the ambulance on a stretcher and driven to our hospital.
+ &lt;/mmlSm:outPatientCondition&gt;
+
+===== mmlSm:staffs
+【内容】患者担当スタッフ情報<br>
+【省略】省略可
+
+===== mmlSm:staffInfo
+【内容】外来担当スタッフ．<br>
+【省略】不可<br>
+【繰り返し設定】繰り返しあり．担当スタッフが複数いれば繰り返す．
+
+===== mmlPsi:PersonalizedInfo
+【内容】個人情報．構造はMML共通形式参照．<br>
+【省略】不可
+
+===== mmlCi:creatorLicense
+【内容】スタッフの資格<br>
+【データ型】string<br>
+【省略】不可<br>
+【繰り返し設定】繰り返しあり．資格が複数ある場合に繰り返す．
+
+===== mmlSm:inPatient
+【内容】入院暦情報<br>
+【省略】不可
+
+===== mmlSm:inPatientItem
+【内容】個々の入院暦．繰り返しにより，複数入院，一入院における転棟，転科を記載可能．<br>
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．入院が複数あれば繰り返す．
+
+===== mlSm:admission
+【内容】入院<br>
+【省略】不可
+
+===== mmlSm:date
+【内容】入院 (転入) 日<br>
+【データ型】date 書式：CCYY-MM-DD<br>
+【省略】不可<br>
+【例】1999 年 8 月 27 日，入院
+
+ &lt;mmlSm:date&gt;1999-8-27&lt;/mmlSm:date&gt;
+
+===== mmlSm:admissionCondition
+【内容】入院時状態<br>
+【データ型】string<br>
+【省略】省略可<br>
+【属性】</th>
+</tr>
+</thead>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|説明
+|mmlSm:emergency|boolean|#IMPLIED|緊急入院．true：緊急入院，false：通常</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">【例】救急車にて緊急入院
+
+ &lt;mmlSm:admissionCondition mmlSm:emergency = "true"&gt;
+   Emergency admission by ambulance
+ &lt;/mmlSm:admissionCondition&gt;
+
+===== mmlSm:referFrom
+【内容】紹介元情報<br>
+【省略】省略可
+
+===== mmlPsi:PersonalizedInfo
+【内容】構造はMML共通形式参照．<br>
+【省略】不可<br>
+【例】新世紀医科大学内科小野洋子医師からの紹介
+
+ &lt;mmlSm:referFrom&gt;
+   &lt;mmlPsi:PersonalizedInfo&gt;
+     &lt;mmlCm:Id mmlCm:type="facility" mmlCm:tableId="MML0024"&gt;
+       23234567
+     &lt;/mmlCm:Id&gt;
+     &lt;mmlPsi:personName&gt;
+       &lt;mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025"&gt;
+         &lt;mmlNm:family&gt;Ono&lt;/mmlNm:family&gt;
+         &lt;mmlNm:given&gt;Yoko&lt;/mmlNm:given&gt;
+         &lt;mmlNm:degree&gt;M.D.&lt;/mmlNm:degree&gt;
+       &lt;/mmlNm:Name&gt;
+     &lt;/mmlPsi:personName&gt;
+     &lt;mmlFc:Facility&gt;
+       &lt;mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025"&gt;
+         New Millenium Medical College Hospital&lt;/mmlFc:name&gt;
+       &lt;mmlCm:Id mmlCm:type="insurance" mmlCm:tableId="MML0027"&gt;
+         801.006.3
+       &lt;/mmlCm:Id&gt;
+     &lt;/mmlFc:Facility&gt;
+     &lt;mmlDp:Department&gt;
+       &lt;mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025"&gt;
+         Internal medicine
+       &lt;/mmlDp:name&gt;
+       &lt;mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029"&gt;01&lt;/mmlCm:Id&gt;
+     &lt;/mmlDp:Department&gt;
+   &lt;/mmlPsi:PersonalizedInfo&gt;
+ &lt;/mmlSm:referFrom&gt;
+
+===== mmlSm:discharge
+【内容】退院<br>
+【省略】不可
+
+===== mmlSm:date
+【内容】退院 (転出) 日<br>
+【データ型】date 書式：CCYY-MM-DD<br>
+【省略】不可<br>
+【例】1999 年 8 月 31 日，退院
+
+ &lt;mmlSm:date&gt;1999-08-31&lt;/mmlSm:date&gt;
+
+===== mmlSm:dischargeCondition
+【内容】退院時状態<br>
+【データ型】string<br>
+【省略】省略可<br>
+【属性】</th>
+</tr>
+</thead>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlSm:outcome|string|#IMPLIED|MML0016|退院時転帰</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">【例】術後4日目に慢性期病院へ転院
+
+ &lt;mmlSm:dischargeCondition mmlSm:outcome="transferChronic"&gt;
+   4 P.O.D, the patient was transferred to the chronic hospital.
+ &lt;/mmlSm:dischargeCondition&gt;
+
+===== mmlSm:referTo
+【内容】紹介先情報<br>
+【省略】不可
+
+===== mmlPsi:PersonalizedInfo
+【内容】構造は MML 共通形式参照．<br>
+【省略】不可<br>
+【例】新世紀平成病院，循環器科の田中富士子医師へ紹介
+
+ &lt;mmlSm:referTo&gt;
+   &lt;mmlPsi:PersonalizedInfo&gt;
+     &lt;mmlCm:Id mmlCm:type="facility" mmlCm:tableId="MML0024"&gt;
+       55234567&lt;/mmlCm:Id&gt;
+     &lt;mmlPsi:personName&gt;
+       &lt;mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025"&gt;
+         &lt;mmlNm:family&gt;Tanaka&lt;/mmlNm:family&gt;
+         &lt;mmlNm:given&gt;Fujiko&lt;/mmlNm:given&gt;
+         &lt;mmlNm:degree&gt;M.D.&lt;/mmlNm:degree&gt;
+       &lt;/mmlNm:Name&gt;
+     &lt;/mmlPsi:personName&gt;
+     &lt;mmlFc:Facility&gt;
+       &lt;mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025"&gt;
+         New Millenium Heisei Hospital
+       &lt;/mmlFc:name&gt;
+       &lt;mmlCm:Id mmlCm:type="insurance" mmlCm:tableId="MML0027"&gt;
+         2354678
+       &lt;/mmlCm:Id&gt;
+     &lt;/mmlFc:Facility&gt;
+     &lt;mmlDp:Department&gt;
+       &lt;mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025"&gt;
+         Cardiology
+       &lt;/mmlDp:name&gt;
+       &lt;mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029"&gt;08&lt;/mmlCm:Id&gt;
+     &lt;/mmlDp:Department&gt;
+   &lt;/mmlPsi:PersonalizedInfo&gt;
+ &lt;/mmlSm:referTo&gt;
+
+===== mmlSm:staffs
+【内容】患者担当スタッフ情報<br>
+【省略】省略可
+
+===== mmlSm:staffInfo
+【内容】入院担当スタッフ．<br>
+【省略】不可<br>
+【繰り返し設定】繰り返しあり．担当スタッフを複数記載する場合に繰り返す．
+
+===== mmlPsi:PersonalizedInfo
+【内容】構造は MML 共通形式参照．<br>
+【省略】不可
+
+===== mmlCi:creatorLicense
+【内容】スタッフの資格<br>
+【データ型】string<br>
+【省略】不可<br>
+【繰り返し設定】繰り返しあり．資格が複数ある場合に繰り返す．<br>
+【例】入院時の主治医が新世紀医科大学心臓外科の荒木賢二医師の場合
+
+ &lt;mmlSm:staffInfo&gt;
+   &lt;mmlPsi:PersonalizedInfo&gt;
+     &lt;mmlCm:Id mmlCm:type="facility" mmlCm:tableId="MML0024"&gt;
+       23456789
+     &lt;/mmlCm:Id&gt;
+     &lt;mmlPsi:personName&gt;
+       &lt;mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025"&gt;
+         &lt;mmlNm:family&gt;Araki&lt;/mmlNm:family&gt;
+         &lt;mmlNm:given&gt;Kenji&lt;/mmlNm:given&gt;
+         &lt;mmlNm:degree&gt;M.D.&lt;/mmlNm:degree&gt;
+       &lt;/mmlNm:Name&gt;
+     &lt;/mmlPsi:personName&gt;
+     &lt;mmlFc:Facility&gt;
+       &lt;mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025"&gt;
+         New Millenium Medical College Hospital
+       &lt;/mmlFc:name&gt;
+       &lt;mmlCm:Id mmlCm:type="insurance" mmlCm:tableId="MML0027"&gt;801.006.3&lt;/mmlCm:Id&gt;
+     &lt;/mmlFc:Facility&gt;
+     &lt;mmlDp:Department&gt;
+       &lt;mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025"&gt;
+         Cardiovascular surgery
+       &lt;/mmlDp:name&gt;
+       &lt;mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029"&gt;16&lt;/mmlCm:Id&gt;
+     &lt;/mmlDp:Department&gt;
+   &lt;/mmlPsi:PersonalizedInfo&gt;
+   &lt;mmlCi:creatorLicense mmlCi:tableId="MML0026"&gt;doctor&lt;/mmlCi:creatorLicense&gt;
+ &lt;/mmlSm:staffInfo&gt;
+
+===== mmlRd:RegisteredDiagnosisModule
+【内容】サマリーにおける診断履歴情報．構造は上記参照．
+
+前述の運用を参照すること．構築法 1 の場合に，本エレメントを用いる．構築法 2 および 3 では，本エレメントは省略される．
+
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．診断名が複数あれば繰り返す．
+
+===== mmlSm:deathInfo
+【内容】死亡関連情報<br>
+【データ型】string<br>
+【省略】省略可<br>
+【属性】</th>
+</tr>
+</thead>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|説明
+|mmlSm:date|date/dateTime|#IMPLIED|死亡日時
+|mmlSm:autopsy|boolean|#IMPLIED|剖検の有無．true：剖検あり，false：なし</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">【例】1999 年 8 月 31，胃癌にて死亡．剖検あり．
+
+ &lt;mmlSm:deathInfo mmlSm:date="1999-08-31" mmlSm:autopsy="true"&gt;
+   The patient died of gastric cancer.
+ &lt;/mmlSm:deathInfo&gt;
+
+===== mmlSg:SurgeryModule
+【内容】サマリーにおける手術記録情報．構造は上記参照．
+
+前述の運用を参照すること．構築法 1 の場合に，本エレメントを用いる．構築法 2 および 3 では，本エレメントは省略される．
+
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．複数手術を施行した場合は繰り返す．
+
+===== mmlSm:chiefComplaints
+【内容】主訴<br>
+【データ型】string<br>
+【省略】省略可<br>
+【文書のレイアウト】XHTML 使用可<br>
+【例】
+
+ &lt;mmlSm:chiefComplaints&gt;Severe chest pain&lt;/mmlSm:chiefComplaints&gt;
+
+===== mmlSm:patientProfile
+【内容】患者プロフィール<br>
+【データ型】string<br>
+【省略】省略可<br>
+【文書のレイアウト】XHTML 使用可<br>
+【例】
+
+ &lt;mmlSm:patientProfile&gt;
+   The patient is a 40-year-old married forester.
+ &lt;/mmlSm:patientProfile&gt;
+
+==== mmlSm:history
+【内容】入院までの経過．<br>
+【データ型】string<br>
+【省略】省略可<br>
+【文書のレイアウト】XHTML 使用可<br>
+【例】
+
+ &lt;mmlSm:history&gt;
+   On a background of good health, the patient noted the onset of chest pain and dyspnea on Aug 25,1999. At 10 A.M., he was put into the ambulance on a stretcher and driven to our hospital
+   On arrival, the symptoms subsided and he went home without any medication. Two days ago (Aug 27), he felt intractable chest pain and was referred to the department of cardiovascular surgery under the diagnosis of unstable angina pectoris.
+ &lt;/mmlSm:history&gt;
+
+===== mmlSm:physicalExam
+【内容】入院時理学所見．<br>
+【データ型】string<br>
+【省略】省略可<br>
+【文書のレイアウト】XHTML 使用可<br>
+【例】
+
+ &lt;mmlSm:physicalExam&gt;
+   Physical findings were essentially normal except for the blood pressure which was 160/100. Heart sounds were clear and rhythm was regular without audible murmurs or friction sounds.
+ &lt;/mmlSm:physicalExam&gt;
+
+===== mmlCm:extRef
+【内容】構造はMML共通形式 (外部参照形式) 参照．<br>
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．外部参照が複数あれば，数だけ繰り返す．
+
+===== mmlSm:clinicalCourse
+【内容】経過および治療<br>
+【省略】省略可
+
+===== mmlSm:clinicalRecord
+【内容】経過記録．mmlCm:extRef と mmlSm:relatedDoc の混在可能．<br>
+【データ型】string<br>
+【省略】不可<br>
+【繰り返し設定】繰り返しあり．日付や項目にあわせて繰り返す．<br>
+【文書のレイアウト】XHTML 使用可<br>
+【属性】</th>
+</tr>
+</thead>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|説明
+|mmlSm:date|date/dateTime|#IMPLIED|イベント発生日時</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlCm:extRef
+【内容】構造は MML 共通形式 (外部参照形式) 参照．<br>
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．外部参照が複数あれば，数だけ繰り返す．
+</p><p class="tableblock">===== mmlSm:relatedDoc
+【内容】本経過記録に関連する MML文書のMmlModuleItemのuidを記載する．<br>
+【データ型】string<br>
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．関連文書が複数あれば繰り返す．<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlSm:relatedDoc|string|#IMPLIED|MML0008|関連の種別</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">【例】
+
+ &lt;mmlSm:clinicalCourse&gt;
+   &lt;mmlSm:clinicalRecord mmlSm:date="1999-08-27"&gt;
+     Emergency coronary angiography was carried out.
+     &lt;mmlCm:extRef mmlCm:contentType="image/jpeg"
+       mmlCm:medicalRole="angioGraphy "
+       mmlCm:title = "Preoperative coronary angiography"
+       mmlCm:href = "patient001/surgicalFigure003.jpg"/&gt;
+     Three vessels (LAD, #9, #12) were involved.
+     ＜mmlSm:relatedDoc mmlSm:relation=" detail"＞
+       11D1AC5400A0C94A814796045F768ED5
+     ＜/mmlSm:relatedDoc＞
+   &lt;/mmlSm:clinicalRecord&gt;
+ &lt;/mmlSm:clinicalCourse&gt;
+
+===== mmlSm:dischargeFindings
+【内容】退院時所見．mmlCm:extRef との混在可能．<br>
+【データ型】string<br>
+【省略】省略可<br>
+【文書のレイアウト】XHTML 使用可
+
+===== mmlCm:extRef
+【内容】構造は MML 共通形式 (外部参照形式) 参照．<br>
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．外部参照が複数あれば，数だけ繰り返す．<br>
+【例】
+
+ &lt;mmlSm:dischargeFindings&gt;
+   Symptoms free, no wound infection.
+ &lt;/mmlSm:dischargeFindings&gt;
+
+===== mmlSm:medication
+【内容】退院時処方．mmlPs:PrescriptionModule、mmlCm:extRef との混在可能．<br>
+【データ型】string<br>
+【省略】省略可<br>
+【文書のレイアウト】XHTML 使用可
+
+===== mmlPs:PrescriptionModule
+【内容】構造はコンテンツモジュールmmlPs:PrescriptionModule参照<br>
+【省略】省略可<br>
+【例】
+
+ &lt;mmlSm:medication&gt;
+  Prescription on discharge
+  &lt;mmlPs:PrescriptionModule&gt;
+    &lt;mmlPs:medication&gt;
+      &lt;mmlPs:batchNo&gt;1&lt;/mmlPs:batchNo&gt;
+      &lt;mmlPs:medicine&gt;
+        &lt;mmlPs:name&gt;プレドニゾロン錠 5mg&lt;/mmlPs:name&gt;
+        &lt;mmlPs:code system="YJ"&gt;61222033&lt;/mmlPs:code&gt;
+      &lt;/mmlPs:medicine&gt;
+      &lt;mmlPs:dose&gt;4&lt;/mmlPs:dose&gt;
+      &lt;mmlPs:doseUnit&gt;錠&lt;/mmlPs:doseUnit&gt;
+      &lt;mmlPs:frequencyPerDay&gt;1&lt;/mmlPs:frequencyPerDay&gt;
+      &lt;mmlPs:startDate&gt;2015-05-13&lt;/mmlPs:startDate&gt;
+      &lt;mmlPs:duration&gt;P14D&lt;/mmlPs:duration&gt;
+      &lt;mmlPs:instruction&gt;内服 1回 朝食前&lt;/mmlPs:instruction&gt;
+    &lt;/mmlPs:medication&gt;
+  &lt;/mmlPs:PrescriptionModule&gt;
+ &lt;/mmlSm:medication&gt;
+
+
+===== mmlCm:extRef
+【内容】構造はMML共通形式 (外部参照形式) 参照．<br>
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．外部参照が複数あれば，数だけ繰り返す<br>
+【例】
+
+ &lt;mmlSm:medication&gt;
+   Prescription on discharge
+   &lt;mmlCm:extRef
+     mmlCm:contentType="APPLICATION/HL72.3-HL7ER2.3"
+     mmlCm:medicalRole="prescription"
+     mmlCm:title="Prescription on discharge"
+     mmlCm:href="patient1234/prescription003.HL7"/&gt;
+ &lt;/mmlSm:medication&gt;
+
+===== mmlSm:testResults
+【内容】退院時検査結果．<br>
+【省略】省略可
+
+===== mmlSm:testResult
+【内容】個々の検査結果．mmlCm:extRef との混在可能．<br>
+【データ型】string<br>
+【省略】不可<br>
+【繰り返し設定】繰り返しあり．検査が複数あれば繰り返す．<br>
+【文書のレイアウト】XHTML 使用可
+
+===== mmlCm:extRef
+【内容】構造はMML共通形式 (外部参照形式) 参照．<br>
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．外部参照が複数あれば，数だけ繰り返す<br>
+【例】
+
+ &lt;mmlSm:testResults&gt;
+   &lt;mmlSm:testResult mmlSm:date=" 1999-08-31"&gt;
+     Labo findings on discharge
+     &lt;mmlCm:extRef mmlCm:contentType="APPLICATION/HL72.3-HL7ER2.3"
+       mmlCm:medicalRole="laboratoryTest"
+       mmlCm:title = "Blood chemistry data on discharge"
+       mmlCm:href = "patient1234/prescription004.HL7"/&gt;
+   &lt;/mmlSm:testResult&gt;
+   &lt;mmlSm:testResult mmlSm:date=" 1999-08-31"&gt;
+     ECG on discharge. No ST change and new Q wave was observed.
+     &lt;mmlCm:extRef mmlCm:contentType="image/gif"
+       mmlCm:medicalRole="ecg"
+       mmlCm:title="ECG on discharge"
+       mmlCm:href="patient1234/exam004.gif"/&gt;
+   &lt;/mmlSm:testResult&gt;
+ &lt;/mmlSm:testResults&gt;
+
+====== mmlSm:plan
+【内容】退院後治療方針．mmlCm:extRef との混在可能．<br>
+【データ型】string<br>
+【省略】省略可<br>
+【文書のレイアウト】XHTML 使用可
+
+===== mmlCm:extRef
+【内容】構造は MML 共通形式 (外部参照形式) 参照．<br>
+【省略】省略可<br>
+【繰り返し設定】繰り返しあり．外部参照が複数あれば，数だけ繰り返す<br>
+【例】
+
+ &lt;mmlSm:plan&gt;
+   Rehabilitation program and wound care will continue in the chronic hospital.
+ &lt;/mmlSm:plan&gt;
+
+===== mmlSm:remarks
+【内容】患者に関する留意事項<br>
+【データ型】string<br>
+【省略】省略可<br>
+【文書のレイアウト】XHTML 使用可<br>
+【例】
+
+ &lt;mmlSm:remarks&gt;
+   Patient education: good. Appointment in outpatient department in 2 weeks.
+ &lt;/mmlSm:remarks&gt;
+
+:Author: Shinji KOBAYASHI
+:Email: <a href="mailto:skoba@moss.gr.jp">skoba@moss.gr.jp</a>
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+=== 検歴情報モジュール
+
+==== 目的と対象
+検体検査の結果情報を記載するためのMMLモジュールである．一モジュールは，通常の運用では，一依頼伝票 (もしくは一検査セット) にあたる．対象検査としては，検体検査であり，内分泌負荷試験，尿沈渣を含む．細菌培養検査，病理組織検査，細胞診は対象外とする．
+
+==== namespaces 宣言
+本モジュールの namespaces 宣言は，以下とする．
+
+ xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
+
+==== 文書ヘッダー情報 (docInfo) のモジュール個別仕様
+
+===== docInfo
+属性 contentModuleType に MML0005 テーブル「test」を入力すること．
+
+===== title
+検歴情報モジュールに文書タイトルをつける必然性は見当たらないが，省略不可となっているため，何らかの文書タイトルをつけておかなければならない．想定される運用例として，モジュール内のセット名をタイトルとすることが考えられる．
+
+属性の generationPurpose は，MML0007 テーブル「reportTest」 (検歴報告書) と入力すること．
+
+===== confirmDate
+モジュール生成日であり，モジュール内の報告日時と一致させる．
+
+===== mmlCi:CreatorInfo
+検歴情報モジュールにおける文書作成者とは，検査依頼者ではなく，検査を実施した施設の代表者である．よって，モジュール内の検査実施施設や検査実施者と一致することが想定される．
+
+===== extRefs
+検歴情報モジュール内の mmlCm:extRef エレメントを記載する．記載されている外部リンク情報の数だけ繰り返す．
+
+===== content
+一つの content に一つだけ検歴情報モジュールを入れる．
+
+.エレメント一覧表</th>
+</tr>
+</thead>
+</table>
+<div class="paragraph">
+<p>| |Elements|Attribute|Datatypes|Occurrence|Table id
+|1.|mmlLb:TestModule| | | |
+|1.1.|mmlLb:information| | | |
+| | |mmlLb:registId|string|#REQUIRED|
+| | |mmlLb:sampleTime|dateTime|#IMPLIED|
+| | |mmlLb:registTime|dateTime|#REQUIRED|
+| | |mmlLb:reportTime|dateTime|#REQUIRED|
+|1.1.1.|mmlLb:reportStatus| |string| |
+| | |mmlLb:statusCode|string|#REQUIRED|mmlLb0001
+| | |mmlLb:statusCodeId|string|#REQUIRED|
+|1.1.2.|mmlLb:set| |string|?|
+| | |mmlLb:setCode|string|#IMPLIED|ユーザー指定
+| | |mmlLb:setCodeId|string|#IMPLIED|
+|1.1.3.|mmlLb:facility| |string| |
+| | |mmlLb:facilityCode|string|#REQUIRED|
+| | |mmlLb:facilityCodeId|string|#REQUIRED|MML0027
+|1.1.4.|mmlLb:department| |string|?|
+| | |mmlLb:depCode|string|#IMPLIED|MML0028
+| | |mmlLb:depCodeId|string|#IMPLIED|
+|1.1.5.|mmlLb:ward| |string|?|
+| | |mmlLb:wardCode|string|#IMPLIED|ユーザー指定
+| | |mmlLb:wardCodeId|string|#IMPLIED|
+|1.1.6.|mmlLb:client| |string|?|
+| | |mmlLb:clientCode|string|#IMPLIED|ユーザー指定
+| | |mmlLb:clientCodeId|string|#IMPLIED|
+|1.1.7.|mmlLb:laboratoryCenter| |string| |
+| | |mmlLb:centerCode|string|#REQUIRED|ユーザー指定
+| | |mmlLb:centerCodeId|string|#REQUIRED|
+|1.1.8.|mmlLb:technician| |string|?|
+| | |mmlLb:techCode|string|#IMPLIED|ユーザー指定
+| | |mmlLb:techCodeId|string|#IMPLIED|
+|1.1.9.|mmlLb:repMemo| |string|<strong>|
+| | |mmlLb:repCodeName|string|#IMPLIED|
+| | |mmlLb:repCode|string|#IMPLIED|ユーザー指定
+| | |mmlLb:repCodeId|string|#IMPLIED|
+|1.1.10.|mmlLb:repMemoF| |string|?|
+|1.2.|mmlLb:laboTest| | ||
+|1.2.1.|mmlLb:specimen| | | |
+|1.2.1.1.|mmlLb:specimenName| |string| |
+| | |mmlLb:spCode|string|#REQUIRED|ユーザー指定
+| | |mmlLb:spCodeId|string|#REQUIRED|
+|1.2.1.2.|mmlLb:spcMemo| |string|*|
+| | |mmlLb:smCodeName|string|#IMPLIED|
+| | |mmlLb:smCode|string|#IMPLIED|ユーザー指定
+| | |mmlLb:smCodeId|string|#IMPLIED|
+|1.2.1.3.|mmlLb:spcMemoF| |string|?|
+|1.2.2.|mmlLb:item| | ||
+|1.2.2.1.|mmlLb:itemName| |string| |
+| | |mmlLb:itCode|string|#REQUIRED|ユーザー指定
+| | |mmlLb:itCodeId|string|#REQUIRED|
+| | |mmlLb:Acode|string|#IMPLIED|JLAC10
+| | |mmlLb:Icode|string|#IMPLIED|JLAC10
+| | |mmlLb:Scode|string|#IMPLIED|JLAC10
+| | |mmlLb:Mcode|string|#IMPLIED|LAC10
+| | |mmlLb:Rcode|string|#IMPLIED|JLAC10
+|1.2.2.2.|mmlLb:value| |string| |
+|1.2.2.3.|mmlLb:numValue| |decimal|?|
+| | |mmlLb:up|decimal|#IMPLIED|
+| | |mmlLb:low|decimal|#IMPLIED|
+| | |mmlLb:normal|string|#IMPLIED|
+| | |mmlLb:out|string|#IMPLIED|mmlLb0002
+|1.2.2.4.|mmlLb:unit| |string|?|
+| | |mmlLb:uCode|string|#IMPLIED|ユーザー指定
+| | |mmlLb:uCodeId|string|#IMPLIED|
+|1.2.2.5.|mmlLb:referenceInfo| | |?|
+|1.2.2.5.1.|mmlCm:extRef| | |</strong>|
+|1.2.2.6.|mmlLb:itemMemo| |string|*|
+| | |mmlLb:imCodeName|string|#IMPLIED|
+| | |mmlLb:imCode|string|#IMPLIED|ユーザー指定
+| | |mmlLb:imCodeId|string|#IMPLIED|
+|1.2.2.7.|mmlLb:itemMemoF| |string|?|</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+</p><p class="tableblock">#REQUIRED:必須属性，#IMPLIED:省略可能属性
+</p><p class="tableblock">==== エレメント解説
+===== mmlLb:TestModule
+【内容】検歴情報モジュール
+</p><p class="tableblock">===== mmlLb:information
+【内容】検歴ヘッダー情報<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:registId|string|#REQUIRED| |依頼ID
+同じ検査依頼から出た検査中報告と最終報告は，同じ依頼 ID とする．
+|mmlLb:sampleTime|dateTime|#IMPLIED| |採取日時
+|mmlLb:registTime|dateTime|#REQUIRED| |受付日時
+|mmlLb:reportTime|dateTime|#REQUIRED| |報告日時</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:reportStatus
+【内容】報告状態<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:statusCode|string|#REQUIRED|mmlLb0001|mid 検査中
+final 最終報告
+|mmlLb:statusCodeId|string|#REQUIRED| |mmlLb0001 と入力</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:set
+【内容】セット名<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:setCode|string|#IMPLIED|ユーザー指定|
+|mmlLb:setCodeId|string|#IMPLIED| |用いたテーブル名を入力</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:facility
+【内容】依頼施設<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:facilityCode|string|#REQUIRED| |
+|mmlLb:facilityCodeId|string|#REQUIRED|MML0027|用いたコード体系の名称を記載</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">====== mmlLb:department
+【内容】依頼診療科<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:depCode|string|#IMPLIED|MML0028|
+|mmlLb:depCodeId|string|#IMPLIED| |MML0028と入力</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:ward
+【内容】依頼病棟<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:wardCode|string|#IMPLIED|ユーザー指定|
+|mmlLb:wardCodeId|string|#IMPLIED| |用いたテーブル名を入力</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:client
+【内容】依頼者<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:clientCode|string|#IMPLIED|ユーザー指定|
+|mmlLb:clientCodeId|string|#IMPLIED| |用いたコード体系の名称を記載</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:laboratoryCenter
+【内容】検査実施施設<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:centerCode|string|#REQUIRED|ユーザー指定|
+|mmlLb:centerCodeId|string|#REQUIRED| |用いたテーブル名を入力</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:technician
+【内容】検査実施者<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:techCode|string|#IMPLIED|ユーザー指定|
+|mmlLb:techCodeId|string|#IMPLIED| |用いたコード体系名を記載</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:repMemo
+【内容】報告コメント<br>
+【繰り返し設定】繰り返しあり．報告コメントが複数あれば，数だけ繰り返す．<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:repCodeName|string|#IMPLIED| |
+|mmlLb:repCode|string|#IMPLIED|ユーザー指定|
+|mmlLb:repCodeId|string|#IMPLIED| |用いたテーブル名を入力</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:repMemoF
+【内容】報告フリーコメント
+</p><p class="tableblock">===== mmlLb:laboTest
+【内容】検体検査結果情報<br>
+【繰り返し設定】繰り返しあり．原則として検体材料が複数あれば，数だけ繰り返す．
+</p><p class="tableblock">===== mmlLb:specimen
+【内容】検体情報
+</p><p class="tableblock">===== mmlLb:specimenName
+【内容】検体材料<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:spCode|string|#REQUIRED|ユーザー指定|
+|mmlLb:spCodeId|string|#REQUIRED| |用いたテーブル名を入力</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:spcMemo
+【内容】検体コメント<br>
+【繰り返し設定】繰り返しあり．検体コメントが複数あれば，数だけ繰り返す．<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:smCodeName|string|#IMPLIED| |検体コメント名称
+|mmlLb:smCode|string|#IMPLIED|ユーザー指定|
+|mmlLb:smCodeId|string|#IMPLIED| |用いたテーブル名を入力</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:spcMemoF
+【内容】検体フリーコメント
+</p><p class="tableblock">===== mmlLb:item
+【内容】項目情報<br>
+【繰り返し設定】繰り返しあり．項目が複数あれば，数だけ繰り返す．
+</p><p class="tableblock">===== mmlLb:itemName
+【内容】項目名<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:itCode|string|#REQUIRED|ユーザー指定|施設固有コード
+|mmlLb:itCodeId|string|#REQUIRED| |施設固有コード体系名
+用いたテーブル名を入力
+|mmlLb:Acode|string|#IMPLIED|JLAC10|JLAC10の分析物コード
+|mmlLb:Icode|string|#IMPLIED|JLAC10|JLAC10の識別コード
+|mmlLb:Scode|string|#IMPLIED|JLAC10|JLAC10の材料コード
+|mmlLb:Mcode|string|#IMPLIED|JLAC10|JLAC10の測定法コード
+|mmlLb:Rcode|string|#IMPLIED|JLAC10|JLAC10の結果識別コード</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:value
+【内容】値．表示用の文字列の値．必須とする．
+</p><p class="tableblock">===== mmlLb:numValue
+【内容】値 (数値) ．数値データの場合のみ設定．<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:up|decimal|#IMPLIED| |上限値
+|mmlLb:low|decimal|#IMPLIED| |下限値
+|mmlLb:normal|string|#IMPLIED| |文字列で示す基準値．例："陰性"
+|mmlLb:out|string|#IMPLIED|mmlLb0002|異常値フラグ<br>
+H 上限値越え<br>
+N 基準値範囲内<br>
+L 下限値未満<br>
+A 異常</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:unit
+【内容】単位<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:uCode|string|#IMPLIED|ユーザー指定|
+|mmlLb:uCodeId|string|#IMPLIED| |用いたテーブル名を入力</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:referenceInfo
+【内容】外部参照情報
+</p><p class="tableblock">=====  mmlCm:extRef
+【内容】外部参照．図，グラフなどを添付するときに，MML 共通形式 (外部参照形式) を用いる．<br>
+【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す．
+</p><p class="tableblock">===== mmlLb:itemMemo
+【内容】項目コメント<br>
+【繰り返し設定】繰り返しあり．項目コメントが複数あれば，数だけ繰り返す．<br>
+【属性】</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:imCodeName|string|#IMPLIED| |項目コメント名称
+|mmlLb:imCode|string|#IMPLIED|ユーザー指定|
+|mmlLb:imCodeId|string|#IMPLIED| |用いたテーブル名を入力</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== mmlLb:itemMemoF
+【内容】項目フリーコメント</p></td>
 </tr>
 </tbody>
 </table>
@@ -8369,7 +9491,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-09-06 21:20:54 JST
+Last updated 2015-09-09 00:20:05 JST
 </div>
 </div>
 </body>
