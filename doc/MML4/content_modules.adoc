@@ -45,3 +45,5 @@ include::flowsheet.adoc[]
 include::prescription.adoc[]
 
 include::injection.adoc[]
+
+include::hemodialysis.adoc[]

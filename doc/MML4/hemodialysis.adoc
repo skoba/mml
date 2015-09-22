@@ -1,0 +1,310 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+=== MML Hd透析モジュール
+.エレメント一覧表
+[options="header"]
+|===
+| |Elements|Attribute|Datatypes|Occurrence|Table id
+|1|MmlHd:HemoDialysysModule| | | |
+|1.1|mmlHd:HeMX| | |?|
+|1.1.1|mmlCm:extRef| | |*|
+|1.2|mmlFc:Facility| | | |
+|1.3|mmlPi:PatientModule| | | |
+|1.4|mmlHd:note| | |?|
+|1.5 mmlHd:HDHistorySection| | |?|
+|1.5.1|mmlHd:HdIntroduction| | |*|
+|1.5.1.1|mmlHd:diagnosis| | |?|
+| | |code||string|#IMPLIED|
+| | |system|string|#IMPLIED|
+|1.5.1.2|mmlHd:HdIntroDate| |date|?|
+|1.5.1.3|mmlFc:Facility| | |?|
+|1.5.2|mmlHd:BloodAccess| | |*|
+|1.5.2.1|mmlHd:dateMade| |date|?|
+|1.5.2.2|mmlHd:dateFirstUse| |date|?|
+|1.5.2.3|mmlHd:dateEnd| |date|?|
+|1.5.2.4 mmlHd:location| |string|?|
+| | |code|String|#IMPLIED|
+| | |tableId|String|#REQUIRED|
+|1.6|mmlHd:OrderSection| | |?|
+|1.6.1|mmlHd:hdorders| | |*|
+| | |mmlHd:orderStatus|string|#REQUIRED|
+| | |mmlHd:dateOrdered|date|#IMPLIED|
+| | |mmlHd:dateEffective|date|#IMPLIED|
+|1.6.1.1 mmlHd:orderGroups| | |*|
+|1.6.1.1.1|mmlHd:effectiveDays| | |*|
+|1.6.1.1.1.1|mmlHd:weekday| |string|*|
+|1.6.1.1.1.2|mmlHd:timeShift| |string|?|
+| | |mmlHd:code|String|#IMPLIED|
+| | |mmlHd:tableId|String|#REQUIRED|
+|1.6.1.1.3|mmlHd:hdMethod| | |?|
+|1.6.1.1.3.1|mmlHd:hdMethodName| | | |
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:tableId|string|#REQUIRED|
+|1.6.1.1.3.2|mmlHd:timeHdStart| |timeperiod| |
+| | |mmlHd:timeDirection|String|#REQUIRED|
+|1.6.1.1.3.3|mmHd:timeHdEnd| |timeperiod| |
+|1.6.1.1.4|mmlHd:dryWeight| |string|
+|1.6.1.1.5|mmlHd:weightCorrection| |string|?|
+|1.6.1.1.6|mmlHd:bloodFlow| | |*|
+|1.6.1.1.6.1|mmlHd:bloodFlowRate| |string|?|
+| | |mmlHd:unit|string|#REQUIRED|
+|1.6.1.1.6.2|mmlHd:timeHdStart| |timeperiod| |
+|1.6.1.1.6.3|mmlHd:timeHdEnd|
+|===
+Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== エレメント解説
+===== MmlHd:HemoDialysysModule
+
+=====  mmlHd:HeMX
+【内容】HeMXの外部参照 +
+【省略】可
+
+=====  mmlCm:extRef
+【内容】構造はMML共通形式を参照 +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり、外部参照ファイルが複数あれば、数だけ繰り返す
+
+===== mmlFc:Facility
+【内容】施設情報、構造はMML共通形式を参照 +
+
+=====  mmlPi:PatientModule
+【内容】患者情報、構造はmmlPi:PatientModuleを参照
+
+=====  mmlHd:note
+【内容】透析コメント +
+【省略】省略可(?)
+
+=====  mmlHd:HDHistorySection
+【内容】透析履歴 +
+【省略】省略可(?)
+
+=====  mmlHd:HdIntroduction 
+【内容】透析導入情報 +
+【省略】省略可(*) +
+【繰り返し設定】あり。導入が複数回のときには本エレメントを繰り返す。
+
+===== 1.5.1.1 mmlHd:diagnosis
+【内容】原疾患 +
+【省略】省略可(?) +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|code|string|#IMPLIED|疾患コード
+|system|string|#IMPLIED|疾患コード体系名
+|===
+
+===== mmlHd:HdIntroDate 
+【内容】透析導入日 +
+【データ型】date +
+【省略】省略可
+
+=====  mmlFc:Facility    
+【内容】構造はMML共通形式を参照 +
+【省略】省略可(?)
+
+=====  mmlHd:BloodAccess
+【内容】ブラッドアクセス +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|baStatus|String|#IMPLIED|ブラッドアクセス状態 +active:良,inactive:不良
+|===
+
+===== mmlHd:dateMade     
+【内容】ブラッドアクセス作成日 +
+【データ型】date +
+【省略】省略可(?)
+
+===== mmlHd:dateFirstUse    
+【内容】ブラッドアクセス使用開始日 +
+【データ型】date +
+【省略】省略可(?)
+
+===== mmlHd:dateEnd
+【内容】ブラッドアクセス使用終了日 +
+【データ型】date +
+【省略】省略可(?)
+
+===== mmlHd:location
+【内容】ブラッドアクセス部位名、漢字を推奨 +
+【データ型】string +
+【省略】省略可(?)
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|code|String|#IMPLIED|ブラッドアクセスID
+|tableId|String|#REQUIRED|テーブルID
+|===
+【例】
+
+ <mmlHd:location mmlHd:code="0102" mmlHd:tableId="mmlhd0001">左前腕</mmlHd:location>
+
+===== mmlHd:OrderSection
+【内容】透析指示情報 +
+【省略】省略可
+
+===== mmlHd:hdorders
+【内容】オーダー単位 +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHd:orderStatus|string|#REQUIRED|オーダ状態を識別するフラグ+
+active: 現行オーダー,alteration:変更オーダー 
+|mmlHd:dateOrdered|date|#IMPLIED|オーダー発行日
+|mmlHd:dateEffective|date|#IMPLIED|変更オーダー発行日
+|===
+
+===== mmlHd:orderGroups
+【内容】オーダーグループ +
+【繰り返し設定】繰り返しあり +
+【省略】省略可(*)
+
+===== mmlHd:effectiveDays  
+【内容】実効曜日 +
+【省略】省略可(?)
+
+===== mmlHd:weekday
+【内容】オーダ適用曜日 +
+【データ型】string(ISO8601のWeekDay)+
+【省略】省略可(*) +
+【繰り返し設定】繰り返しあり +
+
+===== mmlHd:timeShift
+【内容】透析シフト名称 +
+【データ型】string +
+【省略】省略可(?) +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHd:code|String|#IMPLIED|時間帯コード
+|mmlHd:tableId|String|#REQUIRED|テーブルID
+|===
+
+【例】
+
+ <mmlHd:timeShift mmlHd:code="01" mmlHd:tableId="mmlhd0002">午前帯</mmlHd:timeShift>
+
+===== mmlHd:hdMethod
+【内容】血液浄化方法 +
+【省略】省略可(?)
+
+===== mmlHd:hdMethodName
+【内容】血液浄化方法名称 +
+【データ型】string +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHd:code|string|#IMPLIED|血液浄化コード
+|mmlHd:tableId|string|#REQUIRED|テーブルID
+|===
+
+【例】
+
+ <mmlHd:hdMethodName mmlHd:code="01" mmlHd:tableId="mmlhd0003">透析</mmlHd:hdMethodName>
+
+===== mmlHd:timeHdStart
+【内容】開始時刻 +
+【データ型】timeperiod +
+【省略】不可
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHd:timeDirection|String|#REQUIRED|時間方向 +
+before:開始時刻前,after:開始時刻後
+|===
+
+===== mmHd:timeHdEnd
+【内容】終了時刻 +
+【データ型】timeperiod +
+【省略】不可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHd:timeDirection|string|#REQUIRED|時間方向 +
+before:開始時刻前,after:開始時刻後
+|===
+
+===== mmlHd:dryWeight
+【内容】ドライウエイト +
+【データ型】string +
+【省略】省略可(?)
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHd:unit|string|#REQUIRED|単位
+|===
+
+===== mmlHd:weightCorrection
+【内容】重量補正 +
+【データ型】string +
+【省略】可(?) +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHd:unit|string|#REQUIRED|"Kg"
+|MmlHd:cnote|string|#IMPLIED|コメント
+|===
+
+===== mmlHd:bloodFlow
+【内容】血液流量 +
+【省略】可(*) +
+【繰り返し設定】繰り返しあり
+
+===== mmlHd:bloodFlowRate
+【内容】血液流量数値 +
+【データ型】string +
+【省略】可 +
+
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHd:unit|string|#REQUIRED|"ml/min"
+|===
+
+===== mmlHd:timeHdStart
+【内容】開始時刻 +
+【データ型】timeperiod +
+【省略】不可 +
+【属性】
+[options="header"]
+|===
+|mmlHd:timeDirection|string|#REQUIRED|時間方向 +
+before:開始時刻前,after:開始時刻後
+|===
+
+===== mmlHd:timeHdEnd
+【内容】終了時刻 +
+【データ型】timeperiod +
+【省略】不可
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHd:timeDirection|string|#REQUIRED|時間方向 +
+before:開始時刻前,after:開始時刻後
+|===
