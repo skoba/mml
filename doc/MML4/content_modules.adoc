@@ -33,3 +33,15 @@ include::surgery.adoc[]
 include::summary.adoc[]
 
 include::labtest.adoc[]
+
+include::report.adoc[]
+
+include::referral.adoc[]
+
+include::vitalsign.adoc[]
+
+include::flowsheet.adoc[]
+
+include::prescription.adoc[]
+
+include::injection.adoc[]

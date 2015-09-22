@@ -17,7 +17,6 @@ image::mmlsg.jpg[]
 
  xmlns:mmlSg= "http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"
 
-
 .エレメント一覧表
 |=====
 | |Elements|Attribute|Datatypes|Occurence|TableId
@@ -67,6 +66,7 @@ image::mmlsg.jpg[]
 |1.1.9.1.|mmlCm:extRef| | |+|
 |1.1.10.|mmlSg:memo| |string|?|
 |=====
+
 Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
 
 #REQUIRED:必須属性，#IMPLIED:省略可能属性
@@ -318,7 +318,8 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |属性名|データ型|省略|使用テーブル|説明
 |mmlSg:staffClass|string|#IMPLIED|MML0023|麻酔医区分
 |mmlSg:superiority|integer|#IMPLIED| |序列
-
+|=====
+	
 ===== mmlSg:staffInfo
 【内容】麻酔医 ID 情報． +
 【省略】不可

@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.2">
+<title>検歴情報モジュール</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
+<link rel="stylesheet" href="./asciidoctor.css">
+</head>
+<body class="article toc2 toc-right">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel2">
+<li><a href="#_検歴情報モジュール">1. 検歴情報モジュール</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect2">
+<h3 id="_検歴情報モジュール">1. 検歴情報モジュール</h3>
+<div class="sect3">
+<h4 id="_目的と対象">1.1. 目的と対象</h4>
+<div class="paragraph">
+<p>検体検査の結果情報を記載するためのMMLモジュールである．一モジュールは，通常の運用では，一依頼伝票 (もしくは一検査セット) にあたる．対象検査としては，検体検査であり，内分泌負荷試験，尿沈渣を含む．細菌培養検査，病理組織検査，細胞診は対象外とする．</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_namespaces_宣言">1.2. namespaces 宣言</h4>
+<div class="paragraph">
+<p>本モジュールの namespaces 宣言は，以下とする．</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_文書ヘッダー情報_docinfo_のモジュール個別仕様">1.3. 文書ヘッダー情報 (docInfo) のモジュール個別仕様</h4>
+<div class="sect4">
+<h5 id="_docinfo">docInfo</h5>
+<div class="paragraph">
+<p>属性 contentModuleType に MML0005 テーブル「test」を入力すること．</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_title">title</h5>
+<div class="paragraph">
+<p>検歴情報モジュールに文書タイトルをつける必然性は見当たらないが，省略不可となっているため，何らかの文書タイトルをつけておかなければならない．想定される運用例として，モジュール内のセット名をタイトルとすることが考えられる．</p>
+</div>
+<div class="paragraph">
+<p>属性の generationPurpose は，MML0007 テーブル「reportTest」 (検歴報告書) と入力すること．</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_confirmdate">confirmDate</h5>
+<div class="paragraph">
+<p>モジュール生成日であり，モジュール内の報告日時と一致させる．</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmlci_creatorinfo">mmlCi:CreatorInfo</h5>
+<div class="paragraph">
+<p>検歴情報モジュールにおける文書作成者とは，検査依頼者ではなく，検査を実施した施設の代表者である．よって，モジュール内の検査実施施設や検査実施者と一致することが想定される．</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_extrefs">extRefs</h5>
+<div class="paragraph">
+<p>検歴情報モジュール内の mmlCm:extRef エレメントを記載する．記載されている外部リンク情報の数だけ繰り返す．</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_content">content</h5>
+<div class="paragraph">
+<p>一つの content に一つだけ検歴情報モジュールを入れる．</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. エレメント一覧表</caption>
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datatypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Occurrence</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Table id</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:TestModule</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:information</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:registId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:sampleTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:registTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:reportTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:reportStatus</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:statusCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb0001</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:statusCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:set</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:setCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:setCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:facility</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:facilityCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:facilityCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0027</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:department</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:depCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0028</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:depCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:ward</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:wardCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:wardCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:client</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:clientCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:clientCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:laboratoryCenter</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:centerCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:centerCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.8.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:technician</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:techCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:techCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.9.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:repMemo</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:repCodeName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:repCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:repCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.10.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:repMemoF</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:laboTest</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:specimen</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:specimenName</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:spCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:spCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.1.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:spcMemo</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:smCodeName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:smCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:smCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.1.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:spcMemoF</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:item</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.2.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:itemName</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:itCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:itCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:Acode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:Icode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:Scode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:Mcode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LAC10</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:Rcode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.2.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:value</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.2.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:numValue</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:up</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:normal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:out</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb0002</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.2.4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:unit</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:uCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:uCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.2.5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:referenceInfo</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.2.5.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlCm:extRef</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.2.6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:itemMemo</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:imCodeName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:imCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:imCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.2.7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:itemMemoF</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現</p>
+</div>
+<div class="paragraph">
+<p>#REQUIRED:必須属性，#IMPLIED:省略可能属性</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_エレメント解説">1.4. エレメント解説</h4>
+<div class="sect4">
+<h5 id="_mmllb_testmodule">mmlLb:TestModule</h5>
+<div class="paragraph">
+<p>【内容】検歴情報モジュール</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_information">mmlLb:information</h5>
+<div class="paragraph">
+<p>【内容】検歴ヘッダー情報<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:registId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">依頼ID
+同じ検査依頼から出た検査中報告と最終報告は，同じ依頼 ID とする．</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:sampleTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">採取日時</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:registTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">受付日時</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:reportTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">報告日時</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_reportstatus">mmlLb:reportStatus</h5>
+<div class="paragraph">
+<p>【内容】報告状態<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:statusCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb0001</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mid 検査中
+final 最終報告</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:statusCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb0001 と入力</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_set">mmlLb:set</h5>
+<div class="paragraph">
+<p>【内容】セット名<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:setCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:setCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いたテーブル名を入力</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_facility">mmlLb:facility</h5>
+<div class="paragraph">
+<p>【内容】依頼施設<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:facilityCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:facilityCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0027</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いたコード体系の名称を記載</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect5">
+<h6 id="_mmllb_department">mmlLb:department</h6>
+<div class="paragraph">
+<p>【内容】依頼診療科<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:depCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0028</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:depCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MML0028と入力</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_ward">mmlLb:ward</h5>
+<div class="paragraph">
+<p>【内容】依頼病棟<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:wardCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:wardCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いたテーブル名を入力</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_client">mmlLb:client</h5>
+<div class="paragraph">
+<p>【内容】依頼者<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:clientCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:clientCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いたコード体系の名称を記載</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_laboratorycenter">mmlLb:laboratoryCenter</h5>
+<div class="paragraph">
+<p>【内容】検査実施施設<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:centerCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:centerCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いたテーブル名を入力</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_technician">mmlLb:technician</h5>
+<div class="paragraph">
+<p>【内容】検査実施者<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:techCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:techCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いたコード体系名を記載</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_repmemo">mmlLb:repMemo</h5>
+<div class="paragraph">
+<p>【内容】報告コメント<br>
+【繰り返し設定】繰り返しあり．報告コメントが複数あれば，数だけ繰り返す．<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:repCodeName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:repCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:repCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いたテーブル名を入力</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_repmemof">mmlLb:repMemoF</h5>
+<div class="paragraph">
+<p>【内容】報告フリーコメント</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_labotest">mmlLb:laboTest</h5>
+<div class="paragraph">
+<p>【内容】検体検査結果情報<br>
+【繰り返し設定】繰り返しあり．原則として検体材料が複数あれば，数だけ繰り返す．</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_specimen">mmlLb:specimen</h5>
+<div class="paragraph">
+<p>【内容】検体情報</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_specimenname">mmlLb:specimenName</h5>
+<div class="paragraph">
+<p>【内容】検体材料<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:spCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:spCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いたテーブル名を入力</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_spcmemo">mmlLb:spcMemo</h5>
+<div class="paragraph">
+<p>【内容】検体コメント<br>
+【繰り返し設定】繰り返しあり．検体コメントが複数あれば，数だけ繰り返す．<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:smCodeName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">検体コメント名称</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:smCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:smCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いたテーブル名を入力</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_spcmemof">mmlLb:spcMemoF</h5>
+<div class="paragraph">
+<p>【内容】検体フリーコメント</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_item">mmlLb:item</h5>
+<div class="paragraph">
+<p>【内容】項目情報<br>
+【繰り返し設定】繰り返しあり．項目が複数あれば，数だけ繰り返す．</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_itemname">mmlLb:itemName</h5>
+<div class="paragraph">
+<p>【内容】項目名<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:itCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">施設固有コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:itCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">施設固有コード体系名
+用いたテーブル名を入力</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:Acode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10の分析物コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:Icode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10の識別コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:Scode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10の材料コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:Mcode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10の測定法コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:Rcode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JLAC10の結果識別コード</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_value">mmlLb:value</h5>
+<div class="paragraph">
+<p>【内容】値．表示用の文字列の値．必須とする．</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_numvalue">mmlLb:numValue</h5>
+<div class="paragraph">
+<p>【内容】値 (数値) ．数値データの場合のみ設定．<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:up</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">上限値</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">下限値</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:normal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">文字列で示す基準値．例："陰性"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:out</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb0002</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">異常値フラグ<br>
+H 上限値越え<br>
+N 基準値範囲内<br>
+L 下限値未満<br>
+A 異常</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_unit">mmlLb:unit</h5>
+<div class="paragraph">
+<p>【内容】単位<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:uCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:uCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いたテーブル名を入力</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_referenceinfo">mmlLb:referenceInfo</h5>
+<div class="paragraph">
+<p>【内容】外部参照情報</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmlcm_extref">mmlCm:extRef</h5>
+<div class="paragraph">
+<p>【内容】外部参照．図，グラフなどを添付するときに，MML 共通形式 (外部参照形式) を用いる．<br>
+【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す．</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_itemmemo">mmlLb:itemMemo</h5>
+<div class="paragraph">
+<p>【内容】項目コメント<br>
+【繰り返し設定】繰り返しあり．項目コメントが複数あれば，数だけ繰り返す．<br>
+【属性】</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">属性名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">データ型</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">省略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用テーブル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:imCodeName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">項目コメント名称</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:imCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー指定</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:imCodeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いたテーブル名を入力</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_mmllb_itemmemof">mmlLb:itemMemoF</h5>
+<div class="paragraph">
+<p>【内容】項目フリーコメント</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2015-09-09 13:03:41 JST
+</div>
+</div>
+</body>
+</html>
