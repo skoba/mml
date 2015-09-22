@@ -38,7 +38,7 @@
 | | |mmlHd:orderStatus|string|#REQUIRED|
 | | |mmlHd:dateOrdered|date|#IMPLIED|
 | | |mmlHd:dateEffective|date|#IMPLIED|
-|1.6.1.1 mmlHd:orderGroups| | |*|
+|1.6.1.1|mmlHd:orderGroups| | |*|
 |1.6.1.1.1|mmlHd:effectiveDays| | |*|
 |1.6.1.1.1.1|mmlHd:weekday| |string|*|
 |1.6.1.1.1.2|mmlHd:timeShift| |string|?|
