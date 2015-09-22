@@ -294,6 +294,7 @@ before:開始時刻前,after:開始時刻後
 【属性】
 [options="header"]
 |===
+|属性名|データ型|省略|説明
 |mmlHd:timeDirection|string|#REQUIRED|時間方向 +
 before:開始時刻前,after:開始時刻後
 |===
