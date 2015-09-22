@@ -51,7 +51,7 @@
 |1.6.1.1.3.2|mmlHd:timeHdStart| |timeperiod| |
 | | |mmlHd:timeDirection|String|#REQUIRED|
 |1.6.1.1.3.3|mmHd:timeHdEnd| |timeperiod| |
-|1.6.1.1.4|mmlHd:dryWeight| |string|
+|1.6.1.1.4|mmlHd:dryWeight| |string| |
 |1.6.1.1.5|mmlHd:weightCorrection| |string|?|
 |1.6.1.1.6|mmlHd:bloodFlow| | |*|
 |1.6.1.1.6.1|mmlHd:bloodFlowRate| |string|?|
