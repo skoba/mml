@@ -31,8 +31,8 @@
 |1.5.2.2|mmlHd:dateFirstUse| |date|?|
 |1.5.2.3|mmlHd:dateEnd| |date|?|
 |1.5.2.4|mmlHd:location| |string|?|
-| | |code|String|#IMPLIED|
-| | |tableId|String|#REQUIRED|
+| | |code|string|#IMPLIED|
+| | |tableId|string|#REQUIRED|
 |1.6|mmlHd:OrderSection| | |?|
 |1.6.1|mmlHd:hdorders| | |*|
 | | |mmlHd:orderStatus|string|#REQUIRED|
@@ -42,14 +42,14 @@
 |1.6.1.1.1|mmlHd:effectiveDays| | |*|
 |1.6.1.1.1.1|mmlHd:weekday| |string|*|
 |1.6.1.1.1.2|mmlHd:timeShift| |string|?|
-| | |mmlHd:code|String|#IMPLIED|
-| | |mmlHd:tableId|String|#REQUIRED|
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:tableId|string|#REQUIRED|
 |1.6.1.1.3|mmlHd:hdMethod| | |?|
 |1.6.1.1.3.1|mmlHd:hdMethodName| | | |
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#REQUIRED|
 |1.6.1.1.3.2|mmlHd:timeHdStart| |timeperiod| |
-| | |mmlHd:timeDirection|String|#REQUIRED|
+| | |mmlHd:timeDirection|string|#REQUIRED|
 |1.6.1.1.3.3|mmHd:timeHdEnd| |timeperiod| |
 |1.6.1.1.4|mmlHd:dryWeight| |string| |
 |1.6.1.1.5|mmlHd:weightCorrection| |string|?|
@@ -120,7 +120,8 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|baStatus|String|#IMPLIED|ブラッドアクセス状態 +active:良,inactive:不良
+|baStatus|string|#IMPLIED|ブラッドアクセス状態 +
+active:良,inactive:不良
 |===
 
 ===== mmlHd:dateMade     
@@ -146,8 +147,8 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|code|String|#IMPLIED|ブラッドアクセスID
-|tableId|String|#REQUIRED|テーブルID
+|code|string|#IMPLIED|ブラッドアクセスID
+|tableId|string|#REQUIRED|テーブルID
 |===
 【例】
 
@@ -194,8 +195,8 @@ active: 現行オーダー,alteration:変更オーダー
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|mmlHd:code|String|#IMPLIED|時間帯コード
-|mmlHd:tableId|String|#REQUIRED|テーブルID
+|mmlHd:code|string|#IMPLIED|時間帯コード
+|mmlHd:tableId|string|#REQUIRED|テーブルID
 |===
 
 【例】
@@ -230,7 +231,7 @@ active: 現行オーダー,alteration:変更オーダー
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|mmlHd:timeDirection|String|#REQUIRED|時間方向 +
+|mmlHd:timeDirection|string|#REQUIRED|時間方向 +
 before:開始時刻前,after:開始時刻後
 |===
 
