@@ -19,10 +19,10 @@
 |1.2|mmlFc:Facility| | | |
 |1.3|mmlPi:PatientModule| | | |
 |1.4|mmlHd:note| | |?|
-|1.5 mmlHd:HDHistorySection| | |?|
+|1.5|mmlHd:HDHistorySection| | |?|
 |1.5.1|mmlHd:HdIntroduction| | |*|
 |1.5.1.1|mmlHd:diagnosis| | |?|
-| | |code||string|#IMPLIED|
+| | |code|string|#IMPLIED|
 | | |system|string|#IMPLIED|
 |1.5.1.2|mmlHd:HdIntroDate| |date|?|
 |1.5.1.3|mmlFc:Facility| | |?|
@@ -30,7 +30,7 @@
 |1.5.2.1|mmlHd:dateMade| |date|?|
 |1.5.2.2|mmlHd:dateFirstUse| |date|?|
 |1.5.2.3|mmlHd:dateEnd| |date|?|
-|1.5.2.4 mmlHd:location| |string|?|
+|1.5.2.4|mmlHd:location| |string|?|
 | | |code|String|#IMPLIED|
 | | |tableId|String|#REQUIRED|
 |1.6|mmlHd:OrderSection| | |?|
