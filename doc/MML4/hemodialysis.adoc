@@ -53,6 +53,8 @@
 |1.6.1.1.3.3|mmHd:timeHdEnd| |timeperiod| |
 |1.6.1.1.4|mmlHd:dryWeight| |string| |
 |1.6.1.1.5|mmlHd:weightCorrection| |string|?|
+| | |mmlHd:unit|string|#REQUIRED|"Kg"
+| | |MmlHd:cnote|string|#IMPLIED|コメント
 |1.6.1.1.6|mmlHd:bloodFlow| | |*|
 |1.6.1.1.6.1|mmlHd:bloodFlowRate| |string|?|
 | | |mmlHd:unit|string|#REQUIRED|
@@ -142,7 +144,7 @@ active:良,inactive:不良
 ===== mmlHd:location
 【内容】ブラッドアクセス部位名、漢字を推奨 +
 【データ型】string +
-【省略】省略可(?)
+【省略】省略可(?)+
 【属性】
 [options="header"]
 |===
