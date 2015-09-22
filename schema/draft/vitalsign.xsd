@@ -22,8 +22,6 @@
         <xs:element ref="mmlVs:ward" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlVs:observer" minOccurs="0" maxOccurs="1"/>
       </xs:sequence>
-      <xs:attribute name="registId" use="required" type="xs:string"/>
-      <xs:attribute name="registTime" use="required" type="xs:dateTime"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="facility">
