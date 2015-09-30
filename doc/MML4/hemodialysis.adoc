@@ -54,7 +54,7 @@
 |1.6.1.1.4|mmlHd:dryWeight| |string| |
 |1.6.1.1.5|mmlHd:weightCorrection| |string|?|
 | | |mmlHd:unit|string|#REQUIRED|"Kg"
-| | |MmlHd:cnote|string|#IMPLIED|コメント
+| | |mmlHd:cnote|string|#IMPLIED|コメント
 |1.6.1.1.6|mmlHd:bloodFlow| | |*|
 |1.6.1.1.6.1|mmlHd:bloodFlowRate| |string|?|
 | | |mmlHd:unit|string|#REQUIRED|
