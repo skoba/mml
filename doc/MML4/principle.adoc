@@ -26,21 +26,21 @@ MMLインスタンスには複数のアイテムを組み合わせて用いる�
 MML Version 4.0で使用する各モジュールとnamespace宣言を以下に示す。
 
 |===
-|MmlHeader および docInfo構造モジュール|xmlns:mml ="http://www.medxml.net/MML/base/4.0"
-|患者情報モジュール|xmlns:mmlPi ="http://www.medxml.net/MML/ContentModule/PatientInfo/4.0"
-|健康保険情報モジュール|xmlns:mmlHi ="http://www.medxml.net/MML/ContentModule/HealthInsurance/4.0"
-|診断履歴情報モジュール|xmlns:mmlRd ="http://www.medxml.net/MML/ContentModule/RegisteredDiagnosis/4.0"
-|生活習慣情報モジュール|xmlns:mmlLs ="http://www.medxml.net/MML/ContentModule/Lifestyle/4.0"
-|基礎的診療情報モジュール|xmlns:mmlBc ="http://www.medxml.net/MML/ContentModule/BaseClinic/4.0"
-|初診時特有情報モジュール|xmlns:mmlFcl ="http://www.medxml.net/MML/ContentModule/FirstClinic/4.0"
-|経過記録情報モジュール|xmlns:mmlPc ="http://www.medxml.net/MML/ContentModule/ProgressCourse/4.0"
-|手術記録情報モジュール|xmlns:mmlSg ="http://www.medxml.net/MML/ContentModule/Surgery/4.0"
-|臨床サマリー情報モジュール|xmlns:mmlSm ="http://www.medxml.net/MML/ContentModule/Summary/4.0"
-|検歴情報モジュール|xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/Test/4.0"
-|報告書情報モジュール|xmlns:mmlRp="http://www.medxml.net/MML/ContentModule/Report/4.0"
-|紹介状モジュール|xmlns:mmlRe="http://www.medxml.net/MML/ContentModule/Referral/4.0"
-|バイタルサインモジュール|xmlns:mmlVs="http://www.medxml.net/MML/ContentModule/VitalSign/4.0"
-|体温表モジュール|xmlns:mmlFs="http://www.medxml.net/MML/ContentModule/FlowSheet/4.0"
+|MmlHeader および docInfo構造モジュール|xmlns:mml ="http://www.medxml.net/MML/v4/base/1.0"
+|患者情報モジュール|xmlns:mmlPi ="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
+|健康保険情報モジュール|xmlns:mmlHi ="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
+|診断履歴情報モジュール|xmlns:mmlRd ="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
+|生活習慣情報モジュール|xmlns:mmlLs ="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"
+|基礎的診療情報モジュール|xmlns:mmlBc ="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"
+|初診時特有情報モジュール|xmlns:mmlFcl ="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"
+|経過記録情報モジュール|xmlns:mmlPc ="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"
+|手術記録情報モジュール|xmlns:mmlSg ="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"
+|臨床サマリー情報モジュール|xmlns:mmlSm ="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0"
+|検歴情報モジュール|xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/Test/1.0"
+|報告書情報モジュール|xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/Report/1.0"
+|紹介状モジュール|xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
+|バイタルサインモジュール|xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
+|体温表モジュール|xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"
 |===
 
 === MMLにおける各種のデータ定義
@@ -186,7 +186,7 @@ Ver 3まではモジュールのバージョンは，namespaces宣言の末尾�
 
 例えば，検歴情報のnamespaces宣言が
 
- xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/test/1.0"
+ xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
 
 であれば，MML ver 2.3であっても、MML ver 3.0であってもこの検歴情報モジュールのバージョンは，1.0である。
 
@@ -196,7 +196,7 @@ Ver 3まではモジュールのバージョンは，namespaces宣言の末尾�
 
 各モジュールのバージョンはURLの末尾に付与する。MMLの同一バージョンで小規模の修正が加わった場合末尾のバージョンを変更するものとする。
 
-　xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/test/1.0"
+　xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
 
 以下にMML ver 4での各モジュールのnamespaces宣言を一覧する。
 
