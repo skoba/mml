@@ -74,11 +74,7 @@
       <Rule path="/protocol[at0053]/items[at0054]" max="0" />
       <Rule path="/protocol[at0053]/items[at0056]" max="0" />
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.procedure_detail_item_mml.v1" concept_name="Procedure detail item for mml" max="1" path="/description[at0001]/items[at0003]" name="procedure item" />
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/description[at0001]/items[at0003]">
-        <Rule path="/items[at0001]">
-          <constraint xsi:type="parsableConstraint" />
-        </Rule>
-      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/description[at0001]/items[at0003]" />
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation-mml.v1" concept_name="Organisation record for MML" max="1" path="/protocol[at0053]/items[at0055]" name="Patient Department">
         <Rule path="/items[at0005]" max="0" />
         <Rule path="/items[at0.19]" max="0" />
