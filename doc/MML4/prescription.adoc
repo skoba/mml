@@ -46,7 +46,7 @@ confirmDate
 |===
 | |Elements|Attribute|Datatypes|Occurrence|Table id
 |1|mmlPs:PrescriptionModule| | | |
-|1.2|mmlPs:issuedTo| | |?|
+|1.2|mmlPs:issuedTo| |string|?|
 |1.2|mmlPs:medication| | |+|
 |1.2.1|mmlPs:medicine| | | |
 |1.2.1.1|mmlPs:name| |string| |
@@ -65,7 +65,7 @@ confirmDate
 |1.2.12|mmlPs:brandSubstitutionPermitted| |boolean|?|
 |1.2.13|mmlPs:longTerm| |boolean|?|
 |1.2.14|mmlPs:additionalInstruction| |string|?|
-|1.3|mmlPs:narcoticPrescriptionLicenseNumber|string|?|
+|1.3|mmlPs:narcoticPrescriptionLicenseNumber| |string|?|
 |1.4|mmlPs:comment| |string|?|
 |===
 Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
@@ -98,7 +98,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【属性】
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|mmlPs:system|string|省略不可|用いたコード体系の名称を記載
+|mmlPs:system|string|省略不可| |用いたコード体系の名称を記載
 |===
 
 ===== mmlPs:dose
