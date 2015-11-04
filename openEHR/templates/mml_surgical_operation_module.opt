@@ -1549,8 +1549,20 @@
                           <upper>1</upper>
                         </occurrences>
                         <node_id />
+                      </children>
+                      <children xsi:type="C_COMPLEX_OBJECT">
+                        <rm_type_name>DV_MULTIMEDIA</rm_type_name>
+                        <occurrences>
+                          <lower_included>true</lower_included>
+                          <upper_included>true</upper_included>
+                          <lower_unbounded>false</lower_unbounded>
+                          <upper_unbounded>false</upper_unbounded>
+                          <lower>1</lower>
+                          <upper>1</upper>
+                        </occurrences>
+                        <node_id />
                         <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-                          <rm_attribute_name>formalism</rm_attribute_name>
+                          <rm_attribute_name>media_type</rm_attribute_name>
                           <existence>
                             <lower_included>true</lower_included>
                             <upper_included>true</upper_included>
@@ -1559,8 +1571,8 @@
                             <lower>1</lower>
                             <upper>1</upper>
                           </existence>
-                          <children xsi:type="C_PRIMITIVE_OBJECT">
-                            <rm_type_name>STRING</rm_type_name>
+                          <children xsi:type="C_CODE_PHRASE">
+                            <rm_type_name>CODE_PHRASE</rm_type_name>
                             <occurrences>
                               <lower_included>true</lower_included>
                               <upper_included>true</upper_included>
@@ -1570,7 +1582,9 @@
                               <upper>1</upper>
                             </occurrences>
                             <node_id />
-                            <item xsi:type="C_STRING" />
+                            <terminology_id>
+                              <value>IANA_media-types</value>
+                            </terminology_id>
                           </children>
                         </attributes>
                       </children>
@@ -3635,7 +3649,7 @@
                           <lower_included>true</lower_included>
                           <lower_unbounded>false</lower_unbounded>
                           <upper_unbounded>true</upper_unbounded>
-                          <lower>1</lower>
+                          <lower>0</lower>
                         </occurrences>
                         <node_id>at0.2</node_id>
                         <attributes xsi:type="C_SINGLE_ATTRIBUTE">
@@ -3991,7 +4005,7 @@
                                   <lower>0</lower>
                                   <upper>1</upper>
                                 </occurrences>
-                                <node_id>at0002</node_id>
+                                <node_id>at0002.1</node_id>
                                 <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                                   <rm_attribute_name>value</rm_attribute_name>
                                   <existence>
@@ -4341,6 +4355,10 @@
                         <term_definitions code="at0002">
                           <items id="description">An unstructured description of telecoms.</items>
                           <items id="text">Unstuctured telecoms</items>
+                        </term_definitions>
+                        <term_definitions code="at0002.1">
+                          <items id="description">An unstructured description of telecoms.</items>
+                          <items id="text">Unstructured telecoms</items>
                         </term_definitions>
                         <term_definitions code="at0003">
                           <items id="description">A structure for telephone numbers composed of separately identifiable elements. ENV13606-4:2000 7.11.18.</items>
@@ -9210,7 +9228,7 @@
                           <lower_included>true</lower_included>
                           <lower_unbounded>false</lower_unbounded>
                           <upper_unbounded>true</upper_unbounded>
-                          <lower>1</lower>
+                          <lower>0</lower>
                         </occurrences>
                         <node_id>at0.2</node_id>
                         <attributes xsi:type="C_SINGLE_ATTRIBUTE">
@@ -9566,7 +9584,7 @@
                                   <lower>0</lower>
                                   <upper>1</upper>
                                 </occurrences>
-                                <node_id>at0002</node_id>
+                                <node_id>at0002.1</node_id>
                                 <attributes xsi:type="C_SINGLE_ATTRIBUTE">
                                   <rm_attribute_name>value</rm_attribute_name>
                                   <existence>
@@ -9916,6 +9934,10 @@
                         <term_definitions code="at0002">
                           <items id="description">An unstructured description of telecoms.</items>
                           <items id="text">Unstuctured telecoms</items>
+                        </term_definitions>
+                        <term_definitions code="at0002.1">
+                          <items id="description">An unstructured description of telecoms.</items>
+                          <items id="text">Unstructured telecoms</items>
                         </term_definitions>
                         <term_definitions code="at0003">
                           <items id="description">A structure for telephone numbers composed of separately identifiable elements. ENV13606-4:2000 7.11.18.</items>

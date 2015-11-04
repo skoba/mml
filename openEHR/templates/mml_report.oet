@@ -178,10 +178,7 @@
       <Rule path="/protocol[at0032]/items[at0070]" max="0" />
     </Content>
     <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/content">
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]">
-        <Rule path="/items[at0004]" max="0" />
-        <Rule path="/items[at0003]" max="0" />
-      </Items>
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
     </Content>
     <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" path="/content" />
     <Context>

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
 <link rel="stylesheet" href="./asciidoctor.css">
 </head>
-<body class="article toc2 toc-right">
+<body class="book toc2 toc-right">
 <div id="header">
 <h1>MML 4.0(Draft)</h1>
 <div class="details">
@@ -97,6 +97,9 @@
 </div>
 <div class="paragraph">
 <p>これらの成果ならびに透析SIGにおいて開発されてきた透析モジュールを加え、スキーマ定義言語をVer 3までのDTDからW3C XML Schema 1.1に変更してMML ver 4として改定し公開することとした。</p>
+</div>
+<div class="paragraph">
+<p>この文書およびXML schemaは開発段階であり、最終的にはこれに変更が加わる可能性がある。</p>
 </div>
 </div>
 </div>
@@ -684,10 +687,10 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 <p>MMLでは，インスタンスの暗号化を規定しない．暗号化の具体的な方法はユーザーによって選択される．しかし，暗号化情報エレメント（MML基本構造encryptInfo）に，暗号化に関する情報を記載することは可能である．記載方法は規定しない．</p>
 </div>
 <div class="paragraph">
-<p>暗号化の想定される一つの方法として，MMLインスタンスの本文（MML基本構造MmlBody）のみを公開鍵方式により暗号化し，暗号化に関する情報（用いた暗号化方法）を暗号化情報エレメントに記載することが考えられる．生成者情報（MML基本構造mmlCi:CreatorInfo）の生成者ＩＤから生成者の公開鍵を取得し，復号化できれば，電子署名となる．</p>
+<p>暗号化の想定される一つの方法として，MMLインスタンスの本文（MML基本構造MmlBody）のみを公開鍵方式により暗号化し，暗号化に関する情報（用いた暗号化方法）を暗号化情報エレメントに記載することが考えられる．生成者情報（MML基本構造mmlCi:CreatorInfo）の生成者ＩＤから生成者の公開鍵を取得し，復号できれば，電子署名となる．</p>
 </div>
 <div class="paragraph">
-<p>MMLインスタンスの一部またはすべてを暗号化したものは，厳密にはMMLの規格外であり，復号化されたもののみに対し，ＭＭＬの規格は適用される．</p>
+<p>MMLインスタンスの一部またはすべてを暗号化したものは，厳密にはMMLの規格外であり，復号されたもののみに対し，ＭＭＬの規格は適用される．</p>
 </div>
 </div>
 </div>
@@ -15280,7 +15283,7 @@ confirmDate
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-09-17 22:48:42 JST
+Last updated 2015-09-26 15:00:48 JST
 </div>
 </div>
 </body>
