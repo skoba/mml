@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<mapping xmlns="http://tempuri.org/mapping.xsd">
+  <dtMappings>
+    <TemplatePath>/content[openEHR-EHR-INSTRUCTION.medication_order.v0]/activities[at0001]/description[at0002]/items[at0070]</TemplatePath>
+    <Attribute>/value</Attribute>
+    <DataType>DV_TEXT</DataType>
+    <Input>/xs:schema[@xmlns:xs='http://www.w3.org/2001/XMLSchema' AND @elementFormDefault='qualified' AND @xmlns:mmlPs='http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0' AND @targetNamespace='http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0']/xs:element[@name='medication']/xs:complexType/xs:sequence/xs:element[@ref='mmlPs:medicine' AND @minOccurs='1' AND @maxOccur</Input>
+    <Type>Xpath</Type>
+    <ClassType>Element</ClassType>
+  </dtMappings>
+</mapping>

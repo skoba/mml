@@ -1,0 +1,88 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-COMPOSITION.kenshin.v0
+
+concept
+	[at0000]	-- 検診
+language
+	original_language = <[ISO_639-1::ja]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"77E9390DC1608281A895122CDCA5C8DE">
+	>
+
+definition
+	COMPOSITION[at0000] matches {	-- 検診
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {[openehr::433]}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {	-- Tree
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0002] occurrences matches {0..1} matches {	-- 種別
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0003, 	-- 特定健診
+											at0004, 	-- 一派職場検診
+											at0005]	-- 学童検診
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"検診">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"種別">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"特定健診">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"一派職場検診">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"学童検診">
+					description = <"*">
+				>
+			>
+		>
+	>
