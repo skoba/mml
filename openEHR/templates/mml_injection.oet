@@ -60,25 +60,4 @@
       </item>
     </other_details>
   </description>
-  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.medication_list.v1" concept_name="Medication List">
-    <Content xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.medication.v1" concept_name="Medication action" path="/content[at0001]">
-      <Rule path="/description[at0017]/items[at0020]">
-        <constraint xsi:type="multipleConstraint">
-          <includedTypes>Text</includedTypes>
-        </constraint>
-      </Rule>
-      <Rule path="/description[at0017]/items[at0021]" max="0" />
-      <Rule path="/description[at0017]/items[at0036]" max="0" />
-      <Rule path="/protocol[at0030]/items[at0040]" max="0" />
-      <Rule path="/protocol[at0030]/items[at0031]" max="0" />
-      <Rule path="/protocol[at0030]/items[at0037]" max="0" />
-      <Rule path="/protocol[at0030]/items[at0032]" max="0" />
-      <Rule path="/protocol[at0030]/items[at0038]" max="0" />
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_amount.v1" concept_name="Medication amount" path="/description[at0017]/items[at0022]">
-        <Rule path="/items[at0008]" max="0" />
-        <Rule path="/items[at0007]" max="0" />
-      </Items>
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_admin.v1" concept_name="Medication administration" path="/description[at0017]/items[at0027]" />
-    </Content>
-  </definition>
 </template>

@@ -15,7 +15,10 @@ language
 	>
 description
 	original_author = <
-		["name"] = <"">
+		["name"] = <"Shinji KOBAYASHI">
+		["email"] = <"skoba@moss.or.jp">
+		["organisation"] = <"openEHR.jp">
+		["date"] = <"2015-11-11">
 	>
 	details = <
 		["en"] = <
@@ -27,16 +30,16 @@ description
 		>
 		["ja"] = <
 			language = <[ISO_639-1::ja]>
-			purpose = <"">
-			use = <"">
-			misuse = <"">
+			purpose = <"日本の保険請求上の情報を加える">
+			use = <"処方箋について、保険請求上のデータとして日本で利用すること">
+			misuse = <"日本以外での処方情報としての利用">
 			copyright = <"">
 		>
 	>
-	lifecycle_state = <"0">
+	lifecycle_state = <"AuthorDraft">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"D364EAFDE7FB1428B938FE2BAAC6AA9B">
+		["MD5-CAM-1.0.1"] = <"2024966E1C4C09F0D57DE4CC0179DBB9">
 	>
 
 definition
@@ -47,8 +50,8 @@ definition
 					DV_CODED_TEXT matches {
 						defining_code matches {
 							[local::
-							at0002, 	-- *intrahospital(ja)
-							at0003]	-- *extrahospital(ja)
+							at0002, 	-- 院内
+							at0003]	-- 院外
 						}
 					}
 				}
@@ -74,19 +77,19 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Prescription condition">
-					description = <"unknown">
+					description = <"処方箋の状態について日本の保険請求上の情報を加える">
 				>
 				["at0001"] = <
 					text = <"issued to">
 					description = <"**(ja)">
 				>
 				["at0002"] = <
-					text = <"*intrahospital(ja)">
-					description = <"*issued to pharmacy division of hospital(ja)">
+					text = <"院内">
+					description = <"院内処方箋">
 				>
 				["at0003"] = <
-					text = <"*extrahospital(ja)">
-					description = <"*issued to pharmacy out of hospital(ja)">
+					text = <"院外">
+					description = <"院外処方箋">
 				>
 				["at0004"] = <
 					text = <"narcotic prescription license number">
@@ -101,20 +104,20 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"Prescription condition">
-					description = <"Prescription condition for Japanese insurance system">
+					text = <"*Prescription condition(ja)">
+					description = <"*処方箋の状態について日本の保険請求上の情報を加える(ja)">
 				>
 				["at0001"] = <
 					text = <"*issued to(ja)">
 					description = <"***(ja)(ja)">
 				>
 				["at0002"] = <
-					text = <"intrahospital">
-					description = <"issued to pharmacy division of hospital">
+					text = <"*院内(ja)">
+					description = <"*院内処方箋(ja)">
 				>
 				["at0003"] = <
-					text = <"extrahospital">
-					description = <"issued to pharmacy out of hospital">
+					text = <"*院外(ja)">
+					description = <"*院外処方箋(ja)">
 				>
 				["at0004"] = <
 					text = <"*narcotic prescription license number(ja)">

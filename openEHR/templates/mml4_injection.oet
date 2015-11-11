@@ -71,37 +71,37 @@
         </constraint>
       </Rule>
       <Rule path="/activities[at0001]/description[at0002]/items[at0056]/items[at0058]/items[at0145]" max="0" />
-      <Rule path="/activities[at0001]/description[at0002]/items[at0056]/items[at0066]">
-        <constraint xsi:type="multipleConstraint">
-          <includedTypes>Duration</includedTypes>
-        </constraint>
-      </Rule>
+      <Rule path="/activities[at0001]/description[at0002]/items[at0056]/items[at0066]" max="0" />
       <Rule path="/activities[at0001]/description[at0002]/items[at0062]" max="0" />
-      <Rule path="/activities[at0001]/description[at0002]/items[at0113]/items[at0013]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0105]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0107]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0018]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0148]" max="0" />
       <Rule path="/activities[at0001]/description[at0002]/items[at0113]/items[at0011]" max="0" />
       <Rule path="/activities[at0001]/description[at0002]/items[at0113]/items[at0016]" max="0" />
       <Rule path="/activities[at0001]/description[at0002]/items[at0113]/items[at0050]" max="0" />
       <Rule path="/activities[at0001]/description[at0002]/items[at0113]/items[at0060]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0133]/items[at0108]" max="1" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0133]/items[at0102]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0133]/items[at0134]" max="0" />
       <Rule path="/activities[at0001]/description[at0002]/items[at0133]/items[at0136]" max="0" />
-      <Rule path="/activities[at0001]/description[at0002]/items[at0129]/items[at0106]" max="0" />
       <Rule path="/activities[at0001]/description[at0002]/items[at0129]/items[at0141]" max="0" />
+      <Rule path="/activities[at0001]/description[at0002]/items[at0129]/items[at0132]" max="0" />
       <Rule path="/activities[at0001]/description[at0002]/items[at0129]/items[at0139]" max="0" />
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.daily_timing.v0" concept_name="Daily timing" path="/activities[at0001]/description[at0002]/items[at0056]/items[at0058]/items[at0037]">
-        <Rule path="/items[at0003]">
-          <constraint xsi:type="multipleConstraint">
-            <includedTypes>Quantity (Frequency)</includedTypes>
-          </constraint>
-        </Rule>
-        <Rule path="/items[at0014]" max="0" />
-        <Rule path="/items[at0004]" max="0" />
-        <Rule path="/items[at0026]" max="0" />
-        <Rule path="/items[at0023]" max="0" />
-        <Rule path="/items[at0025]" max="0" />
-      </Items>
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.timing_repetition.v0" concept_name="Timing repetition" path="/activities[at0001]/description[at0002]/items[at0056]/items[at0090]" />
+      <Rule path="/protocol[at0005]/items[at0135]" max="0" />
     </Content>
     <Context>
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.free_text.v1" concept_name="Free text" max="1" path="/context/other_context[at0001]/items[at0007]" name="Narcotic License number" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.prescription_condition.v0" concept_name="Prescription condition" path="/context/other_context[at0001]/items[at0007]">
+        <Rule path="/items[at0001]" max="0" />
+        <Rule path="/items[at0005]" max="0" />
+      </Items>
     </Context>
   </definition>
+  <view>
+    <constraints path="[openEHR-EHR-COMPOSITION.prescription.v0]/content[openEHR-EHR-ACTION.medication.v0]/time">
+      <items id="VisibleInView">
+        <value>time</value>
+      </items>
+    </constraints>
+  </view>
 </template>
