@@ -7,6 +7,8 @@
       <xs:sequence>
         <xs:element ref="mmlPs:issuedTo" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:medication" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element ref="mmlPs:narcoticPrescriptionLicenseNumber"/>
+        <xs:element ref="mmlPs:comment"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
