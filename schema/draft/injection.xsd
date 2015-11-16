@@ -19,6 +19,11 @@
         <xs:element ref="mmlInj:startDateTime" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlInj:endDateTime" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlInj:instruction" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlInj:route" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlInj:site" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlInj:deliveryMethod"/>
+        <xs:element ref="mmlInj:batchNo"/>
+        <xs:element ref="mmlInj:additionalInstruction"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -43,8 +48,14 @@
   </xs:element>
   <xs:element name="dose" type="xs:decimal"/>
   <xs:element name="doseUnit" type="xs:string"/>
-  <xs:element name="frequencyPerDay" type="xs:string"/>
   <xs:element name="startDateTime" type="xs:date"/>
   <xs:element name="endDateTime" type="xs:date"/>
   <xs:element name="instruction" type="xs:string"/>
+  <xs:element name="route" type="xs:string"/>
+  <xs:element name="site" type="xs:string"/>
+  <xs:element name="deliveryMethod" type="xs:string"/>
+  <xs:element name="batchNo" type="xs:decimal"/>
+  <xs:element name="additionalInstruction" type="xs:string"/>
+  <xs:element name="narcoticPrescriptionLicenseNumber" type="xs:string"/>
+  <xs:element name="comment" type="xs:string"/>
   </xs:schema>

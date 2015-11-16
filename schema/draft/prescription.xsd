@@ -20,7 +20,13 @@
         <xs:element ref="mmlPs:startDate" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="mmlPs:duration" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:instruction" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPs:PRN" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPs:route" minOccurs="0" maxOccurs="1"></xs:element>
+        <xs:element ref="mmlPs:form" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPs:batchNo" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:brandSubstitutionPermitted" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPs:longTerm" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPs:additionalInstruction" minOccurs="0" maxOccurs="1"></xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -57,5 +63,12 @@
   <xs:element name="startDate" type="xs:date"/>
   <xs:element name="duration" type="xs:duration"/>
   <xs:element name="instruction" type="xs:string"/>
+  <xs:element name="PRN" type="xs:boolean"/>
+  <xs:element name="route" type="xs:string"/>
+  <xs:element name="form" type="xs:string"/>
   <xs:element name="brandSubstitutionPermitted" type="xs:boolean"/>
+  <xs:element name="longTerm" type="xs:boolean"/>
+  <xs:element name="additionalInstruction" type="xs:string"/>
+  <xs:element name="narcoticPrescriptionLicenseNumber" type="xs:string"/>
+  <xs:element name="comment" type="xs:string"/>
 </xs:schema>
