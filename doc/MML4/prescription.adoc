@@ -24,7 +24,7 @@
 ==== namespace宣言
 このモジュールのnamespaceは以下のように宣言する。
 
- xmlns:mmlPs="http://www.medxml.net/MML/ContentModule/Prescription/1.0"
+ xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
 文書ヘッダー情報 (docInfo) のモジュール個別仕様
 
 ===== docInfo
