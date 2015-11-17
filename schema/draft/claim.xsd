@@ -9,7 +9,7 @@
   xmlns:mmlDp="http://www.medxml.net/MML/SharedComponent/Department/1.0"
   >
   
-  <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1" schemaLocation="healthinsurance.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/ContentModule/HealthInsurance/1.1" schemaLocation="healthinsurance.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/SharedComponent/Department/1.0" schemaLocation="department.xsd" />
   
   <xs:element name="ClaimModule">

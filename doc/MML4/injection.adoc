@@ -48,8 +48,8 @@
 | | |mmlInj:system|string| |
 |1.1.2|mmlInj:dose| |decimal| |
 |1.1.3|mmlInj:doseUnit| |string| |
-|1.1.4|mmInj:startDateTime| |dateTime|?|
-|1.1.5|mmInj:endDateTime| |dateTime|?|
+|1.1.4|mmlInj:startDateTime| |dateTime|?|
+|1.1.5|mmlInj:endDateTime| |dateTime|?|
 |1.1.6|mmlInj:instruction| |string|?|
 |1.1.7|mmlInj:route| |string|?|
 |1.1.8|mmlInj:site| |string|?|
@@ -99,19 +99,19 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】不可 +
 【データ型】string
 
-===== mmInj:startDateTime
+===== mmlInj:startDateTime
 【内容】投与開始日時
 【省略】可 +
 【データ型】date +
 【説明】投与を開始した時間を記載する
 
-===== mmInj:endDateTime
+===== mmlInj:endDateTime
 【内容】投与修了日時 +
 【省略】可 +
 【データ型】date +
 【説明】投与を修了した時間を記載する。静注，皮下注，筋注など開始時間と終了時間に差が無いような場合は省略する。
 
-===== mmInj:instruction
+===== mmlInj:instruction
 【内容】用法指示 +
 【省略】可 +
 【データ型】string +
