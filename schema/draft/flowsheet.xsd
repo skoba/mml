@@ -85,8 +85,8 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="bofTimes" type="xs:decimal"/>
-        <xs:element name="bofPeriodStart" type="xs:dateTime"/>
-        <xs:element name="bofPeriodEnd" type="xs:dateTime"/>
+        <xs:element name="bofPeriodStartTime" type="xs:dateTime"/>
+        <xs:element name="bofPeriodEndTime" type="xs:dateTime"/>
         <xs:element name="bofMemo" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>

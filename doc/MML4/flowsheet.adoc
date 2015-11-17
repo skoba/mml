@@ -238,12 +238,12 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】省略可 +
 【データ型】decimal
 
-===== mmlFs:bofStart
+===== mmlFs:bofPeriodStartTime
 【内容】観察を開始した時間。 +
 【省略】省略可 +
 【データ型】dateTime
 
-===== mmlFs:bofEnd
+===== mmlFs:bofPeriodEndTime
 【内容】観察を終了した時間。 +
 【省略】省略可 +
 【データ型】dateTime
