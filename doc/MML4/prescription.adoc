@@ -46,7 +46,7 @@ confirmDate
 |===
 | |Elements|Attribute|Datatypes|Occurrence|Table id
 |1|mmlPs:PrescriptionModule| | | |
-|1.2|mmlPs:issuedTo| |string|?|
+|1.1|mmlPs:issuedTo| |string|?|
 |1.2|mmlPs:medication| | |+|
 |1.2.1|mmlPs:medicine| | | |
 |1.2.1.1|mmlPs:name| |string| |
