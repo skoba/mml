@@ -54,9 +54,9 @@ confirmDate
 | | |mmlPs:system|string|#REQUIRED|
 |1.2.2|mmlPs:dose| |decimal| |
 |1.2.3|mmlPs:doseUnit| |string| |
-|1.2.4|mmPs:frequencyPerDay| |decimal| |
-|1.2.5|mmPs:startDate| |date|?|
-|1.2.6|mmPs:duration| |decimal|?|
+|1.2.4|mmlPs:frequencyPerDay| |decimal| |
+|1.2.5|mmlPs:startDate| |date|?|
+|1.2.6|mmlPs:duration| |decimal|?|
 |1.2.7|mmlPs:instruction| |string|?|
 |1.2.8|mmlPs:PRN| |boolean|?|
 |1.2.9|mmlPs:route| |string|?|
@@ -111,25 +111,25 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】不可 +
 【データ型】string
 
-===== mmPs:frequencyPerDay
+===== mmlPs:frequencyPerDay
 【内容】一日の内服回数 +
 【省略】可 +
 【データ型】decimal +
 【説明】総量のみが記載される外用剤などの場合には省略可
 
-===== mmPs:startDate
+===== mmlPs:startDate
 【内容】服薬開始日 +
 【省略】可 +
 【データ型】date +
 【説明】内服開始日
 
-===== mmPs:duration
+===== mmlPs:duration
 【内容】服薬期間（日数） +
 【省略】可 +
 【データ型】decimal +
 【説明】総量のみが記載される外用剤などの場合には省略可
 
-===== mmPs:instruction
+===== mmlPs:instruction
 【内容】用法指示 +
 【省略】可 +
 【データ型】string +
