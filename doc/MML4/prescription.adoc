@@ -50,7 +50,7 @@ confirmDate
 |1.2|mmlPs:medication| | |+|
 |1.2.1|mmlPs:medicine| | | |
 |1.2.1.1|mmlPs:name| |string| |
-|1.2.1.2|mmlPs:code| |string|+|
+|1.2.1.2|mmlPs:code| |string|*|
 | | |mmlPs:system|string|#REQUIRED|
 |1.2.2|mmlPs:dose| |decimal| |
 |1.2.3|mmlPs:doseUnit| |string| |
