@@ -78,7 +78,7 @@
 |1.4.10.2|mmlFs:bofPeriodStart| |dateTime|?|
 |1.4.10.3|mmlFs:bofPeriodEnd| |dateTime|?|
 |1.4.10.4|mmlFs:bofMemo| |string|?|
-|1.5|mmlFs:fsMemo| |string|*|
+|1.5|mmlFs:fsMemo| |string|?|
 |===
 Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
@@ -255,5 +255,5 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== mmlFs:fsMemo
 【内容】体温表コメント、メモ。その他の体温表に記載する内容。 +
-【繰り返し】0回以上の繰り返しあり、コメントがあれば、その数だけ繰り返す +
+【繰り返し】省略可 +
 【データ型】string
