@@ -11,9 +11,9 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="mmlFs:context" minOccurs="1" maxOccurs="1"/>
-        <xs:element ref="mmlVs:VitalSignModule" minOccurs="0"/>
-        <xs:element ref="mmlFs:intake" minOccurs="0"/>
-        <xs:element ref="mmlFs:bodilyOutput" minOccurs="0"/>
+        <xs:element ref="mmlVs:VitalSignModule" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="mmlFs:intake" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="mmlFs:bodilyOutput" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element ref="mmlFs:fsMemo" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
