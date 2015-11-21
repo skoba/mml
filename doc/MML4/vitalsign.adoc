@@ -47,11 +47,12 @@ Author: Shinji KOBAYASHI
 |1.3|mmlVs:observedTime| |dateTime| |
 |1.4|mmlVs:protocol| | |?|
 |1.4.1|mmlVs:procedure| |string|?|
-|1.4.2|mmlVs:device 		string 	?
-1.4.3 	mmlVs:position 		string 	? 	mmlVs03
-1.4.4 	mmlVs:bodyLocation 		string 	?
-1.4.5 	mmlVs:protMemo 		string 	?
-1.5 	mmlVs:vsMemo 		string 	?
+|1.4.2|mmlVs:device| |string|?|
+|1.4.3|mmlVs:position| |string|?|mmlVs03
+|1.4.4|mmlVs:bodyLocation| |string|?|
+|1.4.5|mmlVs:protMemo| |string|?|
+|1.5|mmlVs:vsMemo| |string|?|
+|===
 
 Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 エレメント解説
