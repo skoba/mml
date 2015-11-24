@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.2">
+<meta name="generator" content="Asciidoctor 1.5.3">
 <meta name="author" content="toc::[]">
 <title>MML 4.0(Draft)</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 </head>
 <body class="book toc2 toc-right">
@@ -13069,6 +13069,17 @@ final 最終報告</p></td>
 <p>【内容】医師名を指定しない相手．<br>
 【省略】省略可</p>
 </div>
+<div class="paragraph">
+<p>Author: Shinji KOBAYASHI
+:Email: <a href="mailto:skoba@moss.gr.jp">skoba@moss.gr.jp</a>
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:</p>
+</div>
 </div>
 </div>
 </div>
@@ -13092,8 +13103,12 @@ final 最終報告</p></td>
 <pre>xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"</pre>
 </div>
 </div>
+<div class="literalblock">
+<div class="content">
+<pre>.エレメント一覧表</pre>
+</div>
+</div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 22. エレメント一覧表</caption>
 <colgroup>
 <col style="width: 16%;">
 <col style="width: 16%;">
@@ -13340,301 +13355,237 @@ final 最終報告</p></td>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性</p>
+<p>Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
+エレメント解説
+1.mmlVs:VitalSignModule</p>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_エレメント解説_22">10.13.2. エレメント解説</h4>
-<div class="sect4">
-<h5 id="_mmlvs_vitalsignmodule">mmlVs:VitalSignModule</h5>
 <div class="paragraph">
-<p>【内容】バイタルサイン記録モジュール</p>
+<p>【内容】バイタルサイン記録モジュール
+1.1 mmlVs:context</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_context">mmlVs:context</h5>
 <div class="paragraph">
-<p>【内容】バイタルサインヘッダ情報。<br>
-【省略】体温表モジュールなど、他のモジュールに組み込んで利用する場合には、重複するようであれば省略可能。</p>
+<p>【内容】バイタルサインヘッダ情報。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_facility">mmlVs:facility</h5>
 <div class="paragraph">
-<p>【内容】バイタルサインを計測して記録した施設<br>
-【省略】このVitalSignModuleを単独で使用する場合には省略不可、FlowSheetModuleなど他のモジュールと組み合わせて使用する場合には省略可。<br>
-【属性】</p>
+<p>【省略】体温表モジュールなど、他のモジュールに組み込んで利用する場合には、重複するようであれば省略可能。</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">属性名</th>
-<th class="tableblock halign-left valign-top">データ型</th>
-<th class="tableblock halign-left valign-top">省略</th>
-<th class="tableblock halign-left valign-top">使用テーブル</th>
-<th class="tableblock halign-left valign-top">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlVs:facilityCode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlVs:facilityCodeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MML0027</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">用いたコード体系の名称を記載</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_department">mmlVs:department</h5>
 <div class="paragraph">
-<p>【内容】バイタルサインを計測し、記録した部署・診療科<br>
-【属性】</p>
+<p>1.1.1 mmlVs:facility</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">属性名</th>
-<th class="tableblock halign-left valign-top">データ型</th>
-<th class="tableblock halign-left valign-top">省略</th>
-<th class="tableblock halign-left valign-top">使用テーブル</th>
-<th class="tableblock halign-left valign-top">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlVs:depCode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MML0028</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlVs:depCodeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MML0028と入力</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_ward">mmlVs:ward</h5>
 <div class="paragraph">
-<p>【内容】バイタルサインを計測し記録した病棟・場所<br>
-【属性】</p>
+<p>【内容】バイタルサインを計測して記録した施設</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">属性名</th>
-<th class="tableblock halign-left valign-top">データ型</th>
-<th class="tableblock halign-left valign-top">省略</th>
-<th class="tableblock halign-left valign-top">使用テーブル</th>
-<th class="tableblock halign-left valign-top">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlVs:wardCode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザ指定</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlVs:wardCodeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">用いたテーブル名を入力</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_observer">mmlVs:observer</h5>
 <div class="paragraph">
-<p>【内容】バイタルサインを計測した人<br>
-【属性】</p>
+<p>【省略】このVitalSignModuleを単独で使用する場合には省略不可、FlowSheetModuleなど他のモジュールと組み合わせて使用する場合には省略可。</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">属性名</th>
-<th class="tableblock halign-left valign-top">データ型</th>
-<th class="tableblock halign-left valign-top">省略</th>
-<th class="tableblock halign-left valign-top">使用テーブル</th>
-<th class="tableblock halign-left valign-top">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlVs:observerCode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザ指定</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlVs:observerCodeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">使用したコード体系を入力</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_item">mmlVs:item</h5>
 <div class="paragraph">
-<p>【内容】項目情報<br>
-【繰り返し設定】1回以上の繰り返しあり。項目が複数あればその数だけ繰り返す。</p>
+<p>【属性】
+属性名 	データ型 	省略 	使用テーブル 	説明
+mmlVs:facilityCode 	string 	#REQUIRED
+mmlVs:facilityCodeId 	string 	#REQUIRED 	MML0027 	用いたコード体系の名称を記載</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_itemname">mmlVs:itemName</h5>
 <div class="paragraph">
-<p>【内容】項目名<br>
-【データ型】string<br>
-【省略】不可<br>
-【使用テーブル】mmlVs01</p>
+<p>1.1.2 mmlVs:department</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_value">mmlVs:value</h5>
 <div class="paragraph">
-<p>【内容】文字列で表記されるバイタルサインの値<br>
-【データ型】string<br>
-【省略】可。1.2.3とどちらかが使用される。</p>
+<p>【内容】バイタルサインを計測し、記録した部署・診療科</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_numvalue">mmlVs:numValue</h5>
 <div class="paragraph">
-<p>【内容】数値で表記されるバイタルサインの値<br>
-【データ型】decimal<br>
-【省略】可。1.2.2とどちらかが使用される。</p>
+<p>【属性】
+属性名 	データ型 	省略 	使用テーブル 	説明
+mmlVs:depCode 	string 	#IMPLIED 	MML0028
+mmlVs:depCodeId 	string 	#IMPLIED 		MML0028と入力</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_unit">mmlVs:unit</h5>
 <div class="paragraph">
-<p>【内容】バイタルサインの単位<br>
-【データ型】string<br>
-【省略】可。<br>
-【使用テーブル】mmlVs02</p>
+<p>1.1.3 mmlVs:ward</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_itemmemo">mmlVs:itemMemo</h5>
 <div class="paragraph">
-<p>【内容】項目コメント<br>
-【データ型】string<br>
-【繰り返し設定】0回以上の繰り返しあり．項目コメントが複数あれば，数だけ繰り返す．</p>
+<p>【内容】バイタルサインを計測し記録した病棟・場所</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_observedtime">mmlVs:observedTime</h5>
 <div class="paragraph">
-<p>【内容】バイタルサインを観察した時間<br>
-【データ型】dateTime<br>
+<p>【属性】
+属性名 	データ型 	省略 	使用テーブル 	説明
+mmlVs:wardCode 	string 	#IMPLIED 	ユーザ指定
+mmlVs:wardCodeId 	string 	#IMPLIED 		用いたテーブル名を入力</p>
+</div>
+<div class="paragraph">
+<p>1.1.4 mmlVs:observer</p>
+</div>
+<div class="paragraph">
+<p>【内容】バイタルサインを計測した人</p>
+</div>
+<div class="paragraph">
+<p>【属性】
+属性名 	データ型 	省略 	使用テーブル 	説明
+mmlVs:observerCode 	string 	#IMPLIED 	ユーザ指定
+mmlVs:observerCodeId 	string 	#IMPLIED 		使用したコード体系を入力</p>
+</div>
+<div class="paragraph">
+<p>1.1.5 mmlPi:PatientModule</p>
+</div>
+<div class="paragraph">
+<p>【内容】患者情報、氏名、生年月日、住所、電話番号などの患者情報。MML患者情報モジュールを利用する。
 【省略】不可</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_protocol">mmlVs:protocol</h5>
 <div class="paragraph">
-<p>【内容】バイタルサインの測定方法を記載する親エレメント<br>
-【繰り返し設定】繰り返しなし．省略可能</p>
+<p>1.2. mmlVs:item</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_procedure">mmlVs:procedure</h5>
 <div class="paragraph">
-<p>【内容】バイタルサインを測定した手順。測定方法や、負荷テストの種別など<br>
-【データ型】string<br>
-【省略】省略可能</p>
+<p>【内容】項目情報</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_device">mmlVs:device</h5>
 <div class="paragraph">
-<p>【内容】バイタルサインの測定に使用した機材、デバイス。聴診器、水銀柱血圧計、機械式血圧計、動脈内プローベなど。<br>
-【データ型】string<br>
-【省略】省略可能</p>
+<p>【繰り返し設定】1回以上の繰り返しあり。項目が複数あればその数だけ繰り返す。
+1.2.1 mmlVs:itemName</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_bodylocation">mmlVs:bodyLocation</h5>
 <div class="paragraph">
-<p>【内容】バイタルサインを測定した身体の部位。右上腕、左下腿など。<br>
-【省略】string<br>
-【省略】省略可能</p>
+<p>【内容】項目名</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_position">mmlVs:position</h5>
 <div class="paragraph">
-<p>【内容】バイタルサインを測定した時の体位。<br>
-【データ型】string<br>
-【省略】省略可能<br>
-【使用テーブル】mmlVs03</p>
+<p>【データ型】string</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_protmemo">mmlVs:protMemo</h5>
 <div class="paragraph">
-<p>【内容】バイタルサイン測定方法に関するコメント<br>
-【データ型】string<br>
-【省略】省略可能</p>
+<p>【省略】不可</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_mmlvs_vsmemo">mmlVs:vsMemo</h5>
 <div class="paragraph">
-<p>【内容】バイタルサイン記録コメント<br>
-【データ型】string<br>
-【省略】省略可能<br></p>
+<p>【使用テーブル】mmlVs01
+1.2.2 mmlVs:value</p>
+</div>
+<div class="paragraph">
+<p>【内容】文字列で表記されるバイタルサインの値</p>
+</div>
+<div class="paragraph">
+<p>【データ型】string</p>
+</div>
+<div class="paragraph">
+<p>【省略】可。1.2.3とどちらかが使用される。
+1.2.3 mmlVs:numValue</p>
+</div>
+<div class="paragraph">
+<p>【内容】数値で表記されるバイタルサインの値</p>
+</div>
+<div class="paragraph">
+<p>【データ型】decimal</p>
+</div>
+<div class="paragraph">
+<p>【省略】可。1.2.2とどちらかが使用される。
+1.2.4 mmlVs:unit</p>
+</div>
+<div class="paragraph">
+<p>【内容】バイタルサインの単位</p>
+</div>
+<div class="paragraph">
+<p>【データ型】string</p>
+</div>
+<div class="paragraph">
+<p>【省略】可。</p>
+</div>
+<div class="paragraph">
+<p>【使用テーブル】mmlVs02
+1.2.5 mmlVs:itemMemo</p>
+</div>
+<div class="paragraph">
+<p>【内容】項目コメント</p>
+</div>
+<div class="paragraph">
+<p>【データ型】string</p>
+</div>
+<div class="paragraph">
+<p>【繰り返し設定】0回以上の繰り返しあり．項目コメントが複数あれば，数だけ繰り返す．
+1.3 mmlVs:observedTime</p>
+</div>
+<div class="paragraph">
+<p>【内容】バイタルサインを観察した時間</p>
+</div>
+<div class="paragraph">
+<p>【データ型】dateTime</p>
+</div>
+<div class="paragraph">
+<p>【省略】不可
+1.4 mmlVs:protocol</p>
+</div>
+<div class="paragraph">
+<p>【内容】バイタルサインの測定方法を記載する親エレメント</p>
+</div>
+<div class="paragraph">
+<p>【繰り返し設定】繰り返しなし．省略可能
+1.4.1 mmlVs:procedure</p>
+</div>
+<div class="paragraph">
+<p>【内容】バイタルサインを測定した手順。測定方法や、負荷テストの種別など</p>
+</div>
+<div class="paragraph">
+<p>【データ型】string</p>
+</div>
+<div class="paragraph">
+<p>【省略】省略可能
+1.4.2 mmlVs:device</p>
+</div>
+<div class="paragraph">
+<p>【内容】バイタルサインの測定に使用した機材、デバイス。聴診器、水銀柱血圧計、機械式血圧計、動脈内プローベなど。</p>
+</div>
+<div class="paragraph">
+<p>【データ型】string</p>
+</div>
+<div class="paragraph">
+<p>【省略】省略可能
+1.4.3 mmlVs:bodyLocation</p>
+</div>
+<div class="paragraph">
+<p>【内容】バイタルサインを測定した身体の部位。右上腕、左下腿など。</p>
+</div>
+<div class="paragraph">
+<p>【省略】string</p>
+</div>
+<div class="paragraph">
+<p>【省略】省略可能
+1.4.4 mmlVs:position</p>
+</div>
+<div class="paragraph">
+<p>【内容】バイタルサインを測定した時の体位。</p>
+</div>
+<div class="paragraph">
+<p>【データ型】string</p>
+</div>
+<div class="paragraph">
+<p>【省略】省略可能</p>
+</div>
+<div class="paragraph">
+<p>【使用テーブル】mmlVs03
+1.4.5 mmlVs:protMemo</p>
+</div>
+<div class="paragraph">
+<p>【内容】バイタルサイン測定方法に関するコメント</p>
+</div>
+<div class="paragraph">
+<p>【データ型】string</p>
+</div>
+<div class="paragraph">
+<p>【省略】省略可能
+1.5 mmlVs:vsMemo</p>
+</div>
+<div class="paragraph">
+<p>【内容】バイタルサイン記録コメント</p>
+</div>
+<div class="paragraph">
+<p>【データ型】string</p>
+</div>
+<div class="paragraph">
+<p>【省略】省略可能
+フローシートモジュールのサンプルインスタンス
+Contents</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Contents
+概要
+バイタルサインモジュール
+体温表モジュール
+テーブル
+処方箋モジュール
+処方箋サンプル
+注射モジュール
+注射サンプル</pre>
+</div>
 </div>
 </div>
 </div>
@@ -13693,7 +13644,7 @@ final 最終報告</p></td>
 <p>体温表モジュールでは、多職種にわたる複数の人間が観察した情報が一つの報告書に記載されることがある。最終的な記載者あるいは代表者が作成者情報として記録される。</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 23. エレメント一覧表</caption>
+<caption class="title">Table 22. エレメント一覧表</caption>
 <colgroup>
 <col style="width: 16%;">
 <col style="width: 16%;">
@@ -14022,7 +13973,7 @@ final 最終報告</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlFs:fsMemo</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -14033,7 +13984,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_エレメント解説_23">10.14.4. エレメント解説</h4>
+<h4 id="_エレメント解説_22">10.14.4. エレメント解説</h4>
 <div class="sect4">
 <h5 id="_mmlfs_flowsheetmodule">mmlFs:FlowSheetModule</h5>
 <div class="paragraph">
@@ -14215,7 +14166,7 @@ final 最終報告</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_vitalsignmodule_2">mmlVs:VitalSignModule</h5>
+<h5 id="_mmlvs_vitalsignmodule">mmlVs:VitalSignModule</h5>
 <div class="paragraph">
 <p>【内容】バイタルサイン情報<br>
 【繰り返し設定】繰り返しあり。測定された一連のバイタルサインの数だけ繰り返す。(例：ラウンド時に計測された収縮期血圧、拡張期血圧、脈拍、体温、SpO2）</p>
@@ -14383,7 +14334,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bofstart">mmlFs:bofStart</h5>
+<h5 id="_mmlfs_bofperiodstarttime">mmlFs:bofPeriodStartTime</h5>
 <div class="paragraph">
 <p>【内容】観察を開始した時間。<br>
 【省略】省略可<br>
@@ -14391,7 +14342,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bofend">mmlFs:bofEnd</h5>
+<h5 id="_mmlfs_bofperiodendtime">mmlFs:bofPeriodEndTime</h5>
 <div class="paragraph">
 <p>【内容】観察を終了した時間。<br>
 【省略】省略可<br>
@@ -14410,7 +14361,7 @@ final 最終報告</p></td>
 <h5 id="_mmlfs_fsmemo">mmlFs:fsMemo</h5>
 <div class="paragraph">
 <p>【内容】体温表コメント、メモ。その他の体温表に記載する内容。<br>
-【繰り返し】0回以上の繰り返しあり、コメントがあれば、その数だけ繰り返す<br>
+【繰り返し】省略可<br>
 【データ型】string</p>
 </div>
 </div>
@@ -14443,7 +14394,7 @@ final 最終報告</p></td>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre> xmlns:mmlPs="http://www.medxml.net/MML/ContentModule/Prescription/1.0"
+<pre> xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
 文書ヘッダー情報 (docInfo) のモジュール個別仕様</pre>
 </div>
 </div>
@@ -14470,7 +14421,7 @@ confirmDate
 <p>処方箋モジュールでは発行した医師が作成者情報として記録される。</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 24. エレメント一覧表</caption>
+<caption class="title">Table 23. エレメント一覧表</caption>
 <colgroup>
 <col style="width: 16%;">
 <col style="width: 16%;">
@@ -14499,7 +14450,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPs:issuedTo</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -14535,7 +14486,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPs:code</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -14564,7 +14515,7 @@ confirmDate
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmPs:frequencyPerDay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPs:frequencyPerDay</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -14572,7 +14523,7 @@ confirmDate
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmPs:startDate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPs:startDate</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
@@ -14580,7 +14531,7 @@ confirmDate
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.2.6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmPs:duration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPs:duration</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
@@ -14674,7 +14625,7 @@ confirmDate
 </div>
 </div>
 <div class="sect3">
-<h4 id="_エレメント解説_24">10.15.3. エレメント解説</h4>
+<h4 id="_エレメント解説_23">10.15.3. エレメント解説</h4>
 <div class="sect4">
 <h5 id="_mmlps_prescriptionmodule_3">mmlPs:PrescriptionModule</h5>
 <div class="paragraph">
@@ -14761,7 +14712,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmps_frequencyperday">mmPs:frequencyPerDay</h5>
+<h5 id="_mmlps_frequencyperday">mmlPs:frequencyPerDay</h5>
 <div class="paragraph">
 <p>【内容】一日の内服回数<br>
 【省略】可<br>
@@ -14770,7 +14721,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmps_startdate">mmPs:startDate</h5>
+<h5 id="_mmlps_startdate">mmlPs:startDate</h5>
 <div class="paragraph">
 <p>【内容】服薬開始日<br>
 【省略】可<br>
@@ -14779,7 +14730,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmps_duration">mmPs:duration</h5>
+<h5 id="_mmlps_duration">mmlPs:duration</h5>
 <div class="paragraph">
 <p>【内容】服薬期間（日数）<br>
 【省略】可<br>
@@ -14788,7 +14739,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmps_instruction">mmPs:instruction</h5>
+<h5 id="_mmlps_instruction">mmlPs:instruction</h5>
 <div class="paragraph">
 <p>【内容】用法指示<br>
 【省略】可<br>
@@ -14900,7 +14851,7 @@ confirmDate
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>xmlns:mmlPs="http://www.medxml.net/MML/ContentModule/Injection/1.0"</pre>
+<pre>xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"</pre>
 </div>
 </div>
 </div>
@@ -14933,7 +14884,7 @@ confirmDate
 <p>実際に注射を実施するのは，看護師を含めた医療従事者であるが，このモジュールでは注射に関わったスタッフを代表して処方箋を記載した医師が作成者情報として記録される。</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 25. エレメント一覧表</caption>
+<caption class="title">Table 24. エレメント一覧表</caption>
 <colgroup>
 <col style="width: 16%;">
 <col style="width: 16%;">
@@ -14990,7 +14941,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlInj:code</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -15019,7 +14970,7 @@ confirmDate
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmInj:startDateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlInj:startDateTime</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
@@ -15027,7 +14978,7 @@ confirmDate
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmInj:endDateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlInj:endDateTime</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
@@ -15105,7 +15056,7 @@ confirmDate
 </div>
 </div>
 <div class="sect3">
-<h4 id="_エレメント解説_25">10.16.4. エレメント解説</h4>
+<h4 id="_エレメント解説_24">10.16.4. エレメント解説</h4>
 <div class="sect4">
 <h5 id="_mmlinj_injectionmodule_2">mmlInj:InjectionModule</h5>
 <div class="paragraph">
@@ -15187,7 +15138,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mminj_startdatetime">mmInj:startDateTime</h5>
+<h5 id="_mmlinj_startdatetime">mmlInj:startDateTime</h5>
 <div class="paragraph">
 <p>【内容】投与開始日時
 【省略】可<br>
@@ -15196,7 +15147,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mminj_enddatetime">mmInj:endDateTime</h5>
+<h5 id="_mmlinj_enddatetime">mmlInj:endDateTime</h5>
 <div class="paragraph">
 <p>【内容】投与修了日時<br>
 【省略】可<br>
@@ -15205,7 +15156,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mminj_instruction">mmInj:instruction</h5>
+<h5 id="_mmlinj_instruction">mmlInj:instruction</h5>
 <div class="paragraph">
 <p>【内容】用法指示<br>
 【省略】可<br>
@@ -15283,7 +15234,7 @@ confirmDate
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-09-26 15:00:48 JST
+Last updated 2015-11-04 23:16:22 JST
 </div>
 </div>
 </body>
