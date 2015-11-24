@@ -55,7 +55,7 @@
         <xs:element ref="mmlVs:value" minOccurs="0"/>
         <xs:element ref="mmlVs:numValue" minOccurs="0"/>
         <xs:element ref="mmlVs:unit" minOccurs="1" maxOccurs="1"/>
-        <xs:element ref="mmlVs:itemMemo" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlVs:itemMemo" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
