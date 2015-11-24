@@ -76,7 +76,7 @@
         <xs:element name="boPathway" type="xs:string"/>
         <xs:element name="boStartTime" type="xs:dateTime"/>
         <xs:element name="boEndTime" type="xs:dateTime"/>
-        <xs:element ref="mmlFs:boFrequency" minOccurs="0"/>
+        <xs:element ref="mmlFs:boFrequency" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="boMemo" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
