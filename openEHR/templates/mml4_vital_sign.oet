@@ -69,23 +69,179 @@
         <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0.27]" max="0" />
         <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at1022.1]" max="0" />
         <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at1023.1]" max="0" />
+        <Rule path="/data[at0002]/events[at0003]/state[at0012]/items[at0013.1]" max="0" />
+        <Rule path="/data[at0002]/events[at0003]/state[at0012]/items[at1018.1]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.device.v1" concept_name="Medical Device" path="/protocol[at0010]/items[at1013]">
+          <Rule path="/items[at0003]" max="0" />
+          <Rule path="/items[at0002]" max="0" />
+          <Rule path="/items[at0021]" max="0" />
+          <Rule path="/items[at0004]" max="0" />
+          <Rule path="/items[at0005]" max="0" />
+          <Rule path="/items[at0020]" max="0" />
+          <Rule path="/items[at0022]" max="0" />
+          <Rule path="/items[at0023]" max="0" />
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0025]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0024]" max="0" />
+        </Items>
       </Item>
       <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.body_temperature.v1" concept_name="Body temperature" path="/items[at0001]">
         <Rule path="/data[at0002]/events[at0003]/state[at0029]/items[at0030]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.device.v1" concept_name="Medical Device" path="/protocol[at0020]/items[at0059]">
+          <Rule path="/items[at0003]" max="0" />
+          <Rule path="/items[at0002]" max="0" />
+          <Rule path="/items[at0021]" max="0" />
+          <Rule path="/items[at0004]" max="0" />
+          <Rule path="/items[at0005]" max="0" />
+          <Rule path="/items[at0020]" max="0" />
+          <Rule path="/items[at0022]" max="0" />
+          <Rule path="/items[at0023]" max="0" />
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0025]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0024]" max="0" />
+        </Items>
       </Item>
-      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.blood_pressure.v1" concept_name="血圧" path="/items[at0001]" />
-      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.indirect_oximetry.v1" concept_name="Indirect Oximetry" path="/items[at0001]" />
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.blood_pressure.v1" concept_name="血圧" path="/items[at0001]">
+        <Rule path="/protocol[at0011]/items[at1033]/items[at1034]" max="0" />
+        <Rule path="/protocol[at0011]/items[at1038]" max="0" />
+        <Rule path="/protocol[at0011]/items[at1010]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.device.v1" concept_name="Medical Device" path="/protocol[at0011]/items[at1025]" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.indirect_oximetry.v1" concept_name="Indirect Oximetry" path="/items[at0001]">
+        <Rule path="/protocol[at0007]/items[at0020]">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Text</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/protocol[at0007]/items[at0037]" max="0" />
+        <Rule path="/protocol[at0007]/items[at0038]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.device.v1" concept_name="Medical Device" path="/protocol[at0007]/items[at0018]">
+          <Rule path="/items[at0003]" max="0" />
+          <Rule path="/items[at0002]" max="0" />
+          <Rule path="/items[at0021]" max="0" />
+          <Rule path="/items[at0004]" max="0" />
+          <Rule path="/items[at0005]" max="0" />
+          <Rule path="/items[at0020]" max="0" />
+          <Rule path="/items[at0022]" max="0" />
+          <Rule path="/items[at0023]" max="0" />
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0025]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0024]" max="0" />
+        </Items>
+      </Item>
       <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.lab_test-blood_gases.v1" concept_name="Blood gas assessment" path="/items[at0001]">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0073]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078.10]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078.9]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078.8]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078.6]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078.5]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078.4]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078.3]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078.2]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0010]" max="0" />
+        <Rule path="/protocol[at0004]/items[at0062]" max="0" />
+        <Rule path="/protocol[at0004]/items[at0063]" max="0" />
+        <Rule path="/protocol[at0004]/items[at0068]" max="0" />
+        <Rule path="/protocol[at0004]/items[at0075]" max="0" />
       </Item>
-      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.lab_test-blood_glucose.v1" concept_name="Blood glucose" path="/items[at0001]" />
-      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.body_weight.v1" concept_name="体重" path="/items[at0001]" />
-      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.height.v1" concept_name="Height/Length" path="/items[at0001]" />
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.height.v1" concept_name="Height/Length" path="/items[at0001]">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.device.v1" concept_name="Medical Device" path="/protocol[at0007]/items[at0011]">
+          <Rule path="/items[at0002]" max="0" />
+          <Rule path="/items[at0021]" max="0" />
+          <Rule path="/items[at0004]" max="0" />
+          <Rule path="/items[at0020]" max="0" />
+          <Rule path="/items[at0022]" max="0" />
+          <Rule path="/items[at0023]" max="0" />
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0025]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0024]" max="0" />
+        </Items>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.body_weight.v1" concept_name="体重" path="/items[at0001]">
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.device.v1" concept_name="Medical Device" path="/protocol[at0015]/items[at0020]">
+          <Rule path="/items[at0002]" max="0" />
+          <Rule path="/items[at0021]" max="0" />
+          <Rule path="/items[at0004]" max="0" />
+          <Rule path="/items[at0005]" max="0" />
+          <Rule path="/items[at0020]" max="0" />
+          <Rule path="/items[at0022]" max="0" />
+          <Rule path="/items[at0023]" max="0" />
+          <Rule path="/items[at0006]" max="0" />
+          <Rule path="/items[at0025]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0024]" max="0" />
+        </Items>
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.lab_test-blood_glucose.v1" concept_name="Blood glucose" path="/items[at0001]">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0073]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0010]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0.89]/items[at0.90]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0.89]/items[at0.98]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0.89]/items[at0.107]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0.89]/items[at0.108]" max="0" />
+        <Rule path="/protocol[at0004]/items[at0013]" max="0" />
+        <Rule path="/protocol[at0004]/items[at0075]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v1" concept_name="Specimen" path="/data[at0001]/events[at0002]/data[at0003]/items[at0065]">
+          <Rule path="/items[at0029]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0073]" max="0" />
+          <Rule path="/items[at0050]" max="0" />
+          <Rule path="/items[at0046]" max="0" />
+          <Rule path="/items[at0039]" max="0" />
+          <Rule path="/items[at0002]" max="0" />
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location.v1" concept_name="Anatomical location" path="/items[at0013]">
+            <Rule path="/items[at0066]" max="0" />
+            <Rule path="/items[at0002]" max="0" />
+            <Rule path="/items[at0064]" max="0" />
+            <Rule path="/items[at0065]" max="0" />
+            <Rule path="/items[at0055]" max="0" />
+            <Rule path="/items[at0023]" max="0" />
+          </Items>
+        </Items>
+      </Item>
       <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.respiration.v1" concept_name="Respirations" path="/items[at0001]">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0016]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0009]" max="0" />
-        <Rule path="/data[at0001]/events[at0002]/state[at0022]/items[at0056]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0022]/items[at0056]" max="1" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.lab_test.v1" concept_name="Laboratory test" path="/items[at0001]">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0078]">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Text</includedTypes>
+            <includedTypes>Quantity</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0010]" max="0" />
+        <Rule path="/protocol[at0004]/items[at0062]" max="0" />
+        <Rule path="/protocol[at0004]/items[at0063]" max="0" />
+        <Rule path="/protocol[at0004]/items[at0068]" max="0" />
+        <Rule path="/protocol[at0004]/items[at0075]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v1" concept_name="Specimen" path="/data[at0001]/events[at0002]/data[at0003]/items[at0065]">
+          <Rule path="/items[at0029]" max="0" />
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0073]" max="0" />
+          <Rule path="/items[at0050]" max="0" />
+          <Rule path="/items[at0046]" max="0" />
+          <Rule path="/items[at0039]" max="0" />
+          <Rule path="/items[at0002]" max="0" />
+          <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.anatomical_location.v1" concept_name="Anatomical location" path="/items[at0013]">
+            <Rule path="/items[at0066]" max="0" />
+            <Rule path="/items[at0002]" max="0" />
+            <Rule path="/items[at0064]" max="0" />
+            <Rule path="/items[at0065]" max="0" />
+            <Rule path="/items[at0055]" max="0" />
+          </Items>
+        </Items>
       </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" path="/items[at0002]" />
     </Content>
