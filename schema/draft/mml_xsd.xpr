@@ -6,7 +6,6 @@
     </meta>
     <projectTree name="mml_xsd.xpr">
         <folder name="sample">
-            <file name="sample/flowsheet_instance.xml"/>
             <file name="sample/mml4_sample1.xml"/>
             <file name="sample/mmlad_structured_sample.xml"/>
             <file name="sample/mmlad_unstructured_sample.xml"/>
@@ -50,6 +49,7 @@
         <file name="hemx.xsd"/>
         <file name="injection.xsd"/>
         <file name="lifestyle.xsd"/>
+        <file name="mml_datatypes_and_header_3.0.dtd"/>
         <file name="mml_xsd.xpr"/>
         <file name="mml.xsd"/>
         <file name="name.xsd"/>

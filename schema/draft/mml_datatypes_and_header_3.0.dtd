@@ -1,0 +1,1323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!--***************************************************-->
+
+<!-- Basic data types -->
+
+<!--***************************************************-->
+
+ 
+
+<!-- xs:boolean -->
+
+<!ENTITY % xs.boolean "(true | false)">
+
+ 
+
+<!-- xs:integer -->
+
+<!ENTITY % xs.integer "CDATA">
+
+ 
+
+<!-- xs:positiveInteger -->
+
+<!ENTITY % xs.positiveInteger "CDATA">
+
+ 
+
+<!-- xs:anyURI -->
+
+<!ENTITY % xs.anyURI "CDATA">
+
+ 
+
+<!-- xs:date -->
+
+<!ENTITY % xs.date "CDATA">
+
+ 
+
+<!-- xs:dateTime -->
+
+<!ENTITY % xs.dateTime "CDATA">
+
+ 
+
+<!--***************************************************-->
+
+<!-- MML data types -->
+
+<!--***************************************************-->
+
+ 
+
+<!-- MML0001 -->
+
+<!ENTITY % mmlDt.MML0001 "(M10 | M11 )">
+
+ 
+
+<!-- MML0002 -->
+
+<!ENTITY % mmlDt.MML0002 "(
+
+current |
+
+permanent |
+
+mailing |
+
+business |
+
+office |
+
+home |
+
+birth |
+
+county)"
+
+>
+
+ 
+
+<!-- MML0003 -->
+
+<!ENTITY % mmlDt.MML0003 "(
+
+PH |
+
+FX |
+
+MD |
+
+CP |
+
+BP |
+
+Internet |
+
+X.400)"
+
+>
+
+ 
+
+<!-- MML0004 -->
+
+<!ENTITY % mmlDt.MML0004 "(
+
+firstEncounter |
+
+laboratory |
+
+prescription |
+
+summary |
+
+random |
+
+nonExtracted |
+
+other)"
+
+>
+
+ 
+
+<!-- MML0005 -->
+
+<!ENTITY % mmlDt.MML0005 "(
+
+patientInfo |
+
+healthInsurance |
+
+registeredDiagnosis |
+
+lifestyle |
+
+baseClinic |
+
+firstClinic |
+
+progressCourse |
+
+surgery |
+
+summary |
+
+referral |
+
+test |
+
+report |
+
+claim |
+
+claimAmount)"
+
+>
+
+ 
+
+<!-- MML0007 -->
+
+<!ENTITY % mmlDt.MML0007 "(
+
+record |
+
+recordAdmission |
+
+recordInpatient |
+
+recordConsult |
+
+recordDischarge |
+
+recordOutpatient |
+
+legalRecord |
+
+consult |
+
+report |
+
+reportRadiology |
+
+reportPathology |
+
+reportTest |
+
+summary |
+
+summaryAdmission |
+
+summaryPreoperation |
+
+summaryPostoperation |
+
+summaryMid |
+
+summaryDischarge |
+
+summaryOutpatient |
+
+disclosure |
+
+informedConsent |
+
+study |
+
+other |
+
+claim)"
+
+>
+
+ 
+
+<!-- MML0008 -->
+
+<!ENTITY % mmlDt.MML0008 "(
+
+origin |
+
+oldEdition |
+
+order |
+
+consult |
+
+originalDiagnosis |
+
+diagnosis |
+
+surgery |
+
+patient |
+
+healthInsurance |
+
+detail |
+
+simpleLink)"
+
+>
+
+ 
+
+<!-- MML0009 -->
+
+<!ENTITY % mmlDt.MML0009 "(
+
+temporaryPatientId |
+
+otherPatientId |
+
+spouseId |
+
+motherId |
+
+fatherId |
+
+childId |
+
+relativeId |
+
+roommateId |
+
+friendId |
+
+representativeId |
+
+emergencyContactId |
+
+coWorkerId)"
+
+>
+
+ 
+
+<!-- MML0016 -->
+
+<!ENTITY % mmlDt.MML0016 "(
+
+died |
+
+worsening |
+
+unchanged |
+
+recovering |
+
+fullyRecovered |
+
+sequelae |
+
+end |
+
+pause |
+
+continued |
+
+transfer |
+
+transferAcute |
+
+transferChronic |
+
+home |
+
+unknown)"
+
+>
+
+ 
+
+<!-- MML0021 -->
+
+<!ENTITY % mmlDt.MML0021 "(elective | emergent)">
+
+ 
+
+<!-- MML0027 -->
+
+<!ENTITY % mmlDt.MML0027 "(
+
+ca |
+
+insurance |
+
+monbusho |
+
+JMARI)"
+
+>
+
+ 
+
+<!-- MML0032 -->
+
+<!ENTITY % mmlDt.MML0032 "(fix | ratio)">
+
+ 
+
+<!-- MML0033 -->
+
+<!ENTITY % mmlDt.MML0033 "(
+
+laboratoryTest |
+
+endoScopy |
+
+xRay |
+
+upperGi |
+
+baEnema |
+
+ctScan |
+
+mri |
+
+riInVivo |
+
+angioGraphy |
+
+otherRadiology |
+
+echo |
+
+ecg |
+
+eeg |
+
+emg |
+
+pcg |
+
+pulmonaryFunction |
+
+otherPhysiologicalTest |
+
+prescription |
+
+vitalSign |
+
+physicalExam |
+
+anesthesiaCourse |
+
+pathology |
+
+surgicalFigure |
+
+referencePaper |
+
+referenceFigure |
+
+treatment |
+
+other)"
+
+>
+
+ 
+
+<!-- MML0034 -->
+
+<!ENTITY % mmlDt.MML0034 "(
+
+none |
+
+read |
+
+write |
+
+delete |
+
+all)"
+
+>
+
+ 
+
+<!-- Claim001 -->
+
+<!ENTITY % mmlDt.Claim001 "(0 | 1 | 2 | 3)">
+
+ 
+
+<!-- Claim008 -->
+
+<!ENTITY % mmlDt.Claim008 "(
+
+appoint |
+
+regist |
+
+perform |
+
+account)"
+
+>
+
+ 
+
+<!-- mmlLb0002 -->
+
+<!ENTITY % mmlDt.mmlLb0002 "(H | N | L | A)">
+
+ 
+
+<!-- JLAC10 -->
+
+<!ENTITY % mmlDt.JLAC10 "CDATA">
+
+ 
+
+<!-- ISO 3166 A3 -->
+
+<!ENTITY % mmlDt.ISO3166A3 "(
+
+ISL | IRL | AZE | AFG | USA | ASM | ARE | DZA | ARG | ABW |
+
+ALB | ARM | AIA | AGO | ATG | AND | YEM | GBR | IOT | ISR |
+
+ITA | IRQ | IRN | IND | IDN | UGA | UKR | UZB | URY | ECU |
+
+EGY | EST | ETH | ERI | SLV | AUS | AUT | OMN | NLD | ANT |
+
+GHA | CPV | GUY | KAZ | QAT | CAN | GAB | CMR | KOR | GMB |
+
+KHM | PRK | MNP | GIN | GNB | CYP | CUB | GRC | KIR | KGZ |
+
+GTM | GLP | GUM | KWT | COK | GRL | CXR | GEO | GRD | HRV |
+
+CYM | KEN | CIV | CCK | CRI | COM | COL | COG | ZAR | SAU |
+
+SGS | STP | ZMB | SPM | SMR | SLE | DJI | GIB | JAM | SYR |
+
+SGP | ZWE | CHE | SWE | SDN | SJM | ESP | SUR | LKA | SVK |
+
+SVN | SWZ | SYC | GNQ | SEN | KNA | VCT | SHN | LCA | SOM |
+
+SLB | TCA | THA | TWN | TJK | TZA | CZE | TCD | CAF | CHN |
+
+TUN | CHL | TUV | DNK | DEU | TGO | TKL | DMA | DOM | TTO |
+
+TKM | TUR | TON | NGA | NRU | NAM | ATA | NIU | NIC | NER |
+
+ESH | WSM | JPN | NCL | NZL | NPL | NFK | NOR | VGB | VIR |
+
+HMD | BMU | HTI | PAK | VAT | PAN | VUT | BHS | BHR | PNG |
+
+PLW | PRY | BRB | HUN | BGD | PCN | TMP | FJI | PHL | FIN |
+
+BTN | BVT | PRI | FRO | FLK | BRA | FRA | FXX | GUF | PYF |
+
+BGR | BFA | BRN | BDI | VNM | BEN | VEN | BLR | BLZ | PER |
+
+BEL | POL | BIH | BWA | BOL | PRT | HKG | HND | MHL | MAC |
+
+MKD | MDG | MYT | MWI | MLI | MLT | MTQ | MYS | FSM | ZAF |
+
+MMR | MEX | MUS | MRT | MOZ | MCO | MDV | MDA | MAR | MNG |
+
+MSR | YUG | JOR | LAO | LVA | LTU | LBY | LIE | LBR | ROM |
+
+LUX | RWA | LSO | LBN | REU | RUS | WLF | ATF | UMI )"
+
+>
+
+ 
+
+<!-- date/dateTime -->
+
+<!ENTITY % mmlDt.date-dateTime "CDATA">
+
+ 
+
+<!--***************************************************-->
+
+<!-- MMLcommon formats -->
+
+<!--***************************************************-->
+
+ 
+
+ 
+
+<!--***************************************************-->
+
+<!-- Address expression format -->
+
+<!-- Address DTD Version 1.0 -->
+
+<!--***************************************************-->
+
+<!ELEMENT mmlAd:Address (
+
+(mmlAd:full? |
+
+(mmlAd:prefecture?, mmlAd:city?, mmlAd:town?, mmlAd:homeNumber?)),
+
+mmlAd:zip?,
+
+mmlAd:countryCode?)
+
+>
+
+<!ATTLIST mmlAd:Address
+
+mmlAd:repCode (A | I | P ) #REQUIRED
+
+mmlAd:addressClass %mmlDt.MML0002; #IMPLIED
+
+mmlAd:tableId CDATA "MML0025"
+
+>
+
+<!ELEMENT mmlAd:countryCode (#PCDATA)>
+
+<!ELEMENT mmlAd:zip (#PCDATA)>
+
+<!ELEMENT mmlAd:homeNumber (#PCDATA)>
+
+<!ELEMENT mmlAd:town (#PCDATA)>
+
+<!ELEMENT mmlAd:city (#PCDATA)>
+
+<!ELEMENT mmlAd:prefecture (#PCDATA)>
+
+<!ELEMENT mmlAd:full (#PCDATA)>
+
+ 
+
+<!--***************************************************-->
+
+<!-- Telephone number format -->
+
+<!-- Phone DTD Version 1.0 -->
+
+<!--***************************************************-->
+
+<!ELEMENT mmlPh:Phone (
+
+(mmlPh:full? |
+
+(mmlPh:area?, mmlPh:city?, mmlPh:number?, mmlPh:extension?)),
+
+mmlPh:country?,
+
+mmlPh:memo? )
+
+>
+
+<!ATTLIST mmlPh:Phone
+
+mmlPh:telEquipType %mmlDt.MML0003; #IMPLIED
+
+>
+
+<!ELEMENT mmlPh:memo (#PCDATA)>
+
+<!ELEMENT mmlPh:country (#PCDATA)>
+
+<!ELEMENT mmlPh:extension (#PCDATA)>
+
+<!ELEMENT mmlPh:number (#PCDATA)>
+
+<!ELEMENT mmlPh:city (#PCDATA)>
+
+<!ELEMENT mmlPh:area (#PCDATA)>
+
+<!ELEMENT mmlPh:full (#PCDATA)>
+
+ 
+
+<!--***************************************************-->
+
+<!-- ID format, external reference format, and E-mail -->
+
+<!-- MML Common DTD Version 1.0 -->
+
+<!--***************************************************-->
+
+<!ELEMENT mmlCm:Id (#PCDATA)>
+
+<!ATTLIST mmlCm:Id
+
+mmlCm:type CDATA #REQUIRED
+
+mmlCm:checkDigitSchema %mmlDt.MML0001; #IMPLIED
+
+mmlCm:checkDigit %xs.integer; #IMPLIED
+
+mmlCm:tableId CDATA #REQUIRED
+
+>
+
+<!ELEMENT mmlCm:extRef EMPTY>
+
+<!ATTLIST mmlCm:extRef
+
+mmlCm:contentType CDATA #IMPLIED
+
+mmlCm:medicalRole %mmlDt.MML0033; #IMPLIED
+
+mmlCm:title CDATA #IMPLIED
+
+mmlCm:href %xs.anyURI; #REQUIRED
+
+>
+
+<!ELEMENT mmlCm:email (#PCDATA)>
+
+ 
+
+<!--***************************************************-->
+
+<!-- Name expression format -->
+
+<!-- Name DTD Version 1.0 -->
+
+<!--***************************************************-->
+
+<!ELEMENT mmlNm:Name (
+
+((mmlNm:family, mmlNm:given, mmlNm:middle?) |
+
+mmlNm:fullname ),
+
+mmlNm:prefix?,
+
+mmlNm:degree?)
+
+>
+
+<!ATTLIST mmlNm:Name
+
+mmlNm:repCode (I | A | P) #REQUIRED
+
+mmlNm:tableId CDATA "MML0025"
+
+>
+
+<!ELEMENT mmlNm:degree (#PCDATA)>
+
+<!ELEMENT mmlNm:prefix (#PCDATA)>
+
+<!ELEMENT mmlNm:fullname (#PCDATA)>
+
+<!ELEMENT mmlNm:middle (#PCDATA)>
+
+<!ELEMENT mmlNm:given (#PCDATA)>
+
+<!ELEMENT mmlNm:family (#PCDATA)>
+
+ 
+
+<!--***************************************************-->
+
+<!-- Facility information format -->
+
+<!-- Facility DTD Version 1.0 -->
+
+<!--***************************************************-->
+
+<!ELEMENT mmlFc:Facility (mmlFc:name+, mmlCm:Id?)>
+
+<!ELEMENT mmlFc:name (#PCDATA)>
+
+<!ATTLIST mmlFc:name
+
+mmlFc:repCode (I | A | P) #REQUIRED
+
+mmlFc:tableId CDATA "MML0025"
+
+>
+
+ 
+
+<!--***************************************************-->
+
+<!-- Medical department information format -->
+
+<!-- Department DTD Version 1.0 -->
+
+<!--***************************************************-->
+
+<!ELEMENT mmlDp:Department (mmlDp:name+, mmlCm:Id?)>
+
+<!ELEMENT mmlDp:name (#PCDATA)>
+
+<!ATTLIST mmlDp:name
+
+mmlDp:repCode (I | A | P) #REQUIRED
+
+mmlDp:tableId CDATA "MML0025"
+
+>
+
+ 
+
+<!--***************************************************-->
+
+<!-- Personal information format -->
+
+<!-- PersonalizedInfo DTD Version 1.0 -->
+
+<!--***************************************************-->
+
+<!ELEMENT mmlPsi:PersonalizedInfo (
+
+mmlCm:Id,
+
+mmlPsi:personName,
+
+mmlFc:Facility?,
+
+mmlDp:Department?,
+
+mmlPsi:addresses?,
+
+mmlPsi:emailAddresses?,
+
+mmlPsi:phones?)
+
+>
+
+<!ELEMENT mmlPsi:phones (mmlPh:Phone+ )>
+
+<!ELEMENT mmlPsi:emailAddresses (mmlCm:email* )>
+
+<!ELEMENT mmlPsi:addresses (mmlAd:Address+ )>
+
+<!ELEMENT mmlPsi:personName (mmlNm:Name+ )>
+
+ 
+
+<!--***************************************************-->
+
+<!-- Creator information format -->
+
+<!-- CreatorInfo DTD Version 1.0 -->
+
+<!--***************************************************-->
+
+<!ELEMENT mmlCi:CreatorInfo (
+
+mmlPsi:PersonalizedInfo,
+
+mmlCi:creatorLicense+)
+
+>
+
+<!ELEMENT mmlCi:creatorLicense (#PCDATA)>
+
+<!ATTLIST mmlCi:creatorLicense
+
+mmlCi:tableId CDATA #IMPLIED
+
+>
+
+ 
+
+<!--***************************************************-->
+
+<!-- MmlHeader -->
+
+<!-- Mml Header DTD Version 1.0 -->
+
+<!--***************************************************-->
+
+ 
+
+<!ELEMENT mml:MmlHeader (
+
+mmlCi:CreatorInfo,
+
+mml:masterId,
+
+mml:toc,
+
+mml:scopePeriod?,
+
+mml:encryptInfo?)
+
+>
+
+ 
+
+<!--***************************************************-->
+
+<!-- MML docInfo module -->
+
+<!--***************************************************-->
+
+<!--***************************************************-->
+
+<!-- DOCINFO -->
+
+<!-- docInfo DTD Version 1.0 -->
+
+<!--***************************************************-->
+
+ 
+
+<!ELEMENT mml:docInfo (
+
+mml:securityLevel,
+
+mml:title,
+
+mml:docId,
+
+mml:confirmDate,
+
+mmlCi:CreatorInfo,
+
+mml:extRefs)
+
+>
+
+<!ATTLIST mml:docInfo
+
+contentModuleType %mmlDt.MML0005; #REQUIRED
+
+moduleVersion %xs.anyURI; #IMPLIED
+
+>
+
+<!ELEMENT mml:encryptInfo (#PCDATA)>
+
+<!ELEMENT mml:title (#PCDATA)>
+
+<!ATTLIST mml:title
+
+generationPurpose CDATA #IMPLIED
+
+>
+
+<!ELEMENT mml:docId (
+
+mml:uid,
+
+mml:parentId*,
+
+mml:groupId*)
+
+>
+
+<!ELEMENT mml:masterId (mmlCm:Id)>
+
+<!ELEMENT mml:content (
+
+mmlPi:PatientModule |
+
+mmlHi:HealthInsuranceModule |
+
+mmlRd:RegisteredDiagnosisModule |
+
+mmlLs:LifestyleModule |
+
+mmlBc:BaseClinicModule |
+
+mmlFcl:FirstClinicModule |
+
+mmlPc:ProgressCourseModule |
+
+mmlSg:SurgeryModule |
+
+mmlSm:SummaryModule |
+
+mmlLb:TestModule |
+
+mmlRp:ReportModule |
+
+mmlRe:ReferralModule |
+
+claim:ClaimModule |
+
+claimA:ClaimAmountModule)
+
+>
+
+<!ELEMENT mml:toc (mml:tocItem+)>
+
+<!ELEMENT mml:tocItem (#PCDATA)>
+
+<!ELEMENT mml:extRefs (mmlCm:extRef*)>
+
+<!ELEMENT mml:scopePeriod EMPTY>
+
+<!ATTLIST mml:scopePeriod
+
+start %xs.date; #IMPLIED
+
+end %xs.date; #IMPLIED
+
+hasOtherInfo %xs.boolean; #IMPLIED
+
+isExtract %xs.boolean; #IMPLIED
+
+extractPolicy %mmlDt.MML0004; #IMPLIED
+
+>
+
+<!ELEMENT mml:uid (#PCDATA)>
+
+<!ELEMENT mml:parentId (#PCDATA)>
+
+<!ATTLIST mml:parentId
+
+relation %mmlDt.MML0008; #IMPLIED
+
+>
+
+<!ELEMENT mml:groupId (#PCDATA)>
+
+<!ATTLIST mml:groupId
+
+groupClass %mmlDt.MML0007; #IMPLIED
+
+>
+
+<!ELEMENT mml:confirmDate (#PCDATA)>
+
+<!ATTLIST mml:confirmDate
+
+start %xs.dateTime; #IMPLIED
+
+end %xs.dateTime; #IMPLIED
+
+firstConfirmDate %xs.dateTime; #IMPLIED
+
+eventDate %xs.dateTime; #IMPLIED >
+
+ 
+
+<!--***************************************************-->
+
+<!-- Security DTD Version 1.0 -->
+
+<!--***************************************************-->
+
+<!ELEMENT mml:securityLevel (mml:accessRight*)>
+
+<!ELEMENT mml:accessRight (
+
+mmlSc:facility?,
+
+mmlSc:person?,
+
+mmlSc:license?,
+
+mmlSc:department?)
+
+>
+
+<!ATTLIST mml:accessRight
+
+permit %mmlDt.MML0034; #REQUIRED
+
+startDate %xs.date; #IMPLIED
+
+endDate %xs.date; #IMPLIED
+
+>
+
+<!ELEMENT mmlSc:facility (mmlSc:facilityName+)>
+
+<!ELEMENT mmlSc:facilityName (#PCDATA)>
+
+<!ATTLIST mmlSc:facilityName
+
+mmlSc:facilityCode (all |
+
+creator |
+
+experience |
+
+individual) #REQUIRED
+
+mmlSc:tableId CDATA "MML0035"
+
+mmlSc:facilityId CDATA #IMPLIED
+
+mmlSc:facilityIdType %mmlDt.MML0027; #IMPLIED
+
+>
+
+<!ELEMENT mmlSc:person (mmlSc:personName+) >
+
+<!ELEMENT mmlSc:personName (#PCDATA)>
+
+<!ATTLIST mmlSc:personName
+
+mmlSc:personCode (all |
+
+creator |
+
+patient |
+
+individual) #REQUIRED
+
+mmlSc:tableId CDATA "MML0036"
+
+mmlSc:personId CDATA #IMPLIED
+
+mmlSc:personIdType CDATA #IMPLIED
+
+>
+
+<!ELEMENT mmlSc:license (mmlSc:licenseName+) >
+
+<!ELEMENT mmlSc:licenseName EMPTY>
+
+<!ATTLIST mmlSc:licenseName
+
+mmlSc:licenseCode CDATA #REQUIRED
+
+mmlSc:tableId CDATA "MML0026"
+
+>
+
+<!ELEMENT mmlSc:department (mmlSc:departmentName+) >
+
+<!ELEMENT mmlSc:departmentName EMPTY>
+
+<!ATTLIST mmlSc:departmentName
+
+mmlSc:departmentCode CDATA #REQUIRED
+
+mmlSc:tableId CDATA "MML0028"
+
+>
+
+ 
+
+<!--*************************************************************-->
+
+<!-- Part of XHTML elements supported by MML -->
+
+<!--*************************************************************-->
+
+ 
+
+<!ENTITY % LanguageCode "NMTOKEN">
+
+<!-- a language code, as per [RFC3066] -->
+
+ 
+
+<!ENTITY % Character "CDATA">
+
+<!-- a single character, as per section 2.2 of [XML] -->
+
+ 
+
+<!ENTITY % Number "CDATA">
+
+<!-- one or more digits -->
+
+ 
+
+<!ENTITY % Script "CDATA">
+
+<!-- script expression -->
+
+ 
+
+<!ENTITY % StyleSheet "CDATA">
+
+<!-- style sheet data -->
+
+ 
+
+<!ENTITY % Text "CDATA">
+
+<!-- used for titles etc. -->
+
+ 
+
+<!-- a color using sRGB: #RRGGBB as Hex values -->
+
+<!ENTITY % Color "CDATA">
+
+ 
+
+<!--=================== Generic Attributes ===============================-->
+
+ 
+
+<!-- core attributes common to most elements
+
+id document-wide unique id
+
+class space separated list of classes
+
+style associated style info
+
+title advisory title/amplification
+
+-->
+
+<!ENTITY % coreattrs
+
+"id ID #IMPLIED
+
+class CDATA #IMPLIED
+
+style %StyleSheet; #IMPLIED
+
+title %Text; #IMPLIED"
+
+>
+
+ 
+
+<!-- internationalization attributes
+
+lang language code (backwards compatible)
+
+xml:lang language code (as per XML 1.0 spec)
+
+dir direction for weak/neutral text
+
+-->
+
+<!ENTITY % i18n
+
+"lang %LanguageCode; #IMPLIED
+
+xml:lang %LanguageCode; #IMPLIED
+
+dir (ltr|rtl) #IMPLIED"
+
+>
+
+ 
+
+<!-- attributes for common UI events
+
+onclick a pointer button was clicked
+
+ondblclick a pointer button was double clicked
+
+onmousedown a pointer button was pressed down
+
+onmouseup a pointer button was released
+
+onmousemove a pointer was moved onto the element
+
+onmouseout a pointer was moved away from the element
+
+onkeypress a key was pressed and released
+
+onkeydown a key was pressed down
+
+onkeyup a key was released
+
+-->
+
+<!ENTITY % events
+
+"onclick %Script; #IMPLIED
+
+ondblclick %Script; #IMPLIED
+
+onmousedown %Script; #IMPLIED
+
+onmouseup %Script; #IMPLIED
+
+onmouseover %Script; #IMPLIED
+
+onmousemove %Script; #IMPLIED
+
+onmouseout %Script; #IMPLIED
+
+onkeypress %Script; #IMPLIED
+
+onkeydown %Script; #IMPLIED
+
+onkeyup %Script; #IMPLIED"
+
+>
+
+ 
+
+<!ENTITY % attrs "%coreattrs; %i18n; %events;">
+
+ 
+
+<!--=================== Text Elements ====================================-->
+
+ 
+
+<!ENTITY % mmlxhtmlinline "
+
+#PCDATA |
+
+xhtml:br |
+
+xhtml:i |
+
+xhtml:b |
+
+xhtml:u |
+
+xhtml:font"
+
+>
+
+<!ENTITY % mmlxhtmlInline "(%mmlxhtmlinline;)*">
+
+ 
+
+<!--======= Part of XHTML elements supported by MML========================-->
+
+ 
+
+<!ELEMENT xhtml:br EMPTY> <!-- forced line break -->
+
+<!ATTLIST xhtml:br
+
+%coreattrs;
+
+clear (left|all|right|none) "none"
+
+>
+
+ 
+
+<!ELEMENT xhtml:i %mmlxhtmlInline;> <!-- italic font -->
+
+<!ATTLIST xhtml:i %attrs;>
+
+ 
+
+<!ELEMENT xhtml:b %mmlxhtmlInline;> <!-- bold font -->
+
+<!ATTLIST xhtml:b %attrs;>
+
+ 
+
+<!ELEMENT xhtml:u %mmlxhtmlInline;> <!-- underline -->
+
+<!ATTLIST xhtml:u %attrs;>
+
+ 
+
+<!ELEMENT xhtml:font %mmlxhtmlInline;> <!-- local change to font -->
+
+<!ATTLIST xhtml:font
+
+%coreattrs;
+
+%i18n;
+
+size CDATA #IMPLIED
+
+color %Color; #IMPLIED
+
+face CDATA #IMPLIED
+
+>
+
+ 
+
+<!ENTITY % mmlxhtml_with_extRefInline
+
+"(%mmlxhtmlinline; | mmlCm:extRef )*"
+
+>
+
+<!ENTITY % mmlxhtml_with_extRef_and_relatedDocInline
+
+"(%mmlxhtmlinline; | mmlCm:extRef |mmlSm:relatedDoc)*"
+
+>
