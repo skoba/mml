@@ -1,0 +1,199 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.dietary_intake.v1
+
+concept
+	[at0000]	-- Dietary intake
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Shinji KOBAYASHI">
+		["email"] = <"skoba@moss.or.jp">
+		["organisation"] = <"openEHR.jp">
+		["date"] = <"2015-11-29">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record dietary feeding for general ages.">
+			use = <"To record dietary itake">
+			misuse = <"Not record fluid intake">
+			copyright = <"*(ja)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"To record dietary feeding for general ages.">
+			use = <"To record dietary itake">
+			misuse = <"Not record fluid intake">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"08F7410ECF377B891DF2C56EEFB18E51">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Dietary intake
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..1} matches {	-- Measurement time
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Content
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Route
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Volume
+										value matches {
+											C_DV_QUANTITY <
+											>
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {	-- Proportion
+										value matches {
+											DV_PROPORTION matches {
+												is_integral matches {False}
+											}
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Time taken
+										value matches {
+											DV_DURATION matches {*}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+					INTERVAL_EVENT[at0008] occurrences matches {0..1} matches {	-- Measurement interval
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]	-- /data[Event Series]/events[Measurement time]/data[Tree]
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dietary intake">
+					description = <"Dietary intake for general ages">
+				>
+				["at0001"] = <
+					text = <"*Event Series(ja)">
+					description = <"*@ internal @(ja)">
+				>
+				["at0002"] = <
+					text = <"Measurement time">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"*Tree(ja)">
+					description = <"*@ internal @(ja)">
+				>
+				["at0004"] = <
+					text = <"*Content(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0005"] = <
+					text = <"*Volume(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0006"] = <
+					text = <"*Route(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0007"] = <
+					text = <"*Proportion(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0008"] = <
+					text = <"*Measurement interval(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0009"] = <
+					text = <"*Time taken(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0010"] = <
+					text = <"Comment">
+					description = <"**(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dietary intake">
+					description = <"食事摂取に関する記録">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Measurement time">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Content">
+					description = <"**(ja)">
+				>
+				["at0005"] = <
+					text = <"Volume">
+					description = <"**(ja)">
+				>
+				["at0006"] = <
+					text = <"Route">
+					description = <"**(ja)">
+				>
+				["at0007"] = <
+					text = <"Proportion">
+					description = <"**(ja)">
+				>
+				["at0008"] = <
+					text = <"Measurement interval">
+					description = <"**(ja)">
+				>
+				["at0009"] = <
+					text = <"Time taken">
+					description = <"**(ja)">
+				>
+				["at0010"] = <
+					text = <"Comment">
+					description = <"*">
+				>
+			>
+		>
+	>
