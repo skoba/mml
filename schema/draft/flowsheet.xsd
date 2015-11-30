@@ -28,12 +28,27 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
   <xs:element name="facility">
     <xs:complexType mixed="true">
-      <xs:attribute name="facilityCode" use="required" type="xs:string"/>
-      <xs:attribute name="facilityCodeId" use="required" type="xs:string"/>
+      <xs:attributeGroup ref="mmlVs:attlist.facility"/>
     </xs:complexType>
   </xs:element>
+  
+  <xs:attributeGroup name="attlist.facility">
+    <xs:attribute name="facilityCode" use="required" form="qualified"/>
+    <xs:attribute name="facilityCodeId" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="ca"/>
+          <xs:enumeration value="insurance"/>
+          <xs:enumeration value="monbusho"/>
+          <xs:enumeration value="JMARI"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  
   <xs:element name="department">
     <xs:complexType mixed="true">
       <xs:attribute name="depCode" type="xs:string"/>

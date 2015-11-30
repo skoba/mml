@@ -39,7 +39,7 @@ description
 	lifecycle_state = <"Initial">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"08F7410ECF377B891DF2C56EEFB18E51">
+		["MD5-CAM-1.0.1"] = <"3A912A0277D97E026E703CFB27579331">
 	>
 
 definition
@@ -76,7 +76,14 @@ definition
 									}
 									ELEMENT[at0009] occurrences matches {0..1} matches {	-- Time taken
 										value matches {
-											DV_DURATION matches {*}
+											DV_INTERVAL<DV_DATE_TIME> matches {
+												upper matches {
+													DV_DATE_TIME matches {*}
+												}
+												lower matches {
+													DV_DATE_TIME matches {*}
+												}
+											}
 										}
 									}
 									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Comment
