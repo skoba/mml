@@ -40,7 +40,7 @@
         <xs:element ref="mmlRe:remarks" minOccurs="0"/>
         <xs:element ref="mmlRe:referToFacility"/>
         <xs:element ref="mmlRe:referToPerson" minOccurs="0"/>
-        <xs:element ref=" mmlRe:referToUnknownName" minOccurs="0"/>
+        <xs:element ref="mmlRe:referToUnknownName" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
