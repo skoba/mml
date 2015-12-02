@@ -77,7 +77,8 @@
 |1.11.1.|mmlCm:extRef| | |*|
 |1.12.|mmlSm:clinicalCourse| | |?|
 |1.13.|mmlRe:medication| |string|?|
-|1.13.1.|mmlCm:extRef| | |*|
+|1.13.1.|mmlPs:PrescriptionModule| |string|?|
+|1.13.2.|mmlCm:extRef| | |*|
 |1.14.|mmlRe:referPurpose| |string| |
 |1.15.|mmlRe:remarks| |string|?|
 |1.15.1.|mmlCm:extRef| | |*|
@@ -188,6 +189,31 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【内容】現在の処方．テキストとmmlCm:extRefの混在可 +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
+
+===== mmlPs:PrescriptionModule
+【内容】構造はコンテンツモジュールmmlPs:PrescriptionModule参照 +
+【省略】省略可 +
+【例】
+
+ <mmlSm:medication>
+  Prescription on discharge
+  <mmlPs:PrescriptionModule>
+    <mmlPs:medication>
+      <mmlPs:batchNo>1</mmlPs:batchNo>
+      <mmlPs:medicine>
+        <mmlPs:name>プレドニゾロン錠 5mg</mmlPs:name>
+        <mmlPs:code system="YJ">61222033</mmlPs:code>
+      </mmlPs:medicine>
+      <mmlPs:dose>4</mmlPs:dose>
+      <mmlPs:doseUnit>錠</mmlPs:doseUnit>
+      <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
+      <mmlPs:startDate>2015-05-13</mmlPs:startDate>
+      <mmlPs:duration>P14D</mmlPs:duration>
+      <mmlPs:instruction>内服 1回 朝食前</mmlPs:instruction>
+    </mmlPs:medication>
+  </mmlPs:PrescriptionModule>
+ </mmlSm:medication>
+
 
 ===== mmlCm:extRef
 【内容】外部参照図，ファイル，表などを添付するときに，MML 共通形式 (外部参照形式) を用いる． +

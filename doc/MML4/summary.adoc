@@ -23,10 +23,6 @@ image::mmlsm3.jpg[]
 .エレメント一覧表
 |=====
 | |Elements|Attribute|Datatypes|Occurence|Table
-|=====
-sep
-
-|=====
 |1.|mmlSm:SummaryModule| | | |
 |1.1.|mmlSm:serviceHistory| | | |
 | | |mmlSm:start|date|#IMPLIED|
@@ -35,10 +31,6 @@ sep
 |1.1.1.1.|mmlSm:outPatientItem| | |*|
 |1.1.1.1.1.|mmlSm:date| |date| |
 |1.1.1.1.2.|mmlSm:outPatientCondition| |string|?|
-|=====
-sep
-
-|=====
 | | |mmlSm:first|boolean|#IMPLIED|
 | | |mmlSm:emergency|boolean|#IMPLIED|
 |1.1.1.1.3.|mmlSm:staffs| | |?|
@@ -57,10 +49,6 @@ sep
 |1.1.2.1.2.1.|mmlSm:date| |date| |
 |1.1.2.1.2.2.|mmlSm:dischargeCondition| |string|?|
 | | |mmlSm:outcome|string|#IMPLIED|MML0016
-|=====
-sep
-
-|=====
 |1.1.2.1.2.3.|mmlSm:referTo| | |?|
 |1.1.2.1.2.3.1.|mmlPsi:PersonalizedInfo| | | |　
 |1.1.2.1.3.|mmlSm:staffs| | |?|
@@ -81,10 +69,6 @@ sep
 |1.9.1.|mmlSm:clinicalRecord| |string|+|
 | | |mmlSm:date|date/dateTime|#IMPLIED|
 |1.9.1.1.|mmlCm:extRef| | |*|
-|=====
-sep
-
-|=====
 |1.9.1.2.|mmlSm:relatedDoc| |string|*|
 | | |mmlSm:relation|string|#IMPLIED|MML0008
 |1.10.|mmlSm:dischargeFindings| |string|?|
