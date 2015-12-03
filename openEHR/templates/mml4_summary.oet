@@ -248,6 +248,7 @@
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/items[at0009]/items">
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
       </Item>
+      <Item xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.medication_order.v1" concept_name="Medication order" path="/items[at0010]/items" />
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" path="/items[at0010]/items" />
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/items[at0010]/items">
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
