@@ -248,7 +248,50 @@
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/items[at0009]/items">
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />
       </Item>
-      <Item xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.medication_order.v1" concept_name="Medication order" path="/items[at0010]/items" />
+      <Item xsi:type="INSTRUCTION" archetype_id="openEHR-EHR-INSTRUCTION.medication_order.v0" concept_name="Medication order" path="/items[at0010]/items">
+        <Rule path="/activities[at0001]/description[at0002]/items[at0009]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0047]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0109]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0055]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0056]/items[at0058]/items[at0144]">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Quantity (Qualified real)</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/activities[at0001]/description[at0002]/items[at0056]/items[at0066]">
+          <constraint xsi:type="multipleConstraint">
+            <includedTypes>Duration</includedTypes>
+          </constraint>
+        </Rule>
+        <Rule path="/activities[at0001]/description[at0002]/items[at0062]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0107]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0018]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0148]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0113]/items[at0013]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0113]/items[at0011]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0113]/items[at0016]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0113]/items[at0050]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0113]/items[at0060]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0133]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0129]/items[at0106]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0129]/items[at0141]" max="0" />
+        <Rule path="/activities[at0001]/description[at0002]/items[at0129]/items[at0139]" max="0" />
+        <Rule path="/protocol[at0005]/items[at0135]" max="0" />
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.medication_preparation.v0" concept_name="Medication preparation" path="/activities[at0001]/description[at0002]/items[at0143]">
+          <Rule path="/items[at0115]" max="0" />
+          <Rule path="/items[at0116]" max="0" />
+          <Rule path="/items[at0117]" max="0" />
+          <Rule path="/items[at0126]" max="0" />
+          <Rule path="/items[at0133]" max="0" />
+        </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.daily_timing.v0" concept_name="Daily timing" path="/activities[at0001]/description[at0002]/items[at0056]/items[at0058]/items[at0037]">
+          <Rule path="/items[at0014]" max="0" />
+          <Rule path="/items[at0004]" max="0" />
+          <Rule path="/items[at0026]" max="0" />
+          <Rule path="/items[at0023]" max="0" />
+          <Rule path="/items[at0025]" max="0" />
+        </Items>
+      </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" path="/items[at0010]/items" />
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.citation.v1" concept_name="Citation" path="/items[at0010]/items">
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.citation.v1" concept_name="Citation" path="/data[at0001]/items[at0002]" />

@@ -100,7 +100,7 @@
   <xs:element name="medication">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlPs:PrescriptionModule"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlPs:PrescriptionModule"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
     </xs:complexType>        
