@@ -259,7 +259,7 @@
         <Rule path="/items[at0005]" max="0" />
       </Items>
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" max="1" path="/context/other_context[at0001]/items[at0006]" name="Department">
-        <Rule path="/items[at0005]" max="1" />
+        <Rule path="/items[at0005]" max="0" />
       </Items>
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" max="1" path="/context/other_context[at0001]/items[at0006]" name="Ward">
         <Rule path="/items[at0005]" max="0" />
@@ -273,6 +273,8 @@
           <Rule path="/items[at0014]" max="0" />
         </Items>
       </Items>
+      <Rule path="/context/other_context[at0001]/items[at0002]" max="0" />
+      <Rule path="/context/other_context[at0001]/items[at0005]" max="0" />
     </Context>
   </definition>
 </template>
