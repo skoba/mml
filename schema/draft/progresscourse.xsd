@@ -7,10 +7,12 @@
   xmlns:mmlPc="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
   xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
+  xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
   xmlns:xhtml="http://www.w3.org/1999/xhtml" >
   
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0" schemaLocation="prescription.xsd"/>
+  <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0" shcemaLocation="injection.xsd"/>
   
   <xs:element name="ProgressCourseModule">
     <xs:complexType>
@@ -109,6 +111,8 @@
   <xs:element name="rxRecord" >
     <xs:complexType mixed="true">
       <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlPs:PrescriptionModule"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlInj:InjectionModule"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
     </xs:complexType>

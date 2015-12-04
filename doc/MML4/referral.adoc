@@ -78,7 +78,8 @@
 |1.12.|mmlSm:clinicalCourse| | |?|
 |1.13.|mmlRe:medication| |string|?|
 |1.13.1.|mmlPs:PrescriptionModule| |string|?|
-|1.13.2.|mmlCm:extRef| | |*|
+|1.13.2.|mmlInj:InjectionModule| |string|?|
+|1.13.3.|mmlCm:extRef| | |*|
 |1.14.|mmlRe:referPurpose| |string| |
 |1.15.|mmlRe:remarks| |string|?|
 |1.15.1.|mmlCm:extRef| | |*|
@@ -214,6 +215,9 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
   </mmlPs:PrescriptionModule>
  </mmlSm:medication>
 
+===== mmlInj:InjectionModule
+【内容】構造はコンテンツモジュールmmlInj:InjectionModule参照 +
+【省略】省略可 +
 
 ===== mmlCm:extRef
 【内容】外部参照図，ファイル，表などを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
