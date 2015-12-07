@@ -251,9 +251,22 @@
     </Content>
     <Content xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.bodily_output.v1" concept_name="Bodily output" path="/content">
       <Rule path="/data[at0001]/events[at0002]" max="0" />
+      <Rule path="/data[at0001]/events[at0006]/data[at0003]/items[at0032]" max="0" />
       <Rule path="/data[at0001]/events[at0007]" max="0" />
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.fluid.v1" concept_name="Body fluid or substance" path="/data[at0001]/events[at0006]/data[at0003]/items[at0016]" />
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.fluid-flowsheet.v1" concept_name="Body fluid or substance for MML flow sheet" path="/data[at0001]/events[at0006]/data[at0003]/items[at0016]">
+        <Rule path="/items[at0003]" max="0" />
+        <Rule path="/items[at0006]/items[at0025]" max="0" />
+        <Rule path="/items[at0006]/items[at0008]" max="0" />
+        <Rule path="/items[at0006]/items[at0071]" max="0" />
+        <Rule path="/items[at0006]/items[at0068]" max="0" />
+        <Rule path="/items[at0006]/items[at0069]" max="0" />
+        <Rule path="/items[at0067]" max="0" />
+        <Rule path="/items[at0072]" max="0" />
+        <Rule path="/items[at0073]" max="0" />
+        <Rule path="/items[at0032]" max="0" />
+      </Items>
     </Content>
+    <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" path="/content" />
     <Context>
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.organisation.v1" concept_name="Organisation" max="1" path="/context/other_context[at0001]/items[at0006]" name="Facility">
         <Rule path="/items[at0005]" max="0" />
@@ -277,4 +290,16 @@
       <Rule path="/context/other_context[at0001]/items[at0005]" max="0" />
     </Context>
   </definition>
+  <view>
+    <constraints path="[openEHR-EHR-COMPOSITION.report.v1]/content[openEHR-EHR-OBSERVATION.bodily_output.v1]/data[at0001]/events[at0006]/time">
+      <items id="VisibleInView">
+        <value>time</value>
+      </items>
+    </constraints>
+    <constraints path="[openEHR-EHR-COMPOSITION.report.v1]/content[openEHR-EHR-OBSERVATION.bodily_output.v1]/data[at0001]/events[at0006]/offset">
+      <items id="VisibleInView">
+        <value>offset</value>
+      </items>
+    </constraints>
+  </view>
 </template>
