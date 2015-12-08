@@ -75,8 +75,8 @@
 |1.4.9|mmlFs:boMemo| |string|?|
 |1.4.10|mmlFs:boFrequency| | |*|
 |1.4.10.1|mmlFs:bofTimes| |decimal|?|
-|1.4.10.2|mmlFs:bofPeriodStart| |dateTime|?|
-|1.4.10.3|mmlFs:bofPeriodEnd| |dateTime|?|
+|1.4.10.2|mmlFs:bofPeriodStartTime| |dateTime|?|
+|1.4.10.3|mmlFs:bofPeriodEndTime| |dateTime|?|
 |1.4.10.4|mmlFs:bofMemo| |string|?|
 |1.5|mmlFs:fsMemo| |string|?|
 |===
