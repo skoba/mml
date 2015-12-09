@@ -110,6 +110,12 @@
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.device.v1" concept_name="Medical Device" path="/protocol[at0011]/items[at1025]" />
       </Item>
       <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.indirect_oximetry.v1" concept_name="Indirect Oximetry" path="/items[at0001]">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0044]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0045]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0046]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0039]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0040]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0019]" max="0" />
         <Rule path="/protocol[at0007]/items[at0020]">
           <constraint xsi:type="multipleConstraint">
             <includedTypes>Text</includedTypes>
@@ -207,6 +213,12 @@
             <Rule path="/items[at0023]" max="0" />
           </Items>
         </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.lab_result_annotation.v1" concept_name="Laboratory result annotation" path="/data[at0001]/events[at0002]/data[at0003]/items[at0089]">
+          <Rule path="/items[at0007]" max="0" />
+          <Rule path="/items[at0005]" max="0" />
+          <Rule path="/items[at0015]" max="0" />
+          <Rule path="/items[at0017]" max="0" />
+        </Items>
       </Item>
       <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.respiration.v1" concept_name="Respirations" path="/items[at0001]">
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]" max="0" />
@@ -261,6 +273,7 @@
         <Rule path="/items[at0006]/items[at0068]" max="0" />
         <Rule path="/items[at0006]/items[at0069]" max="0" />
         <Rule path="/items[at0067]" max="0" />
+        <Rule path="/items[at0081]" max="0" />
         <Rule path="/items[at0072]" max="0" />
         <Rule path="/items[at0073]" max="0" />
         <Rule path="/items[at0032]" max="0" />
