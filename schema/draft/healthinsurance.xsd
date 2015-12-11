@@ -8,8 +8,7 @@
   xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
   xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
   xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
-  xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
-  >
+  xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0">
   
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0" schemaLocation="name.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0" schemaLocation="address.xsd" />
@@ -38,7 +37,7 @@
   </xs:element>
   
   <xs:attributeGroup name="attlist.HealthInsuranceModule">
-    <xs:attribute name="countryType" >
+    <xs:attribute name="countryType" form="qualified">
       <xs:simpleType>
         <xs:restriction base="xs:token">
           <xs:enumeration value="ISL"/>
@@ -432,7 +431,7 @@
   </xs:element>
   
   <xs:attributeGroup name="attlist.paymentRatio">
-    <xs:attribute name="ratioType" use="required" >
+    <xs:attribute name="ratioType" form="qualified" use="required">
       <xs:simpleType>
         <xs:restriction base="xs:token">
           <xs:enumeration value="fix"/>

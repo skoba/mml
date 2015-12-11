@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlFc:Facility xmlns:mmlHi="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
+ xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+ xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+ xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
+ xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
+ xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0 file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/healthinsurance.xsd">
+  <mmlFc:name mmlFc:repCode="I" tableId="MML0025">
+  </mmlFc:name>
+  <mmlFc:name mmlFc:repCode="I" tableId="MML0025">
+  </mmlFc:name>
+  <mmlCm:Id mmlCm:type="type0" mmlCm:checkDigitSchema="M10" mmlCm:checkDigit="checkDigit0" mmlCm:tableId="tableId0">
+  </mmlCm:Id>
+</mmlFc:Facility>

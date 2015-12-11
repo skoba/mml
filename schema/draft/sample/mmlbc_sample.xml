@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mmlBc:BaseClinicModule
   xmlns:mmlBc="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0 ../baseclinic.xsd"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <mmlBc:allergy>
     <mmlBc:allergyItem>
@@ -10,8 +12,8 @@
       <mmlBc:memo>no reaction to shrimp</mmlBc:memo>
     </mmlBc:allergyItem>
   </mmlBc:allergy>
-  <mmlBc:bloodType>
+  <mmlBc:bloodtype>
     <mmlBc:abo>a</mmlBc:abo>
     <mmlBc:rh>rhD+</mmlBc:rh>
-  </mmlBc:bloodType>
+  </mmlBc:bloodtype>
  </mmlBc:BaseClinicModule>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mmlFcl:FirstClinic 
+<mmlFcl:FirstClinicModule
   xmlns:mmlFcl="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"
   xmlns:mmlRd="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
   xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0 ../firstclinic.xsd"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <mmlFcl:familyHistory>
     <mmlFcl:familyHistoryItem>
@@ -49,4 +51,4 @@
   </mmlFcl:pastHistory>
   <mmlFcl:chiefComplaints>頭痛</mmlFcl:chiefComplaints>
   <mmlFcl:presentIllnessNotes>2週間前より一日に数回側頭部から頭頂部にかけてのずきずきする痛みがあり。</mmlFcl:presentIllnessNotes>
-</mmlFcl:FirstClinic>
+</mmlFcl:FirstClinicModule>
