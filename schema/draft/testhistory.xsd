@@ -24,7 +24,7 @@
       <xs:sequence>
         <xs:element ref="mmlLb:reportStatus"/>
         <xs:element minOccurs="0" ref="mmlLb:set"/>
-        <xs:element ref="mmlLb:facility"/>
+        <xs:element ref="mmlLb:facility" minOccurs="0" maxOccurs="1"/>
         <xs:element minOccurs="0" ref="mmlLb:department"/>
         <xs:element minOccurs="0" ref="mmlLb:ward"/>
         <xs:element minOccurs="0" ref="mmlLb:client"/>
@@ -83,7 +83,7 @@
   
   <xs:attributeGroup name="attlist.facility">
     <xs:attribute name="facilityCode" use="required" form="qualified"/>
-    <xs:attribute name="facilityCodeId" use="required">
+    <xs:attribute name="facilityCodeId" use="required" form="qualified">
       <xs:simpleType>
         <xs:restriction base="xs:token">
           <xs:enumeration value="ca"/>
@@ -103,7 +103,7 @@
   
   <xs:attributeGroup name="attlist.mmlLb.department">
     <xs:attribute name="depCode" form="qualified"/>
-    <xs:attribute name="depCodeId" default="MML0028">
+    <xs:attribute name="depCodeId" default="MML0028" form="qualified">
       <xs:simpleType>
         <xs:restriction base="xs:string">
           <xs:enumeration value="MML0028"/>

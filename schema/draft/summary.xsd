@@ -303,6 +303,7 @@
   <xs:element name="testResult">
     <xs:complexType mixed="true">
       <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlSm:relatedDoc"/>
       </xs:sequence>
       <xs:attributeGroup ref="mmlSm:attlist.testResult"/>

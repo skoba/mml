@@ -7,14 +7,14 @@
       <xs:sequence>
         <xs:element ref="mmlPs:issuedTo" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:medication" minOccurs="1" maxOccurs="unbounded"/>
-        <xs:element ref="mmlPs:narcoticPrescriptionLicenseNumber"/>
-        <xs:element ref="mmlPs:comment"/>
+        <xs:element ref="mmlPs:narcoticPrescriptionLicenseNumber" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPs:comment" minOccurs="0" maxOccurs="1"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="medication">
     <xs:complexType>
-      <xs:sequence>
+      <xs:all>
         <xs:element ref="mmlPs:medicine" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="mmlPs:dose" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="mmlPs:doseUnit" minOccurs="1" maxOccurs="1"/>
@@ -29,7 +29,7 @@
         <xs:element ref="mmlPs:brandSubstitutionPermitted" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:longTerm" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:additionalInstruction" minOccurs="0" maxOccurs="1"></xs:element>
-      </xs:sequence>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:element name="issuedTo">

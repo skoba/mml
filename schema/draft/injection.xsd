@@ -7,14 +7,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="mmlInj:medication" minOccurs="1" maxOccurs="unbounded"/>
-        <xs:element ref="mmlInj:narcoticPrescriptionLicenseNumber"/>
-        <xs:element ref="mmlInj:comment"/>
+        <xs:element ref="mmlInj:narcoticPrescriptionLicenseNumber" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlInj:comment" minOccurs="0" maxOccurs="1"/>
       </xs:sequence>
     </xs:complexType>    
   </xs:element>
   <xs:element name="medication">
     <xs:complexType>
-      <xs:sequence>
+      <xs:all>
         <xs:element ref="mmlInj:medicine" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="mmlInj:dose" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="mmlInj:doseUnit" minOccurs="1" maxOccurs="1"/>
@@ -23,10 +23,10 @@
         <xs:element ref="mmlInj:instruction" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlInj:route" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlInj:site" minOccurs="0" maxOccurs="1"/>
-        <xs:element ref="mmlInj:deliveryMethod"/>
-        <xs:element ref="mmlInj:batchNo"/>
-        <xs:element ref="mmlInj:additionalInstruction"/>
-      </xs:sequence>
+        <xs:element ref="mmlInj:deliveryMethod" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlInj:batchNo" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlInj:additionalInstruction" minOccurs="0" maxOccurs="1"/>
+      </xs:all>
     </xs:complexType>
   </xs:element>
   <xs:element name="medicine">
@@ -50,13 +50,13 @@
   </xs:element>
   <xs:element name="dose" type="xs:decimal"/>
   <xs:element name="doseUnit" type="xs:string"/>
-  <xs:element name="startDateTime" type="xs:date"/>
-  <xs:element name="endDateTime" type="xs:date"/>
+  <xs:element name="startDateTime" type="xs:dateTime"/>
+  <xs:element name="endDateTime" type="xs:dateTime"/>
   <xs:element name="instruction" type="xs:string"/>
   <xs:element name="route" type="xs:string"/>
   <xs:element name="site" type="xs:string"/>
   <xs:element name="deliveryMethod" type="xs:string"/>
-  <xs:element name="batchNo" type="xs:decimal"/>
+  <xs:element name="batchNo" type="xs:integer"/>
   <xs:element name="additionalInstruction" type="xs:string"/>
   <xs:element name="narcoticPrescriptionLicenseNumber" type="xs:string"/>
   <xs:element name="comment" type="xs:string"/>

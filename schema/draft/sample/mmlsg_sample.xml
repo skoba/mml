@@ -5,11 +5,14 @@
   xmlns:mmlRd="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
   xmlns:mmlPsi="http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0"
   xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
-  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0">
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0 ../surgery.xsd">
+
   <mmlSg:surgeryItem>
     <mmlSg:surgicalInfo mmlSg:type="elective">
       <mmlSg:date>2015-09-05</mmlSg:date>
-      <mmlSg:time>09:18</mmlSg:time>
+      <mmlSg:startTime>09:18</mmlSg:startTime>
       <mmlSg:duration>P3H20M</mmlSg:duration>
       <mmlSg:surgicalDepartment>
         <mmlDp:Department>
@@ -44,7 +47,7 @@
           </mmlRd:dxItem>
         </mmlRd:diagnosisContents>
         <mmlRd:categories>
-          <mmlRd:category mmlRd:tableId = "MML0012">mainDiagnosis</mmlRd:category>
+          <mmlRd:category mmlRd:tableId= "MML0012">mainDiagnosis</mmlRd:category>
           <mmlRd:category mmlRd:tableId = "MML0013">academicDiagnosis</mmlRd:category>
           <mmlRd:category mmlRd:tableId = "MML0014">operativeDiagnosis</mmlRd:category>
           <mmlRd:category mmlRd:tableId = "MML0015">confirmedDiagnosis</mmlRd:category>

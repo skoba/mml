@@ -57,7 +57,7 @@
     </xs:complexType>
   </xs:element>
   <xs:attributeGroup name="attlist.mmlRd.category">
-    <xs:attribute name="tableId" use="required" >
+    <xs:attribute name="tableId" use="required" form="qualified">
       <xs:simpleType>
         <xs:restriction base="xs:token">
           <xs:enumeration value="MML0012"/>

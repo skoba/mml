@@ -9,7 +9,10 @@
   xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
   xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
   xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0"
-  xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0">
+  xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0 ../summary.xsd">
+
   <mmlSm:serviceHistory mmlSm:start = "1999-08-25" mmlSm:end = "1999-08-31">
     <mmlSm:inPatient>
       <mmlSm:inPatientItem>

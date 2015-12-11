@@ -5,7 +5,7 @@
   xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0 ../progresscourse.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd">
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0 ../progresscourse.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd">
   <mmlPc:structuredExpression>
     <mmlPc:problemItem>
       <mmlPc:subjective>
@@ -44,7 +44,6 @@
           <mmlPs:PrescriptionModule>
             <mmlPs:issuedTo>external</mmlPs:issuedTo>
             <mmlPs:medication>
-              <mmlPs:batchNo>1</mmlPs:batchNo>
               <mmlPs:medicine>
                 <mmlPs:name>プレドニゾロン錠 5mg</mmlPs:name>
                 <mmlPs:code system="YJ">61222033</mmlPs:code>
@@ -55,10 +54,10 @@
               <mmlPs:startDate>2015-05-13</mmlPs:startDate>
               <mmlPs:duration>P14D</mmlPs:duration>
               <mmlPs:instruction>内服 1回 朝食前</mmlPs:instruction>
+              <mmlPs:batchNo>1</mmlPs:batchNo>
               <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
             </mmlPs:medication>
             <mmlPs:medication>
-              <mmlPs:batchNo>1</mmlPs:batchNo>
               <mmlPs:medicine>
                 <mmlPs:name>プレドニゾロン錠 5mg</mmlPs:name>
                 <mmlPs:code system="YJ">61222033</mmlPs:code>
@@ -69,10 +68,10 @@
               <mmlPs:startDate>2015-05-13</mmlPs:startDate>
               <mmlPs:duration>P14D</mmlPs:duration>
               <mmlPs:instruction>内服 1回 昼食後</mmlPs:instruction>
+              <mmlPs:batchNo>1</mmlPs:batchNo>
               <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
             </mmlPs:medication>
             <mmlPs:medication>
-              <mmlPs:batchNo>2</mmlPs:batchNo>
               <mmlPs:medicine>
                 <mmlPs:name>メトリジン錠２ｍｇ</mmlPs:name>
                 <mmlPs:code system="YJ">612160027</mmlPs:code>
@@ -83,10 +82,10 @@
               <mmlPs:startDate>2015-05-13</mmlPs:startDate>
               <mmlPs:duration>P14D</mmlPs:duration>
               <mmlPs:instruction>内服 2回 朝夕食後</mmlPs:instruction>
+              <mmlPs:batchNo>2</mmlPs:batchNo>
               <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
             </mmlPs:medication>
             <mmlPs:medication>
-              <mmlPs:batchNo>2</mmlPs:batchNo>
               <mmlPs:medicine>
                 <mmlPs:name>マーズレンＳ顆粒</mmlPs:name>
                 <mmlPs:code system="YJ">612160027</mmlPs:code>
@@ -97,10 +96,10 @@
               <mmlPs:startDate>2015-05-13</mmlPs:startDate>
               <mmlPs:duration>P14D</mmlPs:duration>
               <mmlPs:instruction>内服 2回 朝夕食後</mmlPs:instruction>
+              <mmlPs:batchNo>2</mmlPs:batchNo>
               <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
             </mmlPs:medication>
             <mmlPs:medication>
-              <mmlPs:batchNo>3</mmlPs:batchNo>
               <mmlPs:medicine>
                 <mmlPs:name>ジクロフェナクnaゲル</mmlPs:name>
                 <mmlPs:code system="YJ">612320261"</mmlPs:code>
@@ -109,6 +108,7 @@
               <mmlPs:doseUnit>g</mmlPs:doseUnit>
               <mmlPs:startDate>2015-05-13</mmlPs:startDate>
               <mmlPs:instruction>一日３回左膝に塗布</mmlPs:instruction>
+              <mmlPs:batchNo>3</mmlPs:batchNo>
               <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
             </mmlPs:medication>
           </mmlPs:PrescriptionModule>
@@ -122,18 +122,18 @@
             ）</xhtml:u>
         <xhtml:br/>
         <xhtml:br/>
-        <xhtml:font xhtml:color="#0000ff"><xhtml:b>オーダ内容</xhtml:b></xhtml:font>
+        <xhtml:font color="#0000ff"><xhtml:b>オーダ内容</xhtml:b></xhtml:font>
         <xhtml:br/>
-        <xhtml:font xhtml:color="#000000">医師氏名4</xhtml:font>
-        <xhtml:font xhtml:color="#000000">
+        <xhtml:font color="#000000">医師氏名4</xhtml:font>
+        <xhtml:font color="#000000">
         </xhtml:font>
-        <xhtml:font xhtml:color="#000000">
+        <xhtml:font color="#000000">
         </xhtml:font>
         <xhtml:br/>
-        <xhtml:font xhtml:color="#000000">尿検査が終わったら連絡をしてください</xhtml:font>
-        <xhtml:font xhtml:color="#000000">
+        <xhtml:font color="#000000">尿検査が終わったら連絡をしてください</xhtml:font>
+        <xhtml:font color="#000000">
         </xhtml:font>
-        <xhtml:font xhtml:color="#000000">
+        <xhtml:font color="#000000">
         </xhtml:font>
         <xhtml:br/>
         <xhtml:br/>

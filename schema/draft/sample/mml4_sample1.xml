@@ -25,7 +25,9 @@
   xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
   xmlns:mmlSc="http://www.medxml.net/MML/v4/SharedComponent/Security/1.0"
   xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
-  xmlns:claim="http://www.medxml.net/claim/claimModule/2.1" xmlns:claimA="http://www.medxml.net/claim/claimAmountModule/2.1">
+  xmlns:claim="http://www.medxml.net/claim/claimModule/2.1" xmlns:claimA="http://www.medxml.net/claim/claimAmountModule/2.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4 ../mml.xsd ">
   <MmlHeader>
     <mmlCi:CreatorInfo>
       <mmlPsi:PersonalizedInfo>
@@ -90,13 +92,14 @@
   <MmlBody>
     <MmlModuleItem>
       <docInfo contentModuleType="progressCourse">
-        <securityLevel>
-          <accessRight permit="all">
+        <mmlSc:securityLevel>
+          <mmlSc:accessRight permit="all">
             <mmlSc:facility>
               <mmlSc:facilityName mmlSc:facilityCode="creator">記載者施設</mmlSc:facilityName>
             </mmlSc:facility>
-          </accessRight>
-        </securityLevel>
+          </mmlSc:accessRight>
+          
+        </mmlSc:securityLevel>
         <title generationPurpose="record">プログレスノート</title>
         <docId>
           <uid>JPN999999900009AC1F1B696FE337200202081013220003</uid>
@@ -122,9 +125,8 @@
           </mmlPsi:PersonalizedInfo>
           <mmlCi:creatorLicense mmlCi:tableId="MML0026">doctor</mmlCi:creatorLicense>
         </mmlCi:CreatorInfo>
-        <extRefs>
-        </extRefs>
-      </docInfo>
+        <extRefs/>
+     </docInfo>
       <content>
         <mmlPc:ProgressCourseModule>
           <mmlPc:structuredExpression>
@@ -164,7 +166,7 @@
                       <mmlPs:doseUnit>錠</mmlPs:doseUnit>
                       <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
                       <mmlPs:startDate>2015-05-13</mmlPs:startDate>
-                      <mmlPs:duration>14</mmlPs:duration>
+                      <mmlPs:duration>P14D</mmlPs:duration>
                       <mmlPs:instruction>内服 1回 朝食後</mmlPs:instruction>
                       <mmlPs:brandSubstitutionPermitted>true</mmlPs:brandSubstitutionPermitted>
                     </mmlPs:medication>
@@ -348,18 +350,18 @@
                   </xhtml:u>
                 <xhtml:br/>
                 <xhtml:br/>
-                <xhtml:font xhtml:color="#0000ff"><xhtml:b>オーダ内容</xhtml:b></xhtml:font>
+                <xhtml:font color="#0000ff"><xhtml:b>オーダ内容</xhtml:b></xhtml:font>
                 <xhtml:br/>
-                <xhtml:font xhtml:color="#000000">医師氏名4</xhtml:font>
-                <xhtml:font xhtml:color="#000000">
+                <xhtml:font color="#000000">医師氏名4</xhtml:font>
+                <xhtml:font color="#000000">
                 </xhtml:font>
-                <xhtml:font xhtml:color="#000000">
+                <xhtml:font color="#000000">
                 </xhtml:font>
                 <xhtml:br/>
-                <xhtml:font xhtml:color="#000000">尿検査が終わったら連絡をしてください</xhtml:font>
-                <xhtml:font xhtml:color="#000000">
+                <xhtml:font color="#000000">尿検査が終わったら連絡をしてください</xhtml:font>
+                <xhtml:font color="#000000">
                 </xhtml:font>
-                <xhtml:font xhtml:color="#000000">
+                <xhtml:font color="#000000">
                 </xhtml:font>
                 <xhtml:br/>
                 <xhtml:br/>

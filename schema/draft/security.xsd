@@ -2,33 +2,29 @@
 <!-- *************************************************** -->
 <!-- Security XSD Version 4.0 -->
 <!-- *************************************************** -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/SharedComponent/Security/1.0" xmlns:mmlSc="http://www.medxml.net/MML/v4/SharedComponent/Security/1.0">
-  <xs:group name="securityLevel">
-    <xs:sequence>
-      <xs:element name="securityLevel" form="unqualified">
-        <xs:complexType>
-          <xs:group minOccurs="0" maxOccurs="unbounded" ref="mmlSc:accessRight"/>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:group>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.medxml.net/MML/v4/SharedComponent/Security/1.0" xmlns:mmlSc="http://www.medxml.net/MML/v4/SharedComponent/Security/1.0">
   
-  <xs:group name="accessRight">
-    <xs:sequence>
-      <xs:element name="accessRight" form="unqualified">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" ref="mmlSc:facility"/>
-            <xs:element minOccurs="0" ref="mmlSc:person"/>
-            <xs:element minOccurs="0" ref="mmlSc:license"/>
-            <xs:element minOccurs="0" ref="mmlSc:department"/>
-          </xs:sequence>
-          <xs:attributeGroup ref="mmlSc:attlist.accessRight"/>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:group>
+  <xs:element name="securityLevel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlSc:accessRight"/>     
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   
+  <xs:element name="accessRight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="mmlSc:facility"/>
+        <xs:element minOccurs="0" ref="mmlSc:person"/>
+        <xs:element minOccurs="0" ref="mmlSc:license"/>
+        <xs:element minOccurs="0" ref="mmlSc:department"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="mmlSc:attlist.accessRight"/>
+    </xs:complexType>
+  </xs:element>
+ 
   <xs:attributeGroup name="attlist.accessRight">
     <xs:attribute name="permit" use="required">
       <xs:simpleType>

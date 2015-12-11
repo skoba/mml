@@ -8,8 +8,7 @@
   xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0"
   xmlns:mmlRd="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
   xmlns:mmlPsi="http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0"
-  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
-  >
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0">
   
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0" schemaLocation="department.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0" schemaLocation="registereddiagnosis.xsd" />
@@ -102,8 +101,8 @@
   </xs:element>
   
   <xs:attributeGroup name="attlist.title">
-    <xs:attribute name="code" form="qualified"/>
-    <xs:attribute name="system" form="qualified"/>
+    <xs:attribute name="code" form="qualified" type="xs:string"/>
+    <xs:attribute name="system" form="qualified" type="xs:string"/>
   </xs:attributeGroup>
   
   <xs:element name="memo" type="xs:string"/>
@@ -139,7 +138,7 @@
   <xs:element name="operationElementItem" >
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlSg:title"/>
+        <xs:element ref="mmlSg:title" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -177,7 +176,7 @@
   <xs:element name="anesthesiaProcedure">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlSg:title"/>
+        <xs:element ref="mmlSg:title" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
