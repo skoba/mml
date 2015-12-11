@@ -3,7 +3,7 @@
  xmlns="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
  xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0 https://raw.githubusercontent.com/skoba/mml/master/schema/draft/address.xsd"
+ xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0 ../address.xsd"
  mmlAd:repCode="A"
  mmlAd:addressClass="business"
  mmlAd:tableId="MML0025">
