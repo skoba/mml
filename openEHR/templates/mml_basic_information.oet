@@ -64,7 +64,6 @@
     <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.adverse_reaction_fhir.v1" concept_name="Adverse Reaction Risk(FHIR/openEHR)" path="/content">
       <Rule path="/data[at0001]/items[at0063]" max="0" />
       <Rule path="/data[at0001]/items[at0101]" max="0" />
-      <Rule path="/data[at0001]/items[at0058]" max="0" />
       <Rule path="/data[at0001]/items[at0120]" max="0" />
       <Rule path="/data[at0001]/items[at0117]" max="0" />
       <Rule path="/data[at0001]/items[at0009]/items[at0010]" max="0" />
