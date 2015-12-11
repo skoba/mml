@@ -10,8 +10,8 @@
   xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0"
   xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
   xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
-  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
-  >
+  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0">
+
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0" schemaLocation="facility.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0" schemaLocation="department.xsd" />

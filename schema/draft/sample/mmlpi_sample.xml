@@ -4,13 +4,16 @@
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
   xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
   xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
-  xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0">
+  xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0 ../patientinfo.xsd">
+
   <mmlPi:uniqueInfo>
     <mmlPi:masterId>
       <mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10"
         mmlCm:checkDigit = "5" mmlCm:tableId = "MML0024">12345</mmlCm:Id>
     </mmlPi:masterId>
-    <mmlPi:otherId type="otherPatientId">
+    <mmlPi:otherId mmlPi:type="otherPatientId">
       <mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10" mmlCm:checkDigit = "5"
         mmlCm:tableId = "JPN452015100001">678910</mmlCm:Id>
     </mmlPi:otherId>

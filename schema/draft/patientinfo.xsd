@@ -8,8 +8,7 @@
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
   xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
   xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
-  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
-  >
+  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0">
   
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0" schemaLocation="phone.xsd" />
@@ -36,6 +35,23 @@
     </xs:complexType>
   </xs:element>
   
+  <xs:element name="uniqueInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mmlPi:masterId"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlPi:otherId"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="masterId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mmlCm:Id"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
   <xs:element name="otherId">
     <xs:complexType>
       <xs:sequence>
@@ -65,23 +81,6 @@
       </xs:simpleType>
     </xs:attribute>
   </xs:attributeGroup>
-  
-  <xs:element name="masterId">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="mmlCm:Id"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:element name="uniqueInfo">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="mmlPi:masterId"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlPi:otherId"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   
   <xs:element name="death">
     <xs:complexType mixed="true">

@@ -35,13 +35,6 @@
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="tableId" default="MML0025">
-      <xs:simpleType>
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="MML0025"/>
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="tableId" form="qualified" default="MML0025" type="xs:string"/>
   </xs:attributeGroup>
-  
 </xs:schema>
