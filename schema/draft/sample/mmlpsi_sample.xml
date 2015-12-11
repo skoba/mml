@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mmlPsi:PersonalizedInfo>
+
+<mmlPsi:PersonalizedInfo
+  xmlns:mmlPsi= "http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0"
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+  xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
+  xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0"
+  xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+  xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0">
+  
   <mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10"
     mmlCm:checkDigit = "5" mmlCm:tableId = "MML0024">12345</mmlCm:Id>
   <mmlPsi:personName>

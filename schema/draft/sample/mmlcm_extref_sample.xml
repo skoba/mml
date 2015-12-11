@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mml:extRefs>
-  <mmlCm:extRef
+<mmlCm:extRef
+    xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
     mmlCm:contentType = "APPLICATION/HL72.3-HL7ER2.3"
     mmlCm:medicalRole = "prescription"
     mmlCm:title = "Prescription on discharge"
     mmlCm:href = "patient1234/prescription831.HL7"/>
-</mml:extRefs>
-

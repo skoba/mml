@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
+<mmlAd:Address
+  xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+  mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
   <mmlAd:prefecture>Miyazaki</mmlAd:prefecture>
   <mmlAd:city>Miyazaki</mmlAd:city>
   <mmlAd:town>Kiyotake</mmlAd:town>
