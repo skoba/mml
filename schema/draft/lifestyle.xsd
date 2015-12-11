@@ -5,8 +5,8 @@
 <!-- *************************************************** -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0" 
   xmlns:mmlLs="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
-  >
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <xs:element name="LifestyleModule">
     <xs:complexType>
       <xs:sequence>

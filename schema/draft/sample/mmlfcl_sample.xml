@@ -24,21 +24,21 @@
       <mmlFcl:bodyWeight mmlFcl:unit="g">3270</mmlFcl:bodyWeight>
       <mmlFcl:bodyHeight mmlFcl:unit="cm">50</mmlFcl:bodyHeight>
     </mmlFcl:birthInfo>
+    <mmlFcl:vaccination>
+      <mmlFcl:vaccinationItem>
+        <mmlFcl:vaccine>polio</mmlFcl:vaccine>
+        <mmlFcl:injected>true</mmlFcl:injected>
+        <mmlFcl:age>P6M</mmlFcl:age>
+        <mmlFcl:memo>first administration</mmlFcl:memo>
+      </mmlFcl:vaccinationItem>
+      <mmlFcl:vaccinationItem>
+        <mmlFcl:vaccine>polio</mmlFcl:vaccine>
+        <mmlFcl:injected>true</mmlFcl:injected>
+        <mmlFcl:age>P1Y6M</mmlFcl:age>
+        <mmlFcl:memo>second administration</mmlFcl:memo>
+      </mmlFcl:vaccinationItem>
+    </mmlFcl:vaccination>
   </mmlFcl:childhood>
-  <mmlFcl:vaccination>
-    <mmlFcl:vaccinationItem>
-      <mmlFcl:vaccine>polio</mmlFcl:vaccine>
-      <mmlFcl:injected>true</mmlFcl:injected>
-      <mmlFcl:age>P6M</mmlFcl:age>
-      <mmlFcl:memo>first administration</mmlFcl:memo>
-    </mmlFcl:vaccinationItem>
-    <mmlFcl:vaccinationItem>
-      <mmlFcl:vaccine>polio</mmlFcl:vaccine>
-      <mmlFcl:injected>true</mmlFcl:injected>
-      <mmlFcl:age>P1Y6M</mmlFcl:age>
-      <mmlFcl:memo>second administration</mmlFcl:memo>
-    </mmlFcl:vaccinationItem>
-  </mmlFcl:vaccination>
   <mmlFcl:pastHistory>
     <mmlFcl:pastHistoryItem>
       <mmlFcl:timeExpression>6 years old</mmlFcl:timeExpression>
