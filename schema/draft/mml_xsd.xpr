@@ -50,7 +50,7 @@
         <file name="injection.xsd"/>
         <file name="lifestyle.xsd"/>
         <file name="mml_datatypes_and_header_3.0.dtd"/>
-        <file name="mml_xsd.xpr"/>
+        <file name="mml_datatypes_and_header_4.0.xsd"/>
         <file name="mml.xsd"/>
         <file name="name.xsd"/>
         <file name="patientinfo.xsd"/>

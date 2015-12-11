@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlFs:FlowSheetModule xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"
+ xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0 file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/flowsheet.xsd">
+  <mmlFs:context>
+    <mmlFs:facility mmlVs:facilityCode="facilityCode0" facilityCodeId="ca">
+    </mmlFs:facility>
+  </mmlFs:context>
+</mmlFs:FlowSheetModule>
