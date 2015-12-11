@@ -71,7 +71,7 @@
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.address-japan.v1" concept_name="Address expression of Japan" path="/items[at0014]">
         <Rule path="/items[at0001]/items[at0015]" max="0" />
       </Items>
-      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-mml.v1" concept_name="Telecom details for MML" path="/items[at0015.1]">
+      <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.telecom_details-japan.v1" concept_name="Telecom details for Japanese system" path="/items[at0015.1]">
         <Rule path="/items[at0010]" max="0" />
       </Items>
       <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.race.v1" concept_name="Race" path="/items[at0018]" />
