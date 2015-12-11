@@ -50,13 +50,7 @@
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="tableId" default="MML0025">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="MML0025"/>
-          </xs:restriction>
-        </xs:simpleType>
-    </xs:attribute>
+    <xs:attribute name="tableId" default="MML0025" form="qualified" />
   </xs:attributeGroup>
   
   <xs:element name="countryCode" type="xs:string"/>

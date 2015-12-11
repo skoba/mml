@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mmlPh:Phone mmlPh:telEquipType = "PH">
+<mmlPh:Phone xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0" mmlPh:telEquipType = "PH">
   <mmlPh:area>0985</mmlPh:area>
   <mmlPh:city>85</mmlPh:city>
   <mmlPh:number>1500</mmlPh:number>

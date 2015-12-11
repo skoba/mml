@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mmlAd:Address
-  xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
-  mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
+ xmlns="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+ xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0 https://raw.githubusercontent.com/skoba/mml/master/schema/draft/address.xsd"
+ mmlAd:repCode="A"
+ mmlAd:addressClass="business"
+ mmlAd:tableId="MML0025">
   <mmlAd:prefecture>Miyazaki</mmlAd:prefecture>
   <mmlAd:city>Miyazaki</mmlAd:city>
   <mmlAd:town>Kiyotake</mmlAd:town>

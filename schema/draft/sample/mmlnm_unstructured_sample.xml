@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025">
+<mmlNm:Name xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0" mmlNm:repCode = "A" mmlNm:tableId = "MML0025">
   <mmlNm:fullname>Araki Kenji</mmlNm:fullname>
   <mmlNm:degree>M.D.</mmlNm:degree>
 </mmlNm:Name>

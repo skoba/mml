@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mmlDp:Department>
+<mmlDp:Department
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0">
   <mmlDp:name mmlDp:repCode = "A" mmlDp:tableId = "MML0025">
     Cardiovascular　Surgery
   </mmlDp:name>
-  <mmlCm:Id mmlCm:type = "medical"　 mmlCm:tableId = "MML0029">16</mmlCm:Id>
+  <mmlCm:Id mmlCm:typ="medical" mmlCm:tableI="MML0029">16</mmlCm:Id>
 </mmlDp:Department>
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mmlPh:Phone mmlPh:telEquipType = "PH">
-  <mmlPh:full>0985-85-1500(2067)< /mmlPh:full >
+<mmlPh:Phone xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
+  mmlPh:telEquipType = "PH">
+  <mmlPh:full>0985-85-1500(2067)</mmlPh:full >
   <mmlPh:country>81</mmlPh:country>
   <mmlPh:memo>daytime</mmlPh:memo>
 </mmlPh:Phone>
