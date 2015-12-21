@@ -139,6 +139,7 @@
             <Rule path="/items[at0.20]" max="0" />
           </Items>
         </Items>
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.adhoc_cluster_heading.v1" concept_name="Adhoc Cluster Heading" max="1" path="/protocol[at0008]/items[at0142]" name="refer to facility" />
       </Item>
     </Content>
     <Content xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.reason_for_encounter.v1" concept_name="Reason for encounter" path="/content">
