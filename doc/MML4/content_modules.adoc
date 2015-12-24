@@ -46,4 +46,4 @@ include::prescription.adoc[]
 
 include::injection.adoc[]
 
-// include::hemodialysis.adoc[]
+include::hemodialysis.adoc[]
