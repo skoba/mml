@@ -1,0 +1,399 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-ADMIN_ENTRY.claim.v1
+
+concept
+	[at0000]	-- CLAIM/MML
+language
+	original_language = <[ISO_639-1::ja]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["organisation"] = <"openEHR.jp">
+		["name"] = <"Shinji KOBAYASHI">
+		["email"] = <"skoba@moss.or.jp">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"CLAIM module archetype">
+			use = <"Record CLAIM data">
+			misuse = <"Record other data">
+			copyright = <"">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2C487589C5E5E821548F27F1D31ABE60">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {	-- CLAIM/MML
+		data matches {
+			ITEM_TREE[at0001] matches {	-- *Tree(ja)
+				items cardinality matches {0..*; unordered} matches {
+					CLUSTER[at0002] occurrences matches {0..1} matches {	-- *新しいクラスタ(ja)
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0003] matches {	-- *新規Element(ja)
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0004] occurrences matches {0..1} matches {	-- *新規Element(ja)
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0005] occurrences matches {0..1} matches {	-- *新規Element(ja)
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0006] occurrences matches {0..1} matches {	-- *新規Element(ja)
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0007] occurrences matches {0..1} matches {	-- claim:performTime
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0008] occurrences matches {0..1} matches {	-- claim:admitFlag
+								value matches {
+									DV_BOOLEAN matches {
+										value matches {True, False}
+									}
+								}
+							}
+							ELEMENT[at0009] occurrences matches {0..1} matches {	-- claim:timeClass
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0010] occurrences matches {0..1} matches {	-- claim:insuranceUid
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0011] occurrences matches {0..1} matches {	-- claim:defaultTableId
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							CLUSTER[at0012] occurrences matches {0..1} matches {	-- claim:appoint
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0013] occurrences matches {0..1} matches {	-- claim:appName
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0014] occurrences matches {0..1} matches {	-- claim:memo
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							CLUSTER[at0015] occurrences matches {0..1} matches {	-- claim:patientDepartment
+								items cardinality matches {1..*; unordered} matches {
+									allow_archetype CLUSTER[at0016] occurrences matches {0..*} matches {	-- mmlDp:department
+										include
+											archetype_id/value matches {/.*/}
+									}
+								}
+							}
+							CLUSTER[at0018] occurrences matches {0..1} matches {	-- claim:patientWard
+								items cardinality matches {1..*; unordered} matches {
+									allow_archetype CLUSTER[at0019] occurrences matches {0..*} matches {	-- mmlDp:department
+										include
+											archetype_id/value matches {/.*/}
+									}
+								}
+							}
+							allow_archetype CLUSTER[at0020] occurrences matches {0..*} matches {	-- mmlHi:insuranceClass
+								include
+									archetype_id/value matches {/.*/}
+							}
+						}
+					}
+					CLUSTER[at0021] occurrences matches {0..1} matches {	-- claim:bundle
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0027] occurrences matches {0..1} matches {	-- claim:bundleNumber
+								value matches {
+									DV_COUNT matches {*}
+								}
+							}
+							ELEMENT[at0023] occurrences matches {0..1} matches {	-- claim:classCodeId
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0022] occurrences matches {0..1} matches {	-- claim:classCode
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0024] occurrences matches {0..1} matches {	-- claim:className
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0025] occurrences matches {0..1} matches {	-- claim:administration
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0026] occurrences matches {0..1} matches {	-- claim:admMemo
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"CLAIM/MML ">
+					description = <"Accounting record to claim for Japanese health insurance system">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"claim:infomation">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"claim:status">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"claim:orderTime">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"claim:appintTime">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"claim:registTime">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"新規Element">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0009"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0010"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0011"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0012"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0013"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0014"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0015"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0016"] = <
+					text = <"*Cluster(ja)">
+					description = <"**(ja)">
+				>
+				["at0018"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0019"] = <
+					text = <"*Cluster(ja)">
+					description = <"**(ja)">
+				>
+				["at0020"] = <
+					text = <"*Cluster(ja)">
+					description = <"**(ja)">
+				>
+				["at0021"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0022"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0023"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0024"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0025"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0026"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0027"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"CLAIM/MML">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"*Tree(ja)">
+					description = <"*@ internal @(ja)">
+				>
+				["at0002"] = <
+					text = <"*新しいクラスタ(ja)">
+					description = <"**(ja)">
+				>
+				["at0003"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0004"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0005"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0006"] = <
+					text = <"*新規Element(ja)">
+					description = <"**(ja)">
+				>
+				["at0007"] = <
+					text = <"claim:performTime">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"claim:admitFlag">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"claim:timeClass">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"claim:insuranceUid">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"claim:defaultTableId">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"claim:appoint">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"claim:appName">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"claim:memo">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"claim:patientDepartment">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"mmlDp:department">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"claim:patientWard">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"mmlDp:department">
+					description = <"*">
+				>
+				["at0020"] = <
+					text = <"mmlHi:insuranceClass">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"claim:bundle">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"claim:classCode">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"claim:classCodeId">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"claim:className">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"claim:administration">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"claim:admMemo">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"claim:bundleNumber">
+					description = <"*">
+				>
+			>
+		>
+	>
