@@ -38,7 +38,7 @@ description
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"4C9FEE7B494D6C0A7AB84C119AAB0347">
+		["MD5-CAM-1.0.1"] = <"653251F8E1AE584914E9D439732AA1A9">
 	>
 
 definition
@@ -139,15 +139,30 @@ definition
 									}
 								}
 							}
-							allow_archetype CLUSTER[at0020] occurrences matches {0..*} matches {	-- mmlHi:insuranceClass
-								include
-									archetype_id/value matches {/.*/}
+							CLUSTER[at0063] occurrences matches {0..1} matches {	-- insurance
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0064] occurrences matches {0..1} matches {	-- mmlHi:insuranceClass
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0065] occurrences matches {0..1} matches {	-- mmlHi:classCode
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0066] occurrences matches {0..1} matches {	-- mmlHi:classCodeId
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
 							}
 						}
 					}
 					CLUSTER[at0021] occurrences matches {0..1} matches {	-- claim:bundle
 						items cardinality matches {1..*; unordered} matches {
-							CLUSTER[at0028] occurrences matches {0..1} matches {	-- *bundle:attributes(ja)
+							CLUSTER[at0028] occurrences matches {0..1} matches {	-- bundle:attributes
 								items cardinality matches {1..*; unordered} matches {
 									ELEMENT[at0022] occurrences matches {0..1} matches {	-- claim:classCode
 										value matches {
@@ -166,19 +181,19 @@ definition
 									DV_TEXT matches {*}
 								}
 							}
-							CLUSTER[at0029] occurrences matches {0..1} matches {	-- *administration(ja)
+							CLUSTER[at0029] occurrences matches {0..1} matches {	-- administration
 								items cardinality matches {1..*; unordered} matches {
-									ELEMENT[at0025] occurrences matches {0..1} matches {	-- *claim:administration(ja)
+									ELEMENT[at0025] occurrences matches {0..1} matches {	-- claim:administration
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0030] occurrences matches {0..1} matches {	-- *claim:adminCode(ja)
+									ELEMENT[at0030] occurrences matches {0..1} matches {	-- claim:adminCode
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0031] occurrences matches {0..1} matches {	-- *claim:adminCodeId(ja)
+									ELEMENT[at0031] occurrences matches {0..1} matches {	-- claim:adminCodeId
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -195,132 +210,132 @@ definition
 									DV_COUNT matches {*}
 								}
 							}
-							CLUSTER[at0035] occurrences matches {1..*} matches {	-- claim:item
+							CLUSTER[at0035] occurrences matches {1..*} matches {	-- *claim:item(ja)
 								items cardinality matches {1..*; unordered} matches {
-									CLUSTER[at0036] occurrences matches {0..1} matches {	-- item:attributes
+									CLUSTER[at0036] occurrences matches {0..1} matches {	-- *item:attributes(ja)
 										items cardinality matches {1..*; unordered} matches {
-											ELEMENT[at0037] occurrences matches {0..1} matches {	-- claim:subclassCode
+											ELEMENT[at0037] occurrences matches {0..1} matches {	-- *claim:subclassCode(ja)
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0038] occurrences matches {0..1} matches {	-- claim:subclassCodeId
+											ELEMENT[at0038] occurrences matches {0..1} matches {	-- *claim:subclassCodeId(ja)
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0039] matches {	-- claim:code
+											ELEMENT[at0039] matches {	-- *claim:code(ja)
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0040] occurrences matches {0..1} matches {	-- claim:tableId
+											ELEMENT[at0040] occurrences matches {0..1} matches {	-- *claim:tableId(ja)
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0041] occurrences matches {0..1} matches {	-- claim:aliasCode
+											ELEMENT[at0041] occurrences matches {0..1} matches {	-- *claim:aliasCode(ja)
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0042] occurrences matches {0..1} matches {	-- claim:aliasTableId
+											ELEMENT[at0042] occurrences matches {0..1} matches {	-- *claim:aliasTableId(ja)
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
 										}
 									}
-									ELEMENT[at0043] occurrences matches {0..1} matches {	-- claim:name
+									ELEMENT[at0043] occurrences matches {0..1} matches {	-- *claim:name(ja)
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									CLUSTER[at0044] occurrences matches {0..*} matches {	-- number
+									CLUSTER[at0044] occurrences matches {0..*} matches {	-- *number(ja)
 										items cardinality matches {2..*; unordered} matches {
-											ELEMENT[at0045] occurrences matches {0..1} matches {	-- claim:number
+											ELEMENT[at0045] occurrences matches {0..1} matches {	-- *claim:number(ja)
 												value matches {
 													C_DV_QUANTITY <
 													>
 												}
 											}
-											ELEMENT[at0046] matches {	-- claim:numberCode
+											ELEMENT[at0046] matches {	-- *claim:numberCode(ja)
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0047] matches {	-- claim:numberCodeId
+											ELEMENT[at0047] matches {	-- *claim:numberCodeId(ja)
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
 										}
 									}
-									ELEMENT[at0049] occurrences matches {0..1} matches {	-- claim:duration
+									ELEMENT[at0049] occurrences matches {0..1} matches {	-- *claim:duration(ja)
 										value matches {
 											DV_DURATION matches {*}
 										}
 									}
-									ELEMENT[at0050] occurrences matches {0..*} matches {	-- claim:location
+									ELEMENT[at0050] occurrences matches {0..*} matches {	-- *claim:location(ja)
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									CLUSTER[at0051] occurrences matches {0..*} matches {	-- claim:film
+									CLUSTER[at0051] occurrences matches {0..*} matches {	-- *claim:film(ja)
 										items cardinality matches {1..*; unordered} matches {
-											CLUSTER[at0052] occurrences matches {0..1} matches {	-- size
+											CLUSTER[at0052] occurrences matches {0..1} matches {	-- *size(ja)
 												items cardinality matches {1..*; unordered} matches {
-													ELEMENT[at0053] occurrences matches {0..1} matches {	-- claim:filmSize
+													ELEMENT[at0053] occurrences matches {0..1} matches {	-- *claim:filmSize(ja)
 														value matches {
 															DV_TEXT matches {*}
 														}
 													}
-													ELEMENT[at0054] occurrences matches {0..1} matches {	-- claim:sizeCode
+													ELEMENT[at0054] occurrences matches {0..1} matches {	-- *claim:sizeCode(ja)
 														value matches {
 															DV_TEXT matches {*}
 														}
 													}
-													ELEMENT[at0055] occurrences matches {0..1} matches {	-- claim:filmDivision
+													ELEMENT[at0055] occurrences matches {0..1} matches {	-- *claim:filmDivision(ja)
 														value matches {
 															DV_TEXT matches {*}
 														}
 													}
 												}
 											}
-											ELEMENT[at0056] matches {	-- claim:filmNumber
+											ELEMENT[at0056] matches {	-- *claim:filmNumber(ja)
 												value matches {
 													DV_COUNT matches {*}
 												}
 											}
 										}
 									}
-									CLUSTER[at0057] occurrences matches {0..1} matches {	-- event
+									CLUSTER[at0057] occurrences matches {0..1} matches {	-- *event(ja)
 										items cardinality matches {1..*; unordered} matches {
-											ELEMENT[at0058] occurrences matches {0..1} matches {	-- claim:event
+											ELEMENT[at0058] occurrences matches {0..1} matches {	-- *claim:event(ja)
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0059] occurrences matches {0..1} matches {	-- claim:eventStart
+											ELEMENT[at0059] occurrences matches {0..1} matches {	-- *claim:eventStart(ja)
 												value matches {
 													DV_DATE matches {*}
 												}
 											}
-											ELEMENT[at0060] occurrences matches {0..1} matches {	-- claim:eventEnd
+											ELEMENT[at0060] occurrences matches {0..1} matches {	-- *claim:eventEnd(ja)
 												value matches {
 													DV_DATE matches {*}
 												}
 											}
 										}
 									}
-									ELEMENT[at0061] occurrences matches {0..1} matches {	-- claim:memo
+									ELEMENT[at0061] occurrences matches {0..1} matches {	-- *claim:memo(ja)
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
 								}
 							}
-							ELEMENT[at0062] occurrences matches {0..1} matches {	-- claim:memo
+							ELEMENT[at0062] occurrences matches {0..1} matches {	-- *claim:memo(ja)
 								value matches {
 									DV_TEXT matches {*}
 								}
@@ -412,10 +427,6 @@ ontology
 					text = <"mmlDp:department">
 					description = <"**(ja)">
 				>
-				["at0020"] = <
-					text = <"mmlHi:insuranceClass">
-					description = <"**(ja)">
-				>
 				["at0021"] = <
 					text = <"claim:bundle">
 					description = <"**(ja)">
@@ -433,7 +444,7 @@ ontology
 					description = <"**(ja)">
 				>
 				["at0025"] = <
-					text = <"*claim:administration(ja)">
+					text = <"claim:administration">
 					description = <"**(ja)">
 				>
 				["at0026"] = <
@@ -445,19 +456,19 @@ ontology
 					description = <"**(ja)">
 				>
 				["at0028"] = <
-					text = <"*bundle:attributes(ja)">
+					text = <"bundle:attributes">
 					description = <"**(ja)">
 				>
 				["at0029"] = <
-					text = <"*administration(ja)">
+					text = <"administration">
 					description = <"**(ja)">
 				>
 				["at0030"] = <
-					text = <"*claim:adminCode(ja)">
+					text = <"claim:adminCode">
 					description = <"**(ja)">
 				>
 				["at0031"] = <
-					text = <"*claim:adminCodeId(ja)">
+					text = <"claim:adminCodeId">
 					description = <"**(ja)">
 				>
 				["at0032"] = <
@@ -473,112 +484,128 @@ ontology
 					description = <"**(ja)">
 				>
 				["at0035"] = <
-					text = <"claim:item">
-					description = <"*">
+					text = <"*claim:item(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0036"] = <
-					text = <"item:attributes">
-					description = <"*">
+					text = <"*item:attributes(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0037"] = <
-					text = <"claim:subclassCode">
-					description = <"*">
+					text = <"*claim:subclassCode(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0038"] = <
-					text = <"claim:subclassCodeId">
-					description = <"*">
+					text = <"*claim:subclassCodeId(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0039"] = <
-					text = <"claim:code">
-					description = <"*">
+					text = <"*claim:code(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0040"] = <
-					text = <"claim:tableId">
-					description = <"*">
+					text = <"*claim:tableId(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0041"] = <
-					text = <"claim:aliasCode">
-					description = <"*">
+					text = <"*claim:aliasCode(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0042"] = <
-					text = <"claim:aliasTableId">
-					description = <"*">
+					text = <"*claim:aliasTableId(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0043"] = <
-					text = <"claim:name">
-					description = <"*">
+					text = <"*claim:name(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0044"] = <
-					text = <"number">
-					description = <"*">
+					text = <"*number(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0045"] = <
-					text = <"claim:number">
-					description = <"*">
+					text = <"*claim:number(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0046"] = <
-					text = <"claim:numberCode">
-					description = <"*">
+					text = <"*claim:numberCode(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0047"] = <
-					text = <"claim:numberCodeId">
-					description = <"*">
+					text = <"*claim:numberCodeId(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0049"] = <
-					text = <"claim:duration">
-					description = <"*">
+					text = <"*claim:duration(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0050"] = <
-					text = <"claim:location">
-					description = <"*">
+					text = <"*claim:location(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0051"] = <
-					text = <"claim:film">
-					description = <"*">
+					text = <"*claim:film(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0052"] = <
-					text = <"size">
-					description = <"*">
+					text = <"*size(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0053"] = <
-					text = <"claim:filmSize">
-					description = <"*">
+					text = <"*claim:filmSize(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0054"] = <
-					text = <"claim:sizeCode">
-					description = <"*">
+					text = <"*claim:sizeCode(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0055"] = <
-					text = <"claim:filmDivision">
-					description = <"*">
+					text = <"*claim:filmDivision(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0056"] = <
-					text = <"claim:filmNumber">
-					description = <"*">
+					text = <"*claim:filmNumber(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0057"] = <
-					text = <"event">
-					description = <"*">
+					text = <"*event(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0058"] = <
-					text = <"claim:event">
-					description = <"*">
+					text = <"*claim:event(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0059"] = <
-					text = <"claim:eventStart">
-					description = <"*">
+					text = <"*claim:eventStart(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0060"] = <
-					text = <"claim:eventEnd">
-					description = <"*">
+					text = <"*claim:eventEnd(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0061"] = <
-					text = <"claim:memo">
-					description = <"*">
+					text = <"*claim:memo(ja)">
+					description = <"***(ja)(ja)">
 				>
 				["at0062"] = <
-					text = <"claim:memo">
-					description = <"*">
+					text = <"*claim:memo(ja)">
+					description = <"***(ja)(ja)">
+				>
+				["at0063"] = <
+					text = <"insurance">
+					description = <"**(ja)">
+				>
+				["at0064"] = <
+					text = <"mmlHi:insuranceClass">
+					description = <"**(ja)">
+				>
+				["at0065"] = <
+					text = <"mmlHi:classCode">
+					description = <"**(ja)">
+				>
+				["at0066"] = <
+					text = <"mmlHi:classCodeId">
+					description = <"**(ja)">
 				>
 			>
 		>
@@ -660,10 +687,6 @@ ontology
 					text = <"mmlDp:department">
 					description = <"*">
 				>
-				["at0020"] = <
-					text = <"mmlHi:insuranceClass">
-					description = <"*">
-				>
 				["at0021"] = <
 					text = <"claim:bundle">
 					description = <"*">
@@ -721,112 +744,128 @@ ontology
 					description = <"*">
 				>
 				["at0035"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"claim:item">
 					description = <"**(ja)">
 				>
 				["at0036"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"item:attributes">
 					description = <"**(ja)">
 				>
 				["at0037"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:subclassCode">
 					description = <"**(ja)">
 				>
 				["at0038"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:subclassCodeId">
 					description = <"**(ja)">
 				>
 				["at0039"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:code">
 					description = <"**(ja)">
 				>
 				["at0040"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:tableId">
 					description = <"**(ja)">
 				>
 				["at0041"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:aliasCode">
 					description = <"**(ja)">
 				>
 				["at0042"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:aliasTableId">
 					description = <"**(ja)">
 				>
 				["at0043"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:name">
 					description = <"**(ja)">
 				>
 				["at0044"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"number">
 					description = <"**(ja)">
 				>
 				["at0045"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:number">
 					description = <"**(ja)">
 				>
 				["at0046"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:numberCode">
 					description = <"**(ja)">
 				>
 				["at0047"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:numberCodeId">
 					description = <"**(ja)">
 				>
 				["at0049"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:duration">
 					description = <"**(ja)">
 				>
 				["at0050"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:location">
 					description = <"**(ja)">
 				>
 				["at0051"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"claim:film">
 					description = <"**(ja)">
 				>
 				["at0052"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"size">
 					description = <"**(ja)">
 				>
 				["at0053"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:filmSize">
 					description = <"**(ja)">
 				>
 				["at0054"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:sizeCode">
 					description = <"**(ja)">
 				>
 				["at0055"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:filmDivision">
 					description = <"**(ja)">
 				>
 				["at0056"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:filmNumber">
 					description = <"**(ja)">
 				>
 				["at0057"] = <
-					text = <"*新しいクラスタ(ja)">
+					text = <"event">
 					description = <"**(ja)">
 				>
 				["at0058"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:event">
 					description = <"**(ja)">
 				>
 				["at0059"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:eventStart">
 					description = <"**(ja)">
 				>
 				["at0060"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:eventEnd">
 					description = <"**(ja)">
 				>
 				["at0061"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:memo">
 					description = <"**(ja)">
 				>
 				["at0062"] = <
-					text = <"*新規Element(ja)">
+					text = <"claim:memo">
 					description = <"**(ja)">
+				>
+				["at0063"] = <
+					text = <"insurance">
+					description = <"*">
+				>
+				["at0064"] = <
+					text = <"mmlHi:insuranceClass">
+					description = <"*">
+				>
+				["at0065"] = <
+					text = <"mmlHi:classCode">
+					description = <"*">
+				>
+				["at0066"] = <
+					text = <"mmlHi:classCodeId">
+					description = <"*">
 				>
 			>
 		>
