@@ -3411,7 +3411,7 @@
         </term_definitions>
         <term_definitions code="at0005">
           <items id="description">**(ja)</items>
-          <items id="text">claim:appintTime</items>
+          <items id="text">claim:appointTime</items>
         </term_definitions>
         <term_definitions code="at0006">
           <items id="description">**(ja)</items>

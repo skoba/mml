@@ -38,7 +38,7 @@ description
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"4D464D17174A175330FDA539563732F3">
+		["MD5-CAM-1.0.1"] = <"82FC83DAEC70CAFEE0BDCCD1F4DF6E07">
 	>
 
 definition
@@ -58,7 +58,7 @@ definition
 									DV_DATE_TIME matches {*}
 								}
 							}
-							ELEMENT[at0005] occurrences matches {0..1} matches {	-- claim:appintTime
+							ELEMENT[at0005] occurrences matches {0..1} matches {	-- claim:appointTime
 								value matches {
 									DV_DATE_TIME matches {*}
 								}
@@ -377,7 +377,7 @@ ontology
 					description = <"***(ja)(ja)">
 				>
 				["at0005"] = <
-					text = <"claim:appintTime">
+					text = <"claim:appointTime">
 					description = <"***(ja)(ja)">
 				>
 				["at0006"] = <
@@ -641,7 +641,7 @@ ontology
 					description = <"**(ja)">
 				>
 				["at0005"] = <
-					text = <"claim:appintTime">
+					text = <"claim:appointTime">
 					description = <"**(ja)">
 				>
 				["at0006"] = <
