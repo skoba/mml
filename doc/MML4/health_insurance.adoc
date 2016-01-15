@@ -93,7 +93,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【属性】本モジュールが日本固有のものであることを明示するために，以下の属性を設ける．
 |=====
 |属性名|データ型|省略|説明
-|MmlHi:countryType|string|#IMPLIED|国タイプ．日本JPN
+|mmlHi:countryType|string|#IMPLIED|国タイプ．日本JPN
 |=====
 
 【例】

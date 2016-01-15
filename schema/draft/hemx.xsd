@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- HeMX version 0.94b converted from DTD  2015-09-09 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+	   targetNamespace="http://www.medxml.net/MML/v4/SharedComponent/Hemodialisys/1.0"
+  xmlns:mmlHd="http://www.medxml.net/MML/v4/SharedComponent/Hemodialisys/1.0">
+
   <xs:element name="HeMX">
     <xs:complexType>
       <xs:sequence>
@@ -28,7 +31,7 @@
         <xs:element ref="facilityName"/>
         <xs:element minOccurs="0" ref="facilityId"/>
       </xs:sequence>
-    </xs:complexType>
+v    </xs:complexType>
   </xs:element>
   <xs:element name="facilityName" type="xs:string"/>
   <xs:element name="facilityId">

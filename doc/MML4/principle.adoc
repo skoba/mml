@@ -41,6 +41,9 @@ MML Version 4.0で使用する各モジュールとnamespace宣言を以下に�
 |紹介状モジュール|xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
 |バイタルサインモジュール|xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
 |体温表モジュール|xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"
+|処方箋モジュール|xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
+|注射記録モジュール|xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
+|透析モジュール|xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
 |===
 
 === MMLにおける各種のデータ定義
@@ -217,6 +220,7 @@ Ver 3まではモジュールのバージョンは，namespaces宣言の末尾�
 |体温表モジュール|xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"
 |処方箋モジュール|xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
 |注射記録モジュール|xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
+|透析モジュール|xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
 |===
 
 === XHTMLの取り扱い
