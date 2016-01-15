@@ -182,7 +182,7 @@
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.6.2.11|mmlHd:dialysateTemp| | |*|
 |1.6.2.11.1|mmlHd:dialysateTempValue| |string| |
-| | |mmlHd;unit|string| |"C"
+| | |mmlHd:unit|string| |"C"
 |1.6.2.11.2|mmlHd:timeHdStart| |timePeriod| |
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.6.2.11.3|mmlHd:timeHdEnd| |timePeriod|?|
@@ -322,7 +322,7 @@
 Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== MmlHd:HemoDialysysModule
+===== mmlHd:HemoDialysysModule
 ===== mmlFc:Facility
 【内容】施設情報、構造はMML共通形式を参照 +
 
@@ -514,7 +514,7 @@ before:開始時刻前,after:開始時刻後
 |===
 |属性名|データ型|省略|説明
 |mmlHd:unit|string|#REQUIRED|"Kg"
-|MmlHd:cnote|string|#IMPLIED|コメント
+|mmlHd:cnote|string|#IMPLIED|コメント
 |===
 
 ===== mmlHd:bloodFlow

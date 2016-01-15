@@ -111,8 +111,8 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|mmlRp:performTime|dateTime|#REQUIRED|検査実施日時
-|mmlRp:reportTime|dateTime|#REQUIRED|報告日時
+|mmlRp:performTime|dateTime|#REQUIRED| |検査実施日時
+|mmlRp:reportTime|dateTime|#REQUIRED| |報告日時
 |===
 
 ===== mmlRp:reportStatus
