@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.3">
+<meta name="generator" content="Asciidoctor 1.5.4">
 <meta name="author" content="toc::[]">
 <title>MML 4.0(Draft)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -243,7 +243,7 @@ Release 1.0, 2000</p>
 <div class="sect2">
 <h3 id="_mml_bodyブロック">5.2. MML bodyブロック</h3>
 <div class="paragraph">
-<p>MML bodyブロックは複数のitemブロック（MｍｌModuleItem)で構成されており、各itemブロックにはヘッダ情報（docInfo)とその内容を表すコンテンツモジュールが配置される。</p>
+<p>MML bodyブロックは複数のitemブロック（MmｌModuleItem)で構成されており、各itemブロックにはヘッダ情報（docInfo)とその内容を表すコンテンツモジュールが配置される。</p>
 </div>
 <div class="paragraph">
 <p>docInfoには、記載日、記載者、文書種別、タイトル、文書ID、親文書ID、グループID、アクセス権、外部参照リストが記載されている。</p>
@@ -254,10 +254,10 @@ Release 1.0, 2000</p>
 <div class="ulist">
 <ul>
 <li>
-<p>患者情報モジュール</p>
+<p>患者情報</p>
 </li>
 <li>
-<p>健康保健情報</p>
+<p>保険情報</p>
 </li>
 <li>
 <p>診断履歴情報</p>
@@ -296,10 +296,13 @@ Release 1.0, 2000</p>
 <p>体温表</p>
 </li>
 <li>
-<p>内服・外用処方</p>
+<p>処方箋</p>
 </li>
 <li>
-<p>注射実施記録</p>
+<p>注射記録</p>
+</li>
+<li>
+<p>透析</p>
 </li>
 </ul>
 </div>
@@ -431,6 +434,18 @@ Release 1.0, 2000</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">体温表モジュール</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">処方箋モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">注射記録モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">透析モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"</p></td>
 </tr>
 </tbody>
 </table>
@@ -803,6 +818,10 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 <td class="tableblock halign-left valign-top"><p class="tableblock">注射記録モジュール</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">透析モジュール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -835,12 +854,12 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -1102,12 +1121,12 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 2. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -1322,12 +1341,12 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 3. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -1488,12 +1507,12 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 4. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -1677,12 +1696,12 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 5. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -1899,12 +1918,12 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 6. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2045,12 +2064,12 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 7. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2193,12 +2212,12 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 8. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -2476,12 +2495,12 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 9. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -3426,12 +3445,12 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 10. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -3982,12 +4001,12 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 11. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -4425,7 +4444,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MmlHi:countryType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:countryType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">国タイプ．日本JPN</p></td>
@@ -4963,12 +4982,12 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 12. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -5387,12 +5406,12 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 13. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -5519,12 +5538,12 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 14. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -5955,12 +5974,12 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 15. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -6719,12 +6738,12 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 16. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -7463,12 +7482,12 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 17. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -8453,12 +8472,12 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 18. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -9942,12 +9961,12 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 19. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
@@ -11369,12 +11388,12 @@ A 異常</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 20. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <thead>
 <tr>
@@ -11865,8 +11884,15 @@ A 異常</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlRp:performTime</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">検査実施日時</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlRp:reportTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">報告日時</p></td>
 </tr>
 </tbody>
 </table>
@@ -12544,12 +12570,12 @@ final 最終報告</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 21. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <thead>
 <tr>
@@ -13120,12 +13146,12 @@ final 最終報告</p></td>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <thead>
 <tr>
@@ -13727,12 +13753,12 @@ final 最終報告</p></td>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 22. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <thead>
 <tr>
@@ -14504,12 +14530,12 @@ confirmDate
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 23. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <thead>
 <tr>
@@ -14969,12 +14995,12 @@ confirmDate
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 24. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <thead>
 <tr>
@@ -15317,12 +15343,12 @@ confirmDate
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 25. エレメント一覧表</caption>
 <colgroup>
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
-<col style="width: 16%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <thead>
 <tr>
@@ -16706,7 +16732,7 @@ confirmDate
 <tr>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd;unit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:unit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">"C"</p></td>
@@ -17799,7 +17825,7 @@ confirmDate
 <div class="sect3">
 <h4 id="_エレメント解説_26">10.17.1. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlhd_hemodialysysmodule">MmlHd:HemoDialysysModule</h5>
+<h5 id="_mmlhd_hemodialysysmodule">mmlHd:HemoDialysysModule</h5>
 
 </div>
 <div class="sect4">
@@ -18301,7 +18327,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">"Kg"</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MmlHd:cnote</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:cnote</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">コメント</p></td>
