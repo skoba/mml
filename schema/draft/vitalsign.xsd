@@ -83,11 +83,11 @@
   <xs:element name="protocol">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:element name="procedure" type="xs:string"/>
-        <xs:element name="position" type="xs:string"/>
-        <xs:element name="device" type="xs:string"/>
-        <xs:element name="bodyLocation" type="xs:string"/>
-        <xs:element name="protMemo" type="xs:string"/>
+        <xs:element name="procedure" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="position" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="device" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="bodyLocation" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="protMemo" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
