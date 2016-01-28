@@ -99,7 +99,7 @@
   <xs:element name="phones">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlPh:Phone" minOccurs="0"/>
+        <xs:element ref="mmlPh:Phone" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -107,7 +107,7 @@
   <xs:element name="emailAddresses">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlCm:email" minOccurs="0"/>
+        <xs:element ref="mmlCm:email" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>      
     </xs:complexType>
   </xs:element>
@@ -115,7 +115,7 @@
   <xs:element name="addresses">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlAd:Address" minOccurs="0"/>
+        <xs:element ref="mmlAd:Address" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>      
     </xs:complexType>
   </xs:element>
@@ -132,7 +132,16 @@
     <xs:attribute name="subtype" form="qualified"/>
   </xs:attributeGroup>
 
-  <xs:element name="race" type="xs:string"/>
+  <xs:element name="race">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.race"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:attributeGroup name="attlist.race">
+    <xs:attribute name="raceCode" form="qualified" type="xs:string"/>
+    <xs:attribute name="raceCodeId" form="qualified" type="xs:string"/>
+  </xs:attributeGroup>
   
   <xs:element name="sex" type="xs:string"/>
   
@@ -141,7 +150,7 @@
   <xs:element name="personName" >
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlNm:Name"/>
+        <xs:element ref="mmlNm:Name" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>  
     </xs:complexType>
   </xs:element>
