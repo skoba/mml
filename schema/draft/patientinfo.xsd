@@ -134,7 +134,7 @@
 
   <xs:element name="race">
     <xs:complexType mixed="true">
-      <xs:attributeGroup ref="attlist.race"/>
+      <xs:attributeGroup ref="mmlPi:attlist.race"/>
     </xs:complexType>
   </xs:element>
   
