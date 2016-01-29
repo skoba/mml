@@ -32,7 +32,8 @@
   xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"
   xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
   xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
-  xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0">
+  xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
+  xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0">
   
   <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd"/>
   <!-- MML base common modules -->
@@ -62,6 +63,7 @@
   <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0" schemaLocation="vitalsign.xsd"/>
   <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0" schemaLocation="prescription.xsd"/>
   <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0" schemaLocation="injection.xsd"/>
+  <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0" schemaLocation="hemodialysis.xsd"/>
   <xs:import namespace="http://www.medxml.net/claim/claimModule/2.1" schemaLocation="claim.xsd" />
   <xs:import namespace="http://www.medxml.net/claim/claimAmountModule/2.1" schemaLocation="claimamount.xsd" />
   
