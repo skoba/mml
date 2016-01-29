@@ -18,19 +18,19 @@
   <xs:element name="HealthInsuranceModule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlHi:insuranceClass"/>
-        <xs:element ref="mmlHi:insuranceNumber"/>
-        <xs:element ref="mmlHi:clientId"/>
-        <xs:element ref="mmlHi:familyClass"/>
-        <xs:element minOccurs="0" ref="mmlHi:clientInfo"/>
-        <xs:element minOccurs="0" ref="mmlHi:continuedDiseases"/>
-        <xs:element ref="mmlHi:startDate"/>
-        <xs:element ref="mmlHi:expiredDate"/>
-        <xs:element minOccurs="0" ref="mmlHi:paymentInRatio"/>
-        <xs:element minOccurs="0" ref="mmlHi:paymentOutRatio"/>
-        <xs:element minOccurs="0" ref="mmlHi:insuredInfo"/>
-        <xs:element minOccurs="0" ref="mmlHi:workInfo"/>
-        <xs:element minOccurs="0" ref="mmlHi:publicInsurance"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:insuranceClass"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlHi:insuranceNumber"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlHi:clientId"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlHi:familyClass"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:clientInfo"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:continuedDiseases"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlHi:startDate"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlHi:expiredDate"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:paymentInRatio"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:paymentOutRatio"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:insuredInfo"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:workInfo"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:publicInsurance"/>
       </xs:sequence>
       <xs:attributeGroup ref="mmlHi:attlist.HealthInsuranceModule"/>
     </xs:complexType>
@@ -325,7 +325,7 @@
   <xs:element name="personName">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlNm:Name"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlNm:Name"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -333,7 +333,7 @@
   <xs:element name="addresses">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlAd:Address"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlAd:Address"/>
       </xs:sequence>      
     </xs:complexType>
   </xs:element>
@@ -341,7 +341,7 @@
   <xs:element name="phones">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlPh:Phone"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlPh:Phone"/>
       </xs:sequence>            
     </xs:complexType>
   </xs:element>
@@ -349,7 +349,7 @@
   <xs:element name="continuedDiseases">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="mmlHi:diseases"/>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlHi:diseases"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -367,9 +367,9 @@
   <xs:element name="insuredInfo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlHi:facility"/>
-        <xs:element minOccurs="0" ref="mmlHi:addresses"/>
-        <xs:element minOccurs="0" ref="mmlHi:phones"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:facility"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:addresses"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:phones"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -377,7 +377,7 @@
   <xs:element name="facility">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="mmlFc:Facility"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlFc:Facility"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -385,9 +385,9 @@
   <xs:element name="workInfo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlHi:facility"/>
-        <xs:element minOccurs="0" ref="mmlHi:addresses"/>
-        <xs:element minOccurs="0" ref="mmlHi:phones"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:facility"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:addresses"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:phones"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -403,12 +403,12 @@
   <xs:element name="publicInsuranceItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlHi:providerName"/>
-        <xs:element ref="mmlHi:provider"/>
-        <xs:element ref="mmlHi:recipient"/>
-        <xs:element ref="mmlHi:startDate"/>
-        <xs:element ref="mmlHi:expiredDate"/>
-        <xs:element minOccurs="0" ref="mmlHi:paymentRatio"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:providerName"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlHi:provider"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlHi:recipient"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlHi:startDate"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlHi:expiredDate"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHi:paymentRatio"/>
       </xs:sequence>
       <xs:attributeGroup ref="mmlHi:attlist.publicInsuranceItem"/>
     </xs:complexType>

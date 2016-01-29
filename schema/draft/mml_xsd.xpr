@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="12.2">
+<project version="17.1">
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="12.2" xml:space="preserve">
-                <map>
+            <serialized version="17.1" xml:space="preserve">
+                <serializableOrderedMap>
                     <entry>
                         <String>validation.scenario.associations</String>
                         <scenarioAssociation-array>
                             <scenarioAssociation>
-                                <field name="name">
-                                    <String>all file with schema</String>
-                                </field>
-                                <field name="type">
-                                    <String>Validation_scenario</String>
-                                </field>
                                 <field name="url">
                                     <String>sample/instance1.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>all file with schema</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
                                 </field>
                             </scenarioAssociation>
                         </scenarioAssociation-array>
@@ -73,7 +77,7 @@
                         <String>validation.scenarios.load.from.project</String>
                         <Boolean>true</Boolean>
                     </entry>
-                </map>
+                </serializableOrderedMap>
             </serialized>
         </options>
     </meta>
