@@ -49,6 +49,7 @@
           <xs:enumeration value="riInVivo"/>
           <xs:enumeration value="angioGraphy"/>
           <xs:enumeration value="otherRadiology"/>
+          <xs:enumeration value="echo"/>
           <xs:enumeration value="ecg"/>
           <xs:enumeration value="eeg"/>
           <xs:enumeration value="emg"/>
