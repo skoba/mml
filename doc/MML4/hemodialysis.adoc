@@ -14,310 +14,316 @@
 |===
 | |Elements|Attribute|Datatypes|Occurrence|Table id
 |1|MmlHd:HemoDialysysModule| | | |
-|1.1|mmlHd:HeMX| | |?|
-|1.1.1|mmlCm:extRef| | |*|
-|1.2|mmlFc:Facility| | | |
-|1.3|mmlPi:PatientModule| | | |
-|1.4|mmlHd:note| | |?|
-|1.5|mmlHd:HDHistorySection| | |?|
-|1.5.1|mmlHd:HdIntroduction| | |*|
-|1.5.1.1|mmlHd:diagnosis| | |?|
-| | |code|string|#IMPLIED| | | |system|string|#IMPLIED|
-|1.5.1.2|mmlHd:HdIntroDate| |date|?|
-|1.5.1.3|mmlFc:Facility| | |?|
-|1.5.2|mmlHd:BloodAccess| | |*|
-|1.5.2.1|mmlHd:dateMade| |date|?|
-|1.5.2.2|mmlHd:dateFirstUse| |date|?|
-|1.5.2.3|mmlHd:dateEnd| |date|?|
-|1.5.2.4|mmlHd:location| |string|?|
-| | |code|string|#IMPLIED| | | |tableId|string|#REQUIRED|
-|1.6|mmlHd:OrderSection| | |?|
-|1.6.1|mmlHd:hdorders| | |*|
+| | |mmlHd:version|string|REQUIRED|
+| | |mmlHd:createDate|dateTime|REQUIRED|
+|1.1|mmlHd:Content| | |?|
+|1.1.1|mmlFc:Facility| | | |
+|1.1.2|mmlPi:PatientModule| | | |
+|1.1.3|mmlHd:note| | |?|
+|1.1.4|mmlHd:HDHistorySection| | |?|
+|1.1.4.1|mmlHd:HdIntroduction| | |*|
+|1.1.4.1.1|mmlHd:diagnosis| | |?|
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:system|string|#IMPLIED|
+|1.1.4.1.2|mmlHd:HdIntroDate| |date|?|
+|1.1.4.1.3|mmlFc:Facility| | | |
+|1.1.4.2|mmlHd:BloodAccess| | |*|
+| | |mmHd:baStatus|string|#IMPLIED|
+|1.1.4.2.1|mmlHd:dateMade| |date|?|
+|1.1.4.2.2|mmlHd:dateFirstUse| |date|?|
+|1.1.4.2.3|mmlHd:dateEnd| |date|?|
+|1.1.4.2.4|mmlHd:location| |string|?|hdBaCodeTable01
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:tableId|string|#REQUIRED|
+|1.1.5|mmlHd:HDOrderSection| | |?|
+|1.1.5.1|mmlHd:hdOrders| | |*|
 | | |mmlHd:orderStatus|string|#REQUIRED|
 | | |mmlHd:dateOrdered|date|#IMPLIED|
 | | |mmlHd:dateEffective|date|#IMPLIED|
-|1.6.1.1|mmlHd:orderGroups| | |*|
-|1.6.1.1.1|mmlHd:effectiveDays| | |*|
-|1.6.1.1.1.1|mmlHd:weekday| |string|*|
-|1.6.1.1.1.2|mmlHd:timeShift| |string|?|
+|1.1.5.1.1|mmlHd:orderGroups| | |*|
+|1.1.5.1.1.1|mmlHd:effectiveDays| | |*|
+|1.1.5.1.1.1.1|mmlHd:weekday| |string|*|
+|1.1.5.1.1.2|mmlHd:timeShift| |string|?|hdTimeShiftTable01
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#REQUIRED|
-|1.6.1.1.3|mmlHd:hdMethod| | |?|
-|1.6.1.1.3.1|mmlHd:hdMethodName| | | |
+|1.1.5.1.1.3|mmlHd:hdMethod| | |*|
+|1.1.5.1.1.3.1|mmlHd:hdMethodName| |string| |
 | | |mmlHd:code|string|#IMPLIED|
-| | |mmlHd:tableId|string|#REQUIRED|
-|1.6.1.1.3.2|mmlHd:timeHdStart| |timeperiod| |
+| | |mmlHd:tableId|string|#REQUIRED|hdMethodTable01
+|1.1.5.1.1.3.2|mmlHd:timeHdStart| |timePeriod| |
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.3.3|mmlHd:timeHdEnd| |timeperiod| |
-|1.6.1.1.4|mmlHd:dryWeight| |string| |
-|1.6.1.1.5|mmlHd:weightCorrection| |string|?|
-| | |mmlHd:unit|string|#REQUIRED|"Kg"
-| | |mmlHd:cnote|string|#IMPLIED|コメント
-|1.6.1.1.6|mmlHd:bloodFlow| | |*|
-|1.6.1.1.6.1|mmlHd:bloodFlowRate| |string|?|
+|1.1.5.1.1.3.3|mmlHd:timeHdEnd| |timePeriod| |
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|1.1.5.1.1.4|mmlHd:dryWeight| |string| |
 | | |mmlHd:unit|string|#REQUIRED|
-|1.6.1.1.6.2|mmlHd:timeHdStart| |timeperiod|?|
+|1.1.5.1.1.5|mmlHd:weightCorrection| |string|?|
+| | |mmlHd:unit|string|#REQUIRED|
+| | |mmlHd:cnote|string|#IMPLIED|
+|1.1.5.1.1.6|mmlHd:bloodFlow| | |*|
+|1.1.5.1.1.6.1|mmlHd:bloodFlowRate| |string| |
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.5.1.1.6.2|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.6.3|mmlHd:timeHdEnd| |timeperiod|?|
+|1.1.5.1.1.6.3|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.7|mmlHd:dialyser| |string|?|
+|1.1.5.1.1.7|mmlHd:dialyser| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 | | |mmlHd:membraneArea|string|#IMPLIED|
-| | |mmlHd:unit|string|#IMPLIED|"m2"
-|1.6.1.1.8|mmlHd:dialysate| | |*|
-|1.6.1.1.8.1|mmlHd:dialysateName| |string| |
+| | |mmlHd:unit|string|#IMPLIED|
+|1.1.5.1.1.8|mmlHd:dialysate| | |*|
+|1.1.5.1.1.8.1|mmlHd:dialysateName| |string| |
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 | | |mmlHd:modification|string|#IMPLIED|
-|1.6.1.1.8.2|mmlHd:timeHdStart| |timePeriod|?|
+|1.1.5.1.1.8.2|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.8.3|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.5.1.1.8.3|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.9|mmlHd:dialysateFlow| | |*|
-|1.6.1.1.9.1|mmlHd:dialysateFlowRate| |string| |
-| | |mmlHd:unit|string|#IMPLIED|"ml/min"
-|1.6.1.1.9.2|mmlHd:timeHdStart| |timePeriod|?|
+|1.1.5.1.1.9|mmlHd:dialysateFlow| | |*|
+|1.1.5.1.1.9.1|mmlHd:dialysateFlowRate| |string| |
+| | |mmlHd:unit|string|#IMPLIED|
+|1.1.5.1.1.9.2|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.9.3|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.5.1.1.9.3|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.10|mmlHd:dialysateTemp| | |*|
-|1.6.1.1.10.1|mmlHd:dialysateTempValue| |string| |
-| | |mmlHd:unit|string| |"C"
-|1.6.1.1.10.2 |mmlHd:timeHdStart| |timePeriod|?|
+|1.1.5.1.1.10|mmlHd:dialysateTemp| | |*|
+|1.1.5.1.1.10.1|mmlHd:dialysateTempValue| |string| |
+| | |mmlHd:unit|string| |
+|1.1.5.1.1.10.2 |mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.10.3|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.5.1.1.10.3|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.11|mmlHd:substitution| | |*|
-|1.6.1.1.11.1|mmlHd:substitutionValue| |string| |
+|1.1.5.1.1.11|mmlHd:substitution| | |*|
+|1.1.5.1.1.11.1|mmlHd:substitutionValue| |string| |
 | | |mmlHd:unit|string|#REQUIRED|
 | | |mmlHd:dilution|string|#REQUIRED|
-|1.6.1.1.11.2|mmlHd:timeHdStart| |timePeriod|?|
+|1.1.5.1.1.11.2|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.11.3 |mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.5.1.1.11.3 |mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.12| |mmlHd:needle|string|*|
+|1.1.5.1.1.12| |mmlHd:needle|string|*|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 | | |mmlHd:position|string|#IMPLIED|
-|1.6.1.1.13|mmlHd:medication| | |*|
-|1.6.1.1.13.1|mmlHd:drugName| |string|?|
+|1.1.5.1.1.13|mmlHd:medication| | |*|
+|1.1.5.1.1.13.1|mmlHd:drugName| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#REQUIRED|
-|1.6.1.1.13.2|mmlHd:dose| |string|?|
+|1.1.5.1.1.13.2|mmlHd:dose| |string|?|
 | | |mmlHd:unit|string|#IMPLIED|
-|1.6.1.1.13.3|mmlHd:timeHd| |timePeriod|?|
+|1.1.5.1.1.13.3|mmlHd:timeHd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.13.4|mmlHd:note| |string|?|
-|1.6.1.1.14|mmlHd:injection| | |*|
-|1.6.1.1.14.1|mmlHd:drugName| |string|?|
+|1.1.5.1.1.13.4|mmlHd:note| |string|?|
+|1.1.5.1.1.14|mmlHd:injection| | |*|
+|1.1.5.1.1.14.1|mmlHd:drugName| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#REQUIRED|
-|1.6.1.1.14.2|mmlHd:dose| |string|?|
+|1.1.5.1.1.14.2|mmlHd:dose| |string|?|
 | | |mmlHd:unit|string|#IMPLIED|
-|1.6.1.1.14.3|mmlHd:timeHdStart| |timePeriod|?|
+|1.1.5.1.1.14.3|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.14.4|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.5.1.1.14.4|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.1.1.14.5|mmlHd:routeName| |string|?|
+|1.1.5.1.1.14.5|mmlHd:routeName| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#REQUIRED|hdInjectionRouteTable01
-|1.6.1.1.14.6|mmlHd:note| |string|?|
-|1.6.1.1.15|mmlHd:note| |string|?|
-|1.6.2|mmlHd:hdDailyOrder| | |*|
+|1.1.5.1.1.14.6|mmlHd:note| |string|?|
+|1.1.5.1.1.15|mmlHd:note| |string|?|
+|1.1.5.2|mmlHd:hdDailyOrder| | |*|
 | | |mmlHd:orderDateTime|dateTime|#IMPLIED|
 | | |mmlHd:dateEffective|date|#IMPLIED|
-|1.6.2.1|mmlHd:imeShift| |string|?|
+|1.1.5.2.1|mmlHd:timeShift| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#REQUIRED|hdTimeShiftTable01
-|1.6.2.2|mmlHd:hdMethod| | |*|
-|1.6.2.2.1|mmlHd:hdMethodName| |string| |
+|1.1.5.2.2|mmlHd:hdMethod| | |*|
+|1.1.5.2.2.1|mmlHd:hdMethodName| |string| |
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#REQUIRED|
-|1.6.2.2.2|mmlHd:timeHdStart| |timePeriod|?|
+|1.1.5.2.2.2|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.2.3|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.5.2.2.3|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.3|mmlHd:targetWeight| |string|?|
-| | |mmlHd:unit|string| |"kg"
-|1.6.2.4|mmlHd:targetUF| |string|?|
-| | |mmlHd:unit|string| |"kg"
-|1.6.2.5|mmlHd:ufrPlan| | |*|
-|1.6.2.5.1|mmlHd:ufRate| |string| |
-| | |mmlHd:unit|string| |"kg./h"
-|1.6.2.5.2|mmlHd:timeHdStart| |timePeriod|?|
+|1.1.5.2.3|mmlHd:targetWeight| |string|?|
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.5.2.4|mmlHd:targetUF| |string|?|
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.5.2.5|mmlHd:ufrPlan| | |*|
+|1.1.5.2.5.1|mmlHd:ufRate| |string| |
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.5.2.5.2|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.5.3|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.5.2.5.3|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.6|mmlHd:weightCorrection| |string|?|
-| | |mmlHd:unit|string| |"kg"
+|1.1.5.2.6|mmlHd:weightCorrection| |string|?|
+| | |mmlHd:unit|string|#REQUIRED|
 | | |mmlHd:cnote|string|#IMPLIED|
-|1.6.2.7|mmlHd:bloodFlow| | |*|
-|1.6.2.7.1|mmlHd:bloodFlowRate| |string| |
-| | |mmlHd:unit|string| |"mL/min"
-|1.6.2.7.2|mmlHd:timeHdStart| |timePeriod|?|
+|1.1.5.2.7|mmlHd:bloodFlow| | |*|
+|1.1.5.2.7.1|mmlHd:bloodFlowRate| |string| |
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.5.2.7.2|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.7.3|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.5.2.7.3|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.8|mmlHd:dialyser| |string|?|
+|1.1.5.2.8|mmlHd:dialyser| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 | | |mmlHd:membraneArea|string|#IMPLIED|
-| | |mmlHd:unit|string|#IMPLIED|"m2"
-|1.6.2.9|mmlHd:dialysate| | |*|
-|1.6.2.9.1|mmlHd:dialysateName| |string| |
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.5.2.9|mmlHd:dialysate| | |*|
+|1.1.5.2.9.1|mmlHd:dialysateName| |string| |
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 | | |mmlHd:modification|string|#IMPLIED|
-|1.6.2.9.2|mmlHd:timeHdStart| |timePeriod|?|
+|1.1.5.2.9.2|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.9.3|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.5.2.9.3|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.6.2.10|mmlHd:dialysateFlow| | |*|
-|1.1.6.2.10.1|dialysateFlowRate| |string| |
-| | |mmlHd:unit|string| |"mL/min"
-|1.6.2.10.2|mmlHd:timeHdStart| |timePeriod|?|
+|1.1.5.2.10|mmlHd:dialysateFlow| | |*|
+|1.1.5.2.10.1|dialysateFlowRate| |string| |
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.5.2.10.2|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.10.3|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.5.2.10.3|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.11|mmlHd:dialysateTemp| | |*|
-|1.6.2.11.1|mmlHd:dialysateTempValue| |string| |
+|1.1.5.2.11|mmlHd:dialysateTemp| | |*|
+|1.1.5.2.11.1|mmlHd:dialysateTempValue| |string| |
 | | |mmlHd:unit|string| |"C"
-|1.6.2.11.2|mmlHd:timeHdStart| |timePeriod| |
+|1.1.5.2.11.2|mmlHd:timeHdStart| |timePeriod| |
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.11.3|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.5.2.11.3|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.12|mmlHd:needle| |string|*|
+|1.1.5.2.12|mmlHd:needle| |string|*|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 | | |mmlHd:position|string|#IMPLIED|
-|1.6.2.13|mmlHd:medication| | |*|
-|1.6.2.13.1|mmlHd:drugName| |string|?|
+|1.1.5.2.13|mmlHd:medication| | |*|
+|1.1.5.2.13.1|mmlHd:drugName| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
-|1.6.2.13.2|mmlHd:dose| |string|?|
+|1.1.5.2.13.2|mmlHd:dose| |string|?|
 | | |mmlHd:unit|string|#IMPLIED|
-|1.6.2.13.3|mmlHd:timeHd| |timePeriod|?|
+|1.1.5.2.13.3|mmlHd:timeHd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.13.4|mmlHd:note| |string|?|
-|1.6.2.14|mmlHd:injection| | |*|
-|1.6.2.14.1|mmlHd:drugName| |string|?|
+|1.1.5.2.13.4|mmlHd:note| |string|?|
+|1.1.5.2.14|mmlHd:injection| | |*|
+|1.1.5.2.14.1|mmlHd:drugName| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
-|1.6.2.14.2|mmlHd:dose| |string|?|
+|1.1.5.2.14.2|mmlHd:dose| |string|?|
 | | |mmlHd:unit|string|#IMPLIED|
-|1.6.2.14.3|mmlHd:timeHdStart| |timePeriod|?|
+|1.1.5.2.14.3|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.14.4|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.5.2.14.4|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.6.2.14.5|mmlHd:routeName| |string|?|
+|1.1.5.2.14.5|mmlHd:routeName| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#IMPLIED|hdInjectionRouteTable01
-|1.6.2.14.6|mmlHd:note| |string|?|
-|1.6.2.15|mmlHd:note| |string|?|
-|1.7|mmlHd:HDProgressSection| | |?|
-|1.7.1|mmlHd:dailyHDRecord| | |*|
+|1.1.5.2.14.6|mmlHd:note| |string|?|
+|1.1.5.2.15|mmlHd:note| |string|?|
+|1.1.6|mmlHd:HDProgressSection| | |?|
+|1.1.6.1|mmlHd:dailyHDRecord| | |*|
 | | |mmlHd:calendarDate|date|#IMPLIED|
 | | |mmlHd:serialNumber|string|#IMPLIED|
-|1.7.1.1|mmlHd:hdMethodRecord| |string|*|
+|1.1.6.1.1|mmlHd:hdMethodRecord| |string|*|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#IMPLIED|hdMethodTable01
 | | |mmlHd:startDateTime|dateTime|#IMPLIED|
 | | |mmlHd:endDateTime|dateTime|#IMPLIED|
-|1.7.1.2|mmlHd:dryWeight| |string|?|
-| | |mmlHd:unit|string| |"kg"
-|1.7.1.3|mmlHd:preWeight| |string|?|
-| | |mmlHd:unit|string| |"kg"
-|1.7.1.4|mmlHd:postWeight| |string|?|
-| | |mmlHd:unit|string| |"kg"
-|1.7.1.5|mmlHd:totalUF| |string|?|
-| | |mmlHd:unit|string| |"kg"
-|1.7.1.6|weightCorrection| |string|?|
-| | |mmlHd:unit|string| |"kg"
-|1.7.1.6.1|mmlHd:note| |string|?|
-|1.7.1.7|mmlHd:dialyser| |string|?|
+|1.1.6.1.2|mmlHd:dryWeight| |string|?|
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.6.1.3|mmlHd:preWeight| |string|?|
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.6.1.4|mmlHd:postWeight| |string|?|
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.6.1.5|mmlHd:totalUF| |string|?|
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.6.1.6|weightCorrection| |string|?|
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.6.1.6.1|mmlHd:note| |string|?|
+|1.1.6.1.7|mmlHd:dialyser| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 | | |mmlHd:membraneArea|string|#IMPLIED|
-| | |mmlHd:unit|string| |"m2"
-|1.7.1.8|mmlHd:dialysate| | |*|
-|1.7.1.8.1|mmlHd:dialysateName| |string| |
+| | |mmlHd:unit|string|#REQUIRED|
+|1.1.6.1.8|mmlHd:dialysate| | |*|
+|1.1.6.1.8.1|mmlHd:dialysateName| |string| |
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 | | |mmlHd:modification|string|#IMPLIED|
-|1.7.1.8.2|mmlHd:timeHdStart| |timePeriod|?|
+|1.1.6.1.8.2|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.7.1.8.3|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.6.1.8.3|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.7.1.9|mmlHd:needle| |string|*|
+|1.1.6.1.9|mmlHd:needle| |string|*|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 | | |mmlHd:position|string|#IMPLIED|
-|1.7.1.10|mmlHd:hdMachine| |string|?|
+|1.1.6.1.10|mmlHd:hdMachine| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#IMPLIED|hdMachineTable
-|1.7.1.11|mmlHd:observation| | |*|
-|1.7.1.11.1|mmlHd:timeHd| |timePeriod|?|
+|1.1.6.1.11|mmlHd:observation| | |*|
+|1.1.6.1.11.1|mmlHd:timeHd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.7.1.11.2|mmlHd:observationItem| | |*|
-|1.7.1.11.2.1|mmlHd:obItemName| |string| |
+|1.1.6.1.11.2|mmlHd:observationItem| | |*|
+|1.1.6.1.11.2.1|mmlHd:obItemName| |string| |
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#IMPLIED|hdObservationTable01
-|1.7.1.11.2.2|mmlHd:value| |string|?|
+|1.1.6.1.11.2.2|mmlHd:value| |string|?|
 | | |mmlHd:unit|string|#IMPLIED|
-|1.7.1.11.3|mmlHd:staffName| |string|*|
+|1.1.6.1.11.3|mmlHd:staffName| |string|*|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
-|1.7.1.11.4|mmlHd:machineName| |string|*|
+|1.1.6.1.11.4|mmlHd:machineName| |string|*|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#IMPLIED|
-|1.7.1.11.5|mmlHd:note| |string|?|
-|1.7.1.12|mmlHd:medication| | |*|
-|1.7.1.12.1|mmlHd:drugName| |string|?|
+|1.1.6.1.11.5|mmlHd:note| |string|?|
+|1.1.6.1.12|mmlHd:medication| | |*|
+|1.1.6.1.12.1|mmlHd:drugName| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
-|1.7.1.12.2|mmlHd:dose| |string|?|
-|1.7.1.12.3|mmlHd:timeHd| |timePeriod|?|
+|1.1.6.1.12.2|mmlHd:dose| |string|?|
+|1.1.6.1.12.3|mmlHd:timeHd| |timePeriod|?|
 | | |mmlHd:unit|string|#IMPLIED|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.7.1.12.4|mmlHd:note| |string|?|
-|1.7.1.13|mmlHd:injection| | |*|
-|1.7.1.13.1|mmlHd:drugName| |string|?|
+|1.1.6.1.12.4|mmlHd:note| |string|?|
+|1.1.6.1.13|mmlHd:injection| | |*|
+|1.1.6.1.13.1|mmlHd:drugName| |string|?|
 | | |mlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
-|1.7.1.13.2|mmlHd:dose| |string|?|
+|1.1.6.1.13.2|mmlHd:dose| |string|?|
 | | |mmlHd:unit|string|#IMPLIED|
-|1.7.1.13.3|mmlHd:timeHdStart| |timePeriod|?|
+|1.1.6.1.13.3|mmlHd:timeHdStart| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.7.1.13.4|mmlHd:timeHdEnd| |timePeriod|?|
+|1.1.6.1.13.4|mmlHd:timeHdEnd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.7.1.13.5|mmlHd:routeName| |string|?|
+|1.1.6.1.13.5|mmlHd:routeName| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#IMPLIED|hdInjectionRouteTable01
-|1.7.1.13.6|mmlHd:note| |string|?|
-|1.7.1.14|note| |string|?|
-|1.8|mmlHd:HDTestResultSection| | |?|
-|1.8.1|mmlHd:testResultItem| | |*|
+|1.1.6.1.13.6|mmlHd:note| |string|?|
+|1.1.6.1.14|note| |string|?|
+|1.1.7|mmlHd:HDTestResultSection| | |?|
+|1.1.7.1|mmlHd:testResultItem| | |*|
 | | |mmlHd:calendarDate|date|#IMPLIED|
-|1.8.1.1|mmlHd:testCondition| |string|?|
+|1.1.7.1.1|mmlHd:testCondition| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#IMPLIED|hdTestConditionTable01
-|1.8.1.2|mmlHd:timeHd| |timePeriod|?|
+|1.1.7.1.2|mmlHd:timeHd| |timePeriod|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.8.1.3|mmlHd:testItemGroup| | |*|
-|1.8.1.3.1|mmlHd:testName| |string|?|
+|1.1.7.1.3|mmlHd:testItemGroup| | |*|
+|1.1.7.1.3.1|mmlHd:testName| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
-|1.8.1.3.2|mmlHd:testResult| |string|?|
+|1.1.7.1.3.2|mmlHd:testResult| |string|?|
 | | |mmlHd:unit|string|#IMPLIED|
-|1.8.1.3.3|mmlHd:note| |string|?|
-|1.8.1.3.4|mmlHd:extRef| | |*|
+|1.1.7.1.3.3|mmlHd:note| |string|?|
+|1.1.7.1.3.4|mmlHd:extRef| | |*|
 | | |mmlHd:contentType|string|#IMPLIED|
 | | |mmlHd:medicalRole|string|#IMPLIED|
 | | |mmlHd:title|string|#IMPLIED|
 | | |mmlHd:href|string|#IMPLIED|
-|2|mmlHd:HeMX| | |*|
-|2.1|mmlCm:extRef| | | |
+|1.2|mmlHd:HeMX| | |*|
+|1.2.1|mmlCm:extRef| | | |
 |===
 Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 

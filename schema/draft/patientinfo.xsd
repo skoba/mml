@@ -3,7 +3,8 @@
 <!-- 患者情報 -->
 <!-- PatientModule XSD Version 4.0 -->
 <!-- *************************************************** -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0" 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0" 
   xmlns:mmlPi="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
   xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"

@@ -6,6 +6,10 @@
             <serialized version="17.1" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
+                        <String>enable.project.master.files.support</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
                         <String>validation.scenario.associations</String>
                         <scenarioAssociation-array>
                             <scenarioAssociation>
@@ -82,6 +86,10 @@
         </options>
     </meta>
     <projectTree name="mml_xsd.xpr">
+        <folder masterFiles="true" name="Master Files">
+            <file name="hemodialysis.xsd"/>
+            <file name="mml.xsd"/>
+        </folder>
         <folder name="sample">
             <file name="sample/mml4_sample1.xml"/>
             <file name="sample/mmlad_structured_sample.xml"/>
@@ -112,7 +120,9 @@
             <file name="sample/mmlsg_sample.xml"/>
             <file name="sample/mmlsm_sample.xml"/>
         </folder>
-        <file name="address.xsd"/>
+        <file name="file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/address.xsd">
+            <file name="hemodialysis.xsd"/>
+        </file>
         <file name="baseclinic.xsd"/>
         <file name="claim.xsd"/>
         <file name="claimamount.xsd"/>
@@ -124,7 +134,9 @@
         <file name="flowsheet.xsd"/>
         <file name="healthinsurance.xsd"/>
         <file name="hemx.dtd"/>
-        <file name="hemx.xsd"/>
+        <file name="file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/hemx.xsd">
+            <file name="hemodialysis.xsd"/>
+        </file>
         <file name="injection.xsd"/>
         <file name="lifestyle.xsd"/>
         <file name="mml_datatypes_and_header_3.0.dtd"/>

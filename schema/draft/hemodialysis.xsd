@@ -2,97 +2,41 @@
 <!-- HeMX version 0.94b converted from DTD  2015-09-09 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
 	   targetNamespace="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
-  xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0">
+  xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
+  xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
+  xmlns:mmlPi="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0">
+  
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0" schemaLocation="facility.xsd"/>
+  <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0" schemaLocation="patientinfo.xsd"/>
 
-  <xs:element name="HemodialysisModule">
+  <xs:element name="HemoDialysisModule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlHd:HDHeader"/>
-        <xs:element ref="mmlHd:HDBody"/>
+        <xs:element ref="mmlHd:Content"/>
+        <xs:element ref="mmlHd:HeMX"/>
       </xs:sequence>
       <xs:attributeGroup ref="mmlHd:attlist.HeMX"/>
     </xs:complexType>
   </xs:element>
   <xs:attributeGroup name="attlist.HeMX">
-    <xs:attribute name="version" use="required"/>
-    <xs:attribute name="createDate" use="required"/>
+    <xs:attribute name="version" type="xs:string" use="required"/>
+    <xs:attribute name="createDate" type="xs:dateTime" use="required"/>
   </xs:attributeGroup>
-  <xs:element name="HDHeader">
+  <xs:element name="Content">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlHd:facility"/>
-        <xs:element minOccurs="0" ref="mmlHd:patient"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlFc:Facility"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlPi:PatientModule"/>
+        <xs:element name="note" minOccurs="0" maxOccurs="1" type="xs:string"/>
+        <xs:element minOccurs="0" ref="mmlHd:HDHistorySection"/>
+        <xs:element minOccurs="0" ref="mmlHd:HDOrderSection"/>
+        <xs:element minOccurs="0" ref="mmlHd:HDProgressSection"/>
+        <xs:element minOccurs="0" ref="mmlHd:HDTestResultSection"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="facility">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="mmlHd:facilityName"/>
-        <xs:element minOccurs="0" ref="mmlHd:facilityId"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="facilityName" type="xs:string"/>
-  <xs:element name="facilityId">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.facilityId"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:attributeGroup name="attlist.facilityId">
-    <xs:attribute name="type" use="required"/>
-  </xs:attributeGroup>
-  <xs:element name="patient">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlHd:patientId"/>
-        <xs:element minOccurs="0" ref="mmlHd:personName"/>
-        <xs:element minOccurs="0" ref="mmlHd:birthday"/>
-        <xs:element minOccurs="0" ref="mmlHd:sex"/>
-        <xs:element minOccurs="0" ref="mmlHd:address"/>
-        <xs:element minOccurs="0" ref="mmlHd:note"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="patientId">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.patientId"/>
-    </xs:complexType>
-  </xs:element>
-  <xs:attributeGroup name="attlist.patientId">
-    <xs:attribute name="type" use="required"/>
-  </xs:attributeGroup>
-  <xs:element name="personName">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="mmlHd:familyName"/>
-        <xs:element minOccurs="0" ref="mmlHd:givenName"/>
-        <xs:element minOccurs="0" ref="mmlHd:middleName"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="familyName" type="xs:string"/>
-  <xs:element name="givenName" type="xs:string"/>
-  <xs:element name="middleName" type="xs:string"/>
-  <xs:element name="birthday" type="xs:string"/>
-  <xs:element name="sex" type="xs:string"/>
-  <xs:element name="address">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlHd:countryCode"/>
-        <xs:element minOccurs="0" ref="mmlHd:zip"/>
-        <xs:element minOccurs="0" ref="mmlHd:prefecture"/>
-        <xs:element minOccurs="0" ref="mmlHd:city"/>
-        <xs:element minOccurs="0" ref="mmlHd:otherDescriptor"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="countryCode" type="xs:string"/>
-  <xs:element name="zip" type="xs:string"/>
-  <xs:element name="prefecture" type="xs:string"/>
-  <xs:element name="city" type="xs:string"/>
   <xs:element name="otherDescriptor" type="xs:string"/>
-  <xs:element name="note" type="xs:string"/>
+
   <xs:element name="HDBody">
     <xs:complexType>
       <xs:sequence>
@@ -116,7 +60,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:hdDiagnosis"/>
         <xs:element minOccurs="0" ref="mmlHd:hdIntroDate"/>
-        <xs:element minOccurs="0" ref="mmlHd:facility"/>
+        <xs:element minOccurs="0" ref="mmlFc:Facility"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
