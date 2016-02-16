@@ -56,7 +56,7 @@ confirmDate
 |1.2.3|mmlPs:doseUnit| |string| |
 |1.2.4|mmlPs:frequencyPerDay| |decimal| |
 |1.2.5|mmlPs:startDate| |date|?|
-|1.2.6|mmlPs:duration| |decimal|?|
+|1.2.6|mmlPs:duration| |duration|?|
 |1.2.7|mmlPs:instruction| |string|?|
 |1.2.8|mmlPs:PRN| |boolean|?|
 |1.2.9|mmlPs:route| |string|?|

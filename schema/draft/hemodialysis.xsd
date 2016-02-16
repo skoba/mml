@@ -12,7 +12,7 @@
   <xs:element name="HemoDialysisModule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlHd:Content"/>
+        <xs:element ref="mmlHd:HemoDialysis"/>
         <xs:element ref="mmlHd:HeMX"/>
       </xs:sequence>
       <xs:attributeGroup ref="mmlHd:attlist.HeMX"/>
@@ -22,7 +22,7 @@
     <xs:attribute name="version" type="xs:string" use="required"/>
     <xs:attribute name="createDate" type="xs:dateTime" use="required"/>
   </xs:attributeGroup>
-  <xs:element name="Content">
+  <xs:element name="HemoDialysis">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="1" maxOccurs="1" ref="mmlFc:Facility"/>
