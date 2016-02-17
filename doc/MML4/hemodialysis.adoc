@@ -16,7 +16,7 @@
 |1|MmlHd:HemoDialysysModule| | | |
 | | |mmlHd:version|string|REQUIRED|
 | | |mmlHd:createDate|dateTime|REQUIRED|
-|1.1|mmlHd:Content| | |?|
+|1.1|mmlHd:HemoDialysis| | |*|
 |1.1.1|mmlFc:Facility| | | |
 |1.1.2|mmlPi:PatientModule| | | |
 |1.1.3|mmlHd:note| | |?|
@@ -32,20 +32,20 @@
 |1.1.4.2.1|mmlHd:dateMade| |date|?|
 |1.1.4.2.2|mmlHd:dateFirstUse| |date|?|
 |1.1.4.2.3|mmlHd:dateEnd| |date|?|
-|1.1.4.2.4|mmlHd:location| |string|?|hdBaCodeTable01
+|1.1.4.2.4|mmlHd:location| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
-| | |mmlHd:tableId|string|#REQUIRED|
+| | |mmlHd:tableId|string|#REQUIRED|hdBaCodeTable01
 |1.1.5|mmlHd:HDOrderSection| | |?|
 |1.1.5.1|mmlHd:hdOrders| | |*|
 | | |mmlHd:orderStatus|string|#REQUIRED|
 | | |mmlHd:dateOrdered|date|#IMPLIED|
 | | |mmlHd:dateEffective|date|#IMPLIED|
-|1.1.5.1.1|mmlHd:orderGroups| | |*|
+|1.1.5.1.1|mmlHd:orderGroups| | |+|
 |1.1.5.1.1.1|mmlHd:effectiveDays| | |*|
 |1.1.5.1.1.1.1|mmlHd:weekday| |string|*|
-|1.1.5.1.1.2|mmlHd:timeShift| |string|?|hdTimeShiftTable01
+|1.1.5.1.1.2|mmlHd:timeShift| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
-| | |mmlHd:tableId|string|#REQUIRED|
+| | |mmlHd:tableId|string|#REQUIRED|hdTimeShiftTable01
 |1.1.5.1.1.3|mmlHd:hdMethod| | |*|
 |1.1.5.1.1.3.1|mmlHd:hdMethodName| |string| |
 | | |mmlHd:code|string|#IMPLIED|
