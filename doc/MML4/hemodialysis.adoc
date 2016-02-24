@@ -22,7 +22,7 @@
 |1.1.3|mmlHd:note| |string|?|
 |1.1.4|mmlHd:HDHistorySection| | |?|
 |1.1.4.1|mmlHd:HdIntroduction| | |*|
-|1.1.4.1.1|mmlHd:diagnosis| | |?|
+|1.1.4.1.1|mmlHd:diagnosis| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:system|string|#IMPLIED|
 |1.1.4.1.2|mmlHd:HdIntroDate| |date|?|
