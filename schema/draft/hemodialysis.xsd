@@ -209,8 +209,8 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="mmlHd:flowRate"/>
-        <xs:element minOccurs="0" ref="mmlHd:timeHdStart"/>
-        <xs:element minOccurs="0" ref="mmlHd:timeHdEnd"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHdStart"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHdEnd"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
