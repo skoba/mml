@@ -117,12 +117,12 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:effectiveDays"/>
-        <xs:element minOccurs="0" ref="mmlHd:timeShift"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeShift"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:hdMethod"/>
-        <xs:element minOccurs="0" ref="mmlHd:dryWeight"/>
-        <xs:element minOccurs="0" ref="mmlHd:weightCorrection"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:dryWeight"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:weightCorrection"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:bloodFlow"/>
-        <xs:element minOccurs="0" ref="mmlHd:dialyser"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:dialyser"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:dialysate"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:dialysateFlow"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:dialysateTemp"/>
@@ -215,24 +215,26 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="flowRate">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.flowRate"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:decimal">
+          <xs:attribute name="unit" type="xs:string" use="required"/>          
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.flowRate">
-    <xs:attribute name="unit" default="mL/min"/>
-  </xs:attributeGroup>
   <xs:element name="dialyser">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.dialyser"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="code" type="xs:string" use="optional"/>
+          <xs:attribute name="type" type="xs:string" use="optional"/>
+          <xs:attribute name="membraneArea" type="xs:decimal"/>
+          <xs:attribute name="unit" default="m2"/>         
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.dialyser">
-    <xs:attribute name="code"/>
-    <xs:attribute name="type"/>
-    <xs:attribute name="membraneArea"/>
-    <xs:attribute name="unit" default="m2"/>
-  </xs:attributeGroup>
   <xs:element name="dialysate">
     <xs:complexType>
       <xs:sequence>

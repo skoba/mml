@@ -54,7 +54,7 @@
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.1.1.3.3|mmlHd:timeHdEnd| |dateTime| |
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.1.1.4|mmlHd:dryWeight| |decimal| |
+|1.1.5.1.1.4|mmlHd:dryWeight| |decimal|?|
 | | |mmlHd:unit|string|#REQUIRED|
 |1.1.5.1.1.5|mmlHd:weightCorrection| |decimal|?|
 | | |mmlHd:unit|string|#REQUIRED|
