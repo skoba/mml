@@ -100,7 +100,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
- 
+
 ==== エレメント解説
 ===== mmlRp:ReportModule
 【内容】報告書情報モジュール
@@ -146,7 +146,7 @@ final 最終報告
 |mmlRp:testSubclassCode|string|#IMPLIED|ユーザー指定
 |mmlRp:testSubclassCodeId|string|#IMPLIED| |用いたテーブル名を入力
 |===
- 
+
 ===== mmlRp:organ
 【内容】臓器．検査対象となった臓器であり，とくにコード化は行わない．
 
@@ -214,7 +214,7 @@ final 最終報告
 |mmlRp:depCode|string|#IMPLIED|MML0028|
 |mmlRp:depCodeId|string|#IMPLIED| |MML0028と入力
 |===
- 
+
 ===== mmlRp:pWard
 【内容】実施病棟 +
 【属性】
@@ -276,7 +276,7 @@ final 最終報告
 |===
 |属性名|データ型|省略|使用テーブル|説明
 |mmlRp:tmCodeName|string|#IMPLIED|検査コメント名称
-|mmlRp:tmCode|string|#IMPLIED|ユーザー指定|
+|mmlRp:tmCode|string|#IMPLIED|ユーザー指定
 |mmlRp:tmCodeId|string|#IMPLIED| |用いたテーブル名を入力
 |===
 

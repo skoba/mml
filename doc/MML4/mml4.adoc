@@ -1,6 +1,3 @@
-:Author: Shinji KOBAYASHI
-:Email: skoba@moss.gr.jp
-:toc: right
 :toclevels: 2
 :pagenums:
 :numberd:
