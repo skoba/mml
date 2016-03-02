@@ -25,7 +25,7 @@
         <xs:element ref="mmlSm:serviceHistory"/>
         <xs:element minOccurs="0" ref="mmlRd:RegisteredDiagnosisModule"/>
         <xs:element minOccurs="0" ref="mmlSm:deathInfo"/>
-        <xs:element minOccurs="0" ref="mmlSg:SurgeryModule"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlSg:SurgeryModule"/>
         <xs:element minOccurs="0" ref="mmlSm:chiefComplaints"/>
         <xs:element minOccurs="0" ref="mmlSm:patientProfile"/>
         <xs:element minOccurs="0" ref="mmlSm:history"/>
@@ -205,7 +205,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="mmlPsi:PersonalizedInfo"/>
-        <xs:element ref="mmlCi:creatorLicense" minOccurs="0"/>
+        <xs:element ref="mmlCi:creatorLicense" minOccurs="1" maxOccurs="unbounded" />
       </xs:sequence>
     </xs:complexType>       
   </xs:element>

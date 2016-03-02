@@ -199,7 +199,16 @@
     </xs:complexType>   
   </xs:element>
   
-  <xs:element name="operation" type="xs:string"/>
+  <xs:element name="operation">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="code" type="xs:string" use="optional"/>
+          <xs:attribute name="system" type="xs:string" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
   
   <xs:element name="procedureMemo" type="xs:string"/>
   

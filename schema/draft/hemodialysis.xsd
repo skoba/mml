@@ -18,13 +18,10 @@
         <xs:element ref="mmlHd:HemoDialysis"/>
         <xs:element ref="mmlHd:HeMX"/>
       </xs:sequence>
-      <xs:attributeGroup ref="mmlHd:attlist.HemoDialysis"/>
+      <xs:attribute name="version" type="xs:string" use="required"/>
+      <xs:attribute name="createDate" type="xs:dateTime" use="required"/>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.HemoDialysis">
-    <xs:attribute name="version" type="xs:string" use="required"/>
-    <xs:attribute name="createDate" type="xs:dateTime" use="required"/>
-  </xs:attributeGroup>
 
   <xs:element name="HemoDialysis">
     <xs:complexType>
@@ -43,30 +40,34 @@
   <xs:element name="HDHistorySection">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:HdIntroduction"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:BloodAccess"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:hdIntroduction"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:bloodAccess"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="HdIntroduction">
+
+  <xs:element name="hdIntroduction">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:diagnosis"/>
-        <xs:element name="HdIntroDate" minOccurs="0" maxOccurs="1" type="xs:date"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:hdDiagnosis"/>
+        <xs:element name="hdIntroDate" minOccurs="0" maxOccurs="1" type="xs:date"/>
         <xs:element minOccurs="1" maxOccurs="1" ref="mmlFc:Facility"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="diagnosis">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.Diagnosis"/>
+
+  <xs:element name="hdDiagnosis">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="code" type="xs:string" use="optional"/>
+          <xs:attribute name="system" type="xs:string" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.Diagnosis">
-    <xs:attribute name="code" use="optional"/>
-    <xs:attribute name="system" use="optional"/>
-  </xs:attributeGroup>
-  <xs:element name="BloodAccess">
+
+  <xs:element name="bloodAccess">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="1" name="dateMade" type="xs:date"/>
@@ -74,49 +75,49 @@
         <xs:element minOccurs="0" maxOccurs="1" name="dateEnd" type="xs:date"/>
         <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:location"/>
       </xs:sequence>
-      <xs:attributeGroup ref="mmlHd:attlist.bloodAccess"/>
+      <xs:attribute name="baStatus" type="xs:string" use="optional"/>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.bloodAccess">
-    <xs:attribute name="baStatus" type="xs:string" use="optional"/>
-  </xs:attributeGroup>
+
   <xs:element name="dateMade" type="xs:string"/>
   <xs:element name="dateFirstUse" type="xs:string"/>
   <xs:element name="dateEnd" type="xs:string"/>
+
   <xs:element name="location">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.location"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="code" use="optional"/>
+          <xs:attribute name="tableId" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.location">
-    <xs:attribute name="code" use="optional"/>
-    <xs:attribute name="tableId" use="required"/>
-  </xs:attributeGroup>
+
   <xs:element name="HDOrderSection">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:HdOrders"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:HdDailyOrder"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:hdOrders"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:hdDailyOrder"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="HdOrders">
+ 
+  <xs:element name="hdOrders">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlHd:orderGroups"/>
       </xs:sequence>
-      <xs:attributeGroup ref="mmlHd:attlist.hdOrders"/>
+      <xs:attribute name="orderStatus" type="xs:string" use="required"/>
+      <xs:attribute name="dateOrdered" type="xs:date" use="optional"/>
+      <xs:attribute name="dateEffective" type="xs:date" use="optional"/>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.hdOrders">
-    <xs:attribute name="orderStatus" type="xs:string" use="required"/>
-    <xs:attribute name="dateOrdered" type="xs:date" use="optional"/>
-    <xs:attribute name="dateEffective" type="xs:date" use="optional"/>
-  </xs:attributeGroup>
+
   <xs:element name="orderGroups">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:effectiveDays"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:effectiveDays"/>
         <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeShift"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:hdMethod"/>
         <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:dryWeight"/>
@@ -129,10 +130,11 @@
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:needle"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:medication"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:injection"/>
-        <xs:element minOccurs="0" ref="mmlHd:note"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="note" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
   <xs:element name="effectiveDays">
     <xs:complexType>
       <xs:sequence>
@@ -140,15 +142,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="timeShift">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.timeShift"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="code" type="xs:string" use="optional"/>
+          <xs:attribute name="tableId" type="xs:string" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.timeShift">
-    <xs:attribute name="code" type="xs:string" use="optional"/>
-    <xs:attribute name="tableId" type="xs:string" use="required"/>
-  </xs:attributeGroup>
+
   <xs:element name="hdMethod">
     <xs:complexType>
       <xs:sequence>
@@ -158,6 +163,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="hdMethodName">
     <xs:complexType>
       <xs:simpleContent>
@@ -168,57 +174,63 @@
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
+ 
   <xs:element name="timeHdStart">
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="xs:dateTime">
+        <xs:extension base="xs:duration">
           <xs:attribute name="timeDirection" type="xs:string" use="required"/>          
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="timeHdEnd">
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base="xs:dateTime">
-          <xs:attribute name="timeDirection" use="required"/>      
+        <xs:extension base="xs:duration">
+          <xs:attribute name="timeDirection" use="required"/>     
         </xs:extension>
       </xs:simpleContent>
      </xs:complexType>
   </xs:element>
+
   <xs:element name="dryWeight">
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" use="required"/>
+          <xs:attribute name="unit" use="optional" default="kg"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="weightCorrection">
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" use="required"/>
-          <xs:attribute name="cnote"/>         
+          <xs:attribute name="unit" use="optional" default="kg"/>
+          <xs:attribute name="cnote" use="optional"/>         
         </xs:extension>
       </xs:simpleContent>
      </xs:complexType>
   </xs:element>
+
   <xs:element name="bloodFlow">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlHd:flowRate"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlHd:flowRate"/>
         <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHdStart"/>
         <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHdEnd"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="flowRate">
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" type="xs:string" use="required"/>          
+          <xs:attribute name="unit" type="xs:string" use="optional" default="ml/min"/>          
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -229,123 +241,143 @@
         <xs:extension base="xs:string">
           <xs:attribute name="code" type="xs:string" use="optional"/>
           <xs:attribute name="type" type="xs:string" use="optional"/>
-          <xs:attribute name="membraneArea" type="xs:decimal"/>
-          <xs:attribute name="unit" default="m2"/>         
+          <xs:attribute name="membraneArea" type="xs:decimal" use="optional"/>
+          <xs:attribute name="unit" use="optional" default="m2"/>         
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="dialysate">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlHd:dialysateName"/>
-        <xs:element minOccurs="0" ref="mmlHd:timeHdStart"/>
-        <xs:element minOccurs="0" ref="mmlHd:timeHdEnd"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlHd:dialysateName"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHdStart"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHdEnd"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="dialysateName">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.dialysateName"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="code" type="xs:string" use="optional"/>
+          <xs:attribute name="type" type="xs:string" use="optional"/>
+          <xs:attribute name="modification" type="xs:string" use="optional"/>         
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.dialysateName">
-    <xs:attribute name="code"/>
-    <xs:attribute name="type"/>
-    <xs:attribute name="modification"/>
-  </xs:attributeGroup>
+
   <xs:element name="dialysateFlow">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlHd:flowRate"/>
-        <xs:element minOccurs="0" ref="mmlHd:timeHdStart"/>
-        <xs:element minOccurs="0" ref="mmlHd:timeHdEnd"/>
+        <xs:element  minOccurs="1" maxOccurs="1" ref="mmlHd:flowRate"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHdStart"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHdEnd"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
   <xs:element name="dialysateTemp">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlHd:dialysateTempValue"/>
-        <xs:element minOccurs="0" ref="mmlHd:timeHdStart"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlHd:dialysateTempValue"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHdStart"/>
         <xs:element minOccurs="0" ref="mmlHd:timeHdEnd"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
   <xs:element name="dialysateTempValue">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.dialysateTempValue"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:decimal">
+          <xs:attribute name="unit" type="xs:string" default="C" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.dialysateTempValue">
-    <xs:attribute name="unit" default="C"/>
-  </xs:attributeGroup>
+ 
   <xs:element name="needle">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.needle"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="code" type="xs:string" use="optional"/>
+          <xs:attribute name="type" type="xs:string" use="optional"/>
+          <xs:attribute name="position" type="xs:string" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.needle">
-    <xs:attribute name="code"/>
-    <xs:attribute name="type"/>
-    <xs:attribute name="position"/>
-  </xs:attributeGroup>
+
   <xs:element name="medication">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlHd:drugName"/>
-        <xs:element minOccurs="0" ref="mmlHd:dose"/>
-        <xs:element minOccurs="0" ref="mmlHd:timeHd"/>
-        <xs:element minOccurs="0" ref="mmlHd:note"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:drugName"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:dose"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHd"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="note" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="drugName">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.drugName"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="code"/>
+          <xs:attribute name="type" use="required"/>         
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.drugName">
-    <xs:attribute name="code"/>
-    <xs:attribute name="type" use="required"/>
-  </xs:attributeGroup>
+
   <xs:element name="dose">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.dose"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:decimal">
+          <xs:attribute name="unit" type="xs:string" use="optional"/>          
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.dose">
-    <xs:attribute name="unit"/>
-  </xs:attributeGroup>
+
   <xs:element name="timeHd">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.timeHd"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:duration">
+          <xs:attribute name="timeDirection" type="xs:string" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.timeHd">
-    <xs:attribute name="timeDirection" use="required"/>
-  </xs:attributeGroup>
+
   <xs:element name="injection">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlHd:drugName"/>
-        <xs:element minOccurs="0" ref="mmlHd:dose"/>
-        <xs:element minOccurs="0" ref="mmlHd:timeHdStart"/>
-        <xs:element minOccurs="0" ref="mmlHd:timeHdEnd"/>
-        <xs:element minOccurs="0" ref="mmlHd:routeName"/>
-        <xs:element minOccurs="0" ref="mmlHd:note"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:drugName"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:dose"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHdStart"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHdEnd"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:routeName"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="note" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="routeName">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlHd:attlist.routeName"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="code" type="xs:string" use="optional"/>
+          <xs:attribute name="tableId" type="xs:string" use="required"/>          
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  <xs:attributeGroup name="attlist.routeName">
-    <xs:attribute name="code"/>
-    <xs:attribute name="tableId" use="required"/>
-  </xs:attributeGroup>
+
   <xs:element name="hdDailyOrder">
     <xs:complexType>
       <xs:sequence>
@@ -363,15 +395,17 @@
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:needle"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:medication"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:injection"/>
-        <xs:element minOccurs="0" ref="mmlHd:note"/>
+        <xs:element minOccurs="0" maxOccurs="1" name="note" type="xs:string"/>
       </xs:sequence>
       <xs:attributeGroup ref="mmlHd:attlist.hdDailyOrder"/>
     </xs:complexType>
   </xs:element>
+
   <xs:attributeGroup name="attlist.hdDailyOrder">
     <xs:attribute name="orderDateTime"/>
     <xs:attribute name="dateEffective"/>
   </xs:attributeGroup>
+
   <xs:element name="targetWeight">
     <xs:complexType mixed="true">
       <xs:attributeGroup ref="mmlHd:attlist.targetWeight"/>

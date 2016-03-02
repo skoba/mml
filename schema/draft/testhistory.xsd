@@ -24,7 +24,7 @@
       <xs:sequence>
         <xs:element ref="mmlLb:reportStatus"/>
         <xs:element minOccurs="0" ref="mmlLb:set"/>
-        <xs:element ref="mmlLb:facility" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlLb:facility" minOccurs="1" maxOccurs="1"/>
         <xs:element minOccurs="0" ref="mmlLb:department"/>
         <xs:element minOccurs="0" ref="mmlLb:ward"/>
         <xs:element minOccurs="0" ref="mmlLb:client"/>

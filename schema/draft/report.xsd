@@ -3,7 +3,14 @@
 <!-- 報告書情報 -->
 <!-- ReportModule XSD Version 4.0 -->
 <!-- *************************************************** -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/ContentModule/report/1.0" xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
+  xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0">
+
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
+
   <xs:element name="ReportModule">
     <xs:complexType>
       <xs:sequence>
@@ -186,7 +193,13 @@
   <xs:element name="chiefComplaints" type="xs:string"/>
   <xs:element name="testPurpose" type="xs:string"/>
   <xs:element name="testDx" type="xs:string"/>
-  <xs:element name="testNotes" type="xs:string"/>
+  <xs:element name = "testNotes">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="testMemo">
     <xs:complexType mixed="true">
       <xs:attributeGroup ref="mmlRp:attlist.mmlRp.testMemo"/>
