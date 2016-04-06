@@ -87,7 +87,6 @@
     </meta>
     <projectTree name="mml_xsd.xpr">
         <folder masterFiles="true" name="Master Files">
-            <file name="hemodialysis.xsd"/>
             <file name="mml.xsd"/>
         </folder>
         <folder name="sample">
@@ -123,7 +122,9 @@
         <file name="file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/address.xsd">
             <file name="hemodialysis.xsd"/>
         </file>
-        <file name="baseclinic.xsd"/>
+        <file name="file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/baseclinic.xsd">
+            <file name="hemodialysis.xsd"/>
+        </file>
         <file name="claim.xsd"/>
         <file name="claimamount.xsd"/>
         <file name="common.xsd"/>
@@ -132,7 +133,10 @@
         <file name="facility.xsd"/>
         <file name="firstclinic.xsd"/>
         <file name="flowsheet.xsd"/>
-        <file name="healthinsurance.xsd"/>
+        <file name="file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/healthinsurance.xsd">
+            <file name="hemodialysis.xsd"/>
+        </file>
+        <file name="hemodialysis.xsd"/>
         <file name="hemx.dtd"/>
         <file name="file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/hemx.xsd">
             <file name="hemodialysis.xsd"/>

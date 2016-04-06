@@ -151,6 +151,7 @@
           <xs:enumeration value="vitalsign"/>
           <xs:enumeration value="prescription"/>
           <xs:enumeration value="injection"/>
+          <xs:enumeration value="hemodialysis"/>
           <xs:enumeration value="claim"/>
           <xs:enumeration value="claimAmount"/>
         </xs:restriction>
@@ -208,6 +209,7 @@
         <xs:element ref="mmlFs:FlowSheetModule" minOccurs="0"/>
         <xs:element ref="mmlPs:PrescriptionModule" minOccurs="0"/>
         <xs:element ref="mmlInj:InjectionModule" minOccurs="0"/>
+        <xs:element ref="mmlHd:HemoDialysisModule" minOccurs="0"/>
         <xs:element ref="claim:ClaimModule" minOccurs="0"/>
         <xs:element ref="claimA:ClaimAmountModule" minOccurs="0"/>
       </xs:sequence>
