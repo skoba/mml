@@ -22,13 +22,13 @@
   <xs:element name="PersonalizedInfo" >
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlCm:Id"/>
-        <xs:element ref="mmlPsi:personName" minOccurs="0"/>
-        <xs:element ref="mmlFc:Facility" minOccurs="0"/>
-        <xs:element ref="mmlDp:Department" minOccurs="0"/>
-        <xs:element ref="mmlPsi:addresses" minOccurs="0"/>
-        <xs:element ref="mmlPsi:emailAddresses" minOccurs="0"/>
-        <xs:element ref="mmlPsi:phones" minOccurs="0"/>
+        <xs:element ref="mmlCm:Id" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlPsi:personName" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlFc:Facility" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlDp:Department" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPsi:addresses" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPsi:emailAddresses" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPsi:phones" minOccurs="0" maxOccurs="1"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -36,7 +36,7 @@
   <xs:element name="phones" >
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlPh:Phone" maxOccurs="unbounded"/>
+        <xs:element ref="mmlPh:Phone" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -44,7 +44,7 @@
   <xs:element name="emailAddresses">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlCm:email" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element ref="mmlCm:email" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -52,7 +52,7 @@
   <xs:element name="addresses" >
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlAd:Address" maxOccurs="unbounded"/>
+        <xs:element ref="mmlAd:Address" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -60,7 +60,7 @@
   <xs:element name="personName" >
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlNm:Name" maxOccurs="unbounded"/>
+        <xs:element ref="mmlNm:Name" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
