@@ -22,8 +22,8 @@
 |===
 | |Elements|Attribute|Datatypes|Occurrence|Table id
 |1|MmlHd:HemoDialysysModule| | | |
-| | |mmlHd:version|string|REQUIRED|
-| | |mmlHd:createDate|dateTime|REQUIRED|
+| | |mmlHd:version|string|#REQUIRED|
+| | |mmlHd:createDate|dateTime|#REQUIRED|
 |1.1|mmlHd:HemoDialysis| | |*|
 |1.1.1|mmlFc:Facility| | | |
 |1.1.2|mmlPi:PatientModule| | | |
@@ -188,7 +188,7 @@
 |1.1.5.2.9.3|mmlHd:timeHdEnd| |dateTime|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.2.10|mmlHd:dialysateFlow| | |*|
-|1.1.5.2.10.1|dialysateFlowRate| |deimal| |
+|1.1.5.2.10.1|mmlHd:dialysateFlowRate| |deimal| |
 | | |mmlHd:unit|string|#REQUIRED|
 |1.1.5.2.10.2|mmlHd:timeHdStart| |dateTime|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
@@ -246,7 +246,7 @@
 | | |mmlHd:unit|string|#REQUIRED|
 |1.1.6.1.5|mmlHd:totalUF| |decimal|?|
 | | |mmlHd:unit|string|#REQUIRED|
-|1.1.6.1.6|weightCorrection| |decimal|?|
+|1.1.6.1.6|mmlHd:weightCorrection| |decimal|?|
 | | |mmlHd:unit|string|#REQUIRED|
 |1.1.6.1.6.1|mmlHd:note| |string|?|
 |1.1.6.1.7|mmlHd:dialyser| |string|?|
@@ -297,7 +297,7 @@
 |1.1.6.1.12.4|mmlHd:note| |string|?|
 |1.1.6.1.13|mmlHd:injection| | |*|
 |1.1.6.1.13.1|mmlHd:drugName| |string|?|
-| | |mlHd:code|string|#IMPLIED|
+| | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 |1.1.6.1.13.2|mmlHd:dose| |decimal|?|
 | | |mmlHd:unit|string|#IMPLIED|
@@ -309,7 +309,7 @@
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#IMPLIED|hdInjectionRouteTable01
 |1.1.6.1.13.6|mmlHd:note| |string|?|
-|1.1.6.1.14|note| |string|?|
+|1.1.6.1.14|mmlHd:note| |string|?|
 |1.1.7|mmlHd:HDTestResultSection| | |?|
 |1.1.7.1|mmlHd:testResultItem| | |*|
 | | |mmlHd:calendarDate|date|#IMPLIED|
