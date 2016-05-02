@@ -21,7 +21,7 @@
 [options="header"]
 |===
 | |Elements|Attribute|Datatypes|Occurrence|Table id
-|1|MmlHd:HemoDialysysModule| | | |
+|1|MmlHd:HemoDialysisModule| | | |
 | | |mmlHd:version|string|#REQUIRED|
 | | |mmlHd:createDate|dateTime|#REQUIRED|
 |1.1|mmlHd:HemoDialysis| | |*|
@@ -348,7 +348,8 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】省略可(?)
 
 ===== mmlHd:HDHistorySection
-【内容】透析履歴 + 【省略】省略可(?)
+【内容】透析履歴 +
+【省略】省略可(?)
 
 ===== mmlHd:HdIntroduction
 【内容】透析導入情報 +
