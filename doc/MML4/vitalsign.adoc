@@ -20,6 +20,9 @@ Author: Shinji KOBAYASHI
 
  xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
 
+==== エレメント構造図
+img::mmlvs.png[]
+
  .エレメント一覧表
 [options="header"]
 |===

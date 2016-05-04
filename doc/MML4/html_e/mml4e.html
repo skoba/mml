@@ -54,7 +54,7 @@
 </li>
 <li><a href="#_mmlコンテンツ_モジュール詳説">10. Details of MML content modules</a><ul class="sectlevel2">
 <li><a href="#_患者情報モジュール">10.1. Patient information module</a></li>
-<li><a href="#_保険情報モジュール">10.2. Insurance information module</a></li>
+<li><a href="#_保険情報モジュール">10.2. Haealth Insurance information (for Japanese) module</a></li>
 <li><a href="#_診断履歴情報モジュール">10.3. Diagnosis record information module</a></li>
 <li><a href="#_生活習慣情報モジュール">10.4. Lifestyle information module</a></li>
 <li><a href="#_基礎的診療情報モジュール">10.5. Basic clinical information module</a></li>
@@ -66,10 +66,10 @@
 <li><a href="#_報告書情報モジュール">10.11. Report information module</a></li>
 <li><a href="#_紹介状モジュール">10.12. Referral module</a></li>
 <li><a href="#_バイタルサインモジュール">10.13. Vital signs module</a></li>
-<li><a href="#_体温表モジュール_draft">10.14. Body temperature chart module (draft)</a></li>
+<li><a href="#_体温表モジュール_draft">10.14. Flowsheet module</a></li>
 <li><a href="#_処方箋モジュール_draft">10.15. Prescriptions module (draft)</a></li>
 <li><a href="#_注射記録モジュール_draft">10.16. Injection record module (draft)</a></li>
-<li><a href="#_mml_hd透析モジュール">10.17. MML Hd dialysis module</a></li>
+<li><a href="#_mml_hd透析モジュール">10.17. Hemodialysis module</a></li>
 </ul>
 </li>
 </ul>
@@ -83,21 +83,21 @@
 <p>MML has been developed beginning from 1995 as a standard for the exchange of medical data. The initial version used SGML, and XML format was adopted beginning from version 2. Modules have been developed for the use cases in the clinical field, and related tables have been prepared. In 2004, it was harmonized with the HL7 CDA rel1 format as an effort at improving interoperability with international standards. </p>
 </div>
 <div class="paragraph">
-<p>Beginning from 2007, research has been conducted for harmonizing MML with the ISO13606 standard that is expected to be the next-generation EHR standard. Based on the results of this research, a vital signs module and body temperature chart module were designed in 2013, and a prescription module and injection module were released in 2015. </p>
+<p>Beginning from 2007, research has been conducted for harmonizing MML with the ISO13606 standard that is expected to be the next-generation EHR standard. Based on the results of this research, a vital signs module and a flowseet module were designed in 2013, and a prescription module and injection module were released in 2015. </p>
 </div>
 <div class="paragraph">
-<p>In addition to these results and the dialysis module that was developed by a dialysis SIG, it was decided to modify the language and release it as MML Ver. 4, which changes the schema definition language from DTD, which was used up to Ver. 3, to W3C XML Schema 1.1. </p>
+<p>In addition to these results and the hemodialysis module that was developed by a hemodialysis SIG, it was decided to modify the language and release it as MML Ver. 4, which changes the schema definition language from DTD, which was used up to Ver. 3, to W3C XML Schema 1.1. </p>
 </div>
 <div class="paragraph">
-<p>This document and the XML schema are in the development phase, and it is possible that changes will be made to it in the final version. </p>
+<p>This document and the XML schema are in the development phase, and it is possible that changes will be made to it in the current version. </p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mml_4_0改定方針">2. Policy for MML 4.0 revisions </h2>
+<h2 id="_mml_4_0改定方針">2. Policy for updating to MML 4.0 revisions </h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As described above, the largest change in this revision was the change to W3C XML Schema 1.1. This was done to improve convenience for developers because an XML Schema can precisely define the data types and data structures, and because a broad range of related tools are available. </p>
+<p>As described above, the largest change in this revision was the change to adopt W3C XML Schema 1.1. This was done to improve convenience for developers because XML Schema can strictly define the data types and data structures, and because a broad range of related tools are available. </p>
 </div>
 <div class="paragraph">
 <p>Moreover it was decided to simplify the structure by eliminating the HL7 CDA-related tag information that had become redundant. However it was decided to keep the same namespace and tag names, and to keep the xpath structure that is semantically equivalent in order to reduce the costs involved with the version upgrade. </p>
@@ -111,19 +111,19 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Dialysis module </p>
+<p>Hemodialysis module </p>
 </li>
 <li>
 <p>Vital signs module </p>
 </li>
 <li>
-<p>Body temperature chart module </p>
+<p>Flowsheet module </p>
 </li>
 <li>
-<p>Prescriptions module </p>
+<p>Prescription module </p>
 </li>
 <li>
-<p>Injections module </p>
+<p>Injection module </p>
 </li>
 </ol>
 </div>
@@ -235,49 +235,49 @@
 <p>Patient information module </p>
 </li>
 <li>
-<p>Health insurance information </p>
+<p>Health insurance information module</p>
 </li>
 <li>
-<p>Diagnosis record information </p>
+<p>Diagnosis record information module</p>
 </li>
 <li>
-<p>Lifestyle information </p>
+<p>Lifestyle information module</p>
 </li>
 <li>
-<p>Basic clinical information </p>
+<p>Basic clinical information module</p>
 </li>
 <li>
-<p>Initial-consultation-specific information </p>
+<p>Initial-consultation-specific information module</p>
 </li>
 <li>
-<p>Progress course information </p>
+<p>Progress course information module</p>
 </li>
 <li>
-<p>Surgery record information </p>
+<p>Surgery record information module</p>
 </li>
 <li>
-<p>Clinical summary information </p>
+<p>Clinical summary information module</p>
 </li>
 <li>
-<p>Test history information </p>
+<p>Test history information module</p>
 </li>
 <li>
-<p>Report information </p>
+<p>Report information module</p>
 </li>
 <li>
-<p>Letter of referral </p>
+<p>Referral module</p>
 </li>
 <li>
-<p>Vital signs </p>
+<p>Vital sign module </p>
 </li>
 <li>
-<p>Body temperature chart </p>
+<p>Flowsheet module </p>
 </li>
 <li>
-<p>Oral and topical prescriptions </p>
+<p>Prescription module(mainly for oral or topic drugs) </p>
 </li>
 <li>
-<p>Injection record </p>
+<p>Injection record module</p>
 </li>
 </ul>
 </div>
