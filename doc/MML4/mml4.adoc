@@ -1,15 +1,15 @@
+:toc: right
 :toclevels: 2
 :pagenums:
-:numberd:
-:sectnums:
-:sectnumlevel: 8
+:sectnums: y
+:sectnumlevels: 8
 :imagesdir: ./figures
 :linkcss:
 :pdf-page-size: a4
 :doctype: book
 
 = MML 4.0
-toc::[]
+
 
 == はじめに
 
