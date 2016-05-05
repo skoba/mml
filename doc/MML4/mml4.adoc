@@ -2,6 +2,7 @@
 :pagenums:
 :numberd:
 :sectnums:
+:sectnumlevel: 8
 :imagesdir: ./figures
 :linkcss:
 :pdf-page-size: a4
