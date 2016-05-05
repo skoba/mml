@@ -75,7 +75,7 @@
 <li><a href="#_体温表モジュール">10.14. 体温表モジュール</a></li>
 <li><a href="#_処方箋モジュール_draft">10.15. 処方箋モジュール(Draft)</a></li>
 <li><a href="#_注射記録モジュール_draft">10.16. 注射記録モジュール(Draft)</a></li>
-<li><a href="#_mml_hd透析モジュール">10.17. MML Hd透析モジュール</a></li>
+<li><a href="#_透析モジュール">10.17. 透析モジュール</a></li>
 </ul>
 </li>
 </ul>
@@ -13134,12 +13134,11 @@ final 最終報告</p></td>
 <pre>xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"</pre>
 </div>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="./figures/mmlvs.png" alt="mmlvs">
 </div>
-</div>
-<div class="sect3">
-<h4 id="_エレメント構造図">10.13.2. エレメント構造図</h4>
-<div class="paragraph">
-<p>img::mmlvs.png[]</p>
+<div class="title">Figure 18. エレメント構造図</div>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -13396,23 +13395,24 @@ final 最終報告</p></td>
 <p>Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性</p>
 </div>
 </div>
+</div>
 <div class="sect3">
-<h4 id="_エレメント解説_22">10.13.3. エレメント解説</h4>
+<h4 id="_エレメント解説_22">10.13.2. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlvs_vitalsignmodule">10.13.3.1. mmlVs:VitalSignModule</h5>
+<h5 id="_mmlvs_vitalsignmodule">10.13.2.1. mmlVs:VitalSignModule</h5>
 <div class="paragraph">
 <p>【内容】バイタルサイン記録モジュール</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_context">10.13.3.2. mmlVs:context</h5>
+<h5 id="_mmlvs_context">10.13.2.2. mmlVs:context</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインヘッダ情報。<br>
 【省略】体温表モジュールなど、他のモジュールに組み込んで利用する場合には、重複するようであれば省略可能。</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_facility">10.13.3.3. mmlVs:facility</h5>
+<h5 id="_mmlvs_facility">10.13.2.3. mmlVs:facility</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインを計測して記録した施設<br>
 【省略】このVitalSignModuleを単独で使用する場合には省略不可、FlowSheetModuleなど他のモジュールと組み合わせて使用する場合には省略可。<br>
@@ -13454,7 +13454,7 @@ final 最終報告</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_department">10.13.3.4. mmlVs:department</h5>
+<h5 id="_mmlvs_department">10.13.2.4. mmlVs:department</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインを計測し、記録した部署・診療科<br>
 【属性】</p>
@@ -13495,7 +13495,7 @@ final 最終報告</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_ward">10.13.3.5. mmlVs:ward</h5>
+<h5 id="_mmlvs_ward">10.13.2.5. mmlVs:ward</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインを計測し記録した病棟・場所<br>
 【属性】</p>
@@ -13536,7 +13536,7 @@ final 最終報告</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_observer">10.13.3.6. mmlVs:observer</h5>
+<h5 id="_mmlvs_observer">10.13.2.6. mmlVs:observer</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインを計測した人<br>
 【属性】</p>
@@ -13578,20 +13578,20 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mmlpi_patientmodule_3">10.13.4. mmlPi:PatientModule</h4>
+<h4 id="_mmlpi_patientmodule_3">10.13.3. mmlPi:PatientModule</h4>
 <div class="paragraph">
 <p>【内容】患者情報、氏名、生年月日、住所、電話番号などの患者情報。MML患者情報モジュールを利用する。<br>
 【省略】不可</p>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_item">10.13.4.1. mmlVs:item</h5>
+<h5 id="_mmlvs_item">10.13.3.1. mmlVs:item</h5>
 <div class="paragraph">
 <p>【内容】項目情報<br>
 【繰り返し設定】1回以上の繰り返しあり。項目が複数あればその数だけ繰り返す。</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_itemname">10.13.4.2. mmlVs:itemName</h5>
+<h5 id="_mmlvs_itemname">10.13.3.2. mmlVs:itemName</h5>
 <div class="paragraph">
 <p>【内容】項目名<br>
 【データ型】string<br>
@@ -13600,7 +13600,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_value">10.13.4.3. mmlVs:value</h5>
+<h5 id="_mmlvs_value">10.13.3.3. mmlVs:value</h5>
 <div class="paragraph">
 <p>【内容】文字列で表記されるバイタルサインの値<br>
 【データ型】string<br>
@@ -13608,7 +13608,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_numvalue">10.13.4.4. mmlVs:numValue</h5>
+<h5 id="_mmlvs_numvalue">10.13.3.4. mmlVs:numValue</h5>
 <div class="paragraph">
 <p>【内容】数値で表記されるバイタルサインの値<br>
 【データ型】decimal<br>
@@ -13616,7 +13616,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_unit">10.13.4.5. mmlVs:unit</h5>
+<h5 id="_mmlvs_unit">10.13.3.5. mmlVs:unit</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインの単位<br>
 【データ型】string<br>
@@ -13625,7 +13625,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_itemmemo">10.13.4.6. mmlVs:itemMemo</h5>
+<h5 id="_mmlvs_itemmemo">10.13.3.6. mmlVs:itemMemo</h5>
 <div class="paragraph">
 <p>【内容】項目コメント<br>
 【データ型】string<br>
@@ -13633,7 +13633,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_observedtime">10.13.4.7. mmlVs:observedTime</h5>
+<h5 id="_mmlvs_observedtime">10.13.3.7. mmlVs:observedTime</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインを観察した時間<br>
 【データ型】dateTime<br>
@@ -13641,14 +13641,14 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_protocol">10.13.4.8. mmlVs:protocol</h5>
+<h5 id="_mmlvs_protocol">10.13.3.8. mmlVs:protocol</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインの測定方法を記載する親エレメント<br>
 【繰り返し設定】繰り返しなし．省略可能</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_1_4_1_mmlvs_procedure">10.13.4.9. 1.4.1 mmlVs:procedure</h5>
+<h5 id="_1_4_1_mmlvs_procedure">10.13.3.9. 1.4.1 mmlVs:procedure</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインを測定した手順。測定方法や、負荷テストの種別など<br>
 【データ型】string<br>
@@ -13656,7 +13656,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_device">10.13.4.10. mmlVs:device</h5>
+<h5 id="_mmlvs_device">10.13.3.10. mmlVs:device</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインの測定に使用した機材、デバイス。聴診器、水銀柱血圧計、機械式血圧計、動脈内プローベなど。<br>
 【データ型】string<br>
@@ -13664,7 +13664,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_bodylocation">10.13.4.11. mmlVs:bodyLocation</h5>
+<h5 id="_mmlvs_bodylocation">10.13.3.11. mmlVs:bodyLocation</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインを測定した身体の部位。右上腕、左下腿など。<br>
 【省略】string<br>
@@ -13672,7 +13672,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_position">10.13.4.12. mmlVs:position</h5>
+<h5 id="_mmlvs_position">10.13.3.12. mmlVs:position</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインを測定した時の体位。<br>
 【データ型】string<br>
@@ -13681,7 +13681,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_protmemo">10.13.4.13. mmlVs:protMemo</h5>
+<h5 id="_mmlvs_protmemo">10.13.3.13. mmlVs:protMemo</h5>
 <div class="paragraph">
 <p>【内容】バイタルサイン測定方法に関するコメント<br>
 【データ型】string<br>
@@ -13689,7 +13689,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_vsmemo">10.13.4.14. mmlVs:vsMemo</h5>
+<h5 id="_mmlvs_vsmemo">10.13.3.14. mmlVs:vsMemo</h5>
 <div class="paragraph">
 <p>【内容】バイタルサイン記録コメント<br>
 【データ型】string<br>
@@ -13751,12 +13751,11 @@ final 最終報告</p></td>
 <div class="paragraph">
 <p>体温表モジュールでは、多職種にわたる複数の人間が観察した情報が一つの報告書に記載されることがある。最終的な記載者あるいは代表者が作成者情報として記録される。</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="./figures/mmlfs.png" alt="mmlfs">
 </div>
-</div>
-<div class="sect3">
-<h4 id="_エレメント構造図_2">10.14.4. エレメント構造図</h4>
-<div class="paragraph">
-<p>img::mmlfs.png[]</p>
+<div class="title">Figure 19. エレメント構造図</div>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 22. エレメント一覧表</caption>
@@ -14097,23 +14096,24 @@ final 最終報告</p></td>
 <p>Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性</p>
 </div>
 </div>
+</div>
 <div class="sect3">
-<h4 id="_エレメント解説_23">10.14.5. エレメント解説</h4>
+<h4 id="_エレメント解説_23">10.14.4. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlfs_flowsheetmodule">10.14.5.1. mmlFs:FlowSheetModule</h5>
+<h5 id="_mmlfs_flowsheetmodule">10.14.4.1. mmlFs:FlowSheetModule</h5>
 <div class="paragraph">
 <p>【内容】体温表モジュール</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_context">10.14.5.2. mmlFs:context</h5>
+<h5 id="_mmlfs_context">10.14.4.2. mmlFs:context</h5>
 <div class="paragraph">
 <p>【内容】体温表モジュールヘッダ情報を表す親エレメント<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_facility">10.14.5.3. mmlFs:facility</h5>
+<h5 id="_mmlfs_facility">10.14.4.3. mmlFs:facility</h5>
 <div class="paragraph">
 <p>【内容】体温表を記録した施設<br>
 【省略】不可<br>
@@ -14155,7 +14155,7 @@ final 最終報告</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_department">10.14.5.4. mmlFs:department</h5>
+<h5 id="_mmlfs_department">10.14.4.4. mmlFs:department</h5>
 <div class="paragraph">
 <p>【内容】体温表を記録した部署<br>
 【省略】可<br>
@@ -14197,7 +14197,7 @@ final 最終報告</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_ward">10.14.5.5. mmlFs:ward</h5>
+<h5 id="_mmlfs_ward">10.14.4.5. mmlFs:ward</h5>
 <div class="paragraph">
 <p>【内容】体温表を記録した病棟・場所<br>
 【属性】</p>
@@ -14238,7 +14238,7 @@ final 最終報告</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_observer">10.14.5.6. mmlFs:observer</h5>
+<h5 id="_mmlfs_observer">10.14.4.6. mmlFs:observer</h5>
 <div class="paragraph">
 <p>【内容】体温表情報の観察者<br>
 【省略】可<br>
@@ -14280,21 +14280,21 @@ final 最終報告</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlvs_vitalsignmodule_2">10.14.5.7. mmlVs:VitalSignModule</h5>
+<h5 id="_mmlvs_vitalsignmodule_2">10.14.4.7. mmlVs:VitalSignModule</h5>
 <div class="paragraph">
 <p>【内容】バイタルサイン情報<br>
 【繰り返し設定】繰り返しあり。測定された一連のバイタルサインの数だけ繰り返す。(例：ラウンド時に計測された収縮期血圧、拡張期血圧、脈拍、体温、SpO2）</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_intake">10.14.5.8. mmlFs:intake</h5>
+<h5 id="_mmlfs_intake">10.14.4.8. mmlFs:intake</h5>
 <div class="paragraph">
 <p>【内容】水分や食事などの摂取状況に関する親エレメント<br>
 【繰り返し設定】0回以上の繰り返しあり。</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_intaketype">10.14.5.9. mmlFs:intakeType</h5>
+<h5 id="_mmlfs_intaketype">10.14.4.9. mmlFs:intakeType</h5>
 <div class="paragraph">
 <p>【内容】摂取した食べ物・飲み物の種類。例：朝食(主)、昼食（副）、水分、経管栄養食など。<br>
 【省略】不可。<br>
@@ -14303,7 +14303,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_intakevolume">10.14.5.10. mmlFs:intakeVolume</h5>
+<h5 id="_mmlfs_intakevolume">10.14.4.10. mmlFs:intakeVolume</h5>
 <div class="paragraph">
 <p>【内容】摂取した食べ物・飲み物の量。<br>
 【省略】省略可<br>
@@ -14312,7 +14312,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mmlfs_intakeunit">10.14.6. mmlFs:intakeUnit</h4>
+<h4 id="_mmlfs_intakeunit">10.14.5. mmlFs:intakeUnit</h4>
 <div class="paragraph">
 <p>【内容】摂取した食べ物・飲み物の単位。/10, ml, g, kcal, など<br>
 【省略】省略可<br>
@@ -14320,7 +14320,7 @@ final 最終報告</p></td>
 【使用テーブル】mmlFs02</p>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_intakepathway">10.14.6.1. mmlFs:intakePathway</h5>
+<h5 id="_mmlfs_intakepathway">10.14.5.1. mmlFs:intakePathway</h5>
 <div class="paragraph">
 <p>【内容】摂取経路。経口摂取、経管、IVH管理など<br>
 【省略】省略可<br>
@@ -14328,7 +14328,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_intakestarttime">10.14.6.2. mmlFs:intakeStartTime</h5>
+<h5 id="_mmlfs_intakestarttime">10.14.5.2. mmlFs:intakeStartTime</h5>
 <div class="paragraph">
 <p>【内容】摂取開始時間。観察を開始した時間を記録する。開始、終了の別なく記録をする場合にはこちらに時間を記入する。<br>
 【省略】省略可<br>
@@ -14336,7 +14336,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_intakeendtime">10.14.6.3. mmlFs:intakeEndTime</h5>
+<h5 id="_mmlfs_intakeendtime">10.14.5.3. mmlFs:intakeEndTime</h5>
 <div class="paragraph">
 <p>【内容】摂取終了時間。<br>
 【省略】省略可<br>
@@ -14344,7 +14344,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_intakememo">10.14.6.4. mmlFs:intakeMemo</h5>
+<h5 id="_mmlfs_intakememo">10.14.5.4. mmlFs:intakeMemo</h5>
 <div class="paragraph">
 <p>【内容】摂取状況に関するコメント・メモ。<br>
 【省略】省略可<br>
@@ -14352,14 +14352,14 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bodilyoutput">10.14.6.5. mmlFs:bodilyOutput</h5>
+<h5 id="_mmlfs_bodilyoutput">10.14.5.5. mmlFs:bodilyOutput</h5>
 <div class="paragraph">
 <p>【内容】体外に排泄されるものについて記録する親エレメント。尿、便以外にも胸水、腹水、体液、胆汁、その他の分泌物なども対処とする。<br>
 【繰り返し設定】0回以上</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_botype">10.14.6.6. mmlFs:boType</h5>
+<h5 id="_mmlfs_botype">10.14.5.6. mmlFs:boType</h5>
 <div class="paragraph">
 <p>【内容】排泄物の種類。<br>
 【省略】不可<br>
@@ -14368,7 +14368,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bovolume">10.14.6.7. mmlFs:boVolume</h5>
+<h5 id="_mmlfs_bovolume">10.14.5.7. mmlFs:boVolume</h5>
 <div class="paragraph">
 <p>【内容】排泄物の量。<br>
 【省略】省略可<br>
@@ -14376,7 +14376,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bounit">10.14.6.8. mmlFs:boUnit</h5>
+<h5 id="_mmlfs_bounit">10.14.5.8. mmlFs:boUnit</h5>
 <div class="paragraph">
 <p>【内容】排泄物の量の単位。<br>
 【省略】省略可<br>
@@ -14385,7 +14385,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bostatus">10.14.6.9. mmlFs:boStatus</h5>
+<h5 id="_mmlfs_bostatus">10.14.5.9. mmlFs:boStatus</h5>
 <div class="paragraph">
 <p>【内容】排泄物の性状。軟便、下痢、混濁など。大量・中等量、少量など数値化できない場合にはここに記載する。<br>
 【省略】省略可<br>
@@ -14393,7 +14393,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bocolor">10.14.6.10. mmlFs:boColor</h5>
+<h5 id="_mmlfs_bocolor">10.14.5.10. mmlFs:boColor</h5>
 <div class="paragraph">
 <p>【内容】排泄物の色調。黄色、茶褐色など。<br>
 【省略】省略可<br>
@@ -14401,7 +14401,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_pathway">10.14.6.11. mmlFs:pathway</h5>
+<h5 id="_mmlfs_pathway">10.14.5.11. mmlFs:pathway</h5>
 <div class="paragraph">
 <p>【内容】排泄経路、カテーテルやドレーン、ストマなど<br>
 【省略】省略可<br>
@@ -14409,7 +14409,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bostarttime">10.14.6.12. mmlFs:boStartTime</h5>
+<h5 id="_mmlfs_bostarttime">10.14.5.12. mmlFs:boStartTime</h5>
 <div class="paragraph">
 <p>【内容】排泄開始時間。観察を開始した時間を記録する。開始、終了の別なく記録をする場合にはこちらに時間を記入する。<br>
 【省略】省略可<br>
@@ -14417,7 +14417,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_boendtime">10.14.6.13. mmlFs:boEndTime</h5>
+<h5 id="_mmlfs_boendtime">10.14.5.13. mmlFs:boEndTime</h5>
 <div class="paragraph">
 <p>【内容】排泄終了時間。<br>
 【省略】省略可<br>
@@ -14425,7 +14425,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bomemo">10.14.6.14. mmlFs:boMemo</h5>
+<h5 id="_mmlfs_bomemo">10.14.5.14. mmlFs:boMemo</h5>
 <div class="paragraph">
 <p>【内容】排泄物に関するコメント、メモ。便秘3日目、出血は収束傾向など。<br>
 【省略】省略可<br>
@@ -14433,14 +14433,14 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bofrequency">10.14.6.15. mmlFs:boFrequency</h5>
+<h5 id="_mmlfs_bofrequency">10.14.5.15. mmlFs:boFrequency</h5>
 <div class="paragraph">
 <p>【内容】一定時間内の排泄回数を表現する親エレメント。<br>
 【繰り返し】0回以上の繰り返しあり</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_boftimes">10.14.6.16. mmlFs:bofTimes</h5>
+<h5 id="_mmlfs_boftimes">10.14.5.16. mmlFs:bofTimes</h5>
 <div class="paragraph">
 <p>【内容】一定期間内に観察された排泄回数。<br>
 【省略】省略可<br>
@@ -14448,7 +14448,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bofperiodstarttime">10.14.6.17. mmlFs:bofPeriodStartTime</h5>
+<h5 id="_mmlfs_bofperiodstarttime">10.14.5.17. mmlFs:bofPeriodStartTime</h5>
 <div class="paragraph">
 <p>【内容】観察を開始した時間。<br>
 【省略】省略可<br>
@@ -14456,7 +14456,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bofperiodendtime">10.14.6.18. mmlFs:bofPeriodEndTime</h5>
+<h5 id="_mmlfs_bofperiodendtime">10.14.5.18. mmlFs:bofPeriodEndTime</h5>
 <div class="paragraph">
 <p>【内容】観察を終了した時間。<br>
 【省略】省略可<br>
@@ -14464,7 +14464,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_bofmemo">10.14.6.19. mmlFs:bofMemo</h5>
+<h5 id="_mmlfs_bofmemo">10.14.5.19. mmlFs:bofMemo</h5>
 <div class="paragraph">
 <p>【内容】数値化されない頻度表現。頻回、乏尿など。<br>
 【省略】省略可<br>
@@ -14472,7 +14472,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfs_fsmemo">10.14.6.20. mmlFs:fsMemo</h5>
+<h5 id="_mmlfs_fsmemo">10.14.5.20. mmlFs:fsMemo</h5>
 <div class="paragraph">
 <p>【内容】体温表コメント、メモ。その他の体温表に記載する内容。<br>
 【繰り返し】省略可<br>
@@ -15346,12 +15346,18 @@ confirmDate
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mml_hd透析モジュール">10.17. MML Hd透析モジュール</h3>
+<h3 id="_透析モジュール">10.17. 透析モジュール</h3>
 <div class="sect3">
 <h4 id="_モジュール概説">10.17.1. モジュール概説</h4>
 <div class="paragraph">
 <p>透析モジュールは2000年に日本透析医学会が血液透析に関する情報を交換するために標準規格として策定したHeMXに準拠して、透析SIGによって開発が進められた。データ構造としては、医療施設と患者の識別情報をもつヘッダ部と、	血液透析の履歴情報(HD History Section)、指示情報(HD Order Section)、実施記録情報(HD Progress Section)と検査情報(HD Test Result Section)の4つのセクションからなる本体部分から構成されている。
 2007年にC案としてMedXML協議会で公開され、MML4へのバージョンアップに伴い正式にMML規格のモジュールの一部として構成されることとなった。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./figures/mmlhd.png" alt="mmlhd">
+</div>
+<div class="title">Figure 20. エレメント構造図</div>
 </div>
 </div>
 <div class="sect3">
@@ -15392,13 +15398,6 @@ confirmDate
 <h5 id="_mmlci_creatorinfo_9">10.17.3.4. mmlCi:CreatorInfo</h5>
 <div class="paragraph">
 <p>体温表モジュールでは、多職種にわたる複数の人間が観察した情報が一つの報告書に記載されることがある。最終的な記載者あるいは代表者が作成者情報として記録される。</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_エレメント構造図_3">10.17.4. エレメント構造図</h4>
-<div class="paragraph">
-<p>img::mmlhd.png[]</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 25. エレメント一覧表</caption>
@@ -17915,40 +17914,41 @@ confirmDate
 <p>Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性</p>
 </div>
 </div>
+</div>
 <div class="sect3">
-<h4 id="_エレメント解説_26">10.17.5. エレメント解説</h4>
+<h4 id="_エレメント解説_26">10.17.4. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlhd_hemodialysysmodule">10.17.5.1. mmlHd:HemoDialysysModule</h5>
+<h5 id="_mmlhd_hemodialysysmodule">10.17.4.1. mmlHd:HemoDialysysModule</h5>
 
 </div>
 <div class="sect4">
-<h5 id="_mmlfc_facility_6">10.17.5.2. mmlFc:Facility</h5>
+<h5 id="_mmlfc_facility_6">10.17.4.2. mmlFc:Facility</h5>
 <div class="paragraph">
 <p>【内容】施設情報、構造はMML共通形式を参照<br></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_patientmodule_4">10.17.5.3. mmlPi:PatientModule</h5>
+<h5 id="_mmlpi_patientmodule_4">10.17.4.3. mmlPi:PatientModule</h5>
 <div class="paragraph">
 <p>【内容】患者情報、構造はmmlPi:PatientModuleを参照</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note">10.17.5.4. mmlHd:note</h5>
+<h5 id="_mmlhd_note">10.17.4.4. mmlHd:note</h5>
 <div class="paragraph">
 <p>【内容】透析コメント<br>
 【省略】省略可(?)</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hdhistorysection">10.17.5.5. mmlHd:HDHistorySection</h5>
+<h5 id="_mmlhd_hdhistorysection">10.17.4.5. mmlHd:HDHistorySection</h5>
 <div class="paragraph">
 <p>【内容】透析履歴<br>
 【省略】省略可(?)</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hdintroduction">10.17.5.6. mmlHd:HdIntroduction</h5>
+<h5 id="_mmlhd_hdintroduction">10.17.4.6. mmlHd:HdIntroduction</h5>
 <div class="paragraph">
 <p>【内容】透析導入情報<br>
 【省略】省略可(*)<br></p>
@@ -17958,7 +17958,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_1_5_1_1_mmlhd_diagnosis">10.17.5.7. 1.5.1.1 mmlHd:diagnosis</h5>
+<h5 id="_1_5_1_1_mmlhd_diagnosis">10.17.4.7. 1.5.1.1 mmlHd:diagnosis</h5>
 <div class="paragraph">
 <p>【内容】原疾患<br>
 【省略】省略可(?)<br>
@@ -17996,7 +17996,7 @@ confirmDate
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hdintrodate">10.17.5.8. mmlHd:HdIntroDate</h5>
+<h5 id="_mmlhd_hdintrodate">10.17.4.8. mmlHd:HdIntroDate</h5>
 <div class="paragraph">
 <p>【内容】透析導入日<br>
 【データ型】date<br>
@@ -18004,14 +18004,14 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfc_facility_7">10.17.5.9. mmlFc:Facility</h5>
+<h5 id="_mmlfc_facility_7">10.17.4.9. mmlFc:Facility</h5>
 <div class="paragraph">
 <p>【内容】構造はMML共通形式を参照<br>
 【省略】省略可(?)</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_bloodaccess">10.17.5.10. mmlHd:BloodAccess</h5>
+<h5 id="_mmlhd_bloodaccess">10.17.4.10. mmlHd:BloodAccess</h5>
 <div class="paragraph">
 <p>【内容】ブラッドアクセス<br>
 【省略】省略可<br>
@@ -18045,7 +18045,7 @@ active:良,inactive:不良</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_datemade">10.17.5.11. mmlHd:dateMade</h5>
+<h5 id="_mmlhd_datemade">10.17.4.11. mmlHd:dateMade</h5>
 <div class="paragraph">
 <p>【内容】ブラッドアクセス作成日<br>
 【データ型】date<br>
@@ -18053,7 +18053,7 @@ active:良,inactive:不良</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_datefirstuse">10.17.5.12. mmlHd:dateFirstUse</h5>
+<h5 id="_mmlhd_datefirstuse">10.17.4.12. mmlHd:dateFirstUse</h5>
 <div class="paragraph">
 <p>【内容】ブラッドアクセス使用開始日<br>
 【データ型】date<br>
@@ -18061,7 +18061,7 @@ active:良,inactive:不良</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dateend">10.17.5.13. mmlHd:dateEnd</h5>
+<h5 id="_mmlhd_dateend">10.17.4.13. mmlHd:dateEnd</h5>
 <div class="paragraph">
 <p>【内容】ブラッドアクセス使用終了日<br>
 【データ型】date<br>
@@ -18069,7 +18069,7 @@ active:良,inactive:不良</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_location">10.17.5.14. mmlHd:location</h5>
+<h5 id="_mmlhd_location">10.17.4.14. mmlHd:location</h5>
 <div class="paragraph">
 <p>【内容】ブラッドアクセス部位名、漢字を推奨<br>
 【データ型】string<br>
@@ -18116,14 +18116,14 @@ active:良,inactive:不良</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_ordersection">10.17.5.15. mmlHd:OrderSection</h5>
+<h5 id="_mmlhd_ordersection">10.17.4.15. mmlHd:OrderSection</h5>
 <div class="paragraph">
 <p>【内容】透析指示情報<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hdorders">10.17.5.16. mmlHd:hdorders</h5>
+<h5 id="_mmlhd_hdorders">10.17.4.16. mmlHd:hdorders</h5>
 <div class="paragraph">
 <p>【内容】オーダー単位<br>
 【省略】省略可<br>
@@ -18169,7 +18169,7 @@ active: 現行オーダー,alteration:変更オーダー</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_ordergroups">10.17.5.17. mmlHd:orderGroups</h5>
+<h5 id="_mmlhd_ordergroups">10.17.4.17. mmlHd:orderGroups</h5>
 <div class="paragraph">
 <p>【内容】オーダーグループ<br>
 【繰り返し設定】繰り返しあり<br>
@@ -18177,14 +18177,14 @@ active: 現行オーダー,alteration:変更オーダー</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_effectivedays">10.17.5.18. mmlHd:effectiveDays</h5>
+<h5 id="_mmlhd_effectivedays">10.17.4.18. mmlHd:effectiveDays</h5>
 <div class="paragraph">
 <p>【内容】実効曜日<br>
 【省略】省略可(?)</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_weekday">10.17.5.19. mmlHd:weekday</h5>
+<h5 id="_mmlhd_weekday">10.17.4.19. mmlHd:weekday</h5>
 <div class="paragraph">
 <p>【内容】オーダ適用曜日<br>
 【データ型】string(ISO8601のWeekDay)+
@@ -18193,7 +18193,7 @@ active: 現行オーダー,alteration:変更オーダー</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timeshift">10.17.5.20. mmlHd:timeShift</h5>
+<h5 id="_mmlhd_timeshift">10.17.4.20. mmlHd:timeShift</h5>
 <div class="paragraph">
 <p>【内容】透析シフト名称<br>
 【データ型】string<br>
@@ -18240,7 +18240,7 @@ active: 現行オーダー,alteration:変更オーダー</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hdmethod">10.17.5.21. mmlHd:hdMethod</h5>
+<h5 id="_mmlhd_hdmethod">10.17.4.21. mmlHd:hdMethod</h5>
 <div class="paragraph">
 <p>【内容】血液浄化方法<br>
 【省略】省略可(?)
@@ -18290,7 +18290,7 @@ active: 現行オーダー,alteration:変更オーダー</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart">10.17.5.22. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart">10.17.4.22. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -18324,7 +18324,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend">10.17.5.23. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend">10.17.4.23. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -18358,7 +18358,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dryweight">10.17.5.24. mmlHd:dryWeight</h5>
+<h5 id="_mmlhd_dryweight">10.17.4.24. mmlHd:dryWeight</h5>
 <div class="paragraph">
 <p>【内容】ドライウエイト<br>
 【データ型】string<br>
@@ -18391,7 +18391,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_weightcorrection">10.17.5.25. mmlHd:weightCorrection</h5>
+<h5 id="_mmlhd_weightcorrection">10.17.4.25. mmlHd:weightCorrection</h5>
 <div class="paragraph">
 <p>【内容】重量補正<br>
 【データ型】string<br>
@@ -18430,7 +18430,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_bloodflow">10.17.5.26. mmlHd:bloodFlow</h5>
+<h5 id="_mmlhd_bloodflow">10.17.4.26. mmlHd:bloodFlow</h5>
 <div class="paragraph">
 <p>【内容】血液流量<br>
 【省略】可(*)<br>
@@ -18438,7 +18438,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_bloodflowrate">10.17.5.27. mmlHd:bloodFlowRate</h5>
+<h5 id="_mmlhd_bloodflowrate">10.17.4.27. mmlHd:bloodFlowRate</h5>
 <div class="paragraph">
 <p>【内容】血液流量数値<br>
 【データ型】string<br>
@@ -18471,7 +18471,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_2">10.17.5.28. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart_2">10.17.4.28. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -18505,7 +18505,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_2">10.17.5.29. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_2">10.17.4.29. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -18539,7 +18539,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialyser">10.17.5.30. mmlHd:dialyser</h5>
+<h5 id="_mmlhd_dialyser">10.17.4.30. mmlHd:dialyser</h5>
 <div class="paragraph">
 <p>【内容】ダイアライザー名称<br>
 【データ型】String<br>
@@ -18590,7 +18590,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysate">10.17.5.31. mmlHd:dialysate　</h5>
+<h5 id="_mmlhd_dialysate">10.17.4.31. mmlHd:dialysate　</h5>
 <div class="paragraph">
 <p>【内容】透析液<br>
 【省略】省略可<br>
@@ -18598,7 +18598,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysatename">10.17.5.32. mmlHd:dialysateName</h5>
+<h5 id="_mmlhd_dialysatename">10.17.4.32. mmlHd:dialysateName</h5>
 <div class="paragraph">
 <p>【内容】透析液名称<br>
 【データ型】string<br>
@@ -18643,7 +18643,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_3">10.17.5.33. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart_3">10.17.4.33. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -18677,7 +18677,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_3">10.17.5.34. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_3">10.17.4.34. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -18711,7 +18711,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysateflow">10.17.5.35. mmlHd:dialysateFlow　</h5>
+<h5 id="_mmlhd_dialysateflow">10.17.4.35. mmlHd:dialysateFlow　</h5>
 <div class="paragraph">
 <p>【内容】透析液流量<br>
 【省略】省略可<br>
@@ -18719,7 +18719,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysateflowrate_透析液流量数値">10.17.5.36. mmlHd:dialysateFlowRate　　透析液流量数値</h5>
+<h5 id="_mmlhd_dialysateflowrate_透析液流量数値">10.17.4.36. mmlHd:dialysateFlowRate　　透析液流量数値</h5>
 <div class="paragraph">
 <p>【内容】 透析液流量数値<br>
 【データ型】string<br>
@@ -18752,7 +18752,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_4">10.17.5.37. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart_4">10.17.4.37. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -18786,7 +18786,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_4">10.17.5.38. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_4">10.17.4.38. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -18820,7 +18820,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysatetemp">10.17.5.39. mmlHd:dialysateTemp</h5>
+<h5 id="_mmlhd_dialysatetemp">10.17.4.39. mmlHd:dialysateTemp</h5>
 <div class="paragraph">
 <p>【内容】透析液温度<br>
 【省略】省略可<br>
@@ -18828,7 +18828,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysatetempvalue">10.17.5.40. mmlHd:dialysateTempValue</h5>
+<h5 id="_mmlhd_dialysatetempvalue">10.17.4.40. mmlHd:dialysateTempValue</h5>
 <div class="paragraph">
 <p>【内容】透析液温度数値<br>
 【データ型】string<br>
@@ -18861,7 +18861,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_5">10.17.5.41. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart_5">10.17.4.41. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -18895,7 +18895,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_5">10.17.5.42. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_5">10.17.4.42. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -18929,7 +18929,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_substitution">10.17.5.43. mmlHd:substitution</h5>
+<h5 id="_mmlhd_substitution">10.17.4.43. mmlHd:substitution</h5>
 <div class="paragraph">
 <p>【内容】補充液<br>
 【省略】省略可<br>
@@ -18937,7 +18937,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_substitutionvalue">10.17.5.44. mmlHd:substitutionValue</h5>
+<h5 id="_mmlhd_substitutionvalue">10.17.4.44. mmlHd:substitutionValue</h5>
 <div class="paragraph">
 <p>【内容】補充液量<br>
 【データ型】string<br>
@@ -18976,7 +18976,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_6">10.17.5.45. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart_6">10.17.4.45. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -19010,7 +19010,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_6">10.17.5.46. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_6">10.17.4.46. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -19044,7 +19044,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_needle">10.17.5.47. mmlHd:needle</h5>
+<h5 id="_mmlhd_needle">10.17.4.47. mmlHd:needle</h5>
 <div class="paragraph">
 <p>【内容】穿刺針名称<br>
 【データ型】string<br>
@@ -19090,7 +19090,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_medication">10.17.5.48. mmlHd:medication</h5>
+<h5 id="_mmlhd_medication">10.17.4.48. mmlHd:medication</h5>
 <div class="paragraph">
 <p>【内容】投薬<br>
 【省略】省略可<br>
@@ -19098,7 +19098,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_drugname">10.17.5.49. mmlHd:drugName</h5>
+<h5 id="_mmlhd_drugname">10.17.4.49. mmlHd:drugName</h5>
 <div class="paragraph">
 <p>【内容】薬剤名称<br>
 【データ型】String<br>
@@ -19137,7 +19137,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dose">10.17.5.50. mmlHd:dose</h5>
+<h5 id="_mmlhd_dose">10.17.4.50. mmlHd:dose</h5>
 <div class="paragraph">
 <p>【内容】１回量<br>
 【データ型】String<br>
@@ -19170,7 +19170,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehd">10.17.5.51. mmlHd:timeHd</h5>
+<h5 id="_mmlhd_timehd">10.17.4.51. mmlHd:timeHd</h5>
 <div class="paragraph">
 <p>【内容】投与時刻<br>
 【データ型】dateTime<br>
@@ -19204,7 +19204,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note_2">10.17.5.52. mmlHd:note</h5>
+<h5 id="_mmlhd_note_2">10.17.4.52. mmlHd:note</h5>
 <div class="paragraph">
 <p>【内容】備考<br>
 【データ型】string<br>
@@ -19212,7 +19212,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_injection">10.17.5.53. mmlHd:injection</h5>
+<h5 id="_mmlhd_injection">10.17.4.53. mmlHd:injection</h5>
 <div class="paragraph">
 <p>【内容】注射<br>
 【省略】省略可<br>
@@ -19220,7 +19220,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_drugname_2">10.17.5.54. mmlHd:drugname</h5>
+<h5 id="_mmlhd_drugname_2">10.17.4.54. mmlHd:drugname</h5>
 <div class="paragraph">
 <p>【内容】注射薬名称<br>
 【データ型】string<br>
@@ -19259,7 +19259,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dose_2">10.17.5.55. mmlHd:dose</h5>
+<h5 id="_mmlhd_dose_2">10.17.4.55. mmlHd:dose</h5>
 <div class="paragraph">
 <p>【内容】１回量または投与速度
 【データ型】String
@@ -19292,7 +19292,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_7">10.17.5.56. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart_7">10.17.4.56. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】投与開始時間<br>
 【データ型】dateTime<br>
@@ -19326,7 +19326,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_7">10.17.5.57. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_7">10.17.4.57. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】投与終了時間<br>
 【データ型】dateTime<br>
@@ -19360,7 +19360,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_routename">10.17.5.58. mmlHd:routeName</h5>
+<h5 id="_mmlhd_routename">10.17.4.58. mmlHd:routeName</h5>
 <div class="paragraph">
 <p>【内容】投与経路名称<br>
 【データ型】string<br>
@@ -19407,7 +19407,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note_3">10.17.5.59. mmlHd:note</h5>
+<h5 id="_mmlhd_note_3">10.17.4.59. mmlHd:note</h5>
 <div class="paragraph">
 <p>【内容】備考<br>
 【データ型】string<br>
@@ -19415,7 +19415,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note_4">10.17.5.60. mmlHd:note</h5>
+<h5 id="_mmlhd_note_4">10.17.4.60. mmlHd:note</h5>
 <div class="paragraph">
 <p>【内容】備考<br>
 【データ型】string<br>
@@ -19423,7 +19423,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hddailyorder">10.17.5.61. mmlHd:hdDailyOrder</h5>
+<h5 id="_mmlhd_hddailyorder">10.17.4.61. mmlHd:hdDailyOrder</h5>
 <div class="paragraph">
 <p>【内容】日々指示<br>
 【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．<br>
@@ -19461,7 +19461,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timeshift_2">10.17.5.62. mmlHd:timeshift</h5>
+<h5 id="_mmlhd_timeshift_2">10.17.4.62. mmlHd:timeshift</h5>
 <div class="paragraph">
 <p>【内容】透析シフト名称<br>
 【データ型】string<br>
@@ -19508,7 +19508,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hdmethod_2">10.17.5.63. mmlHd:hdMethod</h5>
+<h5 id="_mmlhd_hdmethod_2">10.17.4.63. mmlHd:hdMethod</h5>
 <div class="paragraph">
 <p>【内容】血液浄化方法<br>
 【省略】省略可<br>
@@ -19516,7 +19516,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hdmethodname">10.17.5.64. mmlHd:hdMethodName</h5>
+<h5 id="_mmlhd_hdmethodname">10.17.4.64. mmlHd:hdMethodName</h5>
 <div class="paragraph">
 <p>【内容】血液浄化方法名称<br>
 【データ型】string<br>
@@ -19563,7 +19563,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_8">10.17.5.65. mmlHd:timeHdStart　　　</h5>
+<h5 id="_mmlhd_timehdstart_8">10.17.4.65. mmlHd:timeHdStart　　　</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -19597,7 +19597,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_8">10.17.5.66. mmlHd:timeHdEnd　　　　</h5>
+<h5 id="_mmlhd_timehdend_8">10.17.4.66. mmlHd:timeHdEnd　　　　</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -19631,7 +19631,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_targetweight">10.17.5.67. mmlHd:targetWeight</h5>
+<h5 id="_mmlhd_targetweight">10.17.4.67. mmlHd:targetWeight</h5>
 <div class="paragraph">
 <p>【内容】目標体重<br>
 【データ型】string<br>
@@ -19664,7 +19664,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_targetuf">10.17.5.68. mmlHd:targetUF</h5>
+<h5 id="_mmlhd_targetuf">10.17.4.68. mmlHd:targetUF</h5>
 <div class="paragraph">
 <p>【内容】実施除水量<br>
 【データ型】string<br>
@@ -19697,7 +19697,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_ufrplan">10.17.5.69. mmlHd:ufrPlan</h5>
+<h5 id="_mmlhd_ufrplan">10.17.4.69. mmlHd:ufrPlan</h5>
 <div class="paragraph">
 <p>【内容】除水速度設定<br>
 【省略】省略可<br>
@@ -19705,7 +19705,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mlhd_ufrate">10.17.5.70. mlHd:ufRate</h5>
+<h5 id="_mlhd_ufrate">10.17.4.70. mlHd:ufRate</h5>
 <div class="paragraph">
 <p>【内容】除水速度<br>
 【データ型】string<br>
@@ -19738,7 +19738,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_9">10.17.5.71. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart_9">10.17.4.71. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -19772,7 +19772,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_9">10.17.5.72. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_9">10.17.4.72. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -19806,7 +19806,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_weightcorrection_2">10.17.5.73. mmlHd:weightCorrection</h5>
+<h5 id="_mmlhd_weightcorrection_2">10.17.4.73. mmlHd:weightCorrection</h5>
 <div class="paragraph">
 <p>【内容】重量補正<br>
 【データ型】string<br>
@@ -19845,7 +19845,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_bloodflow_2">10.17.5.74. mmlHd:bloodFlow</h5>
+<h5 id="_mmlhd_bloodflow_2">10.17.4.74. mmlHd:bloodFlow</h5>
 <div class="paragraph">
 <p>【内容】血液流量<br>
 【省略】省略可<br>
@@ -19853,7 +19853,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_bloodflowrate_2">10.17.5.75. mmlHd:bloodFlowRate　　</h5>
+<h5 id="_mmlhd_bloodflowrate_2">10.17.4.75. mmlHd:bloodFlowRate　　</h5>
 <div class="paragraph">
 <p>【内容】血液流量数値<br>
 【データ型】string<br>
@@ -19886,7 +19886,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_10">10.17.5.76. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart_10">10.17.4.76. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -19920,7 +19920,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_10">10.17.5.77. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_10">10.17.4.77. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -19954,7 +19954,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialyser_2">10.17.5.78. mmlHd:dialyser</h5>
+<h5 id="_mmlhd_dialyser_2">10.17.4.78. mmlHd:dialyser</h5>
 <div class="paragraph">
 <p>【内容】ダイアライザー名称
 【データ型】String
@@ -20005,7 +20005,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysate_2">10.17.5.79. mmlHd:dialysate</h5>
+<h5 id="_mmlhd_dialysate_2">10.17.4.79. mmlHd:dialysate</h5>
 <div class="paragraph">
 <p>【内容】透析液<br>
 【省略】省略可<br>
@@ -20013,7 +20013,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dyalysatename">10.17.5.80. mmlHd:dyalysateName　　</h5>
+<h5 id="_mmlhd_dyalysatename">10.17.4.80. mmlHd:dyalysateName　　</h5>
 <div class="paragraph">
 <p>【内容】透析液名称<br>
 【データ型】string<br>
@@ -20058,7 +20058,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_11">10.17.5.81. mmlHd:timeHdStart　　</h5>
+<h5 id="_mmlhd_timehdstart_11">10.17.4.81. mmlHd:timeHdStart　　</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -20092,7 +20092,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_11">10.17.5.82. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_11">10.17.4.82. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -20126,7 +20126,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysateflow_2">10.17.5.83. mmlHd:dialysateFlow</h5>
+<h5 id="_mmlhd_dialysateflow_2">10.17.4.83. mmlHd:dialysateFlow</h5>
 <div class="paragraph">
 <p>【内容】透析液流量<br>
 【省略】省略可<br>
@@ -20134,7 +20134,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysateflowrate">10.17.5.84. mmlHd:dialysateFlowRate</h5>
+<h5 id="_mmlhd_dialysateflowrate">10.17.4.84. mmlHd:dialysateFlowRate</h5>
 <div class="paragraph">
 <p>【内容】透析液流量数値<br>
 【データ型】string<br>
@@ -20167,7 +20167,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_12">10.17.5.85. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart_12">10.17.4.85. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -20199,7 +20199,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_12">10.17.5.86. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_12">10.17.4.86. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -20233,7 +20233,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysatetemp_2">10.17.5.87. mmlHd:dialysateTemp</h5>
+<h5 id="_mmlhd_dialysatetemp_2">10.17.4.87. mmlHd:dialysateTemp</h5>
 <div class="paragraph">
 <p>【内容】透析液温度<br>
 【省略】省略可<br>
@@ -20241,7 +20241,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysatetempvalue_2">10.17.5.88. mmlHd:dialysateTempValue</h5>
+<h5 id="_mmlhd_dialysatetempvalue_2">10.17.4.88. mmlHd:dialysateTempValue</h5>
 <div class="paragraph">
 <p>【内容】透析液温度数値<br>
 【データ型】string<br>
@@ -20274,7 +20274,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_13">10.17.5.89. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart_13">10.17.4.89. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -20306,7 +20306,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_13">10.17.5.90. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_13">10.17.4.90. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -20340,7 +20340,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_needle_2">10.17.5.91. mmlHd:needle</h5>
+<h5 id="_mmlhd_needle_2">10.17.4.91. mmlHd:needle</h5>
 <div class="paragraph">
 <p>【内容】穿刺針名称<br>
 【データ型】string<br>
@@ -20386,7 +20386,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_medication_2">10.17.5.92. mmlHd:medication</h5>
+<h5 id="_mmlhd_medication_2">10.17.4.92. mmlHd:medication</h5>
 <div class="paragraph">
 <p>【内容】投薬<br>
 【省略】省略可<br>
@@ -20394,7 +20394,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_drugname_3">10.17.5.93. mmlHd:drugName</h5>
+<h5 id="_mmlhd_drugname_3">10.17.4.93. mmlHd:drugName</h5>
 <div class="paragraph">
 <p>【内容】薬剤名称<br>
 【データ型】string<br>
@@ -20433,7 +20433,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dose_3">10.17.5.94. mmlHd:dose</h5>
+<h5 id="_mmlhd_dose_3">10.17.4.94. mmlHd:dose</h5>
 <div class="paragraph">
 <p>【内容】１回量<br>
 【データ型】string<br>
@@ -20466,7 +20466,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehd_2">10.17.5.95. mmlHd:timeHd</h5>
+<h5 id="_mmlhd_timehd_2">10.17.4.95. mmlHd:timeHd</h5>
 <div class="paragraph">
 <p>【内容】投与時刻<br>
 【データ型】dateTime<br>
@@ -20500,7 +20500,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note_5">10.17.5.96. mmlHd:note</h5>
+<h5 id="_mmlhd_note_5">10.17.4.96. mmlHd:note</h5>
 <div class="paragraph">
 <p>【内容】備考<br>
 【データ型】string<br>
@@ -20508,7 +20508,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_injection_2">10.17.5.97. mmlHd:injection</h5>
+<h5 id="_mmlhd_injection_2">10.17.4.97. mmlHd:injection</h5>
 <div class="paragraph">
 <p>【内容】注射<br>
 【省略】省略可<br>
@@ -20516,7 +20516,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_drugname_4">10.17.5.98. mmlHd:drugName　</h5>
+<h5 id="_mmlhd_drugname_4">10.17.4.98. mmlHd:drugName　</h5>
 <div class="paragraph">
 <p>【内容】注射薬名称<br>
 【データ型】string<br>
@@ -20555,7 +20555,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dose_4">10.17.5.99. mmlHd:dose　　　　　　　　</h5>
+<h5 id="_mmlhd_dose_4">10.17.4.99. mmlHd:dose　　　　　　　　</h5>
 <div class="paragraph">
 <p>【内容】１回量または投与速度<br>
 【データ型】string<br>
@@ -20588,7 +20588,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_14">10.17.5.100. mmlHd:timeHdStart　　　　　</h5>
+<h5 id="_mmlhd_timehdstart_14">10.17.4.100. mmlHd:timeHdStart　　　　　</h5>
 <div class="paragraph">
 <p>【内容】投与開始時間<br>
 【データ型】dateTime<br>
@@ -20622,7 +20622,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_14">10.17.5.101. mmlHd:timeHdEnd　　　　　　</h5>
+<h5 id="_mmlhd_timehdend_14">10.17.4.101. mmlHd:timeHdEnd　　　　　　</h5>
 <div class="paragraph">
 <p>【内容】投与終了時間<br>
 【データ型】dateTime<br>
@@ -20656,7 +20656,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_routename_2">10.17.5.102. mmlHd:routeName　　　　　　</h5>
+<h5 id="_mmlhd_routename_2">10.17.4.102. mmlHd:routeName　　　　　　</h5>
 <div class="paragraph">
 <p>【内容】投与経路名称<br>
 【データ型】string<br>
@@ -20697,7 +20697,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note_6">10.17.5.103. mmlHd:note　　</h5>
+<h5 id="_mmlhd_note_6">10.17.4.103. mmlHd:note　　</h5>
 <div class="paragraph">
 <p>【内容】備考<br>
 【データ型】string<br>
@@ -20705,7 +20705,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note_7">10.17.5.104. mmlHd:note</h5>
+<h5 id="_mmlhd_note_7">10.17.4.104. mmlHd:note</h5>
 <div class="paragraph">
 <p>【内容】備考<br>
 【データ型】string<br>
@@ -20713,14 +20713,14 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hdprogresssection">10.17.5.105. mmlHd:HDProgressSection</h5>
+<h5 id="_mmlhd_hdprogresssection">10.17.4.105. mmlHd:HDProgressSection</h5>
 <div class="paragraph">
 <p>【内容】透析記録情報<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dailyhdrecord_br">10.17.5.106. mmlHd:dailyHDRecord<br></h5>
+<h5 id="_mmlhd_dailyhdrecord_br">10.17.4.106. mmlHd:dailyHDRecord<br></h5>
 <div class="paragraph">
 <p>【内容】日次HD記録<br>
 【省略】省略可<br>
@@ -20759,7 +20759,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hdmethodrecord">10.17.5.107. mmlHd:hdMethodRecord</h5>
+<h5 id="_mmlhd_hdmethodrecord">10.17.4.107. mmlHd:hdMethodRecord</h5>
 <div class="paragraph">
 <p>【内容】血液浄化法名称<br>
 【データ型】string<br>
@@ -20819,7 +20819,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dryweight_2">10.17.5.108. mmlHd:dryWeight</h5>
+<h5 id="_mmlhd_dryweight_2">10.17.4.108. mmlHd:dryWeight</h5>
 <div class="paragraph">
 <p>【内容】ドライウェイト<br>
 【データ型】string<br>
@@ -20852,7 +20852,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_preweight">10.17.5.109. mmlHd:preWeight</h5>
+<h5 id="_mmlhd_preweight">10.17.4.109. mmlHd:preWeight</h5>
 <div class="paragraph">
 <p>【内容】 透析前体重
 【データ型】string<br>
@@ -20885,7 +20885,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_postweight">10.17.5.110. mmlHd:postWeight</h5>
+<h5 id="_mmlhd_postweight">10.17.4.110. mmlHd:postWeight</h5>
 <div class="paragraph">
 <p>【内容】透析後体重<br>
 【データ型】string<br>
@@ -20918,7 +20918,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_totaluf">10.17.5.111. mmlHd:totalUF</h5>
+<h5 id="_mmlhd_totaluf">10.17.4.111. mmlHd:totalUF</h5>
 <div class="paragraph">
 <p>【内容】実施除水量<br>
 【データ型】string<br>
@@ -20951,7 +20951,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_weightcorrection_3">10.17.5.112. mmlHd:weightCorrection</h5>
+<h5 id="_mmlhd_weightcorrection_3">10.17.4.112. mmlHd:weightCorrection</h5>
 <div class="paragraph">
 <p>【内容】補正<br>
 【データ型】string<br>
@@ -20984,7 +20984,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note_8">10.17.5.113. mmlHd:note</h5>
+<h5 id="_mmlhd_note_8">10.17.4.113. mmlHd:note</h5>
 <div class="paragraph">
 <p>【内容】備考
 【データ型】string
@@ -20992,7 +20992,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialyser_3">10.17.5.114. mmlHd:dialyser</h5>
+<h5 id="_mmlhd_dialyser_3">10.17.4.114. mmlHd:dialyser</h5>
 <div class="paragraph">
 <p>【内容】ダイアライザー名称<br>
 【データ型】String<br>
@@ -21043,7 +21043,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysate_3">10.17.5.115. mmlHd:dialysate</h5>
+<h5 id="_mmlhd_dialysate_3">10.17.4.115. mmlHd:dialysate</h5>
 <div class="paragraph">
 <p>【内容】透析液<br>
 【省略】省略可<br>
@@ -21051,7 +21051,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dialysatename_2">10.17.5.116. mmlHd:dialysateName</h5>
+<h5 id="_mmlhd_dialysatename_2">10.17.4.116. mmlHd:dialysateName</h5>
 <div class="paragraph">
 <p>【内容】透析液名称<br>
 【データ型】string<br>
@@ -21096,7 +21096,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_15">10.17.5.117. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart_15">10.17.4.117. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】開始時刻<br>
 【データ型】dateTime<br>
@@ -21130,7 +21130,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_15">10.17.5.118. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_15">10.17.4.118. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】終了時刻<br>
 【データ型】dateTime<br>
@@ -21164,7 +21164,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_needle_3">10.17.5.119. mmlHd:needle</h5>
+<h5 id="_mmlhd_needle_3">10.17.4.119. mmlHd:needle</h5>
 <div class="paragraph">
 <p>【内容】穿刺針名称<br>
 【データ型】string<br>
@@ -21210,7 +21210,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hdmachine">10.17.5.120. mmlHd:hdMachine</h5>
+<h5 id="_mmlhd_hdmachine">10.17.4.120. mmlHd:hdMachine</h5>
 <div class="paragraph">
 <p>【内容】機器名<br>
 【データ型】String<br>
@@ -21249,7 +21249,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_observation">10.17.5.121. mmlHd:observation</h5>
+<h5 id="_mmlhd_observation">10.17.4.121. mmlHd:observation</h5>
 <div class="paragraph">
 <p>【内容】観察記録<br>
 【省略】省略可<br>
@@ -21257,7 +21257,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehd_3">10.17.5.122. mmlHd:timeHd</h5>
+<h5 id="_mmlhd_timehd_3">10.17.4.122. mmlHd:timeHd</h5>
 <div class="paragraph">
 <p>【内容】 人工腎臓開始時刻からの経過時間<br>
 【データ型】dateTime<br>
@@ -21291,7 +21291,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_observationitem">10.17.5.123. mmlHd:observationItem</h5>
+<h5 id="_mmlhd_observationitem">10.17.4.123. mmlHd:observationItem</h5>
 <div class="paragraph">
 <p>【内容】観察項目<br>
 【省略】省略可<br>
@@ -21299,7 +21299,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_obitemname">10.17.5.124. mmlHd:obItemName</h5>
+<h5 id="_mmlhd_obitemname">10.17.4.124. mmlHd:obItemName</h5>
 <div class="paragraph">
 <p>【内容】観察項目名<br>
 【データ型】string<br>
@@ -21341,7 +21341,7 @@ hdObservationTable01</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_value">10.17.5.125. mmlHd:value</h5>
+<h5 id="_mmlhd_value">10.17.4.125. mmlHd:value</h5>
 <div class="paragraph">
 <p>【内容】観察値<br>
 【データ型】string<br>
@@ -21374,7 +21374,7 @@ hdObservationTable01</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_staffname">10.17.5.126. mmlHd:StaffName</h5>
+<h5 id="_mmlhd_staffname">10.17.4.126. mmlHd:StaffName</h5>
 <div class="paragraph">
 <p>【内容】観察スタッフ名<br>
 【データ型】string<br>
@@ -21408,7 +21408,7 @@ hdObservationTable01</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_machinename">10.17.5.127. mmlHd:machineName</h5>
+<h5 id="_mmlhd_machinename">10.17.4.127. mmlHd:machineName</h5>
 <div class="paragraph">
 <p>【内容】機器名<br>
 【データ型】string<br>
@@ -21449,7 +21449,7 @@ hdObservationTable01</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note_9">10.17.5.128. mmlHd:note</h5>
+<h5 id="_mmlhd_note_9">10.17.4.128. mmlHd:note</h5>
 <div class="paragraph">
 <p>【内容】備考<br>
 【データ型】string<br>
@@ -21457,7 +21457,7 @@ hdObservationTable01</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_medication_3">10.17.5.129. mmlHd:medication</h5>
+<h5 id="_mmlhd_medication_3">10.17.4.129. mmlHd:medication</h5>
 <div class="paragraph">
 <p>【内容】投薬<br>
 【省略】省略可<br>
@@ -21465,7 +21465,7 @@ hdObservationTable01</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_drugname_5">10.17.5.130. mmlHd:drugName</h5>
+<h5 id="_mmlhd_drugname_5">10.17.4.130. mmlHd:drugName</h5>
 <div class="paragraph">
 <p>【内容】内服薬名称<br>
 【データ型】string<br>
@@ -21504,7 +21504,7 @@ hdObservationTable01</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dose_5">10.17.5.131. mmlHd:dose</h5>
+<h5 id="_mmlhd_dose_5">10.17.4.131. mmlHd:dose</h5>
 <div class="paragraph">
 <p>【内容】１回量<br>
 【データ型】string<br>
@@ -21537,7 +21537,7 @@ hdObservationTable01</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehd_4">10.17.5.132. mmlHd:timeHd</h5>
+<h5 id="_mmlhd_timehd_4">10.17.4.132. mmlHd:timeHd</h5>
 <div class="paragraph">
 <p>【内容】実施時刻<br>
 【データ型】dateTime<br>
@@ -21571,7 +21571,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note_10">10.17.5.133. mmlHd:note</h5>
+<h5 id="_mmlhd_note_10">10.17.4.133. mmlHd:note</h5>
 <div class="paragraph">
 <p>【内容】備考<br>
 【データ型】string<br>
@@ -21579,7 +21579,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_injection_3">10.17.5.134. mmlHd:injection</h5>
+<h5 id="_mmlhd_injection_3">10.17.4.134. mmlHd:injection</h5>
 <div class="paragraph">
 <p>【内容】注射<br>
 【省略】省略可<br>
@@ -21587,7 +21587,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_drugname_6">10.17.5.135. mmlHd:drugName</h5>
+<h5 id="_mmlhd_drugname_6">10.17.4.135. mmlHd:drugName</h5>
 <div class="paragraph">
 <p>【【内容】注射薬名称<br>
 【データ型】string<br>
@@ -21626,7 +21626,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_dose_6">10.17.5.136. mmlHd:dose</h5>
+<h5 id="_mmlhd_dose_6">10.17.4.136. mmlHd:dose</h5>
 <div class="paragraph">
 <p>【内容】１回量または投与速度<br>
 【データ型】string<br>
@@ -21659,7 +21659,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdstart_16">10.17.5.137. mmlHd:timeHdStart</h5>
+<h5 id="_mmlhd_timehdstart_16">10.17.4.137. mmlHd:timeHdStart</h5>
 <div class="paragraph">
 <p>【内容】投与開始時間<br>
 【データ型】dateTime<br>
@@ -21693,7 +21693,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehdend_16">10.17.5.138. mmlHd:timeHdEnd</h5>
+<h5 id="_mmlhd_timehdend_16">10.17.4.138. mmlHd:timeHdEnd</h5>
 <div class="paragraph">
 <p>【内容】投与終了時間<br>
 【データ型】dateTime<br>
@@ -21727,7 +21727,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_routename_3">10.17.5.139. mmlHd:routeName</h5>
+<h5 id="_mmlhd_routename_3">10.17.4.139. mmlHd:routeName</h5>
 <div class="paragraph">
 <p>【内容】投与経路名称<br>
 【データ型】string<br>
@@ -21774,7 +21774,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note_11">10.17.5.140. mmlHd:note</h5>
+<h5 id="_mmlhd_note_11">10.17.4.140. mmlHd:note</h5>
 <div class="paragraph">
 <p>【内容】備考<br>
 【データ型】string<br>
@@ -21782,7 +21782,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note_12">10.17.5.141. mmlHd:note</h5>
+<h5 id="_mmlhd_note_12">10.17.4.141. mmlHd:note</h5>
 <div class="paragraph">
 <p>【内容】備考<br>
 【データ型】string<br>
@@ -21790,14 +21790,14 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hdtestresultsection">10.17.5.142. mmlHd:HDTestResultSection</h5>
+<h5 id="_mmlhd_hdtestresultsection">10.17.4.142. mmlHd:HDTestResultSection</h5>
 <div class="paragraph">
 <p>【内容】透析関連検査結果情報<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_testresultitem">10.17.5.143. mmlHd:testResultItem</h5>
+<h5 id="_mmlhd_testresultitem">10.17.4.143. mmlHd:testResultItem</h5>
 <div class="paragraph">
 <p>【内容】検査結果<br>
 【省略】省略可<br>
@@ -21830,7 +21830,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_testcondition">10.17.5.144. mmlHd:testCondition</h5>
+<h5 id="_mmlhd_testcondition">10.17.4.144. mmlHd:testCondition</h5>
 <div class="paragraph">
 <p>【内容】検査条件<br>
 【データ型】string<br>
@@ -21869,7 +21869,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_timehd_5">10.17.5.145. mmlHd:timeHd</h5>
+<h5 id="_mmlhd_timehd_5">10.17.4.145. mmlHd:timeHd</h5>
 <div class="paragraph">
 <p>【内容】実施時刻<br>
 【データ型】dateTime<br>
@@ -21903,7 +21903,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_testitemgroup">10.17.5.146. mmlHd:testItemGroup</h5>
+<h5 id="_mmlhd_testitemgroup">10.17.4.146. mmlHd:testItemGroup</h5>
 <div class="paragraph">
 <p>【内容】 検査項目グループ _
 【省略】省略可<br>
@@ -21911,7 +21911,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_testname">10.17.5.147. mmlHd:testName</h5>
+<h5 id="_mmlhd_testname">10.17.4.147. mmlHd:testName</h5>
 <div class="paragraph">
 <p>【内容】検査名称<br>
 【データ型】string<br>
@@ -21948,7 +21948,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_testresult">10.17.5.148. mmlHd:testResult</h5>
+<h5 id="_mmlhd_testresult">10.17.4.148. mmlHd:testResult</h5>
 <div class="paragraph">
 <p>【内容】検査結果<br>
 【データ型】string<br>
@@ -21981,7 +21981,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_note_13">10.17.5.149. mmlHd:note</h5>
+<h5 id="_mmlhd_note_13">10.17.4.149. mmlHd:note</h5>
 <div class="paragraph">
 <p>【内容】 備考<br>
 【データ型】string<br>
@@ -21989,7 +21989,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_extref">10.17.5.150. mmlHd:extRef</h5>
+<h5 id="_mmlhd_extref">10.17.4.150. mmlHd:extRef</h5>
 <div class="paragraph">
 <p>【内容】検査結果外部参照。構造はMML共通形式を参照<br>
 【省略】省略可<br>
@@ -21997,7 +21997,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hemx">10.17.5.151. mmlHd:HeMX</h5>
+<h5 id="_mmlhd_hemx">10.17.4.151. mmlHd:HeMX</h5>
 <div class="paragraph">
 <p>【内容】HeMXの外部参照<br>
 【省略】省略可<br>
@@ -22005,7 +22005,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlcm_extref_外部参照">10.17.5.152. mmlCm:extRef　　外部参照</h5>
+<h5 id="_mmlcm_extref_外部参照">10.17.4.152. mmlCm:extRef　　外部参照</h5>
 <div class="paragraph">
 <p>【内容】構造はMML共通形式を参照<br>
 【省略】省略不可</p>

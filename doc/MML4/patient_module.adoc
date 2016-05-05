@@ -3,8 +3,7 @@
 :toc: right
 :toclevels: 2
 :pagenums:
-:numberd:
-:sectnums:
+:sectnums: y
 :imagesdir: ./figures
 :linkcss:
 
