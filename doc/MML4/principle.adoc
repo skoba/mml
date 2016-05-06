@@ -3,8 +3,9 @@
 :toc: right
 :toclevels: 2
 :pagenums:
-:numberd:
-:sectnums:
+:sectnums: y
+:sectnumlevels: 8
+:sectoffset: 6
 :imagesdir: ./figures
 :linkcss:
 
@@ -52,45 +53,47 @@ MML Version 4.0で使用する各モジュールとnamespace宣言を以下に�
 
 MMLでは情報の粒度および性質に応じてさまざまな時刻が定義されている。以下にそれを列記する。
 
-. createDate(MML基本構造 Mmlの属性) +
+.MMLにおける時刻表現
+1 createDate(MML基本構造 Mmlの属性)::
 MMLインスタンスの生成時刻を示す。MMLの生成処理をする際にタイムスタンプとして自動的にに入力されることを想定している。したがって、MMLインスタンスに記載される内容の時刻とは原則として無関係であり、その内容が10年前であっても今日の時刻でMMLインスタンス化されたのであれば、生成された時点での時刻が記載される。
 
-. start(MML基本構造 scopePeriodの属性) +
+2 start(MML基本構造 scopePeriodの属性)::
 MMLインスタンス記載内容全体を通した期間の開始日である。MmlModuleItemが複数存在する場合ははすべてのMmlModuleItemを含めた期間とする。
 
-. end(MML基本構造scopePeriodの属性) +
+3 end(MML基本構造scopePeriodの属性)::
 MMLインスタンス記載内容全体を通した期間の終了日である。MmlModuleItemが複数素材する場合はすべてのMmlModuleItemを含めた期間とする。
 
-. confirmDate(MML基本構造) +
+4 confirmDate(MML基本構造)::
 一つのcontentの記載内容が確定された日付である。通常は診療録が電子的に記録されて確定した日に相当する。記載確定日は、イベントが発生し文書が記載された日と一致することが運用上好ましい。しかしながら、運用上数日前のイベントを遅れて記載したような場合には、記載された日付をconfirmDateとして記録する。MMLではイベントが発生した正確な日付は文書内容を解析しなければわからない。文書内にエレメントとして明示的にイベント発生日時が記載されていることもあるが、文脈などから判断するしかない場合もある。これは、現在の診療録の運用上、やむを得ないことである。
 
-. start(MML基本構造confirmDateの属性) +
+5 start(MML基本構造confirmDateの属性)::
 contentの記載内容が複数の日付にまたがる情報(たとえばサマリー）である場合は記載内容が対象とする期間の開始日を記載する。上記(2)のscopePeriodがMMLインスタンス全体が対象期間であるのに対して、こちらは対応する一つのMmlModuleItemが対象期間である。
 
-. end(MML基本構造cinfirmDateの属性) +
+6 end(MML基本構造cinfirmDateの属性)::
  上記同様にcontentの記載内容が複数の日付にまたがる情報であれば、対応する一つのMmlModuleItemが対象とする期間の終了日を記載する。
 
- . mmlHi:startDate(健康保健情報) +
+7 mmlHi:startDate(健康保健情報)::
  健康保険の交付年月日である。この日付は診療イベントと関係がないため上記(2)(3)(5)(6)の対象とはしない。
- . mmlHi:expiredDate(健康保健情報) +
+
+8 mmlHi:expiredDate(健康保健情報)::
  健康保険の有効期限である。この日付も診療イベントとは関係ないため、上記(2)(3)(5)(6)の対象とはしない。
- . mmlRd:startDate(診断履歴情報) +
+mmlRd:startDate(診断履歴情報)::
  この日付は疾患の発症年月日ではなく、保険請求上の開始日であり診療イベントとは関係ないことが多いため、上記(2)(3)(5)(6)の対象とはしない。
- . mmlRd:endDate +
+9 mmlRd:endDate::
  この日付は疾患が治癒した日ではなく、保険請求上の終了日であり、診療イベントとは関係しないことが多いため、上記(2)(3)(5)(6)の対象とはしない。
- . mmlRd:firstEncounterDate(診断履歴情報)
+10 mmlRd:firstEncounterDate(診断履歴情報)::
  疾患の初診日であり、最初の保険医療行為の対象となった日である。疾患自体の発症や治癒と関係のないイベントであるため、この日付も上記(2)(3)(5)(6)の対象とはしない。
- . mmlSg:date(手術記録情報) +
+11 mmlSg:date(手術記録情報)::
  手術施行日(イベント発生日)であり、記載日ではない。記載日は(4)MML基本構造のconfirmDateとして記録する。手術施行日に記載が完了しない場合もあるため、mmlSg:dateとconfirmDateは必ずしも一致しない。
- . mmlSm:start(臨床サマリー情報 mmlSm:serviceHistoryの属性) +
+12 mmlSm:start(臨床サマリー情報 mmlSm:serviceHistoryの属性)::
  サマリー対象期間の開始日である。通常はMML基本構造confirmDateのstart属性と同じ値となる。
- . mmlSm:end(臨床サマリー情報mmlSm:serviceHistoryの属性) +
+13 mmlSm:end(臨床サマリー情報mmlSm:serviceHistoryの属性)::
  サマリー対象期間御終了日である。通常はMML基本構造confirmDateのend属性と同じ値となる。
 
 ==== エレメント粒度
 
 患者氏名を構造化せずに一つのエレメントとするか、姓・名などのエレメントに分割して取り扱うかといったエレメント粒度はしばしば問題となる。本来であれば、細粒度のデータモデルによって情報が規定されていることが望ましいが、既存の情報システムからデータを収集することも想定する必要もある。粒度の異なる情報システムからデータを収集する際のミスマッチによる情報劣化を抑制するために、MMLではいくつかのエレメントにおいて、粒度の異なるエレメントを選択できるように配慮している。具体例を以下に示す。
-
+==========================
 . 住所表現形式における非構造化住所（mmlAd:full）と構造化形式で示された住所（mmlAd:prefecture， mmlAd:city，mmlAd:town，mmlAd:homeNumber）
 
 . 人名表現形式における非構造化名前表現（mmlNm:fullname）と構造化形式による名前表現（mmlNm:family，mmlNm:given，mmlNm:middle）
@@ -104,6 +107,7 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 . 経過記録情報－Subject情報における自由記載（mmlPc:freeNotes）と時間表現併用型記載（mmlPc:subjectiveItem）
 
 . 手術記録情報における手術法一連表記（mmlSg:operation）と要素分割表記（mmlSg:operationElement）
+==========================
 
 ただし，MMLインスタンスを正確に生成できても、MMLインスタンスとローカルデータベースのスキーマとの相互変換は、ローカルデータベースの情報粒度に大きく依存する。情報粒度のミスマッチが生じている場合は、情報の損失が起きないように配慮する必要がある．相対的に、MML側の粒度が荒い（分割されていない）場合は、正確な変換は困難である。相対的にMML側の粒度が細かい（分割されている）場合は、情報量を落とさないためにタグをつけたままローカルデータベースに格納することも考えられるが現実的ではない。
 
@@ -111,24 +115,24 @@ contentの記載内容が複数の日付にまたがる情報(たとえばサマ
 
 一つのMMLモジュールアイテム(MML基本構造MmlModuleItem)には、一つのcontentしか記載されないのが原則であり、さらに一つのcontentには一つのMMLモジュールしか記載されない。よって、一つのモジュールアイテムを、一つの文書として見なすことができる。しかし、一つの文書が意味する文書粒度は文書の種別ごとに定義しておく必要がある。
 
-
-. 患者情報 +
+[glossary]
+患者情報::
 患者情報は，蓄積型の情報であり，最新の情報のみが意味を持つ場合が多いので，複数の患者情報文書が意味を持って同時に出現することは考えにくく，文書粒度が問題になることはない．
-. 健康保険情報 +
+健康保険情報::
 一つの使用可能保険・公費の組合せを一文書とする．詳細はエレメント解説を参照．
-. 診断履歴情報 +
+診断履歴情報::
 一つの病名を一文書とする．主たる病名に対する合併症や続発症は，別の文書に記載する．病名を，幹病名と修飾語に分けた場合は，合わせて一文書とする．詳細はエレメント解説を参照．
-. 生活習慣情報 +
+生活習慣情報::
 患者情報とほぼ同じで，複数の生活習慣情報文書が意味を持って同時に出現することは考えにくく，文書粒度が問題になることはない．
-. 基礎的診療情報 +
+基礎的診療情報::
 患者情報と同様である．
-. 初診時特有情報 +
+初診時特有情報::
 一回の初診（入院）で取得した一連の情報を一文書とする．ただし，情報の取得が段階的に行われて，複数のインスタンスに分かれることはありうる．複数の初診（入院）で取得した情報をまとめて一文書にしてはならない．
-. 経過記録情報 +
+経過記録情報::
 プログレスノートに相当する文書であり，一回の記述を一文書とする．よって，記載者が複数存在することはない．また，通常は記載日が複数日にまたがることもない．
-. 手術記録情報 +
+手術記録情報::
 手術室に入室し，退室するまでの一連の情報を一文書とする．一旦手術室を退室し，時間をあけずに再び入室して再手術を施行した場合は，二文書とするべきである．逆に，手術途中で術者や担当診療科が変わったり，術創が変わっても，一文書とすべきである．
-. 臨床サマリー情報 +
+臨床サマリー情報::
 ユーザーが定義する対象期間のサマリーを一文書とする．通常，退院時サマリーの場合は，一回の入院で一文書と考えられる．入院途中で転科し，複数診療科にまたがった場合に，サマリーを分けるか，一つにするかは，ユーザーによって定義される
 
 ==== parentIdによる文書間の関連付け
@@ -139,6 +143,7 @@ MMLでは，関連親文書ID（MML基本構造parentId）を記載し，文書�
 
 親文書IDによるポイントは，次のような利用法が考えられる．
 
+==========================
 . 文書の訂正（テーブルMML0008　 oldEdition） +
     すでに生成した文書を訂正，更新したい時に，前文書のuidをポイントする．ただし，前文書を物理的に消去する必要はなく，ユーザーインターフェイス上見えなくするに留めておくことが望ましい．
 . オーダーとその結果の関連付け（テーブルMML0008　 order） +
@@ -149,8 +154,9 @@ MMLでは，関連親文書ID（MML基本構造parentId）を記載し，文書�
     病名の時系列的な変遷を表すことが可能である．病名の終了（前病名文書と同じ病名で転記を終了とした新病名文書を生成），変化（前病名文書と異なる病名の新病名文書を生成），分離（前病名文書に対して，病名の異なる複数の新病名文書を生成），併合（複数の前病名文書に対して，一つの新病名文書を生成）を表すことができる．
 . 病名に対する適用健康保険（テーブルMML0008　 healthInsurance）
     医事会計上必要である場合に，対応可能である．
+==========================
 
-補足：MMLインスタンスを受け取るMMLプロセッサは，受け取ったMMLインスタンスの関連親文書IDから，該当する文書を検索できることが望ましい．しかし，受信側MMLプロセッサが検索できる保証がない場合は，送信側MMLプロセッサは，過去にすでに送った文書に対してのみ，親文書IDによるポイントを行うべきである．
+TIP: MMLインスタンスを受け取るMMLプロセッサは，受け取ったMMLインスタンスの関連親文書IDから，該当する文書を検索できることが望ましい．しかし，受信側MMLプロセッサが検索できる保証がない場合は，送信側MMLプロセッサは，過去にすでに送った文書に対してのみ，親文書IDによるポイントを行うべきである．
 
 ==== groupIdによる文書間の関連付け
 複数のモジュールを組み合わせて，要約や紹介状等を構築するためには，グループID （1.2.1.1.3.3. groupId）を用いる．モジュール単位で情報を管理する場合には，全く対等でまとまりのあるモジュール群は，同じ文書IDで管理されていた方が，検索抽出が容易であり，文書としてまとめる必要のある複数モジュールには，文書IDとは別個に，同じID（すなわちgroupId）を設定可能とする．
@@ -160,17 +166,17 @@ MMLでは，関連親文書ID（MML基本構造parentId）を記載し，文書�
 ==== データ型
 MML Ver 4のデータ型はW3C XML Schema Ver 1.1に準拠する。具体的には以下の通りである。Ver 3までのtimePeriod型はxs:duration型で代用する。
 
-|===
-|xs:string | 文字列
-|xs:integer | 整数
-|xs:decimal | 10進数
-|xs:boolean | 真偽値(true or false)
-|xs:date | 日付型。ISO8601形式(CCYY-MM-DD)で表記する
-|xs:time | 時刻型。ISO8601形式(hh:mmLss[Z\|(+\|-)hh:mm])で表記する
-|xs:dateTIme | 日付時刻型。ISO8601形式(CCYY-MM-DDThh:mm:ss[Z\|(+\|-)hh:mm])で表記する
-|xs:duration|期間型。ISO8601形式に週（W)を加えたPnYnMnWnDTnHnMnS形式で表記する。
-|xs:token|空白置換と空白縮小が行われた文字列。
-|===
+[horizontal]
+xs:string:: 文字列
+xs:integer:: 整数
+xs:decimal:: 10進数
+xs:boolean:: 真偽値(true or false)
+xs:date:: 日付型。ISO8601形式(CCYY-MM-DD)で表記する
+xs:time:: 時刻型。ISO8601形式(hh:mmLss[Z\|(+\|-)hh:mm])で表記する
+xs:dateTIme:: 日付時刻型。ISO8601形式(CCYY-MM-DDThh:mm:ss[Z\|(+\|-)hh:mm])で表記する
+xs:duration:: 期間型。ISO8601形式に週（W)を加えたPnYnMnWnDTnHnMnS形式で表記する。
+xs:token:: 空白置換と空白縮小が行われた文字列。
+
 
 ==== アクセス権と暗号化
 
@@ -189,7 +195,7 @@ Ver 3まではモジュールのバージョンは，namespaces宣言の末尾�
 
 例えば，検歴情報のnamespaces宣言が
 
- xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
+ xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/test/1.0"
 
 であれば，MML ver 2.3であっても、MML ver 3.0であってもこの検歴情報モジュールのバージョンは，1.0である。
 
@@ -199,29 +205,45 @@ Ver 3まではモジュールのバージョンは，namespaces宣言の末尾�
 
 各モジュールのバージョンはURLの末尾に付与する。MMLの同一バージョンで小規模の修正が加わった場合末尾のバージョンを変更するものとする。
 
-　xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
+ xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
 
 以下にMML ver 4での各モジュールのnamespaces宣言を一覧する。
 
-|===
-|患者情報モジュール|xmlns:mmlPi ="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
-|健康保険情報モジュール|xmlns:mmlHi ="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
-|診断履歴情報モジュール|xmlns:mmlRd ="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
-|生活習慣情報モジュール|xmlns:mmlLs ="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"
-|基礎的診療情報モジュール|xmlns:mmlBc ="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"
-|初診時特有情報モジュール|xmlns:mmlFcl ="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"
-|経過記録情報モジュール|xmlns:mmlPc ="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"
-|手術記録情報モジュール|xmlns:mmlSg ="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"
-|臨床サマリー情報モジュール|xmlns:mmlSm ="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0"
-|検歴情報モジュール|xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
-|報告書情報モジュール|xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
-|紹介状モジュール|xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
-|バイタルサインモジュール|xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
-|体温表モジュール|xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"
-|処方箋モジュール|xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
-|注射記録モジュール|xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
-|透析モジュール|xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
-|===
+患者情報モジュール::
+xmlns:mmlPi ="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
+健康保険情報モジュール::
+xmlns:mmlHi ="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
+診断履歴情報モジュール::
+xmlns:mmlRd ="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
+生活習慣情報モジュール::
+xmlns:mmlLs ="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"
+基礎的診療情報モジュール::
+xmlns:mmlBc ="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"
+初診時特有情報モジュール::
+xmlns:mmlFcl ="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"
+経過記録情報モジュール::
+xmlns:mmlPc ="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"
+手術記録情報モジュール::
+xmlns:mmlSg ="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"
+臨床サマリー情報モジュール::
+xmlns:mmlSm ="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0"
+検歴情報モジュール::
+xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
+報告書情報モジュール::
+xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
+紹介状モジュール::
+xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
+バイタルサインモジュール::
+xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
+体温表モジュール::
+xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"
+処方箋モジュール::
+xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
+注射記録モジュール::
+xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
+透析モジュール::
+xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
+
 
 === XHTMLの取り扱い
 MMLでは，文章として記述すべき情報を多く含んでいるため，書式情報を交換しなければ，正確に意味が伝わらないことがある．よって，データ型がstringであるエレメントのいくつかには，XHTMLが使用できることを定義し、改行書式“<br/>”のみを必須の書式としてきた。他の要素は処理系依存であり、必ずしも処理する必要はないとしたが、XHTML部分に書式以外の情報が入る余地を残したことで、この部分にMMLでは規定していないさまざまな情報が構造化されて記載されて運用されることになった。

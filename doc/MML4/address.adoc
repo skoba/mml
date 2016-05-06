@@ -10,13 +10,13 @@
 
 === 住所表現形式
 
-.エレメント構造図
+.住所表現形式エレメント構造図
 image::mmlad.jpg[]
 
-.エレメント一覧表
+.住所表現形式エレメント一覧表
 |=====
 | |Elements|Attribute|Datatypes|Occurence|TableId
-|1.|mmlAd:Address| | | |
+|1.|<<address, mmlAd:Address>>| | | |
 | | |mmlAd:repCode|string|#REQUIRED|optional
 | | |mmlAd:addressClass|string|#IMPLIED|MML0002
 | | |mmlAd:tableId|string|#IMPLIED|
@@ -35,7 +35,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ==== エレメント解説
 
-===== mmlAd:Address (住所表現形式)
+===== [[address]]mmlAd:Address (住所表現形式)
 【内容】住所を表現する共通形式．一連住所もしくはその直下の 4 エレメント (1.2. から1.5.) のどちらかを選択．
 
 【属性】
