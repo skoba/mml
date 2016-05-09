@@ -31,8 +31,7 @@
 <ul class="sectlevel2">
 <li><a href="#_モジュールのnamespace宣言とバージョン管理">6.1. モジュールのnamespace宣言とバージョン管理</a></li>
 <li><a href="#_mmlにおける各種のデータ定義">6.2. MMLにおける各種のデータ定義</a></li>
-<li><a href="#_モジュール等のバージョン管理とnamespaces宣言">6.3. モジュール等のバージョン管理とnamespaces宣言</a></li>
-<li><a href="#_xhtmlの取り扱い">6.4. XHTMLの取り扱い</a></li>
+<li><a href="#_xhtmlの取り扱い">6.3. XHTMLの取り扱い</a></li>
 </ul>
 </li>
 <li><a href="#_共通形式">7. 共通形式</a>
@@ -772,118 +771,7 @@ xs:token
 </div>
 </div>
 <div class="sect2">
-<h3 id="_モジュール等のバージョン管理とnamespaces宣言">6.3. モジュール等のバージョン管理とnamespaces宣言</h3>
-<div class="paragraph">
-<p>MML Ver 4リリースに伴い、これまでバージョン間で共有されていたnamespaces宣言をバージョンごとに分離する。</p>
-</div>
-<div class="paragraph">
-<p>Ver 3まではモジュールのバージョンは，namespaces宣言の末尾の整数によって表されていた</p>
-</div>
-<div class="paragraph">
-<p>例えば，検歴情報のnamespaces宣言が</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/test/1.0"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>であれば，MML ver 2.3であっても、MML ver 3.0であってもこの検歴情報モジュールのバージョンは，1.0である。</p>
-</div>
-<div class="paragraph">
-<p>混乱を避けるためにVer 4以降ではURLを示すhttp://www.medxml.net/MMLの後にMMLのバージョンを以下のように記載する。</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>xmlns:mml="http://www.medxml.net/MML/v4"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>各モジュールのバージョンはURLの末尾に付与する。MMLの同一バージョンで小規模の修正が加わった場合末尾のバージョンを変更するものとする。</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>以下にMML ver 4での各モジュールのnamespace宣言を一覧する。</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">患者情報モジュール</dt>
-<dd>
-<p>xmlns:mmlPi ="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"</p>
-</dd>
-<dt class="hdlist1">健康保険情報モジュール</dt>
-<dd>
-<p>xmlns:mmlHi ="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"</p>
-</dd>
-<dt class="hdlist1">診断履歴情報モジュール</dt>
-<dd>
-<p>xmlns:mmlRd ="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"</p>
-</dd>
-<dt class="hdlist1">生活習慣情報モジュール</dt>
-<dd>
-<p>xmlns:mmlLs ="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"</p>
-</dd>
-<dt class="hdlist1">基礎的診療情報モジュール</dt>
-<dd>
-<p>xmlns:mmlBc ="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"</p>
-</dd>
-<dt class="hdlist1">初診時特有情報モジュール</dt>
-<dd>
-<p>xmlns:mmlFcl ="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"</p>
-</dd>
-<dt class="hdlist1">経過記録情報モジュール</dt>
-<dd>
-<p>xmlns:mmlPc ="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"</p>
-</dd>
-<dt class="hdlist1">手術記録情報モジュール</dt>
-<dd>
-<p>xmlns:mmlSg ="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"</p>
-</dd>
-<dt class="hdlist1">臨床サマリー情報モジュール</dt>
-<dd>
-<p>xmlns:mmlSm ="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0"</p>
-</dd>
-<dt class="hdlist1">検歴情報モジュール</dt>
-<dd>
-<p>xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"</p>
-</dd>
-<dt class="hdlist1">報告書情報モジュール</dt>
-<dd>
-<p>xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"</p>
-</dd>
-<dt class="hdlist1">紹介状モジュール</dt>
-<dd>
-<p>xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"</p>
-</dd>
-<dt class="hdlist1">バイタルサインモジュール</dt>
-<dd>
-<p>xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"</p>
-</dd>
-<dt class="hdlist1">体温表モジュール</dt>
-<dd>
-<p>xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"</p>
-</dd>
-<dt class="hdlist1">処方箋モジュール</dt>
-<dd>
-<p>xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"</p>
-</dd>
-<dt class="hdlist1">注射記録モジュール</dt>
-<dd>
-<p>xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"</p>
-</dd>
-<dt class="hdlist1">透析モジュール</dt>
-<dd>
-<p>xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_xhtmlの取り扱い">6.4. XHTMLの取り扱い</h3>
+<h3 id="_xhtmlの取り扱い">6.3. XHTMLの取り扱い</h3>
 <div class="paragraph">
 <p>MMLでは，文章として記述すべき情報を多く含んでいるため，書式情報を交換しなければ，正確に意味が伝わらないことがある．よって，データ型がstringであるエレメントのいくつかには，XHTMLが使用できることを定義し、改行書式“&lt;br/&gt;”のみを必須の書式としてきた。他の要素は処理系依存であり、必ずしも処理する必要はないとしたが、XHTML部分に書式以外の情報が入る余地を残したことで、この部分にMMLでは規定していないさまざまな情報が構造化されて記載されて運用されることになった。</p>
 </div>
