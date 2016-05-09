@@ -349,102 +349,117 @@ Release 1.0, 2000</p>
 <div class="sect2">
 <h3 id="_モジュールのnamespace宣言とバージョン管理">6.1. モジュールのnamespace宣言とバージョン管理</h3>
 <div class="paragraph">
-<p>モジュールのバージョンはnamespace宣言の末尾の数字で示される。たとえば、バイタルサインモジュールのnamespace宣言が</p>
+<p>MML Ver 4リリースに伴い、これまでバージョン間で共有されていたnamespaces宣言をバージョンごとに分離する。</p>
+</div>
+<div class="paragraph">
+<p>Ver 3まではモジュールのバージョンは，namespaces宣言の末尾の整数によって表されていた</p>
+</div>
+<div class="paragraph">
+<p>例えば，検歴情報のnamespaces宣言が</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/vitalsign/1.0"</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml"> xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/test/1.0"</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>であれば、このバイタルサインモジュールのバージョンは1.0である。モジュールのバージョンとMML全体でのバージョンが異なる点に注意が必要である。</p>
+<p>であれば，MML ver 2.3であっても、MML ver 3.0であってもこの検歴情報モジュールのバージョンは，1.0である。</p>
 </div>
 <div class="paragraph">
-<p>MMLインスタンスには複数のアイテムを組み合わせて用いることができるため、作成日や作成者の異なる複数のアイテムによりインスタンスが構成されることがある。そのためMMLインスタンス全体および各アイテムを生成したスキーマのバージョンを明示しておく必要がある。</p>
+<p>混乱を避けるためにVer 4以降ではURLを示すhttp://www.medxml.net/MMLの後にMMLのバージョンを以下のように記載する。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"> xmlns:mml="http://www.medxml.net/MML/v4"</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>MML Version 4.0で使用する各モジュールとnamespace宣言を以下に示す。</p>
+<p>各モジュールのバージョンはURLの末尾に付与する。MMLの同一バージョンで小規模の修正が加わった場合末尾のバージョンを変更するものとする。</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MmlHeader および docInfo構造モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mml ="http://www.medxml.net/MML/v4/base/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">患者情報モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlPi ="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">健康保険情報モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlHi ="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">診断履歴情報モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlRd ="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">生活習慣情報モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlLs ="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">基礎的診療情報モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlBc ="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">初診時特有情報モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlFcl ="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">経過記録情報モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlPc ="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">手術記録情報モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlSg ="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">臨床サマリー情報モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlSm ="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">検歴情報モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/Test/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">報告書情報モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/Report/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">紹介状モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">バイタルサインモジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">体温表モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">処方箋モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">注射記録モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">透析モジュール</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"</p></td>
-</tr>
-</tbody>
-</table>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"> xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>以下にMML ver 4での各モジュールのnamespace宣言を一覧する。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">MmlHeader および docInfo構造モジュール</dt>
+<dd>
+<p>xmlns:mml ="http://www.medxml.net/MML/v4/base/1.0"</p>
+</dd>
+<dt class="hdlist1">患者情報モジュール</dt>
+<dd>
+<p>xmlns:mmlPi ="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"</p>
+</dd>
+<dt class="hdlist1">健康保険情報モジュール</dt>
+<dd>
+<p>xmlns:mmlHi ="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"</p>
+</dd>
+<dt class="hdlist1">診断履歴情報モジュール</dt>
+<dd>
+<p>xmlns:mmlRd ="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"</p>
+</dd>
+<dt class="hdlist1">生活習慣情報モジュール</dt>
+<dd>
+<p>xmlns:mmlLs ="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"</p>
+</dd>
+<dt class="hdlist1">基礎的診療情報モジュール</dt>
+<dd>
+<p>xmlns:mmlBc ="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"</p>
+</dd>
+<dt class="hdlist1">初診時特有情報モジュール</dt>
+<dd>
+<p>xmlns:mmlFcl ="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"</p>
+</dd>
+<dt class="hdlist1">経過記録情報モジュール</dt>
+<dd>
+<p>xmlns:mmlPc ="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"</p>
+</dd>
+<dt class="hdlist1">手術記録情報モジュール</dt>
+<dd>
+<p>xmlns:mmlSg ="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"</p>
+</dd>
+<dt class="hdlist1">臨床サマリー情報モジュール</dt>
+<dd>
+<p>xmlns:mmlSm ="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0"</p>
+</dd>
+<dt class="hdlist1">検歴情報モジュール</dt>
+<dd>
+<p>xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/Test/1.0"</p>
+</dd>
+<dt class="hdlist1">報告書情報モジュール</dt>
+<dd>
+<p>xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/Report/1.0"</p>
+</dd>
+<dt class="hdlist1">紹介状モジュール</dt>
+<dd>
+<p>xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"</p>
+</dd>
+<dt class="hdlist1">バイタルサインモジュール</dt>
+<dd>
+<p>xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"</p>
+</dd>
+<dt class="hdlist1">体温表モジュール</dt>
+<dd>
+<p>xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"</p>
+</dd>
+<dt class="hdlist1">処方箋モジュール</dt>
+<dd>
+<p>xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"</p>
+</dd>
+<dt class="hdlist1">注射記録モジュール</dt>
+<dd>
+<p>xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"</p>
+</dd>
+<dt class="hdlist1">透析モジュール</dt>
+<dd>
+<p>xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"</p>
+</dd>
+</dl>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_mmlにおける各種のデータ定義">6.2. MMLにおける各種のデータ定義</h3>
@@ -792,7 +807,7 @@ xs:token
 </div>
 </div>
 <div class="paragraph">
-<p>以下にMML ver 4での各モジュールのnamespaces宣言を一覧する。</p>
+<p>以下にMML ver 4での各モジュールのnamespace宣言を一覧する。</p>
 </div>
 <div class="dlist">
 <dl>
