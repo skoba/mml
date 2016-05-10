@@ -1,0 +1,23 @@
+== References
+. MedXML Consortium:  http://www.medxml.net/
+. Hiroyuki Yoshihara, Kazuhiko Ohe, Katsuhiro Ohashi, Ryuichi Yamamoto, Shunji Yamasaki, Yasuyuki Hirose, Kunio Matsui, Teruyoshi Hishiki, Yoshinori Yamashita, Kazushi Minagawa, Hiroshi Koyama: Studies on the standardization of exchange procedures of medical information, 1997.,
+http://www.miyazaki-med.ac.jp/medinfo/SGmeeting/document/mml9702/techcore.html
+. Hiroyuki Yoshihara, Kazuhiko Ohe, Katsuhiro Ohashi, Ryuichi Yamamoto, Shunji Yamazaki, Yasuyuki Hirose, Kunio Matsui, Teruyoshi Hishiki, Yoshinori Yamashita, Kazush Minagawa: Studies on the standardization of exchange procedures of medical information,
+http://www.miyazaki-med.ac.jp/medinfo/SGmeeting/document/mml9702/techcore_E.html
+. Extensible Markup Language (XML) 1.0 W3C Recommendation 10-February-1998,
+http://www.w3.org/TR/1998/REC-xml-19980210
+. Namespaces in XML World Wide Web Consortium 14-January-1999,
+http://www.w3.org/TR/1999/REC-xml-names-19990114/
+. Date elements and interchange formats - Information interchange - Representation of dates and times, http://www.iso.ch/markete/8601.pdf
+brief overview of the ISO 8601 standard
+http://www.cl.cam.ac.uk/~mgk25/iso-time.html
+. Seagaia Meeting home page: http://www.seagaia.org/
+. Kenji Araki, Katsuhiro Ohashi, Shunji Yamazaki, Yasuyuki Hirose, Yoshinori Yamashita, Ryuichi Yamamoto, Kazushi Minagawa, Norihiro Sakamoto, and Hiroyuki Yoshihara: Medical Markup Language (MML) for XML-based Hospital Information Interchange, Journal of Medical Systems; Vol.24, No3, 2000
+. HL7：Version 3 Standard: Clinical Document Architecture Framework
+Release 1.0, 2000
+. HL7 Modeling & Methodology Committee ：Hl7 Version3 Message Development Framework, V3.3, Dec 1999
+. ANSI/HL7 Standard version 2.4, The Global Healthcare Messaging Standard, Oct 2000
+. ISO 13606-1:2008, Electronic health record communication -- Part 1: Reference model, 2008
+. ISO 13606-2:2008, Electronic health record communication -- Part 2: Archetype interchange specification, 2008
+. The openEHR Project, http://www.openehr.org/
+. XML Schema 1.1, World Wide Web Consortium, 2004, http://www.w3.org/XML/Schema

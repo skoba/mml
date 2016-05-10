@@ -51,7 +51,7 @@ All of the copyrights in this specification belong to the MedXML Consortium Non-
 In principle, a product that is created by this Consortium shall be made public on the Internet and treated as being in the public domain. Thus, both consortium members and non-members can make use of such products for commercial or academic activities. While using such products, however, the user shall be obligated to report to the Consortium and to clearly indicate that the product of the Consortium is being used in a product, written work, or for other purposes in compliance with copyrights and preferences.
 ----
 
-include::references.adoc[]
+include::references_e.adoc[]
 
 include::overview.adoc[]
 
