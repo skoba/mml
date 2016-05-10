@@ -1,0 +1,66 @@
+:toc: right
+:toclevels: 2
+:pagenums:
+:sectnums: y
+:sectnumlevels: 8
+:imagesdir: ./figures
+:icons: font
+:data-uri:
+:linkcss:
+:pdf-page-size: a4
+:doctype: book
+= MML 4.0
+
+[[introduction]]
+== Introduction
+
+MML has been developed from 1995 as a standard for the exchange of medical data. The initial version used SGML, and XML format was adopted from version 2. Modules have been developed for the use cases in the clinical field, and related tables have been prepared. In 2004, it was harmonized with the HL7 CDA rel 1 format as an effort at improving interoperability with international standards.
+
+Beginning from 2007, research has been conducted for harmonizing MML with the ISO13606 standard that is expected to be the next-generation EHR standard. Based on the results of this research, a vital signs module and a flowseet module were designed in 2013, and a prescription module and injection module were released in 2015.
+
+In addition to these results, we decided to release MML version 4 including the hemodialysis module, which was developed by a hemodialysis SIG, and changed the schema definition language from DTD to  W3C XML Schema 1.1.
+
+This document and the XML schema were officially apporoved as MML version 4 standard on the board, but they are still in the development phase, updates are inevitable.
+
+[[update_policy]]
+== Updating policy for MML 4.0 release
+As described above, the largest change in this revision is adopting W3C XML Schema 1.1. This change intended to improve convenience for developers to implement this MML standard, because XML Schema can strictly define the data types and data structures, and a broad range of related tools are available.
+
+Moreover it was decided to simplify the structure by eliminating the HL7 CDA-related tags that had become redundant. However it was decided to keep the same namespace and tag names, and to keep the XPath structure that is semantically equivalent in order to reduce the costs involved with the version upgrade.
+
+Shift JIS was the official character code up to Ver. 3, however we adopted UTF-8 in Ver. 4. This improves convenience of implementation as well as interoperabiltiy with other standards.
+
+It was also decided to officially add the following modules which had previously been published as Plan B.
+
+. Hemodialysis module
+. Vital signs module
+. Flowsheet module
+. Prescription module
+. Injection module
+
+The Data Exchange Specification that had been defined in MML 2.3 was obsoleted.
+
+
+[[intelectual_property]]
+==  Intellectual property
+
+All of the copyrights in this specification belong to the MedXML Consortium Non-Profit Organization. Thus, all uses of the specification shall comply with the policies of the MedXML Consortium Non-Profit Organization.
+
+.Policy of the MedXML Consortium Non-Profit Organization in relation to products created
+----
+In principle, a product that is created by this Consortium shall be made public on the Internet and treated as being in the public domain. Thus, both consortium members and non-members can make use of such products for commercial or academic activities. While using such products, however, the user shall be obligated to report to the Consortium and to clearly indicate that the product of the Consortium is being used in a product, written work, or for other purposes in compliance with copyrights and preferences.
+----
+
+include::references.adoc[]
+
+include::overview.adoc[]
+
+include::principle.adoc[]
+
+include::common_components.adoc[]
+
+include::header.adoc[]
+
+include::docinfo.adoc[]
+
+include::content_modules.adoc[]
