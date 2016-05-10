@@ -20,7 +20,7 @@ Beginning from 2007, research has been conducted for harmonizing MML with the IS
 
 In addition to these results, we decided to release MML version 4 including the hemodialysis module, which was developed by a hemodialysis SIG, and changed the schema definition language from DTD to  W3C XML Schema 1.1.
 
-This document and the XML schema were officially apporoved as MML version 4 standard on the board, but they are still in the development phase, updates are inevitable.
+NOTE: This document and the XML schema were officially apporoved as MML version 4 standard on the board, but they are still in the development phase, updates are inevitable.
 
 [[update_policy]]
 == Updating policy for MML 4.0 release
@@ -53,7 +53,7 @@ In principle, a product that is created by this Consortium shall be made public 
 
 include::references_e.adoc[]
 
-include::overview.adoc[]
+include::overview_e.adoc[]
 
 include::principle.adoc[]
 
