@@ -11,9 +11,7 @@
 == Overview of MML structure
 toc::[]
 
-MML is composed of 2 blocks: the header block and the body block (<<MML_Structure, Figure 1>>). The header block defines the content module for each individual use case that is common to all MML instances. It also separately defines the formats that are used in common by all these modules.
-
-MMLはheader部分とbody部分の2つのブロックで構成される(Figure 1)。Header部分にはすべてのMMLインスタンスに共通の個別のユースケースに対応したコンテンツモジュールが定義されており、それらのモジュールで共通して使われる形式が別途定義されている。
+MML is composed of 2 blocks: the header block and the body block (<<MML_Structure, Figure 1>>). The header block defines the sharable  common structures and the body block defines the structures to convey each clinical contents.
 
 [[MML_Structure]]
 .MML Structure
