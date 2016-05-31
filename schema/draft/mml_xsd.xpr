@@ -137,10 +137,6 @@
             <file name="hemodialysis.xsd"/>
         </file>
         <file name="hemodialysis.xsd"/>
-        <file name="hemx.dtd"/>
-        <file name="file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/hemx.xsd">
-            <file name="hemodialysis.xsd"/>
-        </file>
         <file name="injection.xsd"/>
         <file name="lifestyle.xsd"/>
         <file name="mml_datatypes_and_header_3.0.dtd"/>
