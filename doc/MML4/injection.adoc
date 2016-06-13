@@ -45,7 +45,7 @@
 |1.1.1|mmlInj:medicine| | | |
 |1.1.1.1|mmlInj:name| |string| |
 |1.1.1.2|mmlInj:code| |string|*|
-| | |mmlInj:system|string| |
+| | |system|string| |
 |1.1.2|mmlInj:dose| |decimal| |
 |1.1.3|mmlInj:doseUnit| |string| |
 |1.1.4|mmlInj:startDateTime| |dateTime|?|
@@ -85,7 +85,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|mmlInj:system|string|不可| |用いたコード体系の名称を記載
+|system|string|不可| |用いたコード体系の名称を記載
 |===
 
 ===== mmlInj:dose

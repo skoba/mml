@@ -23,7 +23,7 @@
         <xs:element ref="mmlPs:duration" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:instruction" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:PRN" minOccurs="0" maxOccurs="1"/>
-        <xs:element ref="mmlPs:route" minOccurs="0" maxOccurs="1"></xs:element>
+        <xs:element ref="mmlPs:route" minOccurs="0" maxOccurs="1" />
         <xs:element ref="mmlPs:form" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:batchNo" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:brandSubstitutionPermitted" minOccurs="0" maxOccurs="1"/>

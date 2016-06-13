@@ -51,7 +51,7 @@ confirmDate
 |1.2.1|mmlPs:medicine| | | |
 |1.2.1.1|mmlPs:name| |string| |
 |1.2.1.2|mmlPs:code| |string|*|
-| | |mmlPs:system|string|#REQUIRED|
+| | |system|string|#REQUIRED|
 |1.2.2|mmlPs:dose| |decimal| |
 |1.2.3|mmlPs:doseUnit| |string| |
 |1.2.4|mmlPs:frequencyPerDay| |decimal| |
@@ -99,7 +99,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|mmlPs:system|string|不可| |用いたコード体系の名称を記載
+|system|string|不可| |用いたコード体系の名称を記載
 |===
 
 ===== mmlPs:dose
