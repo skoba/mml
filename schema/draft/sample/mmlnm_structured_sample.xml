@@ -2,7 +2,7 @@
 <mmlNm:Name
   xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0 ../name.xsd"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0/name.xsd"
   mmlNm:repCode = "A" mmlNm:tableId = "MML0025">
   <mmlNm:family>Araki</mmlNm:family>
   <mmlNm:given>Kenji</mmlNm:given>

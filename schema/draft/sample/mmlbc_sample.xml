@@ -2,7 +2,7 @@
 <mmlBc:BaseClinicModule
   xmlns:mmlBc="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0 ../baseclinic.xsd"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0/baseclinic.xsd"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <mmlBc:allergy>
     <mmlBc:allergyItem>

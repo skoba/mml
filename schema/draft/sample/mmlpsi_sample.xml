@@ -9,7 +9,7 @@
   xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
   xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/PersonalizedInfo/1.0 ../personalizedinfo.xsd">
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/PersonalizedInfo/1.0/personalizedinfo.xsd">
   
   <mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10"
     mmlCm:checkDigit = "5" mmlCm:tableId = "MML0024">12345</mmlCm:Id>

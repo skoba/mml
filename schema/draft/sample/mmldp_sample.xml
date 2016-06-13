@@ -3,7 +3,7 @@
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
   xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0 ../department.xsd">
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0/department.xsd">
   <mmlDp:name mmlDp:repCode = "A" mmlDp:tableId = "MML0025">
     Cardiovascular　Surgery
   </mmlDp:name>

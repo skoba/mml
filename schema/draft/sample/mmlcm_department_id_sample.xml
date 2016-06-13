@@ -2,7 +2,7 @@
 <mmlCm:Id
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0 ../common.xsd"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0/common.xsd"
   mmlCm:type = "medical" mmlCm:tableId = "MML0029">
   16
 </mmlCm:Id>

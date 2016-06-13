@@ -7,7 +7,7 @@
   xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0 ../surgery.xsd">
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0/surgery.xsd">
 
   <mmlSg:surgeryItem>
     <mmlSg:surgicalInfo mmlSg:type="elective">

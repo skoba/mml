@@ -6,7 +6,7 @@
   xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
   xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0 ../patientinfo.xsd">
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0/patientinfo.xsd">
 
   <mmlPi:uniqueInfo>
     <mmlPi:masterId>

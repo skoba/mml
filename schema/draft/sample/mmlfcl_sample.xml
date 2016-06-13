@@ -4,7 +4,7 @@
   xmlns:mmlRd="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
   xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0 ../firstclinic.xsd"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0/firstclinic.xsd"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <mmlFcl:familyHistory>
     <mmlFcl:familyHistoryItem>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mmlPh:Phone xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0 ../phone.xsd"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0/phone.xsd"
   mmlPh:telEquipType = "PH">
   <mmlPh:full>0985-85-1500(2067)</mmlPh:full >
   <mmlPh:country>81</mmlPh:country>

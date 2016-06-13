@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Mml version="4.0" createDate="2015-09-05T20:28:45"
-  xmlns="http://www.medxml.net/MML/v4"
-  xmlns:mml="http://www.medxml.net/MML/v4"
+  xmlns="http://www.medxml.net/MML/v4/base/1.0"
+  xmlns:mml="http://www.medxml.net/MML/v4/base/1.0"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
   xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
@@ -27,7 +27,7 @@
   xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
   xmlns:claim="http://www.medxml.net/claim/claimModule/2.1" xmlns:claimA="http://www.medxml.net/claim/claimAmountModule/2.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4 ../mml.xsd ">
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/base/1.0/mml.xsd ">
   <MmlHeader>
     <mmlCi:CreatorInfo>
       <mmlPsi:PersonalizedInfo>

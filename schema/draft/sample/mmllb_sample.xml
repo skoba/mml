@@ -3,7 +3,7 @@
     xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
     xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/test/1.0 ../testhistory.xsd">
+    xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/test/1.0/testhistory.xsd">
     <mmlLb:information mmlLb:registId="0002228" mmlLb:registTime="2002-07-25T00:00:00" mmlLb:reportTime="2002-07-25T11:15:00" mmlLb:sampleTime="2002-07-25T06:00:00">
       <mmlLb:reportStatus mmlLb:statusCode="final" mmlLb:statusCodeId="mmlLB0001">最終報告</mmlLb:reportStatus>
       <mmlLb:facility mmlLb:facilityCode="JPN432101234567" mmlLb:facilityCodeId="JMARI">テスト病院</mmlLb:facility>
