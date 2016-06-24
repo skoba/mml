@@ -55,7 +55,7 @@ include::references_e.adoc[]
 
 include::overview_e.adoc[]
 
-include::principle.adoc[]
+include::principle_e.adoc[]
 
 include::common_components.adoc[]
 

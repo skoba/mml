@@ -9,103 +9,106 @@
 :imagesdir: ./figures
 :linkcss:
 
-== 基本方針
+== Basic policies
 
 toc::[]
 
-=== モジュールのnamespace宣言とバージョン管理
+=== Version control of modules and namespace declaration
+From this version 4 release, namespace declaration is separated with each version.
 
-MML Ver 4リリースに伴い、これまでバージョン間で共有されていたnamespaces宣言をバージョンごとに分離する。
+Before this release, the version of module was described at the end of namespace declaration.
 
-Ver 3まではモジュールのバージョンは，namespaces宣言の末尾の整数によって表されていた
+For example, the following is the name space declaration of test history information module.
 
-例えば，検歴情報のnamespaces宣言が
 [source, xml]
 ----
  xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/test/1.0"
 ----
-であれば，MML ver 2.3であっても、MML ver 3.0であってもこの検歴情報モジュールのバージョンは，1.0である。
+This declaration shows that the version of laboratory test history module is 1.0, even if this modules was involved in either version MML Ver 3.0 or version MML Ver 2.3.
 
-混乱を避けるためにVer 4以降ではURLを示すhttp://www.medxml.net/MMLの後にMMLのバージョンを以下のように記載する。
+To clarify the version of MML, the version of MML is described after the URL of MedXML consortium as following.
 [source, xml]
 -----
  xmlns:mml="http://www.medxml.net/MML/v4"
 -----
 
-各モジュールのバージョンはURLの末尾に付与する。MMLの同一バージョンで小規模の修正が加わった場合末尾のバージョンを変更するものとする。
+Version of each module is described the end of URL. This version will be changed after updates of module schema.
 
 [source, xml]
 -----
  xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
 -----
-以下にMML ver 4での各モジュールのnamespace宣言を一覧する。
+The modules and namespace declarations that are used with MML Version 4.0 are the following.
 
-MmlHeader および docInfo構造モジュール::
+Structure module of MmlHeader and docInfo::
 	xmlns:mml ="http://www.medxml.net/MML/v4/base/1.0"
-患者情報モジュール::
+Patient information module::
 	xmlns:mmlPi ="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
-健康保険情報モジュール::
+Health insurance information module::
 	xmlns:mmlHi ="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
-診断履歴情報モジュール::
+Diagnosis record information module::
 	xmlns:mmlRd ="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
-生活習慣情報モジュール::
+Lifestyle information module::
 	xmlns:mmlLs ="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"
-基礎的診療情報モジュール::
+Basic clinical information module::
 	xmlns:mmlBc ="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"
-初診時特有情報モジュール::
+Initial-consultation specific information::
 	xmlns:mmlFcl ="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"
-経過記録情報モジュール::
+Progress course information module::
 	xmlns:mmlPc ="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"
-手術記録情報モジュール::
+Surgery record information module::
 	xmlns:mmlSg ="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"
-臨床サマリー情報モジュール::
-	xmlns:mmlSm ="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0"
-検歴情報モジュール::
+Clinical summary information module::
+	xmlns:mmlSm ="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0":
+Test history information module::
 	xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/Test/1.0"
-報告書情報モジュール::
+Report information module::
 	xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/Report/1.0"
-紹介状モジュール::
+Referral module::
 	xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
-バイタルサインモジュール::
+Vital signs module::
 	xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
-体温表モジュール::
+Flow sheet module::
 	xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"
-処方箋モジュール::
+Prescription module::
 	xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
-注射記録モジュール::
+Injection record module::
 	xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
-透析モジュール::
+Hemodialysis module::
 	xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
 
-=== MMLにおける各種のデータ定義
+=== Data definitions of MML
 
-==== 時刻の種類と定義
+==== Types and definitions of time
+MML defines various types of time according to the granularity and its features. These are listed below.
 
-MMLでは情報の粒度および性質に応じてさまざまな時刻が定義されている。以下にそれを列記する。
+Indicates the time when the MML instance was created. It is expected that this will be input automatically as a time stamp when the MML creation process is executed. Therefore in principle it is unrelated to the time of the information that is recorded in the MML instance. Even if the information dates from 10 years earlier, because the MML instance was created today, the time when the instance was created will be recorded.
 
-.MMLにおける時刻表現
-1 createDate(MML基本構造 Mmlの属性)::
-MMLインスタンスの生成時刻を示す。MMLの生成処理をする際にタイムスタンプとして自動的にに入力されることを想定している。したがって、MMLインスタンスに記載される内容の時刻とは原則として無関係であり、その内容が10年前であっても今日の時刻でMMLインスタンス化されたのであれば、生成された時点での時刻が記載される。
-2 start(MML基本構造 scopePeriodの属性)::
-MMLインスタンス記載内容全体を通した期間の開始日である。MmlModuleItemが複数存在する場合ははすべてのMmlModuleItemを含めた期間とする。
-3 end(MML基本構造scopePeriodの属性)::
-MMLインスタンス記載内容全体を通した期間の終了日である。MmlModuleItemが複数素材する場合はすべてのMmlModuleItemを含めた期間とする。
-4 confirmDate(MML基本構造)::
-一つのcontentの記載内容が確定された日付である。通常は診療録が電子的に記録されて確定した日に相当する。記載確定日は、イベントが発生し文書が記載された日と一致することが運用上好ましい。しかしながら、運用上数日前のイベントを遅れて記載したような場合には、記載された日付をconfirmDateとして記録する。MMLではイベントが発生した正確な日付は文書内容を解析しなければわからない。文書内にエレメントとして明示的にイベント発生日時が記載されていることもあるが、文脈などから判断するしかない場合もある。これは、現在の診療録の運用上、やむを得ないことである。
-5 start(MML基本構造confirmDateの属性)::
-contentの記載内容が複数の日付にまたがる情報(たとえばサマリー）である場合は記載内容が対象とする期間の開始日を記載する。上記(2)のscopePeriodがMMLインスタンス全体が対象期間であるのに対して、こちらは対応する一つのMmlModuleItemが対象期間である。
-6 end(MML基本構造cinfirmDateの属性)::
- 上記同様にcontentの記載内容が複数の日付にまたがる情報であれば、対応する一つのMmlModuleItemが対象とする期間の終了日を記載する。
-7 mmlHi:startDate(健康保健情報)::
- 健康保険の交付年月日である。この日付は診療イベントと関係がないため上記(2)(3)(5)(6)の対象とはしない。
-8 mmlHi:expiredDate(健康保健情報)::
- 健康保険の有効期限である。この日付も診療イベントとは関係ないため、上記(2)(3)(5)(6)の対象とはしない。
-mmlRd:startDate(診断履歴情報)::
- この日付は疾患の発症年月日ではなく、保険請求上の開始日であり診療イベントとは関係ないことが多いため、上記(2)(3)(5)(6)の対象とはしない。
-9 mmlRd:endDate(診断履歴情報)::
- この日付は疾患が治癒した日ではなく、保険請求上の終了日であり、診療イベントとは関係しないことが多いため、上記(2)(3)(5)(6)の対象とはしない。
-10 mmlRd:firstEncounterDate(診断履歴情報)::
- 疾患の初診日であり、最初の保険医療行為の対象となった日である。疾患自体の発症や治癒と関係のないイベントであるため、この日付も上記(2)(3)(5)(6)の対象とはしない。
+.Time expression in MML
+1 createDate (as an attribute of Mml in MML basic structure)::
+Indicates the time when the MML instance was created. It is expected that this will be input automatically as a time stamp when the MML creation process is executed. Therefore it is does not indicate the time of the information recorded in the MML instance in principle. Even if the recorded dates in MML instance was from 10 years earlier and the MML instance was created today,  the createDate should be the time of today when the instance was created.
+2 start (as an attribute of scopePeriod in MML basic structure)::
+This is the start date of the period for all of the information recorded in the MML instance. When there are multiple MmlModuleItem, this should be the start date of the entire period which includes all of the MmlModuleItem.
+3 end (as an attribute scopePeriod of in MML basic structure)::
+This is the end date of the period for all of the information recorded in the MML instance. When there are multiple MmlModuleItem, this should be the end date of the entire period which includes all of the MmlModuleItem.
+4 confirmDate (as an attribute of MML basic structure)::
+This is the date when information in the content of this document was finally fixed. Ordinarily this corresponds to the date when the medical record was electronically recorded. A confirmation date should be the date the event occurred and was recorded in a document. If the document about the events that happened before some days, the confirmDate should be the date when the document was recorded. In an MML document, it should be confirmed in the document content to determine the accurate date when the event happened.  Although there are cases when an event date is explicitly recorded as an element in a document, there are also cases when it is necessary to judge from the context or other information. This is unavoidable due to the way of current medical records operation.
+5 start(as an attribute of confirmDate, MML basic structure)::
+If the description of a content shows information across multiple dates (for example a summary), this records the start date of the period covered with the described information in the document. Unlike scopePeriod in (2) above which is the period that covers the entire MML instance, this start means the start of period of the a MmlModuleItem.
+6 end (as an attribute of confirmDate, MML basic structure)::
+In the same way as above, if the description of a content shows information across multiple dates, this records the end date of the period of the a MmlModuleItem.
+7 mmlHi:startDate (as an attribute of Health insurance information module)::
+This is the date on which the health insurance was issued. Because this date is unrelated to medical events, it is not subject to (2), (3), (5), and (6) above.
+8 mmlHi:expiredDate(as an attribute of Health insurance informationmodule )::
+This is the health insurance expiration date. Because this date also is unrelated to medical events, it is not subject to (2), (3), (5), and (6) above.
+mmlRd:startDate (as an attribute of Diagnosis record information module)::
+This date is not the date when a patient got the disease at first. It is the start date for use in insurance claims, and because it is unrelated to medical events, it is not subject to (2), (3), (5), and (6) above.
+9 mmlRd:endDate(as an attribute of Diagnosis record information module)::
+This date is not the date when the disease was cured. It is the end date for use in insurance claims. Because it is unrelated to medical events, it is not subject to (2), (3), (5), and (6) above.
+10 mmlRd:firstEncounterDate(as an attribute of Diagnosis record information module)::
+This is the first visit date, and is the date of the first date to start health insurance record. Because this event is unrelated to the symptoms and treatment of the illness itself, this date is also not subject to (2), (3), (5), and (6) above.
+
+
 11 mmlSg:date(手術記録情報)::
  手術施行日(イベント発生日)であり、記載日ではない。記載日は(4)MML基本構造のconfirmDateとして記録する。手術施行日に記載が完了しない場合もあるため、mmlSg:dateとconfirmDateは必ずしも一致しない。
 12 mmlSm:start(臨床サマリー情報 mmlSm:serviceHistoryの属性)::

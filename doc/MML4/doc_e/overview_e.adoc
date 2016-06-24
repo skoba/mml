@@ -15,50 +15,50 @@ MML is composed of 2 blocks: the header block and the body block (<<MML_Structur
 
 [[MML_Structure]]
 .MML Structure
-image::mml_structure.png[]
+image::mml_structure_e.png[]
 
 
-=== MML headerブロック
+=== MML header block
 
-MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)、toc(Table of Contents)情報で構成される。SAXパーサではこのtoc情報を見ることで、MML bodyブロックに記載されるコンテンツモジュールの内容を認識し、それに応じて条件分岐させることができる。
+The MML header is composed of the MML creator information (mmlCi:CreatorInfo), patient ID (masterId), and toc (Table of Contents) information. The SAX parser sees this toc information and recognizes the information in the content modules that are recorded in the MML body block, allowing it to perform the appropriate conditional branching.
 
-=== MML bodyブロック
 
-MML bodyブロックは複数のitemブロック（MmｌModuleItem)で構成されており、各itemブロックにはヘッダ情報（docInfo)とその内容を表すコンテンツモジュールが配置される。
+=== MML body block
 
-docInfoには、記載日、記載者、文書種別、タイトル、文書ID、親文書ID、グループID、アクセス権、外部参照リストが記載されている。
+The MML body block is composed of multiple item blocks (MmlModuleItem), and each item block contains header information (docInfo) and the content module which expresses the item block contents.
 
-各itemブロックには下記のモジュールのいずれか一つが格納される。
+docInfo contains the description date, writer, document type, title, document ID, parent document ID, group ID, access rights, and list of external references.
 
-* 患者情報
-* 保険情報
-* 診断履歴情報
-* 生活習慣情報
-* 基礎的診療情報
-* 初診時特有情報
-* 経過記録情報
-* 手術記録情報
-* 臨床サマリー情報
-* 検歴情報
-* 報告書情報
-* 紹介状
-* バイタルサイン
-* 体温表
-* 処方箋
-* 注射記録
-* 透析
+Each item block contains one of the following modules.
 
-=== MML共通形式
+* Patient information module
+* Health insurance information module
+* Diagnosis record information module
+* Lifestyle information module
+* Basic clinical information module
+* Initial-consultation-specific information module
+* Progress course information module
+* Surgery record information module
+* Clinical summary information module
+* Test history information module
+* Report information module
+* Referral module
+* Vital sign module
+* Flowsheet module
+* Prescription module(mainly for oral or topic drugs)
+* Injection record module
 
-複数のモジュールで共通して利用される情報モデルは以下のMML共通形式としてまとめられている。
+=== MML common format
 
-* 住所表現形式
-* 電話番号表現形式
-* Id形式
-* 外部参照形式
-* 人名表現形式
-* 施設情報形式
-* 個人情報形式
-* 作成者情報形式
+Information models frequently used in various modules are collected as the following MML common formats.
 
-ただし、上位モジュールの違いにより使用するテーブルが異なることがあるため、実装の際には各モジュールの解説で確認しなければならない。
+* Address expression format
+* Telephone number format
+* ID format
+* External reference format
+* Name expression format
+* Facility information format
+* Personal information format
+* Creator information format
+
+NOTE: Because a table to use in a format depends on the upper level module of the format, it is necessary to check the document of each module when implementing.
