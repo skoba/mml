@@ -17,8 +17,8 @@
         <xs:element ref="mmlHd:HemoDialysis"/>
         <xs:element ref="mmlHd:HeMX"/>
       </xs:sequence>
-      <xs:attribute name="version" type="xs:string" use="required"/>
-      <xs:attribute name="createDate" type="xs:dateTime" use="required"/>
+      <xs:attribute name="version" type="xs:string" use="required" form="qualified"/>
+      <xs:attribute name="createDate" type="xs:dateTime" use="required" form="qualified"/>
     </xs:complexType>
   </xs:element>
 
@@ -59,8 +59,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="system" type="xs:string" use="required"/>
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="system" type="xs:string" use="required" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -74,7 +74,7 @@
         <xs:element minOccurs="0" maxOccurs="1" name="dateEnd" type="xs:date"/>
         <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:location"/>
       </xs:sequence>
-      <xs:attribute name="baStatus" type="xs:string" use="optional"/>
+      <xs:attribute name="baStatus" type="xs:string" use="optional" form="qualified"/>
     </xs:complexType>
   </xs:element>
 
@@ -82,8 +82,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="tableId" type="xs:string" use="required"/>
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="tableId" type="xs:string" use="required" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -103,9 +103,9 @@
       <xs:sequence>
         <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlHd:orderGroups"/>
       </xs:sequence>
-      <xs:attribute name="orderStatus" type="xs:string" use="required"/>
-      <xs:attribute name="dateOrdered" type="xs:date" use="optional"/>
-      <xs:attribute name="dateEffective" type="xs:date" use="optional"/>
+      <xs:attribute name="orderStatus" type="xs:string" use="required" form="qualified"/>
+      <xs:attribute name="dateOrdered" type="xs:date" use="optional" form="qualified"/>
+      <xs:attribute name="dateEffective" type="xs:date" use="optional" form="qualified"/>
     </xs:complexType>
   </xs:element>
 
@@ -143,8 +143,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="tableId" type="xs:string" use="required"/>
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="tableId" type="xs:string" use="required" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -164,8 +164,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="tableId" type="xs:string" use="required"/>
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="tableId" type="xs:string" use="required" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -175,7 +175,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:duration">
-          <xs:attribute name="timeDirection" type="xs:string" use="required"/>          
+          <xs:attribute name="timeDirection" type="xs:string" use="required" form="qualified"/>          
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -185,7 +185,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:duration">
-          <xs:attribute name="timeDirection" type="xs:string" use="required"/>     
+          <xs:attribute name="timeDirection" type="xs:string" use="required" form="qualified"/>     
         </xs:extension>
       </xs:simpleContent>
      </xs:complexType>
@@ -195,7 +195,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" type="xs:string" use="optional" default="kg"/>
+          <xs:attribute name="unit" type="xs:string" use="optional" default="kg" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -205,8 +205,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" type="xs:string" use="optional" default="kg"/>
-          <xs:attribute name="cnote" type="xs:string" use="optional"/>         
+          <xs:attribute name="unit" type="xs:string" use="optional" default="kg" form="qualified"/>
+          <xs:attribute name="cnote" type="xs:string" use="optional" form="qualified"/>         
         </xs:extension>
       </xs:simpleContent>
      </xs:complexType>
@@ -226,7 +226,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" type="xs:string" use="optional" default="ml/min"/>          
+          <xs:attribute name="unit" type="xs:string" use="optional" default="ml/min" form="qualified"/>          
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -236,10 +236,10 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="type" type="xs:string" use="optional"/>
-          <xs:attribute name="membraneArea" type="xs:decimal" use="optional"/>
-          <xs:attribute name="unit" type="xs:string" use="optional" default="m2"/>         
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="type" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="membraneArea" type="xs:decimal" use="optional" form="qualified"/>
+          <xs:attribute name="unit" type="xs:string" use="optional" default="m2" form="qualified"/>         
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -259,9 +259,9 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="type" type="xs:string" use="optional"/>
-          <xs:attribute name="modification" type="xs:string" use="optional"/>         
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="type" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="modification" type="xs:string" use="optional" form="qualified"/>         
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -291,7 +291,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" type="xs:string" default="C" use="optional"/>
+          <xs:attribute name="unit" type="xs:string" default="C" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -311,8 +311,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" type="xs:string" use="required"/>
-          <xs:attribute name="dilution" type="xs:string" use="required"/>
+          <xs:attribute name="unit" type="xs:string" use="required" form="qualified"/>
+          <xs:attribute name="dilution" type="xs:string" use="required" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -322,9 +322,9 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="type" type="xs:string" use="optional"/>
-          <xs:attribute name="position" type="xs:string" use="optional"/>
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="type" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="position" type="xs:string" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -345,8 +345,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string"/>
-          <xs:attribute name="type" type="xs:string" use="required"/>         
+          <xs:attribute name="code" type="xs:string" form="qualified"/>
+          <xs:attribute name="type" type="xs:string" use="required" form="qualified"/>         
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -356,7 +356,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" type="xs:string" use="optional"/>          
+          <xs:attribute name="unit" type="xs:string" use="optional" form="qualified"/>          
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -366,7 +366,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:duration">
-          <xs:attribute name="timeDirection" type="xs:string" use="required"/>
+          <xs:attribute name="timeDirection" type="xs:string" use="required" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -389,8 +389,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="tableId" type="xs:string" use="required"/>          
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="tableId" type="xs:string" use="required" form="qualified"/>          
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -415,8 +415,8 @@
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:injection"/>
         <xs:element minOccurs="0" maxOccurs="1" name="note" type="xs:string"/>
       </xs:sequence>
-      <xs:attribute name="orderDateTime" type="xs:dateTime" use="optional"/>
-      <xs:attribute name="dateEffective" type="xs:date" use="optional"/>
+      <xs:attribute name="orderDateTime" type="xs:dateTime" use="optional" form="qualified"/>
+      <xs:attribute name="dateEffective" type="xs:date" use="optional" form="qualified"/>
     </xs:complexType>
   </xs:element>
 
@@ -424,7 +424,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" type="xs:string" default="kg" use="optional"/>
+          <xs:attribute name="unit" type="xs:string" default="kg" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -434,7 +434,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" type="xs:string" default="kg" use="optional"/>
+          <xs:attribute name="unit" type="xs:string" default="kg" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -454,7 +454,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" type="xs:string" default="kg/h"/>
+          <xs:attribute name="unit" type="xs:string" default="kg/h" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -491,18 +491,18 @@
   </xs:element>
 
   <xs:attributeGroup name="attlist.dailyHDRecord">
-    <xs:attribute name="calendarDate" type="xs:date" use="optional"/>
-    <xs:attribute name="serialNumber" type="xs:string" use="optional"/>
+    <xs:attribute name="calendarDate" type="xs:date" use="optional" form="qualified"/>
+    <xs:attribute name="serialNumber" type="xs:string" use="optional" form="qualified"/>
   </xs:attributeGroup>
 
   <xs:element name="hdMethodRecord">
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="tableId" type="xs:string" use="optional"/>
-          <xs:attribute name="startDateTime" type="xs:dateTime" use="optional"/>
-          <xs:attribute name="endDateTime" type="xs:dateTime" use="optional"/>
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="tableId" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="startDateTime" type="xs:dateTime" use="optional" form="qualified"/>
+          <xs:attribute name="endDateTime" type="xs:dateTime" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -512,7 +512,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" type="xs:string" default="kg" use="optional"/>
+          <xs:attribute name="unit" type="xs:string" default="kg" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -522,7 +522,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" type="xs:string" default="kg" use="optional"/>
+          <xs:attribute name="unit" type="xs:string" default="kg" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -532,7 +532,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="unit" default="kg" use="optional"/>
+          <xs:attribute name="unit" default="kg" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -542,8 +542,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="tableId" type="xs:string" use="optional"/>
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="tableId" type="xs:string" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -574,8 +574,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="tableId" type="xs:string" use="optional"/>
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="tableId" type="xs:string" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -585,7 +585,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="unit" type="xs:string" use="optional"/>
+          <xs:attribute name="unit" type="xs:string" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -595,8 +595,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="type" type="xs:string" use="optional"/>
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="type" type="xs:string" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -606,8 +606,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code"/>
-          <xs:attribute name="tableId"/>
+          <xs:attribute name="code" form="qualified"/>
+          <xs:attribute name="tableId" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -628,7 +628,7 @@
         <xs:element minOccurs="0" maxOccurs="1" ref="mmlHd:timeHd"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlHd:testItemGroup"/>
       </xs:sequence>
-      <xs:attribute name="calendarDate" type="xs:date" use="optional"/>
+      <xs:attribute name="calendarDate" type="xs:date" use="optional" form="qualified"/>
     </xs:complexType>
   </xs:element>
 
@@ -636,8 +636,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code"/>
-          <xs:attribute name="tableId"/>
+          <xs:attribute name="code" type="xs:string" form="qualified"/>
+          <xs:attribute name="tableId" type="xs:string" form="qualified"/>
        </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -658,8 +658,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="code" type="xs:string" use="optional"/>
-          <xs:attribute name="type" type="xs:string" use="optional"/>
+          <xs:attribute name="code" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="type" type="xs:string" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
@@ -669,7 +669,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="unit" type="xs:string" use="optional"/>
+          <xs:attribute name="unit" type="xs:string" use="optional" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
