@@ -49,7 +49,7 @@ image::mmlhd.png[]
 |1.1.3|mmlHd:note| |string|?|
 |1.1.4|mmlHd:HDHistorySection| | |?|
 |1.1.4.1|mmlHd:HdIntroduction| | |*|
-|1.1.4.1.1|mmlHd:diagnosis| |string|?|
+|1.1.4.1.1|mmlHd:hdDiagnosis| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:system|string|#IMPLIED|
 |1.1.4.1.2|mmlHd:HdIntroDate| |date|?|
@@ -207,7 +207,7 @@ image::mmlhd.png[]
 |1.1.5.2.9.3|mmlHd:timeHdEnd| |dateTime|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.2.10|mmlHd:dialysateFlow| | |*|
-|1.1.5.2.10.1|mmlHd:dialysateFlowRate| |deimal| |
+|1.1.5.2.10.1|mmlHd:dialysateFlowRate| |decimal| |
 | | |mmlHd:unit|string|#REQUIRED|
 |1.1.5.2.10.2|mmlHd:timeHdStart| |dateTime|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
@@ -376,7 +376,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 【繰り返し設定】あり。導入が複数回のときには本エレメントを繰り返す。
 
-===== 1.5.1.1 mmlHd:diagnosis
+===== 1.5.1.1 mmlHd:hdDiagnosis
 【内容】原疾患 +
 【省略】省略可(?) +
 【属性】
