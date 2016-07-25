@@ -51,7 +51,7 @@ image::mmlhd.png[]
 |1.1.4.1|mmlHd:HdIntroduction| | |*|
 |1.1.4.1.1|mmlHd:hdDiagnosis| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
-| | |mmlHd:system|string|#IMPLIED|
+| | |mmlHd:system|string|#REQUIRED|
 |1.1.4.1.2|mmlHd:HdIntroDate| |date|?|
 |1.1.4.1.3|mmlFc:Facility| | | |
 |1.1.4.2|mmlHd:BloodAccess| | |*|
@@ -63,7 +63,7 @@ image::mmlhd.png[]
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#REQUIRED|hdBaCodeTable01
 |1.1.5|mmlHd:HDOrderSection| | |?|
-|1.1.5.1|mmlHd:HdOrders| | |*|
+|1.1.5.1|mmlHd:hdOrders| | |*|
 | | |mmlHd:orderStatus|string|#REQUIRED|
 | | |mmlHd:dateOrdered|date|#IMPLIED|
 | | |mmlHd:dateEffective|date|#IMPLIED|
@@ -77,9 +77,9 @@ image::mmlhd.png[]
 |1.1.5.1.1.3.1|mmlHd:hdMethodName| |string| |
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#REQUIRED|hdMethodTable01
-|1.1.5.1.1.3.2|mmlHd:timeHdStart| |dateTime| |
+|1.1.5.1.1.3.2|mmlHd:timeHdStart| |duration| |
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.1.1.3.3|mmlHd:timeHdEnd| |dateTime| |
+|1.1.5.1.1.3.3|mmlHd:timeHdEnd| |duration| |
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.1.1.4|mmlHd:dryWeight| |decimal|?|
 | | |mmlHd:unit|string|#REQUIRED|
@@ -89,9 +89,9 @@ image::mmlhd.png[]
 |1.1.5.1.1.6|mmlHd:bloodFlow| | |*|
 |1.1.5.1.1.6.1|mmlHd:bloodFlowRate| |decimal| |
 | | |mmlHd:unit|string|#REQUIRED|
-|1.1.5.1.1.6.2|mmlHd:timeHdStart| |dateTime|?|
+|1.1.5.1.1.6.2|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.1.1.6.3|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.1.1.6.3|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.1.1.7|mmlHd:dialyser| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
@@ -103,31 +103,31 @@ image::mmlhd.png[]
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 | | |mmlHd:modification|string|#IMPLIED|
-|1.1.5.1.1.8.2|mmlHd:timeHdStart| |dateTime|?|
+|1.1.5.1.1.8.2|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.1.1.8.3|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.1.1.8.3|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.1.1.9|mmlHd:dialysateFlow| | |*|
 |1.1.5.1.1.9.1|mmlHd:dialysateFlowRate| |decimal| |
 | | |mmlHd:unit|string|#IMPLIED|
-|1.1.5.1.1.9.2|mmlHd:timeHdStart| |dateTime|?|
+|1.1.5.1.1.9.2|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.1.1.9.3|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.1.1.9.3|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.1.1.10|mmlHd:dialysateTemp| | |*|
 |1.1.5.1.1.10.1|mmlHd:dialysateTempValue| |decimal| |
 | | |mmlHd:unit|string| |
-|1.1.5.1.1.10.2 |mmlHd:timeHdStart| |dateTime|?|
+|1.1.5.1.1.10.2 |mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.1.1.10.3|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.1.1.10.3|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.1.1.11|mmlHd:substitution| | |*|
 |1.1.5.1.1.11.1|mmlHd:substitutionValue| |decimal| |
 | | |mmlHd:unit|string|#REQUIRED|
 | | |mmlHd:dilution|string|#REQUIRED|
-|1.1.5.1.1.11.2|mmlHd:timeHdStart| |dateTime|?|
+|1.1.5.1.1.11.2|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.1.1.11.3 |mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.1.1.11.3 |mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.1.1.12|mmlHd:needle| |string|*|
 | | |mmlHd:code|string|#IMPLIED|
@@ -139,7 +139,7 @@ image::mmlhd.png[]
 | | |mmlHd:type|string|#REQUIRED|
 |1.1.5.1.1.13.2|mmlHd:dose| |decimal|?|
 | | |mmlHd:unit|string|#IMPLIED|
-|1.1.5.1.1.13.3|mmlHd:timeHd| |dateTime|?|
+|1.1.5.1.1.13.3|mmlHd:timeHd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.1.1.13.4|mmlHd:note| |string|?|
 |1.1.5.1.1.14|mmlHd:injection| | |*|
@@ -148,9 +148,9 @@ image::mmlhd.png[]
 | | |mmlHd:type|string|#REQUIRED|
 |1.1.5.1.1.14.2|mmlHd:dose| |decimal|?|
 | | |mmlHd:unit|string|#IMPLIED|
-|1.1.5.1.1.14.3|mmlHd:timeHdStart| |dateTime|?|
+|1.1.5.1.1.14.3|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.1.1.14.4|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.1.1.14.4|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.1.1.14.5|mmlHd:routeName| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
@@ -167,9 +167,9 @@ image::mmlhd.png[]
 |1.1.5.2.2.1|mmlHd:hdMethodName| |string| |
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#REQUIRED|
-|1.1.5.2.2.2|mmlHd:timeHdStart| |dateTime|?|
+|1.1.5.2.2.2|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.2.2.3|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.2.2.3|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.2.3|mmlHd:targetWeight| |decimal|?|
 | | |mmlHd:unit|string|#REQUIRED|
@@ -178,9 +178,9 @@ image::mmlhd.png[]
 |1.1.5.2.5|mmlHd:ufrPlan| | |*|
 |1.1.5.2.5.1|mmlHd:ufRate| |decimal| |
 | | |mmlHd:unit|string|#REQUIRED|
-|1.1.5.2.5.2|mmlHd:timeHdStart| |dateTime|?|
+|1.1.5.2.5.2|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.2.5.3|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.2.5.3|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.2.6|mmlHd:weightCorrection| |decimal|?|
 | | |mmlHd:unit|string|#REQUIRED|
@@ -188,9 +188,9 @@ image::mmlhd.png[]
 |1.1.5.2.7|mmlHd:bloodFlow| | |*|
 |1.1.5.2.7.1|mmlHd:bloodFlowRate| |decimal| |
 | | |mmlHd:unit|string|#REQUIRED|
-|1.1.5.2.7.2|mmlHd:timeHdStart| |dateTime|?|
+|1.1.5.2.7.2|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.2.7.3|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.2.7.3|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.2.8|mmlHd:dialyser| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
@@ -202,23 +202,23 @@ image::mmlhd.png[]
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 | | |mmlHd:modification|string|#IMPLIED|
-|1.1.5.2.9.2|mmlHd:timeHdStart| |dateTime|?|
+|1.1.5.2.9.2|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.2.9.3|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.2.9.3|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.2.10|mmlHd:dialysateFlow| | |*|
 |1.1.5.2.10.1|mmlHd:dialysateFlowRate| |decimal| |
 | | |mmlHd:unit|string|#REQUIRED|
-|1.1.5.2.10.2|mmlHd:timeHdStart| |dateTime|?|
+|1.1.5.2.10.2|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.2.10.3|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.2.10.3|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.2.11|mmlHd:dialysateTemp| | |*|
 |1.1.5.2.11.1|mmlHd:dialysateTempValue| |decimal| |
 | | |mmlHd:unit|string|#REQUIRED|
-|1.1.5.2.11.2|mmlHd:timeHdStart| |dateTime| |
+|1.1.5.2.11.2|mmlHd:timeHdStart| |duration| |
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.2.11.3|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.2.11.3|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.2.12|mmlHd:needle| |string|*|
 | | |mmlHd:code|string|#IMPLIED|
@@ -239,9 +239,9 @@ image::mmlhd.png[]
 | | |mmlHd:type|string|#IMPLIED|
 |1.1.5.2.14.2|mmlHd:dose| |decimal|?|
 | | |mmlHd:unit|string|#IMPLIED|
-|1.1.5.2.14.3|mmlHd:timeHdStart| |dateTime|?|
+|1.1.5.2.14.3|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.5.2.14.4|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.5.2.14.4|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.5.2.14.5|mmlHd:routeName| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
@@ -278,9 +278,9 @@ image::mmlhd.png[]
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 | | |mmlHd:modification|string|#IMPLIED|
-|1.1.6.1.8.2|mmlHd:timeHdStart| |dateTime|?|
+|1.1.6.1.8.2|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.6.1.8.3|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.6.1.8.3|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.6.1.9|mmlHd:needle| |string|*|
 | | |mmlHd:code|string|#IMPLIED|
@@ -290,7 +290,7 @@ image::mmlhd.png[]
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:tableId|string|#IMPLIED|hdMachineTable
 |1.1.6.1.11|mmlHd:observation| | |*|
-|1.1.6.1.11.1|mmlHd:timeHd| |dateTime|?|
+|1.1.6.1.11.1|mmlHd:timeHd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.6.1.11.2|mmlHd:observationItem| | |*|
 |1.1.6.1.11.2.1|mmlHd:obItemName| |string| |
@@ -310,7 +310,7 @@ image::mmlhd.png[]
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:type|string|#IMPLIED|
 |1.1.6.1.12.2|mmlHd:dose| |string|?|
-|1.1.6.1.12.3|mmlHd:timeHd| |dateTime|?|
+|1.1.6.1.12.3|mmlHd:timeHd| |duration|?|
 | | |mmlHd:unit|string|#IMPLIED|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.6.1.12.4|mmlHd:note| |string|?|
@@ -320,9 +320,9 @@ image::mmlhd.png[]
 | | |mmlHd:type|string|#IMPLIED|
 |1.1.6.1.13.2|mmlHd:dose| |decimal|?|
 | | |mmlHd:unit|string|#IMPLIED|
-|1.1.6.1.13.3|mmlHd:timeHdStart| |dateTime|?|
+|1.1.6.1.13.3|mmlHd:timeHdStart| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
-|1.1.6.1.13.4|mmlHd:timeHdEnd| |dateTime|?|
+|1.1.6.1.13.4|mmlHd:timeHdEnd| |duration|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |1.1.6.1.13.5|mmlHd:routeName| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
@@ -368,23 +368,23 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== mmlHd:HDHistorySection
 【内容】透析履歴 +
-【省略】省略可(?)
+【省略】省略可
 
 ===== mmlHd:HdIntroduction
 【内容】透析導入情報 +
-【省略】省略可(*) +
+【省略】省略可 +
 
 【繰り返し設定】あり。導入が複数回のときには本エレメントを繰り返す。
 
 ===== 1.5.1.1 mmlHd:hdDiagnosis
 【内容】原疾患 +
-【省略】省略可(?) +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
 |属性名|データ型|省略|説明
 |code|string|#IMPLIED|疾患コード
-|system|string|#IMPLIED|疾患コード体系名
+|system|string|#REQUIRED|疾患コード体系名
 |===
 
 ===== mmlHd:HdIntroDate
@@ -442,7 +442,7 @@ active:良,inactive:不良
 【内容】透析指示情報 +
 【省略】省略可
 
-===== mmlHd:hdorders
+===== mmlHd:hdOrders
 【内容】オーダー単位 +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり +
@@ -468,7 +468,7 @@ active: 現行オーダー,alteration:変更オーダー
 ===== mmlHd:weekday
 【内容】オーダ適用曜日 +
 【データ型】string(ISO8601のWeekDay)+
-【省略】省略可(*) +
+【省略】省略可 +
 【繰り返し設定】繰り返しあり +
 
 ===== mmlHd:timeShift
