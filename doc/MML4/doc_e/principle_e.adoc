@@ -107,35 +107,29 @@ This date is not the date when a patient got the disease at first. It is the sta
 This date is not the date when the disease was cured. It is the end date for use in insurance claims. Because it is unrelated to medical events, it is not subject to (2), (3), (5), and (6) above.
 10 mmlRd:firstEncounterDate(as an attribute of Diagnosis record information module)::
 This is the first visit date, and is the date of the first date to start health insurance record. Because this event is unrelated to the symptoms and treatment of the illness itself, this date is also not subject to (2), (3), (5), and (6) above.
+11 mmlSg:date (Surgery record information)::
+This is the date that surgical operation was performed (date of event occurrence). It is not the date that this module was recorded. It is recorded as a (4) confirmDate MML basic structure. Because there are cases when the recording is not completed on the surgery date, mmlSg:date and confirmDate may not always be the same.
+12 mmlSm:start (Clinical summary information, mmlSm:serviceHistory attribute)::
+This is the start date for the period covered by the summary. It is usually the same value as the start attribute of the confirmDate in MML basic structure.
+13 mmlSm:end (Clinical summary information, mmlSm:serviceHistory attribute)::
+This is the end date for the period covered by the summary. It is usually the same value as the end attribute of the confirmDate in MML basic structure.
 
-
-11 mmlSg:date(手術記録情報)::
- 手術施行日(イベント発生日)であり、記載日ではない。記載日は(4)MML基本構造のconfirmDateとして記録する。手術施行日に記載が完了しない場合もあるため、mmlSg:dateとconfirmDateは必ずしも一致しない。
-12 mmlSm:start(臨床サマリー情報 mmlSm:serviceHistoryの属性)::
- サマリー対象期間の開始日である。通常はMML基本構造confirmDateのstart属性と同じ値となる。
-13 mmlSm:end(臨床サマリー情報mmlSm:serviceHistoryの属性)::
- サマリー対象期間御終了日である。通常はMML基本構造confirmDateのend属性と同じ値となる。
-
-==== エレメント粒度
-
-患者氏名を構造化せずに一つのエレメントとするか、姓・名などのエレメントに分割して取り扱うかといったエレメント粒度はしばしば問題となる。本来であれば、細粒度のデータモデルによって情報が規定されていることが望ましいが、既存の情報システムからデータを収集することも想定する必要もある。粒度の異なる情報システムからデータを収集する際のミスマッチによる情報劣化を抑制するために、MMLではいくつかのエレメントにおいて、粒度の異なるエレメントを選択できるように配慮している。具体例を以下に示す。
+==== Granularity of elements
+Element granularity is a common issue. For example, patient name is whether the patient name is unstructured and handled as a single element, or divided into elements such as last name and first name. As usual, it is preferable that information be prescribed using a fine-grain data model. However it is also necessary to consider that data will be collected by existing information systems. MML takes the step of allowing elements with different granularity to be selected, in order to prevent data degradation caused by mismatching granularity of data collected from different information systems.
+Concrete examples are shown below.
 ==========================
-. 住所表現形式における非構造化住所（mmlAd:full）と構造化形式で示された住所（mmlAd:prefecture， mmlAd:city，mmlAd:town，mmlAd:homeNumber）
+. The address expression format: unstructured address (mmlAd:full) and tructured format (mmlAd:prefecture, mmlAd:city, mmlAd:town, mmlAd:homeNumber)
+. The name expression format: unstructured name expression (mmlNm:fullname) and structured format (mmNm:family, mmlNm:given, mmlNm: middle)
+. The diagnosis record information: unstructured diagnosis (mmlRd:diagnosis) and structured format (mmlRd:diagnosisContents)
+. The initial-consultation-specific information: free text style expression (mmlFcl:freeNotes), and structured with time and event expressions (mmlFcl:pastHistoryItem)
 
-. 人名表現形式における非構造化名前表現（mmlNm:fullname）と構造化形式による名前表現（mmlNm:family，mmlNm:given，mmlNm:middle）
+. The progress course information: free text style expression (mmlPc:FreeExpression) and structured expression (mmlPc:structuredExpression)
 
-. 診断履歴情報における非構造化病名（mmlRd:diagnosis）と構造化病名形式（mmlRd:diagnosisContents）
+. The subjective information in the progress course module: free text style expression (mmlPc:freeNotes), and structured by time and event expressions (mmlPc:subjectiveItem)
 
-. 初診時特有情報における自由文章表現（mmlFcl:freeNotes）と時間表現併用型記載（mmlFcl:pastHistoryItem）
-
-. 経過記録情報における自由記載（mmlPc:FreeExpression）と構造化記載（mmlPc:structuredExpression）
-
-. 経過記録情報－Subject情報における自由記載（mmlPc:freeNotes）と時間表現併用型記載（mmlPc:subjectiveItem）
-
-. 手術記録情報における手術法一連表記（mmlSg:operation）と要素分割表記（mmlSg:operationElement）
+. The surgery record information, a full expression of a series of surgery procedures (mmlSg:operation) and separated elements expression (mmlSg:operationElement)
 ==========================
-
-ただし，MMLインスタンスを正確に生成できても、MMLインスタンスとローカルデータベースのスキーマとの相互変換は、ローカルデータベースの情報粒度に大きく依存する。情報粒度のミスマッチが生じている場合は、情報の損失が起きないように配慮する必要がある．相対的に、MML側の粒度が荒い（分割されていない）場合は、正確な変換は困難である。相対的にMML側の粒度が細かい（分割されている）場合は、情報量を落とさないためにタグをつけたままローカルデータベースに格納することも考えられるが現実的ではない。
+Even if an MML instance was generated accurately, the interchangeability between the MML instance and local database schema depends largely on the information granularity of the local database. If there was a mismatch in granularity, you should be careful in order to prevent data loss. When the granularity of the information in MML is not detailed (not subdivided), it is relatively difficult to achieve correct conversion. If the granularity on the MML side is relatively fine (divided), it is possible to store the information in the local database with tags added to it so that the volume of information is not lost, however this is not practical.
 
 ==== 文書の粒度
 
