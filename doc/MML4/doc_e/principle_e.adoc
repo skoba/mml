@@ -131,29 +131,29 @@ Concrete examples are shown below.
 ==========================
 Even if an MML instance was generated accurately, the interchangeability between the MML instance and local database schema depends largely on the information granularity of the local database. If there was a mismatch in granularity, you should be careful in order to prevent data loss. When the granularity of the information in MML is not detailed (not subdivided), it is relatively difficult to achieve correct conversion. If the granularity on the MML side is relatively fine (divided), it is possible to store the information in the local database with tags added to it so that the volume of information is not lost, however this is not practical.
 
-==== 文書の粒度
+==== Granularity of documents
 
-一つのMMLモジュールアイテム(MML基本構造MmlModuleItem)には、一つのcontentしか記載されないのが原則であり、さらに一つのcontentには一つのMMLモジュールしか記載されない。よって、一つのモジュールアイテムを、一つの文書として見なすことができる。しかし、一つの文書が意味する文書粒度は文書の種別ごとに定義しておく必要がある。
+In general, each MML module item (MmlModuleItem, MML basic structure) can contain only one content, and each content can carry only one MML module. Therefore, each module item can be recognized as a single document. However, the granularity of documents should be defined for each document type.
 
 [glossary]
-患者情報::
-患者情報は，蓄積型の情報であり，最新の情報のみが意味を持つ場合が多いので，複数の患者情報文書が意味を持って同時に出現することは考えにくく，文書粒度が問題になることはない．
-健康保険情報::
-一つの使用可能保険・公費の組合せを一文書とする．詳細はエレメント解説を参照．
-診断履歴情報::
-一つの病名を一文書とする．主たる病名に対する合併症や続発症は，別の文書に記載する．病名を，幹病名と修飾語に分けた場合は，合わせて一文書とする．詳細はエレメント解説を参照．
-生活習慣情報::
-患者情報とほぼ同じで，複数の生活習慣情報文書が意味を持って同時に出現することは考えにくく，文書粒度が問題になることはない．
-基礎的診療情報::
-患者情報と同様である．
-初診時特有情報::
-一回の初診（入院）で取得した一連の情報を一文書とする．ただし，情報の取得が段階的に行われて，複数のインスタンスに分かれることはありうる．複数の初診（入院）で取得した情報をまとめて一文書にしてはならない．
-経過記録情報::
-プログレスノートに相当する文書であり，一回の記述を一文書とする．よって，記載者が複数存在することはない．また，通常は記載日が複数日にまたがることもない．
-手術記録情報::
-手術室に入室し，退室するまでの一連の情報を一文書とする．一旦手術室を退室し，時間をあけずに再び入室して再手術を施行した場合は，二文書とするべきである．逆に，手術途中で術者や担当診療科が変わったり，術創が変わっても，一文書とすべきである．
-臨床サマリー情報::
-ユーザーが定義する対象期間のサマリーを一文書とする．通常，退院時サマリーの場合は，一回の入院で一文書と考えられる．入院途中で転科し，複数診療科にまたがった場合に，サマリーを分けるか，一つにするかは，ユーザーによって定義される
+Patient information::
+Patient information is cumulative. In most cases, only the latest information is active one. Therefore, multiple patient information documents are not simultaneously active. Therefore, the granularity of the document is not a matter of concern.
+Health insurance information::
+A combination of available health insurance and public subsidy is considered to be one document. For details, refer to the explanation of the element.
+Diagnosis record information::
+Each diagnosis record is considered to be carried on each one document. Complications or secondary disease from the main disease are written in another documents. When the description of a disease name is divided into the main part with the modifier, the total parts are considered as one document. For details, refer to the explanation of the element.
+Lifestyle information::
+With regards to patient information module, multiple meaningful lifestyle information documents are not possible to be active and the granularity of the document is not a matter of concern.
+Basic clinical information::
+This is same as patient information module.
+Initial-consultation-specific information::
+This records are taken at one first visit (hospitalization), so this is considered to be a single document. However, the information may be acquired in stages and divided into several instances, when patients visit multiple medical providers. In such cases, the information should not be recorded in a single document.
+Progress course information::
+This module is used for recording a progress note. Each document should contain one description. Therefore, each document has only one author and is not possible to have plural authors. Usually, one description does not cover more than one date.
+Surgery record information::
+A series of events between entry and exit from  operation room are recorded be a single document module. When a patient exits from an operation room once and returns again to the operation room for surgery within a short period of time, such information should be described in two documents. Even if a surgeon, department in charge, or operation method changed during surgery, such surgical record should be recorded to a single document.
+Clinical summary information::
+Each summary document contains events in a period that a user subjected to record. For example, a discharge summary records one hospitalization episode. If a patient has been treated by multiple departments during hospitalization along with a change of the patient department, user can describe in both ways, whether the summary is divided or compiled into a single document.
 
 ==== parentIdによる文書間の関連付け
 
