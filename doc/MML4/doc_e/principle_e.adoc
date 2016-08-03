@@ -202,7 +202,7 @@ A presumed method of encryption is to encrypt only the body of the MML instance 
 
 However, MML instance that is wholly or partially encrypted is outside of MML standards, and the MML standards apply only to the decrypted instance.
 
-=== XHTMLの取り扱い
+=== XHTML expression in MML instances
 Because MML contains large amounts of information which should be recorded as text, the structure of document may not be accurately communicated without format information. Therefore for several elements with data type string, this defines that XHTML can be used and the format requires only the line break format <br />. Other elements are dependent on the processing system, and processing of them is not always necessary. However by leaving additional space for information other than the format in XHTML parts, it has become possible to structure and record in these parts a variety of information which is not defined in MML.
 
 The handling of XHTML parts in Ver. 4 is the same as in previous versions, however for future versions, the contents will be carefully examined and consideration given to incorporating as much structuring of the contents as possible.

@@ -119,9 +119,7 @@
             <file name="sample/mmlsg_sample.xml"/>
             <file name="sample/mmlsm_sample.xml"/>
         </folder>
-        <file name="file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/address.xsd">
-            <file name="hemodialysis.xsd"/>
-        </file>
+        <file name="address.xsd"/>
         <file name="file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/baseclinic.xsd">
             <file name="hemodialysis.xsd"/>
         </file>
