@@ -155,61 +155,54 @@ A series of events between entry and exit from  operation room are recorded be a
 Clinical summary information::
 Each summary document contains events in a period that a user subjected to record. For example, a discharge summary records one hospitalization episode. If a patient has been treated by multiple departments during hospitalization along with a change of the patient department, user can describe in both ways, whether the summary is divided or compiled into a single document.
 
-==== parentIdによる文書間の関連付け
+==== Linkage of documents using the parentId
+Each module item (MmlModuleItem, MML basic structure) must be assigned a unique document ID (uid). This uid should be UUID(Universally Unique IDentifier). "uid" is a required element and MML processor must assign uid at each time it generate an MML instance. In addition, an MML processor should record uid in local strage in anywaa, when it receives an MML instance.
 
-一つのモジュールアイテム（MML基本構造 MmlModuleItem）には，一つのユニークな文書ID（uid）が割り付けられる．uidはUUIDとする．uidは必須エレメントであり，MMLプロセッサーは，MMLインスタンス生成時に必ずuidを附番しなければならない．また，MMLプロセッサーは，MMLインスタンスを受け取った時に，何らかの手段でuidをローカルに保存しておくことを強く推奨する．
+MML syntax can associate a document to the parent document by specifying its document ID(parent ID in MML basic structure)., the related parent document ID (parentId, MML basic structure).
 
-MMLでは，関連親文書ID（MML基本構造parentId）を記載し，文書をポイントすることにより，文書間の関連付けを行うことができる．
-
-親文書IDによるポイントは，次のような利用法が考えられる．
-
+The following usage is available by specification with parent IDs:
 ==========================
-. 文書の訂正（テーブルMML0008　 oldEdition） +
-    すでに生成した文書を訂正，更新したい時に，前文書のuidをポイントする．ただし，前文書を物理的に消去する必要はなく，ユーザーインターフェイス上見えなくするに留めておくことが望ましい．
-. オーダーとその結果の関連付け（テーブルMML0008　 order） +
-    一つのオーダー文書を，複数の結果文書（通常どちらも経過記録情報モジュールを用いる）からポイントすることにより，検査結果のグルーピングが可能である．
-    質問とその返答の関連付け（テーブルMML0008　 consult）
-    電子メールのスレッド管理と同じ機能が可能である．
-. 病名の変遷（テーブルMML0008　 originalDiagnosis）
-    病名の時系列的な変遷を表すことが可能である．病名の終了（前病名文書と同じ病名で転記を終了とした新病名文書を生成），変化（前病名文書と異なる病名の新病名文書を生成），分離（前病名文書に対して，病名の異なる複数の新病名文書を生成），併合（複数の前病名文書に対して，一つの新病名文書を生成）を表すことができる．
-. 病名に対する適用健康保険（テーブルMML0008　 healthInsurance）
-    医事会計上必要である場合に，対応可能である．
+Correction of document (Refer to table MML0008, oldEdition)::
+When you correct or update a generated document, you only have to specify the uid of the previous document. It is not necessary to physically delete the previous document, but it is preferable that the previous document is invisible on the users' view.
+Association an order with its result (Refer to table MML0008, order)::
+Specifying one order document from multiple result documents (usually the progress course information module is used for both documents) allows grouping of test results. Threading control of email is available in the same way in order to associate query with its response (Refer to table MML0008, consult).
+History of diagnosing process (Refer to table MML0008, originalDiagnosis)::
+Time series of diagnoses may be expressed. This association indicates the followings: Resolution of diagnosis (to add a new diagnosis record with the previous disease name and its outcome marks end), change (to add a new diagnosis record and change diagnosis name from the before), division (to create multiple new diagnoses with different disease names from the previous diagnosis), and merge (creation of a new diagnosis from multiple previous diagnoses).
+Available health insurance for diagnosis (Refer to table MML0008, healthInsurance)::
+Applicable health insurance to diagnosis may be specified when required by medical accounting.
 ==========================
 
-TIP: MMLインスタンスを受け取るMMLプロセッサは，受け取ったMMLインスタンスの関連親文書IDから，該当する文書を検索できることが望ましい．しかし，受信側MMLプロセッサが検索できる保証がない場合は，送信側MMLプロセッサは，過去にすでに送った文書に対してのみ，親文書IDによるポイントを行うべきである．
+NOTE: It prefers that an MML processor is able to search applicable documents with related parent document IDs, when it receives MML instances. However, the MML processor should send MML instances with parent IDs which refer to the document sent ever, in case that receiver is not sure to be able to search by parent ID of documents.
 
-==== groupIdによる文書間の関連付け
-複数のモジュールを組み合わせて，要約や紹介状等を構築するためには，グループID （1.2.1.1.3.3. groupId）を用いる．モジュール単位で情報を管理する場合には，全く対等でまとまりのあるモジュール群は，同じ文書IDで管理されていた方が，検索抽出が容易であり，文書としてまとめる必要のある複数モジュールには，文書IDとは別個に，同じID（すなわちgroupId）を設定可能とする．
+==== Linking documents using the groupId
+Group ID (1.2.1.1.3.3. groupId) makes compounded documents, such as summaries and referral letters by combination of multiple document modules. It is easier to query group modules with the same identifier, if the documents can be grouped with equivalent relation. In such case, group ID can be assigned other than their own document IDs.
 
-具体的には，MML文書ヘッダ（docInfo）内のdocIdの下位エレメントとして，uid（文書ユニークID），parentId（関連親文書ID）に続いて，groupIdエレメントを追加する．さらに，属性として，groupClassを置き，モジュール群の文書の種別（例えば紹介状）を設定可能とする．
+For example, following uid(document unique ID) and parent ID(ID for parent document) elements, is added as a subordinate element to the docId element within MML document header(docInfo). Furthermore, group Class attribute is able to mark the category of documents of module groups(such as referral letter).
 
-==== データ型
-MML Ver 4のデータ型はW3C XML Schema Ver 1.1に準拠する。具体的には以下の通りである。Ver 3までのtimePeriod型はxs:duration型で代用する。
+==== Data types
+The MML Ver. 4 data type conforms to W3C XML Schema Ver 1.1. The following list shows the all of them. "timePeriod" type used in ver 3 or before was substituted by the xs:duration type.
 
 [horizontal]
-xs:string:: 文字列
-xs:integer:: 整数
-xs:decimal:: 10進数
-xs:boolean:: 真偽値(true or false)
-xs:date:: 日付型。ISO8601形式(CCYY-MM-DD)で表記する
-xs:time:: 時刻型。ISO8601形式(hh:mmLss[Z\|(+\|-)hh:mm])で表記する
-xs:dateTIme:: 日付時刻型。ISO8601形式(CCYY-MM-DDThh:mm:ss[Z\|(+\|-)hh:mm])で表記する
-xs:duration:: 期間型。ISO8601形式に週（W)を加えたPnYnMnWnDTnHnMnS形式で表記する。
-xs:token:: 空白置換と空白縮小が行われた文字列。
+xs:string:: String(or text)
+xs:integer:: Integer
+xs:decimal:: Decimal numbers
+xs:boolean:: Boolean(true or false)
+xs:date:: Date type. Expressed in ISO8601 format(CCYY-MM-DD)
+xs:time:: Time type. Expressed in ISO8601 format(hh:mmLss[Z\|(+\|-)hh:mm])
+xs:dateTIme:: Date and time type. Expressed in ISO8601 format (CCYY-MM-DDThh:mm:ss[Z\|(+\|-)hh:mm])
+xs:duration:: Durration/Period type. Expressed in ISO8601 format added Week(W), (PnYnMnWnDTnHnMnS)
+xs:token:: Strings removed line feeds, carriage returns, tabs, leading and trailing spaces, and multiple spaces.
 
+==== Access control and encryption
+MML instance creators can control an access rights of each document by describing accessRigght attribute in MML basic structure in docInfo. However, these access rights are recorded based on a decision by the instance creator at the time when the instance is created, MML does not define how the recorded access rights are to be used by receivers. In other words, access control depends on user application implementation.
 
-==== アクセス権と暗号化
+ML does not define instance encryption. How to encrypt is implemented by the user. However it is possible to record encryption in the encryption information element (encryptInfo, MML basic structure). Description format is not defined.
 
-MMLインスタンス生成者の判断により，一文書ごとにアクセス権を記載することができる（MML基本構造accessRight）．ただし，このアクセス権は，インスタンス生成時において，インスタンス生成者の判断により記載されるものであり，インスタンスを受ける側が，記載されたアクセス権をどのように利用するかは，MMLでは定義されない．すなわち，実際のアクセスコントロールは，ユーザーのアプリケーションに委ねられる．
+A presumed method of encryption is to encrypt only the body of the MML instance (MmlBody, MML basic structure) using a public key encryption system, and to record information related to the encryption (the encryption method used) in the encryption information element. If decryption is possible by acquiring the creators' public key from the creator ID in the creator information (mmlCi:CreatorInfo, MML basic structure), and then this is applicable for digital signature.
 
-MMLでは，インスタンスの暗号化を規定しない．暗号化の具体的な方法はユーザーによって選択される．しかし，暗号化情報エレメント（MML基本構造encryptInfo）に，暗号化に関する情報を記載することは可能である．記載方法は規定しない．
-
-暗号化の想定される一つの方法として，MMLインスタンスの本文（MML基本構造MmlBody）のみを公開鍵方式により暗号化し，暗号化に関する情報（用いた暗号化方法）を暗号化情報エレメントに記載することが考えられる．生成者情報（MML基本構造mmlCi:CreatorInfo）の生成者ＩＤから生成者の公開鍵を取得し，復号できれば，電子署名となる．
-
-MMLインスタンスの一部またはすべてを暗号化したものは，厳密にはMMLの規格外であり，復号されたもののみに対し，ＭＭＬの規格は適用される．
-
+However, MML instance that is wholly or partially encrypted is outside of MML standards, and the MML standards apply only to the decrypted instance.
 
 === XHTMLの取り扱い
-MMLでは，文章として記述すべき情報を多く含んでいるため，書式情報を交換しなければ，正確に意味が伝わらないことがある．よって，データ型がstringであるエレメントのいくつかには，XHTMLが使用できることを定義し、改行書式“<br/>”のみを必須の書式としてきた。他の要素は処理系依存であり、必ずしも処理する必要はないとしたが、XHTML部分に書式以外の情報が入る余地を残したことで、この部分にMMLでは規定していないさまざまな情報が構造化されて記載されて運用されることになった。
+Because MML contains large amounts of information which should be recorded as text, the structure of document may not be accurately communicated without format information. Therefore for several elements with data type string, this defines that XHTML can be used and the format requires only the line break format <br />. Other elements are dependent on the processing system, and processing of them is not always necessary. However by leaving additional space for information other than the format in XHTML parts, it has become possible to structure and record in these parts a variety of information which is not defined in MML.
 
-XHTML部分の扱いについてVer 4ではこれまで通りとするが、内容については精査しできる限り構造化して取り入れるように今後のバージョンで検討していくこととする。
+The handling of XHTML parts in Ver. 4 is the same as in previous versions, however for future versions, the contents will be carefully examined and consideration given to incorporating as much structuring of the contents as possible.
