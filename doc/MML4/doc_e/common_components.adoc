@@ -1,0 +1,32 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+== Common format
+toc::[]
+
+MML Common formats define frequently reusable components in multiple modules. For details of each component, refer to the individual component explanations.
+
+include::address_e.adoc[]
+
+include::phone_e.adoc[]
+
+include::id_e.adoc[]
+
+include::extref_e.adoc[]
+
+include::name_e.adoc[]
+
+include::facility_e.adoc[]
+
+include::department_e.adoc[]
+
+include::personalized_info_e.adoc[]
+
+include::creator_info_e.adoc[]
