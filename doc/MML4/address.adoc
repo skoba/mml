@@ -4,7 +4,7 @@
 :toclevels: 2
 :pagenums:
 :sectnums:
-:sectnumlevels: 3
+:sectnumlevels: 8
 :imagesdir: ./figures
 :linkcss:
 
@@ -16,17 +16,17 @@ image::mmlad.jpg[]
 .住所表現形式エレメント一覧表
 |=====
 | |Elements|Attribute|Datatypes|Occurence|TableId
-|1.|address, mmlAd:Address| | | |
+|M1.|mmlAd:Address| | | |
 | | |mmlAd:repCode|string|#REQUIRED|optional
 | | |mmlAd:addressClass|string|#IMPLIED|MML0002
 | | |mmlAd:tableId|string|#IMPLIED|
-|1.1.|mmlAd:full, mmlAd:full| |string|?|
-|1.2.|mmlAd:prefecture, mmlAd:prefecture>>| |string|?|
-|1.3.|mmlAd:city| |string|?|
-|1.4.|mmlAd:town| |string|?|
-|1.5.|mmlAd:homeNumber| |string|?|
-|1.6.|mmlAd:zip| |string|?|
-|1.7.|mmlAd:countryCode| |string|?|
+|M1.1.|mmlAd:full| |string|?|
+|M1.2.|mmlAd:prefecture| |string|?|
+|M1.3.|mmlAd:city| |string|?|
+|M1.4.|mmlAd:town| |string|?|
+|M1.5.|mmlAd:homeNumber| |string|?|
+|M1.6.|mmlAd:zip| |string|?|
+|M1.7.|mmlAd:countryCode| |string|?|
 |=====
 
 Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
@@ -35,8 +35,8 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ==== エレメント解説
 
-===== 1. mmlAd:Address (住所表現形式)
-【内容】住所を表現する共通形式．一連住所もしくはその直下の 4 エレメント (1.2. から1.5.) のどちらかを選択．
+===== M1. mmlAd:Address (住所表現形式)
+【内容】住所を表現する共通形式．一連住所もしくはその直下のエレメント (M1.2. からM1.5.) のどちらかを選択．
 
 【属性】
 |======
@@ -47,10 +47,10 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |======
 
 【例】アルファベット表記，職場住所の場合
+[source, xml]
+<mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
 
- <mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
-
-===== 1.1. mmlAd:full
+===== M1.1. mmlAd:full
 【内容】一連住所． +
 【データ型】string +
 【省略】省略可

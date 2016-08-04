@@ -1,0 +1,111 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums: 7
+:sectnumlevels: 8
+:imagesdir: ./figures
+:linkcss:
+
+== Address expression format
+toc::[]
+
+.Structure of elements
+image::mmlad.jpg[]
+
+. Element list
+|=====
+| |Elements|Attribute|Datatypes|Occurence|TableId
+|M1.|mmlAd:Address| | | |
+| | |mmlAd:repCode|string|#REQUIRED|optional
+| | |mmlAd:addressClass|string|#IMPLIED|MML0002
+| | |mmlAd:tableId|string|#IMPLIED|
+|M1.1.|mmlAd:full| |string|?|
+|M1.2.|mmlAd:prefecture| |string|?|
+|M1.3.|mmlAd:city| |string|?|
+|M1.4.|mmlAd:tMown| |string|?|
+|M1.5.|mmlAd:hMomeNumber| |string|?|
+|M1.6.|mmlAd:zip| |string|?|
+|M1.7.|mmlAd:countryCode| |string|?|
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: 1 or more, *: 0 or more +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+=== Element explanation
+==== M1. mmlAd:Address (Address expression format)
+[horizontal]
+Description:: common format for indicating addresses. Select the full address expression or subdivided address expression using 4 elements (from 1.2. to 1.5.). +
+Attribute::
+|======
+|Name|Data type|Cardinality|Table|Description
+|mmlAd:repCode|string|#REQUIRED|optional|Expression style
+|mmlAd:addressClass|string|#IMPLIED|MML0002|Address type code
+|mmlAd:tableId|string|#IMPLIED| |Table name to determine expression style on above
+|======
+Example: Adress for business address by alphabets
+[source, xml]
+<mmlAd:Address mmlAd:repCode="A" mmlAd:addressClass="business" mmlAd:tableId="MML0025">
+
+==== M1.1. mmlAd:full
+[horizontal]
+Description:: full(unstructured) address
+Data type:: string +
+Occurrence:: optional
+
+==== M1.2. mmlAd:prefecture
+[horizontal]
+Description:: prefecture
+Data type:: string
+Occurrence:: optional
+
+==== M1.3. mmlAd:city
+[horizontal]
+Description:: city, ward, etc.
+Data type:: string
+Occurrence:: optional
+
+==== M1.4. mmlAd:town
+[horizontal]
+Description:: town or village
+Data type:: string
+Occurrence:: optional
+
+==== M1.5. mmlAd:homeNumber
+[horizontal]
+Description:: remaining address items such as house number, street name, apartment name, room number, etc.
+Data type:: string
+Occurrence:: optional
+
+==== M1.6. mmlAd:zip
+[horizontal]
+Description:: zip code
+Data type:: string
+Occurrence:: optional
+
+==== M1.7. mmlAd:countryCode
+Description:: country code. ISO 3166 A3 code is used.
+Data type:: string
+Occurrence:: optional
+
+.Example instances of mmlAd:Address (Address expression format)
+
+For a full(unstructured) address
+[source, xml]
+<mmlAd:Address mmlAd:repCode ="A" mmlAd:addressClass="business" mmlAd:tableId="MML0025">
+  <mmlAd:full>5200 Kihara, Kiyotake-cho, Miyazaki-gun, Miyazaki-prefecture</mmlAd:full>
+  <mmlAd:zip>889-1692</mmlAd:zip>
+  <mmlAd:countryCode>JPN</mmlAd:countryCode>
+</mmlAd:Address>
+
+For a structured address
+[source, xml]
+<mmlAd:Address mmlAd:repCode="A" mmlAd:addressClass="business" mmlAd:tableId="MML0025">
+  <mmlAd:prefecture>Miyazaki</mmlAd:prefecture>
+  <mmlAd:city>Miyazaki</mmlAd:city>
+  <mmlAd:town>Kiyotake</mmlAd:town>
+  <mmlAd:homeNumber>5200 Kihara</mmlAd:homeNumber>
+  <mmlAd:zip>889-1692</mmlAd:zip>
+  <mmlAd:countryCode>JPN</mmlAd:countryCode>
+</mmlAd:Address>

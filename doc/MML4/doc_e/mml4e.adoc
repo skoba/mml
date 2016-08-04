@@ -16,11 +16,11 @@
 
 MML has been developed from 1995 as a standard for the exchange of medical data. The initial version used SGML, and XML format was adopted from version 2. Modules have been developed for the use cases in the clinical field, and related tables have been prepared. In 2004, it was harmonized with the HL7 CDA rel 1 format as an effort at improving interoperability with international standards.
 
-Beginning from 2007, research has been conducted for harmonizing MML with the ISO13606 standard that is expected to be the next-generation EHR standard. Based on the results of this research, a vital signs module and a flowseet module were designed in 2013, and a prescription module and injection module were released in 2015.
+Beginning from 2007, research has been conducted for harmonizing MML with the ISO13606 standard that is expected to be the next-generation EHR standard. Based on the results of this research, a vital signs module and a flowsheet module were designed in 2013, and a prescription module and injection module were released in 2015.
 
 In addition to these results, we decided to release MML version 4 including the hemodialysis module, which was developed by a hemodialysis SIG, and changed the schema definition language from DTD to  W3C XML Schema 1.1.
 
-NOTE: This document and the XML schema were officially apporoved as MML version 4 standard on the board, but they are still in the development phase, updates are inevitable.
+NOTE: This document and the XML schema were officially approved as MML version 4 standard on the board, but they are still in the development phase, updates are inevitable.
 
 [[update_policy]]
 == Updating policy for MML 4.0 release
