@@ -9,7 +9,7 @@
 :imagesdir: ./figures
 :linkcss:
 
-== Basic policies
+== Principles
 
 toc::[]
 
@@ -21,23 +21,19 @@ Before this release, the version of module was described at the end of namespace
 For example, the following is the name space declaration of test history information module.
 
 [source, xml]
-----
  xmlns:mmlLb="http://www.medxml.net/MML/ContentModule/test/1.0"
-----
+
 This declaration shows that the version of laboratory test history module is 1.0, even if this modules was involved in either version MML Ver 3.0 or version MML Ver 2.3.
 
 To clarify the version of MML, the version of MML is described after the URL of MedXML consortium as following.
 [source, xml]
------
  xmlns:mml="http://www.medxml.net/MML/v4"
------
 
 Version of each module is described the end of URL. This version will be changed after updates of module schema.
 
 [source, xml]
------
  xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
------
+
 The modules and namespace declarations that are used with MML Version 4.0 are the following.
 
 Structure module of MmlHeader and docInfo::

@@ -14,69 +14,69 @@ image::mmlph.jpg[]
 
 .エレメント一覧表
 |=====
-| |Elements|Attribute|Datatypes|Occurence|TableId
-|2.|mmlPh:Phone| | | |
+| |Element|Attribute|Datatype|Occurence|TableId
+|M2.1.|mmlPh:Phone| | | |
 | | |mmlPh:telEquipType|string|#IMPLIED|MML0003
-|2.1.|mmlPh:area| |string|?|
-|2.2.|mmlPh:city| |string|?|
-|2.3.|mmlPh:number| |string|?|
-|2.4.|mmlPh:extension| |string|?|
-|2.5.|mmlPh:full| |string|?|
-|2.6.|mmlPh:country| |string|?|
-|2.7.|mmlPh:memo| |string|?|
+|M2.1.|mmlPh:area| |string|?|
+|M2.2.|mmlPh:city| |string|?|
+|M2.3.|mmlPh:number| |string|?|
+|M2.4.|mmlPh:extension| |string|?|
+|M2.5.|mmlPh:full| |string|?|
+|M2.6.|mmlPh:country| |string|?|
+|M2.7.|mmlPh:memo| |string|?|
 |=====
 Occurrence　　なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
 
 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== mmlPh:Phone (電話番号表現形式)
-【内容】電話番号を表現する共通形式．分割電話番号 (2.1. から 2.4.) もしくは一連電話番 (2.5.) のどちらかを選択． +
+===== M2. mmlPh:Phone (電話番号表現形式)
+【内容】電話番号を表現する共通形式．分割電話番号 (M2.1. から M2.4.) もしくは一連電話番 (M2.5.) のどちらかを選択． +
 【属性】
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlPh:telEquipType|string|#IMPLIED|MML0003|装置の種類コード
 |=====
 
-===== mmlPh:area
+===== M2.1. mmlPh:area
 【内容】市外局番 +
 【データ型】string +
 【省略】省略可
 
-===== mmlPh:city
+===== M2.2. mmlPh:city
 【内容】局番 +
 【データ型】string +
 【省略】省略可
 
-===== mmlPh:number
+===== M2.3. mmlPh:number
 【内容】加入番号 +
 【データ型】string +
 【省略】省略可
 
-===== mmlPh:extension
+===== M2.4. mmlPh:extension
 【内容】内線番号 +
 【データ型】string +
 【省略】省略可
 
-===== mmlPh:full
+===== M2.5. mmlPh:full
 【内容】一連電話番号 +
 【データ型】string +
 【省略】省略可
 
-===== mmlPh:country
+===== M2.6. mmlPh:country
 【内容】国番号 +
 【データ型】string +
 【省略】省略可
 
-===== mmlPh:memo
+===== M2.7. mmlPh:memo
 【内容】使用時間帯などを記載 +
 【データ型】string +
 【省略】省略可
 
 .mmlPh:Phone(電話番号表現形式)サンプルインスタンス
 
-構造化電話番号表記
-
+. 構造化電話番号表記
+[source, xml]
  <mmlPh:Phone mmlPh:telEquipType = "PH">
    <mmlPh:area>0985</mmlPh:area>
    <mmlPh:city>85</mmlPh:city>
@@ -86,9 +86,9 @@ Occurrence　　なし：必ず1回出現，?： 0回もしくは1回出現，+�
    <mmlPh:memo>daytime</mmlPh:memo>
  </mmlPh:Phone>
 
-非構造化電話番号表記
-
+. 非構造化電話番号表記
+[source, xml]
  <mmlPh:Phone mmlPh:telEquipType = "PH">
-   <mmlPh:full>0985-85-1500(2067)< /mmlPh:full >
+   <mmlPh:full>0985-85-1500(2067)</mmlPh:full>
    <mmlPh:country>81</mmlPh:country>
  <mmlPh:memo>daytime</mmlPh:memo>

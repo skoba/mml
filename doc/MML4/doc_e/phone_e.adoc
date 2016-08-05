@@ -1,0 +1,101 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:sectnumlevels: 8
+:imagesdir: ./figures
+:linkcss:
+
+=== Telephone number format
+.Structure of elements
+image::mmlph.jpg[]
+
+.Elements list
+|=====
+| |Element|Attribute|Datatype|Occurence|TableId
+|M2.|mmlPh:Phone| | | |
+| | |mmlPh:telEquipType|string|#IMPLIED|MML0003
+|M2.1.|mmlPh:area| |string|?|
+|M2.2.|mmlPh:city| |string|?|
+|M2.3.|mmlPh:number| |string|?|
+|M2.4.|mmlPh:extension| |string|?|
+|M2.5.|mmlPh:full| |string|?|
+|M2.6.|mmlPh:country| |string|?|
+|M2.7.|mmlPh:memo| |string|?|
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: 1 or more, *: 0 or more +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+==== Elements in details
+===== M2. mmlPh:Phone (Telephone number format)
+[horizontal]
+Description:: common format for indicating telephone numbers. You can choice structured telephone number expression (from M2.1. to M2.4.) or full(unstructured) telephone number expression (M2.5.).
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlPh:telEquipType|string|#IMPLIED|MML0003|Equipment type code
+|=====
+===== M2.1. mmlPh:area
+[horizontal]
+Description:: area code
+Occurrence:: optional
+
+===== M2.2. mmlPh:city
+[horizontal]
+Description:: local number
+Data type:: string
+Occurrence:: optional
+
+===== M2.3. mmlPh:number
+[horizontal]
+Description:: individual number
+Data type:: string
+Occurrence:: optional
+
+===== M2.4. mmlPh:extension
+[horizontal]
+Description:: extension
+Data type:: string
+Occurrence:: optional
+
+===== M2.5. mmlPh:full
+[horizontal]
+Description:: full telephone number
+Data type:: string
+Occurrence:: optional
+
+===== M2.6. mmlPh:country
+[horizontal]
+Description:: country code
+Data type:: string
+Occurrence:: optional
+
+===== M2.7. mmlPh:memo
+[horizontal]
+Description:: describe the time range of calls, etc.
+Data type:: string
+Occurrence:: optional
+
+
+.Examples of mmlPh:Phone (Telephone number format)
+
+. Structured style telephone number expression
+[source, xml]
+<mmlPh:Phone mmlPh:telEquipType="PH">
+  <mmlPh:area>0985</mmlPh:area>
+  <mmlPh:city>85</mmlPh:city>
+  <mmlPh:number>1500</mmlPh:number>
+  <mmlPh:extension>2067</mmlPh:extension>
+  <mmlPh:country>81</mmlPh:country>
+  <mmlPh:memo>daytime</mmlPh:memo>
+</mmlPh:Phone>
+
+. Unstructured style telephone number expression
+[source, xml]
+<mmlPh:Phone mmlPh:telEquipType = "PH">
+  <mmlPh:full>0985-85-1500(2067)</mmlPh:full>
+  <mmlPh:country>81</mmlPh:country>
+<mmlPh:memo>daytime</mmlPh:memo>
