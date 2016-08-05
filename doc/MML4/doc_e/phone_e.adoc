@@ -82,7 +82,7 @@ Occurrence:: optional
 
 .Examples of mmlPh:Phone (Telephone number format)
 
-. Structured style telephone number expression
+- Structured style telephone number expression
 [source, xml]
 <mmlPh:Phone mmlPh:telEquipType="PH">
   <mmlPh:area>0985</mmlPh:area>
@@ -93,7 +93,7 @@ Occurrence:: optional
   <mmlPh:memo>daytime</mmlPh:memo>
 </mmlPh:Phone>
 
-. Unstructured style telephone number expression
+- Unstructured style telephone number expression
 [source, xml]
 <mmlPh:Phone mmlPh:telEquipType = "PH">
   <mmlPh:full>0985-85-1500(2067)</mmlPh:full>

@@ -87,7 +87,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 .mmlAd:Address (住所表現形式) サンプル インスタンス
 
-. 一連住所の場合
+- 一連住所の場合
 [source, xml]
 <mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
   <mmlAd:full>5200 Kihara, Kiyotake-cho, Miyazaki-gun, Miyazaki-prefecture</mmlAd:full>
@@ -95,7 +95,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
   <mmlAd:countryCode>JPN</mmlAd:countryCode>
 </mmlAd:Address>
 
-. 分割して表記する場合
+- 分割して表記する場合
 [source, xml]
 <mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
   <mmlAd:prefecture>Miyazaki</mmlAd:prefecture>

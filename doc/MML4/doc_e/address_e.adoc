@@ -92,7 +92,7 @@ Occurrence:: optional
 
 .Example instances of mmlAd:Address (Address expression format)
 
-. For a full(unstructured) address
+- For a full(unstructured) address
 [source, xml]
 <mmlAd:Address mmlAd:repCode ="A" mmlAd:addressClass="business" mmlAd:tableId="MML0025">
   <mmlAd:full>5200 Kihara, Kiyotake-cho, Miyazaki-gun, Miyazaki-prefecture</mmlAd:full>
@@ -100,7 +100,7 @@ Occurrence:: optional
   <mmlAd:countryCode>JPN</mmlAd:countryCode>
 </mmlAd:Address>
 
-. For a structured address
+- For a structured address
 [source, xml]
 <mmlAd:Address mmlAd:repCode="A" mmlAd:addressClass="business" mmlAd:tableId="MML0025">
   <mmlAd:prefecture>Miyazaki</mmlAd:prefecture>

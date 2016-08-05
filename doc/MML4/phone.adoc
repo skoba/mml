@@ -75,7 +75,7 @@ Occurrence　　なし：必ず1回出現，?： 0回もしくは1回出現，+�
 
 .mmlPh:Phone(電話番号表現形式)サンプルインスタンス
 
-. 構造化電話番号表記
+- 構造化電話番号表記
 [source, xml]
  <mmlPh:Phone mmlPh:telEquipType = "PH">
    <mmlPh:area>0985</mmlPh:area>
@@ -86,7 +86,7 @@ Occurrence　　なし：必ず1回出現，?： 0回もしくは1回出現，+�
    <mmlPh:memo>daytime</mmlPh:memo>
  </mmlPh:Phone>
 
-. 非構造化電話番号表記
+- 非構造化電話番号表記
 [source, xml]
  <mmlPh:Phone mmlPh:telEquipType = "PH">
    <mmlPh:full>0985-85-1500(2067)</mmlPh:full>

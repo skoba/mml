@@ -1,0 +1,55 @@
+=== External reference format
+.Elements list
+|=====
+| |Element|Attribute|Datatype|Occurrence|Table id
+|M4.|mmlCm:extRef| | | |
+| | |mmlCm:contentType|string|#IMPLIED|
+| | |mmlCm:medicalRole|string|#IMPLIED|
+| | |mmlCm:title|string|#IMPLIED|
+| | |mmlCm:href|string|#REQUIRED|
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: 1 or more, *: 0 or more +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+==== Elements in details
+[horizontal]
+Description:: common format for indicating external references
+Attribute::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlCm:contentType|string|#IMPLIED||Code of external reference information type
+|mmlCm:medicalRole|string|#IMPLIED||Type of external reference detailed information
+|mmlCm:title|string|#IMPLIED||title
+|mmlCm:href|string|#REQUIRED||URI to external reference information
+|=====
+It is strongly recommended to use external reference from MML instances to binary data, such as images and ECG wave forms. The reasons are (1) standards, such as HL7 or DICOM  would be more useful,(2) binary data format is more efficient to exchange data, and (3) these data are usually managed as separated files. Since we have not discussed the method to integrate these data into MML instance has not discussed yet, this document describes only to refer them as external references.
+
+The attributes of external references are described as followings.
+
+===== mmlCm:contentType
+The contentType is in compliance with the Content-Type of MIME (RFC 2045, 2046, 2047), such as "TEXT/PLAIN" etc. Moreover, MERIT9 content types are also available such as "IMAGE/DICOM", APPLICATION/HL7 2.3--HL7ER2.3", etc.
+Multiple formats for images are also available to refer such as "IMAGE/JPEG, "IMAGE/GIF", "IMAGE/TIFF"
+
+===== mmlCm:title
+This attribute describes the content of subjected external reference file with a brief text.
+
+The examples are followings,
+
+.Example
+- Chest X-ray after chest drainage
+- Chest CT scan after chemotherepy
+- Coronary angiography
+- Articles with similar case studies(PDF)
+
+===== mmlCm:href
+This attribute indicates relative "URI" from the MML instance. Since the MML instances are supposed to attach external reference files in transmission, absolute URI could be changed before and after transmission. File names and directory settings are not defined in this specification.
+
+.Example of mmlCm:extRef(External reference)
+[source, xml]
+<mml:extRefs>
+  <mmlCm:extRef
+   mmlCm:contentType="APPLICATION/HL72.3-HL7ER2.3"
+   mmlCm:medicalRole="prescription"
+   mmlCm:title="Prescription on discharge"
+   mmlCm:href="patient1234/prescription831.HL7"/>
+</mml:extRefs>

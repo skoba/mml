@@ -1,0 +1,49 @@
+=== ID format
+
+.Element list </caption>
+|=====
+| |Element|Attribute|Datatype|Occurrence|Table id
+|M3.|mmlCm:Id| |string| |
+| | |mmlCm:type|string|#REQUIRED|optional
+| | |mmlCm:tableId|string|#REQUIRED|
+| | |mmlCm:checkDigit|integer|#IMPLIED|
+| | |mmlCm:checkDigitSchema|string|#IMPLIED|MML0001
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: 1 or more, *: 0 or more +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+==== Elements in details
+===== mmlCm:Id (ID format)
+[horizontal]
+Description:: common format for indicating IDs
+Data type:: string
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlCm:type|string|#REQUIRED|optional|Code of ID type
+|mmlCm:tableId|string|#REQUIRED| |Table name specifying the ID type code above. In case a personal ID in a facility, the facility ID can be recorded as a table name.
+|mmlCm:checkDigit|integer|#IMPLIED| |check digit
+|mmlCm:checkDigitSchema|string|#IMPLIED|MML0001|check digit schema
+|=====
+
+NOTE: In principle, the mmlCm:type uses table MML0024 for personal IDs, table MML0027 for facility IDs and table MML0029 for the medical department IDs. The table name used above should be recorded in the mmlCm:tableId attribute.
+
+NOTE: Only in the case a personal ID is provided from a facility, the facility ID may be recorded in the mmlCm:tableId attribute and a personal ID with the combination of the facility ID is possible to be recorded as a unique personal ID in the facility.
+
+.Example of mmlCm:Id (ID format)
+-  For a personal ID
+[source, xml]
+<mmlCm:Id mmlCm:type="facility" mmlCm:checkDigitSchema="M10" mmlCm:checkDigit="5"
+  mmlCm:tableId="MML0024">12345</mmlCm:Id>
+
+-  For a personal ID with the combination of a facility ID and facility unique personal ID
+[source, xml]
+<mmlCm:Id mmlCm:type="facility" mmlCm:checkDigitSchema="M10" mmlCm:checkDigit="5" mmlCm:tableId="JPN452015100001">12345</mmlCm:Id>
+
+-  For a facility ID
+[source, xml]
+<mmlCm:Id mmlCm:type="insurance" mmlCm:tableId="MML0027">12345</mmlCm:Id>
+
+-  For a medical department ID
+[source, xml]
+<mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">16</mmlCm:Id>
