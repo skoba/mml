@@ -13,7 +13,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== mmlCm:Id (Id 形式)
+===== M3. mmlCm:Id (Id 形式)
 【内容】ID を表現する共通形式． +
 【データ型】string +
 【属性】

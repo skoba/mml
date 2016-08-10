@@ -1,0 +1,80 @@
+:imagesdir: ./figures
+=== Name expression format
+.Structure of elements
+image::mmlnm.jpg[]
+.Elements list
+|=====
+| |Element|Attribute|Datatype|Occurrence|Table id
+|M5.|mmlNm:Name| | | |
+| | |mmlNm:repCode|string|#REQUIRED|optional
+| | |mmlNm:tableId|string|#IMPLIED|
+|M5.1.|mmlNm:family| |string|?|
+|M5.2.|mmlNm:given| |string|?|
+|M5.3.|mmlNm:middle| |string|?|
+|M5.4.|mmlNm:fullname| |string|?|
+|M5.5.|mmlNm:prefix| |string|?|
+|M5.6.|mmlNm:degree| |string|?|
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: 1 or more, *: 0 or more +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+==== Elements in details
+===== M5. mmlNm:Name (Name expression format)
+[horizontal]
+Description:: MML common format to express personal names. It is You can choice the structured name expression using 3 elements (from M5.1. to M5.3.) or thefull(unstructured) name expression (M5.4.).
+Attribute::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlNm:repCode|string|#REQUIRED|optional|expression style
+|mmlNm:tableId|string|#IMPLIED| | Table name for expression styles
+|=====
+
+===== M5.1. mmlNm:family
+[horizontal]
+Description:: family name
+Data type:: string
+Occurrence:: optional
+
+===== M5.2. mmlNm:given
+[horizontal]
+Description:: given name
+Data type:: string
+Occurrence:: optional
+
+===== M5.3. mmlNm:middle
+[horizontal]
+Description:: middle name
+Data type:: string
+Occurrence:: optional
+
+===== M5.4. mmlNm:fullname
+[horizontal]
+Description:: full name
+Data type:: string
+Occurrence:: optional
+
+===== M5.5. mmlNm:prefix
+[horizontal]
+Description:: title, prefix, etc.
+Data type:: string
+Occurrence:: optional
+
+===== M5.6. mmlNm:degree
+[horizontal]
+Description:: academic degree
+Data type:: string
+
+.Example for mmlNm:Name (Name expression format)
+- Structured style with given name and family name.
+[source, xml]
+<mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025">
+  <mmlNm:family>Araki</mmlNm:family>
+  <mmlNm:given>Kenji</mmlNm:given>
+  <mmlNm:degree>M.D.</mmlNm:degree>
+</mmlNm:Name>
+- Unstructured style(full name)
+[source, xml]
+<mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025">
+  <mmlNm:fullname>Araki Kenji</mmlNm:fullname>
+  <mmlNm:degree>M.D.</mmlNm:degree>
+</mmlNm:Name>

@@ -12,6 +12,7 @@ Occurrences; blank: 1, ?: 0 or 1, +: 1 or more, *: 0 or more +
 #REQUIRED: mandatory attribute, #IMPLIED: optional attribute
 
 ==== Elements in details
+===== M4. mmlCm:extRef
 [horizontal]
 Description:: common format for indicating external references
 Attribute::

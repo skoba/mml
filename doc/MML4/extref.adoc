@@ -1,18 +1,8 @@
-:Author: Shinji KOBAYASHI
-:Email: skoba@moss.gr.jp
-:toc: right
-:toclevels: 2
-:pagenums:
-:numberd:
-:sectnums:
-:imagesdir: ./figures
-:linkcss:
-
 === 外部参照形式
 .エレメント一覧表
 |=====
 | |Elements|Attribute|Datatypes|Occurrence|Table id
-|4.|mmlCm:extRef| | | |
+|M4.|mmlCm:extRef| | | |
 | | |mmlCm:contentType|string|#IMPLIED|
 | | |mmlCm:medicalRole|string|#IMPLIED|
 | | |mmlCm:title|string|#IMPLIED|
@@ -24,7 +14,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 
 ==== エレメント解説
-===== mmlCm:extRef(外部参照形式)
+===== M4. mmlCm:extRef(外部参照形式)
 【内容】外部参照を表現する共通形式． +
 【属性】
 |=====
@@ -52,8 +42,7 @@ contentType は，MIME (RFC 2045,2046,2047) の Content-Type に準拠してお�
 
 個々の外部参照ファイルの内容を，具体的に表す短い文字列を記載する．以下のような使用を想定している．
 
-【例】
-
+.【例】
 * 胸腔ドレナージ後の胸部レントゲン写真
 * 化学療法直後の胸部CTスキャン
 * 冠動脈造影スケッチ
@@ -65,11 +54,11 @@ MML インスタンスからの相対的 uri 記述．外部参照ファイル�
 
 
 .mmlCm:extRef (外部参照形式) サンプルインスタンス
-
- <mml:extRefs>
-   <mmlCm:extRef
-     mmlCm:contentType = "APPLICATION/HL72.3-HL7ER2.3"
-     mmlCm:medicalRole = "prescription"
-     mmlCm:title = "Prescription on discharge"
-     mmlCm:href = "patient1234/prescription831.HL7"/>
- </mml:extRefs>
+[source, xml]
+<mml:extRefs>
+  <mmlCm:extRef
+   mmlCm:contentType="APPLICATION/HL72.3-HL7ER2.3"
+   mmlCm:medicalRole="prescription"
+   mmlCm:title="Prescription on discharge"
+   mmlCm:href="patient1234/prescription831.HL7"/>
+</mml:extRefs>

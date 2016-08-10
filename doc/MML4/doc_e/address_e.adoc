@@ -36,7 +36,7 @@ Occurrences; blank: 1, ?: 0 or 1, +: 1 or more, *: 0 or more +
 === Elements in details
 ==== M1. mmlAd:Address (Address expression format)
 [horizontal]
-Description:: common format for indicating addresses. You can choice full(unstructured)(M1.1.) address expression or subdivided address expression using 4 elements (from M1.2. to M1.5.).
+Description:: common format to express addresses. You can choice full(unstructured)(M1.1.) address expression or subdivided address expression using 4 elements (from M1.2. to M1.5.).
 Attributes::
 |======
 |Name|Data type|Occurrence|Table|Description
