@@ -1,12 +1,4 @@
-:Author: Shinji KOBAYASHI
-:Email: skoba@moss.gr.jp
-:toc: right
-:toclevels: 2
-:pagenums:
-:numberd:
-:sectnums:
 :imagesdir: ./figures
-:linkcss:
 
 === 施設情報形式
 .エレメント構造図
@@ -14,12 +6,12 @@ image::mmlfc.jpg[]
 
 .エレメント一覧表
 |=====
-| |Elements|Attribute|Datatypes|Occurrence|Table id
-|6.|mmlFc:Facility| | | |
-|6.1.|mmlFc:name| |string|+|
+| |Element|Attribute|Datatype|Occurrence|Table id
+|M6.|mmlFc:Facility| | | |
+|M6.1.|mmlFc:name| |string|+|
 | | |mmlFc:repCode|string|#REQUIRED|optional
 | | |mmlFc:tableId|string|#IMPLIED|
-|6.2.|mmlCm:Id| |string|?|
+|M6.2.|mmlCm:Id| |string|?|
 |=====
 Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
 
@@ -27,10 +19,10 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 
 ==== エレメント解説
-===== mmlFc:Facility(施設情報形式)
+===== M6. mmlFc:Facility(施設情報形式)
 【内容】施設を表現する共通形式．
 
-===== mmlFc:name
+===== M6.1. mmlFc:name
 【内容】施設名称． +
 【データ型】string +
 【省略】不可 +
@@ -42,16 +34,16 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlFc:tableId|string|#IMPLIED| |表記法を規定するテーブル名
 |=====
 
-===== mmlCm:Id
+===== M6.2. mmlCm:Id
 【内容】施設 ID．構造は MML 共通形式 (Id 形式) 参照． +
 【省略】省略可
 
 .mmlFc:Facility (施設情報形式) サンプルインスタンス
-
- <mmlFc:Facility>
-   <mmlFc:name mmlFc:repCode = "A" mmlFc:tableId = "MML0025">
-     New Millenium Medical College Hospital
-   </mmlFc:name>
-   <mmlCm:Id mmlCm:type = "insurance" mmlCm:checkDigitSchema = "MD10"
-     mmlCm:checkDigit = "5" mmlCm:tableId = "MML0027">12345</mmlCm:Id>
- </mmlFc:Facility>
+[source, xml]
+<mmlFc:Facility>
+  <mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025">
+    New Millenium Medical College Hospital
+  </mmlFc:name>
+  <mmlCm:Id mmlCm:type="insurance" mmlCm:checkDigitSchema="MD10"
+    mmlCm:checkDigit="5" mmlCm:tableId="MML0027">12345</mmlCm:Id>
+</mmlFc:Facility>

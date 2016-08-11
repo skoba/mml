@@ -1,0 +1,49 @@
+:imagesdir: ./figures
+=== Facility information format
+.Structure of elements
+image::mmlfc.jpg[]
+
+.List of elements
+|=====
+| |Element|Attribute|Datatype|Occurrence|Table id
+|M6.|mmlFc:Facility| | | |
+|M6.1.|mmlFc:name| |string|+|
+| | |mmlFc:repCode|string|#REQUIRED|optional
+| | |mmlFc:tableId|string|#IMPLIED|
+|M6.2.|mmlCm:Id| |string|?|
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: 1 or more, *: 0 or more +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+==== Elements in details
+===== M6. mmlFc:Facility (Facility information format)
+[horizontal]
+Description:: format for facility information
+
+===== M6.1. mmlFc:name
+[horizontal]
+Description:: facility name
+Data type:: string
+Occurrence:: more than one. If there are multiple expressions for a facility, this element can be repeated as the number.
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlFc:repCode|string|#REQUIRED|optional|expression style
+|mmlFc:tableId|string|#IMPLIED| |table name for expression styles
+|=====
+
+===== M6.2. mmlCm:Id
+[horizontal]
+Description:: facility identifier(ref. mmlCm:Id format)
+Data type:: string
+Occurrence:: optional
+
+.Example for mmlFc:Facility(Facility information format)
+[source, xml]
+<mmlFc:Facility>
+  <mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025">
+    New Millenium Medical College Hospital
+  </mmlFc:name>
+  <mmlCm:Id mmlCm:type="insurance" mmlCm:checkDigitSchema="MD10"
+    mmlCm:checkDigit="5" mmlCm:tableId="MML0027">12345</mmlCm:Id>
+</mmlFc:Facility>

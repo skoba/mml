@@ -1,0 +1,48 @@
+:imagesdir: ./figures
+===  Medical department information format
+.Structure of elements
+image::mmldp.jpg[]
+.List of elements
+|=====
+| |Element|Attribute|Datatype|Occurrence|Table id
+|M7.|mmlDp:Department| | | |
+|M7.1.|mmlDp:name| |string|+|
+| | |mmlDp:repCode|string|#REQUIRED|optional
+| | |mmlDp:tableId|string|#IMPLIED|
+|M7.2.|mmlCm:Id| |string|?|
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: more then 1, *: more than 0+
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+==== Elements in details
+===== M7. mmlDp:Department (Medical department information format)
+[horizontal]
+Description:: Commonn format for medical department information.
+
+===== M7.1. mmlDp:name
+[horizontal]
+Description:: medical department name
+Data type:: string
+Occurrence:: More than one. If there are multiple expressions for a facility, this element can be repeated as the number.
+Attribute::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlDp:repCode|string|#REQUIRED|optional|expression style
+|mmlDp:tableId|string|#IMPLIED| |table name for expression styles
+|=====
+
+===== mmlCm:Id
+[horizontal]
+Description:: Medical department identifier. (ref. mmlCm:Id format)
+Occurrence:: optional
+
+.Example for mmlDp:Department(Department information format)
+[source, xml]
+<mmlDp:Department>
+  <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">
+    Cardiovascular　Surgery
+  </mmlDp:name>
+  <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">16</mmlCm:Id>
+</mmlDp:Department>
+
+NOTE: Department ID was described on department code of MML0029 table.

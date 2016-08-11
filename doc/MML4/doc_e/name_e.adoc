@@ -2,7 +2,7 @@
 === Name expression format
 .Structure of elements
 image::mmlnm.jpg[]
-.Elements list
+.List of elements
 |=====
 | |Element|Attribute|Datatype|Occurrence|Table id
 |M5.|mmlNm:Name| | | |
@@ -22,11 +22,11 @@ Occurrences; blank: 1, ?: 0 or 1, +: 1 or more, *: 0 or more +
 ===== M5. mmlNm:Name (Name expression format)
 [horizontal]
 Description:: MML common format to express personal names. It is You can choice the structured name expression using 3 elements (from M5.1. to M5.3.) or thefull(unstructured) name expression (M5.4.).
-Attribute::
+Attributes::
 |=====
 |Name|Data type|Occurrence|Table|Description
 |mmlNm:repCode|string|#REQUIRED|optional|expression style
-|mmlNm:tableId|string|#IMPLIED| | Table name for expression styles
+|mmlNm:tableId|string|#IMPLIED| |table name for expression styles
 |=====
 
 ===== M5.1. mmlNm:family
