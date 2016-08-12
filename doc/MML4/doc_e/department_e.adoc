@@ -45,4 +45,4 @@ Occurrence:: optional
   <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">16</mmlCm:Id>
 </mmlDp:Department>
 
-NOTE: Department ID was described on department code of MML0029 table.
+NOTE: Department ID was quoted from department code of MML0029 table.

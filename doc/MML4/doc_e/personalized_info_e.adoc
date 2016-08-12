@@ -1,20 +1,11 @@
-:Author: Shinji KOBAYASHI
-:Email: skoba@moss.gr.jp
-:toc: right
-:toclevels: 2
-:pagenums:
-:numberd:
-:sectnums:
 :imagesdir: ./figures
-:linkcss:
-
-=== 個人情報形式
-.エレメント構造図
+===  Personal information format
+.Structure of elements
 image::mmlpsi.jpg[]
 
-.エレメント一覧表
+.List of elements
 |=====
-| |Element|Attribute|Datatype|Occurrence|Table id
+| |Element|Attribute|Datatypes|Occurrence|Table id
 |M8.|mmlPsi:PersonalizedInfo| | | |
 |M8.1.|mmlCm:Id| |string| |
 |M8.2.|mmlPsi:personName| | | |
@@ -28,70 +19,76 @@ image::mmlpsi.jpg[]
 |M8.7.|mmlPsi:phones| | |?|
 |M8.7.1.|mmlPh:Phone| | |+|
 |=====
-Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+Occurrences; blank: 1, ?: 0 or 1, +: more then 1, *: more than 0+
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
 
-#REQUIRED:必須属性，#IMPLIED:省略可能属性
-
-
-==== エレメント解説
-===== M8. mmlPsi:PersonalizedInfo(個人情報形式)
-【内容】個人情報を表現する共通形式．
+==== Elements in details
+===== M8. mmlPsi:PersonalizedInfo (Personal information format)
+[horizontal]
+Description:: Common format for personal information
 
 ===== M8.1. mmlCm:Id
-【内容】個人 ID．構造はMML共通形式 (Id 形式) 参照． +
-【省略】不可
+[horizontal]
+Description:: Personal ID. Refer to the MML common format (ID format) for the structure.
+Occurrence:: mandatory
 
 ===== M8.2. mmlPsi:personName
-【内容】氏名情報を入れる親エレメント． +
-【省略】不可
+[horizontal]
+Description:: Parent element for the input of personal name.
+Occurrence:: mandatory
 
 ===== M8.2.1. mmlNm:Name
-【内容】氏名．構造は MML 共通形式 (人名表現形式) 参照． +
-【省略】不可 +
-【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+[horizontal]
+Description:: Personal name(ref. mmlNm)
+Occurrence:: more than one. If there are multiple expressions for a person name, this element can be repeated as the number.
 
 ===== M8.3. mmlFc:Facility
-【内容】施設情報．構造は MML 共通形式 (施設情報形式) 参照． +
-【省略】省略可
+[horizontal]
+Description:: Facility information that the person belongs to.
+Occurrence:: optional.
 
 ===== M8.4. mmlDp:Department
-【内容】診療科情報．構造は MML 共通形式 (診療科情報形式) 参照． +
-【省略】省略可
+[horizontal]
+Description:: Department information that the person belongs to.
+Occurrence:: optional.
 
 ===== M8.5. mmlPsi:addresses
-【内容】住所情報を入れる親エレメント． +
-【省略】省略可
+[horizontal]
+Description:: Parent element for the input of personal address.
+Occurrence:: optional
 
 ===== M8.5.1. mmlAd:address
-【内容】住所．構造は MML 共通形式 (住所表現形式) 参照． +
-【省略】不可 +
-【繰り返し設定】繰り返しあり．住所の種類あるいは表記法が複数あれば繰り返す．
+[horizontal]
+Description:: Address expression(ref. mmlAd)
+Occurrence:: more than 1.
 
 ===== M8.6. mmlPsi:emailAddresses
-【内容】下記の電子メールアドレスを入れる親エレメント． +
-【省略】省略可
+[horizontal]
+Description:: Parent element for the input of personal email address.
+Occurrence:: optional
 
-===== M8.6.1. mmlCm:email
-【内容】電子メールアドレス +
-【データ型】string +
-【省略】省略可 +
-【繰り返し設定】繰り返しあり．電子メールアドレスが複数あれば繰り返す． +
-【例】
+===== M8.6.1. mmlPsi:emailAddresses
+[horizontal]
+Description:: Email addresses for a person. If the person has multiple email addresses, this field can be repeated as the number.
+Occurrence:: more than 0
+
+.Example for email address
 [source, xml]
 <mmlPsi:emailAddresses>
   <mmlCm:email>araki@post.medxml.net</mmlCm:email>
 </mmlPsi:emailAddresses>
 
 ===== M8.7. mmlPsi:phones
-【内容】下記連絡先電話番号を入れる親エレメント． +
-【省略】省略可
+[horizontal]
+Description:: parent element for the input of telephone numbers described below.
+Occurrence:: optional
 
 ===== M8.7.1. mmlPh:Phone
-【内容】構造はMML共通形式 (電話番号表現形式) 参照． +
-【省略】不可 +
-【繰り返し設定】繰り返しあり．電話番号が複数あれば繰り返す．
+[horizontal]
+Description:: Telephone number. Refer to the MML common format (Telephone number format)
+Occurrence:: more than one.
 
-.mmlPsi:PersonalizedInfo (個人情報形式) サンプル インスタンス
+.Example for mmlPsi:PersonalizedInfo (Personal information format)
 [source, xml]
 <mmlPsi:PersonalizedInfo>
   <mmlCm:Id mmlCm:type="facility" mmlCm:checkDigitSchema="M10" mmlCm:checkDigit="5" mmlCm:tableId="MML0024">12345</mmlCm:Id>

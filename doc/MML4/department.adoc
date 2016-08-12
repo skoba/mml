@@ -26,10 +26,10 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== mmlDp:Department(診療科情報形式)
+===== M7. mmlDp:Department(診療科情報形式)
 【内容】診療科を表現する共通形式．
 
-===== mmlDp:name
+===== M7.1. mmlDp:name
 【内容】診療科名称． +
 【データ型】string +
 【省略】不可 +
@@ -41,17 +41,17 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlDp:tableId|string|#IMPLIED| |表記法を規定するテーブル名
 |=====
 
-===== mmlCm:Id
+===== M7.2. mmlCm:Id
 【内容】診療科 ID．構造は MML 共通形式 (Id 形式) 参照． +
 【省略】省略可 +
 
 .mmlDp:Department (診療科情報形式) サンプルインスタンス
-
- <mmlDp:Department>
-   <mmlDp:name mmlDp:repCode = "A" mmlDp:tableId = "MML0025">
-     Cardiovascular　Surgery
-   </mmlDp:name>
-   <mmlCm:Id mmlCm:type = "medical"　 mmlCm:tableId = "MML0029">16</mmlCm:Id>
- </mmlDp:Department>
+[source, xml]
+<mmlDp:Department>
+  <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">
+    Cardiovascular　Surgery
+  </mmlDp:name>
+  <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">16</mmlCm:Id>
+</mmlDp:Department>
 
 注釈：診療科 ID に MML0029 テーブルの医科診療科コードを用いた．
