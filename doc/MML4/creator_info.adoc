@@ -14,10 +14,10 @@ image::mmlci.jpg[]
 
 .エレメント一覧表
 |=====
-| |Elements|Attribute|Datatypes|Occurrence|Table id
-|9.|mmlCi:CreatorInfo| | | |
-|9.1.|mmlPsi:PersonalizedInfo| | | |
-|9.2.|mmlCi:creatorLicense| |string|+|optional
+| |Element|Attribute|Datatype|Occurrence|Table id
+|M9.|mmlCi:CreatorInfo| | | |
+|M9.1.|mmlPsi:PersonalizedInfo| | | |
+|M9.2.|mmlCi:creatorLicense| |string|+|optional
 | | |mmlCi:tableId|string|#IMPLIED|
 |=====
 Occurrence なし：必ず 1 回出現，?： 0 回もしくは 1 回出現，+： 1 回以上出現，*： 0 回以上出現
@@ -25,14 +25,14 @@ Occurrence なし：必ず 1 回出現，?： 0 回もしくは 1 回出現，+�
 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== mmlCi:CreatorInfo(作成者情報形式)
+===== M9. mmlCi:CreatorInfo(作成者情報形式)
 【内容】作成者を表現する共通形式．
 
-===== mmlPsi:PersonalizedInfo
+===== M9.1. mmlPsi:PersonalizedInfo
 【内容】作成者の個人情報．構造は MML 共通形式 (個人情報形式) 参照． +
 【省略】不可
 
-===== mmlCi:creatorLicense
+===== M9.2. mmlCi:creatorLicense
 【内容】生成者の資格 +
 【データ型】string．属性で指定されたテーブルの値を入れる． +
 【省略】不可 +
@@ -43,5 +43,5 @@ Occurrence なし：必ず 1 回出現，?： 0 回もしくは 1 回出現，+�
 |mmlCi:tableId|string|#IMPLIED| |生成者の資格を規定するテーブル名
 |=====
 【例】
-
- <mmlCi:creatorLicense mmlCi:tableId = "MML0026">doctor</mmlCi:creatorLicense>
+[source, xml]
+<mmlCi:creatorLicense mmlCi:tableId="MML0026">doctor</mmlCi:creatorLicense>

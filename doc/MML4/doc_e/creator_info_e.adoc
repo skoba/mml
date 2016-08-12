@@ -1,0 +1,37 @@
+:imagesdir: ./figures
+=== Creator information format
+.Structure of elements
+image::mmlpsi.jpg[]
+
+.List of elements
+|=====
+| |Element|Attribute|Datatype|Occurrence|Table id
+|M9.|mmlCi:CreatorInfo| | | |
+|M9.1.|mmlPsi:PersonalizedInfo| | | |
+|M9.2.|mmlCi:creatorLicense| |string|+|optional
+| | |mmlCi:tableId|string|#IMPLIED|
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: more then 1, *: more than 0 +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+==== Elements in details
+===== M9. mmlCi:CreatorInfo(creator information format)
+[horizontal]
+Description:: common format to express the creator of MML instances.
+
+===== M9.1. mmlPsi:PersonalizedInfo
+[horizontal]
+Description:: personal information of the creator. (ref. mmlPsi:PersonalizedInfo)
+
+===== M9.2.mmlCi:creatorLicense
+[horizontal]
+Description:: Medical license of creator.
+Occurrence:: More than one. If the creator has multiple license, this field can be repeated as the number.
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlCi:tableId|string|#IMPLIED| |Table name for licenses
+|=====
+.Example
+[source, xml]
+<mmlCi:creatorLicense mmlCi:tableId="MML0026">doctor</mmlCi:creatorLicense>

@@ -86,7 +86,7 @@ Occurrence:: optional
 ===== M8.7.1. mmlPh:Phone
 [horizontal]
 Description:: Telephone number. Refer to the MML common format (Telephone number format)
-Occurrence:: more than one.
+Occurrence:: more than one. If the person has multiple phone numbers, this field can be repeated as the number.
 
 .Example for mmlPsi:PersonalizedInfo (Personal information format)
 [source, xml]
