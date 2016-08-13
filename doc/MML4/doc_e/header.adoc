@@ -1,0 +1,57 @@
+:imagesdir: ./figures
+
+== MmlHeader format in details
+=== About MmlHeader
+All tags in the MML Ver. 4 MmlHeader all belong to the namespace, "xmlns:mml= "http://www.medxml.net/MML/v4/base/1.0". (In this section, default namaspace is  xmlns="http://www.medxml.net/MML/v4/base/1.0")
+
+==== MmlHeader
+[horizontal]
+Description:: header information
+
+==== mmlCi:CreatorInfo
+[horizontal]
+Description:: Creator identifier(ref. mmlCi:CreatorInfo).
+Occurrence:: mandatory
+
+==== masterId
+[horizontal]
+Description:: master ID for the patient.
+Occurrence:: mandatory
+
+====  mmlCm:Id
+[horizontal]
+Description:: Ref. mmlCm:Id
+Occurrence:: mandatory
+
+==== toc
+[horizontal]
+Description:: Table Of Contents. MML processor check this "toc" to identify the contents of MML instances. Although this item is redundant, this field is still active in MML ver. 4 for SAX parser.
+Occurrence:: mandatory
+
+==== tocItem
+[horizontal]
+Description:: All XML schemas in MML instance should be listed. all DTDs used in this MML document are listed. Although this item is redundant, this field is still active in MML ver. 4 for SAX parser.
+Data type:: string
+Occurrence:: More than one. Elements should be repeated the number of used XML Schema.
+
+==== scopePeriod
+[horizontal]
+Description:: period covered by entire MML documents
+Occurence:: optional
+Attribute::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|start|date|#IMPLIED| |start date
+|end|date|#IMPLIED| |end date
+|hasOtherInfo|boolean|#IMPLIED| |If there is information out of the period. yes: true, no: false.
+|isExtract|boolean|#IMPLIED| |If there is extracted information, yes: true, no: false.
+|extractPolicy|string|#IMPLIED|MML0004|extraction policy
+|=====
+
+If MML sender has other information out of the entire period covered by "start" and "end" of MML header, the value of "hasOtherInfo" should be "true". If MML sender wrote all patient information on the MML instance within the period, the value of "isExtract" should be "false"; if some information was extracted from the all data of pattient, the value should be "true". Furthermore, in the latter case, the extraction policy should be given in "extractPolicy". This is to clarify whether all or partial patient information is received at the reception side of the MML instance. If it is assumed that all information is received despite the fact that only partial information is received, a serious mistake in medical treatment may occur.
+
+==== encryptInfo
+[horizontal]
+Description:: Encryption information such as electronic signature. The description method is not specified in particular. Refer to the "Access rights and encryption" section in the principle.
+Data type:: string
+Occurrence:: optional

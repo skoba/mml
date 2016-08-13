@@ -11,13 +11,12 @@
 == MmlHeader 形式詳説
 === MmlHeader に関して
 
-MML Ver 4のMmlHeader 内のタグはすべて，xmlns:mml ="http://www.medxml.net/MML/v4" の Namespace に属す．(ここでは，xmlns="http://www.medxml.net/MML/v4" とデフォルト化したものとして記述することとする)
+MML Ver 4のMmlHeader 内のタグはすべて，xmlns:mml ="http://www.medxml.net/MML/v4/base/1.0/" の Namespace に属す．(ここでは，xmlns="http://www.medxml.net/MML/v4/base/1.0" とデフォルト化したものとして記述することとする)
 
 ==== MmlHeader
 【内容】ヘッダー情報
 
 ==== mmlCi:CreatorInfo
-
 【内容】生成者識別情報．構造は MML 共通形式 (作成者情報形式) 参照． +
 【省略】不可
 
@@ -34,7 +33,7 @@ MML Ver 4のMmlHeader 内のタグはすべて，xmlns:mml ="http://www.medxml.n
 【省略】不可
 
 ==== tocItem
-【内容】本 MML 文書で使われている全ての DTD をリストアップする．冗長ではあるが、SAX系の処理には有効であるためv4でも存続させた。  +
+【内容】本 MML 文書で使われている全てのXML Schemaをリストアップする．冗長ではあるが、SAX系の処理には有効であるためv4でも存続させた。  +
 【データ型】string +
 【省略】不可 +
 【繰り返し設定】繰り返しあり．使用した DTD の種類だけ繰り返す．
