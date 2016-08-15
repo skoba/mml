@@ -23,7 +23,7 @@ docInfoはOverviewで記述したとおり、各MmlModuleItemの先頭に記載�
 |=======
 |属性名|データ型|省略|使用テーブル|説明
 |contentModuleType|string|#IMPLIED|MML0005|文書の種類コード
-|moduleVersion|uri|#IMPLIED| |使用モジュールのDTDのURIを記載
+|moduleVersion|uri|#IMPLIED| |使用するモジュールのXMLスキーマのURIを記載
 |=======
 
 ==== securityLevel

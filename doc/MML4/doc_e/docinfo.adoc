@@ -1,0 +1,64 @@
+:numberd:
+:sectnums:
+
+== docInfo structure in details
+===  What is docInfo?
+As described in the overview section, docInfo is recorded at the beginning of each MmlModuleItem, and the creator information, range of access rights, and other information related to that item.
+
+==== docInfo
+[horizontal]
+Description:: individual document header information
+Occurence:: Mandatory in general. Omission is allowed only when there is no query specifying modules or no modules are applicable to a given query.
+Attribute:: it is necessary to set up attributes so that the type and version of the module used will become obvious only with the reference of the document header.
+|=====
+|Name|Data type|Occurrence|Table|Description
+|contentModuleType|string|#IMPLIED|MML0005|document type codeド
+|moduleVersion|uri|#IMPLIED| |URI of the modules to use.
+|=====
+
+==== securityLevel
+[horizontal]
+Description:: types of access rights. MML creator should settle the access rights of each MML instance in generation. The receiver of MML instance should grant access control as described.
+Occurrence:: Mandatory. If there are multiple accessRight elements, the accessRight elements are mutually under the "OR" condition. When there are more than two subordinate elements of accessRight by a facility, medical department, occupation, or person, the condition is "AND". If nothing meets this "AND" condition, the access right is not granted.
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|permit|string|#REQUIRED|MML0034|Right to +
+none：no access permission. +
+read： permit to read +
+write： permit to read and write +
+delete： permit to read and delete +
+all： permit to read, write and delete +
+|startDate|date|#IMPLIED| |Start date for access
+|endDate|date|#IMPLIED| |End date for access
+|=====
+In order to address no permission for the accessRight explicitly, set "none" for the permit attribute.
+
+MML does not define "delete" implementation for delete request to the document. An example implementation was assumed that document status change to invisible logically and keep it with log file, instead of deleting it physically.
+
+==== mmlSc:facility
+[horizontal]
+Description:: facility. Grant access rights in the facility unit.
+Occurrence:: optional
+
+==== mmlSc:facilityName
+[horizontal]
+Description:: facility name
+Data type:: string
+Occurrence:: more than zero. Elements should be repeated as the number of facilities to be granted.
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlSc:facilityCode|string|#REQUIRED|MML0035|Access right to the facility
+|mmlSc:tableId|string|#IMPLIED| |Table name for access right definition. Use MML0035 in general
+|mmlSc:facilityId|string|#IMPLIED| |Facility code
+|mmlSc:facilityIdType|string|#IMPLIED|MML0027|Facility code table
+|=====
+
+The definition of access rights on facility shown bellow:
+[glossary]
+all:: All facilities.
+creator:: The facility of the creator.
+|experience|The facilities that subject(patient) has consulted ever. +
+Each application can be implemented to select the facilities of this condition.
+individual:: Individual facility ID to be granted is recorded to mmlSc:facilityId and mmlSc:facilityIdType.

@@ -32,7 +32,7 @@ Occurrence:: mandatory
 [horizontal]
 Description:: All XML schemas in MML instance should be listed. all DTDs used in this MML document are listed. Although this item is redundant, this field is still active in MML ver. 4 for SAX parser.
 Data type:: string
-Occurrence:: More than one. Elements should be repeated the number of used XML Schema.
+Occurrence:: More than one. Elements should be repeated as the number of used XML Schema.
 
 ==== scopePeriod
 [horizontal]
