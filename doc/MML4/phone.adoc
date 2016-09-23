@@ -77,7 +77,7 @@ Occurrence　　なし：必ず1回出現，?： 0回もしくは1回出現，+�
 
 - 構造化電話番号表記
 [source, xml]
- <mmlPh:Phone mmlPh:telEquipType = "PH">
+ <mmlPh:Phone mmlPh:telEquipType="PH">
    <mmlPh:area>0985</mmlPh:area>
    <mmlPh:city>85</mmlPh:city>
    <mmlPh:number>1500</mmlPh:number>
@@ -88,7 +88,7 @@ Occurrence　　なし：必ず1回出現，?： 0回もしくは1回出現，+�
 
 - 非構造化電話番号表記
 [source, xml]
- <mmlPh:Phone mmlPh:telEquipType = "PH">
+ <mmlPh:Phone mmlPh:telEquipType="PH">
    <mmlPh:full>0985-85-1500(2067)</mmlPh:full>
    <mmlPh:country>81</mmlPh:country>
  <mmlPh:memo>daytime</mmlPh:memo>

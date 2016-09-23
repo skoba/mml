@@ -58,7 +58,29 @@ Attributes::
 The definition of access rights on facility shown bellow:
 [glossary]
 all:: All facilities.
-creator:: The facility of the creator.
-|experience|The facilities that subject(patient) has consulted ever. +
+creator:: Only the facility of the creator.
+experience:: The facilities that subject(patient) has consulted to ever.
 Each application can be implemented to select the facilities of this condition.
-individual:: Individual facility ID to be granted is recorded to mmlSc:facilityId and mmlSc:facilityIdType.
+individual:: The individual facility ID to be granted is recorded to mmlSc:facilityId and mmlSc:facilityIdType.
+
+==== mmlSc:departmentName
+[horizontal]
+Description:: Medical department name
+Occurrence:: More than one. The element should be repeated as the number of departments to be granted.
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlSc:departmentCode|string|#REQUIRED|MML0028|Department code
+|mmlSc:tableId|string|#IMPLIED| |Department code name. MML0028 as default
+|=====
+
+==== mmlSc:license
+[horizontal]
+Description:: Occupation/license class to be granted.
+Occurrence:: Optional
+
+==== mmlSc:licenseName
+[horizontal]
+Description:: Occupation/license name
+Occurrence:: More than zero.
+Omission: not allowed<br>Repetition: allowed. The element should be repeated the same number of times as the number of occupations for which access rights are set. <br> Attribute:

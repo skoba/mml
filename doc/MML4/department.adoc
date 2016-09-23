@@ -54,4 +54,4 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
   <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">16</mmlCm:Id>
 </mmlDp:Department>
 
-注釈：診療科 ID に MML0029 テーブルの医科診療科コードを用いた．
+NOTE: 診療科 ID に MML0029 テーブルの医科診療科コードを用いた．

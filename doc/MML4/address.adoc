@@ -89,7 +89,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 - 一連住所の場合
 [source, xml]
-<mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
+<mmlAd:Address mmlAd:repCode="A" mmlAd:addressClass="business" mmlAd:tableId="MML0025">
   <mmlAd:full>5200 Kihara, Kiyotake-cho, Miyazaki-gun, Miyazaki-prefecture</mmlAd:full>
   <mmlAd:zip>889-1692</mmlAd:zip>
   <mmlAd:countryCode>JPN</mmlAd:countryCode>
@@ -97,7 +97,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 - 分割して表記する場合
 [source, xml]
-<mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025">
+<mmlAd:Address mmlAd:repCode="A" mmlAd:addressClass="business" mmlAd:tableId="MML0025">
   <mmlAd:prefecture>Miyazaki</mmlAd:prefecture>
   <mmlAd:city>Miyazaki</mmlAd:city>
   <mmlAd:town>Kiyotake</mmlAd:town>

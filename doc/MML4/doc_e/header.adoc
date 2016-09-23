@@ -48,7 +48,7 @@ Attribute::
 |extractPolicy|string|#IMPLIED|MML0004|extraction policy
 |=====
 
-If MML sender has other information out of the entire period covered by "start" and "end" of MML header, the value of "hasOtherInfo" should be "true". If MML sender wrote all patient information on the MML instance within the period, the value of "isExtract" should be "false"; if some information was extracted from the all data of pattient, the value should be "true". Furthermore, in the latter case, the extraction policy should be given in "extractPolicy". This is to clarify whether all or partial patient information is received at the reception side of the MML instance. If it is assumed that all information is received despite the fact that only partial information is received, a serious mistake in medical treatment may occur.
+If MML sender has other information out of the entire period covered by "start" and "end" of MML header, the value of "hasOtherInfo" should be "true". If MML sender wrote all patient information on the MML instance within the period, the value of "isExtract" should be "false"; if some information was extracted from the all data of patient, the value should be "true". Furthermore, in the latter case, the extraction policy should be given in "extractPolicy". This is to clarify whether all or partial patient information is received at the reception side of the MML instance. If it is assumed that all information is received despite the fact that only partial information is received, a serious mistake in medical treatment may occur.
 
 ==== encryptInfo
 [horizontal]
