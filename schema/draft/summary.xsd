@@ -23,7 +23,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="mmlSm:serviceHistory"/>
-        <xs:element minOccurs="0" ref="mmlRd:RegisteredDiagnosisModule"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlRd:RegisteredDiagnosisModule"/>
         <xs:element minOccurs="0" ref="mmlSm:deathInfo"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlSg:SurgeryModule"/>
         <xs:element minOccurs="0" ref="mmlSm:chiefComplaints"/>
