@@ -140,61 +140,41 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 .【例】securityLevel (アクセス権種別) 記載例
 
 宮崎医科大学附属病院の内科，医師に2001年10月1日から2001年12月31日まで参照，修正，削除の権利を与える場合
+[source, xml]
+<securityLevel>
+  <accessRight permit="all" startDate="2001-10-01" endDate="2001-12-31">
+    <mmlSc:facility>
+      <mmlSc:facilityName mmlSc:facilityCode="individual" mmlSc:tableId="MML0035" mmlSc:facilityId="JPN453010100003" mmlSc:facilityIdType="JMARI">
+        宮崎医科大学附属病院
+      </mmlSc:facilityName>
+    </mmlSc:facility>
+    <mmlSc:department>
+      <mmlSc:departmentName mmlSc:departmentCode="01" mmlSc:tableId="MML0028"/>
+    </mmlSc:department>
+    <mmlSc:license>
+      <mmlSc:licenseName mmlSc:licenseCode="doctor" mmlSc:tableId="MML0026"/>
+    </mmlSc:license>
+  </accessRight>
+</securityLevel>
 
- <securityLevel>
-   <accessRight
-     permit="all"
-     startDate="2001-10-01"
-     endDate="2001-12-31">
-     <mmlSc:facility>
-       <mmlSc:facilityName
-         mmlSc:facilityCode="individual"
-         mmlSc:tableId="MML0035"
-         mmlSc:facilityId="JPN453010100003"
-         mmlSc:facilityIdType="JMARI">
-         宮崎医科大学附属病院
-       </mmlSc:facilityName>
-     </mmlSc:facility>
-     <mmlSc:department>
-       <mmlSc:departmentName
-       mmlSc:departmentCode="01"
-       mmlSc:tableId="MML0028"/>
-     </mmlSc:department>
-     <mmlSc:license>
-       <mmlSc:licenseName
-         mmlSc:licenseCode="doctor"
-         mmlSc:tableId="MML0026"/>
-     </mmlSc:license>
-   </accessRight>
- </securityLevel>
-
-記載者施設に無期限の全ての権利と，患者 (患者太郎) に 2001 年 10 月 1 日から 2001 年 12 月 31 日まで参照の権利を与える場合
-
- <securityLevel>
-   <accessRight permit="all">
-     <mmlSc:facility>
-       <mmlSc:facilityName
-         mmlSc:facilityCode="creator"
-         mmlSc:tableId="MML0035">
-         記載者施設
-       </mmlSc:facilityName>
-     </mmlSc:facility>
-   </accessRight>
-   <accessRight
-     permit="read"
-     startDate="2001-10-01"
-     endDate="2001-12-31">
-     <mmlSc:person>
-       <mmlSc:personName
-         mmlSc:personCode="patient"
-         mmlSc:tableId="MML0036"
-         mmlSc:personId="4500001234"
-         mmlSc:personIdType="dolphinUserid_2001-10-03">
-         患者太郎
-       </mmlSc:personName>
-     </mmlSc:person>
-   </accessRight>
- </securityLevel>
+.記載者施設に無期限の全ての権利と，患者 (患者太郎) に 2001 年 10 月 1 日から 2001 年 12 月 31 日まで参照の権利を与える場合
+[source, xml]
+<securityLevel>
+  <accessRight permit="all">
+    <mmlSc:facility>
+      <mmlSc:facilityName mmlSc:facilityCode="creator" mmlSc:tableId="MML0035">
+        記載者施設
+      </mmlSc:facilityName>
+    </mmlSc:facility>
+  </accessRight>
+  <accessRight permit="read" startDate="2001-10-01" endDate="2001-12-31">
+    <mmlSc:person>
+      <mmlSc:personName mmlSc:personCode="patient" mmlSc:tableId="MML0036" mmlSc:personId="4500001234" mmlSc:personIdType="dolphinUserid_2001-10-03">
+        患者太郎
+      </mmlSc:personName>
+    </mmlSc:person>
+  </accessRight>
+</securityLevel>
 
 ==== title
 【内容】文書タイトル +

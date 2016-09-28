@@ -43,7 +43,7 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:string">
-          <xs:attribute name="system" type="xs:string" use="required"/>
+          <xs:attribute name="system" type="xs:string" use="required" form="qualified"/>
         </xs:extension>
       </xs:simpleContent>
     </xs:complexType>
