@@ -28,9 +28,9 @@ image::mmlsg.jpg[]
 |1.1.1.2.|mmlSg:startTime| |time|?|
 |1.1.1.3.|mmlSg:duration| |duration|?|
 |1.1.1.4.|mmlSg:surgicalDepartment| | |?|
-|1.1.1.4.1.|mmlDp:Department| | | |
+|1.1.1.4.1.|mmlDp:Department| | |+|
 |1.1.1.5.|mmlSg:patientDepartment| | |?|
-|1.1.1.5.1.|mmlDp:Department| | | |　
+|1.1.1.5.1.|mmlDp:Department| | |+|　
 |1.1.2.|mmlSg:surgicalDiagnosis| | | |
 |1.1.2.1.|mmlRd:RegisteredDiagnosisModule| | |+|
 |1.1.3.|mmlSg:surgicalProcedure| | | |
@@ -44,12 +44,12 @@ image::mmlsg.jpg[]
 | | |mmlSg:code|string|#IMPLIED|
 | | |mmlSg:system|string|#IMPLIED|
 |1.1.3.1.3.|mmlSg:procedureMemo| |string|?|
-|1.1.4.|mmlSg:surgicalStaffs| | | |
+|1.1.4.|mmlSg:surgicalStaffs| | |?|
 |1.1.4.1.|mmlSg:staff| | |+|
 | | |mmlSg:staffClass|string|#IMPLIED|MML0022
 | | |mmlSg:superiority|integer|#IMPLIED|
 |1.1.4.1.1.|mmlSg:staffInfo| | | |
-|1.1.4.1.1.1.|mmlPsi:PersonalizedInfo| | | |
+|1.1.4.1.1.1.|mmlPsi:PersonalizedInfo| | |+|
 |1.1.5.|mmlSg:anesthesiaProcedure| | |?|
 |1.1.5.1.|mmlSg:title| |string|+|
 | | |mmlSg:code|string|#IMPLIED|
@@ -59,7 +59,7 @@ image::mmlsg.jpg[]
 | | |mmlSg:staffClass|string|#IMPLIED|MML0023
 | | |mmlSg:superiority|integer|#IMPLIED|
 |1.1.6.1.1.|mmlSg:staffInfo| | | |
-|1.1.6.1.1.1.|mmlPsi:PersonalizedInfo| | | |
+|1.1.6.1.1.1.|mmlPsi:PersonalizedInfo| | |+|
 |1.1.7.|mmlSg:anesthesiaDuration| |duration|?|
 |1.1.8.|mmlSg:operativeNotes| |string|?|
 |1.1.9.|mmlSg:referenceInfo| | |?|
@@ -319,7 +319,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlSg:staffClass|string|#IMPLIED|MML0023|麻酔医区分
 |mmlSg:superiority|integer|#IMPLIED| |序列
 |=====
-	
+
 ===== mmlSg:staffInfo
 【内容】麻酔医 ID 情報． +
 【省略】不可
