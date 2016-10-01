@@ -121,14 +121,15 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== mmlDp:Department
 【内容】手術実施診療科．構造は MML 共通形式参照． +
-【省略】不可
+【省略】不可、繰り返し有り
+
 ===== mmlSg:patientDepartment
 【内容】患者診療科情報．手術実施診療科と異なることもあるため，患者診療科を記載できるようにしている． +
 【省略】省略可
 
 ===== mmlDp:Department
 【内容】手術時に患者の所属していた診療科．構造は MML 共通形式参照． +
-【省略】不可 +
+【省略】不可、繰り返し有り +
 【例】内科 (ID 01) に所属している場合
 
  <mmlDp:Department>
@@ -280,7 +281,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== mmlPsi:PersonalizedInfo
 【内容】個人識別情報．構造は上記mmlPsi:PersonalizedInfo参照． +
-【省略】不可
+【省略】不可、繰り返し有り
 
 ===== mmlSg:anesthesiaProcedure
 【内容】麻酔法名情報 +
@@ -326,7 +327,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== mmlPsi:PersonalizedInfo
 【内容】個人識別情報．構造は上記mmlPsi:PersonalizedInfo参照． +
-【省略】不可
+【省略】不可、繰り返し有り
 
 ===== mmlSg:anesthesiaDuration
 【内容】麻酔時間 +
