@@ -13,7 +13,7 @@
 toc::[]
 
 === docInfoとは
-docInfoはOverviewで記述したとおり、各MmlModuleItemの先頭に記載され、各Itemに関する作成者やアクセス権の範囲などが記載される。
+docInfoはOverviewで解説したとおり、各MmlModuleItemの先頭に記載され、各Itemの作成者やアクセス権の範囲などが記載される。
 
 ==== docInfo
 
@@ -191,12 +191,12 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 【省略】不可 +
 
 ==== uid
-【内容】文書ユニーク ID．ユニーク番号の形式は UUID とする ( UUID はハイフンを含めた形式とする)．MML プロセッサーは，MML インスタンスを受け取った時に，何らかの手段で uid をローカルに保存しておくことを強く推奨する． +
+【内容】文書固有のID．ユニーク番号の形式は UUID とする ( UUID はハイフンを含めた形式とする)．MML プロセッサーは，MML インスタンスを受け取った時に，何らかの手段で uid をローカルに保存しておくことを強く推奨する． +
 【データ型】string +
 【省略】不可 +
 【例】
-
- <uid>0aae5960-667c-11d3-9751-00105a6792e7</uid>
+[source, xml]
+<uid>0aae5960-667c-11d3-9751-00105a6792e7</uid>
 
 ==== parentId
 【内容】関連親文書の ID．活用法については，基本方針の「文書間の関連付け」を参照すること． +
@@ -209,8 +209,8 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 |relation|string|#IMPLIED|MML0008|関連の種別
 |=====
 【例】親文書に対する訂正文書 (新しい版) である場合
-
- <parentId relation = "oldEdition">0aae5960-667c-11d3-9751-00105a6792e8</parentId>
+[source, xml]
+<parentId relation="oldEdition">0aae5960-667c-11d3-9751-00105a6792e8</parentId>
 
 ==== groupId
 【内容】グループ ID．活用法については，基本方針の「groupId による文書間の関連付け」を参照すること． +
@@ -239,7 +239,6 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 ==== mmlCi:CreatorInfo
 【内容】個々の文書の作成者情報．構造は MML 共通形式 (作成者情報形式) 参照． +
 【省略】不可
-
 
 ==== extRefs
 【内容】content 内に記載されているすべての外部リンク情報のリスト．content 内を解析しなくても，外部参照ファイルのリストを得ることができる． +

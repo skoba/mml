@@ -19,7 +19,12 @@ Attribute:: it is necessary to set up attributes so that the type and version of
 ==== securityLevel
 [horizontal]
 Description:: types of access rights. MML creator should settle the access rights of each MML instance in generation. The receiver of MML instance should grant access control as described.
-Occurrence:: Mandatory. If there are multiple accessRight elements, the accessRight elements are mutually under the "OR" condition. When there are more than two subordinate elements of accessRight by a facility, medical department, occupation, or person, the condition is "AND". If nothing meets this "AND" condition, the access right is not granted.
+Occurrence:: Mandatory.
+
+==== accessRight
+[horizontal]
+Description:: Access right definition.
+Occuurence:: more thean oneIf there are multiple accessRight elements, the accessRight elements are mutually under the "OR" condition. When there are more than two subordinate elements of accessRight by a facility, medical department, occupation, or person, the condition is "AND". If nothing meets this "AND" condition, the access right is not granted.
 Attributes::
 |=====
 |Name|Data type|Occurrence|Table|Description
@@ -32,13 +37,13 @@ all： permit to read, write and delete +
 |startDate|date|#IMPLIED| |Start date for access
 |endDate|date|#IMPLIED| |End date for access
 |=====
-In order to address no permission for the accessRight explicitly, set "none" for the permit attribute.
+In order to grant no permission by the accessRight explicitly, set "none" for the permit attribute.
 
-MML does not define "delete" implementation for delete request to the document. An example implementation was assumed that document status change to invisible logically and keep it with log file, instead of deleting it physically.
+MML does not define "delete" implementation for delete request to the document. An example implementation was assumed that document status change to invisible logically and record the "delete" operation in a log file, instead of deleting it physically.
 
 ==== mmlSc:facility
 [horizontal]
-Description:: facility. Grant access rights in the facility unit.
+Description:: facility. Facility unit to be granted the access right.
 Occurrence:: optional
 
 ==== mmlSc:facilityName
@@ -63,6 +68,11 @@ experience:: The facilities that subject(patient) has consulted to ever.
 Each application can be implemented to select the facilities of this condition.
 individual:: The individual facility ID to be granted is recorded to mmlSc:facilityId and mmlSc:facilityIdType.
 
+==== mmlSc:department
+[horizontal]
+Description:: Department. The department unit to be granted the access rights.
+Occurrence:: optional
+
 ==== mmlSc:departmentName
 [horizontal]
 Description:: Medical department name
@@ -82,5 +92,155 @@ Occurrence:: Optional
 ==== mmlSc:licenseName
 [horizontal]
 Description:: Occupation/license name
-Occurrence:: More than zero.
-Omission: not allowed<br>Repetition: allowed. The element should be repeated the same number of times as the number of occupations for which access rights are set. <br> Attribute:
+Occurrence:: More than zero. This element should be repeated as the number of occupations to be granted.
+Attribute::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlSc:licenseCode|string|#REQUIRED|MML0026|Occupation/license code
+|mmlSc:tableId|string|#IMPLIED| |Occupation/license code table. MML0026 as the default.
+|=====
+
+==== mmlSc:person
+[horizontal]
+Description:: person to be granted
+Occurrence:: optional
+
+==== mmlSc:personName
+[horizontal]
+Description:: person's name
+Data type:: string
+Occurrence:: More than one. This element should be repeated as many as the number of people for whom access rights are privileged.
+Attribute::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlSc:personCode|string|#REQUIRED|MML0036|Definition of personal access right
+|mmlSc:tableId|string|#IMPLIED| |Table name used for the personal access right definition. The default table is MML0036.
+|mmlSc:personId|string|#IMPLIED| |Personal ID
+|mmlSc:personIdType|string|#IMPLIED| |The master name of ID.
+|=====
+
+Each definition of the personal access right are described as follows
+|=====
+|all| All people accessible
+|creator|Only the creators of this document are accessible
+|patient|Only the patient(subject to be described) is accessible
+|individual| Access rights are granted to individual person. +
+Permitted persons are subjected to mmlSc:personId and mmlSc:personIdType.．
+|=====
+
+.Example of description of securityLevel (type of access right)
+In case to grant an access right to read, update, and delete for doctors of the internal medicine department, Miyazaki Medical College Hospital from October 1, 2001 to December 31, 2001 .
+[source, xml]
+<securityLevel>
+  <accessRight permit="all" startDate="2001-10-01" endDate="2001-12-31">
+    <mmlSc:facility>
+      <mmlSc:facilityName mmlSc:facilityCode="individual" mmlSc:tableId="MML0035" mmlSc:facilityId="JPN453010100003" mmlSc:facilityIdType="JMARI">
+        Miyazaki Medical College Hospital
+      </mmlSc:facilityName>
+    </mmlSc:facility>
+    <mmlSc:department>
+      <mmlSc:departmentName mmlSc:departmentCode="01" mmlSc:tableId="MML0028"/>
+    </mmlSc:department>
+    <mmlSc:license>
+      <mmlSc:licenseName mmlSc:licenseCode="doctor" mmlSc:tableId="MML0026"/>
+    </mmlSc:license>
+  </accessRight>
+</securityLevel>
+
+.Example to grant all access rights for the creator's facility in indefinite period, and grant access right to read for the subject patient named "Taro Kanja"  from October 1, 2001 to December 31, 2001.
+
+[source, xml]
+<securityLevel>
+  <accessRight permit="all">
+    <mmlSc:facility>
+      <mmlSc:facilityName mmlSc:facilityCode="creator" mmlSc:tableId="MML0035">
+        Creator's facility
+      </mmlSc:facilityName>
+    </mmlSc:facility>
+  </accessRight>
+  <accessRight permit="read" startDate="2001-10-01" endDate="2001-12-31">
+    <mmlSc:person>
+      <mmlSc:personName mmlSc:personCode="patient" mmlSc:tableId="MML0036" mmlSc:personId="4500001234" mmlSc:personIdType="dolphinUserid_2001-10-03">
+        Taro Kanja
+      </mmlSc:personName>
+    </mmlSc:person>
+  </accessRight>
+</securityLevel>
+
+==== title
+[horizontal]
+Description:: document title
+Data type:: string
+Occurrence:: mandatory.
+Attribute::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|generationPurpose|string|#IMPLIED|MML0007|Document type in detail
+|=====
+
+==== docId
+[horizontal]
+Description:: document title
+Occurrence:: mandatory.
+
+==== uid
+[horizontal]
+Description:: Unique identifier for the document. The format should be UUID. (UUID is a format consisted with hexadecimal number and hyphens.) It is strongly recommended that the MML processor should store the uid in local strage when it receives an MML instance.
+Occurrence:: mandatory.
+.Example
+[source, xml]
+<uid>0aae5960-667c-11d3-9751-00105a6792e7</uid>
+
+==== parentId
+[horizontal]
+Description:: Document identifier for parent document. This ID is used to link document section for reference in general.
+Data type:: string
+Occurrence:: More than zero. If this document section has multiple parents, this element should be repeated as many as parents.
+Attribute::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|relation|string|#IMPLIED|MML0008|Type of relation
+|=====
+.Example: this document is the update(new version) for the parent document.
+[source, xml]
+<parentId relation="oldEdition">0aae5960-667c-11d3-9751-00105a6792e8</parentId>
+
+==== groupId
+[horizontal]
+Description:: Identifier for document group. groupId is used to link grouped document section in general.
+Data type:: string
+Occurrence:: More then zero. If the document belongs to multiple groups, groupId should be repeated as many as the groups.
+Attribute::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|groupClass|string|#IMPLIED|MML0007| Type of group
+|=====
+
+==== confirmDate
+[horizontal]
+Description:: Date and time when the electronic storage of a medical chart is confirmed.
+Data type:: dateTime recorded by ISO8610 Format: CCYY-MM-DDThh:mm:ss
+Occurrence:: mandatory.
+Attribute:: If this document was recorded with other sections with time series, this element should address the start/end dates and times in the following attributes. While scopePeriod represents the period covered by an entire MML document, this confirmDate addresses the period of one "MmlModuleItem"
+|=====
+|Name|Data type|Occurrence|Table|Description
+|start|dateTime|#IMPLIED| |Start date and time for time series.
+|end|dateTime|#IMPLIED| |End date and time for time series.
+|firstConfirmDate|dateTime| |#IMPLIED|The first date and time when the document was updated.
+|eventDate|dateTime| |#IMPLIED|The date and time when the recorded event happened.
+|=====
+
+==== mmlCi:CreatorInfo
+[horizontal]
+Description:: creator information of individual document. (ref. mmlCi:CreatorInfo)
+Occurrence:: mandatory
+
+==== extRefs
+[horizontal]
+Description:: list of all external link information described in this document. The list of external reference files can be obtained without parsing the content module of this document.
+Occurrence:: mandatory
+
+==== mmlCm:extRef
+[horizontal]
+Description:: external link information. (ref. mmlCm:extRef)
+Occurrence:: more than zero. This element should be repeated as much as external links in the document.
