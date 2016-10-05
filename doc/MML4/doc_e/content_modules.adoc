@@ -1,6 +1,7 @@
-== MMLコンテンツ モジュール詳説
+== MML Content Module in details
 
-　MMLではユースケースに応じて下記のモジュールを設計した。各モジュールを1文書単位としてMmlItemに記載することとしている。詳細は各ドキュメントおよびスキーマを参照すること。
+MML content modules have been designed for use cases and each MML item contains one module as a document unit. We describe in details in the following documents and XML schema.
+
 
 include::patient_module.adoc[]
 
