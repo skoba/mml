@@ -1,0 +1,206 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:sectnums: y
+:imagesdir: ./figures
+:linkcss:
+
+=== Patient information module
+.Structure of elements
+image::mmlpi.jpg[]
+
+==== namespaces declaration
+The following is namespaces declaration of this module.
+[source, xml]
+xmlns:mmlPi="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
+
+
+.Lis t of elements
+|=====
+| |Elements|Attribute|Datatypes|Occurence|TableId
+|M10.|mmlPi:PatientModule| | | |
+|M10.1.|mmlPi:uniqueInfo| | | |
+|M10.1.1.|mmlPi:masterId| | | |
+|M10.1.1.1.|mmlCm:Id| |string| |
+|M10.1.2.|mmlPi:otherId| | |*|
+| | |mmlPi:type|string|#REQUIRED|MML0009
+|M10.1.2.1.|mmlCm:Id| |string| |
+|M10.2.|mmlPi:personName| | | |
+|M10.2.1.|mmlNm:Name| | |+|
+|M10.3.|mmlPi:birthday| |date| |
+|M10.4.|mmlPi:sex| |string| |MML0010
+|M10.5.|mmlPi:nationality| |string|?|
+| | |mmlPi:subtype|string|#IMPLIED|
+|M10.6.|mmlPi:race| |string|?|
+| | |mmlPi:raceCode|string|#IMPLIED|
+| | |mmlPi:raceCodeId|string|#IMPLIED|
+|M10.7.|mmlPi:marital| |string|?|MML0011
+|M10.8.|mmlPi:addresses| | |?|
+|M10.8.1.|mmlAd:Address| | |*|
+|M10.9.|mmlPi:emailAddresses| | |?|
+|M10.9.1.|mmlCm:email| |string|*|
+|M10.10.|mmlPi:phones| | |?|
+|M10.10.1.|mmlPh:Phone| | |*|
+|M10.11.|mmlPi:accountNumber| |string|?|
+|M10.12.|mmlPi:socialIdentification| |string|?|
+|M10.13.|mmlPi:death| |boolean|?|
+| | |mmlPi:date|date/dateTime|#IMPLIED
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: 1 or more, *: 0 or more +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+==== Elements in details
+===== M10. mmlPi:PatientModule
+[horizontal]
+Description:: patient information
+
+===== M10.1. mmlPi:uniqueInfo
+[horizontal]
+Description:: identifier information.
+Occurrence:: mandatory
+
+===== M10.1.1. mmlPi:masterId
+[horizontal]
+Description:: master ID. This must be identical to the masterId of an MmlHeader.
+Occurrence:: mandatory
+
+===== M10.1.1.1. mmlCm:Id
+[horizontal]
+Description:: Ref. MML common ID format.
+Occurrence:: mandatory
+
+===== M10.1.2. mmlPi:otherId
+[horizontal]
+Description:: other identifiers. These IDs are subjected to a proxy, key person, or etc.
+Occurrence:: more than zero. This element should be as many as available IDs.
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlPi:type|string|#REQUIRED|MML0009|type of other ID
+|=====
+
+===== M10.1.2.1. mmlCm:Id
+[horizontal]
+Description:: Ref. mmlCm:Id
+Occurrence:: mandatory
+
+===== M10.2. mmlPi:personName
+[horizontal]
+Description:: Individual personal name information.
+Occurrence:: mandatory.
+
+===== M10.2.1. mmlNm:Name
+[horizontal]
+Description:: Ref. MML common format, mmlNm:Name
+Occurrence:: more than one. This element should be repeated as many as name expressions.
+
+===== M10.3. mmlPi:birthday
+[horizontal]
+Description:: Date of birth
+Data type:: dateTime, ISO8601(CCYY-MM-DD).
+Occurrence:: mandatory.
+
+.Example
+[source, xml]
+<mmlPi:birthday>1958-10-21</mmlPi:birthday>
+
+===== M10.4. mmlPi:sex
+[horizontal]
+Description:: Gender expression. (Ref to Table MML0010)
+Data type:: string.
+Occurrence:: mandatory.
+
+===== M10.5. mmlPi:nationality
+[horizontal]
+Description:: nationality code. (Ref to ISO 3166 A3). For example, Japan: JPN
+Data type:: string.
+Occurrence:: optional.
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlPi:subtype|string|#IMPLIED|Code of second nationality. (ref. ISO 3166 A3)
+|=====
+.Example The first nationality is Japan and the second is USA.
+[source, xml]
+<mmlPi:nationality mmlPi:subtype="USA">JPN</mmlPi:nationality>
+
+===== M10.6. mmlPi:race
+[horizontal]
+Description:: race, ethnic group
+Data type:: string
+Occurrence:: optional
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlPi:raceCode|string|#IMPLIED|Code
+|mmlPi:raceCodeId|string|#IMPLIED|Table name of code
+|=====
+
+===== M10.7. mmlPi:marital
+[horizontal]
+Description:: marital status. Ref table MML0011
+Data type:: string
+Occurrence:: optional
+
+===== M10.8. mmlPi:addresses
+[horizontal]
+Description:: Parent element of the following addresses.
+Occurrence:: optional
+
+===== M10.8.1. mmlAd:Address
+[horizontal]
+Description:: Address. Ref to mmlAd:Address
+Occurrence:: more than zero. This element should be repeated as many as the expressions of address.
+
+===== M10.9. mmlPi:emailAddresses
+[horizontal]
+Description:: Parent element of the following email addresses.
+Occurrence:: optional
+
+===== M10.9.1. mmlCm:email
+[horizontal]
+Description:: email address.
+Data type:: string
+Occurrence:: more than zero. This element should be repeated as many as email addresses.
+
+===== M10.10. mmlPi:phones
+[horizontal]
+Description:: Parent element of the following phone numbers.
+Occurrence:: optional
+
+===== M10.10.1. mmlPh:Phone
+[horizontal]
+Description:: Phone number. Ref to mmlPh:Phone
+Occurrence:: more than zero. This element should be repeated as many as contacts.
+
+===== M10.11. mmlPi:accountNumber
+[horizontal]
+Description:: Number for accounting.
+Data type:: string.
+Occurrence:: optional.
+
+===== M10.12. mmlPi:socialIdentification
+[horizontal]
+Description:: Social identifier
+Data type:: string.
+Occurrence:: optional.
+
+===== M10.13. mmlPi:death
+[horizontal]
+Description:: Death flag. true: dead, false: alive.
+Data type:: Boolean.
+Occurrence:: optional.
+attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlPi:date|date/dateTime|#IMPLIED|date of death. data type should be date or dateTime.
+|=====
+.Example: died on September 1,1999.
+[source, xml]
+<mmlPi:death mmlPi:date="1999-09-01">true</mmlPi:death>
+
+.Example: died at 6:15 on September 1, 1999
+[source, xml]
+<mmlPi:death mmlPi:date="1999-09-01T06:15">true</mmlPi:death>

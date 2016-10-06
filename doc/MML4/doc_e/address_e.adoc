@@ -9,7 +9,7 @@
 :imagesdir: ./figures
 :linkcss:
 
-== Address expression format
+=== Address expression format
 toc::[]
 
 .Structure of elements
@@ -33,8 +33,8 @@ image::mmlad.jpg[]
 Occurrences; blank: 1, ?: 0 or 1, +: 1 or more, *: 0 or more +
 #REQUIRED: mandatory attribute, #IMPLIED: optional attribute
 
-=== Elements in details
-==== M1. mmlAd:Address (Address expression format)
+==== Elements in details
+===== M1. mmlAd:Address (Address expression format)
 [horizontal]
 Description:: common format to express addresses. You can choice full(unstructured)(M1.1.) address expression or subdivided address expression using 4 elements (from M1.2. to M1.5.).
 Attributes::
@@ -48,43 +48,43 @@ Example:: Address for business address by alphabets
 [source, xml]
 <mmlAd:Address mmlAd:repCode="A" mmlAd:addressClass="business" mmlAd:tableId="MML0025">
 
-==== M1.1. mmlAd:full
+===== M1.1. mmlAd:full
 [horizontal]
 Description:: full(unstructured) address
 Data type:: string +
 Occurrence:: optional
 
-==== M1.2. mmlAd:prefecture
+===== M1.2. mmlAd:prefecture
 [horizontal]
 Description:: prefecture
 Data type:: string
 Occurrence:: optional
 
-==== M1.3. mmlAd:city
+===== M1.3. mmlAd:city
 [horizontal]
 Description:: city, ward, etc.
 Data type:: string
 Occurrence:: optional
 
-==== M1.4. mmlAd:town
+===== M1.4. mmlAd:town
 [horizontal]
 Description:: town or village
 Data type:: string
 Occurrence:: optional
 
-==== M1.5. mmlAd:homeNumber
+===== M1.5. mmlAd:homeNumber
 [horizontal]
 Description:: remaining address items such as house number, street name, apartment name, room number, etc.
 Data type:: string
 Occurrence:: optional
 
-==== M1.6. mmlAd:zip
+===== M1.6. mmlAd:zip
 [horizontal]
 Description:: zip code
 Data type:: string
 Occurrence:: optional
 
-==== M1.7. mmlAd:countryCode
+===== M1.7. mmlAd:countryCode
 [horizontal]
 Description:: country code. ISO 3166 A3 code is used.
 Data type:: string
