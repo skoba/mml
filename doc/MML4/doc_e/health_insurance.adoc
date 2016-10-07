@@ -1,0 +1,393 @@
+:imagesdir: ./figures
+
+=== Health Insurance information module
+
+.Structure of elements
+image::mmlhi.jpg[]
+
+==== Namespaces declaration
+Namespaces declaration of this module is the following:
+[source, xml]
+xmlns:mmlHi= "http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
+
+.List of elements
+|=====
+| |Elements|Attribute|Datatypes|Occurence|TableId
+|M11.|mmlHi:HealthInsuranceModule| | | |
+| | |mmlHi:countryType|string|#IMPLIED|
+|M11.1.|mmlHi:insuranceClass| |string|?|
+| | |mmlHi:ClassCode|string|#REQUIRED|
+| | |mmlHi:tableId|string|#REQUIRED|MML0031
+|M11.2.|mmlHi:insuranceNumber| |string| |
+|M11.3.|mmlHi:clientId| | | |
+|M11.3.1.|mmlHi:group| |string| |
+|M11.3.2.|mmlHi:number| |string| |
+|M11.4.|mmlHi:familyClass| |boolean| |
+|M11.5.|mmlHi:clientInfo| | |?|
+|M11.5.1.|mmlHi:personName| | |?|
+|M11.5.1.1.|mmlNm:Name| | |*|
+|M11.5.2.|mmlHi:addresses| | |?|
+|M11.5.2.1.|mmlAd:Address| | |*|
+|M11.5.3.|mmlHi:phones| | |?|
+|M11.5.3.1.|mmlPh:Phone| | |*|
+|M11.6.|mmlHi:continuedDiseases| | |?|
+|M11.6.1.|mmlHi:diseases| |string|+|
+|M11.7.|mmlHi:startDate| |date| |
+|M11.8.|mmlHi:expiredDate| |date| |
+|M11.9.|mmlHi:paymentInRatio| |decimal|?|
+|M11.10.|mmlHi:paymentOutRatio| |decimal|?|
+|M11.11.|mmlHi:insuredInfo| | |?|
+|M11.11.1.|mmlHi:facility| | |?|
+|M11.11.1.1.|mmlFc:Facility| | |?|
+|M11.11.2.|mmlHi:addresses| | |?|
+|M11.11.2.1.|mmlAd:Address| | |*|
+|M11.11.3.|mmlHi:phones| | |?|
+|M11.11.3.1.|mmlPh:Phone| | |*|
+|M11.12.|mmlHi:workInfo| | |?|
+|M11.12.1.|mmlHi:facility| | |?|
+|M11.12.1.1.|mmlFc:Facility| | |?|
+|M11.12.2.|mmlHi:addresses| | |?|
+|M11.12.2.1.|mmlAd:Address| | |*|
+|M11.12.3.|mmlHi:phones| | |?|
+|M11.12.3.1.|mmlPh:Phone| | |*|
+|M11.13.|mmlHi:publicInsurance| | |?|
+|M11.13.1.|mmlHi:publicInsuranceItem| | |+|
+| | |mmlHi:priority|string|#REQUIRED|
+|M11.13.1.1.|mmlHi:providerName| |string|?|
+|M11.13.1.2.|mmlHi:provider| |string| |
+|M11.13.1.3.|mmlHi:recipient| |string| |
+|M11.13.1.4.|mmlHi:startDate| |date| |
+|M11.13.1.5.|mmlHi:expiredDate| |date| |
+|M11.13.1.6.|mmlHi:paymentRatio| |decimal|?|
+| | |mmlHi:ratioType|string|#REQUIRED|MML0032
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: more than 1, *: more than 0 +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+
+==== Elements in details
+===== M11. mmlHi:HealthInsuranceModule
+[horizontal]
+Description:: combination of available health insurance and public insurance.
+Occurrence:: more than one. This MmlModuleItem should be repeated as many as combinations of insurance.
+
+For example, if these 3 insurance were used for payment,
+
+. National health insurance only
+. National health insurance and public subsidy(Tbc)
+. Company insurance for health care, continued
+
+each insurance information should be described in each <MmlModuleItem> for 3 times.
+[horizontal]
+Attributes:: the following attribute is provided to indicate that this module is unique to Japan.
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlHi:countryType|string|#IMPLIED|Type of nation. Japan: JPN
+|=====
+.Example
+[source, xml]
+<mmlHi:HealthInsuranceModule mmlHi:countryType="JPN">
+
+===== M11.1. mmlHi:insuranceClass
+[horizontal]
+Description:: class of insurance. Classification should be quoted from table MML0031, but other tables can be quoted if user has to other items for local subsidy or others. In this case, the table name should be recorded in this element.
+Data type:: string
+Occurrence:: 0 or 1.
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlHi:ClassCode|string|#REQUIRED|
+|mmlHi:tableId|string|#REQUIRED|MML0031
+|=====
+
+.Example
+[source, xml]
+ <mmlHi:insuranceClass mmlHi:ClassCode="00" mmlHi:tableId="MML0031">National health insurance</mmlHi:insuranceClass>
+
+===== M11.2. mmlHi:insuranceNumber
+[horizontal]
+Description:: Identification number of health insurance
+Data type:: string
+Occurrence:: 1.
+
+.Example
+[source, xml]
+<mmlHi:insuranceNumber>8001</mmlHi:insuranceNumber>
+
+===== M11.3. mmlHi:clientId
+[horizontal]
+Description:: Identifier for insured person
+Occurrence:: 1.
+
+===== M11.3.1. mmlHi:group
+[horizontal]
+Description:: Group identifier for insured person
+Data type:: string
+Occurrence:: 1.
+
+===== M11.3.2. mmlHi:number
+[horizontal]
+Description:: Identification number for insured person
+Data type:: string
+Occurrence:: 1.
+.Example
+[source, xml]
+<mmlHi:clientId>
+  <mmlHi:group>Miyaichi Miheshi</mmlHi:group>
+  <mmlHi:number>421</mmlHi:number>
+</mmlHi:clientId>
+
+===== M11.4. mmlHi:familyClass
+[horizontal]
+Description:: Class for insured person or their family member. True: insured person, false: family member.
+Data type:: Boolean
+Occurrence:: 1.
+
+.Example: insured person
+[source, xml]
+<mmlHi:familyClass>true</mmlHi:familyClass>
+
+.Example: family
+[source, xml]
+<mmlHi:familyClass>false</mmlHi:familyClass>
+
+===== M11.5. mmlHi:clientInfo
+[horizontal]
+Description:: information of insured person.
+Occurrence:: 0 or 1.
+
+===== M11.5.1. mmlHi:personName
+[horizontal]
+Description:: parent element for the insured person's names described below.
+Occurrence:: 0 or 1.
+
+===== M11.5.1.1. mmlNm:Name
+[horizontal]
+Description:: name of insured person. (ref. mmlNm:Name)
+Occurrence:: more than 0. This element should be repeated as many as expressions of name.
+
+===== M11.5.2. mmlHi:addresses
+[horizontal]
+Description:: parent element for the insured person's addresses described below.
+Occurrence:: 0 or 1.
+
+===== M11.5.2.1. mmlAd:Address
+Description:: address of insured person. (ref. mmlAd:Address)
+Occurrence:: more than 0. This element should be repeated as many as expressions or type of addresses.
+
+===== M11.5.3. mmlHi:phones
+[horizontal]
+Description:: parent element for the insured person's phones described below.
+Occurrence:: 0 or 1.
+
+===== M11.5.3.1. mmlPh:Phone
+Description:: address of insured person. (ref. mmlPh:Phone)
+Occurrence:: more than 0. This element should be repeated as many as expressions or type of phones.
+
+===== M11.6. mmlHi:continuedDiseases
+Description:: information of diseases to be continued care.
+Occurrence:: 0 or 1.
+
+===== M11.6.1. mmlHi:diseases
+[horizontal]
+Description:: Names of continued disease.
+Data type:: string
+Occurrence:: more than 1. If insured person has multiple diseases to continue care,  this element should be repeated as the number.
+
+.Example: Diabetes mellitus and hypertension
+[source, xml]
+<mmlHi:continuedDiseases>
+  <mmlHi:diseases>diabetes mellitus</mmlHi:diseases>
+  <mmlHi:diseases>hypertension</mmlHi:diseases>
+</mmlHi:continuedDiseases>
+
+===== M11.6.7. mmlHi:startDate
+[horizontal]
+Description:: Start date for payment.
+Data type:: date, ISO 8601 format(CCYY-MM-DD)
+Occurrence:: 1.
+
+.Example
+[source, xml]
+<mmlHi:startDate>1995-04-01</mmlHi:startDate>
+
+===== M11.8. mmlHi:expiredDate
+[horizontal]
+Description:: Expired date of insurance payment.
+Data type:: date, ISO 8601 format(CCYY-MM-DD)
+Occurrence:: 1.
+
+.Example
+[source, xml]
+<mmlHi:expiredDate>1999-09-30</mmlHi:expiredDate>
+
+===== M11.9. mmlHi:paymentInRatio
+[horizontal]
+Description:: insured person's payment ratio for inpatient care. 0[.0][0]_1[.0][0] (For example, 30% payment: 0.3)
+Data type:: decimal
+Occurrence:: 0 or 1.
+
+.Example 20% payment
+[source, xml]
+<mmlHi:paymentInRatio>0.2</mmlHi:paymentInRatio>
+
+===== M11.10. mmlHi:paymentOutRatio
+[horizontal]
+Description:: insured person's payment ratio for outpatient care. 0[.0][0]_1[.0][0] (For example, 30% payment: 0.3)
+Data type:: decimal
+Occurrence:: 0 or 1.
+
+.Example 20% payment
+[source, xml]
+<mmlHi:paymentOutRatio>0.2</mmlHi:paymentOutRatio>
+
+===== M11.11. mmlHi:insuredInfo
+[horizontal]
+Description:: insurer's information
+Occurrence:: 0 or 1.
+
+===== M11.11.1. mmlHi:facility
+[horizontal]
+Description:: parent element for the insurer's information described below.
+Occurrence:: 0 or 1.
+
+===== M11.11.1.1. mmlFc:Facility
+[horizontal]
+Description:: facility information. (ref. mmlFc:Facility)
+Occurrence:: 0 or 1.
+
+===== M11.11.2. mmlHi:addresses
+[horizontal]
+Description:: parent element for the insurer's address described below.
+Occurrence:: 0 or 1.
+
+===== M11.11.2.1. mmlAd:Address
+[horizontal]
+Description:: address of insurer. (ref. mmlAd:Address)
+Occurrence:: more than 0. This element should be repeated as many as expressions or type of addresses.
+
+===== M11.11.3. mmlHi:phones
+[horizontal]
+Description:: parent element for the insurer's phones described below.
+Occurrence:: 0 or 1.
+
+===== M11.11.3.1. mmlPh:Phone
+Description:: address of insured person. (ref. mmlPh:Phone)
+Occurrence:: more than 0. This element should be repeated as many as expressions or type of phones.
+
+===== M11.12 mmlHi:workInfo
+[horizontal]
+Description:: place of business information of an insured person.
+Occurrence:: 0 or 1.
+
+===== M11.12.1. mmlHi:facility
+[horizontal]
+Description:: parent element for the business facility described below.
+Occurrence:: 0 or 1.
+
+===== M11.12.1.1. mmlFc:Facility
+[horizontal]
+Description:: facility information. (ref. mmlFc:Facility)
+Occurrence:: 0 or 1.
+
+===== M11.12.2. mmlHi:addresses
+[horizontal]
+Description:: parent element for the place of business described below.
+Occurrence:: 0 or 1.
+
+===== M11.12.2.1. mmlAd:Address
+[horizontal]
+Description:: address of insured person. (ref. mmlAd:Address)
+Occurrence:: more than 0. This element should be repeated as many as expressions or type of addresses.
+
+===== M11.12.3. mmlHi:phones
+[horizontal]
+Description:: parent element for the business phones described below.
+Occurrence:: 0 or 1.
+
+===== M11.12.3.1. mmlPh:Phone
+[horizontal]
+Description:: address of insured person. (ref. mmlPh:Phone)
+Occurrence:: more than 0. This element should be repeated as many as expressions or type of phones.
+
+===== M11.13. mmlHi:publicInsurance
+[horizontal]
+Description:: information of public subsidy
+Occurrence:: 0 or 1
+
+===== M11.13.1. mmlHi:publicInsuranceItem
+[horizontal]
+Description:: public subsidy
+Occurrence:: more than 0. This element should be repeated as many as available public subsidies.
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlHi:priority|string|#REQUIRED|priority of subsidies +
+Ordinal integer should be started from 1
+|=====
+
+.Example
+[source, xml]
+<mmlHi:publicInsuranceItem mmlHi:priority="1">
+
+===== M11.13.1.1. mmlHi:providerName
+[horizontal]
+Description:: name of public subsidy
+Data type:: string
+Occurrence:: 0 or 1
+
+===== M11.13.1.2. mmlHi:provider
+[horizontal]
+Description:: subsidy provider identifier
+Data type:: string
+Occurrence:: 1
+
+===== M11.13.1.3. mmlHi:recipient
+[horizontal]
+Description:: subsidy receiver identifier
+Data type:: string
+Occurrence:: 1
+
+===== M11.13.1.4. mmlHi:startDate
+[horizontal]
+Description:: Start date for subsidy.
+Data type:: date, ISO 8601 format(CCYY-MM-DD)
+Occurrence:: 1.
+
+===== M11.13.1.5. mmlHi:expireDate
+[horizontal]
+Description:: Expired date of subsidy.
+Data type:: date, ISO 8601 format(CCYY-MM-DD)
+Occurrence:: 1.
+
+===== M11.13.1.6. mmlHi:paymentRatio
+[horizontal]
+Description:: receiver payment or payment ratio for subsidy. 0[.0][0]_1[.0][0] (For example, 30% payment: 0.3)
+Data type:: decimal
+Occurrence:: 0 or 1.
+Attributes::
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlHi:ratioType|String|#REQUIRED|MML0032|payment ratio or payment fee
+|=====
+
+.Example: payment is fixed to 10,000JPY.
+[source, xml]
+<mmlHi:paymentRatio mmlHi:ratioType="fix">10000</mmlHi:paymentRatio>
+
+.Example Payment ratio is 5%.
+[source, xml]
+<mmlHi:paymentRatio mmlHi:ratioType="ratio">0.05</mmlHi:paymentRatio>
+
+.Example
+[source, xml]
+<mmlHi:publicInsurance>
+  <mmlHi:publicInsuranceItem mmlHi:priority="1">
+    <mmlHi:providerName>public subsidy</mmlHi:providerName>
+    <mmlHi:provider>15450034</mmlHi:provider>
+    <mmlHi:recipient>0009043</mmlHi:recipient>
+    <mmlHi:startDate>1997-09-30</mmlHi:startDate>
+    <mmlHi:expiredDate>1999-09-30</mmlHi:expiredDate>
+    <mmlHi:paymentRatio mmlHi:ratioType="fix">10000</mmlHi:paymentRatio>
+  </mmlHi:publicInsuranceItem>
+</mmlHi:publicInsurance>
