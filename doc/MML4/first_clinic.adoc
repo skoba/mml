@@ -14,136 +14,136 @@ image::mmlfcl.jpg[]
 
 ==== namespaces 宣言
 本モジュールのnamespaces宣言は，以下とする．
-
- xmlns:mmlFcl= "http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"
+[source, xml]
+xmlns:mmlFcl= "http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"
 
 
 .エレメント一覧表
 |=====
 | |Elements|Attribute|Datatypes|Occurence|TableId
-|1.|mmlFcl:FirstClinicModule| | | |
-|1.1.|mmlFcl:familyHistory| | |?|
-|1.1.1.|mmlFcl:familyHistoryItem| | |+|
-|1.1.1.1.|mmlFcl:relation| |string| |MML0020
-|1.1.1.2.|mmlRd:RegisteredDiagnosisModule| | | |
-|1.1.1.3.|mmlFcl:age| |duration|?|
-|1.1.1.4.|mmlFcl:memo| |string|?|
-|1.2.|mmlFcl:childhood| | |?|
-|1.2.1.|mmlFcl:birthInfo| | |?|
-|1.2.1.1.|mmlFc:Facility| | |?|
-|1.2.1.2.|mmlFcl:deliveryWeeks| |duration|?|
-|1.2.1.3.|mmlFcl:deliveryMethod| |string|?|
-|1.2.1.4.|mmlFcl:bodyWeight| |decimal|?|
+|M15.|mmlFcl:FirstClinicModule| | | |
+|M15.1.|mmlFcl:familyHistory| | |?|
+|M15.1.1.|mmlFcl:familyHistoryItem| | |+|
+|M15.1.1.1.|mmlFcl:relation| |string| |MML0020
+|M15.1.1.2.|mmlRd:RegisteredDiagnosisModule| | | |
+|M15.1.1.3.|mmlFcl:age| |duration|?|
+|M15.1.1.4.|mmlFcl:memo| |string|?|
+|M15.2.|mmlFcl:childhood| | |?|
+|M15.2.1.|mmlFcl:birthInfo| | |?|
+|M15.2.1.1.|mmlFc:Facility| | |?|
+|M15.2.1.2.|mmlFcl:deliveryWeeks| |string|?|
+|M15.2.1.3.|mmlFcl:deliveryMethod| |string|?|
+|M15.2.1.4.|mmlFcl:bodyWeight| |decimal|?|
 | | |mmlFcl:unit|string|#REQUIRED|
-|1.2.1.5.|mmlFcl:bodyHeight| |decimal|?|
+|M15.2.1.5.|mmlFcl:bodyHeight| |decimal|?|
 | | |mmlFcl:unit|string|#REQUIRED|
-|1.2.1.6.|mmlFcl:chestCircumference| |decimal|?|
+|M15.2.1.6.|mmlFcl:chestCircumference| |decimal|?|
 | | |mmlFcl:unit|string|#REQUIRED|
-|1.2.1.7.|mmlFcl:headCircumference| |decimal|?|
+|M15.2.1.7.|mmlFcl:headCircumference| |decimal|?|
 | | |mmlFcl:unit|string|#REQUIRED|
-|1.2.1.8.|mmlFcl:memo| |string|?|
-|1.2.2.|mmlFcl:vaccination| | |?|
-|1.2.2.1.|mmlFcl:vaccinationItem| | |+|
-|1.2.2.1.1.|mmlFcl:vaccine| |string| |
-|1.2.2.1.2.|mmlFcl:injected| |boolean| |
-|1.2.2.1.3.|mmlFcl:age| |duration|?|
-|1.2.2.1.4.|mmlFcl:memo| |string|?|
-|1.3.|mlFcl:pastHistory| | |?|
-|1.3.1.|mmlFcl:freeNotes| |string| |
-|1.3.2.|mmlFcl:pastHistoryItem| | |*|
-|1.3.2.1.|mmlFcl:timeExpression| |string|	|
-|1.3.2.2.|mmlFcl:eventExpression| |string|*|
-|1.4.|mmlFcl:chiefComplaints| |string|?|
-|1.5.|mmlFcl:presentIllnessNotes| |string|?|
+|M15.2.1.8.|mmlFcl:memo| |string|?|
+|M15.2.2.|mmlFcl:vaccination| | |?|
+|M15.2.2.1.|mmlFcl:vaccinationItem| | |+|
+|M15.2.2.1.1.|mmlFcl:vaccine| |string| |
+|M15.2.2.1.2.|mmlFcl:injected| |boolean| |
+|M15.2.2.1.3.|mmlFcl:age| |duration|?|
+|M15.2.2.1.4.|mmlFcl:memo| |string|?|
+|M15.3.|mlFcl:pastHistory| | |?|
+|M15.3.1.|mmlFcl:freeNotes| |string| |
+|M15.3.2.|mmlFcl:pastHistoryItem| | |*|
+|M15.3.2.1.|mmlFcl:timeExpression| |string|	|
+|M15.3.2.2.|mmlFcl:eventExpression| |string|*|
+|M15.4.|mmlFcl:chiefComplaints| |string|?|
+|M15.5.|mmlFcl:presentIllnessNotes| |string|?|
 |=====
 Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
 
 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== mmlFcl:FirstClinicModule
+===== M15. mmlFcl:FirstClinicModule
 【内容】初診時特有情報
 
-===== mmlFcl:familyHistory
+===== M15.1. mmlFcl:familyHistory
 【内容】家族歴情報 +
 【省略】省略可
 
-===== mmlFcl:familyHistoryItem
+===== M15.1.1. mmlFcl:familyHistoryItem
 【内容】繰り返しのためのエレメント +
 【省略】不可 +
 【繰り返し設定】繰り返しあり．記載する家族が複数いれば繰り返す．さらに，一人の家族に複数の疾患がある場合も，繰り返す．
 
-===== mmlFcl:relation
+===== M15.1.1.1. mmlFcl:relation
 【内容】続柄コード．テーブル MML0020 を使用． +
 【データ型】string +
 【省略】不可 +
 【例】義理の母親．(「義理の」関係の場合は，末尾に「InLaw」を追加する)
+[source, xml]
+<mmlFcl:relation>motherInLaw</mmlFcl:relation>
 
- <mmlFcl:relation>motherInLaw</mmlFcl:relation>
-
-===== mmlRd:RegisteredDiagnosisModule
+===== M15.1.1.1.2. mmlRd:RegisteredDiagnosisModule
 【内容】疾患名情報．構造は，MMLモジュール (診断履歴情報) を参照． +
 【省略】不可 +
 【例】1989 年 8 月 25 日に胃癌で死亡
+[source, xml]
+<mmlRd:RegisteredDiagnosisModule>
+  <mmlRd:diagnosis mmlRd:code="C169-.007" mmlRd:system="ICD10">gastric cancer</mmlRd:diagnosis>
+  <mmlRd:endDate>1989-08-25</mmlRd:endDate>
+  <mmlRd:outcome>died</mmlRd:outcome>
+</mmlRd:RegisteredDiagnosisModule>
 
- <mmlRd:RegisteredDiagnosisModule>
-   <mmlRd:diagnosis mmlRd:code="C169-.007" mmlRd:system="ICD10">gastric cancer</mmlRd:diagnosis>
-   <mmlRd:endDate>1989-08-25</mmlRd:endDate>
-   <mmlRd:outcome>died</mmlRd:outcome>
- </mmlRd:RegisteredDiagnosisModule>
-
-===== mmlFcl:age
+===== M15.1.1.3. mmlFcl:age
 【内容】家族の疾患時年齢 +
 【データ型】duration 書式：PnYnMnWnDTnHnMnS
 乳幼児を除き，通常は PnY で可． +
 【省略】省略可 +
 【例】40歳
-
- <mmlFcl:age>P40Y</mmlFcl:age>
+[source, xml]
+<mmlFcl:age>P40Y</mmlFcl:age>
 
 【例】生後 1 年 3ヶ月
-
- <mmlFcl:age>P1Y3M</mmlFcl:age>
+[source, xml]
+<mmlFcl:age>P1Y3M</mmlFcl:age>
 
 【例】生後 3ヶ月
+[source, xml]
+<mmlFcl:age>P3M</mmlFcl:age>
 
- <mmlFcl:age>P3M</mmlFcl:age>
-
-===== mmlFcl:memo
+===== M15.1.1.4. mmlFcl:memo
 【内容】メモ +
 【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlFcl:childhood
+===== M15.2. mmlFcl:childhood
 【内容】小児期情報 +
 【省略】省略可
 
-===== mmlFcl:birthInfo
+===== M15.2.1. mmlFcl:birthInfo
 【内容】出生時情報 +
 【省略】省略可
 
-===== mmlFc:Facility
+===== M15.2.1.1. mmlFc:Facility
 【内容】出生施設．構造は，MML 共通形式 (施設情報形式) 参照． +
 【省略】省略可
 
-===== mmlFcl:deliveryWeeks
+===== M15.2.1.2. mmlFcl:deliveryWeeks
 【内容】分娩時週数． +
-【データ型】duration 書式：PnW +
+【データ型】string. duration型に準じる. 書式：PnW +
 【省略】省略可 +
 【例】40週
+[source, xml]
+<mmlFcl:deliveryWeeks>P40W</mmlFcl:deliveryWeeks>
 
- <mmlFcl:deliveryWeeks>P40W</mmlFcl:deliveryWeeks>
-
-===== mmlFcl:deliveryMethod
+===== M15.2.1.3. mmlFcl:deliveryMethod
 【内容】分娩方法．記載法を特に定めない． +
 【データ型】string +
 【省略】省略可 +
 【例】帝王切開
+[source, xml]
+<mmlFcl:deliveryMethod>cesarean section</mmlFcl:deliveryMethod>
 
- <mmlFcl:deliveryMethod>cesarean section</mmlFcl:deliveryMethod>
-
-===== mmlFcl:bodyWeight
+===== M15.2.1.4. mmlFcl:bodyWeight
 【内容】出生時体重 +
 【データ型】decimal +
 【省略】省略可 +
@@ -153,10 +153,10 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlFcl:unit|string|#REQUIRED|単位．gもしくはkg
 |=====
 【例】3270グラム
-
+[source, xml]
  <mmlFcl:bodyWeight mmlFcl:unit="g">3270</mmlFcl:bodyWeight>
 
-===== mmlFcl:bodyHeight
+===== M15.2.1.5 mmlFcl:bodyHeight
 【内容】出生時身長 +
 【データ型】decimal +
 【省略】省略可 +
@@ -166,7 +166,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlFcl:unit|string|#REQUIRED|単位．cmもしくはm
 |=====
 
-===== mmlFcl:chestCircumference
+===== M15.2.1.6. mmlFcl:chestCircumference
 【内容】出生時胸囲 +
 【データ型】decimal +
 【省略】省略可 +
@@ -176,7 +176,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlFcl:unit|string|#REQUIRED|単位．cm
 |=====
 
-===== mmlFcl:headCircumference
+===== M15.2.1.7. mmlFcl:headCircumference
 【内容】出生時頭囲 +
 【データ型】decimal +
 【省略】省略可 +
@@ -186,113 +186,115 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlFcl:unit|string|#REQUIRED|単位．cm
 |=====
 
-===== mmlFcl:memo
+===== M15.2.1.8. mmlFcl:memo
 【内容】出生時メモ +
 【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlFcl:vaccination
+===== M15.2.2. mmlFcl:vaccination
 【内容】予防接種情報 +
 【省略】省略可
 
-===== mmlFcl:vaccinationItem
+===== M15.2.2.1. mmlFcl:vaccinationItem
 【内容】繰り返しのためのエレメント +
 【省略】不可 +
 【繰り返し設定】繰り返しあり．接種ワクチンが複数あれば繰り返す．
 
-===== mmlFcl:vaccine
+===== M15.2.2.1.1. mmlFcl:vaccine
 【内容】接種ワクチン名 +
 【データ型】string +
 【省略】不可
 
-===== mmlFcl:injected
+===== M15.2.2.1.2. mmlFcl:injected
 【内容】実施状態．true：ワクチン接種，false：接種せず +
 【データ型】boolean +
 【省略】不可
 
-===== mmlFcl:age
+===== M15.2.2.1.3. mmlFcl:age
 【内容】接種時年齢 +
 【データ型】duration　書式：PnYnMnWnDTnHnMnS
 通常は，PnYnMで可． +
 【省略】省略可
 
-===== mmlFcl:memo
+===== M15.2.2.1.4. mmlFcl:memo
 【内容】実施時メモ +
 【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可 +
 【例】ポリオを生後6ヶ月と1歳6ヶ月に2回投与．
+[source, xml]
+<mmlFcl:vaccination>
+  <mmlFcl:vaccinationItem>
+    <mmlFcl:vaccine>polio</mmlFcl:vaccine>
+    <mmlFcl:injected>true</mmlFcl:injected>
+    <mmlFcl:age>P6M</mmlFcl:age>
+    <mmlFcl:memo>first administration</mmlFcl:memo>
+  </mmlFcl:vaccinationItem>
+  <mmlFcl:vaccinationItem>
+    <mmlFcl:vaccine>polio</mmlFcl:vaccine>
+    <mmlFcl:injected>true</mmlFcl:injected>
+    <mmlFcl:age>P1Y6M</mmlFcl:age>
+    <mmlFcl:memo>second administration</mmlFcl:memo>
+  </mmlFcl:vaccinationItem>
+</mmlFcl:vaccination>
 
- <mmlFcl:vaccination>
-   <mmlFcl:vaccinationItem>
-     <mmlFcl:vaccine>polio</mmlFcl:vaccine>
-     <mmlFcl:injected>true</mmlFcl:injected>
-     <mmlFcl:age>P6M</mmlFcl:age>
-     <mmlFcl:memo>first administration</mmlFcl:memo>
-   </mmlFcl:vaccinationItem>
-   <mmlFcl:vaccinationItem>
-     <mmlFcl:vaccine>polio</mmlFcl:vaccine>
-     <mmlFcl:injected>true</mmlFcl:injected>
-     <mmlFcl:age>P1Y6M</mmlFcl:age>
-     <mmlFcl:memo>second administration</mmlFcl:memo>
-   </mmlFcl:vaccinationItem>
- </mmlFcl:vaccination>
-
-===== mmlFcl:pastHistory
+===== M15.3.  mmlFcl:pastHistory
 【内容】既往歴情報．自由記載 (mmlFcl:freeNotes) とするか，時間表現併用 (mmlFcl:timeExpression と mmlFcl:eventExpression) とするかを選択 +
 【省略】省略可
 
-===== mmlFcl:freeNotes
+===== M15.3.1. mmlFcl:freeNotes
 【内容】自由文章表現． +
 【データ型】string +
 【省略】不可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlFcl:pastHistoryItem
+===== M15.3.2. mmlFcl:pastHistoryItem
 【内容】繰り返しのためのエレメント +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．既往歴として記載数項目が複数あれば繰り返す．
 
-===== mmlFcl:timeExpression
+===== M15.2.1. mmlFcl:timeExpression
 【内容】時間表現．表現形式を特に定めない． +
 【データ型】string +
 【省略】不可
 
-===== mmlFcl:eventExpression
+===== M15.2.2. mmlFcl:eventExpression
 【内容】時間表現に対応するイベント表現 +
 【データ型】string +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．一つの時間表現に複数のイベント表現があれば繰り返す． +
 【文書のレイアウト】XHTML使用可 +
 【例】既往歴自由記載の場合
-
- <mmlFcl:pastHistory>
-   <mmlFcl:freeNotes>
+[source, xml]
+<mmlFcl:pastHistory>
+  <mmlFcl:freeNotes>
      Appendectomy (6 years old), hypertension (5 years ago)
-   </mmlFcl:freeNotes>
- </mmlFcl:pastHistory>
+  </mmlFcl:freeNotes>
+</mmlFcl:pastHistory>
 
 【例】既往歴時間表現－イベント表現併記の場合
+[source, xml]
+<mmlFcl:pastHistory>
+  <mmlFcl:pastHistoryItem>
+    <mmlFcl:timeExpression>6 years old</mmlFcl:timeExpression>
+    <mmlFcl:eventExpression>appendectomy</mmlFcl:eventExpression>
+  </mmlFcl:pastHistoryItem>
+  <mmlFcl:pastHistoryItem>
+    <mmlFcl:timeExpression>
+      5 years ago (1994)
+    </mmlFcl:timeExpression>
+    <mmlFcl:eventExpression>hypertension</mmlFcl:eventExpression>
+  </mmlFcl:pastHistoryItem>
+</mmlFcl:pastHistory>
 
- <mmlFcl:pastHistory>
-   <mmlFcl:pastHistoryItem>
-     <mmlFcl:timeExpression>6 years old</mmlFcl:timeExpression>
-     <mmlFcl:eventExpression>appendectomy</mmlFcl:eventExpression>
-   </mmlFcl:pastHistoryItem>
-   <mmlFcl:pastHistoryItem>
-     <mmlFcl:timeExpression>5 years ago (1994)</mmlFcl:timeExpression>
-     <mmlFcl:eventExpression>hypertension</mmlFcl:eventExpression>
-   </mmlFcl:pastHistoryItem>
- </mmlFcl:pastHistory>
-
-===== mmlFcl:chiefComplaints
+===== M15.4. mmlFcl:chiefComplaints
 【内容】主訴 +
 【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlFcl:presentIllnessNotes
+===== M15.5. mmlFcl:presentIllnessNotes
 【内容】現病歴自由記載． +
 【データ型】string +
 【省略】省略可 +

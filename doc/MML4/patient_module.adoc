@@ -23,10 +23,10 @@ image::mmlpi.jpg[]
 |M10.|mmlPi:PatientModule| | | |
 |M10.1.|mmlPi:uniqueInfo| | | |
 |M10.1.1.|mmlPi:masterId| | | |
-|M10.1.1.1.|mmlCm:Id| |string| |
+|M10.1.1.1.|mmlCm:Id| | | |
 |M10.1.2.|mmlPi:otherId| | |*|
 | | |mmlPi:type|string|#REQUIRED|MML0009
-|M10.1.2.1.|mmlCm:Id| |string| |
+|M10.1.2.1.|mmlCm:Id| | | |
 |M10.2.|mmlPi:personName| | | |
 |M10.2.1.|mmlNm:Name| | |+|
 |M10.3.|mmlPi:birthday| |date| |

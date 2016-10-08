@@ -12,9 +12,9 @@
   <xs:element name="BaseClinicModule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" ref="mmlBc:allergy"/>
-        <xs:element minOccurs="0" ref="mmlBc:bloodtype"/>
-        <xs:element minOccurs="0" ref="mmlBc:infection"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:allergy"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:bloodtype"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:infection"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -22,7 +22,7 @@
   <xs:element name="allergy">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="mmlBc:allergyItem"/>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlBc:allergyItem"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -30,10 +30,10 @@
   <xs:element name="allergyItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlBc:factor"/>
-        <xs:element minOccurs="0" ref="mmlBc:severity"/>
-        <xs:element minOccurs="0" ref="mmlBc:identifiedDate"/>
-        <xs:element minOccurs="0" ref="mmlBc:memo"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlBc:factor"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:severity"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:identifiedDate"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:memo"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,10 +49,10 @@
   <xs:element name="bloodtype">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlBc:abo"/>
-        <xs:element minOccurs="0" ref="mmlBc:rh"/>
-        <xs:element minOccurs="0" ref="mmlBc:others"/>
-        <xs:element minOccurs="0" ref="mmlBc:memo"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlBc:abo"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:rh"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:others"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:memo"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -60,13 +60,21 @@
   <xs:element name="rh" type="xs:string"/>
   
   <xs:element name="abo" type="xs:string"/>
+
+  <xs:element name="others">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlBc:other"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   
   <xs:element name="other">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlBc:typeName"/>
-        <xs:element ref="mmlBc:typeJudgement"/>
-        <xs:element minOccurs="0" ref="mmlBc:description"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlBc:typeName"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlBc:typeJudgement"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:description"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -80,7 +88,7 @@
   <xs:element name="infection">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" ref="mmlBc:infectionItem"/>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlBc:infectionItem"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -88,22 +96,13 @@
   <xs:element name="infectionItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlBc:factor"/>
-        <xs:element ref="mmlBc:examValue"/>
-        <xs:element minOccurs="0" ref="mmlBc:identifiedDate"/>
-        <xs:element minOccurs="0" ref="mmlBc:memo"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlBc:factor"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlBc:examValue"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:identifiedDate"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:memo"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="examValue" type="xs:string"/>
-  
-  <xs:element name="others">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlBc:other"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  
+  <xs:element name="examValue" type="xs:string"/>  
 </xs:schema>

@@ -10,10 +10,10 @@
   <xs:element name="LifestyleModule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlLs:occupation"/>
-        <xs:element ref="mmlLs:tobacco"/>
-        <xs:element ref="mmlLs:alcohol"/>
-        <xs:element minOccurs="0" ref="mmlLs:other"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlLs:occupation"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlLs:tobacco"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlLs:alcohol"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlLs:other"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
