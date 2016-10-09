@@ -129,7 +129,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== M15.2.1.2. mmlFcl:deliveryWeeks
 【内容】分娩時週数． +
-【データ型】string. duration型に準じる. 書式：PnW +
+【データ型】string. duration型に準じる. xs:duration(ISO8601形式)には週の単位がないため、便宜上の書式を採用する。書式：PnW +
 【省略】省略可 +
 【例】40週
 [source, xml]

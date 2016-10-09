@@ -45,7 +45,7 @@ xmlns:mmlPc="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"
 |M16.2.1.3.3.|mmlPc:testResult| |string|?|
 |M16.2.1.3.3.1.|mmlCm:extRef| | |*|
 |M16.2.1.3.4.|mmlPc:rxRecord| |string|?|
-|M16.2.1.3.4.1.|mmlPs:PrescriptionModule| | |?|
+|M16.2.1.3.4.1.|mmlPs:PrescriptionModule| | |*|
 |M16.2.1.3.4.2.|mmlInj:InjectionModule| | |*|
 |M16.2.1.3.4.3.|mmlCm:extRef| | |*|
 |M16.2.1.3.5.|mmlPc:txRecord| |string|?|
@@ -56,8 +56,8 @@ xmlns:mmlPc="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"
 |M16.2.1.5.1.|mmlPc:testOrder| |string|?|
 |M16.2.1.5.1.1.|mmlCm:extRef| | |*|
 |M16.2.1.5.2.|mmlPc:rxOrder| |string|?|
-|M16.2.1.5.2.1|mmlPs:PrescriptionModule| | |?|
-|M16.2.1.5.2.2|mmlInj:InjectionModule| | |?|
+|M16.2.1.5.2.1|mmlPs:PrescriptionModule| | |*|
+|M16.2.1.5.2.2|mmlInj:InjectionModule| | |*|
 |M16.2.1.5.2.3.|mmlCm:extRef| | |*|
 |M16.2.1.5.3.|mmlPc:txOrder| |string|?|
 |M16.2.1.5.3.1.|mmlCm:extRef| | |*|

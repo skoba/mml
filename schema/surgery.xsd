@@ -64,6 +64,10 @@
     </xs:attribute>
   </xs:attributeGroup>
   
+  <xs:element name="date" type="xs:date"/>
+  <xs:element name="startTime" type="xs:time"/>
+  <xs:element name="duration" type="xs:duration"/>
+
   <xs:element name="surgicalDepartment">
     <xs:complexType>
       <xs:sequence>
@@ -80,14 +84,48 @@
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="date" type="xs:date"/>
-  <xs:element name="startTime" type="xs:time"/>
-  <xs:element name="duration" type="xs:duration"/>
-  
   <xs:element name="surgicalDiagnosis">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="mmlRd:RegisteredDiagnosisModule" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="surgicalProcedure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlSg:procedureItem"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="surgicalStaffs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlSg:staff"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="staff">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mmlSg:staffInfo"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="mmlSg:attlist.staff"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:attributeGroup name="attlist.staff">
+    <xs:attribute name="superiority" form="qualified"/>
+    <xs:attribute name="staffClass" form="qualified"/>
+  </xs:attributeGroup>
+  
+  <xs:element name="staffInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlPsi:PersonalizedInfo"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -104,14 +142,6 @@
   </xs:attributeGroup>
   
   <xs:element name="memo" type="xs:string"/>
-  
-  <xs:element name="surgicalProcedure">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlSg:procedureItem"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   
   <xs:element name="procedureItem">
     <xs:complexType>
@@ -141,36 +171,6 @@
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="surgicalStaffs">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlSg:staff"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:element name="staff">
-    <xs:complexType>
-        <xs:sequence>
-          <xs:element ref="mmlSg:staffInfo"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="mmlSg:attlist.staff"/>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:attributeGroup name="attlist.staff">
-    <xs:attribute name="superiority" form="qualified"/>
-    <xs:attribute name="staffClass" form="qualified"/>
-  </xs:attributeGroup>
-  
-  <xs:element name="staffInfo">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlPsi:PersonalizedInfo"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  
   <xs:element name="anesthesiaProcedure">
     <xs:complexType>
       <xs:sequence>
@@ -186,7 +186,8 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
+
+  <xs:element name="anesthesiaDuration" type="xs:string"/>
   <xs:element name="operativeNotes" type="xs:string"/>
   
   <xs:element name="referenceInfo">
@@ -208,8 +209,5 @@
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="procedureMemo" type="xs:string"/>
-  
-  <xs:element name="anesthesiaDuration" type="xs:string"/>
-  
+  <xs:element name="procedureMemo" type="xs:string"/>  
 </xs:schema>
