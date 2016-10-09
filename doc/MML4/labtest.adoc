@@ -41,6 +41,7 @@ xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
 一つの content に一つだけ検歴情報モジュールを入れる．
 
 .エレメント一覧表
+[options="header"]
 |=====
 | |Elements|Attribute|Data types|Occurrence|Table id
 |M19.|mmlLb:TestModule| | | |
@@ -127,6 +128,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【内容】検歴ヘッダー情報 +
 【省略】不可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:registId|string|#REQUIRED| |依頼ID
@@ -141,6 +143,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】string +
 【省略】不可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:statusCode|string|#REQUIRED|mmlLb0001|mid 検査中
@@ -231,6 +234,7 @@ final 最終報告
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．報告コメントが複数あれば，数だけ繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:repCodeName|string|#IMPLIED| |
@@ -290,6 +294,7 @@ final 最終報告
 【データ型】string +
 【省略】不可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:itCode|string|#REQUIRED|ユーザー指定|施設固有コード
@@ -312,6 +317,7 @@ final 最終報告
 【データ型】decimal +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:up|decimal|#IMPLIED| |上限値
@@ -329,6 +335,7 @@ A 異常
 【データ型】string +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:uCode|string|#IMPLIED|ユーザー指定|
@@ -350,6 +357,7 @@ A 異常
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．項目コメントが複数あれば，数だけ繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:imCodeName|string|#IMPLIED| |項目コメント名称
