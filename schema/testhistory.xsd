@@ -13,8 +13,8 @@
   <xs:element name="TestModule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlLb:information"/>
-        <xs:element maxOccurs="unbounded" ref="mmlLb:laboTest"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlLb:information"/>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlLb:laboTest"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -22,244 +22,234 @@
   <xs:element name="information">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlLb:reportStatus"/>
-        <xs:element minOccurs="0" ref="mmlLb:set"/>
-        <xs:element ref="mmlLb:facility" minOccurs="1" maxOccurs="1"/>
-        <xs:element minOccurs="0" ref="mmlLb:department"/>
-        <xs:element minOccurs="0" ref="mmlLb:ward"/>
-        <xs:element minOccurs="0" ref="mmlLb:client"/>
-        <xs:element ref="mmlLb:laboratoryCenter"/>
-        <xs:element minOccurs="0" ref="mmlLb:technician"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlLb:reportStatus"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlLb:set"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlLb:facility"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlLb:department"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlLb:ward"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlLb:client"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlLb:laboratoryCenter"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlLb:technician"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlLb:repMemo"/>
-        <xs:element minOccurs="0" ref="mmlLb:repMemoF"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlLb:repMemoF"/>
       </xs:sequence>
-      <xs:attributeGroup ref="mmlLb:attlist.information"/>
+      <xs:attribute name="registId" type="xs:string" use="required" form="qualified"/>
+      <xs:attribute name="sampleTime" type="xs:dateTime" use="optional" form="qualified"/>
+      <xs:attribute name="registTime" type="xs:dateTime" use="required" form="qualified"/>
+      <xs:attribute name="reportTime" type="xs:dateTime" use="required" form="qualified"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="reportStatus">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="statusCode" type="xs:string" use="required" form="qualified"/>
+          <xs:attribute name="statusCodeId" type="xs:string" use="required" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="set">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="setCode" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="setCodeId" type="xs:string" use="optional" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
   
+  <xs:element name="facility">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="facilityCode" type="xs:string" use="required" form="qualified"/>
+          <xs:attribute name="facilityCodeId" use="required" form="qualified">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="ca"/>
+                <xs:enumeration value="insurance"/>
+                <xs:enumeration value="monbusho"/>
+                <xs:enumeration value="JMARI"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="department">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="depCode" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="depCodeId" type="xs:string" use="optional" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="ward">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="wardCode" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="wardCodeId" type="xs:string" use="optional" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="client">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="clientCode" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="clientCodeId" type="xs:string" use="optional" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="laboratoryCenter">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="centerCode" type="xs:string" use="required" form="qualified"/>
+          <xs:attribute name="centerCodeId" type="xs:string" use="required" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="technician">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="techCode" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="techCodeId" type="xs:string" use="optional" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="repMemo">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="repCodeName" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="repCode" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="repCodeId" type="xs:string" use="optional" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="repMemoF" type="xs:string"/>
+
   <xs:element name="laboTest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlLb:specimen"/>
-        <xs:element maxOccurs="unbounded" ref="mmlLb:item"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlLb:specimen"/>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="mmlLb:item"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
-  <xs:attributeGroup name="attlist.information">
-    <xs:attribute name="registId" use="required" form="qualified"/>
-    <xs:attribute name="sampleTime" form="qualified"/>
-    <xs:attribute name="registTime" use="required" form="qualified"/>
-    <xs:attribute name="reportTime" use="required" form="qualified"/>
-  </xs:attributeGroup>
-  
-  <xs:element name="reportStatus">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.reportStatus"/>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:attributeGroup name="attlist.reportStatus">
-    <xs:attribute name="statusCode" use="required" form="qualified"/>
-    <xs:attribute name="statusCodeId" use="required" form="qualified"/>
-  </xs:attributeGroup>
-  
-  <xs:element name="set">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.set"/>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:attributeGroup name="attlist.set">
-    <xs:attribute name="setCode" form="qualified"/>
-    <xs:attribute name="setCodeId" form="qualified"/>
-  </xs:attributeGroup>
-  
-  <xs:element name="facility">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.facility"/>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:attributeGroup name="attlist.facility">
-    <xs:attribute name="facilityCode" use="required" form="qualified"/>
-    <xs:attribute name="facilityCodeId" use="required" form="qualified">
-      <xs:simpleType>
-        <xs:restriction base="xs:token">
-          <xs:enumeration value="ca"/>
-          <xs:enumeration value="insurance"/>
-          <xs:enumeration value="monbusho"/>
-          <xs:enumeration value="JMARI"/>
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:attribute>
-  </xs:attributeGroup>
-  
-  <xs:element name="department">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.mmlLb.department"/>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:attributeGroup name="attlist.mmlLb.department">
-    <xs:attribute name="depCode" form="qualified"/>
-    <xs:attribute name="depCodeId" default="MML0028" form="qualified">
-      <xs:simpleType>
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="MML0028"/>
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:attribute>
-  </xs:attributeGroup>
-  
-  <xs:element name="ward">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.ward"/>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:attributeGroup name="attlist.ward">
-    <xs:attribute name="wardCode" form="qualified"/>
-    <xs:attribute name="wardCodeId" form="qualified"/>
-  </xs:attributeGroup>
-  
-  <xs:element name="client">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.client"/>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:attributeGroup name="attlist.client">
-    <xs:attribute name="clientCode" form="qualified"/>
-    <xs:attribute name="clientCodeId" form="qualified"/>
-  </xs:attributeGroup>
-  
-  <xs:element name="laboratoryCenter">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.laboratoryCenter"/>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:attributeGroup name="attlist.laboratoryCenter">
-    <xs:attribute name="centerCode" use="required" form="qualified"/>
-    <xs:attribute name="centerCodeId" use="required" form="qualified"/>
-  </xs:attributeGroup>
-  
-  <xs:element name="technician">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.technician"/>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:attributeGroup name="attlist.technician">
-    <xs:attribute name="techCode" form="qualified"/>
-    <xs:attribute name="techCodeId" form="qualified"/>
-  </xs:attributeGroup>
-  
-  <xs:element name="repMemo">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.repMemo"/>
-    </xs:complexType>
-  </xs:element>
-  
-  <xs:attributeGroup name="attlist.repMemo">
-    <xs:attribute name="repCodeName" form="qualified"/>
-    <xs:attribute name="repCode" form="qualified"/>
-    <xs:attribute name="repCodeId" form="qualified"/>
-  </xs:attributeGroup>
-  
-  <xs:element name="repMemoF" type="xs:string"/>
   
   <xs:element name="specimen">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlLb:specimenName"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlLb:specimenName"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlLb:spcMemo"/>
-        <xs:element minOccurs="0" ref="mmlLb:spcMemoF"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlLb:spcMemoF"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   
   <xs:element name="specimenName">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.specimenName"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="spCode" type="xs:string" use="required" form="qualified"/>
+          <xs:attribute name="spCodeId" type="xs:string" use="required" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  
-  <xs:attributeGroup name="attlist.specimenName">
-    <xs:attribute name="spCode" use="required" form="qualified"/>
-    <xs:attribute name="spCodeId" use="required" form="qualified"/>
-  </xs:attributeGroup>
   
   <xs:element name="spcMemo">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.spcMemo"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="smCodeName" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="smCode" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="smCodeId" type="xs:string" use="optional" form="qualified"/>          
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  
-  <xs:attributeGroup name="attlist.spcMemo">
-    <xs:attribute name="smCodeName" form="qualified"/>
-    <xs:attribute name="smCode" form="qualified"/>
-    <xs:attribute name="smCodeId" form="qualified"/>
-  </xs:attributeGroup>
-  
+
   <xs:element name="spcMemoF" type="xs:string"/>
   
   <xs:element name="item">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlLb:itemName"/>
-        <xs:element ref="mmlLb:value"/>
-        <xs:element minOccurs="0" ref="mmlLb:numValue"/>
-        <xs:element minOccurs="0" ref="mmlLb:unit"/>
-        <xs:element minOccurs="0" ref="mmlLb:referenceInfo"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlLb:itemName"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlLb:value"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlLb:numValue"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlLb:unit"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlLb:referenceInfo"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlLb:itemMemo"/>
-        <xs:element minOccurs="0" ref="mmlLb:itemMemoF"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlLb:itemMemoF"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   
   <xs:element name="itemName">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.itemName"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="itCode" type="xs:string" use="required" form="qualified"/>
+          <xs:attribute name="itCodeId" type="xs:string" use="required" form="qualified"/>
+          <xs:attribute name="Acode" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="Icode" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="Scode" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="Mcode" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="Rcode" type="xs:string" use="optional" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  
-  <xs:attributeGroup name="attlist.itemName">
-    <xs:attribute name="itCode" use="required" form="qualified"/>
-    <xs:attribute name="itCodeId" use="required" form="qualified"/>
-    <xs:attribute name="Acode" form="qualified"/>
-    <xs:attribute name="Icode" form="qualified"/>
-    <xs:attribute name="Scode" form="qualified"/>
-    <xs:attribute name="Mcode" form="qualified"/>
-    <xs:attribute name="Rcode" form="qualified"/>
-  </xs:attributeGroup>
   
   <xs:element name="value" type="xs:string"/>
   
   <xs:element name="numValue">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.numValue"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:decimal">
+          <xs:attribute name="up" type="xs:decimal" use="optional" form="qualified"/>
+          <xs:attribute name="low" type="xs:decimal" use="optional" form="qualified"/>
+          <xs:attribute name="normal" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="out" type="xs:string" use="optional" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  
-  <xs:attributeGroup name="attlist.numValue">
-    <xs:attribute name="up" form="qualified"/>
-    <xs:attribute name="low" form="qualified"/>
-    <xs:attribute name="normal" form="qualified"/>
-    <xs:attribute name="out" form="qualified"/>
-  </xs:attributeGroup>
   
   <xs:element name="unit">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.unit"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="uCode" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="uCodeId" type="xs:string" use="optional" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  
-  <xs:attributeGroup name="attlist.unit">
-    <xs:attribute name="uCode" form="qualified"/>
-    <xs:attribute name="uCodeId" form="qualified"/>
-  </xs:attributeGroup>
   
   <xs:element name="referenceInfo">
     <xs:complexType>
@@ -270,17 +260,16 @@
   </xs:element>
   
   <xs:element name="itemMemo">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlLb:attlist.itemMemo"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="imCodeName" form="qualified"/>
+          <xs:attribute name="imCode" form="qualified"/>
+          <xs:attribute name="imCodeId" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
   
-  <xs:attributeGroup name="attlist.itemMemo">
-    <xs:attribute name="imCodeName" form="qualified"/>
-    <xs:attribute name="imCode" form="qualified"/>
-    <xs:attribute name="imCodeId" form="qualified"/>
-  </xs:attributeGroup>
-  
   <xs:element name="itemMemoF" type="xs:string"/>
-  
 </xs:schema>

@@ -610,5 +610,5 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
 【例】
 [source, xml]
 <mmlSm:remarks>
-   Patient education: good. Appointment in outpatient department in 2 weeks.
+  Patient education: good. Appointment in outpatient department in 2 weeks.
 </mmlSm:remarks>
