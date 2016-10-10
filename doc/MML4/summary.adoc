@@ -21,7 +21,7 @@ xmlns:mmlSm= "http://www.medxml.net/MML/v4/ContentModule/Summaryr/1.0"
 
 .エレメント一覧表
 |=====
-| |Elements|Attribute|Datatypes|Occurence|Table
+| |Elements|Attribute|Data types|Occurence|Table
 |M18.|mmlSm:SummaryModule| | | |
 |M18.1.|mmlSm:serviceHistory| | | |
 | | |mmlSm:start|date|#IMPLIED|

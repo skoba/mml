@@ -12,6 +12,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="medication">
     <xs:complexType>
       <xs:all>
@@ -32,6 +33,7 @@
       </xs:all>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="issuedTo">
     <xs:simpleType>
       <xs:restriction base="xs:token">
@@ -40,6 +42,7 @@
       </xs:restriction>
     </xs:simpleType>
   </xs:element>
+
   <xs:element name="medicine">
     <xs:complexType>
       <xs:sequence>
@@ -48,8 +51,11 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="batchNo" type="xs:integer"/>
+
   <xs:element name="name" type="xs:string"/>
+
   <xs:element name="code">
     <xs:complexType>
       <xs:simpleContent>
@@ -59,6 +65,7 @@
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
+ 
   <xs:element name="dose" type="xs:decimal"/>
   <xs:element name="doseUnit" type="xs:string"/>
   <xs:element name="frequencyPerDay" type="xs:string"/>
