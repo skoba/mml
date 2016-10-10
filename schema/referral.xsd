@@ -27,23 +27,23 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="mmlPi:PatientModule"/>
-        <xs:element ref="mmlRe:occupation" minOccurs="0"/>
-        <xs:element ref="mmlRe:referFrom"/>
-        <xs:element ref="mmlRe:title"/>
-        <xs:element ref="mmlRe:greeting" minOccurs="0"/>
-        <xs:element ref="mmlRe:chiefComplaints"/>
-        <xs:element ref="mmlRe:clinicalDiagnosis" minOccurs="0"/>
-        <xs:element ref="mmlRe:pastHistory" minOccurs="0"/>
-        <xs:element ref="mmlRe:familyHistory" minOccurs="0"/>
-        <xs:element ref="mmlRe:presentIllness"/>
-        <xs:element ref="mmlRe:testResults" minOccurs="0"/>
-        <xs:element ref="mmlSm:clinicalCourse" minOccurs="0"/>
-        <xs:element ref="mmlRe:medication" minOccurs="0"/>
-        <xs:element ref="mmlRe:referPurpose"/>
-        <xs:element ref="mmlRe:remarks" minOccurs="0"/>
-        <xs:element ref="mmlRe:referToFacility"/>
-        <xs:element ref="mmlRe:referToPerson" minOccurs="0"/>
-        <xs:element ref="mmlRe:referToUnknownName" minOccurs="0"/>
+        <xs:element ref="mmlRe:occupation" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlRe:referFrom" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlRe:title" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlRe:greeting" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlRe:chiefComplaints" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlRe:clinicalDiagnosis" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlRe:pastHistory" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlRe:familyHistory" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlRe:presentIllness" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlRe:testResults" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlSm:clinicalCourse" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlRe:medication" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlRe:referPurpose" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlRe:remarks" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlRe:referToFacility" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlRe:referToPerson" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlRe:referToUnknownName" minOccurs="0" maxOccurs="1"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -87,7 +87,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
-    </xs:complexType>    
+    </xs:complexType>
   </xs:element>
   
   <xs:element name="testResults">
@@ -121,8 +121,8 @@
   <xs:element name="referToFacility">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlFc:Facility"/> 
-        <xs:element ref="mmlDp:Department" minOccurs="0"/> 
+        <xs:element ref="mmlFc:Facility" minOccurs="1" maxOccurs="1"/> 
+        <xs:element ref="mmlDp:Department" minOccurs="0" maxOccurs="1"/> 
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -130,7 +130,7 @@
   <xs:element name="referToPerson">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlPsi:PersonalizedInfo"/> 
+        <xs:element ref="mmlPsi:PersonalizedInfo" minOccurs="1" maxOccurs="1"/> 
       </xs:sequence>
     </xs:complexType>
   </xs:element>

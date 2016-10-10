@@ -314,8 +314,8 @@ final 最終報告
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|mmlRp:tmCodeName|string|#IMPLIED|検査コメント名称
-|mmlRp:tmCode|string|#IMPLIED|ユーザー指定
+|mmlRp:tmCodeName|string|#IMPLIED|検査コメント名称|
+|mmlRp:tmCode|string|#IMPLIED|ユーザー指定|
 |mmlRp:tmCodeId|string|#IMPLIED| |用いたテーブル名を入力
 |===
 
