@@ -29,8 +29,9 @@
       </xs:all>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="medicine">
-    <xs:complexType mixed="true">
+    <xs:complexType>
       <xs:sequence>
         <xs:element ref="mmlInj:name" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="mmlInj:code" minOccurs="0" maxOccurs="unbounded">
@@ -38,7 +39,9 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="name" type="xs:string"/>
+
   <xs:element name="code">
     <xs:complexType>
       <xs:simpleContent>
@@ -48,6 +51,7 @@
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="dose" type="xs:decimal"/>
   <xs:element name="doseUnit" type="xs:string"/>
   <xs:element name="startDateTime" type="xs:dateTime"/>
