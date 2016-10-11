@@ -37,7 +37,7 @@ MML Ver 4のMmlHeader 内のタグはすべて，xmlns:mml ="http://www.medxml.n
 【内容】本 MML 文書で使われている全てのXML Schemaをリストアップする．冗長ではあるが、SAX系の処理には有効であるためv4でも存続させた。  +
 【データ型】string +
 【省略】不可 +
-【繰り返し設定】繰り返しあり．使用した DTD の種類だけ繰り返す．
+【繰り返し設定】繰り返しあり．使用したSchema の種類だけ繰り返す．
 
 ==== scopePeriod
 【内容】MML 本文全体の対象期間 +

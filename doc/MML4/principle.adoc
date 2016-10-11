@@ -190,8 +190,8 @@ xs:decimal:: 10進数
 xs:boolean:: 真偽値(true or false)
 xs:date:: 日付型。ISO8601形式(CCYY-MM-DD)で表記する
 xs:time:: 時刻型。ISO8601形式(hh:mmLss[Z\|(+\|-)hh:mm])で表記する
-xs:dateTIme:: 日付時刻型。ISO8601形式(CCYY-MM-DDThh:mm:ss[Z\|(+\|-)hh:mm])で表記する
-xs:duration:: 期間型。ISO8601形式に週（W)を加えたPnYnMnWnDTnHnMnS形式で表記する。
+xs:dateTime:: 日付時刻型。ISO8601形式(CCYY-MM-DDThh:mm:ss[Z\|(+\|-)hh:mm])で表記する
+xs:duration:: 期間型。ISO8601形式(PnYnMnDTnHnMnS)形式で表記する。
 xs:token:: 空白置換と空白縮小が行われた文字列。
 
 
