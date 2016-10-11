@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mmlNm:Name
-  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0/name.xsd"
-  mmlNm:repCode = "A" mmlNm:tableId="MML0025">
-  <mmlNm:fullname>Araki Kenji</mmlNm:fullname>
-  <mmlNm:degree>M.D.</mmlNm:degree>
-</mmlNm:Name>

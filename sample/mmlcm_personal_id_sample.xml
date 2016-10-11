@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mmlCm:Id
-  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0/common.xsd"
-  mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10" mmlCm:checkDigit = "5"
-  mmlCm:tableId = "MML0024">12345</mmlCm:Id>
