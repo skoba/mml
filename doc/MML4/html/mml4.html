@@ -17,12 +17,12 @@
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#introduction">1. はじめに</a></li>
-<li><a href="#update_policy">2. MML ver 4 改定方針</a></li>
-<li><a href="#intelectual_property">3. 知的所有権について</a>
+<li><a href="#update_policy">2. MML ver 4 改定方針</a>
 <ul class="sectlevel2">
-<li><a href="#_mml_ver_4_修正履歴">3.1. MML Ver. 4 修正履歴</a></li>
+<li><a href="#_mml_ver_4_修正履歴">2.1. MML Ver. 4 修正履歴</a></li>
 </ul>
 </li>
+<li><a href="#intelectual_property">3. 知的所有権について</a></li>
 <li><a href="#_参考文献">4. 参考文献</a></li>
 <li><a href="#_mml構造概説">5. MML構造概説</a>
 <ul class="sectlevel2">
@@ -140,27 +140,13 @@
 <div class="paragraph">
 <p>なお、MML 2.3で定義されていたData Exchange Specificationは廃止する。</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="intelectual_property">3. 知的所有権について</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>本仕様のすべての著作権は，特定非営利活動法人 MedXML コンソーシアムに帰属する．よって，その利用に当っては，以下の特定非営利活動法人 MedXML コンソーシアムのポリシーに従うものとする。</p>
-</div>
-<div class="listingblock">
-<div class="title">成果物に関する，特定非営利活動法人 MedXML コンソーシアムのポリシー</div>
-<div class="content">
-<pre>本法人によって作成された成果物は，原則としてインターネット上に公開し，パブリックドメインとして取り扱う．従って，会員，非会員にかかわらず成果物を利用し，営利，学術活動に利用することが出来る．ただし，その利用にあたっては著作権，優先権に配慮，製品，論文などで本法人の成果物を利用したことを明記し，本法人への報告を義務付けるものとする</pre>
-</div>
-</div>
 <div class="sect2">
-<h3 id="_mml_ver_4_修正履歴">3.1. MML Ver. 4 修正履歴</h3>
+<h3 id="_mml_ver_4_修正履歴">2.1. MML Ver. 4 修正履歴</h3>
 <div class="paragraph">
 <p>MML ver 4を2016年2月8日に公開して以来、下記のような修正が行われた。</p>
 </div>
 <div class="sect3">
-<h4 id="_章_節番号_エレメント番号">3.1.1. 章・節番号、エレメント番号</h4>
+<h4 id="_章_節番号_エレメント番号">2.1.1. 章・節番号、エレメント番号</h4>
 <div class="paragraph">
 <p>MML共通形式、MMLコンテンツモジュールの各エレメントに対する番号と章番号が混在していた。わかりやすくするために各エレメントの先頭にMをつけ、共通形式、コンテンツモジュールに連番を振った。</p>
 </div>
@@ -183,7 +169,7 @@
 </table>
 </div>
 <div class="sect3">
-<h4 id="_解説にデータ型_省略_繰り返しを明記した">3.1.2. 解説にデータ型、省略、繰り返しを明記した</h4>
+<h4 id="_解説にデータ型_省略_繰り返しを明記した">2.1.2. 解説にデータ型、省略、繰り返しを明記した</h4>
 <div class="paragraph">
 <p>エレメント表で記載されてはいるが、解説で記載されていなかったデータ型や省略について明示的に記載することとした。</p>
 </div>
@@ -196,7 +182,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mml_header_docinfoのnamespace宣言">3.1.3. MML Header, docInfoのnamespace宣言</h4>
+<h4 id="_mml_header_docinfoのnamespace宣言">2.1.3. MML Header, docInfoのnamespace宣言</h4>
 <div class="paragraph">
 <p>以下のようにnamespace宣言をしていた。</p>
 </div>
@@ -217,12 +203,12 @@ xmlns="http://www.medxml.net/MML/v4/base/1.0"</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_dtdについての記述">3.1.4. DTDについての記述</h4>
+<h4 id="_dtdについての記述">2.1.4. DTDについての記述</h4>
 <div class="paragraph">
-<p>MML4ではW3C XML Schemaを採用しておりDTDはもはや使用しないため表現の修正を行った。
-.8.1.6 tocItem</p>
+<p>MML4ではW3C XML Schemaを採用しておりDTDはもはや使用しないため表現の修正を行った。</p>
 </div>
 <div class="literalblock">
+<div class="title">8.1.6 tocItem</div>
 <div class="content">
 <pre>-【内容】本 MML 文書で使われている全ての DTD をリストアップする．冗長ではあるが、SAX系の処理には有効であるためv4でも存続させた。  +
 +【内容】本 MML 文書で使われている全てのXML Schemaをリストアップする．冗長ではあるが、SAX系の処理には有効であるためv4でも存続させた。  +
@@ -239,7 +225,7 @@ xmlns="http://www.medxml.net/MML/v4/base/1.0"</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_初診時特有情報の分娩時週数">3.1.5. 初診時特有情報の分娩時週数</h4>
+<h4 id="_初診時特有情報の分娩時週数">2.1.5. 初診時特有情報の分娩時週数</h4>
 <div class="paragraph">
 <p>P32Wといった、ISO8601のduration表記に準じたPnWで表現することとし、xs:duration型としていたが、XMLスキーマのxs:duration型には週数を範囲とする記載法がなく、一般的なバリデータではエラーとなるため、xs:string型で表現することとした</p>
 </div>
@@ -260,7 +246,7 @@ xmlns="http://www.medxml.net/MML/v4/base/1.0"</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_臨床サマリーモジュール内の診断履歴情報">3.1.6. 臨床サマリーモジュール内の診断履歴情報</h4>
+<h4 id="_臨床サマリーモジュール内の診断履歴情報">2.1.6. 臨床サマリーモジュール内の診断履歴情報</h4>
 <div class="paragraph">
 <p>文書では繰り返しありとなっているところをスキーマでは繰り返さなくなっているところを修正した。</p>
 </div>
@@ -273,7 +259,7 @@ xmlns="http://www.medxml.net/MML/v4/base/1.0"</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_手術記録モジュール内のエレメントのoccurrence">3.1.7. 手術記録モジュール内のエレメントのoccurrence</h4>
+<h4 id="_手術記録モジュール内のエレメントのoccurrence">2.1.7. 手術記録モジュール内のエレメントのoccurrence</h4>
 <div class="paragraph">
 <p>手術記録モジュールの解説文書に記載されているエレメントのoccurrenceとスキーマに記載されているoccurrenceが一部異なっていた。調査の結果、MML ver 2, ver 3でも同様に文書とDTDにずれが見られた。検討の結果、DTD、スキーマに文書を合わせることとした。</p>
 </div>
@@ -305,7 +291,7 @@ M17.1.6.1.1.1. mmlPsi:PersonalizedInfo +</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_処方箋_注射モジュールの薬剤コードエレメント">3.1.8. 処方箋、注射モジュールの薬剤コードエレメント</h4>
+<h4 id="_処方箋_注射モジュールの薬剤コードエレメント">2.1.8. 処方箋、注射モジュールの薬剤コードエレメント</h4>
 <div class="literalblock">
 <div class="content">
 <pre>　処方箋、注射記録モジュールとも薬剤コードの所属するコード体型を記録するsystem属性が存在するが、そのネームスペースが欠落していたのでそれぞれのネームスペースを付与した
@@ -326,7 +312,7 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_注射記録モジュールの投与開始日時_投与終了日時">3.1.9. 注射記録モジュールの投与開始日時、投与終了日時</h4>
+<h4 id="_注射記録モジュールの投与開始日時_投与終了日時">2.1.9. 注射記録モジュールの投与開始日時、投与終了日時</h4>
 <div class="paragraph">
 <p>注射では投与開始日ではなく、投与開始日時が記録されるため記述部分でデータ型がdateとなっていたのをdateTime型に修正した。(スキーマに変更なし)</p>
 </div>
@@ -352,12 +338,12 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_xmlスキーマのリファクタリング">3.1.10. XMLスキーマのリファクタリング。</h4>
+<h4 id="_xmlスキーマのリファクタリング">2.1.10. XMLスキーマのリファクタリング。</h4>
 <div class="paragraph">
 <p>xsdの書式で型定義やoccurrence定義が不十分であったり、冗長であったところを修正した。XMLスキーマとして暗黙的に指定されている型やoccurrenceについても明示的に記載することとした。</p>
 </div>
 <div class="sect4">
-<h5 id="_occurrenceの明示_基礎的診療情報モジュール">3.1.10.1. occurrenceの明示(基礎的診療情報モジュール）</h5>
+<h5 id="_occurrenceの明示_基礎的診療情報モジュール">2.1.10.1. occurrenceの明示(基礎的診療情報モジュール）</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">-        &lt;xs:element minOccurs="0" ref="mmlBc:allergy"/&gt;
@@ -370,7 +356,7 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_文字列型からboolean型へ">3.1.10.2. 文字列型からboolean型へ</h5>
+<h5 id="_文字列型からboolean型へ">2.1.10.2. 文字列型からboolean型へ</h5>
 <div class="paragraph">
 <p>文字列（トークン）型で"true"あるいは"false"と制限をかける制約とboolean型を指定することで、インスタンス内に記載されるデータに差はないが、boolean型として明示的に定義するほうが冗長さも回避できる。</p>
 </div>
@@ -393,7 +379,7 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_文字列型からdate型へ">3.1.10.3. 文字列型からdate型へ</h5>
+<h5 id="_文字列型からdate型へ">2.1.10.3. 文字列型からdate型へ</h5>
 <div class="paragraph">
 <p>MMLの規約として、日付はCCYY-MM-DDのISO8601形式で記載することとしているため、date型で指定するのと同様にインスタンスに記載されるが、明示的に型を指定することによりデータのバリデーションを行うことができるためスキーマの修正を行った。</p>
 </div>
@@ -403,19 +389,23 @@ mmlInj:system</pre>
 <li>
 <p>&lt;xs:element name="birthday" type="xs:string"/&gt;
 +  &lt;xs:element name="birthday" type="xs:date"/&gt;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>attributeの付け替えなど</p>
 </li>
 </ul>
 </div>
+</li>
+</ul>
 </div>
-<div class="sect4">
-<h5 id="_attributeの付け替えなど">3.1.10.4. attributeの付け替えなど</h5>
 <div class="paragraph">
 <p>DTDからXML schemaにはほぼ自動変換したものを使用していたが、冗長であったり定義の並びが離れていて分かりづらかったりしたところを修正した。</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_誤字_表現の修正">3.1.11. 誤字、表現の修正</h4>
+<h4 id="_誤字_表現の修正">2.1.11. 誤字、表現の修正</h4>
 <div class="paragraph">
 <p>その他誤字の修正、表現の修正を多数行った</p>
 </div>
@@ -430,6 +420,20 @@ mmlInj:system</pre>
 +【省略】省略可</pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="intelectual_property">3. 知的所有権について</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>本仕様のすべての著作権は，特定非営利活動法人 MedXML コンソーシアムに帰属する．よって，その利用に当っては，以下の特定非営利活動法人 MedXML コンソーシアムのポリシーに従うものとする。</p>
+</div>
+<div class="listingblock">
+<div class="title">成果物に関する，特定非営利活動法人 MedXML コンソーシアムのポリシー</div>
+<div class="content">
+<pre>本法人によって作成された成果物は，原則としてインターネット上に公開し，パブリックドメインとして取り扱う．従って，会員，非会員にかかわらず成果物を利用し，営利，学術活動に利用することが出来る．ただし，その利用にあたっては著作権，優先権に配慮，製品，論文などで本法人の成果物を利用したことを明記し，本法人への報告を義務付けるものとする</pre>
 </div>
 </div>
 </div>
@@ -22622,7 +22626,7 @@ hdObservationTable01</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-10-12 02:02:14 JST
+Last updated 2016-10-12 02:50:59 JST
 </div>
 </div>
 </body>
