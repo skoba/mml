@@ -95,7 +95,7 @@
 <p>これらの成果ならびに透析SIGにおいて開発されてきた透析モジュールを加え、スキーマ定義言語をVer 3までのDTDからW3C XML Schema 1.1に変更してMML ver 4として改定し公開することとした。</p>
 </div>
 <div class="paragraph">
-<p>この文書およびXML schemaはMedXML協議会において正式版として発表されているが、現在も検討段階にあり修正が加えられている。</p>
+<p>この文書およびXML schemaはMedXML協議会において正式版として発表されているが、現在も開発が続けられており、適宜バージョンアップが行われることとなっている。</p>
 </div>
 </div>
 </div>
@@ -109,7 +109,7 @@
 <p>さらに、冗長であったHL7 CDA関連のタグ情報を排除することとし、構造を簡素化することとした。一方でNamespaceやタグ名は維持することとし、意味論的には等価でありxpath構造も維持することとし、バージョンアップに伴うコストを低減することとした。</p>
 </div>
 <div class="paragraph">
-<p>文字コードはVer 3まではShift JISが正式であったがVer 4ではUTF-8とし、利便性を高めるとともに他の標準との相互運用性を向上させることとした。</p>
+<p>文字コードはVer 3まではShift JISが正式であったがVer 4ではUTF-8を採用し、利便性を高めるとともに他の標準との相互運用性を向上させることとした。</p>
 </div>
 <div class="paragraph">
 <p>さらにB案として検討されてきた下記のモジュールも正式に追加することとした。</p>
@@ -336,7 +336,7 @@ Release 1.0, 2000</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>ただし、上位モジュールの違いにより使用するテーブルが異なることがあるため、実装の際には各モジュールの解説で確認しなければならない。</p>
+<p>ただし、これらの形式を組み込んだ上位モジュールの違いにより使用するテーブルが異なることがあるため、実装の際には各モジュールの解説で確認しなければならない。</p>
 </div>
 </div>
 </div>
@@ -472,7 +472,7 @@ Release 1.0, 2000</p>
 <dl>
 <dt class="hdlist1">1 createDate(MML基本構造 Mmlの属性)</dt>
 <dd>
-<p>MMLインスタンスの生成時刻を示す。MMLの生成処理をする際にタイムスタンプとして自動的にに入力されることを想定している。したがって、MMLインスタンスに記載される内容の時刻とは原則として無関係であり、その内容が10年前であっても今日の時刻でMMLインスタンス化されたのであれば、生成された時点での時刻が記載される。</p>
+<p>MMLインスタンスの生成時刻を示す。MMLの生成処理をする際にタイムスタンプとして自動的にに入力されることを想定している。したがって、MMLインスタンスに記載される内容の時刻とは原則として無関係であり、記載内容が10年前でも、今日の時点でインスタンスが生成されたのであれば、生成された時点での時刻が記載される。</p>
 </dd>
 <dt class="hdlist1">2 start(MML基本構造 scopePeriodの属性)</dt>
 <dd>
@@ -480,11 +480,12 @@ Release 1.0, 2000</p>
 </dd>
 <dt class="hdlist1">3 end(MML基本構造scopePeriodの属性)</dt>
 <dd>
-<p>MMLインスタンス記載内容全体を通した期間の終了日である。MmlModuleItemが複数素材する場合はすべてのMmlModuleItemを含めた期間とする。</p>
+<p>MMLインスタンス記載内容全体を通した期間の終了日である。MmlModuleItemが複数存在する場合はすべてのMmlModuleItemを含めた期間とする。</p>
 </dd>
 <dt class="hdlist1">4 confirmDate(MML基本構造)</dt>
 <dd>
-<p>一つのcontentの記載内容が確定された日付である。通常は診療録が電子的に記録されて確定した日に相当する。記載確定日は、イベントが発生し文書が記載された日と一致することが運用上好ましい。しかしながら、運用上数日前のイベントを遅れて記載したような場合には、記載された日付をconfirmDateとして記録する。MMLではイベントが発生した正確な日付は文書内容を解析しなければわからない。文書内にエレメントとして明示的にイベント発生日時が記載されていることもあるが、文脈などから判断するしかない場合もある。これは、現在の診療録の運用上、やむを得ないことである。</p>
+<p>一つのcontentの記載内容が確定された日付である。通常は診療録が電子的に記録されて確定した日に相当する。記載確定日は、イベントが発生した日と一致することが運用上好ましい。しかしながら、運用上数日前のイベントを遅れて記載したような場合には、記載された日付をconfirmDateとして記録する。
+MMLではイベントが発生した正確な日付は文書内容を解析しなければわからない。文書内にエレメントとして明示的にイベント発生日時が記載されていることもあるが、文脈などから判断するしかない場合もある。これは、現在の診療録の運用上、やむを得ないことである。</p>
 </dd>
 <dt class="hdlist1">5 start(MML基本構造confirmDateの属性)</dt>
 <dd>
@@ -506,7 +507,7 @@ Release 1.0, 2000</p>
 <dd>
 <p>この日付は疾患の発症年月日ではなく、保険請求上の開始日であり診療イベントとは関係ないことが多いため、上記(2)(3)(5)(6)の対象とはしない。</p>
 </dd>
-<dt class="hdlist1">9 mmlRd:endDate</dt>
+<dt class="hdlist1">9 mmlRd:endDate(診断履歴情報)</dt>
 <dd>
 <p>この日付は疾患が治癒した日ではなく、保険請求上の終了日であり、診療イベントとは関係しないことが多いため、上記(2)(3)(5)(6)の対象とはしない。</p>
 </dd>
@@ -576,7 +577,7 @@ Release 1.0, 2000</p>
 <dl>
 <dt>患者情報</dt>
 <dd>
-<p>患者情報は，蓄積型の情報であり，最新の情報のみが意味を持つ場合が多いので，複数の患者情報文書が意味を持って同時に出現することは考えにくく，文書粒度が問題になることはない．</p>
+<p>患者情報は，最新の情報のみが意味を持つ場合が多いので，複数の患者情報文書が意味を持って同時に出現することは考えにくく，文書粒度が問題になることはない．</p>
 </dd>
 <dt>健康保険情報</dt>
 <dd>
@@ -619,34 +620,34 @@ Release 1.0, 2000</p>
 <p>一つのモジュールアイテム（MML基本構造 MmlModuleItem）には，一つのユニークな文書ID（uid）が割り付けられる．uidはUUIDとする．uidは必須エレメントであり，MMLプロセッサーは，MMLインスタンス生成時に必ずuidを附番しなければならない．また，MMLプロセッサーは，MMLインスタンスを受け取った時に，何らかの手段でuidをローカルに保存しておくことを強く推奨する．</p>
 </div>
 <div class="paragraph">
-<p>MMLでは，関連親文書ID（MML基本構造parentId）を記載し，文書をポイントすることにより，文書間の関連付けを行うことができる．</p>
+<p>MMLでは，関連親文書ID（MML基本構造parentId）を記載することで、文書間の関連付けを行うことができる．</p>
 </div>
 <div class="paragraph">
 <p>親文書IDによるポイントは，次のような利用法が考えられる．</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>文書の訂正（テーブルMML0008　 oldEdition）<br>
-すでに生成した文書を訂正，更新したい時に，前文書のuidをポイントする．ただし，前文書を物理的に消去する必要はなく，ユーザーインターフェイス上見えなくするに留めておくことが望ましい．</p>
-</li>
-<li>
-<p>オーダーとその結果の関連付け（テーブルMML0008　 order）<br>
-一つのオーダー文書を，複数の結果文書（通常どちらも経過記録情報モジュールを用いる）からポイントすることにより，検査結果のグルーピングが可能である．
+<div class="dlist">
+<dl>
+<dt class="hdlist1">文書の訂正（テーブルMML0008　 oldEdition）</dt>
+<dd>
+<p>すでに生成した文書を訂正，更新したい時に，前文書のuidをポイントする．ただし，前文書を物理的に消去する必要はなく，ユーザーインターフェイス上見えなくするに留めておくことが望ましい．</p>
+</dd>
+<dt class="hdlist1">オーダーとその結果の関連付け（テーブルMML0008　 order）</dt>
+<dd>
+<p>一つのオーダー文書を，複数の結果文書（通常どちらも経過記録情報モジュールを用いる）からポイントすることにより，検査結果のグルーピングが可能である．
 質問とその返答の関連付け（テーブルMML0008　 consult）
 電子メールのスレッド管理と同じ機能が可能である．</p>
-</li>
-<li>
-<p>病名の変遷（テーブルMML0008　 originalDiagnosis）
-病名の時系列的な変遷を表すことが可能である．病名の終了（前病名文書と同じ病名で転記を終了とした新病名文書を生成），変化（前病名文書と異なる病名の新病名文書を生成），分離（前病名文書に対して，病名の異なる複数の新病名文書を生成），併合（複数の前病名文書に対して，一つの新病名文書を生成）を表すことができる．</p>
-</li>
-<li>
-<p>病名に対する適用健康保険（テーブルMML0008　 healthInsurance）
-医事会計上必要である場合に，対応可能である．</p>
-</li>
-</ol>
+</dd>
+<dt class="hdlist1">病名の変遷（テーブルMML0008　 originalDiagnosis）</dt>
+<dd>
+<p>病名の時系列的な変遷を表すことが可能である．病名の終了（前病名文書と同じ病名で転記を終了とした新病名文書を生成），変化（前病名文書と異なる病名の新病名文書を生成），分離（前病名文書に対して，病名の異なる複数の新病名文書を生成），併合（複数の前病名文書に対して，一つの新病名文書を生成）を表すことができる．</p>
+</dd>
+<dt class="hdlist1">病名に対する適用健康保険（テーブルMML0008　 healthInsurance）</dt>
+<dd>
+<p>医事会計上必要である場合に，対応可能である．</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -757,7 +758,7 @@ xs:token
 <div class="sect3">
 <h4 id="_アクセス権と暗号化">6.2.7. アクセス権と暗号化</h4>
 <div class="paragraph">
-<p>MMLインスタンス生成者の判断により，一文書ごとにアクセス権を記載することができる（MML基本構造accessRight）．ただし，このアクセス権は，インスタンス生成時において，インスタンス生成者の判断により記載されるものであり，インスタンスを受ける側が，記載されたアクセス権をどのように利用するかは，MMLでは定義されない．すなわち，実際のアクセスコントロールは，ユーザーのアプリケーションに委ねられる．</p>
+<p>MMLインスタンス生成者の判断により，一文書ごとにアクセス権を記載することができる（MML基本構造accessRight）．ただし，このアクセス権は，インスタンス生成時において，インスタンス生成者の判断により記載されるものであり，インスタンスを受ける側が，記載されたアクセス権をどのように利用するかは，受け取ったアプリケーションのアクセスコントロールに委ねられる．</p>
 </div>
 <div class="paragraph">
 <p>MMLでは，インスタンスの暗号化を規定しない．暗号化の具体的な方法はユーザーによって選択される．しかし，暗号化情報エレメント（MML基本構造encryptInfo）に，暗号化に関する情報を記載することは可能である．記載方法は規定しない．</p>
@@ -766,7 +767,7 @@ xs:token
 <p>暗号化の想定される一つの方法として，MMLインスタンスの本文（MML基本構造MmlBody）のみを公開鍵方式により暗号化し，暗号化に関する情報（用いた暗号化方法）を暗号化情報エレメントに記載することが考えられる．生成者情報（MML基本構造mmlCi:CreatorInfo）の生成者ＩＤから生成者の公開鍵を取得し，復号できれば，電子署名となる．</p>
 </div>
 <div class="paragraph">
-<p>MMLインスタンスの一部またはすべてを暗号化したものは，厳密にはMMLの規格外であり，復号されたもののみに対し，ＭＭＬの規格は適用される．</p>
+<p>MMLインスタンスの一部またはすべてを暗号化したものは，厳密にはMMLの規格外であり，復号されたもののみに対し，MMLの規格は適用される．</p>
 </div>
 </div>
 </div>
@@ -809,15 +810,15 @@ xs:token
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Elements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Element</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attribute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Datatypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datatype</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Occurence</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TableId</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#address">mmlAd:Address</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:Address</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -848,7 +849,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M1.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:full</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -856,7 +857,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M1.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:prefecture</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -864,7 +865,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M1.3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:city</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -872,7 +873,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M1.4.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:town</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -880,7 +881,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M1.5.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:homeNumber</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -888,7 +889,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M1.6.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:zip</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -896,7 +897,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M1.7.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:countryCode</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -914,9 +915,9 @@ xs:token
 <div class="sect3">
 <h4 id="_エレメント解説">7.1.1. エレメント解説</h4>
 <div class="sect4">
-<h5 id="__a_id_address_a_mmlad_address_住所表現形式">7.1.1.1. <a id="address"></a>mmlAd:Address (住所表現形式)</h5>
+<h5 id="_m1_mmlad_address_住所表現形式">7.1.1.1. M1. mmlAd:Address (住所表現形式)</h5>
 <div class="paragraph">
-<p>【内容】住所を表現する共通形式．一連住所もしくはその直下の 4 エレメント (1.2. から1.5.) のどちらかを選択．</p>
+<p>【内容】住所を表現する共通形式．一連住所(M1.1.)もしくはその直下のエレメント (M1.2. からM1.5.) のどちらかを選択．</p>
 </div>
 <div class="paragraph">
 <p>【属性】</p>
@@ -963,14 +964,14 @@ xs:token
 <div class="paragraph">
 <p>【例】アルファベット表記，職場住所の場合</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025"&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025"&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlad_full">7.1.1.2. mmlAd:full</h5>
+<h5 id="_m1_1_mmlad_full">7.1.1.2. M1.1. mmlAd:full</h5>
 <div class="paragraph">
 <p>【内容】一連住所．<br>
 【データ型】string<br>
@@ -978,7 +979,7 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlad_prefecture">7.1.1.3. mmlAd:prefecture</h5>
+<h5 id="_m1_2_mmlad_prefecture">7.1.1.3. M1.2. mmlAd:prefecture</h5>
 <div class="paragraph">
 <p>【内容】都道府県<br>
 【データ型】string<br>
@@ -986,15 +987,15 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlad_city">7.1.1.4. mmlAd:city</h5>
+<h5 id="_m1_3_mmlad_city">7.1.1.4. M1.3. mmlAd:city</h5>
 <div class="paragraph">
-<p>【内容】市，区，郡<br>
+<p>【内容】 市，区，郡<br>
 【データ型】string<br>
 【省略】省略可<br></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlad_town">7.1.1.5. mmlAd:town</h5>
+<h5 id="_m1_4_mmlad_town">7.1.1.5. M1.4. mmlAd:town</h5>
 <div class="paragraph">
 <p>【内容】町，村<br>
 【データ型】string<br>
@@ -1002,7 +1003,7 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlad_homenumber">7.1.1.6. mmlAd:homeNumber</h5>
+<h5 id="_m1_5_mmlad_homenumber">7.1.1.6. M1.5. mmlAd:homeNumber</h5>
 <div class="paragraph">
 <p>【内容】番地，丁目，マンション名，部屋番号など残りすべて．<br>
 【データ型】string<br>
@@ -1010,7 +1011,7 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlad_zip">7.1.1.7. mmlAd:zip</h5>
+<h5 id="_m1_6_mmlad_zip">7.1.1.7. M1.6. mmlAd:zip</h5>
 <div class="paragraph">
 <p>【内容】郵便番号<br>
 【データ型】string<br>
@@ -1018,39 +1019,43 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlad_countrycode">7.1.1.8. mmlAd:countryCode</h5>
+<h5 id="_m1_7_mmlad_countrycode">7.1.1.8. M1.7. mmlAd:countryCode</h5>
 <div class="paragraph">
 <p>【内容】国コード．ISO 3166 A3 コード使用．<br>
 【データ型】string<br>
 【省略】省略可</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
 <div class="title">mmlAd:Address (住所表現形式) サンプル インスタンス</div>
+<ul>
+<li>
 <p>一連住所の場合</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025"&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlAd:Address mmlAd:repCode="A" mmlAd:addressClass="business" mmlAd:tableId="MML0025"&gt;
   &lt;mmlAd:full&gt;5200 Kihara, Kiyotake-cho, Miyazaki-gun, Miyazaki-prefecture&lt;/mmlAd:full&gt;
   &lt;mmlAd:zip&gt;889-1692&lt;/mmlAd:zip&gt;
   &lt;mmlAd:countryCode&gt;JPN&lt;/mmlAd:countryCode&gt;
-&lt;/mmlAd:Address&gt;</pre>
+&lt;/mmlAd:Address&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>分割して表記する場合</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId = "MML0025"&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlAd:Address mmlAd:repCode="A" mmlAd:addressClass="business" mmlAd:tableId="MML0025"&gt;
   &lt;mmlAd:prefecture&gt;Miyazaki&lt;/mmlAd:prefecture&gt;
   &lt;mmlAd:city&gt;Miyazaki&lt;/mmlAd:city&gt;
   &lt;mmlAd:town&gt;Kiyotake&lt;/mmlAd:town&gt;
   &lt;mmlAd:homeNumber&gt;5200 Kihara&lt;/mmlAd:homeNumber&gt;
   &lt;mmlAd:zip&gt;889-1692&lt;/mmlAd:zip&gt;
   &lt;mmlAd:countryCode&gt;JPN&lt;/mmlAd:countryCode&gt;
-&lt;/mmlAd:Address&gt;</pre>
+&lt;/mmlAd:Address&gt;</code></pre>
 </div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1076,14 +1081,14 @@ xs:token
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Elements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Element</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attribute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Datatypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datatype</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Occurence</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TableId</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M2.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:Phone</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -1099,7 +1104,7 @@ xs:token
 <td class="tableblock halign-left valign-top"><p class="tableblock">MML0003</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M2.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:area</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1107,7 +1112,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M2.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:city</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1115,7 +1120,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M2.3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:number</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1123,7 +1128,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M2.4.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:extension</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1131,7 +1136,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M2.5.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:full</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1139,7 +1144,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M2.6.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:country</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1147,7 +1152,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M2.7.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:memo</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1165,9 +1170,9 @@ xs:token
 <div class="sect3">
 <h4 id="_エレメント解説_2">7.2.1. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlph_phone_電話番号表現形式">7.2.1.1. mmlPh:Phone (電話番号表現形式)</h5>
+<h5 id="_m2_mmlph_phone_電話番号表現形式">7.2.1.1. M2. mmlPh:Phone (電話番号表現形式)</h5>
 <div class="paragraph">
-<p>【内容】電話番号を表現する共通形式．分割電話番号 (2.1. から 2.4.) もしくは一連電話番 (2.5.) のどちらかを選択．<br>
+<p>【内容】電話番号を表現する共通形式．分割電話番号 (M2.1. から M2.4.) もしくは一連電話番 (M2.5.) のどちらかを選択．<br>
 【属性】</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
@@ -1197,7 +1202,7 @@ xs:token
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlph_area">7.2.1.2. mmlPh:area</h5>
+<h5 id="_m2_1_mmlph_area">7.2.1.2. M2.1. mmlPh:area</h5>
 <div class="paragraph">
 <p>【内容】市外局番<br>
 【データ型】string<br>
@@ -1205,7 +1210,7 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlph_city">7.2.1.3. mmlPh:city</h5>
+<h5 id="_m2_2_mmlph_city">7.2.1.3. M2.2. mmlPh:city</h5>
 <div class="paragraph">
 <p>【内容】局番<br>
 【データ型】string<br>
@@ -1213,7 +1218,7 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlph_number">7.2.1.4. mmlPh:number</h5>
+<h5 id="_m2_3_mmlph_number">7.2.1.4. M2.3. mmlPh:number</h5>
 <div class="paragraph">
 <p>【内容】加入番号<br>
 【データ型】string<br>
@@ -1221,7 +1226,7 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlph_extension">7.2.1.5. mmlPh:extension</h5>
+<h5 id="_m2_4_mmlph_extension">7.2.1.5. M2.4. mmlPh:extension</h5>
 <div class="paragraph">
 <p>【内容】内線番号<br>
 【データ型】string<br>
@@ -1229,7 +1234,7 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlph_full">7.2.1.6. mmlPh:full</h5>
+<h5 id="_m2_5_mmlph_full">7.2.1.6. M2.5. mmlPh:full</h5>
 <div class="paragraph">
 <p>【内容】一連電話番号<br>
 【データ型】string<br>
@@ -1237,7 +1242,7 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlph_country">7.2.1.7. mmlPh:country</h5>
+<h5 id="_m2_6_mmlph_country">7.2.1.7. M2.6. mmlPh:country</h5>
 <div class="paragraph">
 <p>【内容】国番号<br>
 【データ型】string<br>
@@ -1245,38 +1250,42 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlph_memo">7.2.1.8. mmlPh:memo</h5>
+<h5 id="_m2_7_mmlph_memo">7.2.1.8. M2.7. mmlPh:memo</h5>
 <div class="paragraph">
 <p>【内容】使用時間帯などを記載<br>
 【データ型】string<br>
 【省略】省略可</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
 <div class="title">mmlPh:Phone(電話番号表現形式)サンプルインスタンス</div>
+<ul>
+<li>
 <p>構造化電話番号表記</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlPh:Phone mmlPh:telEquipType = "PH"&gt;
-  &lt;mmlPh:area&gt;0985&lt;/mmlPh:area&gt;
-  &lt;mmlPh:city&gt;85&lt;/mmlPh:city&gt;
-  &lt;mmlPh:number&gt;1500&lt;/mmlPh:number&gt;
-  &lt;mmlPh:extension&gt;2067&lt;/mmlPh:extension&gt;
-  &lt;mmlPh:country&gt;81&lt;/mmlPh:country&gt;
-  &lt;mmlPh:memo&gt;daytime&lt;/mmlPh:memo&gt;
-&lt;/mmlPh:Phone&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml"> &lt;mmlPh:Phone mmlPh:telEquipType="PH"&gt;
+   &lt;mmlPh:area&gt;0985&lt;/mmlPh:area&gt;
+   &lt;mmlPh:city&gt;85&lt;/mmlPh:city&gt;
+   &lt;mmlPh:number&gt;1500&lt;/mmlPh:number&gt;
+   &lt;mmlPh:extension&gt;2067&lt;/mmlPh:extension&gt;
+   &lt;mmlPh:country&gt;81&lt;/mmlPh:country&gt;
+   &lt;mmlPh:memo&gt;daytime&lt;/mmlPh:memo&gt;
+ &lt;/mmlPh:Phone&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>非構造化電話番号表記</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlPh:Phone mmlPh:telEquipType = "PH"&gt;
-  &lt;mmlPh:full&gt;0985-85-1500(2067)&lt; /mmlPh:full &gt;
-  &lt;mmlPh:country&gt;81&lt;/mmlPh:country&gt;
-&lt;mmlPh:memo&gt;daytime&lt;/mmlPh:memo&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml"> &lt;mmlPh:Phone mmlPh:telEquipType="PH"&gt;
+   &lt;mmlPh:full&gt;0985-85-1500(2067)&lt;/mmlPh:full&gt;
+   &lt;mmlPh:country&gt;81&lt;/mmlPh:country&gt;
+ &lt;mmlPh:memo&gt;daytime&lt;/mmlPh:memo&gt;</code></pre>
 </div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1303,7 +1312,7 @@ xs:token
 <td class="tableblock halign-left valign-top"><p class="tableblock">Table id</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlCm:Id</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1351,7 +1360,7 @@ xs:token
 <div class="sect3">
 <h4 id="_エレメント解説_3">7.3.1. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlcm_id_id_形式">7.3.1.1. mmlCm:Id (Id 形式)</h5>
+<h5 id="_m3_mmlcm_id_id_形式">7.3.1.1. M3. mmlCm:Id (Id 形式)</h5>
 <div class="paragraph">
 <p>【内容】ID を表現する共通形式．<br>
 【データ型】string<br>
@@ -1403,46 +1412,56 @@ xs:token
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>注釈 1：mmlCm:type は原則として，個人 ID に対しては MML0024 テーブルを，施設 ID に対しては MML0027 テーブルを，診療科 ID に対しては MML0029 を使用し，mmlCm:tableId に使用したテーブル名を記載する．</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">注釈 1</dt>
+<dd>
+<p>mmlCm:type は原則として，個人 ID に対しては MML0024 テーブルを，施設 ID に対しては MML0027 テーブルを，診療科 ID に対しては MML0029 を使用し，mmlCm:tableId に使用したテーブル名を記載する．</p>
+</dd>
+<dt class="hdlist1">注釈 2</dt>
+<dd>
+<p>個人 ID が施設固有のものである場合に限り，mmlCm:tableId に施設 ID を記載し，「施設 ID＋施設固有個人 ID」の組み合わせで個人 ID を記載することを可能とする．</p>
+</dd>
+</dl>
 </div>
-<div class="paragraph">
-<p>注釈 2：個人 ID が施設固有のものである場合に限り，mmlCm:tableId に施設 ID を記載し，「施設 ID＋施設固有個人 ID」の組み合わせで個人 ID を記載することを可能とする．</p>
-</div>
-<div class="paragraph">
+<div class="ulist">
 <div class="title">mmlCm:Id(Id 形式)サンプルインスタンス</div>
+<ul>
+<li>
 <p>個人 ID の場合</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10" mmlCm:checkDigit = "5"
-  mmlCm:tableId = "MML0024"&gt;12345&lt;/mmlCm:Id&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml"> &lt;mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10" mmlCm:checkDigit = "5"
+   mmlCm:tableId = "MML0024"&gt;12345&lt;/mmlCm:Id&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>個人 ID の場合 (「施設 ID＋施設固有個人 ID」で記載する場合)</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10" mmlCm:checkDigit = "5"
-  mmlCm:tableId = "JPN452015100001"&gt;12345&lt;/mmlCm:Id&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml"> &lt;mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10" mmlCm:checkDigit = "5"
+   mmlCm:tableId = "JPN452015100001"&gt;12345&lt;/mmlCm:Id&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>施設 ID の場合</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlCm:Id mmlCm:type = "insurance" mmlCm:tableId = " MML0027"&gt;12345&lt;/mmlCm:Id&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml"> &lt;mmlCm:Id mmlCm:type = "insurance" mmlCm:tableId = " MML0027"&gt;12345&lt;/mmlCm:Id&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>診療科 ID の場合</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlCm:Id mmlCm:type = "medical" mmlCm:tableId = "MML0029"&gt;16&lt;/mmlCm:Id&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml"> &lt;mmlCm:Id mmlCm:type = "medical" mmlCm:tableId = "MML0029"&gt;16&lt;/mmlCm:Id&gt;</code></pre>
 </div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1469,7 +1488,7 @@ xs:token
 <td class="tableblock halign-left valign-top"><p class="tableblock">Table id</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M4.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlCm:extRef</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -1519,7 +1538,7 @@ xs:token
 <div class="sect3">
 <h4 id="_エレメント解説_4">7.4.1. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlcm_extref_外部参照形式">7.4.1.1. mmlCm:extRef(外部参照形式)</h5>
+<h5 id="_m4_mmlcm_extref_外部参照形式">7.4.1.1. M4. mmlCm:extRef(外部参照形式)</h5>
 <div class="paragraph">
 <p>【内容】外部参照を表現する共通形式．<br>
 【属性】</p>
@@ -1589,10 +1608,8 @@ xs:token
 <div class="paragraph">
 <p>個々の外部参照ファイルの内容を，具体的に表す短い文字列を記載する．以下のような使用を想定している．</p>
 </div>
-<div class="paragraph">
-<p>【例】</p>
-</div>
 <div class="ulist">
+<div class="title">【例】</div>
 <ul>
 <li>
 <p>胸腔ドレナージ後の胸部レントゲン写真</p>
@@ -1614,16 +1631,16 @@ xs:token
 <div class="paragraph">
 <p>MML インスタンスからの相対的 uri 記述．外部参照ファイルは，MML インスタンスに添付して送られることを想定しているため，絶対的 uri は使用しない．ファイルの名称や，ディレクトリの設定は，ユーザーにより定義される．</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="title">mmlCm:extRef (外部参照形式) サンプルインスタンス</div>
 <div class="content">
-<pre>&lt;mml:extRefs&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mml:extRefs&gt;
   &lt;mmlCm:extRef
-    mmlCm:contentType = "APPLICATION/HL72.3-HL7ER2.3"
-    mmlCm:medicalRole = "prescription"
-    mmlCm:title = "Prescription on discharge"
-    mmlCm:href = "patient1234/prescription831.HL7"/&gt;
-&lt;/mml:extRefs&gt;</pre>
+   mmlCm:contentType="APPLICATION/HL72.3-HL7ER2.3"
+   mmlCm:medicalRole="prescription"
+   mmlCm:title="Prescription on discharge"
+   mmlCm:href="patient1234/prescription831.HL7"/&gt;
+&lt;/mml:extRefs&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -1658,7 +1675,7 @@ xs:token
 <td class="tableblock halign-left valign-top"><p class="tableblock">Table id</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M5.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlNm:Name</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -1682,7 +1699,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M5.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlNm:family</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1690,7 +1707,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M5.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlNm:given</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1698,7 +1715,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M5.3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlNm:middle</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1706,7 +1723,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M5.4.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlNm:fullname</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1714,7 +1731,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M5.5.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlNm:prefix</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1722,7 +1739,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M5.6.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlNm:degree</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1740,9 +1757,9 @@ xs:token
 <div class="sect3">
 <h4 id="_エレメント解説_5">7.5.1. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlnm_name_人名表現形式">7.5.1.1. mmlNm:Name(人名表現形式)</h5>
+<h5 id="_m5_mmlnm_name_人名表現形式">7.5.1.1. M5. mmlNm:Name(人名表現形式)</h5>
 <div class="paragraph">
-<p>【内容】人名を表現する共通形式．5.1. から 5.3. の 3 エレメントもしくは 5.4. フルネームのどちらかを選択．<br>
+<p>【内容】人名を表現する共通形式．M5.1. から M5.3. の 3 エレメントもしくは M5.4. フルネームのどちらかを選択．<br>
 【属性】</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
@@ -1779,7 +1796,7 @@ xs:token
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlnm_family">7.5.1.2. mmlNm:family</h5>
+<h5 id="_m5_1_mmlnm_family">7.5.1.2. M5.1. mmlNm:family</h5>
 <div class="paragraph">
 <p>【内容】姓<br>
 【データ型】string<br>
@@ -1787,7 +1804,7 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlnm_given">7.5.1.3. mmlNm:given</h5>
+<h5 id="_m5_2_mmlnm_given">7.5.1.3. M5.2. mmlNm:given</h5>
 <div class="paragraph">
 <p>【内容】名<br>
 【データ型】string<br>
@@ -1795,7 +1812,7 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlnm_middle">7.5.1.4. mmlNm:middle</h5>
+<h5 id="_m5_3_mmlnm_middle">7.5.1.4. M5.3. mmlNm:middle</h5>
 <div class="paragraph">
 <p>【内容】ミドルネーム<br>
 【データ型】string<br>
@@ -1803,15 +1820,14 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlnm_fullname">7.5.1.5. mmlNm:fullname</h5>
+<h5 id="_m5_4_mmlnm_fullname">7.5.1.5. M5.4. mmlNm:fullname</h5>
 <div class="paragraph">
-<p>【内容】フルネーム．<br>
-【データ型】string<br>
+<p>【データ型】string<br>
 【省略】上記参照</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlnm_prefix">7.5.1.6. mmlNm:prefix</h5>
+<h5 id="_m5_5_mmlnm_prefix">7.5.1.6. M5.5. mmlNm:prefix</h5>
 <div class="paragraph">
 <p>【内容】肩書きなど<br>
 【データ型】string<br>
@@ -1819,35 +1835,39 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlnm_degree">7.5.1.7. mmlNm:degree</h5>
+<h5 id="_m5_6_mmlnm_degree">7.5.1.7. M5.6. mmlNm:degree</h5>
 <div class="paragraph">
 <p>【内容】学位<br>
 【データ型】string<br>
 【省略】省略可</p>
 </div>
-<div class="paragraph">
+<div class="ulist">
 <div class="title">mmlNm:Name (人名表現形式) サンプルインスタンス</div>
+<ul>
+<li>
 <p>姓名を分ける場合</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025"&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025"&gt;
   &lt;mmlNm:family&gt;Araki&lt;/mmlNm:family&gt;
   &lt;mmlNm:given&gt;Kenji&lt;/mmlNm:given&gt;
   &lt;mmlNm:degree&gt;M.D.&lt;/mmlNm:degree&gt;
-&lt;/mmlNm:Name&gt;</pre>
+&lt;/mmlNm:Name&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>姓名を分けない場合</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025"&gt;
- &lt;mmlNm:fullname&gt;Araki Kenji&lt;/mmlNm:fullname&gt;
- &lt;mmlNm:degree&gt;M.D.&lt;/mmlNm:degree&gt;
-&lt;/mmlNm:Name&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025"&gt;
+  &lt;mmlNm:fullname&gt;Araki Kenji&lt;/mmlNm:fullname&gt;
+  &lt;mmlNm:degree&gt;M.D.&lt;/mmlNm:degree&gt;
+&lt;/mmlNm:Name&gt;</code></pre>
 </div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1873,14 +1893,14 @@ xs:token
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Elements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Element</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attribute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Datatypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datatype</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Occurrence</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Table id</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M6.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlFc:Facility</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -1888,7 +1908,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M6.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlFc:name</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1912,7 +1932,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M6.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlCm:Id</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1930,13 +1950,13 @@ xs:token
 <div class="sect3">
 <h4 id="_エレメント解説_6">7.6.1. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlfc_facility_施設情報形式">7.6.1.1. mmlFc:Facility(施設情報形式)</h5>
+<h5 id="_m6_mmlfc_facility_施設情報形式">7.6.1.1. M6. mmlFc:Facility(施設情報形式)</h5>
 <div class="paragraph">
 <p>【内容】施設を表現する共通形式．</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfc_name">7.6.1.2. mmlFc:name</h5>
+<h5 id="_m6_1_mmlfc_name">7.6.1.2. M6.1. mmlFc:name</h5>
 <div class="paragraph">
 <p>【内容】施設名称．<br>
 【データ型】string<br>
@@ -1978,21 +1998,21 @@ xs:token
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlcm_id">7.6.1.3. mmlCm:Id</h5>
+<h5 id="_m6_2_mmlcm_id">7.6.1.3. M6.2. mmlCm:Id</h5>
 <div class="paragraph">
 <p>【内容】施設 ID．構造は MML 共通形式 (Id 形式) 参照．<br>
 【省略】省略可</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="title">mmlFc:Facility (施設情報形式) サンプルインスタンス</div>
 <div class="content">
-<pre>&lt;mmlFc:Facility&gt;
-  &lt;mmlFc:name mmlFc:repCode = "A" mmlFc:tableId = "MML0025"&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlFc:Facility&gt;
+  &lt;mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025"&gt;
     New Millenium Medical College Hospital
   &lt;/mmlFc:name&gt;
-  &lt;mmlCm:Id mmlCm:type = "insurance" mmlCm:checkDigitSchema = "MD10"
-    mmlCm:checkDigit = "5" mmlCm:tableId = "MML0027"&gt;12345&lt;/mmlCm:Id&gt;
-&lt;/mmlFc:Facility&gt;</pre>
+  &lt;mmlCm:Id mmlCm:type="insurance" mmlCm:checkDigitSchema="MD10"
+    mmlCm:checkDigit="5" mmlCm:tableId="MML0027"&gt;12345&lt;/mmlCm:Id&gt;
+&lt;/mmlFc:Facility&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -2026,7 +2046,7 @@ xs:token
 <td class="tableblock halign-left valign-top"><p class="tableblock">Table id</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M7.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlDp:Department</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2034,7 +2054,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M7.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlDp:name</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -2058,7 +2078,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M7.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlCm:Id</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -2076,13 +2096,13 @@ xs:token
 <div class="sect3">
 <h4 id="_エレメント解説_7">7.7.1. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmldp_department_診療科情報形式">7.7.1.1. mmlDp:Department(診療科情報形式)</h5>
+<h5 id="_m7_mmldp_department_診療科情報形式">7.7.1.1. M7. mmlDp:Department(診療科情報形式)</h5>
 <div class="paragraph">
 <p>【内容】診療科を表現する共通形式．</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmldp_name">7.7.1.2. mmlDp:name</h5>
+<h5 id="_m7_1_mmldp_name">7.7.1.2. M7.1. mmlDp:name</h5>
 <div class="paragraph">
 <p>【内容】診療科名称．<br>
 【データ型】string<br>
@@ -2124,24 +2144,33 @@ xs:token
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlcm_id_2">7.7.1.3. mmlCm:Id</h5>
+<h5 id="_m7_2_mmlcm_id">7.7.1.3. M7.2. mmlCm:Id</h5>
 <div class="paragraph">
 <p>【内容】診療科 ID．構造は MML 共通形式 (Id 形式) 参照．<br>
 【省略】省略可<br></p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="title">mmlDp:Department (診療科情報形式) サンプルインスタンス</div>
 <div class="content">
-<pre>&lt;mmlDp:Department&gt;
-  &lt;mmlDp:name mmlDp:repCode = "A" mmlDp:tableId = "MML0025"&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlDp:Department&gt;
+  &lt;mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025"&gt;
     Cardiovascular　Surgery
   &lt;/mmlDp:name&gt;
-  &lt;mmlCm:Id mmlCm:type = "medical"　 mmlCm:tableId = "MML0029"&gt;16&lt;/mmlCm:Id&gt;
-&lt;/mmlDp:Department&gt;</pre>
+  &lt;mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029"&gt;16&lt;/mmlCm:Id&gt;
+&lt;/mmlDp:Department&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>注釈：診療科 ID に MML0029 テーブルの医科診療科コードを用いた．</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+診療科 ID に MML0029 テーブルの医科診療科コードを用いた．
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -2167,14 +2196,14 @@ xs:token
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Elements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Element</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attribute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Datatypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datatype</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Occurrence</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Table id</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M8.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPsi:PersonalizedInfo</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2182,7 +2211,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M8.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlCm:Id</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -2190,7 +2219,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M8.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPsi:personName</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2198,7 +2227,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.2.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M8.2.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlNm:Name</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2206,7 +2235,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M8.3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlFc:Facility</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2214,7 +2243,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M8.4.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlDp:Department</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2222,7 +2251,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M8.5.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPsi:addresses</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2230,7 +2259,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.5.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M8.5.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:address</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2238,7 +2267,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M8.6.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPsi:emailAddresses</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2246,7 +2275,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.6.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M8.6.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlCm:email</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -2254,7 +2283,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M8.7.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPsi:phones</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2262,7 +2291,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8.7.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M8.7.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:Phone</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2280,27 +2309,27 @@ xs:token
 <div class="sect3">
 <h4 id="_エレメント解説_8">7.8.1. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlpsi_personalizedinfo_個人情報形式">7.8.1.1. mmlPsi:PersonalizedInfo(個人情報形式)</h5>
+<h5 id="_m8_mmlpsi_personalizedinfo_個人情報形式">7.8.1.1. M8. mmlPsi:PersonalizedInfo(個人情報形式)</h5>
 <div class="paragraph">
 <p>【内容】個人情報を表現する共通形式．</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlcm_id_3">7.8.1.2. mmlCm:Id</h5>
+<h5 id="_m8_1_mmlcm_id">7.8.1.2. M8.1. mmlCm:Id</h5>
 <div class="paragraph">
 <p>【内容】個人 ID．構造はMML共通形式 (Id 形式) 参照．<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_personname">7.8.1.3. mmlPsi:personName</h5>
+<h5 id="_m8_2_mmlpsi_personname">7.8.1.3. M8.2. mmlPsi:personName</h5>
 <div class="paragraph">
 <p>【内容】氏名情報を入れる親エレメント．<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlnm_name">7.8.1.4. mmlNm:Name</h5>
+<h5 id="_m8_2_1_mmlnm_name">7.8.1.4. M8.2.1. mmlNm:Name</h5>
 <div class="paragraph">
 <p>【内容】氏名．構造は MML 共通形式 (人名表現形式) 参照．<br>
 【省略】不可<br>
@@ -2308,28 +2337,28 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfc_facility">7.8.1.5. mmlFc:Facility</h5>
+<h5 id="_m8_3_mmlfc_facility">7.8.1.5. M8.3. mmlFc:Facility</h5>
 <div class="paragraph">
 <p>【内容】施設情報．構造は MML 共通形式 (施設情報形式) 参照．<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmldp_department">7.8.1.6. mmlDp:Department</h5>
+<h5 id="_m8_4_mmldp_department">7.8.1.6. M8.4. mmlDp:Department</h5>
 <div class="paragraph">
 <p>【内容】診療科情報．構造は MML 共通形式 (診療科情報形式) 参照．<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_addresses">7.8.1.7. mmlPsi:addresses</h5>
+<h5 id="_m8_5_mmlpsi_addresses">7.8.1.7. M8.5. mmlPsi:addresses</h5>
 <div class="paragraph">
 <p>【内容】住所情報を入れる親エレメント．<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlad_address">7.8.1.8. mmlAd:address</h5>
+<h5 id="_m8_5_1_mmlad_address">7.8.1.8. M8.5.1. mmlAd:address</h5>
 <div class="paragraph">
 <p>【内容】住所．構造は MML 共通形式 (住所表現形式) 参照．<br>
 【省略】不可<br>
@@ -2337,14 +2366,14 @@ xs:token
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_emailaddresses">7.8.1.9. mmlPsi:emailAddresses</h5>
+<h5 id="_m8_6_mmlpsi_emailaddresses">7.8.1.9. M8.6. mmlPsi:emailAddresses</h5>
 <div class="paragraph">
 <p>【内容】下記の電子メールアドレスを入れる親エレメント．<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlcm_email">7.8.1.10. mmlCm:email</h5>
+<h5 id="_m8_6_1_mmlcm_email">7.8.1.10. M8.6.1. mmlCm:email</h5>
 <div class="paragraph">
 <p>【内容】電子メールアドレス<br>
 【データ型】string<br>
@@ -2352,58 +2381,56 @@ xs:token
 【繰り返し設定】繰り返しあり．電子メールアドレスが複数あれば繰り返す．<br>
 【例】</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlPsi:emailAddresses&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlPsi:emailAddresses&gt;
   &lt;mmlCm:email&gt;araki@post.medxml.net&lt;/mmlCm:email&gt;
-&lt;/mmlPsi:emailAddresses&gt;</pre>
+&lt;/mmlPsi:emailAddresses&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_phones">7.8.1.11. mmlPsi:phones</h5>
+<h5 id="_m8_7_mmlpsi_phones">7.8.1.11. M8.7. mmlPsi:phones</h5>
 <div class="paragraph">
 <p>【内容】下記連絡先電話番号を入れる親エレメント．<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlph_phone">7.8.1.12. mmlPh:Phone</h5>
+<h5 id="_m8_7_1_mmlph_phone">7.8.1.12. M8.7.1. mmlPh:Phone</h5>
 <div class="paragraph">
 <p>【内容】構造はMML共通形式 (電話番号表現形式) 参照．<br>
 【省略】不可<br>
 【繰り返し設定】繰り返しあり．電話番号が複数あれば繰り返す．</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="title">mmlPsi:PersonalizedInfo (個人情報形式) サンプル インスタンス</div>
 <div class="content">
-<pre>&lt;mmlPsi:PersonalizedInfo&gt;
-  &lt;mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10"
-    mmlCm:checkDigit = "5" mmlCm:tableId = "MML0024"&gt;12345&lt;/mmlCm:Id&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlPsi:PersonalizedInfo&gt;
+  &lt;mmlCm:Id mmlCm:type="facility" mmlCm:checkDigitSchema="M10" mmlCm:checkDigit="5" mmlCm:tableId="MML0024"&gt;12345&lt;/mmlCm:Id&gt;
   &lt;mmlPsi:personName&gt;
-    &lt;mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025"&gt;
+    &lt;mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025"&gt;
       &lt;mmlNm:family&gt;Araki&lt;/mmlNm:family&gt;
       &lt;mmlNm:given&gt;Kenji&lt;/mmlNm:given&gt;
       &lt;mmlNm:degree&gt;M.D.&lt;/mmlNm:degree&gt;
     &lt;/mmlNm:Name&gt;
   &lt;/mmlPsi:personName&gt;
   &lt;mmlFc:Facility&gt;
-    &lt;mmlFc:name mmlFc:repCode = "A" mmlFc:tableId = "MML0025"&gt;
+    &lt;mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025"&gt;
       New Millenium Medical College Hospital
     &lt;/mmlFc:name&gt;
-    &lt;mmlCm:Id mmlCm:type = "insurance"
-      mmlCm:tableId = "MML0027"&gt;12345&lt;/mmlCm:Id&gt;
+    &lt;mmlCm:Id mmlCm:type="insurance"
+      mmlCm:tableId="MML0027"&gt;12345&lt;/mmlCm:Id&gt;
   &lt;/mmlFc:Facility&gt;
   &lt;mmlDp:Department&gt;
-    &lt;mmlDp:name mmlDp:repCode = "A" mmlDp:tableId = "MML0025"&gt;
+    &lt;mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025"&gt;
       Cardiovascular Surgery
     &lt;/mmlDp:name&gt;
-    &lt;mmlCm:Id mmlCm:type = "medical" mmlCm:tableId = "MML0029"&gt;16&lt;/mmlCm:Id&gt;
+    &lt;mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029"&gt;16&lt;/mmlCm:Id&gt;
   &lt;/mmlDp:Department&gt;
   &lt;mmlPsi:addresses&gt;
-    &lt;mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business"
-      mmlAd:tableId = "MML0025"&gt;
-      &lt;mmlAd:full&gt;
+    &lt;mmlAd:Address mmlAd:repCode="A" mmlAd:addressClass="business" mmlAd:tableId="MML0025"&gt;
+       &lt;mmlAd:full&gt;
         5200 Kihara, Kiyotake-cho, Miyazaki-gun, Miyazaki-prefecture
       &lt;/mmlAd:full&gt;
       &lt;mmlAd:zip&gt;889-1692&lt;/mmlAd:zip&gt;
@@ -2414,7 +2441,7 @@ xs:token
     &lt;mmlCm:email&gt;araki@post.medxml.net&lt;/mmlCm:email&gt;
   &lt;/mmlPsi:emailAddresses&gt;
   &lt;mmlPsi:phones&gt;
-    &lt;mmlPh:Phone mmlPh:telEquipType = "PH"&gt;
+    &lt;mmlPh:Phone mmlPh:telEquipType="PH"&gt;
       &lt;mmlPh:area&gt;0985&lt;/mmlPh:area&gt;
       &lt;mmlPh:city&gt;85&lt;/mmlPh:city&gt;
       &lt;mmlPh:number&gt;1500&lt;/mmlPh:number&gt;
@@ -2423,7 +2450,7 @@ xs:token
       &lt;mmlPh:memo&gt;daytime&lt;/mmlPh:memo&gt;
     &lt;/mmlPh:Phone&gt;
   &lt;/mmlPsi:phones&gt;
-&lt;/mmlPsi:PersonalizedInfo&gt;</pre>
+&lt;/mmlPsi:PersonalizedInfo&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -2450,14 +2477,14 @@ xs:token
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Elements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Element</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attribute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Datatypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datatype</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Occurrence</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Table id</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M9.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlCi:CreatorInfo</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2465,7 +2492,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M9.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPsi:PersonalizedInfo</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2473,7 +2500,7 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M9.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlCi:creatorLicense</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -2499,20 +2526,20 @@ xs:token
 <div class="sect3">
 <h4 id="_エレメント解説_9">7.9.1. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlci_creatorinfo_作成者情報形式">7.9.1.1. mmlCi:CreatorInfo(作成者情報形式)</h5>
+<h5 id="_m9_mmlci_creatorinfo_作成者情報形式">7.9.1.1. M9. mmlCi:CreatorInfo(作成者情報形式)</h5>
 <div class="paragraph">
 <p>【内容】作成者を表現する共通形式．</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_personalizedinfo">7.9.1.2. mmlPsi:PersonalizedInfo</h5>
+<h5 id="_m9_1_mmlpsi_personalizedinfo">7.9.1.2. M9.1. mmlPsi:PersonalizedInfo</h5>
 <div class="paragraph">
 <p>【内容】作成者の個人情報．構造は MML 共通形式 (個人情報形式) 参照．<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlci_creatorlicense">7.9.1.3. mmlCi:creatorLicense</h5>
+<h5 id="_m9_2_mmlci_creatorlicense">7.9.1.3. M9.2. mmlCi:creatorLicense</h5>
 <div class="paragraph">
 <p>【内容】生成者の資格<br>
 【データ型】string．属性で指定されたテーブルの値を入れる．<br>
@@ -2548,9 +2575,9 @@ xs:token
 <div class="paragraph">
 <p>【例】</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlCi:creatorLicense mmlCi:tableId = "MML0026"&gt;doctor&lt;/mmlCi:creatorLicense&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlCi:creatorLicense mmlCi:tableId="MML0026"&gt;doctor&lt;/mmlCi:creatorLicense&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -2564,7 +2591,7 @@ xs:token
 <div class="sect2">
 <h3 id="_mmlheader_に関して">8.1. MmlHeader に関して</h3>
 <div class="paragraph">
-<p>MML Ver 4のMmlHeader 内のタグはすべて，xmlns:mml ="http://www.medxml.net/MML/v4" の Namespace に属す．(ここでは，xmlns="http://www.medxml.net/MML/v4" とデフォルト化したものとして記述することとする)</p>
+<p>MML Ver 4のMmlHeader 内のタグはすべて，xmlns:mml ="http://www.medxml.net/MML/v4/base/1.0/" の Namespace に属す．(ここでは，xmlns="http://www.medxml.net/MML/v4/base/1.0" とデフォルト化したものとして記述することとする)</p>
 </div>
 <div class="sect3">
 <h4 id="_mmlheader">8.1.1. MmlHeader</h4>
@@ -2587,7 +2614,7 @@ xs:token
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mmlcm_id_4">8.1.4. mmlCm:Id</h4>
+<h4 id="_mmlcm_id">8.1.4. mmlCm:Id</h4>
 <div class="paragraph">
 <p>【内容】構造は MML 共通形式 (Id 形式) 参照．<br>
 【省略】不可</p>
@@ -2603,7 +2630,7 @@ xs:token
 <div class="sect3">
 <h4 id="_tocitem">8.1.6. tocItem</h4>
 <div class="paragraph">
-<p>【内容】本 MML 文書で使われている全ての DTD をリストアップする．冗長ではあるが、SAX系の処理には有効であるためv4でも存続させた。 <br>
+<p>【内容】本 MML 文書で使われている全てのXML Schemaをリストアップする．冗長ではあるが、SAX系の処理には有効であるためv4でも存続させた。 <br>
 【データ型】string<br>
 【省略】不可<br>
 【繰り返し設定】繰り返しあり．使用した DTD の種類だけ繰り返す．</p>
@@ -2691,7 +2718,7 @@ xs:token
 <div class="sect2">
 <h3 id="_docinfoとは">9.1. docInfoとは</h3>
 <div class="paragraph">
-<p>docInfoはOverviewで記述したとおり、各MmlModuleItemの先頭に記載され、各Itemに関する作成者やアクセス権の範囲などが記載される。</p>
+<p>docInfoはOverviewで解説したとおり、各MmlModuleItemの先頭に記載され、各Itemの作成者やアクセス権の範囲などが記載される。</p>
 </div>
 <div class="sect3">
 <h4 id="_docinfo">9.1.1. docInfo</h4>
@@ -2728,7 +2755,7 @@ xs:token
 <td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">使用モジュールのDTDのURIを記載</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用するモジュールのXMLスキーマのURIを記載</p></td>
 </tr>
 </tbody>
 </table>
@@ -3084,66 +3111,44 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <div class="title">【例】securityLevel (アクセス権種別) 記載例</div>
 <p>宮崎医科大学附属病院の内科，医師に2001年10月1日から2001年12月31日まで参照，修正，削除の権利を与える場合</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;securityLevel&gt;
-  &lt;accessRight
-    permit="all"
-    startDate="2001-10-01"
-    endDate="2001-12-31"&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;securityLevel&gt;
+  &lt;accessRight permit="all" startDate="2001-10-01" endDate="2001-12-31"&gt;
     &lt;mmlSc:facility&gt;
-      &lt;mmlSc:facilityName
-        mmlSc:facilityCode="individual"
-        mmlSc:tableId="MML0035"
-        mmlSc:facilityId="JPN453010100003"
-        mmlSc:facilityIdType="JMARI"&gt;
+      &lt;mmlSc:facilityName mmlSc:facilityCode="individual" mmlSc:tableId="MML0035" mmlSc:facilityId="JPN453010100003" mmlSc:facilityIdType="JMARI"&gt;
         宮崎医科大学附属病院
       &lt;/mmlSc:facilityName&gt;
     &lt;/mmlSc:facility&gt;
     &lt;mmlSc:department&gt;
-      &lt;mmlSc:departmentName
-      mmlSc:departmentCode="01"
-      mmlSc:tableId="MML0028"/&gt;
+      &lt;mmlSc:departmentName mmlSc:departmentCode="01" mmlSc:tableId="MML0028"/&gt;
     &lt;/mmlSc:department&gt;
     &lt;mmlSc:license&gt;
-      &lt;mmlSc:licenseName
-        mmlSc:licenseCode="doctor"
-        mmlSc:tableId="MML0026"/&gt;
+      &lt;mmlSc:licenseName mmlSc:licenseCode="doctor" mmlSc:tableId="MML0026"/&gt;
     &lt;/mmlSc:license&gt;
   &lt;/accessRight&gt;
-&lt;/securityLevel&gt;</pre>
+&lt;/securityLevel&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>記載者施設に無期限の全ての権利と，患者 (患者太郎) に 2001 年 10 月 1 日から 2001 年 12 月 31 日まで参照の権利を与える場合</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
+<div class="title">記載者施設に無期限の全ての権利と，患者 (患者太郎) に 2001 年 10 月 1 日から 2001 年 12 月 31 日まで参照の権利を与える場合</div>
 <div class="content">
-<pre>&lt;securityLevel&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;securityLevel&gt;
   &lt;accessRight permit="all"&gt;
     &lt;mmlSc:facility&gt;
-      &lt;mmlSc:facilityName
-        mmlSc:facilityCode="creator"
-        mmlSc:tableId="MML0035"&gt;
+      &lt;mmlSc:facilityName mmlSc:facilityCode="creator" mmlSc:tableId="MML0035"&gt;
         記載者施設
       &lt;/mmlSc:facilityName&gt;
     &lt;/mmlSc:facility&gt;
   &lt;/accessRight&gt;
-  &lt;accessRight
-    permit="read"
-    startDate="2001-10-01"
-    endDate="2001-12-31"&gt;
+  &lt;accessRight permit="read" startDate="2001-10-01" endDate="2001-12-31"&gt;
     &lt;mmlSc:person&gt;
-      &lt;mmlSc:personName
-        mmlSc:personCode="patient"
-        mmlSc:tableId="MML0036"
-        mmlSc:personId="4500001234"
-        mmlSc:personIdType="dolphinUserid_2001-10-03"&gt;
+      &lt;mmlSc:personName mmlSc:personCode="patient" mmlSc:tableId="MML0036" mmlSc:personId="4500001234" mmlSc:personIdType="dolphinUserid_2001-10-03"&gt;
         患者太郎
       &lt;/mmlSc:personName&gt;
     &lt;/mmlSc:person&gt;
   &lt;/accessRight&gt;
-&lt;/securityLevel&gt;</pre>
+&lt;/securityLevel&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -3191,14 +3196,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <div class="sect3">
 <h4 id="_uid">9.1.14. uid</h4>
 <div class="paragraph">
-<p>【内容】文書ユニーク ID．ユニーク番号の形式は UUID とする ( UUID はハイフンを含めた形式とする)．MML プロセッサーは，MML インスタンスを受け取った時に，何らかの手段で uid をローカルに保存しておくことを強く推奨する．<br>
+<p>【内容】文書固有のID．ユニーク番号の形式は UUID とする ( UUID はハイフンを含めた形式とする)．MML プロセッサーは，MML インスタンスを受け取った時に，何らかの手段で uid をローカルに保存しておくことを強く推奨する．<br>
 【データ型】string<br>
 【省略】不可<br>
 【例】</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;uid&gt;0aae5960-667c-11d3-9751-00105a6792e7&lt;/uid&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;uid&gt;0aae5960-667c-11d3-9751-00105a6792e7&lt;/uid&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -3239,9 +3244,9 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <div class="paragraph">
 <p>【例】親文書に対する訂正文書 (新しい版) である場合</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;parentId relation = "oldEdition"&gt;0aae5960-667c-11d3-9751-00105a6792e8&lt;/parentId&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;parentId relation="oldEdition"&gt;0aae5960-667c-11d3-9751-00105a6792e8&lt;/parentId&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -3363,10 +3368,9 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <div class="sect1">
 <h2 id="_mmlコンテンツ_モジュール詳説">10. MMLコンテンツ モジュール詳説</h2>
 <div class="sectionbody">
-<!-- toc disabled -->
 <div class="literalblock">
 <div class="content">
-<pre>　MMLではユースケースに応じて設計された下記のモジュールを一単位としてMmlItemに記載することにしている。詳細はドキュメントおよびスキーマを参照すること。</pre>
+<pre>　MMLではユースケースに応じて下記のモジュールを設計した。各モジュールを1文書単位としてMmlItemに記載することとしている。詳細は各ドキュメントおよびスキーマを参照すること。</pre>
 </div>
 </div>
 <div class="sect2">
@@ -3407,7 +3411,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TableId</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:PatientModule</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -3415,7 +3419,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:uniqueInfo</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -3423,7 +3427,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.1.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:masterId</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -3431,7 +3435,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.1.1.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlCm:Id</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -3439,7 +3443,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.1.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:otherId</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -3455,7 +3459,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MML0009</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.2.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.1.2.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlCm:Id</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -3463,7 +3467,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:personName</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -3471,7 +3475,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.2.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlNm:Name</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -3479,7 +3483,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:birthday</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
@@ -3487,7 +3491,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.4.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:sex</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -3495,7 +3499,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MML0010</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.5.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:nationality</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -3511,7 +3515,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.6.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:race</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -3535,7 +3539,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.7.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:marital</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -3543,7 +3547,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MML0011</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.8.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.8.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:addresses</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -3551,7 +3555,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.8.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.8.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:Address</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -3559,7 +3563,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.9.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.9.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:emailAddresses</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -3567,7 +3571,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.9.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.9.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlCm:email</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -3575,7 +3579,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.10.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.10.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:phones</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -3583,7 +3587,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.10.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.10.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:Phone</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -3591,7 +3595,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.11.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.11.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:accountNumber</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -3599,7 +3603,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.12.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.12.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:socialIdentification</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -3607,7 +3611,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.13.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M10.13.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:death</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
@@ -3626,34 +3630,34 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <div class="sect3">
 <h4 id="_エレメント解説_10">10.1.2. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlpi_patientmodule">10.1.2.1. mmlPi:PatientModule</h5>
+<h5 id="_m10_mmlpi_patientmodule">10.1.2.1. M10. mmlPi:PatientModule</h5>
 <div class="paragraph">
 <p>【内容】患者情報</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_uniqueinfo">10.1.2.2. mmlPi:uniqueInfo</h5>
+<h5 id="_m10_1_mmlpi_uniqueinfo">10.1.2.2. M10.1. mmlPi:uniqueInfo</h5>
 <div class="paragraph">
 <p>【内容】ID 情報<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_masterid">10.1.2.3. mmlPi:masterId</h5>
+<h5 id="_m10_1_1_mmlpi_masterid">10.1.2.3. M10.1.1. mmlPi:masterId</h5>
 <div class="paragraph">
 <p>【内容】主 ID．MmlHeader の masterId と必ず一致すること．<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlcm_id_5">10.1.2.4. mmlCm:Id</h5>
+<h5 id="_m10_1_1_1_mmlcm_id">10.1.2.4. M10.1.1.1. mmlCm:Id</h5>
 <div class="paragraph">
 <p>【内容】構造は MML 共通形式 (Id 形式) 参照．<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_otherid">10.1.2.5. mmlPi:otherId</h5>
+<h5 id="_m10_1_2_mmlpi_otherid">10.1.2.5. M10.1.2. mmlPi:otherId</h5>
 <div class="paragraph">
 <p>【内容】その他の ID．代理人の ID，緊急連絡者の ID，等を記載する．<br>
 【省略】省略可<br>
@@ -3687,21 +3691,21 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlcm_id_6">10.1.2.6. mmlCm:Id</h5>
+<h5 id="_m10_1_2_1_mmlcm_id">10.1.2.6. M10.1.2.1. mmlCm:Id</h5>
 <div class="paragraph">
 <p>【内容】構造は MML 共通形式 (Id 形式) 参照．<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_personname">10.1.2.7. mmlPi:personName</h5>
+<h5 id="_m10_2_mmlpi_personname">10.1.2.7. M10.2. mmlPi:personName</h5>
 <div class="paragraph">
 <p>【内容】氏名情報<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlnm_name_2">10.1.2.8. mmlNm:Name</h5>
+<h5 id="_m10_2_1_mmlnm_name">10.1.2.8. M10.2.1. mmlNm:Name</h5>
 <div class="paragraph">
 <p>【内容】構造は MML 共通形式 (人名表現形式) 参照．<br>
 【省略】不可<br>
@@ -3709,21 +3713,21 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_birthday">10.1.2.9. mmlPi:birthday</h5>
+<h5 id="_m10_3_mmlpi_birthday">10.1.2.9. M10.3. mmlPi:birthday</h5>
 <div class="paragraph">
 <p>【内容】生年月日<br>
 【データ型】date 書式：CCYY-MM-DD<br>
 【省略】不可<br>
 【例】</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlPi:birthday&gt;1958-10-21&lt;/mmlPi:birthday&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlPi:birthday&gt;1958-10-21&lt;/mmlPi:birthday&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_sex">10.1.2.10. mmlPi:sex</h5>
+<h5 id="_m10_4_mmlpi_sex">10.1.2.10. M10.4. mmlPi:sex</h5>
 <div class="paragraph">
 <p>【内容】性別．テーブル MML0010 を使用する．<br>
 【データ型】string<br>
@@ -3731,9 +3735,9 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_nationality">10.1.2.11. mmlPi:nationality</h5>
+<h5 id="_m10_5_mmlpi_nationality">10.1.2.11. M10.5. mmlPi:nationality</h5>
 <div class="paragraph">
-<p>【内容】国籍コード．ISO 3166 A3 コード使用．日本 JPN<br>
+<p>【内容】国籍コード．ISO 3166 A3 コード使用．例：日本 JPN<br>
 【データ型】string<br>
 【省略】省略可<br>
 【属性】</p>
@@ -3763,14 +3767,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <div class="paragraph">
 <p>【例】国籍が日本．第 2 国籍がアメリカの場合．</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlPi:nationality mmlPi:subtype = "USA"&gt;JPN&lt;/mmlPi:nationality&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlPi:nationality mmlPi:subtype="USA"&gt;JPN&lt;/mmlPi:nationality&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_race">10.1.2.12. mmlPi:race</h5>
+<h5 id="_m10_6_mmlpi_race">10.1.2.12. M10.6. mmlPi:race</h5>
 <div class="paragraph">
 <p>【内容】人種，民族<br>
 【データ型】string<br>
@@ -3807,7 +3811,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_marital">10.1.2.13. mmlPi:marital</h5>
+<h5 id="_m10_7_mmlpi_marital">10.1.2.13. M10.7. mmlPi:marital</h5>
 <div class="paragraph">
 <p>【内容】婚姻状態．テーブル MML0011 を使用する．<br>
 【データ型】string<br>
@@ -3815,14 +3819,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_addresses">10.1.2.14. mmlPi:addresses</h5>
+<h5 id="_m10_8_mmlpi_addresses">10.1.2.14. M10.8. mmlPi:addresses</h5>
 <div class="paragraph">
 <p>【内容】下記の住所を入れる親エレメント．<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlad_address_2">10.1.2.15. mmlAd:Address</h5>
+<h5 id="_m10_8_1_mmlad_address">10.1.2.15. M10.8.1. mmlAd:Address</h5>
 <div class="paragraph">
 <p>【内容】住所．構造は MML 共通形式 (住所表現形式) 参照．<br>
 【省略】省略可<br>
@@ -3830,14 +3834,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_emailaddresses">10.1.2.16. mmlPi:emailAddresses</h5>
+<h5 id="_m10_9_mmlpi_emailaddresses">10.1.2.16. M10.9. mmlPi:emailAddresses</h5>
 <div class="paragraph">
 <p>【内容】下記の電子メールアドレスを入れる親エレメント．<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlcm_email_2">10.1.2.17. mmlCm:email</h5>
+<h5 id="_m10_9_1_mmlcm_email">10.1.2.17. M10.9.1. mmlCm:email</h5>
 <div class="paragraph">
 <p>【内容】電子メールアドレス<br>
 【データ型】string<br>
@@ -3846,14 +3850,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_phones">10.1.2.18. mmlPi:phones</h5>
+<h5 id="_m10_10_mmlpi_phones">10.1.2.18. M10.10. mmlPi:phones</h5>
 <div class="paragraph">
 <p>【内容】下記連絡先電話番号を入れる親エレメント．<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlph_phone_2">10.1.2.19. mmlPh:Phone</h5>
+<h5 id="_m10_10_1_mmlph_phone">10.1.2.19. M10.10.1. mmlPh:Phone</h5>
 <div class="paragraph">
 <p>【内容】構造は MML 共通形式 (電話番号表現形式) 参照．<br>
 【省略】不可<br>
@@ -3861,7 +3865,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_accountnumber">10.1.2.20. mmlPi:accountNumber</h5>
+<h5 id="_m10_11_mmlpi_accountnumber">10.1.2.20. M10.11. mmlPi:accountNumber</h5>
 <div class="paragraph">
 <p>【内容】会計番号<br>
 【データ型】string<br>
@@ -3869,7 +3873,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_socialidentification">10.1.2.21. mmlPi:socialIdentification</h5>
+<h5 id="_m10_12_mmlpi_socialidentification">10.1.2.21. M10.12. mmlPi:socialIdentification</h5>
 <div class="paragraph">
 <p>【内容】社会番号<br>
 【データ型】string<br>
@@ -3877,10 +3881,10 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_death">10.1.2.22. mmlPi:death</h5>
+<h5 id="_m10_13_mmlpi_death">10.1.2.22. M10.13. mmlPi:death</h5>
 <div class="paragraph">
 <p>【内容】死亡フラグ．true：死亡，false：生存<br>
-【データ型】boolean<br>
+【データ型】Boolean<br>
 【省略】省略可<br>
 【属性】</p>
 </div>
@@ -3902,24 +3906,24 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date/dateTime</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">死亡日時．datatypesはdateもしくはdateTimeのどちらかとする．</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">死亡日時．データ型はdateもしくはdateTimeのどちらかとする．</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
 <p>【例】1999 年 9 月 1 日に死亡</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlPi:death mmlPi:date="1999-09-01"&gt;true&lt;/mmlPi:death&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlPi:death mmlPi:date="1999-09-01"&gt;true&lt;/mmlPi:death&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>【例】1999 年 9 月 1 日 6 時 15 分に死亡</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlPi:death mmlPi:date="1999-09-01T06:15"&gt;true&lt;/mmlPi:death&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlPi:death mmlPi:date="1999-09-01T06:15"&gt;true&lt;/mmlPi:death&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -3938,9 +3942,9 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <div class="paragraph">
 <p>本モジュールのnamespaces宣言は，以下とする．</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>xmlns:mmlHi= "http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">xmlns:mmlHi= "http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all spread">
@@ -3963,7 +3967,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TableId</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:HealthInsuranceModule</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -3979,7 +3983,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:insuranceClass</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -4003,7 +4007,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MML0031</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:insuranceNumber</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -4011,7 +4015,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:clientId</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4019,7 +4023,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.3.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:group</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -4027,7 +4031,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.3.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.3.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:number</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -4035,7 +4039,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.4.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:familyClass</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
@@ -4043,7 +4047,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.5.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:clientInfo</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4051,7 +4055,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.5.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:personName</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4059,7 +4063,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.5.1.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlNm:Name</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4067,7 +4071,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.5.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:addresses</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4075,7 +4079,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.2.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.5.2.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:Address</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4083,7 +4087,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.5.3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:phones</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4091,7 +4095,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.3.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.5.3.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:Phone</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4099,7 +4103,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.6.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:continuedDiseases</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4107,7 +4111,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.6.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.6.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:diseases</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -4115,7 +4119,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.7.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:startDate</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
@@ -4123,7 +4127,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.8.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.8.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:expiredDate</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
@@ -4131,7 +4135,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.9.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.9.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:paymentInRatio</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
@@ -4139,7 +4143,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.10.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.10.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:paymentOutRatio</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
@@ -4147,7 +4151,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.11.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.11.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:insuredInfo</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4155,7 +4159,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.11.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.11.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:facility</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4163,7 +4167,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.11.1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.11.1.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlFc:Facility</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4171,7 +4175,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.11.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.11.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:addresses</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4179,7 +4183,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.11.2.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.11.2.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:Address</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4187,7 +4191,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.11.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.11.3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:phones</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4195,7 +4199,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.11.3.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.11.3.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:Phone</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4203,7 +4207,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.12.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.12.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:workInfo</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4211,7 +4215,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.12.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.12.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:facility</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4219,7 +4223,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.12.1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.12.1.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlFc:Facility</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4227,7 +4231,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.12.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.12.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:addresses</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4235,7 +4239,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.12.2.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.12.2.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlAd:Address</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4243,7 +4247,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.12.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.12.3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:phones</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4251,7 +4255,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.12.3.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.12.3.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPh:Phone</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4259,7 +4263,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.13.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.13.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:publicInsurance</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4267,7 +4271,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.13.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.13.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:publicInsuranceItem</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -4283,7 +4287,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.13.1.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.13.1.1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:providerName</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -4291,7 +4295,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.13.1.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.13.1.2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:provider</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -4299,7 +4303,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.13.1.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.13.1.3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:recipient</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -4307,7 +4311,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.13.1.4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.13.1.4.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:startDate</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
@@ -4315,7 +4319,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.13.1.5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.13.1.5.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:expiredDate</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
@@ -4323,7 +4327,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.13.1.6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M11.13.1.6.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHi:paymentRatio</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
@@ -4350,7 +4354,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <div class="sect3">
 <h4 id="_エレメント解説_11">10.2.2. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_mmlhi_healthinsurancemodule">10.2.2.1. mmlHi:HealthInsuranceModule</h5>
+<h5 id="_m11_mmlhi_healthinsurancemodule">10.2.2.1. M11. mmlHi:HealthInsuranceModule</h5>
 <div class="paragraph">
 <p>【内容】使用可能保険・公費の組合せ．<br>
 【省略】不可<br>
@@ -4359,14 +4363,18 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <div class="paragraph">
 <p>たとえば，以下の 3 通りの保険が使われておれば，</p>
 </div>
-<div class="paragraph">
-<p>1．国保のみ</p>
-</div>
-<div class="paragraph">
-<p>2．国保と公費 (結核)</p>
-</div>
-<div class="paragraph">
-<p>3．社保継続</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>国保のみ</p>
+</li>
+<li>
+<p>国保と公費 (結核)</p>
+</li>
+<li>
+<p>社保継続</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>&lt;MmlModuleItem&gt;を 3 回繰り返して，3 つを別個に記載する．</p>
@@ -4399,14 +4407,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <div class="paragraph">
 <p>【例】</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:HealthInsuranceModule mmlHi:countryType = "JPN"&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:HealthInsuranceModule mmlHi:countryType="JPN"&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_insuranceclass">10.2.2.2. mmlHi:insuranceClass</h5>
+<h5 id="_m11_1_mmlhi_insuranceclass">10.2.2.2. M11.1. mmlHi:insuranceClass</h5>
 <div class="paragraph">
 <p>【内容】 健康保険種別．原則としてテーブル MML0031 を用いるが，地方公費等でユーザー固有の拡張が必要なときは，別テーブルとし，別のテーブル名を記載する．<br>
 【データ型】string<br>
@@ -4444,31 +4452,35 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <div class="paragraph">
 <p>【例】</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:insuranceClass mmlHi:ClassCode="00" mmlHi:tableId="MML0031"&gt;国保&lt;/mmlHi:insuranceClass&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml"> &lt;mmlHi:insuranceClass mmlHi:ClassCode="00" mmlHi:tableId="MML0031"&gt;国保&lt;/mmlHi:insuranceClass&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_insurancenumber">10.2.2.3. mmlHi:insuranceNumber</h5>
+<h5 id="_m11_2_mmlhi_insurancenumber">10.2.2.3. M11.2. mmlHi:insuranceNumber</h5>
 <div class="paragraph">
 <p>【内容】健康保険者番号<br>
 【データ型】string<br>
 【省略】不可<br>
-【例】
- &lt;mmlHi:insuranceNumber&gt;8001&lt;/mmlHi:insuranceNumber&gt;</p>
+【例】</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:insuranceNumber&gt;8001&lt;/mmlHi:insuranceNumber&gt;</code></pre>
+</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_clientid">10.2.2.4. mmlHi:clientId</h5>
+<h5 id="_m11_3_mmlhi_clientid">10.2.2.4. M11.3. mmlHi:clientId</h5>
 <div class="paragraph">
 <p>【内容】被保険者情報<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_group">10.2.2.5. mmlHi:group</h5>
+<h5 id="_m11_3_1_mmlhi_group">10.2.2.5. M11.3.1. mmlHi:group</h5>
 <div class="paragraph">
 <p>【内容】被保険者記号<br>
 【データ型】string<br>
@@ -4476,60 +4488,60 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_number">10.2.2.6. mmlHi:number</h5>
+<h5 id="_m11_3_2_mmlhi_number">10.2.2.6. M11.3.2. mmlHi:number</h5>
 <div class="paragraph">
 <p>【内容】被保険者番号<br>
 【データ型】string<br>
 【省略】不可<br>
 【例】</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:clientId&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:clientId&gt;
   &lt;mmlHi:group&gt;宮市みへし&lt;/mmlHi:group&gt;
   &lt;mmlHi:number&gt;421&lt;/mmlHi:number&gt;
-&lt;/mmlHi:clientId&gt;</pre>
+&lt;/mmlHi:clientId&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_familyclass">10.2.2.7. mmlHi:familyClass</h5>
+<h5 id="_m11_4_mmlhi_familyclass">10.2.2.7. M11.4. mmlHi:familyClass</h5>
 <div class="paragraph">
 <p>【内容】本人家族区分．true：本人，false：家族<br>
 【データ型】boolean<br>
 【省略】不可<br>
 【例】本人</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:familyClass&gt;true&lt;/mmlHi:familyClass&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:familyClass&gt;true&lt;/mmlHi:familyClass&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>【例】家族</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:familyClass&gt;false&lt;/mmlHi:familyClass&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:familyClass&gt;false&lt;/mmlHi:familyClass&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_clientinfo">10.2.2.8. mmlHi:clientInfo</h5>
+<h5 id="_m11_5_mmlhi_clientinfo">10.2.2.8. M11.5. mmlHi:clientInfo</h5>
 <div class="paragraph">
 <p>【内容】被保険者情報<br>
 【省略】可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_personname">10.2.2.9. mmlHi:personName</h5>
+<h5 id="_m11_5_1_mmlhi_personname">10.2.2.9. M11.5.1. mmlHi:personName</h5>
 <div class="paragraph">
 <p>【内容】下記の被保険者氏名を入れる親エレメント<br>
 【省略】可.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlnm_name_3">10.2.2.10. mmlNm:Name</h5>
+<h5 id="_m11_5_1_1_mmlnm_name">10.2.2.10. M11.5.1.1. mmlNm:Name</h5>
 <div class="paragraph">
 <p>【内容】氏名．構造は MML 共通形式 (人名表現形式参照)<br>
 【省略】可<br>
@@ -4537,14 +4549,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_addresses">10.2.2.11. mmlHi:addresses</h5>
+<h5 id="_m11_5_2_mmlhi_addresses">10.2.2.11. M11.5.2. mmlHi:addresses</h5>
 <div class="paragraph">
 <p>【内容】下記の被保険住所を入れる親エレメント<br>
 【省略】可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlad_address_3">10.2.2.12. mmlAd:Address</h5>
+<h5 id="_m11_5_2_1_mmlad_address">10.2.2.12. M11.5.2.1. mmlAd:Address</h5>
 <div class="paragraph">
 <p>【内容】住所．構造は MML 共通形式 (住所表現形式参照)<br>
 【省略】可<br>
@@ -4552,14 +4564,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_phones">10.2.2.13. mmlHi:phones</h5>
+<h5 id="_m11_5_3_mmlhi_phones">10.2.2.13. M11.5.3. mmlHi:phones</h5>
 <div class="paragraph">
 <p>【内容】下記の被保険電話番号を入れる親エレメント<br>
 【省略】可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlph_phone_3">10.2.2.14. mmlPh:Phone</h5>
+<h5 id="_m11_5_3_1_mmlph_phone">10.2.2.14. M11.5.3.1. mmlPh:Phone</h5>
 <div class="paragraph">
 <p>【内容】電話番号．構造は MML 共通形式 (電話番号表現形式参照)<br>
 【省略】可<br>
@@ -4567,14 +4579,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_continueddiseases">10.2.2.15. mmlHi:continuedDiseases</h5>
+<h5 id="_m11_6_mmlhi_continueddiseases">10.2.2.15. M11.6. mmlHi:continuedDiseases</h5>
 <div class="paragraph">
 <p>【内容】継続疾患情報<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_diseases">10.2.2.16. mmlHi:diseases</h5>
+<h5 id="_m11_6_1_mmlhi_diseases">10.2.2.16. M11.6.1. mmlHi:diseases</h5>
 <div class="paragraph">
 <p>【内容】継続適応疾患名<br>
 【データ型】string<br>
@@ -4582,101 +4594,101 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 【繰り返し設定】繰り返しあり．継続疾患が複数あれば繰り返す．<br>
 【例】糖尿病と高血圧</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:continuedDiseases&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:continuedDiseases&gt;
   &lt;mmlHi:diseases&gt;diabetes mellitus&lt;/mmlHi:diseases&gt;
   &lt;mmlHi:diseases&gt;hypertension&lt;/mmlHi:diseases&gt;
-&lt;/mmlHi:continuedDiseases&gt;</pre>
+&lt;/mmlHi:continuedDiseases&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_startdate">10.2.2.17. mmlHi:startDate</h5>
+<h5 id="_m11_6_7_mmlhi_startdate">10.2.2.17. M11.6.7. mmlHi:startDate</h5>
 <div class="paragraph">
 <p>【内容】開始日 (交付年月日)<br>
 【データ型】date 書式：CCYY-MM-DD<br>
 【省略】不可<br>
 【例】</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:startDate&gt;1995-04-01&lt;/mmlHi:startDate&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:startDate&gt;1995-04-01&lt;/mmlHi:startDate&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_expireddate">10.2.2.18. mmlHi:expiredDate</h5>
+<h5 id="_m11_8_mmlhi_expireddate">10.2.2.18. M11.8. mmlHi:expiredDate</h5>
 <div class="paragraph">
 <p>【内容】有効期限<br>
 【データ型】date 書式：CCYY-MM-DD<br>
 【省略】不可<br>
 【例】</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:expiredDate&gt;1999-09-30&lt;/mmlHi:expiredDate&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:expiredDate&gt;1999-09-30&lt;/mmlHi:expiredDate&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_paymentinratio">10.2.2.19. mmlHi:paymentInRatio</h5>
+<h5 id="_m11_9_mmlhi_paymentinratio">10.2.2.19. M11.9. mmlHi:paymentInRatio</h5>
 <div class="paragraph">
 <p>【内容】入院時の負担率．0[.0][0]_1[.0][0] (例：3 割負担ならば 0.3)<br>
 【データ型】decimal<br>
 【省略】省略可<br>
 【例】負担率 2 割．</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:paymentInRatio&gt;0.2&lt;/mmlHi:paymentInRatio&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:paymentInRatio&gt;0.2&lt;/mmlHi:paymentInRatio&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_paymentoutratio">10.2.2.20. mmlHi:paymentOutRatio</h5>
+<h5 id="_m11_10_mmlhi_paymentoutratio">10.2.2.20. M11.10. mmlHi:paymentOutRatio</h5>
 <div class="paragraph">
 <p>【内容】外来時の負担率．0[.0][0]_1[.0][0] (例：3 割負担ならば 0.3)<br>
 【データ型】decimal<br>
 【省略】省略可<br>
 【例】負担率 2 割．</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:paymentOutRatio&gt;0.2&lt;/mmlHi:paymentOutRatio&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:paymentOutRatio&gt;0.2&lt;/mmlHi:paymentOutRatio&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_insuredinfo">10.2.2.21. mmlHi:insuredInfo</h5>
+<h5 id="_m11_11_mmlhi_insuredinfo">10.2.2.21. M11.11. mmlHi:insuredInfo</h5>
 <div class="paragraph">
 <p>【内容】保険者情報<br>
 【省略】可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_facility">10.2.2.22. mmlHi:facility</h5>
+<h5 id="_m11_11_1_mmlhi_facility">10.2.2.22. M11.11.1. mmlHi:facility</h5>
 <div class="paragraph">
 <p>【内容】下記の保険者情報を入れる親エレメント
 【省略】可.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfc_facility_2">10.2.2.23. mmlFc:Facility</h5>
+<h5 id="_m11_11_1_1_mmlfc_facility">10.2.2.23. M11.11.1.1. mmlFc:Facility</h5>
 <div class="paragraph">
 <p>【内容】施設情報．構造は MML 共通形式 (施設情報表現形式参照)<br>
 【省略】可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_addresses_2">10.2.2.24. mmlHi:addresses</h5>
+<h5 id="_m11_11_2_mmlhi_addresses">10.2.2.24. M11.11.2. mmlHi:addresses</h5>
 <div class="paragraph">
 <p>【内容】下記の保険者住所を入れる親エレメント<br>
 【省略】可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlad_address_4">10.2.2.25. mmlAd:Address</h5>
+<h5 id="_m11_11_2_1_mmlad_address">10.2.2.25. M11.11.2.1. mmlAd:Address</h5>
 <div class="paragraph">
 <p>【内容】住所．構造は MML 共通形式 (住所表現形式参照)<br>
 【省略】可<br>
@@ -4684,14 +4696,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_phones_2">10.2.2.26. mmlHi:phones</h5>
+<h5 id="_m11_11_3_mmlhi_phones">10.2.2.26. M11.11.3. mmlHi:phones</h5>
 <div class="paragraph">
 <p>【内容】下記の保険者電話番号を入れる親エレメント<br>
 【省略】可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlph_phone_4">10.2.2.27. mmlPh:Phone</h5>
+<h5 id="_m11_11_3_1_mmlph_phone">10.2.2.27. M11.11.3.1. mmlPh:Phone</h5>
 <div class="paragraph">
 <p>【内容】電話番号．構造は MML 共通形式 (電話番号表現形式参照)<br>
 【省略】可<br>
@@ -4699,35 +4711,35 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_workinfo">10.2.2.28. mmlHi:workInfo</h5>
+<h5 id="_m11_12_mmlhi_workinfo">10.2.2.28. M11.12 mmlHi:workInfo</h5>
 <div class="paragraph">
 <p>【内容】被保険者の所属する事業所情報<br>
 【省略】可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_facility_2">10.2.2.29. mmlHi:facility</h5>
+<h5 id="_m11_12_1_mmlhi_facility">10.2.2.29. M11.12.1. mmlHi:facility</h5>
 <div class="paragraph">
 <p>【内容】下記の事業所情報を入れる親エレメント<br>
 【省略】可.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfc_facility_3">10.2.2.30. mmlFc:Facility</h5>
+<h5 id="_m11_12_1_1_mmlfc_facility">10.2.2.30. M11.12.1.1. mmlFc:Facility</h5>
 <div class="paragraph">
 <p>【内容】施設情報．構造は MML 共通形式 (施設情報表現形式参照)<br>
 【省略】可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_addresses_3">10.2.2.31. mmlHi:addresses</h5>
+<h5 id="_m11_12_2_mmlhi_addresses">10.2.2.31. M11.12.2. mmlHi:addresses</h5>
 <div class="paragraph">
 <p>【内容】下記の事業所住所を入れる親エレメント<br>
 【省略】可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlad_address_5">10.2.2.32. mmlAd:Address</h5>
+<h5 id="_m11_12_2_1_mmlad_address">10.2.2.32. M11.12.2.1. mmlAd:Address</h5>
 <div class="paragraph">
 <p>【内容】住所．構造は MML 共通形式 (住所表現形式参照)<br>
 【省略】可<br>
@@ -4735,14 +4747,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_phones_3">10.2.2.33. mmlHi:phones</h5>
+<h5 id="_m11_12_3_mmlhi_phones">10.2.2.33. M11.12.3. mmlHi:phones</h5>
 <div class="paragraph">
 <p>【内容】下記の事業所電話番号を入れる親エレメント<br>
 【省略】可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlph_phone_5">10.2.2.34. mmlPh:Phone</h5>
+<h5 id="_m11_12_3_1_mmlph_phone">10.2.2.34. M11.12.3.1. mmlPh:Phone</h5>
 <div class="paragraph">
 <p>【内容】電話番号．構造は MML 共通形式 (電話番号表現形式参照)<br>
 【省略】可<br>
@@ -4750,14 +4762,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_publicinsurance">10.2.2.35. mmlHi:publicInsurance</h5>
+<h5 id="_m11_13_mmlhi_publicinsurance">10.2.2.35. M11.13. mmlHi:publicInsurance</h5>
 <div class="paragraph">
 <p>【内容】公費負担医療情報<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_publicinsuranceitem">10.2.2.36. mmlHi:publicInsuranceItem</h5>
+<h5 id="_m11_13_1_mmlhi_publicinsuranceitem">10.2.2.36. M11.13.1. mmlHi:publicInsuranceItem</h5>
 <div class="paragraph">
 <p>【内容】公費負担<br>
 【省略】不可<br>
@@ -4790,14 +4802,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <div class="paragraph">
 <p>【例】</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:publicInsuranceItem mmlHi:priority = "1"&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:publicInsuranceItem mmlHi:priority="1"&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_providername">10.2.2.37. mmlHi:providerName</h5>
+<h5 id="_m11_13_1_1_mmlhi_providername">10.2.2.37. M11.13.1.1. mmlHi:providerName</h5>
 <div class="paragraph">
 <p>【内容】公費負担名称<br>
 【データ型】string<br>
@@ -4805,7 +4817,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_provider">10.2.2.38. mmlHi:provider</h5>
+<h5 id="_m11_13_1_2_mmlhi_provider">10.2.2.38. M11.13.1.2. mmlHi:provider</h5>
 <div class="paragraph">
 <p>【内容】負担者番号<br>
 【データ型】string<br>
@@ -4813,7 +4825,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_recipient">10.2.2.39. mmlHi:recipient</h5>
+<h5 id="_m11_13_1_3_mmlhi_recipient">10.2.2.39. M11.13.1.3. mmlHi:recipient</h5>
 <div class="paragraph">
 <p>【内容】受給者番号<br>
 【データ型】string<br>
@@ -4821,7 +4833,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_startdate_2">10.2.2.40. mmlHi:startDate</h5>
+<h5 id="_m11_13_1_4_mmlhi_startdate">10.2.2.40. M11.13.1.4. mmlHi:startDate</h5>
 <div class="paragraph">
 <p>【内容】開始日<br>
 【データ型】date<br>
@@ -4829,7 +4841,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_expiredate">10.2.2.41. mmlHi:expireDate</h5>
+<h5 id="_m11_13_1_5_mmlhi_expiredate">10.2.2.41. M11.13.1.5. mmlHi:expireDate</h5>
 <div class="paragraph">
 <p>【内容】有効期限<br>
 【データ型】date<br>
@@ -4837,7 +4849,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhi_paymentratio">10.2.2.42. mmlHi:paymentRatio</h5>
+<h5 id="_m11_13_1_6_mmlhi_paymentratio">10.2.2.42. M11.13.1.6. mmlHi:paymentRatio</h5>
 <div class="paragraph">
 <p>【内容】負担率または負担金<br>
 【データ型】decimal<br>
@@ -4873,26 +4885,26 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <p>【例】<br>
 負担が定額 10,000 円の場合</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:paymentRatio mmlHi:ratioType="fix"&gt;10000&lt;/ mmlHi:paymentRatio&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:paymentRatio mmlHi:ratioType="fix"&gt;10000&lt;/mmlHi:paymentRatio&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>負担が比率 5 %の場合</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:paymentRatio mmlHi:ratioType="ratio"&gt;0.05&lt;/ mmlHi:paymentRatio&gt;</pre>
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:paymentRatio mmlHi:ratioType="ratio"&gt;0.05&lt;/mmlHi:paymentRatio&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>【例】</p>
 </div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>&lt;mmlHi:publicInsurance&gt;
-  &lt;mmlHi:publicInsuranceItem mmlHi:priority = "1"&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlHi:publicInsurance&gt;
+  &lt;mmlHi:publicInsuranceItem mmlHi:priority="1"&gt;
     &lt;mmlHi:providerName&gt;公費&lt;/mmlHi:providerName&gt;
     &lt;mmlHi:provider&gt;15450034&lt;/mmlHi:provider&gt;
     &lt;mmlHi:recipient&gt;0009043&lt;/mmlHi:recipient&gt;
@@ -4900,7 +4912,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
     &lt;mmlHi:expiredDate&gt;1999-09-30&lt;/mmlHi:expiredDate&gt;
     &lt;mmlHi:paymentRatio mmlHi:ratioType="fix"&gt;10000&lt;/mmlHi:paymentRatio&gt;
   &lt;/mmlHi:publicInsuranceItem&gt;
-&lt;/mmlHi:publicInsurance&gt;</pre>
+&lt;/mmlHi:publicInsurance&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -6325,7 +6337,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfc_facility_4">10.6.2.10. mmlFc:Facility</h5>
+<h5 id="_mmlfc_facility">10.6.2.10. mmlFc:Facility</h5>
 <div class="paragraph">
 <p>【内容】出生施設．構造は，MML 共通形式 (施設情報形式) 参照．<br>
 【省略】省略可</p>
@@ -7512,7 +7524,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlDp:Department</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -7528,7 +7540,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlDp:Department</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">　</p></td>
 </tr>
 <tr>
@@ -7640,7 +7652,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlSg:surgicalStaffs</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -7680,7 +7692,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPsi:PersonalizedInfo</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -7760,7 +7772,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPsi:PersonalizedInfo</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -7915,20 +7927,24 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmldp_department_2">10.8.2.8. mmlDp:Department</h5>
+<h5 id="_mmldp_department">10.8.2.8. mmlDp:Department</h5>
 <div class="paragraph">
 <p>【内容】手術実施診療科．構造は MML 共通形式参照．<br>
-【省略】不可
-===== mmlSg:patientDepartment
-【内容】患者診療科情報．手術実施診療科と異なることもあるため，患者診療科を記載できるようにしている．<br>
+【省略】不可、繰り返し有り</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmlsg_patientdepartment">10.8.2.9. mmlSg:patientDepartment</h5>
+<div class="paragraph">
+<p>【内容】患者診療科情報．手術実施診療科と異なることもあるため，患者診療科を記載できるようにしている．<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmldp_department_3">10.8.2.9. mmlDp:Department</h5>
+<h5 id="_mmldp_department_2">10.8.2.10. mmlDp:Department</h5>
 <div class="paragraph">
 <p>【内容】手術時に患者の所属していた診療科．構造は MML 共通形式参照．<br>
-【省略】不可<br>
+【省略】不可、繰り返し有り<br>
 【例】内科 (ID 01) に所属している場合</p>
 </div>
 <div class="literalblock">
@@ -7943,14 +7959,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_surgicaldiagnosis">10.8.2.10. mmlSg:surgicalDiagnosis</h5>
+<h5 id="_mmlsg_surgicaldiagnosis">10.8.2.11. mmlSg:surgicalDiagnosis</h5>
 <div class="paragraph">
 <p>【内容】外科診断情報．癌取り扱い規約など，外科特有の診断名を考慮し，mmlRd:RegisteredDiagnosisModule と別個に記載可能とする．但し，構造は同じとする．<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlrd_registereddiagnosismodule_3">10.8.2.11. mmlRd:RegisteredDiagnosisModule</h5>
+<h5 id="_mmlrd_registereddiagnosismodule_3">10.8.2.12. mmlRd:RegisteredDiagnosisModule</h5>
 <div class="paragraph">
 <p>【内容】構造は上記参照．<br>
 【省略】不可<br>
@@ -7986,14 +8002,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_surgicalprocedure">10.8.2.12. mmlSg:surgicalProcedure</h5>
+<h5 id="_mmlsg_surgicalprocedure">10.8.2.13. mmlSg:surgicalProcedure</h5>
 <div class="paragraph">
 <p>【内容】手術法情報<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_procedureitem">10.8.2.13. mmlSg:procedureItem</h5>
+<h5 id="_mmlsg_procedureitem">10.8.2.14. mmlSg:procedureItem</h5>
 <div class="paragraph">
 <p>【内容】手術法の繰り返しを表現するためのエレメント．一つの mmlSg:procedureItem 内では，修飾語を含めて全体表記するか，手術法の要素分割表記とするかどちらか一方のみを選択．<br>
 【省略】不可<br>
@@ -8001,7 +8017,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_operation">10.8.2.14. mmlSg:operation</h5>
+<h5 id="_mmlsg_operation">10.8.2.15. mmlSg:operation</h5>
 <div class="paragraph">
 <p>【内容】手術法．修飾語を含めて全体表記．<br>
 【データ型】string<br>
@@ -8053,7 +8069,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_operationelement">10.8.2.15. mmlSg:operationElement</h5>
+<h5 id="_mmlsg_operationelement">10.8.2.16. mmlSg:operationElement</h5>
 <div class="paragraph">
 <p>【内容】手術法の要素分割表記．<br>
 例：右乳房切断術を，右と乳房切断術に分割<br>
@@ -8062,7 +8078,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_operationelementitem">10.8.2.16. mmlSg:operationElementItem</h5>
+<h5 id="_mmlsg_operationelementitem">10.8.2.17. mmlSg:operationElementItem</h5>
 <div class="paragraph">
 <p>【内容】要素の繰り返しを表現するためのエレメント<br>
 【省略】不可<br>
@@ -8070,7 +8086,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_title">10.8.2.17. mmlSg:title</h5>
+<h5 id="_mmlsg_title">10.8.2.18. mmlSg:title</h5>
 <div class="paragraph">
 <p>【内容】分割された手術要素名<br>
 【データ型】string<br>
@@ -8107,7 +8123,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_procedurememo">10.8.2.18. mmlSg:procedureMemo</h5>
+<h5 id="_mmlsg_procedurememo">10.8.2.19. mmlSg:procedureMemo</h5>
 <div class="paragraph">
 <p>【内容】手術法に関する追加事項<br>
 【データ型】string<br>
@@ -8144,14 +8160,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_surgicalstaffs">10.8.2.19. mmlSg:surgicalStaffs</h5>
+<h5 id="_mmlsg_surgicalstaffs">10.8.2.20. mmlSg:surgicalStaffs</h5>
 <div class="paragraph">
 <p>【内容】麻酔を除く手術スタッフの情報<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_staff">10.8.2.20. mmlSg:staff</h5>
+<h5 id="_mmlsg_staff">10.8.2.21. mmlSg:staff</h5>
 <div class="paragraph">
 <p>【内容】繰り返しのためのエレメント<br>
 【省略】不可<br>
@@ -8201,28 +8217,28 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_staffinfo">10.8.2.21. mmlSg:staffInfo</h5>
+<h5 id="_mmlsg_staffinfo">10.8.2.22. mmlSg:staffInfo</h5>
 <div class="paragraph">
 <p>【内容】スタッフ ID 情報．<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_personalizedinfo_2">10.8.2.22. mmlPsi:PersonalizedInfo</h5>
+<h5 id="_mmlpsi_personalizedinfo">10.8.2.23. mmlPsi:PersonalizedInfo</h5>
 <div class="paragraph">
 <p>【内容】個人識別情報．構造は上記mmlPsi:PersonalizedInfo参照．<br>
-【省略】不可</p>
+【省略】不可、繰り返し有り</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_anesthesiaprocedure">10.8.2.23. mmlSg:anesthesiaProcedure</h5>
+<h5 id="_mmlsg_anesthesiaprocedure">10.8.2.24. mmlSg:anesthesiaProcedure</h5>
 <div class="paragraph">
 <p>【内容】麻酔法名情報<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_title_2">10.8.2.24. mmlSg:title</h5>
+<h5 id="_mmlsg_title_2">10.8.2.25. mmlSg:title</h5>
 <div class="paragraph">
 <p>【内容】麻酔法名<br>
 【データ型】string<br>
@@ -8272,14 +8288,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_anesthesiologists">10.8.2.25. mmlSg:anesthesiologists</h5>
+<h5 id="_mmlsg_anesthesiologists">10.8.2.26. mmlSg:anesthesiologists</h5>
 <div class="paragraph">
 <p>【内容】麻酔医情報<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_staff_2">10.8.2.26. mmlSg:staff</h5>
+<h5 id="_mmlsg_staff_2">10.8.2.27. mmlSg:staff</h5>
 <div class="paragraph">
 <p>【内容】麻酔医<br>
 【省略】省略可<br>
@@ -8320,21 +8336,21 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_staffinfo_2">10.8.2.27. mmlSg:staffInfo</h5>
+<h5 id="_mmlsg_staffinfo_2">10.8.2.28. mmlSg:staffInfo</h5>
 <div class="paragraph">
 <p>【内容】麻酔医 ID 情報．<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_personalizedinfo_3">10.8.2.28. mmlPsi:PersonalizedInfo</h5>
+<h5 id="_mmlpsi_personalizedinfo_2">10.8.2.29. mmlPsi:PersonalizedInfo</h5>
 <div class="paragraph">
 <p>【内容】個人識別情報．構造は上記mmlPsi:PersonalizedInfo参照．<br>
-【省略】不可</p>
+【省略】不可、繰り返し有り</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_anesthesiaduration">10.8.2.29. mmlSg:anesthesiaDuration</h5>
+<h5 id="_mmlsg_anesthesiaduration">10.8.2.30. mmlSg:anesthesiaDuration</h5>
 <div class="paragraph">
 <p>【内容】麻酔時間<br>
 【データ型】duration 書式：PnYnMnDTnHnMnS
@@ -8349,7 +8365,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_operativenotes">10.8.2.30. mmlSg:operativeNotes</h5>
+<h5 id="_mmlsg_operativenotes">10.8.2.31. mmlSg:operativeNotes</h5>
 <div class="paragraph">
 <p>【内容】手術記録の自由文章表現．<br>
 【データ型】string<br>
@@ -8358,14 +8374,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_referenceinfo">10.8.2.31. mmlSg:referenceInfo</h5>
+<h5 id="_mmlsg_referenceinfo">10.8.2.32. mmlSg:referenceInfo</h5>
 <div class="paragraph">
 <p>【内容】手術記録に用いる図や写真を外部参照<br>
 【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlcm_extref_10">10.8.2.32. mmlCm:extRef</h5>
+<h5 id="_mmlcm_extref_10">10.8.2.33. mmlCm:extRef</h5>
 <div class="paragraph">
 <p>【内容】構造は MML 共通形式 (外部参照形式) 参照．<br>
 【省略】不可<br>
@@ -8377,7 +8393,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlsg_memo">10.8.2.33. mmlSg:memo</h5>
+<h5 id="_mmlsg_memo">10.8.2.34. mmlSg:memo</h5>
 <div class="paragraph">
 <p>【内容】手術に関する追加事項．<br>
 【データ型】string<br>
@@ -9104,14 +9120,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_personalizedinfo_4">10.9.3.9. mmlPsi:PersonalizedInfo</h5>
+<h5 id="_mmlpsi_personalizedinfo_3">10.9.3.9. mmlPsi:PersonalizedInfo</h5>
 <div class="paragraph">
 <p>【内容】個人情報．構造はMML共通形式参照．<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlci_creatorlicense_2">10.9.3.10. mmlCi:creatorLicense</h5>
+<h5 id="_mmlci_creatorlicense">10.9.3.10. mmlCi:creatorLicense</h5>
 <div class="paragraph">
 <p>【内容】スタッフの資格<br>
 【データ型】string<br>
@@ -9204,7 +9220,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_personalizedinfo_5">10.9.3.17. mmlPsi:PersonalizedInfo</h5>
+<h5 id="_mmlpsi_personalizedinfo_4">10.9.3.17. mmlPsi:PersonalizedInfo</h5>
 <div class="paragraph">
 <p>【内容】構造はMML共通形式参照．<br>
 【省略】不可<br>
@@ -9315,7 +9331,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_personalizedinfo_6">10.9.3.22. mmlPsi:PersonalizedInfo</h5>
+<h5 id="_mmlpsi_personalizedinfo_5">10.9.3.22. mmlPsi:PersonalizedInfo</h5>
 <div class="paragraph">
 <p>【内容】構造は MML 共通形式参照．<br>
 【省略】不可<br>
@@ -9369,14 +9385,14 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_personalizedinfo_7">10.9.3.25. mmlPsi:PersonalizedInfo</h5>
+<h5 id="_mmlpsi_personalizedinfo_6">10.9.3.25. mmlPsi:PersonalizedInfo</h5>
 <div class="paragraph">
 <p>【内容】構造は MML 共通形式参照．<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlci_creatorlicense_3">10.9.3.26. mmlCi:creatorLicense</h5>
+<h5 id="_mmlci_creatorlicense_2">10.9.3.26. mmlCi:creatorLicense</h5>
 <div class="paragraph">
 <p>【内容】スタッフの資格<br>
 【データ型】string<br>
@@ -12803,7 +12819,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_patientmodule_2">10.12.3.2. mmlPi:PatientModule</h5>
+<h5 id="_mmlpi_patientmodule">10.12.3.2. mmlPi:PatientModule</h5>
 <div class="paragraph">
 <p>【内容】患者情報．氏名，生年月日，住所，電話番号等の患者情報．構造は MML モジュール (患者情報モジュール) 参照．<br>
 【省略】不可</p>
@@ -12825,7 +12841,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_personalizedinfo_8">10.12.3.5. mmlPsi:PersonalizedInfo</h5>
+<h5 id="_mmlpsi_personalizedinfo_7">10.12.3.5. mmlPsi:PersonalizedInfo</h5>
 <div class="paragraph">
 <p>【内容】紹介者．構造はMML共通形式 (個人情報形式) mmlPsi:PersonalizedInfo を参照．<br>
 【省略】不可
@@ -13018,14 +13034,14 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfc_facility_5">10.12.4.20. mmlFc:Facility</h5>
+<h5 id="_mmlfc_facility_2">10.12.4.20. mmlFc:Facility</h5>
 <div class="paragraph">
 <p>【内容】紹介先医療機関．構造はMML共通形式(施設情報形式)mmlFc:Facilityを利用する．<br>
 【省略】不可</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmldp_department_4">10.12.4.21. mmlDp:Department</h5>
+<h5 id="_mmldp_department_3">10.12.4.21. mmlDp:Department</h5>
 <div class="paragraph">
 <p>【内容】紹介先診療科．構造は MML 共通形式 (施設情報形式)mmlDp:Departmentを利用する．<br>
 【省略】可</p>
@@ -13039,7 +13055,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpsi_personalizedinfo_9">10.12.4.23. mmlPsi:PersonalizedInfo</h5>
+<h5 id="_mmlpsi_personalizedinfo_8">10.12.4.23. mmlPsi:PersonalizedInfo</h5>
 <div class="paragraph">
 <p>【内容】紹介先医師．構造はMML共通形式(個人情報形式)mmlPsi:PersonalizedInfoを利用する．</p>
 </div>
@@ -13528,7 +13544,7 @@ final 最終報告</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mmlpi_patientmodule_3">10.13.3. mmlPi:PatientModule</h4>
+<h4 id="_mmlpi_patientmodule_2">10.13.3. mmlPi:PatientModule</h4>
 <div class="paragraph">
 <p>【内容】患者情報、氏名、生年月日、住所、電話番号などの患者情報。MML患者情報モジュールを利用する。<br>
 【省略】不可</p>
@@ -15444,7 +15460,7 @@ confirmDate
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.4.1.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:diagnosis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:hdDiagnosis</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
@@ -15463,7 +15479,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:system</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -15556,7 +15572,7 @@ confirmDate
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:HdOrders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:hdOrders</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
@@ -15670,7 +15686,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.3.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -15686,7 +15702,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.3.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -15766,7 +15782,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.6.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -15782,7 +15798,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.6.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -15878,7 +15894,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.8.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -15894,7 +15910,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.8.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -15934,7 +15950,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.9.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -15950,7 +15966,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.9.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -15990,7 +16006,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.10.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16006,7 +16022,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.10.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16054,7 +16070,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.11.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16070,7 +16086,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.11.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16166,7 +16182,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.13.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16238,7 +16254,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.14.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16254,7 +16270,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.1.1.14.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16390,7 +16406,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.2.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16406,7 +16422,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.2.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16478,7 +16494,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.5.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16494,7 +16510,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.5.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16558,7 +16574,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.7.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16574,7 +16590,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.7.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16670,7 +16686,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.9.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16686,7 +16702,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.9.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16710,7 +16726,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.10.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:dialysateFlowRate</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">deimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16726,7 +16742,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.10.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16742,7 +16758,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.10.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16782,7 +16798,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.11.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16798,7 +16814,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.11.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16966,7 +16982,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.14.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16982,7 +16998,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.5.2.14.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -17278,7 +17294,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.6.1.8.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -17294,7 +17310,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.6.1.8.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -17374,7 +17390,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.6.1.11.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -17534,7 +17550,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.6.1.12.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -17614,7 +17630,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.6.1.13.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdStart</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -17630,7 +17646,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.1.6.1.13.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:timeHdEnd</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -17872,13 +17888,13 @@ confirmDate
 
 </div>
 <div class="sect4">
-<h5 id="_mmlfc_facility_6">10.17.4.2. mmlFc:Facility</h5>
+<h5 id="_mmlfc_facility_3">10.17.4.2. mmlFc:Facility</h5>
 <div class="paragraph">
 <p>【内容】施設情報、構造はMML共通形式を参照<br></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlpi_patientmodule_4">10.17.4.3. mmlPi:PatientModule</h5>
+<h5 id="_mmlpi_patientmodule_3">10.17.4.3. mmlPi:PatientModule</h5>
 <div class="paragraph">
 <p>【内容】患者情報、構造はmmlPi:PatientModuleを参照</p>
 </div>
@@ -17894,24 +17910,24 @@ confirmDate
 <h5 id="_mmlhd_hdhistorysection">10.17.4.5. mmlHd:HDHistorySection</h5>
 <div class="paragraph">
 <p>【内容】透析履歴<br>
-【省略】省略可(?)</p>
+【省略】省略可</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_mmlhd_hdintroduction">10.17.4.6. mmlHd:HdIntroduction</h5>
 <div class="paragraph">
 <p>【内容】透析導入情報<br>
-【省略】省略可(*)<br></p>
+【省略】省略可<br></p>
 </div>
 <div class="paragraph">
 <p>【繰り返し設定】あり。導入が複数回のときには本エレメントを繰り返す。</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_1_5_1_1_mmlhd_diagnosis">10.17.4.7. 1.5.1.1 mmlHd:diagnosis</h5>
+<h5 id="_1_5_1_1_mmlhd_hddiagnosis">10.17.4.7. 1.5.1.1 mmlHd:hdDiagnosis</h5>
 <div class="paragraph">
 <p>【内容】原疾患<br>
-【省略】省略可(?)<br>
+【省略】省略可<br>
 【属性】</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
@@ -17939,7 +17955,7 @@ confirmDate
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">system</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">疾患コード体系名</p></td>
 </tr>
 </tbody>
@@ -17954,7 +17970,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlfc_facility_7">10.17.4.9. mmlFc:Facility</h5>
+<h5 id="_mmlfc_facility_4">10.17.4.9. mmlFc:Facility</h5>
 <div class="paragraph">
 <p>【内容】構造はMML共通形式を参照<br>
 【省略】省略可(?)</p>
@@ -18073,7 +18089,7 @@ active:良,inactive:不良</p></td>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_mmlhd_hdorders">10.17.4.16. mmlHd:hdorders</h5>
+<h5 id="_mmlhd_hdorders">10.17.4.16. mmlHd:hdOrders</h5>
 <div class="paragraph">
 <p>【内容】オーダー単位<br>
 【省略】省略可<br>
@@ -18138,7 +18154,7 @@ active: 現行オーダー,alteration:変更オーダー</p></td>
 <div class="paragraph">
 <p>【内容】オーダ適用曜日<br>
 【データ型】string(ISO8601のWeekDay)+
-【省略】省略可(*)<br>
+【省略】省略可<br>
 【繰り返し設定】繰り返しあり<br></p>
 </div>
 </div>
@@ -21984,7 +22000,7 @@ before:開始時刻前,after:開始時刻後</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-06 12:59:14 JST
+Last updated 2016-10-11 16:27:39 JST
 </div>
 </div>
 </body>
