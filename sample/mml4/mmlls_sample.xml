@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlLs:LifestyleModule
+  xmlns:mmlLs="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0/lifestyle.xsd"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <mmlLs:occupation>Doctor</mmlLs:occupation>
+  <mmlLs:tobacco>None</mmlLs:tobacco>
+  <mmlLs:alcohol>Beer 350ml/day</mmlLs:alcohol>
+  <mmlLs:other>walking</mmlLs:other>
+</mmlLs:LifestyleModule>

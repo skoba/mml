@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlSg:SurgeryModule
+  xmlns:mmlSg="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"
+  xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0"
+  xmlns:mmlRd="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
+  xmlns:mmlPsi="http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0"
+  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0/surgery.xsd">
+
+  <mmlSg:surgeryItem>
+    <mmlSg:surgicalInfo mmlSg:type="elective">
+      <mmlSg:date>2015-09-05</mmlSg:date>
+      <mmlSg:startTime>09:18</mmlSg:startTime>
+      <mmlSg:duration>P3H20M</mmlSg:duration>
+      <mmlSg:surgicalDepartment>
+        <mmlDp:Department>
+          <mmlDp:name mmlDp:repCode = "A" mmlDp:tableId = "MML0025">
+            Cardiovasucular surgery
+          </mmlDp:name>
+          <mmlCm:Id mmlCm:type = "medical" mmlCm:tableId = "MML0029">16</mmlCm:Id>
+        </mmlDp:Department>
+      </mmlSg:surgicalDepartment>
+      <mmlSg:patientDepartment>
+        <mmlDp:Department>
+          <mmlDp:name mmlDp:repCode = "A" mmlDp:tableId = "MML0025">
+            Internal medicine
+          </mmlDp:name>
+          <mmlCm:Id mmlCm:type = "medical" mmlCm:tableId = "MML0029">01</mmlCm:Id>
+        </mmlDp:Department>
+      </mmlSg:patientDepartment>
+    </mmlSg:surgicalInfo>
+    <mmlSg:surgicalDiagnosis>
+      <mmlRd:RegisteredDiagnosisModule>
+        <mmlRd:diagnosisContents>
+          <mmlRd:dxItem >
+            <mmlRd:name mmlRd:code = " C349-.007" mmlRd:system = "ICD10">
+              Lung cancer
+            </mmlRd:name>
+          </mmlRd:dxItem>
+          <mmlRd:dxItem>
+            <mmlRd:name>right</mmlRd:name>
+          </mmlRd:dxItem>
+          <mmlRd:dxItem >
+            <mmlRd:name>upper lobe</mmlRd:name>
+          </mmlRd:dxItem>
+        </mmlRd:diagnosisContents>
+        <mmlRd:categories>
+          <mmlRd:category mmlRd:tableId= "MML0012">mainDiagnosis</mmlRd:category>
+          <mmlRd:category mmlRd:tableId = "MML0013">academicDiagnosis</mmlRd:category>
+          <mmlRd:category mmlRd:tableId = "MML0014">operativeDiagnosis</mmlRd:category>
+          <mmlRd:category mmlRd:tableId = "MML0015">confirmedDiagnosis</mmlRd:category>
+        </mmlRd:categories>
+      </mmlRd:RegisteredDiagnosisModule>
+    </mmlSg:surgicalDiagnosis>
+    <mmlSg:surgicalProcedure>
+      <mmlSg:procedureItem>
+        <mmlSg:operation>coronary artery bypass grafting</mmlSg:operation>
+      </mmlSg:procedureItem>
+      <mmlSg:procedureItem>
+        <mmlSg:operation>cardio-pulmonary bypass</mmlSg:operation>
+      </mmlSg:procedureItem>
+    </mmlSg:surgicalProcedure>
+    <mmlSg:surgicalStaffs>
+      <mmlSg:staff>
+        <mmlSg:staffInfo>
+          <mmlPsi:PersonalizedInfo>
+            <mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10"
+              mmlCm:checkDigit = "5" mmlCm:tableId = "MML0024">12345</mmlCm:Id>
+            <mmlPsi:personName>
+              <mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025">
+                <mmlNm:family>Araki</mmlNm:family>
+                <mmlNm:given>Kenji</mmlNm:given>
+                <mmlNm:degree>M.D.</mmlNm:degree>
+              </mmlNm:Name>
+            </mmlPsi:personName>
+          </mmlPsi:PersonalizedInfo>
+        </mmlSg:staffInfo>
+      </mmlSg:staff>
+    </mmlSg:surgicalStaffs>
+    <mmlSg:anesthesiaProcedure>
+      <mmlSg:title>general anesthesia</mmlSg:title>
+      <mmlSg:title>tracheal intubation </mmlSg:title>
+      <mmlSg:title>G+O+Ethrane</mmlSg:title>
+    </mmlSg:anesthesiaProcedure>
+    <mmlSg:anesthesiologists>
+      <mmlSg:staff>
+        <mmlSg:staffInfo>
+          <mmlPsi:PersonalizedInfo>
+            <mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10"
+              mmlCm:checkDigit = "5" mmlCm:tableId = "MML0024">67890</mmlCm:Id>
+            <mmlPsi:personName>
+              <mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025">
+                <mmlNm:family>Yoshiharai</mmlNm:family>
+                <mmlNm:given>Hiroyuki</mmlNm:given>
+                <mmlNm:degree>M.D.</mmlNm:degree>
+              </mmlNm:Name>
+            </mmlPsi:personName>
+          </mmlPsi:PersonalizedInfo>
+        </mmlSg:staffInfo>
+      </mmlSg:staff>
+    </mmlSg:anesthesiologists>
+    <mmlSg:referenceInfo>
+      <mmlCm:extRef mmlCm:contentType = "image/gif" mmlCm:medicalRole = " surgicalFigure " mmlCm:title = "Fig1. Skin incision" mmlCm:href = "patient001/surgicalFigure001.gif"/>
+    </mmlSg:referenceInfo>
+  </mmlSg:surgeryItem>
+</mmlSg:SurgeryModule>

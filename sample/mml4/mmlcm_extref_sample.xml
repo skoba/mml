@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlCm:extRef
+    xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0/common.xsd"
+    mmlCm:contentType = "APPLICATION/HL72.3-HL7ER2.3"
+    mmlCm:medicalRole = "prescription"
+    mmlCm:title = "Prescription on discharge"
+    mmlCm:href = "patient1234/prescription831.HL7"/>

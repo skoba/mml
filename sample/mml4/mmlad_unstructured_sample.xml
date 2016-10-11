@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlAd:Address xmlns="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+  xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0/address.xsd"
+  mmlAd:repCode = "A" mmlAd:addressClass = "business" mmlAd:tableId="MML0025">
+  <mmlAd:full>5200 Kihara, Kiyotake-cho, Miyazaki-gun, Miyazaki-prefecture</mmlAd:full>
+  <mmlAd:zip>889-1692</mmlAd:zip>
+  <mmlAd:countryCode>JPN</mmlAd:countryCode>
+</mmlAd:Address>

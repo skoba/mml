@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlRd:RegisteredDiagnosisModule
+  xmlns:mmlRd="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0/registereddiagnosis.xsd">
+  <mmlRd:diagnosis mmlRd:code="E790-.003" mmlRd:system="ICD-10">高尿酸血症</mmlRd:diagnosis>
+  <mmlRd:startDate>2002-01-25</mmlRd:startDate>
+  <mmlRd:firstEncounterDate>2002-01-25</mmlRd:firstEncounterDate>
+</mmlRd:RegisteredDiagnosisModule>
