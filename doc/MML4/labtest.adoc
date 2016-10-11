@@ -43,7 +43,7 @@ xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
 .エレメント一覧表
 [options="header"]
 |=====
-| |Elements|Attribute|Data types|Occurrence|Table id
+| |Elements|Attribute|Data types|Occurrence|TableId
 |M19.|mmlLb:TestModule| | | |
 |M19.1.|mmlLb:information| | | |
 | | |mmlLb:registId|string|#REQUIRED|
@@ -156,6 +156,7 @@ final 最終報告
 【データ型】string +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:setCode|string|#IMPLIED|ユーザー指定|
@@ -167,6 +168,7 @@ final 最終報告
 【データ型】string +
 【省略】不可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:facilityCode|string|#REQUIRED| |
@@ -178,6 +180,7 @@ final 最終報告
 【データ型】string +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:depCode|string|#IMPLIED|MML0028|
@@ -189,6 +192,7 @@ final 最終報告
 【データ型】string +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:wardCode|string|#IMPLIED|ユーザー指定|
@@ -200,6 +204,7 @@ final 最終報告
 【データ型】string +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:clientCode|string|#IMPLIED|ユーザー指定|
@@ -211,6 +216,7 @@ final 最終報告
 【データ型】string +
 【省略】不可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:centerCode|string|#REQUIRED|ユーザー指定|
@@ -222,6 +228,7 @@ final 最終報告
 【データ型】string +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:techCode|string|#IMPLIED|ユーザー指定|
@@ -260,6 +267,7 @@ final 最終報告
 【データ型】string +
 【省略】不可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:spCode|string|#REQUIRED|ユーザー指定|
@@ -272,6 +280,7 @@ final 最終報告
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．検体コメントが複数あれば，数だけ繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlLb:smCodeName|string|#IMPLIED| |検体コメント名称

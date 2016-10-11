@@ -17,10 +17,10 @@ image::mmlhi.jpg[]
 [source, xml]
 xmlns:mmlHi= "http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
 
-
 .エレメント一覧表
+[options="header"]
 |=====
-| |Elements|Attribute|Datatypes|Occurence|TableId
+| |Elements|Attribute|Data types|Occurence|TableId
 |M11.|mmlHi:HealthInsuranceModule| | | |
 | | |mmlHi:countryType|string|#IMPLIED|
 |M11.1.|mmlHi:insuranceClass| |string|?|
@@ -88,6 +88,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 <MmlModuleItem>を 3 回繰り返して，3 つを別個に記載する．
 
 【属性】本モジュールが日本固有のものであることを明示するために，以下の属性を設ける．
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlHi:countryType|string|#IMPLIED|国タイプ．日本JPN
@@ -101,6 +102,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】string +
 【省略】可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル
 |mmlHi:ClassCode|string|#REQUIRED|
@@ -299,6 +301,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】不可 +
 【繰り返し設定】繰り返しあり．公費が複数あれば繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlHi:priority|string|#REQUIRED|複数公費の優先順位 +
@@ -338,6 +341,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】decimal +
 【省略】可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlHi:ratioType|String|#REQUIRED|MML0032|負担率または負担金

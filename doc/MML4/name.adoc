@@ -13,8 +13,9 @@
 image::mmlnm.jpg[]
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Elements|Attribute|Datatypes|Occurrence|Table id
+| |Elements|Attribute|Data types|Occurrence|TableId
 |M5.|mmlNm:Name| | | |
 | | |mmlNm:repCode|string|#REQUIRED|optional
 | | |mmlNm:tableId|string|#IMPLIED|
@@ -33,6 +34,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 ===== M5. mmlNm:Name(人名表現形式)
 【内容】人名を表現する共通形式．M5.1. から M5.3. の 3 エレメントもしくは M5.4. フルネームのどちらかを選択． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlNm:repCode|string|#REQUIRED|optional|表記法

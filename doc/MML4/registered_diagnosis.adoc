@@ -19,10 +19,10 @@ image::mmlrd.jpg[]
 [source, xml]
 xmlns:mmlRd= "http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
 
-
 .エレメント一覧表
+[options="header"]
 |=====
-| |Elements|Attribute|Datatypes|Occurence|TableId
+| |Elements|Attribute|Data types|Occurence|TableId
 |M12.|mmlRd:RegisteredDiagnosisModule| | | |
 |M12.1.|mmlRd:diagnosis| |string| |
 | | |mmlRd:code|string|#IMPLIED|
@@ -55,6 +55,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】string +
 【省略】不可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlRd:code|string|#IMPLIED|疾患コード
@@ -79,6 +80,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】string +
 【省略】不可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlRd:code|string|#IMPLIED|疾患コード
@@ -107,6 +109,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】不可 +
 【繰り返し設定】繰り返しあり．分類の種類が複数あれば，繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlRd:tableId|string#REQUIRED|分類の種類コード．
@@ -144,6 +147,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【内容】関連する健康保険情報．EMPTY タグとし，属性で関連する健康保険情報の文書 uid を記載する．本エレメントは，mmlRd:RegisteredDiagnosisModule が，mmlSg:SurgeryModule や mmlSm:SummaryModule 内で用いられた場合にのみ使用する．mmlRd:RegisteredDiagnosisModule が単独の MML content として用いられた場合は，関連する健康保険情報の文書 uid は，parentId (docInfo モジュール) に記載する． +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlRd:uid|string|#IMPLIED|疾患に関連する保険の mmlHi:HealthInsuranceModule の uid を記載する．

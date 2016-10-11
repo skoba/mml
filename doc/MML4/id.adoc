@@ -1,8 +1,9 @@
 === Id 形式
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Elements|Attribute|Datatypes|Occurrence|Table id
+| |Elements|Attribute|Data types|Occurrence|TableId
 |M3.|mmlCm:Id| |string| |
 | | |mmlCm:type|string|#REQUIRED|optional
 | | |mmlCm:tableId|string|#REQUIRED|
@@ -17,6 +18,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【内容】ID を表現する共通形式． +
 【データ型】string +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlCm:type|string|#REQUIRED|optional|ID の種類コード

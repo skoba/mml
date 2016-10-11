@@ -5,8 +5,9 @@
 image::mmlfc.jpg[]
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Element|Attribute|Datatype|Occurrence|Table id
+| |Element|Attribute|Data types|Occurrence|TableId
 |M6.|mmlFc:Facility| | | |
 |M6.1.|mmlFc:name| |string|+|
 | | |mmlFc:repCode|string|#REQUIRED|optional
@@ -28,6 +29,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】不可 +
 【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlFc:repCode|string|#REQUIRED|optional|表記法

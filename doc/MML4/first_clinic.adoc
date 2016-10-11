@@ -19,8 +19,9 @@ xmlns:mmlFcl= "http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"
 
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Elements|Attribute|Datatypes|Occurence|TableId
+| |Elements|Attribute|Data types|Occurence|TableId
 |M15.|mmlFcl:FirstClinicModule| | | |
 |M15.1.|mmlFcl:familyHistory| | |?|
 |M15.1.1.|mmlFcl:familyHistoryItem| | |+|
@@ -148,6 +149,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】decimal +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlFcl:unit|string|#REQUIRED|単位．gもしくはkg
@@ -161,6 +163,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】decimal +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlFcl:unit|string|#REQUIRED|単位．cmもしくはm
@@ -171,6 +174,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】decimal +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlFcl:unit|string|#REQUIRED|単位．cm
@@ -181,6 +185,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】decimal +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlFcl:unit|string|#REQUIRED|単位．cm

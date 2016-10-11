@@ -26,7 +26,7 @@ image::mmlvs.png[]
 .エレメント一覧表
 [options="header"]
 |===
-| |Elements|Attribute|Data types|Occurrence|Table id
+| |Elements|Attribute|Data types|Occurrence|TableId
 |M22.|mmlVs:VitalSignModule| | | |
 |M22.1.|mmlVs:context| | |?|
 |M22.1.1.|mmlVs:facility| |string|?|

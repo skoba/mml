@@ -18,8 +18,9 @@ image::mmlsg.jpg[]
 xmlns:mmlSg= "http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Elements|Attribute|Datatypes|Occurence|TableId
+| |Elements|Attribute|Data types|Occurence|TableId
 |M17.|mmlSg:SurgeryModule| | | |
 |M17.1.|mmlSg:surgeryItem| | |+|
 |M17.1.1.|mmlSg:surgicalInfo| | | |
@@ -84,6 +85,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【内容】手術ヘッダー情報 +
 【省略】不可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlSg:type|string|#IMPLIED|MML0021|手術の種類コード
@@ -187,6 +189,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】string +
 【省略】要素分割表記が選択されれば，省略可． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlSg:code|string|#IMPLIED|手術法コード
@@ -219,6 +222,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】string +
 【省略】不可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlSg:code|string|#IMPLIED|手術法コード
@@ -265,6 +269,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】不可 +
 【繰り返し設定】繰り返しあり．スタッフの数だけ繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlSg:staffClass|string|#IMPLIED|MML0022|手術スタッフ区分
@@ -293,6 +298,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】不可 +
 【繰り返し設定】繰り返しあり．麻酔法が複数あれば繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlSg:code|string|#IMPLIED|麻酔法名コード
@@ -315,6 +321,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．麻酔医が複数いれば繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlSg:staffClass|string|#IMPLIED|MML0023|麻酔医区分

@@ -39,7 +39,7 @@ xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
 .エレメント一覧表
 [options="header"]
 |===
-| |Elements|Attribute|Data types|Occurrence|Table id
+| |Elements|Attribute|Data types|Occurrence|TableId
 |M20.|mmlRp:ReportModule| | | |
 |M20.1.|mmlRp:information| | | |
 | | |mmlRp:performTime|dateTime|#REQUIRED|

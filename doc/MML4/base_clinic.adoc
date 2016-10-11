@@ -19,8 +19,9 @@ image::mmlbc.jpg[]
 
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Elements|Attribute|Datatypes|Occurence|TableId
+| |Elements|Attribute|Data types|Occurence|TableId
 |M14.|mmlBc:BaseClinicModule| | | |
 |M14.1.|mmlBc:allergy| | |?|
 |M14.1.1.|mmlBc:allergyItem| | |+|

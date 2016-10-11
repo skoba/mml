@@ -19,8 +19,9 @@ image::mmlpc.jpg[]
 xmlns:mmlPc="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0"
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Elements|Attribute|Datatypes|Occurence|TableId
+| |Elements|Attribute|Data types|Occurence|TableId
 |M16.|mmlPc:ProgressCourseModule| | | |
 |M16.1.|mmlPc:FreeExpression| |string| |
 |M16.1.1.|mmlCm:extRef| | |*|
@@ -96,6 +97,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】string +
 【省略】省略可 +
 【属性】関連する診断名を記載するMMLインスタンスのuid を，属性に指定する．
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlPc:dxUid|string|#IMPLIED|関連するmmlRd:RegisteredDiagnosisModuleのuidを記載する．

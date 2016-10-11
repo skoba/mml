@@ -1,8 +1,8 @@
-==== MML Ver. 4 修正履歴
+=== MML Ver. 4 修正履歴
 
 MML ver 4を2016年2月8日に公開して以来、下記のような修正が行われた。
 
-===== 章・節番号、エレメント番号
+==== 章・節番号、エレメント番号
 MML共通形式、MMLコンテンツモジュールの各エレメントに対する番号と章番号が混在していた。わかりやすくするために各エレメントの先頭にMをつけ、共通形式、コンテンツモジュールに連番を振った。
 
 .例 住所表現形式のエレメント番号
@@ -11,7 +11,7 @@ MML共通形式、MMLコンテンツモジュールの各エレメントに対�
 |1.1.|M1.1.
 |=====
 
-===== 解説にデータ型、省略、繰り返しを明記した
+==== 解説にデータ型、省略、繰り返しを明記した
 エレメント表で記載されてはいるが、解説で記載されていなかったデータ型や省略について明示的に記載することとした。
 
 .例：注射モジュールの薬剤名称のデータ型
@@ -20,7 +20,7 @@ MML共通形式、MMLコンテンツモジュールの各エレメントに対�
  +【データ型】string
 
 
-===== MML Header, docInfoのnamespace宣言
+==== MML Header, docInfoのnamespace宣言
 以下のようにnamespace宣言をしていた。
 
  xmlns:mml ="http://www.medxml.net/MML/v4"
@@ -32,7 +32,7 @@ MML共通形式、MMLコンテンツモジュールの各エレメントに対�
  xmlns="http://www.medxml.net/MML/v4/base/1.0"
 
 
-===== DTDについての記述
+==== DTDについての記述
 MML4ではW3C XML Schemaを採用しておりDTDはもはや使用しないため表現の修正を行った。
 .8.1.6 tocItem
 
@@ -45,7 +45,7 @@ MML4ではW3C XML Schemaを採用しておりDTDはもはや使用しないた�
  -|moduleVersion|uri|#IMPLIED| |使用モジュールのDTDのURIを記載
  +|moduleVersion|uri|#IMPLIED| |使用するモジュールのXMLスキーマのURIを記載
 
-===== 初診時特有情報の分娩時週数
+==== 初診時特有情報の分娩時週数
 P32Wといった、ISO8601のduration表記に準じたPnWで表現することとし、xs:duration型としていたが、XMLスキーマのxs:duration型には週数を範囲とする記載法がなく、一般的なバリデータではエラーとなるため、xs:string型で表現することとした
 
  +===== M15.2.1.2. mmlFcl:deliveryWeeks
@@ -58,7 +58,7 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
  -|xs:duration|期間型。ISO8601形式に週（W)を加えたPnYnMnWnDTnHnMnS形式で表記する。
  +xs:duration:: 期間型。ISO8601形式PnYnMnDTnHnMnS形式で表記する。
 
-===== 臨床サマリーモジュール内の診断履歴情報
+==== 臨床サマリーモジュール内の診断履歴情報
 文書では繰り返しありとなっているところをスキーマでは繰り返さなくなっているところを修正した。
 
 .summary.xsd
@@ -66,7 +66,7 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
  - <xs:element minOccurs="0" ref="mmlRd:RegisteredDiagnosisModule"/>
  + <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlRd:RegisteredDiagnosisModule"/>
 
-===== 手術記録モジュール内のエレメントのoccurrence
+==== 手術記録モジュール内のエレメントのoccurrence
 手術記録モジュールの解説文書に記載されているエレメントのoccurrenceとスキーマに記載されているoccurrenceが一部異なっていた。調査の結果、MML ver 2, ver 3でも同様に文書とDTDにずれが見られた。検討の結果、DTD、スキーマに文書を合わせることとした。
 
 .修正前
@@ -92,7 +92,7 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
  M17.1.6.1.1.1. mmlPsi:PersonalizedInfo +
 
 
-===== 処方箋、注射モジュールの薬剤コードエレメント
+==== 処方箋、注射モジュールの薬剤コードエレメント
 　処方箋、注射記録モジュールとも薬剤コードの所属するコード体型を記録するsystem属性が存在するが、そのネームスペースが欠落していたのでそれぞれのネームスペースを付与した
 .修正前
 
@@ -104,7 +104,7 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
  mmlInj:system
 
 
-===== 注射記録モジュールの投与開始日時、投与終了日時
+==== 注射記録モジュールの投与開始日時、投与終了日時
 注射では投与開始日ではなく、投与開始日時が記録されるため記述部分でデータ型がdateとなっていたのをdateTime型に修正した。(スキーマに変更なし)
 
  +===== M25.1.4. mmlInj:startDateTime
@@ -121,11 +121,11 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
   【省略】可 +
  -【データ型】date +
 
-===== XMLスキーマのリファクタリング。
+==== XMLスキーマのリファクタリング。
 
 xsdの書式で型定義やoccurrence定義が不十分であったり、冗長であったところを修正した。XMLスキーマとして暗黙的に指定されている型やoccurrenceについても明示的に記載することとした。
 
-======  occurrenceの明示(基礎的診療情報モジュール）
+=====  occurrenceの明示(基礎的診療情報モジュール）
 [source, xml]
 -        <xs:element minOccurs="0" ref="mmlBc:allergy"/>
 -        <xs:element minOccurs="0" ref="mmlBc:bloodtype"/>
@@ -134,7 +134,7 @@ xsdの書式で型定義やoccurrence定義が不十分であったり、冗長�
 +        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:bloodtype"/>
 +        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:infection"/>
 
-====== 文字列型からboolean型へ
+===== 文字列型からboolean型へ
 文字列（トークン）型で"true"あるいは"false"と制限をかける制約とboolean型を指定することで、インスタンス内に記載されるデータに差はないが、boolean型として明示的に定義するほうが冗長さも回避できる。
 
 .summary.xsd
@@ -151,20 +151,21 @@ xsdの書式で型定義やoccurrence定義が不十分であったり、冗長�
 
 サマリー情報にあるemergency属性, dethinfoエレメントなどに上記の変更を行った。
 
-====== 文字列型からdate型へ
+===== 文字列型からdate型へ
 MMLの規約として、日付はCCYY-MM-DDのISO8601形式で記載することとしているため、date型で指定するのと同様にインスタンスに記載されるが、明示的に型を指定することによりデータのバリデーションを行うことができるためスキーマの修正を行った。
 
 .patient.xsd
 -  <xs:element name="birthday" type="xs:string"/>
 +  <xs:element name="birthday" type="xs:date"/>
 
-====== attributeの付け替えなど
+===== attributeの付け替えなど
 DTDからXML schemaにはほぼ自動変換したものを使用していたが、冗長であったり定義の並びが離れていて分かりづらかったりしたところを修正した。
 
-===== 誤字、表現の修正
+==== 誤字、表現の修正
 その他誤字の修正、表現の修正を多数行った
 
 .項目の並びを、データ型、省略の順とした(例)
+
  +===== M23.4.4. mmlFs:boStatus
   【内容】排泄物の性状。軟便、下痢、混濁など。大量・中等量、少量など数値化できない場合にはここに記載する。 +
  -【省略】省略可 +

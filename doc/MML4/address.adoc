@@ -14,8 +14,9 @@
 image::mmlad.jpg[]
 
 .住所表現形式エレメント一覧表
+[options="header"]
 |=====
-| |Element|Attribute|Datatype|Occurence|TableId
+| |Element|Attribute|Data types|Occurence|TableId
 |M1.|mmlAd:Address| | | |
 | | |mmlAd:repCode|string|#REQUIRED|optional
 | | |mmlAd:addressClass|string|#IMPLIED|MML0002
@@ -39,6 +40,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【内容】住所を表現する共通形式．一連住所(M1.1.)もしくはその直下のエレメント (M1.2. からM1.5.) のどちらかを選択．
 
 【属性】
+[options="header"]
 |======
 |属性名|データ型|省略|使用テーブル|説明
 |mmlAd:repCode|string|#REQUIRED|optional|表記法

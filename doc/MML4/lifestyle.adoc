@@ -18,8 +18,9 @@ image::mmlls.jpg[]
 xmlns:mmlLs= "http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Elements|Attribute|Datatypes|Occurence|TableId
+| |Elements|Attribute|Data types|Occurence|TableId
 |M13.|mmlLs:LifestyleModule| | | |
 |M13.1.|mmlLs:occupation| |string| |
 |M13.2.|mmlLs:tobacco| |string| |

@@ -42,7 +42,7 @@ image::mmlfs.png[]
 .エレメント一覧表
 [options="header"]
 |===
-| |Elements|Attribute|Data types|Occurrence|Table id
+| |Elements|Attribute|Data types|Occurrence|TableId
 |M23.|mmlFs:FlowSheetModule| | | |
 |M23.1.|mmlFs:context| | | |
 |M23.1.1.|mmlFs:facility| |string| |
