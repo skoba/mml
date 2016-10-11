@@ -4,16 +4,17 @@ MML ver 4を2016年2月8日に公開して以来、下記のような修正が�
 
 ===== 章・節番号、エレメント番号
 MML共通形式、MMLコンテンツモジュールの各エレメントに対する番号と章番号が混在していた。わかりやすくするために各エレメントの先頭にMをつけ、共通形式、コンテンツモジュールに連番を振った。
+
 .例 住所表現形式のエレメント番号
 |=====
-|変更前|変更後|
-|1.1.|M1.1.|
+|変更前|変更後
+|1.1.|M1.1.
 |=====
 
 ===== 解説にデータ型、省略、繰り返しを明記した
 エレメント表で記載されてはいるが、解説で記載されていなかったデータ型や省略について明示的に記載することとした。
 
-.例：注射モジュールの薬剤名称
+.例：注射モジュールの薬剤名称のデータ型
 
   【内容】薬剤名称
  +【データ型】string
@@ -25,7 +26,7 @@ MML共通形式、MMLコンテンツモジュールの各エレメントに対�
  xmlns:mml ="http://www.medxml.net/MML/v4"
  xmlns="http://www.medxml.net/MML/v4"
 
-下記のように改めた。
+下記のようにbaseを間に挟むように改めた。
 
  xmlns:mml ="http://www.medxml.net/MML/v4/base/1.0/"
  xmlns="http://www.medxml.net/MML/v4/base/1.0"
@@ -55,10 +56,11 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
 .基本方針 6.2.6. データ型
 
  -|xs:duration|期間型。ISO8601形式に週（W)を加えたPnYnMnWnDTnHnMnS形式で表記する。
- +xs:duration:: 期間型。ISO8601形式に週（W)を加えたPnYnMnWnDTnHnMnS形式で表記する。
+ +xs:duration:: 期間型。ISO8601形式PnYnMnDTnHnMnS形式で表記する。
 
 ===== 臨床サマリーモジュール内の診断履歴情報
 文書では繰り返しありとなっているところをスキーマでは繰り返さなくなっているところを修正した。
+
 .summary.xsd
 [source, xml]
  - <xs:element minOccurs="0" ref="mmlRd:RegisteredDiagnosisModule"/>
@@ -111,7 +113,7 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
   【省略】可 +
  -【データ型】date +
   【説明】投与を開始した時間を記載する
-  
+
  -===== mmlInj:endDateTime
  +===== M25.1.5. mmlInj:endDateTime
   【内容】投与修了日時 +
@@ -169,5 +171,3 @@ DTDからXML schemaにはほぼ自動変換したものを使用していたが�
  -【データ型】string
  +【データ型】string +
  +【省略】省略可
-
-   
