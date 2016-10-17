@@ -106,7 +106,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|mmlPs:system|string|不可| |用いたコード体系の名称を記載
+|mmlPs:system|string|不可| |用いた薬剤コード体系を記載する。MML0037参照
 |===
 
 ===== M24.2.2. mmlPs:dose
