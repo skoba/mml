@@ -64,10 +64,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 
-LICENSE for archetypes derived from openEHR clinical knowledge
-manager(http://www.openehr.org/ckm/) is under CC-BY-SA.
+LICENSE for archetypes
 ===
 
+Archetypes are licenced under CC-BY-SA,
+because they are derived from openEHR clinical knowledge
+manager(http://www.openehr.org/ckm/)
 
 CC-BY-SA license document is available on the following website.
 https://creativecommons.org/licenses/by-sa/4.0/deed.en
