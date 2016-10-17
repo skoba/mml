@@ -334,7 +334,13 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_注射記録モジュールの投与開始日時_投与終了日時">2.1.11. 注射記録モジュールの投与開始日時、投与終了日時</h4>
+<h4 id="_処方箋_注射モジュールの薬剤コード体系設定">2.1.11. 処方箋、注射モジュールの薬剤コード体系設定</h4>
+<div class="paragraph">
+<p>処方箋モジュール、注射モジュールで使用する薬剤コード体系をMML0037テーブルにまとめた。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_注射記録モジュールの投与開始日時_投与終了日時">2.1.12. 注射記録モジュールの投与開始日時、投与終了日時</h4>
 <div class="paragraph">
 <p>注射では投与開始日ではなく、投与開始日時が記録されるため記述部分でデータ型がdateとなっていたのをdateTime型に修正した。(スキーマに変更なし)</p>
 </div>
@@ -360,12 +366,12 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_xmlスキーマのリファクタリング">2.1.12. XMLスキーマのリファクタリング。</h4>
+<h4 id="_xmlスキーマのリファクタリング">2.1.13. XMLスキーマのリファクタリング。</h4>
 <div class="paragraph">
 <p>xsdの書式で型定義やoccurrence定義が不十分であったり、冗長であったところを修正した。XMLスキーマとして暗黙的に指定されている型やoccurrenceについても明示的に記載することとした。</p>
 </div>
 <div class="sect4">
-<h5 id="_occurrenceの明示_基礎的診療情報モジュール">2.1.12.1. occurrenceの明示(基礎的診療情報モジュール）</h5>
+<h5 id="_occurrenceの明示_基礎的診療情報モジュール">2.1.13.1. occurrenceの明示(基礎的診療情報モジュール）</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">-        &lt;xs:element minOccurs="0" ref="mmlBc:allergy"/&gt;
@@ -378,7 +384,7 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_文字列型からboolean型へ">2.1.12.2. 文字列型からboolean型へ</h5>
+<h5 id="_文字列型からboolean型へ">2.1.13.2. 文字列型からboolean型へ</h5>
 <div class="paragraph">
 <p>文字列（トークン）型で"true"あるいは"false"と制限をかける制約とboolean型を指定することで、インスタンス内に記載されるデータに差はないが、boolean型として明示的に定義するほうが冗長さも回避できる。</p>
 </div>
@@ -401,7 +407,7 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_文字列型からdate型へ">2.1.12.3. 文字列型からdate型へ</h5>
+<h5 id="_文字列型からdate型へ">2.1.13.3. 文字列型からdate型へ</h5>
 <div class="paragraph">
 <p>MMLの規約として、日付はCCYY-MM-DDのISO8601形式で記載することとしているため、date型で指定するのと同様にインスタンスに記載されるが、明示的に型を指定することによりデータのバリデーションを行うことができるためスキーマの修正を行った。</p>
 </div>
@@ -427,7 +433,7 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_誤字_表現の修正">2.1.13. 誤字、表現の修正</h4>
+<h4 id="_誤字_表現の修正">2.1.14. 誤字、表現の修正</h4>
 <div class="paragraph">
 <p>その他誤字の修正、表現の修正を多数行った</p>
 </div>
@@ -15356,7 +15362,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">不可</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">用いたコード体系の名称を記載</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いた薬剤コード体系を記載する。MML0037参照</p></td>
 </tr>
 </tbody>
 </table>
@@ -15795,7 +15801,7 @@ confirmDate
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">不可</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">用いたコード体系の名称を記載</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用いたコード体系の名称を記載。MML0037参照</p></td>
 </tr>
 </tbody>
 </table>
@@ -22660,7 +22666,7 @@ hdObservationTable01</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-10-12 02:50:59 JST
+Last updated 2016-10-17 16:59:14 JST
 </div>
 </div>
 </body>

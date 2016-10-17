@@ -89,7 +89,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|mmlInj:system|string|不可| |用いたコード体系の名称を記載
+|mmlInj:system|string|不可| |用いたコード体系の名称を記載。MML0037参照
 |===
 
 ===== M25.1.2. mmlInj:dose
