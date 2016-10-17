@@ -149,37 +149,43 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】可 +
 【説明】頓用処方であればtrue, そうでなければfalse
 
-===== M24.2.9. mmlPs:route
+===== M24.2.9 mmlPs:repetitions
+【内容】総投与回数。(頓用、外用などの場合) +
+【データ型】decimal +
+【省略】可 +
+【説明】頓用処方や外用処方の場合など、薬剤が繰り返される回数。
+
+===== M24.2.10. mmlPs:route
 【内容】投与経路 +
 【データ型】string +
 【省略】可 +
 【説明】経口、経皮、座剤などの別を記載する
 
-===== M24.2.10. mmlPs:form
+===== M24.2.11. mmlPs:form
 【内容】剤形 +
 【データ型】string +
 【省略】可 +
 【説明】錠剤、散剤、液剤などの別を記載する
 
-===== M24.2.11. mmlPs:batchNo
+===== M24.2.12. mmlPs:batchNo
 【内容】処方番号 +
 【データ型】decimal +
 【省略】可 +
 【説明】処方番号を記載する。これにより用法が共通する薬剤をまとめて一つの処方単位とすることができる。
 
-===== M24.2.12. mmlPs:brandSubtitutionPermitted
+===== M24.2.13. mmlPs:brandSubtitutionPermitted
 【内容】ジェネリック医薬品への代替可 +
 【データ型】boolean +
 【省略】可 +
 【説明】ジェネリック使用可の場合にはtrue，使用不可の場合にはfalse。省略時にはtrueとみなす
 
-===== M24.2.13. mmlPs:longTerm
+===== M24.2.14. mmlPs:longTerm
 【内容】長期処方可 +
 【データ型】boolean +
 【省略】可 +
 【説明】長期処方であればtrue，短期であればfalse
 
-===== M24.2.14. mmlPs:additionalInstruction
+===== M24.2.15. mmlPs:additionalInstruction
 【内容】追加指示，コメント +
 【データ型】string +
 【省略】可 +
