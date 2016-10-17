@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.4">
+<meta name="generator" content="Asciidoctor 1.5.5">
 <title>MML 4.1</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body class="book toc2 toc-right">
 <div id="header">
@@ -291,7 +291,23 @@ M17.1.6.1.1.1. mmlPsi:PersonalizedInfo +</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_処方箋_注射モジュールの薬剤コードエレメント">2.1.8. 処方箋、注射モジュールの薬剤コードエレメント</h4>
+<h4 id="_処方箋モジュールのmmlps_repetitionsエレメント追加">2.1.8. 処方箋モジュールのmmlPs:repetitionsエレメント追加</h4>
+<div class="paragraph">
+<p>処方箋モジュールで頓用処方の総回数を記載する項目がなかったため追加した。
+下記のように追加した</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>M24.2.9 mmlPs:repetitions
+【内容】総投与回数。(頓用、外用などの場合) +
+【データ型】decimal +
+【省略】可 +
+【説明】頓用処方や外用処方の場合など、薬剤が繰り返される回数。</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_処方箋_注射モジュールの薬剤コードエレメント">2.1.9. 処方箋、注射モジュールの薬剤コードエレメント</h4>
 <div class="literalblock">
 <div class="content">
 <pre>　処方箋、注射記録モジュールとも薬剤コードの所属するコード体型を記録するsystem属性が存在するが、そのネームスペースが欠落していたのでそれぞれのネームスペースを付与した
@@ -312,7 +328,13 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_注射記録モジュールの投与開始日時_投与終了日時">2.1.9. 注射記録モジュールの投与開始日時、投与終了日時</h4>
+<h4 id="_処方箋モジュールの1日量処方表記">2.1.10. 処方箋モジュールの1日量処方表記</h4>
+<div class="paragraph">
+<p>処方箋モジュールの書式は1回量表記がベースとなっているが、システム上、止むを得ない場合に一日総量をdoseに記載し、frequencyPerDayに1として、用法指示に分割指示を記載することも許容することとした。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_注射記録モジュールの投与開始日時_投与終了日時">2.1.11. 注射記録モジュールの投与開始日時、投与終了日時</h4>
 <div class="paragraph">
 <p>注射では投与開始日ではなく、投与開始日時が記録されるため記述部分でデータ型がdateとなっていたのをdateTime型に修正した。(スキーマに変更なし)</p>
 </div>
@@ -338,12 +360,12 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_xmlスキーマのリファクタリング">2.1.10. XMLスキーマのリファクタリング。</h4>
+<h4 id="_xmlスキーマのリファクタリング">2.1.12. XMLスキーマのリファクタリング。</h4>
 <div class="paragraph">
 <p>xsdの書式で型定義やoccurrence定義が不十分であったり、冗長であったところを修正した。XMLスキーマとして暗黙的に指定されている型やoccurrenceについても明示的に記載することとした。</p>
 </div>
 <div class="sect4">
-<h5 id="_occurrenceの明示_基礎的診療情報モジュール">2.1.10.1. occurrenceの明示(基礎的診療情報モジュール）</h5>
+<h5 id="_occurrenceの明示_基礎的診療情報モジュール">2.1.12.1. occurrenceの明示(基礎的診療情報モジュール）</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">-        &lt;xs:element minOccurs="0" ref="mmlBc:allergy"/&gt;
@@ -356,7 +378,7 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_文字列型からboolean型へ">2.1.10.2. 文字列型からboolean型へ</h5>
+<h5 id="_文字列型からboolean型へ">2.1.12.2. 文字列型からboolean型へ</h5>
 <div class="paragraph">
 <p>文字列（トークン）型で"true"あるいは"false"と制限をかける制約とboolean型を指定することで、インスタンス内に記載されるデータに差はないが、boolean型として明示的に定義するほうが冗長さも回避できる。</p>
 </div>
@@ -379,7 +401,7 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_文字列型からdate型へ">2.1.10.3. 文字列型からdate型へ</h5>
+<h5 id="_文字列型からdate型へ">2.1.12.3. 文字列型からdate型へ</h5>
 <div class="paragraph">
 <p>MMLの規約として、日付はCCYY-MM-DDのISO8601形式で記載することとしているため、date型で指定するのと同様にインスタンスに記載されるが、明示的に型を指定することによりデータのバリデーションを行うことができるためスキーマの修正を行った。</p>
 </div>
@@ -405,7 +427,7 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_誤字_表現の修正">2.1.11. 誤字、表現の修正</h4>
+<h4 id="_誤字_表現の修正">2.1.13. 誤字、表現の修正</h4>
 <div class="paragraph">
 <p>その他誤字の修正、表現の修正を多数行った</p>
 </div>
@@ -15017,7 +15039,7 @@ final 最終報告</p></td>
 <p>しかしながら、データとして機械処理をするためには1回量で処方を記載されている方が簡便であるため、本モジュールでは1回量処方を基準とする。</p>
 </div>
 <div class="paragraph">
-<p>システムが1回量に対応しておらず1日量しかデータが得られない場合には、やむを得ずdoseに1日量を記載し、frequencyPerDayを1回と記録して一日の投与量がわかるようにし、指示に「毎食後三分割」と記載する。</p>
+<p>システムが1回量に対応しておらず1日量しかデータが得られない場合には、やむを得ずdoseに1日量を記載し、frequencyPerDayを1回と記録して一日の投与量がわかるようにし、指示に「毎食後三分割」と分割指示を記載する。</p>
 </div>
 <div class="paragraph">
 <p>このモジュールが対象とするものは医師が指示した処方箋であって、薬局での払い出し結果や服薬結果ではない。保険請求のための処方箋データは、CLAIMによって表現される</p>
@@ -15401,7 +15423,16 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_m24_2_9_mmlps_route">10.15.3.14. M24.2.9. mmlPs:route</h5>
+<h5 id="_m24_2_9_mmlps_repetitions">10.15.3.14. M24.2.9 mmlPs:repetitions</h5>
+<div class="paragraph">
+<p>【内容】総投与回数。(頓用、外用などの場合)<br>
+【データ型】decimal<br>
+【省略】可<br>
+【説明】頓用処方や外用処方の場合など、薬剤が繰り返される回数。</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_m24_2_10_mmlps_route">10.15.3.15. M24.2.10. mmlPs:route</h5>
 <div class="paragraph">
 <p>【内容】投与経路<br>
 【データ型】string<br>
@@ -15410,7 +15441,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_m24_2_10_mmlps_form">10.15.3.15. M24.2.10. mmlPs:form</h5>
+<h5 id="_m24_2_11_mmlps_form">10.15.3.16. M24.2.11. mmlPs:form</h5>
 <div class="paragraph">
 <p>【内容】剤形<br>
 【データ型】string<br>
@@ -15419,7 +15450,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_m24_2_11_mmlps_batchno">10.15.3.16. M24.2.11. mmlPs:batchNo</h5>
+<h5 id="_m24_2_12_mmlps_batchno">10.15.3.17. M24.2.12. mmlPs:batchNo</h5>
 <div class="paragraph">
 <p>【内容】処方番号<br>
 【データ型】decimal<br>
@@ -15428,7 +15459,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_m24_2_12_mmlps_brandsubtitutionpermitted">10.15.3.17. M24.2.12. mmlPs:brandSubtitutionPermitted</h5>
+<h5 id="_m24_2_13_mmlps_brandsubtitutionpermitted">10.15.3.18. M24.2.13. mmlPs:brandSubtitutionPermitted</h5>
 <div class="paragraph">
 <p>【内容】ジェネリック医薬品への代替可<br>
 【データ型】boolean<br>
@@ -15437,7 +15468,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_m24_2_13_mmlps_longterm">10.15.3.18. M24.2.13. mmlPs:longTerm</h5>
+<h5 id="_m24_2_14_mmlps_longterm">10.15.3.19. M24.2.14. mmlPs:longTerm</h5>
 <div class="paragraph">
 <p>【内容】長期処方可<br>
 【データ型】boolean<br>
@@ -15446,7 +15477,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_m24_2_14_mmlps_additionalinstruction">10.15.3.19. M24.2.14. mmlPs:additionalInstruction</h5>
+<h5 id="_m24_2_15_mmlps_additionalinstruction">10.15.3.20. M24.2.15. mmlPs:additionalInstruction</h5>
 <div class="paragraph">
 <p>【内容】追加指示，コメント<br>
 【データ型】string<br>
@@ -15455,7 +15486,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_m24_3_mmlps_narcoticprescriptionlicensenumber">10.15.3.20. M24.3. mmlPs:narcoticPrescriptionLicenseNumber</h5>
+<h5 id="_m24_3_mmlps_narcoticprescriptionlicensenumber">10.15.3.21. M24.3. mmlPs:narcoticPrescriptionLicenseNumber</h5>
 <div class="paragraph">
 <p>【内容】麻薬施用者番号<br>
 【データ型】string<br>
@@ -15464,7 +15495,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_m24_4_mmlps_comment">10.15.3.21. M24.4. mmlPs:comment</h5>
+<h5 id="_m24_4_mmlps_comment">10.15.3.22. M24.4. mmlPs:comment</h5>
 <div class="paragraph">
 <p>【内容】コメント<br>
 【省略】可<br>
@@ -15932,7 +15963,7 @@ confirmDate
 <div class="sect4">
 <h5 id="_mmlci_creatorinfo_9">10.17.3.4. mmlCi:CreatorInfo</h5>
 <div class="paragraph">
-<p>体温表モジュールでは、多職種にわたる複数の人間が観察した情報が一つの報告書に記載されることがある。最終的な記載者あるいは代表者が作成者情報として記録される。</p>
+<p>透析モジュールでは、多職種にわたる複数の人間が観察した情報が一つの報告書に記載されることがある。最終的な記載者あるいは代表者が作成者情報として記録される。</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 27. エレメント一覧表</caption>
@@ -21342,7 +21373,7 @@ confirmDate
 </table>
 </div>
 <div class="sect4">
-<h5 id="_m16_1_6_1_1_mmlhd_hdmethodrecord">10.17.4.109. M16.1.6.1.1. mmlHd:hdMethodRecord</h5>
+<h5 id="_m26_1_6_1_1_mmlhd_hdmethodrecord">10.17.4.109. M26.1.6.1.1. mmlHd:hdMethodRecord</h5>
 <div class="paragraph">
 <p>【内容】血液浄化法名称<br>
 【データ型】string<br>
