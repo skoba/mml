@@ -62,9 +62,12 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-===
+
 
 LICENSE for archetypes derived from openEHR clinical knowledge
 manager(http://www.openehr.org/ckm/) is under CC-BY-SA.
+===
+
+
 CC-BY-SA license document is available on the following website.
 https://creativecommons.org/licenses/by-sa/4.0/deed.en
