@@ -39,122 +39,126 @@
 .エレメント一覧表
 [options="header"]
 |===
-| |Elements|Attribute|Datatypes|Occurrence|Table id
-|1|mmlInj:InjectionModule| | | |
-|1.1|mmlInj:medication| | |+|
-|1.1.1|mmlInj:medicine| | | |
-|1.1.1.1|mmlInj:name| |string| |
-|1.1.1.2|mmlInj:code| |string|*|
-| | |system|string| |
-|1.1.2|mmlInj:dose| |decimal| |
-|1.1.3|mmlInj:doseUnit| |string| |
-|1.1.4|mmlInj:startDateTime| |dateTime|?|
-|1.1.5|mmlInj:endDateTime| |dateTime|?|
-|1.1.6|mmlInj:instruction| |string|?|
-|1.1.7|mmlInj:route| |string|?|
-|1.1.8|mmlInj:site| |string|?|
-|1.1.9|mmlInj:deliveryMethod| |string|?|
-|1.1.10|mmlInj:batchNo| |decimal|?|
-|1.1.11|mmlInj:additionalInstruction| |string|?|
-|1.2|mmlInj:narcoticPrescriptionLicenseNumber| |string|?|
-|1.3|mmlInj:comment| |string|?|
+| |Elements|Attribute|Data types|Occurrence|Table id
+|M25.|mmlInj:InjectionModule| | | |
+|M25.1.|mmlInj:medication| | |+|
+|M25.1.1.|mmlInj:medicine| | | |
+|M25.1.1.1.|mmlInj:name| |string| |
+|M25.1.1.2.|mmlInj:code| |string|*|
+| | |mmlInj:system|string| |
+|M25.1.2.|mmlInj:dose| |decimal| |
+|M25.1.3.|mmlInj:doseUnit| |string| |
+|M25.1.4.|mmlInj:startDateTime| |dateTime|?|
+|M25.1.5.|mmlInj:endDateTime| |dateTime|?|
+|M25.1.6.|mmlInj:instruction| |string|?|
+|M25.1.7.|mmlInj:route| |string|?|
+|M25.1.8.|mmlInj:site| |string|?|
+|M25.1.9.|mmlInj:deliveryMethod| |string|?|
+|M25.1.10.|mmlInj:batchNo| |decimal|?|
+|M25.1.11.|mmlInj:additionalInstruction| |string|?|
+|M25.2.|mmlInj:narcoticPrescriptionLicenseNumber| |string|?|
+|M25.3.|mmlInj:comment| |string|?|
 |===
-Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
+Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== mmlInj:InjectionModule
+===== M25. mmlInj:InjectionModule
 【内容】注射記録モジュール
 
-===== mmlInj:medication
+===== M25.1. mmlInj:medication
 【内容】注射された薬剤と用量、用法の組み合わせ +
 【省略】不可 +
 【繰り返し】1回以上
 
-===== mmlInj:medicine
+===== M25.1.1. mmlInj:medicine
 【内容】薬剤名称と対応するコードのセット +
 【省略】不可
 
-===== mmlInj:name
+===== M25.1.1.1. mmlInj:name
 【内容】薬剤名称 +
+【データ型】string +
 【省略】不可
 
-===== mmlInj:code
+===== M25.1.1.2. mmlInj:code
 【内容】薬剤コード +
+【データ型】string +
 【繰り返し】0回以上 +
 【属性】
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|system|string|不可| |用いたコード体系の名称を記載
+|mmlInj:system|string|不可| |用いたコード体系の名称を記載
 |===
 
-===== mmlInj:dose
+===== M25.1.2. mmlInj:dose
 【内容】用量 +
-【省略】不可 +
 【データ型】decimal +
+【省略】不可 +
 【説明】慣習として1/2Aや2Vといった製剤単位での記載も可能であるが，g, mgのように定量的に記録できる質量単位で記載されることが望ましい。
 
-===== mmlInj:doseUnit
-【内容】用量の単位
-【省略】不可 +
-【データ型】string
+===== M25.1.3. mmlInj:doseUnit
+【内容】用量の単位 +
+【データ型】string +
+【省略】不可
 
-===== mmlInj:startDateTime
-【内容】投与開始日時
+===== M25.1.4. mmlInj:startDateTime
+【内容】投与開始日時 +
+【データ型】dateTime +
 【省略】可 +
-【データ型】date +
 【説明】投与を開始した時間を記載する
 
-===== mmlInj:endDateTime
+===== M25.1.5. mmlInj:endDateTime
 【内容】投与修了日時 +
+【データ型】dateTime +
 【省略】可 +
-【データ型】date +
 【説明】投与を修了した時間を記載する。静注，皮下注，筋注など開始時間と終了時間に差が無いような場合は省略する。
 
-===== mmlInj:instruction
+===== M25.1.6. mmlInj:instruction
 【内容】用法指示 +
-【省略】可 +
 【データ型】string +
+【省略】可 +
 【説明】使用法に関する指示を記載する
 
-===== mmlInj:route
+===== M25.1.7. mmlInj:route
 【内容】投与経路 +
-【省略】可+
 【データ型】string +
+【省略】可 +
 【説明】投与する注射ルートを記載する。例：右前腕留置ルート，右鎖骨下中心静脈ルート
 
-===== mmlInj:site
+===== M25.1.8. mmlInj:site
 【内容】投与部位 +
-【省略】可 +
 【データ型】string +
+【省略】可 +
 【説明】注射した部位を記載する。例：右上腕三角，腹部
 
-===== mmlInj:deliveryMethod
+===== M25.1.9. mmlInj:deliveryMethod
 【内容】注射方法 +
-【省略】可 +
 【データ型】string +
+【省略】可 +
 【説明】注射方法について記載する。例：筋注，皮下注，静注，点滴静注，中心静脈注射
 
-===== mmlInj:batchNo
+===== M25.1.10. mmlInj:batchNo
 【内容】処方番号 +
-【省略】可 +
 【データ型】decimal +
+【省略】可 +
 【説明】処方番号を記載する。これにより用法が共通する薬剤をまとめて一つの処方単位とすることができる。
 
-===== mmlInj:additionalInstruction
+===== M25.1.11. mmlInj:additionalInstruction
 【内容】追加指示，コメント +
-【省略】可 +
 【データ型】string +
+【省略】可 +
 【説明】注射に関する用法，用量に関する追加指示。必要に応じて記載する。
 
-===== mmlInj:narcoticPrescriptionLicenseNumber
+===== M25.2. mmlInj:narcoticPrescriptionLicenseNumber
 【内容】麻薬施用者番号 +
-【省略】可 +
 【データ型】string +
+【省略】可 +
 【説明】麻薬処方箋の場合には麻薬施用者番号及び患者住所を記載する必要がある。
 
-===== mmlInj:comment
+===== M25.3.  mmlInj:comment
 【内容】コメント +
-【省略】可 +
 【データ型】string +
+【省略】可 +
 【説明】

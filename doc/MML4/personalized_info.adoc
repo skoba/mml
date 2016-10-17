@@ -13,8 +13,9 @@
 image::mmlpsi.jpg[]
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Element|Attribute|Datatype|Occurrence|Table id
+| |Element|Attribute|Data types|Occurrence|TableId
 |M8.|mmlPsi:PersonalizedInfo| | | |
 |M8.1.|mmlCm:Id| |string| |
 |M8.2.|mmlPsi:personName| | | |

@@ -13,8 +13,9 @@
 image::mmldp.jpg[]
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Elements|Attribute|Datatypes|Occurrence|Table id
+| |Elements|Attribute|Data types|Occurrence|TableId
 |M7.|mmlDp:Department| | | |
 |M7.1.|mmlDp:name| |string|+|
 | | |mmlDp:repCode|string|#REQUIRED|optional
@@ -35,6 +36,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】不可 +
 【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlDp:repCode|string|#REQUIRED|optional|表記法

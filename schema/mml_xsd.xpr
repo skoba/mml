@@ -89,40 +89,8 @@
         <folder masterFiles="true" name="Master Files">
             <file name="mml.xsd"/>
         </folder>
-        <folder name="sample">
-            <file name="sample/mml4_sample1.xml"/>
-            <file name="sample/mmlad_structured_sample.xml"/>
-            <file name="sample/mmlad_unstructured_sample.xml"/>
-            <file name="sample/mmlbc_sample.xml"/>
-            <file name="sample/mmlci_sample.xml"/>
-            <file name="sample/mmlcm_department_id_sample.xml"/>
-            <file name="sample/mmlcm_extref_sample.xml"/>
-            <file name="sample/mmlcm_facility_id_sample.xml"/>
-            <file name="sample/mmlcm_personal_id_sample.xml"/>
-            <file name="sample/mmlcm_personal_id_with_facility_sample.xml"/>
-            <file name="sample/mmldp_sample.xml"/>
-            <file name="sample/mmlfc_sample.xml"/>
-            <file name="sample/mmlfcl_sample.xml"/>
-            <file name="sample/mmlhi_sample.xml"/>
-            <file name="sample/mmlinj_sample.xml"/>
-            <file name="sample/mmllb_sample.xml"/>
-            <file name="sample/mmlls_sample.xml"/>
-            <file name="sample/mmlnm_structured_sample.xml"/>
-            <file name="sample/mmlnm_unstructured_sample.xml"/>
-            <file name="sample/mmlpc_sample.xml"/>
-            <file name="sample/mmlph_structured_sample.xml"/>
-            <file name="sample/mmlph_unstructured_sample.xml"/>
-            <file name="sample/mmlpi_sample.xml"/>
-            <file name="sample/mmlps_sample.xml"/>
-            <file name="sample/mmlpsi_sample.xml"/>
-            <file name="sample/mmlrd_sample.xml"/>
-            <file name="sample/mmlsg_sample.xml"/>
-            <file name="sample/mmlsm_sample.xml"/>
-        </folder>
         <file name="address.xsd"/>
-        <file name="file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/baseclinic.xsd">
-            <file name="hemodialysis.xsd"/>
-        </file>
+        <file name="baseclinic.xsd"/>
         <file name="claim.xsd"/>
         <file name="claimamount.xsd"/>
         <file name="common.xsd"/>
@@ -131,9 +99,7 @@
         <file name="facility.xsd"/>
         <file name="firstclinic.xsd"/>
         <file name="flowsheet.xsd"/>
-        <file name="file:/C:/Users/skoba/Documents/GitHub/mml/schema/draft/healthinsurance.xsd">
-            <file name="hemodialysis.xsd"/>
-        </file>
+        <file name="healthinsurance.xsd"/>
         <file name="hemodialysis.xsd"/>
         <file name="injection.xsd"/>
         <file name="lifestyle.xsd"/>

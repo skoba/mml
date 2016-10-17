@@ -19,6 +19,8 @@
 
 しかしながら、データとして機械処理をするためには1回量で処方を記載されている方が簡便であるため、本モジュールでは1回量処方を基準とする。
 
+システムが1回量に対応しておらず1日量しかデータが得られない場合には、やむを得ずdoseに1日量を記載し、frequencyPerDayを1回と記録して一日の投与量がわかるようにし、指示に「毎食後三分割」と分割指示を記載する。
+
 このモジュールが対象とするものは医師が指示した処方箋であって、薬局での払い出し結果や服薬結果ではない。保険請求のための処方箋データは、CLAIMによって表現される
 
 ==== namespace宣言
@@ -44,148 +46,158 @@ confirmDate
 .エレメント一覧表
 [options="header"]
 |===
-| |Elements|Attribute|Datatypes|Occurrence|Table id
-|1|mmlPs:PrescriptionModule| | | |
-|1.1|mmlPs:issuedTo| |string|?|
-|1.2|mmlPs:medication| | |+|
-|1.2.1|mmlPs:medicine| | | |
-|1.2.1.1|mmlPs:name| |string| |
-|1.2.1.2|mmlPs:code| |string|*|
-| | |system|string|#REQUIRED|
-|1.2.2|mmlPs:dose| |decimal| |
-|1.2.3|mmlPs:doseUnit| |string| |
-|1.2.4|mmlPs:frequencyPerDay| |decimal| |
-|1.2.5|mmlPs:startDate| |date|?|
-|1.2.6|mmlPs:duration| |duration|?|
-|1.2.7|mmlPs:instruction| |string|?|
-|1.2.8|mmlPs:PRN| |boolean|?|
-|1.2.9|mmlPs:route| |string|?|
-|1.2.10|mmlPs:form| |string|?|
-|1.2.11|mmlPs:batchNo| |decimal|?|
-|1.2.12|mmlPs:brandSubstitutionPermitted| |boolean|?|
-|1.2.13|mmlPs:longTerm| |boolean|?|
-|1.2.14|mmlPs:additionalInstruction| |string|?|
-|1.3|mmlPs:narcoticPrescriptionLicenseNumber| |string|?|
-|1.4|mmlPs:comment| |string|?|
+| |Elements|Attribute|Data types|Occurrence|Table id
+|M24.|mmlPs:PrescriptionModule| | | |
+|M24.1.|mmlPs:issuedTo| |string|?|
+|M24.2.|mmlPs:medication| | |+|
+|M24.2.1.|mmlPs:medicine| | | |
+|M24.2.1.1.|mmlPs:name| |string| |
+|M24.2.1.2.|mmlPs:code| |string|*|
+| | |mmlPs:system|string|#REQUIRED|
+|M24.2.2.|mmlPs:dose| |decimal| |
+|M24.2.3.|mmlPs:doseUnit| |string| |
+|M24.2.4.|mmlPs:frequencyPerDay| |decimal| |
+|M24.2.5.|mmlPs:startDate| |date|?|
+|M24.2.6.|mmlPs:duration| |duration|?|
+|M24.2.7.|mmlPs:instruction| |string|?|
+|M24.2.8.|mmlPs:PRN| |boolean|?|
+|M24.2.9.|mmlPs:route| |string|?|
+|M24.2.10.|mmlPs:form| |string|?|
+|M24.2.11.|mmlPs:batchNo| |decimal|?|
+|M24.2.12.|mmlPs:brandSubstitutionPermitted| |boolean|?|
+|M24.2.13.|mmlPs:longTerm| |boolean|?|
+|M24.2.14.|mmlPs:additionalInstruction| |string|?|
+|M24.3.|mmlPs:narcoticPrescriptionLicenseNumber| |string|?|
+|M24.4.|mmlPs:comment| |string|?|
 |===
-Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
+Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== mmlPs:PrescriptionModule
+===== M24. mmlPs:PrescriptionModule
 【内容】処方箋モジュール
 
-===== mmlPs:issuedTo
+===== M24.1. mmlPs:issuedTo
 【内容】院外、院内処方箋の別。院外処方の場合にはexternal、院内処方の場合にはinternalと記載する。 +
+【データ型】string +
 【省略】可 +
 【繰り返し】なし
 
-===== mmlPs:medication
+===== M24.2. mmlPs:medication
 【内容】処方箋に記載する薬剤と用量、用法の組み合わせ +
 【省略】不可 +
 【繰り返し】1回以上
 
-===== mmlPs:medicine
+===== M24.2.1. mmlPs:medicine
 【内容】薬剤名称と対応するコードのセット +
 【省略】不可
 
-===== mmlPs:name
+===== M24.2.1.1. mmlPs:name
 【内容】薬剤名称 +
+【データ型】string +
 【省略】不可
 
-===== mmlPs:code
+===== M24.2.1.2. mmlPs:code
 【内容】薬剤コード +
+【データ型】string +
 【繰り返し】0回以上 +
 【属性】
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|system|string|不可| |用いたコード体系の名称を記載
+|mmlPs:system|string|不可| |用いたコード体系の名称を記載
 |===
 
-===== mmlPs:dose
+===== M24.2.2. mmlPs:dose
 【内容】用量 +
-【省略】不可 +
-【データ型】decimal
-
-===== mmlPs:doseUnit
-【内容】用量の単位 +
-【省略】不可 +
-【データ型】string
-
-===== mmlPs:frequencyPerDay
-【内容】一日の内服回数 +
-【省略】可 +
 【データ型】decimal +
+【省略】不可
+
+===== M24.2.3. mmlPs:doseUnit
+【内容】用量の単位 +
+【データ型】string +
+【省略】不可
+
+===== M24.2.4. mmlPs:frequencyPerDay
+【内容】一日の内服回数 +
+【データ型】decimal +
+【省略】可 +
 【説明】総量のみが記載される外用剤などの場合には省略可
 
-===== mmlPs:startDate
+===== M24.2.5. mmlPs:startDate
 【内容】服薬開始日 +
-【省略】可 +
 【データ型】date +
+【省略】可 +
 【説明】内服開始日
 
-===== mmlPs:duration
+===== M24.2.6. mmlPs:duration
 【内容】服薬期間（日数） +
-【省略】可 +
 【データ型】decimal +
+【省略】可 +
 【説明】総量のみが記載される外用剤などの場合には省略可
 
-===== mmlPs:instruction
+===== M24.2.7. mmlPs:instruction
 【内容】用法指示 +
-【省略】可 +
 【データ型】string +
+【省略】可 +
 【説明】
 
-===== mmlPs:PRN
+===== M24.2.8. mmlPs:PRN
 【内容】頓用指示 +
-【省略】可 +
 【データ型】boolean +
+【省略】可 +
 【説明】頓用処方であればtrue, そうでなければfalse
 
-===== mmlPs:route
-【内容】投与経路 +
+===== M24.2.9 mmlPs:repetitions
+【内容】総投与回数。(頓用、外用などの場合) +
+【データ型】decimal +
 【省略】可 +
+【説明】頓用処方や外用処方の場合など、薬剤が繰り返される回数。
+
+===== M24.2.10. mmlPs:route
+【内容】投与経路 +
 【データ型】string +
+【省略】可 +
 【説明】経口、経皮、座剤などの別を記載する
 
-===== mmlPs:form
+===== M24.2.11. mmlPs:form
 【内容】剤形 +
-【省略】可 +
 【データ型】string +
+【省略】可 +
 【説明】錠剤、散剤、液剤などの別を記載する
 
-===== mmlPs:batchNo
+===== M24.2.12. mmlPs:batchNo
 【内容】処方番号 +
-【省略】可 +
 【データ型】decimal +
+【省略】可 +
 【説明】処方番号を記載する。これにより用法が共通する薬剤をまとめて一つの処方単位とすることができる。
 
-===== mmlPs:brandSubtitutionPermitted
+===== M24.2.13. mmlPs:brandSubtitutionPermitted
 【内容】ジェネリック医薬品への代替可 +
-【省略】可 +
 【データ型】boolean +
+【省略】可 +
 【説明】ジェネリック使用可の場合にはtrue，使用不可の場合にはfalse。省略時にはtrueとみなす
 
-===== mmlPs:longTerm
+===== M24.2.14. mmlPs:longTerm
 【内容】長期処方可 +
-【省略】可 +
 【データ型】boolean +
+【省略】可 +
 【説明】長期処方であればtrue，短期であればfalse
 
-===== mmlPs:additionalInstruction
+===== M24.2.15. mmlPs:additionalInstruction
 【内容】追加指示，コメント +
-【省略】可 +
 【データ型】string +
+【省略】可 +
 【説明】用法，用量に関する追加指示。必要に応じて記載する。
 
-===== mmlPs:narcoticPrescriptionLicenseNumber
+===== M24.3. mmlPs:narcoticPrescriptionLicenseNumber
 【内容】麻薬施用者番号 +
-【省略】可 +
 【データ型】string +
+【省略】可 +
 【説明】麻薬処方箋の場合には麻薬施用者番号及び患者住所を記載する必要がある。
 
-
-===== mmlPs:comment
+===== M24.4. mmlPs:comment
 【内容】コメント +
 【省略】可 +
 【データ型】string +

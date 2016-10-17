@@ -24,8 +24,8 @@
 ===== namespaces 宣言
 
 本モジュールの namespaces 宣言は，以下とする．
-
- xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
+[source, xml]
+xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
 
 ===== 文書ヘッダー情報 (docInfo) のモジュール個別仕様
 ===== docInfo
@@ -57,146 +57,153 @@
 .エレメント一覧表
 [options="header"]
 |===
-| |Elements|Attribute|Datatypes|Occurrence|Table id
-|1|mmmRe:ReferralModule| | | |
-|1.1.|mmlPi:PatientModule| | | |
-|1.2.|mmlRe:occupation| |string|?|
-|1.3.|mmlRe:referFrom| | | |
-|1.3.1|mmlPsi:PersonalizedInfo| | | |
-|1.4.|mmlRe:title| |string| |
-|1.5.|mmlRe:greeting| |string|?|
-|1.6.|mmlRe:chiefComplaints| |string| |
-|1.7.|mmlRe:clinicalDiagnosis| |string|?|
-|1.8.|mmlRe:pastHistory| |string|?|
-|1.8.1.|mmlCm:extRef| | |*|
-|1.9.|mmlRe:familyHistory| |string|?|
-|1.9.1.|mmlCm:extRef| | |*|
-|1.10.|mmlRe:presentIllness| |string| |
-|1.10.1.|mmlCm:extRef| | |*|
-|1.11.|mmlRe:testResults| |string|?|
-|1.11.1.|mmlCm:extRef| | |*|
-|1.12.|mmlSm:clinicalCourse| | |?|
-|1.13.|mmlRe:medication| |string|?|
-|1.13.1.|mmlPs:PrescriptionModule| |string|?|
-|1.13.2.|mmlInj:InjectionModule| |string|?|
-|1.13.3.|mmlCm:extRef| | |*|
-|1.14.|mmlRe:referPurpose| |string| |
-|1.15.|mmlRe:remarks| |string|?|
-|1.15.1.|mmlCm:extRef| | |*|
-|1.16.|mmlRe:referToFacility| | | |
-|1.16.1.|mmlFc:Facility| | | |
-|1.16.2.|mmlDp:Department| | |?|
-|1.17.|mmlRe:referToPerson| | |?|
-|1.17.1.|mmlPsi:PersonalizedInfo| | | |
-|1.18.|mmlRe:referToUnknownName| |string|?|
+| |Elements|Attribute|Data types|Occurrence|TableId
+|M21|mmmRe:ReferralModule| | | |
+|M21.1.|mmlPi:PatientModule| | | |
+|M21.2.|mmlRe:occupation| |string|?|
+|M21.3.|mmlRe:referFrom| | | |
+|M21.3.1|mmlPsi:PersonalizedInfo| | | |
+|M21.4.|mmlRe:title| |string| |
+|M21.5.|mmlRe:greeting| |string|?|
+|M21.6.|mmlRe:chiefComplaints| |string| |
+|M21.7.|mmlRe:clinicalDiagnosis| |string|?|
+|M21.8.|mmlRe:pastHistory| |string|?|
+|M21.8.1.|mmlCm:extRef| | |*|
+|M21.9.|mmlRe:familyHistory| |string|?|
+|M21.9.1.|mmlCm:extRef| | |*|
+|M21.10.|mmlRe:presentIllness| |string| |
+|M21.10.1.|mmlCm:extRef| | |*|
+|M21.11.|mmlRe:testResults| |string|?|
+|M21.11.1.|mmlCm:extRef| | |*|
+|M21.12.|mmlSm:clinicalCourse| | |?|
+|M21.13.|mmlRe:medication| |string|?|
+|M21.13.1.|mmlPs:PrescriptionModule| |string|?|
+|M21.13.2.|mmlInj:InjectionModule| |string|?|
+|M21.13.3.|mmlCm:extRef| | |*|
+|M21.14.|mmlRe:referPurpose| |string| |
+|M21.15.|mmlRe:remarks| |string|?|
+|M21.15.1.|mmlCm:extRef| | |*|
+|M21.16.|mmlRe:referToFacility| | | |
+|M21.16.1.|mmlFc:Facility| | | |
+|M21.16.2.|mmlDp:Department| | |?|
+|M21.17.|mmlRe:referToPerson| | |?|
+|M21.17.1.|mmlPsi:PersonalizedInfo| | | |
+|M21.18.|mmlRe:referToUnknownName| |string|?|
 |===
 Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
 
 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== mmlRe:ReferralModule
+===== M21. mmlRe:ReferralModule
 【内容】紹介状モジュール．同一医師の一回に行う紹介状作成行為を一つのモジュールに収める． +
-
 【省略】不可
 
-===== mmlPi:PatientModule
+===== M21.1. mmlPi:PatientModule
 【内容】患者情報．氏名，生年月日，住所，電話番号等の患者情報．構造は MML モジュール (患者情報モジュール) 参照． +
 【省略】不可
 
-===== mmlRe:occupation
+===== M21.2. mmlRe:occupation
 【内容】職業． +
 【省略】省略可 +
+【データ型】string +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlRe:referFrom
+===== M21.3. mmlRe:referFrom
 【内容】紹介者情報を入れる親エレメント． +
 【省略】不可
 
-===== mmlPsi:PersonalizedInfo
+===== M21.3.1. mmlPsi:PersonalizedInfo
 【内容】紹介者．構造はMML共通形式 (個人情報形式) mmlPsi:PersonalizedInfo を参照． +
 【省略】不可
-===== mmlRe:title
+
+===== M21.4. mmlRe:title
 【内容】タイトル．紹介状，診療情報提供書など． +
+【データ型】string +
 【省略】不可
 
-==== mmlRe:greeting
-
+==== M21.5. mmlRe:greeting
 【内容】挨拶文． +
+【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可 +
 【例】
-
 [source, xml]
-----
 <mmlRe:greeting>
 謹啓 平素は患者の診療について種々ご配慮頂きまして有難うございます。<xhtml:br/>
 さて，下記の患者をご紹介申し上げます。<xhtml:br/>
 ご繁忙のところ恐縮に存じますが，よろしくご高診賜りますよう，お願い申し上げます。
 </mmlRe:greeting>
-----
 
-===== mmlRe:chiefComplaints
+===== M21.6. mmlRe:chiefComplaints
 【内容】主訴 +
+【データ型】string +
 【省略】不可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlRe:clinicalDiagnosis
+===== M21.7. mmlRe:clinicalDiagnosis
 【内容】病名．このエレメントでは，特に構造化せず，XHTMLを用いて記載する．構造化が必要なときは，別個に診断履歴モジュールを作成し，紹介状モジュールと groupId を用いて束ねる． +
+【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlRe:pastHistory
-【内容】既往歴．テキスト (#PCDATA) とmmlCm:extRef の混在可 +
+===== M21.8. mmlRe:pastHistory
+【内容】既往歴．テキストとmmlCm:extRef の混在可 +
+【データ型】string +
 【省略】可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlCm:extRef
+===== M21.8.1. mmlCm:extRef
 【内容】外部参照図，グラフなどを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
 【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す． +
 
-===== mmlRe:familyHistory
+===== M21.9. mmlRe:familyHistory
 【内容】家族歴．テキストとmmlCm:extRefの混在可 +
+【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlCm:extRef
+===== M21.9.1. mmlCm:extRef
 【内容】外部参照図，表などを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
 【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す．
 
-===== mmlRe:presentIllness
+===== M21.10. mmlRe:presentIllness
 【内容】症状経過．テキストとmmlCm:extRefの混在可 +
+【データ型】string +
 【省略】不可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlCm:extRef
+===== M21.10.1. mmlCm:extRef
 【内容】外部参照図，表などを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
 【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す．
 
-===== mmlRe:testResults
+===== M21.11. mmlRe:testResults
 【内容】検査結果．テキストとmmlCm:extRefの混在可 +
+【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlCm:extRef
+===== M21.11.1. mmlCm:extRef
 【内容】外部参照図，グラフ，表などを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
 【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す．
 
-===== mmlSm:clinicalCourse
+===== M21.12. mmlSm:clinicalCourse
 【内容】治療経過．構造は MML モジュール (臨床サマリーモジュール) のmmlSm:clinicalCourseを参照． +
+【データ型】string +
 【省略】省略可 +
 
-===== mmlRe:medication
+===== M21.13. mmlRe:medication
 【内容】現在の処方．テキストとmmlCm:extRefの混在可 +
+【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlPs:PrescriptionModule
+===== M21.13.1. mmlPs:PrescriptionModule
 【内容】構造はコンテンツモジュールmmlPs:PrescriptionModule参照 +
 【省略】省略可 +
 【例】
-
- <mmlSm:medication>
+[source, xml]
+<mmlSm:medication>
   Prescription on discharge
   <mmlPs:PrescriptionModule>
     <mmlPs:medication>
@@ -213,49 +220,53 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
       <mmlPs:instruction>内服 1回 朝食前</mmlPs:instruction>
     </mmlPs:medication>
   </mmlPs:PrescriptionModule>
- </mmlSm:medication>
+</mmlSm:medication>
 
-===== mmlInj:InjectionModule
+===== M21.13.2. mmlInj:InjectionModule
 【内容】構造はコンテンツモジュールmmlInj:InjectionModule参照 +
 【省略】省略可 +
 
-===== mmlCm:extRef
+===== M21.13.3. mmlCm:extRef
 【内容】外部参照図，ファイル，表などを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
 【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す．
 
-===== mmlRe:referPurpose
+===== M21.14. mmlRe:referPurpose
 【内容】紹介目的 +
+【データ型】string +
 【省略】不可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlRe:remarks
-【内容】備考．テキスト (#PCDATA) と mmlCm:extRef の混在可 +
+===== M21.15. mmlRe:remarks
+【内容】備考．テキストと mmlCm:extRef の混在可 +
+【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlCm:extRef
+===== M21.15.1. mmlCm:extRef
 【内容】外部参照図，ファイル，表などを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
 【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す． +
 
-===== mmlRe:referToFacility
+===== M21.16. mmlRe:referToFacility
 【内容】紹介先医療機関名．施設情報を入れる親エレメント +
 【省略】不可
 
-===== mmlFc:Facility
+===== M21.16.1. mmlFc:Facility
 【内容】紹介先医療機関．構造はMML共通形式(施設情報形式)mmlFc:Facilityを利用する． +
 【省略】不可
 
-===== mmlDp:Department
+===== M21.16.2. mmlDp:Department
 【内容】紹介先診療科．構造は MML 共通形式 (施設情報形式)mmlDp:Departmentを利用する． +
 【省略】可
 
-===== mmlRe:referToPerson
+===== M21.17. mmlRe:referToPerson
 【内容】紹介先医師名．氏名情報を入れる親エレメント． +
 【省略】省略可
 
-===== mmlPsi:PersonalizedInfo
-【内容】紹介先医師．構造はMML共通形式(個人情報形式)mmlPsi:PersonalizedInfoを利用する．
+===== M21.17.1. mmlPsi:PersonalizedInfo
+【内容】紹介先医師．構造はMML共通形式(個人情報形式)mmlPsi:PersonalizedInfoを利用する． +
+【省略】不可
 
-===== mmlRe:referToUnknownName
+===== M21.18. mmlRe:referToUnknownName
 【内容】医師名を指定しない相手． +
+【データ型】string +
 【省略】省略可

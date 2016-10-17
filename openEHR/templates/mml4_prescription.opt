@@ -346,7 +346,7 @@
                   <value>openEHR-EHR-CLUSTER.prescription_condition.v0</value>
                 </archetype_id>
                 <term_definitions code="at0000">
-                  <items id="description">unknown</items>
+                  <items id="description">処方箋の状態について日本の保険請求上の情報を加える</items>
                   <items id="text">Prescription condition</items>
                 </term_definitions>
                 <term_definitions code="at0001">
@@ -354,12 +354,12 @@
                   <items id="text">issued to</items>
                 </term_definitions>
                 <term_definitions code="at0002">
-                  <items id="description">*issued to pharmacy division of hospital(ja)</items>
-                  <items id="text">*intrahospital(ja)</items>
+                  <items id="description">院内処方箋</items>
+                  <items id="text">院内</items>
                 </term_definitions>
                 <term_definitions code="at0003">
-                  <items id="description">*issued to pharmacy out of hospital(ja)</items>
-                  <items id="text">*extrahospital(ja)</items>
+                  <items id="description">院外処方箋</items>
+                  <items id="text">院外</items>
                 </term_definitions>
                 <term_definitions code="at0004">
                   <items id="description">**(ja)</items>
@@ -1092,7 +1092,7 @@ It is understood that these terms may not equate to the same exact times in diff
                           </children>
                         </attributes>
                       </children>
-                      <children xsi:type="ARCHETYPE_SLOT">
+                      <children xsi:type="C_ARCHETYPE_ROOT">
                         <rm_type_name>CLUSTER</rm_type_name>
                         <occurrences>
                           <lower_included>true</lower_included>
@@ -1102,26 +1102,182 @@ It is understood that these terms may not equate to the same exact times in diff
                           <lower>0</lower>
                           <upper>1</upper>
                         </occurrences>
-                        <node_id>at0090</node_id>
-                        <includes>
-                          <expression xsi:type="EXPR_BINARY_OPERATOR">
-                            <type>Boolean</type>
-                            <operator>2007</operator>
-                            <precedence_overridden>false</precedence_overridden>
-                            <left_operand xsi:type="EXPR_LEAF">
-                              <type>String</type>
-                              <item xsi:type="xsd:string">archetype_id/value</item>
-                              <reference_type>attribute</reference_type>
-                            </left_operand>
-                            <right_operand xsi:type="EXPR_LEAF">
-                              <type>C_STRING</type>
-                              <item xsi:type="C_STRING">
-                                <pattern>openEHR-EHR-CLUSTER\.timing_repetition(-[a-zA-Z0-9_]+)*\.v0</pattern>
-                              </item>
-                              <reference_type>constraint</reference_type>
-                            </right_operand>
-                          </expression>
-                        </includes>
+                        <node_id>at0000</node_id>
+                        <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+                          <rm_attribute_name>items</rm_attribute_name>
+                          <existence>
+                            <lower_included>true</lower_included>
+                            <upper_included>true</upper_included>
+                            <lower_unbounded>false</lower_unbounded>
+                            <upper_unbounded>false</upper_unbounded>
+                            <lower>1</lower>
+                            <upper>1</upper>
+                          </existence>
+                          <children xsi:type="C_COMPLEX_OBJECT">
+                            <rm_type_name>CLUSTER</rm_type_name>
+                            <occurrences>
+                              <lower_included>true</lower_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>true</upper_unbounded>
+                              <lower>0</lower>
+                            </occurrences>
+                            <node_id>at0010</node_id>
+                            <attributes xsi:type="C_MULTIPLE_ATTRIBUTE">
+                              <rm_attribute_name>items</rm_attribute_name>
+                              <existence>
+                                <lower_included>true</lower_included>
+                                <upper_included>true</upper_included>
+                                <lower_unbounded>false</lower_unbounded>
+                                <upper_unbounded>false</upper_unbounded>
+                                <lower>1</lower>
+                                <upper>1</upper>
+                              </existence>
+                              <children xsi:type="C_COMPLEX_OBJECT">
+                                <rm_type_name>ELEMENT</rm_type_name>
+                                <occurrences>
+                                  <lower_included>true</lower_included>
+                                  <upper_included>true</upper_included>
+                                  <lower_unbounded>false</lower_unbounded>
+                                  <upper_unbounded>false</upper_unbounded>
+                                  <lower>0</lower>
+                                  <upper>1</upper>
+                                </occurrences>
+                                <node_id>at0013</node_id>
+                                <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                                  <rm_attribute_name>value</rm_attribute_name>
+                                  <existence>
+                                    <lower_included>true</lower_included>
+                                    <upper_included>true</upper_included>
+                                    <lower_unbounded>false</lower_unbounded>
+                                    <upper_unbounded>false</upper_unbounded>
+                                    <lower>0</lower>
+                                    <upper>1</upper>
+                                  </existence>
+                                  <children xsi:type="C_COMPLEX_OBJECT">
+                                    <rm_type_name>DV_COUNT</rm_type_name>
+                                    <occurrences>
+                                      <lower_included>true</lower_included>
+                                      <upper_included>true</upper_included>
+                                      <lower_unbounded>false</lower_unbounded>
+                                      <upper_unbounded>false</upper_unbounded>
+                                      <lower>1</lower>
+                                      <upper>1</upper>
+                                    </occurrences>
+                                    <node_id />
+                                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
+                                      <rm_attribute_name>magnitude</rm_attribute_name>
+                                      <existence>
+                                        <lower_included>true</lower_included>
+                                        <upper_included>true</upper_included>
+                                        <lower_unbounded>false</lower_unbounded>
+                                        <upper_unbounded>false</upper_unbounded>
+                                        <lower>1</lower>
+                                        <upper>1</upper>
+                                      </existence>
+                                      <children xsi:type="C_PRIMITIVE_OBJECT">
+                                        <rm_type_name>INTEGER</rm_type_name>
+                                        <occurrences>
+                                          <lower_included>true</lower_included>
+                                          <upper_included>true</upper_included>
+                                          <lower_unbounded>false</lower_unbounded>
+                                          <upper_unbounded>false</upper_unbounded>
+                                          <lower>1</lower>
+                                          <upper>1</upper>
+                                        </occurrences>
+                                        <node_id />
+                                        <item xsi:type="C_INTEGER">
+                                          <range>
+                                            <lower_included>true</lower_included>
+                                            <lower_unbounded>false</lower_unbounded>
+                                            <upper_unbounded>true</upper_unbounded>
+                                            <lower>0</lower>
+                                          </range>
+                                        </item>
+                                      </children>
+                                    </attributes>
+                                  </children>
+                                </attributes>
+                              </children>
+                              <cardinality>
+                                <is_ordered>false</is_ordered>
+                                <is_unique>false</is_unique>
+                                <interval>
+                                  <lower_included>true</lower_included>
+                                  <lower_unbounded>false</lower_unbounded>
+                                  <upper_unbounded>true</upper_unbounded>
+                                  <lower>1</lower>
+                                </interval>
+                              </cardinality>
+                            </attributes>
+                          </children>
+                          <cardinality>
+                            <is_ordered>false</is_ordered>
+                            <is_unique>false</is_unique>
+                            <interval>
+                              <lower_included>true</lower_included>
+                              <lower_unbounded>false</lower_unbounded>
+                              <upper_unbounded>true</upper_unbounded>
+                              <lower>1</lower>
+                            </interval>
+                          </cardinality>
+                        </attributes>
+                        <archetype_id>
+                          <value>openEHR-EHR-CLUSTER.timing_repetition.v0</value>
+                        </archetype_id>
+                        <term_definitions code="at0000">
+                          <items id="description">Details of timing schedules repeating over periods longer than a single day.</items>
+                          <items id="text">Timing repetition</items>
+                        </term_definitions>
+                        <term_definitions code="at0001">
+                          <items id="comment">e.g. 'on 12 Jan 2017'</items>
+                          <items id="description">The activity should take place on a specific date.</items>
+                          <items id="text">Specific date</items>
+                        </term_definitions>
+                        <term_definitions code="at0002">
+                          <items id="comment">e.g. 'Every 3 weeks'</items>
+                          <items id="description">The interval between repetitions of the activity.</items>
+                          <items id="text">Repetition interval</items>
+                        </term_definitions>
+                        <term_definitions code="at0003">
+                          <items id="comment">e.g. 'On Mondays, Wednesdays and Fridays'.</items>
+                          <items id="description">The activity should take place on a specific day of the week, with 0 representing Sunday.</items>
+                          <items id="text">Specific day of week</items>
+                        </term_definitions>
+                        <term_definitions code="at0004">
+                          <items id="comment">e.g. 'on the 3rd, 13th and 23rd of each month'.</items>
+                          <items id="description">The activity should take place on a specific day of the month.</items>
+                          <items id="text">Specific day of month</items>
+                        </term_definitions>
+                        <term_definitions code="at0005">
+                          <items id="description">The name of the event that triggers the activity to take place.</items>
+                          <items id="text">Event name</items>
+                        </term_definitions>
+                        <term_definitions code="at0006">
+                          <items id="description">The activity should take place in relation to a specific named event.</items>
+                          <items id="text">Specific event</items>
+                        </term_definitions>
+                        <term_definitions code="at0009">
+                          <items id="comment">e.g. '3 days after onset of menstruation = menstrual onset + 3 days', '2 weeks prior to admission= admission -2 weeks'.</items>
+                          <items id="description">The period of time before or after the named event when the activity should take place. Negative durations can be used to signifify that the activity should be taken before a known event.</items>
+                          <items id="text">Start interval</items>
+                        </term_definitions>
+                        <term_definitions code="at0010">
+                          <items id="comment">e.g. 'take 3 tablets daily for 1 week, omit a week, then take 3 tablets daily for 1 week, repeat 4 times'</items>
+                          <items id="description">A cycle of activity where an on-off pattern is required.</items>
+                          <items id="text">On /off cycle</items>
+                        </term_definitions>
+                        <term_definitions code="at0011">
+                          <items id="description">The period of time for which the activity should take place.</items>
+                          <items id="text">On</items>
+                        </term_definitions>
+                        <term_definitions code="at0012">
+                          <items id="description">The period of time for which the activity should NOT take place.</items>
+                          <items id="text">Off</items>
+                        </term_definitions>
+                        <term_definitions code="at0013">
+                          <items id="description">The number of repetitions of the on/off cycle.</items>
+                          <items id="text">Repetitions</items>
+                        </term_definitions>
                       </children>
                       <cardinality>
                         <is_ordered>false</is_ordered>

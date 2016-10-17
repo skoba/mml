@@ -12,6 +12,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="medication">
     <xs:complexType>
       <xs:all>
@@ -23,6 +24,7 @@
         <xs:element ref="mmlPs:duration" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:instruction" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:PRN" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPs:repetitions" minOccurs="0" maxOccurs="1" />
         <xs:element ref="mmlPs:route" minOccurs="0" maxOccurs="1" />
         <xs:element ref="mmlPs:form" minOccurs="0" maxOccurs="1"/>
         <xs:element ref="mmlPs:batchNo" minOccurs="0" maxOccurs="1"/>
@@ -32,6 +34,7 @@
       </xs:all>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="issuedTo">
     <xs:simpleType>
       <xs:restriction base="xs:token">
@@ -40,6 +43,7 @@
       </xs:restriction>
     </xs:simpleType>
   </xs:element>
+
   <xs:element name="medicine">
     <xs:complexType>
       <xs:sequence>
@@ -48,8 +52,11 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:element name="batchNo" type="xs:integer"/>
+
   <xs:element name="name" type="xs:string"/>
+
   <xs:element name="code">
     <xs:complexType>
       <xs:simpleContent>
@@ -59,6 +66,7 @@
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
+ 
   <xs:element name="dose" type="xs:decimal"/>
   <xs:element name="doseUnit" type="xs:string"/>
   <xs:element name="frequencyPerDay" type="xs:string"/>
@@ -66,6 +74,7 @@
   <xs:element name="duration" type="xs:duration"/>
   <xs:element name="instruction" type="xs:string"/>
   <xs:element name="PRN" type="xs:boolean"/>
+  <xs:element name="repetitions" type="xs:decimal"/>
   <xs:element name="route" type="xs:string"/>
   <xs:element name="form" type="xs:string"/>
   <xs:element name="brandSubstitutionPermitted" type="xs:boolean"/>

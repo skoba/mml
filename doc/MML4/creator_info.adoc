@@ -13,8 +13,9 @@
 image::mmlci.jpg[]
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Element|Attribute|Datatype|Occurrence|Table id
+| |Element|Attribute|Data types|Occurrence|TableId
 |M9.|mmlCi:CreatorInfo| | | |
 |M9.1.|mmlPsi:PersonalizedInfo| | | |
 |M9.2.|mmlCi:creatorLicense| |string|+|optional
@@ -38,6 +39,7 @@ Occurrence なし：必ず 1 回出現，?： 0 回もしくは 1 回出現，+�
 【省略】不可 +
 【繰り返し設定】繰り返しあり．資格を複数持っておれば繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlCi:tableId|string|#IMPLIED| |生成者の資格を規定するテーブル名

@@ -13,8 +13,9 @@
 image::mmlph.jpg[]
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Element|Attribute|Datatype|Occurence|TableId
+| |Element|Attribute|Data types|Occurence|TableId
 |M2.1.|mmlPh:Phone| | | |
 | | |mmlPh:telEquipType|string|#IMPLIED|MML0003
 |M2.1.|mmlPh:area| |string|?|
@@ -33,6 +34,7 @@ Occurrence　　なし：必ず1回出現，?： 0回もしくは1回出現，+�
 ===== M2. mmlPh:Phone (電話番号表現形式)
 【内容】電話番号を表現する共通形式．分割電話番号 (M2.1. から M2.4.) もしくは一連電話番 (M2.5.) のどちらかを選択． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlPh:telEquipType|string|#IMPLIED|MML0003|装置の種類コード

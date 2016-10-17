@@ -1,4 +1,4 @@
-Author: Shinji KOBAYASHI
+:Author: Shinji KOBAYASHI
 :Email: skoba@moss.gr.jp
 :toc: right
 :toclevels: 2
@@ -13,62 +13,64 @@ Author: Shinji KOBAYASHI
 
 体温表モジュールを作成するにあたって、バイタルサインを記録するモジュール は汎用性が高く、診療概念においても独立性が高いため、分離させることとし た。
 
-このモジュールは、体温、脈拍、血圧、SpO2といったバイタルサインの測定のために利用される。病棟回診や外来診療などで行われる任意のイベントでの計測された一連のバイタルサインを記録するために、必要なだけのitemを列記する。item間での関係性については明示しないが、一つのインスタンスに格納された収縮期血圧、拡張期血圧は同時に計測された血圧であるとする（図１）。
+このモジュールは、体温、脈拍、血圧、SpO2といったバイタルサインの測定のために利用される。病棟回診や外来診療などで行われる任意のイベントでの計測された一連のバイタルサインを記録するために、必要なだけのitemを列記する。item間での関係性については明示しないが、一つのインスタンスに格納された収縮期血圧、拡張期血圧は同時に計測された血圧であるとする（図18）。
 
 ===== namespaces 宣言
 本モジュールの namespaces 宣言は，以下とする．
-
- xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
+[source, xml]
+xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
 
 .エレメント構造図
 image::mmlvs.png[]
 
- .エレメント一覧表
+.エレメント一覧表
 [options="header"]
 |===
-| |Elements|Attribute|Datatypes|Occurrence|Table id
-|1|mmlVs:VitalSignModule| | | |
-|1.1|mmlVs:context| | |?|
-|1.1.1|mmlVs:facility| |string|?|
+| |Elements|Attribute|Data types|Occurrence|TableId
+|M22.|mmlVs:VitalSignModule| | | |
+|M22.1.|mmlVs:context| | |?|
+|M22.1.1.|mmlVs:facility| |string|?|
 | | |mmlVs:facilityCode|string|#REQUIRED|
 | | |mmlVs:facilityCodeId|string|#REQUIRED|MML0027
-|1.1.2|mmlVs:department| |string|?|
+|M22.1.2.|mmlVs:department| |string|?|
 | | |mmlVs:depCode|string|#IMPLIED|MML0028
 | | |mmlVs:depCodeId|string|#IMPLIED|
-|1.1.3|mmlVs:ward| |string|?|
+|M22.1.3.|mmlVs:ward| |string|?|
 | | |mmlVs:wardCode|string|#IMPLIED|ユーザ指定
 | | |mmlVs:wardCodeId|string|#IMPLIED|
-|1.1.4|mmlVs:observer| |string|?|
+|M22.1.4.|mmlVs:observer| |string|?|
 | | |mmlVs:obsCode|string|#IMPLIED|ユーザ指定
 | | |mmlVs:obsCodeId|string|#IMPLIED|
-|1.2|mmlVs:item| | |+|
-|1.2.1|mmlVs:itemName| |string| |mmlVs01
-|1.2.2|mmlVs:value| |string|?|
-|1.2.3|mmlVs:numValue| |decimal|?|
-|1.2.4|mmlVs:unit| |string|?|mmlVs02
-|1.2.5|mmlVs:itemMemo| |string|*|
-|1.3|mmlVs:observedTime| |dateTime| |
-|1.4|mmlVs:protocol| | |?|
-|1.4.1|mmlVs:procedure| |string|?|
-|1.4.2|mmlVs:device| |string|?|
-|1.4.3|mmlVs:position| |string|?|mmlVs03
-|1.4.4|mmlVs:bodyLocation| |string|?|
-|1.4.5|mmlVs:protMemo| |string|?|
-|1.5|mmlVs:vsMemo| |string|?|
+|M22.2.|mmlVs:item| | |+|
+|M22.2.1.|mmlVs:itemName| |string| |mmlVs01
+|M22.2.2.|mmlVs:value| |string|?|
+|M22.2.3.|mmlVs:numValue| |decimal|?|
+|M22.2.4.|mmlVs:unit| |string|?|mmlVs02
+|M22.2.5.|mmlVs:itemMemo| |string|*|
+|M22.3.|mmlVs:observedTime| |dateTime| |
+|M22.4.|mmlVs:protocol| | |?|
+|M22.4.1.|mmlVs:procedure| |string|?|
+|M22.4.2.|mmlVs:device| |string|?|
+|M22.4.3.|mmlVs:position| |string|?|mmlVs03
+|M22.4.4.|mmlVs:bodyLocation| |string|?|
+|M22.4.5.|mmlVs:protMemo| |string|?|
+|M22.5.|mmlVs:vsMemo| |string|?|
 |===
+Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
 
-Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== mmlVs:VitalSignModule
+===== M22 mmlVs:VitalSignModule
 【内容】バイタルサイン記録モジュール
 
-===== mmlVs:context
+===== M22.1. mmlVs:context
 【内容】バイタルサインヘッダ情報。 +
 【省略】体温表モジュールなど、他のモジュールに組み込んで利用する場合には、重複するようであれば省略可能。
 
-===== mmlVs:facility
+===== M22.1.1. mmlVs:facility
 【内容】バイタルサインを計測して記録した施設 +
+【データ型】string +
 【省略】このVitalSignModuleを単独で使用する場合には省略不可、FlowSheetModuleなど他のモジュールと組み合わせて使用する場合には省略可。 +
 【属性】
 [options="header"]
@@ -78,8 +80,10 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlVs:facilityCodeId|string|#REQUIRED|MML0027|用いたコード体系の名称を記載
 |===
 
-===== mmlVs:department
+===== M22.1.2. mmlVs:department
 【内容】バイタルサインを計測し、記録した部署・診療科 +
+【データ型】string +
+【省略】省略可能 +
 【属性】
 [options="header"]
 |===
@@ -88,8 +92,10 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlVs:depCodeId|string|#IMPLIED| |MML0028と入力
 |===
 
-===== mmlVs:ward
+===== M22.1.3. mmlVs:ward
 【内容】バイタルサインを計測し記録した病棟・場所 +
+【データ型】string +
+【省略】省略可能 +
 【属性】
 [options="header"]
 |===
@@ -98,8 +104,10 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlVs:wardCodeId|string|#IMPLIED| |用いたテーブル名を入力
 |===
 
-===== mmlVs:observer
+===== M22.1.4. mmlVs:observer
 【内容】バイタルサインを計測した人 +
+【データ型】string +
+【省略】省略可能 +
 【属性】
 [options="header"]
 |===
@@ -108,77 +116,75 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlVs:observerCodeId|string|#IMPLIED| |使用したコード体系を入力
 |===
 
-==== mmlPi:PatientModule
-【内容】患者情報、氏名、生年月日、住所、電話番号などの患者情報。MML患者情報モジュールを利用する。 +
-【省略】不可
-
-===== mmlVs:item
+===== M22.2. mmlVs:item
 【内容】項目情報 +
+【省略】不可
 【繰り返し設定】1回以上の繰り返しあり。項目が複数あればその数だけ繰り返す。
 
-===== mmlVs:itemName
+===== M22.2.1. mmlVs:itemName
 【内容】項目名 +
 【データ型】string +
 【省略】不可 +
 【使用テーブル】mmlVs01
 
-===== mmlVs:value
+===== M22.2.2. mmlVs:value
 【内容】文字列で表記されるバイタルサインの値 +
 【データ型】string +
 【省略】可。numValueとどちらかが使用される。
 
-===== mmlVs:numValue
+===== M22.2.3. mmlVs:numValue
 【内容】数値で表記されるバイタルサインの値 +
 【データ型】decimal +
 【省略】可。valueとどちらかが使用される。
 
-===== mmlVs:unit
+===== M22.2.4. mmlVs:unit
 【内容】バイタルサインの単位 +
 【データ型】string +
 【省略】可。 +
 【使用テーブル】mmlVs02
 
-===== mmlVs:itemMemo
+===== M22.2.5. mmlVs:itemMemo
 【内容】項目コメント +
 【データ型】string +
+【省略】可。 +
 【繰り返し設定】0回以上の繰り返しあり．項目コメントが複数あれば，数だけ繰り返す．
 
-===== mmlVs:observedTime
+===== M22.3. mmlVs:observedTime
 【内容】バイタルサインを観察した時間 +
 【データ型】dateTime +
 【省略】不可
 
-===== mmlVs:protocol
+===== M22.4. mmlVs:protocol
 【内容】バイタルサインの測定方法を記載する親エレメント +
 【繰り返し設定】繰り返しなし．省略可能
 
-===== 1.4.1 mmlVs:procedure
+===== M22.4.1 mmlVs:procedure
 【内容】バイタルサインを測定した手順。測定方法や、負荷テストの種別など +
 【データ型】string +
 【省略】省略可能
 
-===== mmlVs:device
+===== M22.4.2. mmlVs:device
 【内容】バイタルサインの測定に使用した機材、デバイス。聴診器、水銀柱血圧計、機械式血圧計、動脈内プローベなど。 +
 【データ型】string +
 【省略】省略可能
 
-===== mmlVs:bodyLocation
+===== M22.4.3. mmlVs:bodyLocation
 【内容】バイタルサインを測定した身体の部位。右上腕、左下腿など。 +
 【省略】string +
 【省略】省略可能
 
-===== mmlVs:position
+===== M22.4.4. mmlVs:position
 【内容】バイタルサインを測定した時の体位。 +
 【データ型】string +
 【省略】省略可能 +
 【使用テーブル】mmlVs03
 
-===== mmlVs:protMemo
+===== M22.4.5. mmlVs:protMemo
 【内容】バイタルサイン測定方法に関するコメント +
 【データ型】string +
 【省略】省略可能
 
-===== mmlVs:vsMemo
+===== M22.5. mmlVs:vsMemo
 【内容】バイタルサイン記録コメント +
 【データ型】string +
 【省略】省略可能

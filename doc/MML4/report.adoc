@@ -12,8 +12,8 @@
 
 ==== namespaces 宣言
 本モジュールの namespaces 宣言は，以下とする．
-
- xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
+[source, xml]
+xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
 
 ==== 文書ヘッダー情報 (docInfo) のモジュール個別仕様
 ===== docInfo
@@ -39,61 +39,61 @@
 .エレメント一覧表
 [options="header"]
 |===
-| |Elements|Attribute|Datatypes|Occurrence|Table id
-|1.|mmlRp:ReportModule| | | |
-|1.1.|mmlRp:information| | | |
+| |Elements|Attribute|Data types|Occurrence|TableId
+|M20.|mmlRp:ReportModule| | | |
+|M20.1.|mmlRp:information| | | |
 | | |mmlRp:performTime|dateTime|#REQUIRED|
 | | |mmlRp:reportTime|dateTime|#REQUIRED|
-|1.1.1.|mmlRp:reportStatus| |string| |
+|M20.1.1.|mmlRp:reportStatus| |string| |
 | | |mmlRp:statusCode|string|#REQUIRED|mmlLb0001
 | | |mmlRp:statusCodeId|string|#REQUIRED|
-|1.1.2.|mmlRp:testClass| |string| |
+|M20.1.2.|mmlRp:testClass| |string| |
 | | |mmlRp:testClassCode|string|#REQUIRED|MML0033
 | | |mmlRp:testClassCodeId|string|#REQUIRED|
-|1.1.3.|mmlRp:testSubclass| |string|?|
+|M20.1.3.|mmlRp:testSubclass| |string|?|
 | | |mmlRp:testSubclassCode|string|#IMPLIED|ユーザー指定
 | | |mmlRp:testSubclassCodeId|string|#IMPLIED|
-|1.1.4.|mmlRp:organ| |string|?|
-|1.1.5.|mmlRp:consultFrom| | |?|
-|1.1.5.1.|mmlRp:conFacility| |string|?|
+|M20.1.4.|mmlRp:organ| |string|?|
+|M20.1.5.|mmlRp:consultFrom| | |?|
+|M20.1.5.1.|mmlRp:conFacility| |string|?|
 | | |mmlRp:facilityCode|string|#IMPLIED|
 | | |mmlRp:facilityCodeId|string|#IMPLIED|MML0027
-|1.1.5.2.|mmlRp:conDepartment| |string|?|
+|M20.1.5.2.|mmlRp:conDepartment| |string|?|
 | | |mmlRp:depCode|string|#IMPLIED|MML0028
 | | |mmlRp:depCodeId|string|#IMPLIED|
-|1.1.5.3.|mmlRp:conWard| |string|?|
+|M20.1.5.3.|mmlRp:conWard| |string|?|
 | | |mmlRp:wardCode|string|#IMPLIED|ユーザー指定
 | | |mmlRp:wardCodeId|string|#IMPLIED|
-|1.1.5.4.|mmlRp:client| |string|?|
+|M20.1.5.4.|mmlRp:client| |string|?|
 | | |mmlRp:clientCode|string|#IMPLIED|ユーザー指定
 | | |mmlRp:clientCodeId|string|#IMPLIED|
-|1.1.6.|mmlRp:perfom| | | |
-|1.1.6.1.|mmlRp:pFacility| |string| |
+|M20.1.6.|mmlRp:perfom| | | |
+|M20.1.6.1.|mmlRp:pFacility| |string| |
 | | |mmlRp:facilityCode|string|#REQUIRED|
 | | |mmlRp:facilityCodeId|string|#REQUIRED|MML0027
-|1.1.6.2.|mmlRp:pDepartment| |string|?|
+|M20.1.6.2.|mmlRp:pDepartment| |string|?|
 | | |mmlRp:depCode|string|#IMPLIED|MML0028
 | | |mmlRp:depCodeId|string|#IMPLIED|
-|1.1.6.3.|mmlRp:pWard| |string|?|
+|M20.1.6.3.|mmlRp:pWard| |string|?|
 | | |mmlRp:wardCode|string|#IMPLIED|ユーザー指定
 | | |mmlRp:wardCodeId|string|#IMPLIED|
-|1.1.6.4.|mmlRp:performer| |string| |
+|M20.1.6.4.|mmlRp:performer| |string| |
 | | |mmlRp:performerCode|string|#REQUIRED|ユーザー指定
 | | |mmlRp:performerCodeId|string|#REQUIRED|
-|1.1.6.5.|mmlRp:supervisor| |string|?|
+|M20.1.6.5.|mmlRp:supervisor| |string|?|
 | | |mmlRp:supervisorCode|string|#IMPLIED|ユーザー指定
 | | |mmlRp:supervisorCodeId|string|#IMPLIED|
-|1.2.|mmlRp:reportBody| | | |
-|1.2.1.|mmlRp:chiefComplaints| |string|?|
-|1.2.2.|mmlRp:testPurpose| |string|?|
-|1.2.3.|mmlRp:testDx| |string|?|
-|1.2.4.|mmlRp:testNotes| |string|?|
-| | |mmlCm:extRef| |*|
-|1.2.5.|mmlRp:testMemo| |string|*|
+|M20.2.|mmlRp:reportBody| | | |
+|M20.2.1.|mmlRp:chiefComplaints| |string|?|
+|M20.2.2.|mmlRp:testPurpose| |string|?|
+|M20.2.3.|mmlRp:testDx| |string|?|
+|M20.2.4.|mmlRp:testNotes| |string|?|
+|M20.2.4.1.|mmlCm:extRef| | |*|
+|M20.2.5.|mmlRp:testMemo| |string|*|
 | | |mmlRp:tmCodeName|string|#IMPLIED|
 | | |mmlRp:tmCode|string|#IMPLIED|ユーザー指定
 | | |mmlRp:tmCodeId|string|#IMPLIED|
-|1.2.6.|mmlRp:testMemoF| |string|?|
+|M20.2.6.|mmlRp:testMemoF| |string|?|
 |===
 
 Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
@@ -102,11 +102,12 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 
 ==== エレメント解説
-===== mmlRp:ReportModule
+===== M20. mmlRp:ReportModule
 【内容】報告書情報モジュール
 
-===== mmlRp:information
+===== M20.1. mmlRp:information
 【内容】報告書ヘッダー情報 +
+【省略】不可 +
 【属性】
 [options="header"]
 |===
@@ -115,8 +116,10 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlRp:reportTime|dateTime|#REQUIRED| |報告日時
 |===
 
-===== mmlRp:reportStatus
+===== M20.1.1. mmlRp:reportStatus
 【内容】報告状態 +
+【データ型】string +
+【省略】不可 +
 【属性】
 [options="header"]
 |===
@@ -126,8 +129,10 @@ final 最終報告
 |mmlRp:statusCodeId|string|#REQUIRED| |mmlLb0001と入力
 |===
 
-===== mmlRp:testClass
+===== M20.1.2. mmlRp:testClass
 【内容】報告書種別 +
+【データ型】string +
+【省略】不可 +
 【属性】
 [options="header"]
 |===
@@ -136,25 +141,31 @@ final 最終報告
 |mmlRp:testClassCodeId|string|#REQUIRED|MML0033|
 |===
 
-1.1.3.mmlRp:testSubclass
-
+===== M20.1.3.mmlRp:testSubclass
 【内容】報告書詳細種別．報告書種別では表現できない詳細な種別を入力する．コードを用いる場合は，ユーザー独自定義のテーブルを用いる．+
+【データ型】string +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|mmlRp:testSubclassCode|string|#IMPLIED|ユーザー指定
+|mmlRp:testSubclassCode|string|#IMPLIED|ユーザー指定|
 |mmlRp:testSubclassCodeId|string|#IMPLIED| |用いたテーブル名を入力
 |===
 
-===== mmlRp:organ
+===== M20.1.4. mmlRp:organ
 【内容】臓器．検査対象となった臓器であり，とくにコード化は行わない．
+【データ型】string +
+【省略】省略可 +
 
-===== mmlRp:consultFrom
+===== M20.1.5. mmlRp:consultFrom
 【内容】依頼者情報
+【省略】省略可 +
 
-===== mmlRp:conFacility
+===== M20.1.5.1. mmlRp:conFacility
 【内容】依頼施設 +
+【データ型】string +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
@@ -163,8 +174,10 @@ final 最終報告
 |mmlRp:facilityCodeId|string|#IMPLIED|MML0027| |
 |===
 
-===== mmlRp:conDepartment
+===== M20.1.5.2. mmlRp:conDepartment
 【内容】依頼診療科 +
+【データ型】string +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
@@ -173,8 +186,10 @@ final 最終報告
 |mmlRp:depCodeId|string|#IMPLIED| |MML0028と入力
 |===
 
-===== mmlRp:conWard
+===== M20.1.5.3. mmlRp:conWard
 【内容】依頼病棟 +
+【データ型】string +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
@@ -183,8 +198,10 @@ final 最終報告
 |mmlRp:wardCodeId|string|#IMPLIED| |用いたテーブル名を入力
 |===
 
-===== mmlRp:client
+===== M20.1.5.4. mmlRp:client
 【内容】依頼者 +
+【データ型】string +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
@@ -193,11 +210,14 @@ final 最終報告
 |mmlRp:clientCodeId|string|#IMPLIED| |用いたテーブル名を入力
 |===
 
-===== mmlRp:perform
+===== M20.1.6. mmlRp:perform
 【内容】実施者情報
+【省略】不可 +
 
-===== mmlRp:pFacility
+===== M20.1.6.1. mmlRp:pFacility
 【内容】実施施設 +
+【データ型】string +
+【省略】不可 +
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
@@ -205,8 +225,10 @@ final 最終報告
 |mmlRp:facilityCodeId|string|#REQUIRED|MML0027|
 |===
 
-===== mmlRp:pDepartment
+===== M20.1.6.2. mmlRp:pDepartment
 【内容】実施診療科 +
+【データ型】string +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
@@ -215,8 +237,10 @@ final 最終報告
 |mmlRp:depCodeId|string|#IMPLIED| |MML0028と入力
 |===
 
-===== mmlRp:pWard
+===== M20.1.6.3. mmlRp:pWard
 【内容】実施病棟 +
+【データ型】string +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
@@ -225,8 +249,10 @@ final 最終報告
 |mmlRp:wardCodeId|string|#IMPLIED| |用いたテーブル名を入力
 |===
 
-===== mmlRp:performer
+===== M20.1.6.4. mmlRp:performer
 【内容】実施者 +
+【データ型】string +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
@@ -235,9 +261,10 @@ final 最終報告
 |mmlRp:performerCodeId|string|#REQUIRED| |用いたテーブル名を指定
 |===
 
-===== mmlRp:supervisor
+===== M20.1.6.5. mmlRp:supervisor
 【内容】監督者 +
-
+【データ型】string +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
@@ -246,39 +273,53 @@ final 最終報告
 |mmlRp:supervisorCodeId|string|#IMPLIED| |用いたテーブル名を指定
 |===
 
-===== mmlRp:reportBody
+===== M20.2. mmlRp:reportBody
 【内容】報告書本文情報
+【省略】不可 +
 
-===== mmlRp:chiefComplaints
+===== M20.2.1. mmlRp:chiefComplaints
 【内容】主訴 +
+【データ型】string +
+【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlRp:testPurpose
+===== M20.2.2. mmlRp:testPurpose
 【内容】検査目的 +
+【データ型】string +
+【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlRp:testDx
+===== M20.2.3. mmlRp:testDx
 【内容】検査診断．本エレメントでは，病名をテキスト (XHTML 使用可) で記載する．構造化した病名情報が必要な場合は，診断履歴モジュールを必要な数生成し，groupId による文書間の関連付けを行う． +
+【データ型】string +
+【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlRp:testNotes
+===== M20.2.4. mmlRp:testNotes
 【内容】検査所見記載．テキスト (#PCDATA) と mmlCm:extRef の混在可 +
+【データ型】string +
+【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlCm:extRef
+===== M20.2.4.1. mmlCm:extRef
 【内容】外部参照図，グラフなどを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
+【省略】省略可 +
 【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す．
 
-===== mmlRp:testMemo
+===== M20.2.5. mmlRp:testMemo
 【内容】検査コメント +
+【データ型】string +
+【繰り返し設定】繰り返しあり． +
 【属性】
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|mmlRp:tmCodeName|string|#IMPLIED|検査コメント名称
-|mmlRp:tmCode|string|#IMPLIED|ユーザー指定
+|mmlRp:tmCodeName|string|#IMPLIED|検査コメント名称|
+|mmlRp:tmCode|string|#IMPLIED|ユーザー指定|
 |mmlRp:tmCodeId|string|#IMPLIED| |用いたテーブル名を入力
 |===
 
-===== mmlRp:testMemoF
-【内容】検査フリーコメント
+===== M20.2.6. mmlRp:testMemoF
+【内容】検査フリーコメント +
+【データ型】string +
+【省略】省略可 +

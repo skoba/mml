@@ -19,19 +19,19 @@
   <xs:element name="PatientModule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlPi:uniqueInfo"/>
-        <xs:element ref="mmlPi:personName"/>
-        <xs:element ref="mmlPi:birthday"/>
-        <xs:element ref="mmlPi:sex"/>
-        <xs:element minOccurs="0" ref="mmlPi:nationality"/>
-        <xs:element minOccurs="0" ref="mmlPi:race"/>
-        <xs:element minOccurs="0" ref="mmlPi:marital"/>
-        <xs:element minOccurs="0" ref="mmlPi:addresses"/>
-        <xs:element minOccurs="0" ref="mmlPi:emailAddresses"/>
-        <xs:element minOccurs="0" ref="mmlPi:phones"/>
-        <xs:element minOccurs="0" ref="mmlPi:accountNumber"/>
-        <xs:element minOccurs="0" ref="mmlPi:socialIdentification"/>
-        <xs:element minOccurs="0" ref="mmlPi:death"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlPi:uniqueInfo"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlPi:personName"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlPi:birthday"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlPi:sex"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlPi:nationality"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlPi:race"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlPi:marital"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlPi:addresses"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlPi:emailAddresses"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlPi:phones"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlPi:accountNumber"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlPi:socialIdentification"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="mmlPi:death"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -39,7 +39,7 @@
   <xs:element name="uniqueInfo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlPi:masterId"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlPi:masterId"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlPi:otherId"/>
       </xs:sequence>
     </xs:complexType>
@@ -48,7 +48,7 @@
   <xs:element name="masterId">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlCm:Id"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlCm:Id"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -56,7 +56,7 @@
   <xs:element name="otherId">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlCm:Id"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="mmlCm:Id"/>
       </xs:sequence>
       <xs:attributeGroup ref="mmlPi:attlist.otherId"/>
     </xs:complexType>
@@ -84,15 +84,15 @@
   </xs:attributeGroup>
   
   <xs:element name="death">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlPi:attlist.death"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:boolean">
+          <xs:attribute name="date" use="optional" form="qualified" />
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  
-  <xs:attributeGroup name="attlist.death">
-    <xs:attribute name="date" form="qualified"/>
-  </xs:attributeGroup>
-  
+   
   <xs:element name="socialIdentification" type="xs:string"/>
   
   <xs:element name="accountNumber" type="xs:string"/>
@@ -124,29 +124,29 @@
   <xs:element name="marital" type="xs:string"/>
   
   <xs:element name="nationality">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlPi:attlist.nationality"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="subtype" form="qualified" use="optional" type="xs:string"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  
-  <xs:attributeGroup name="attlist.nationality">
-    <xs:attribute name="subtype" form="qualified"/>
-  </xs:attributeGroup>
-
+ 
   <xs:element name="race">
-    <xs:complexType mixed="true">
-      <xs:attributeGroup ref="mmlPi:attlist.race"/>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="raceCode" form="qualified" type="xs:string" use="optional"/>
+          <xs:attribute name="raceCodeId" form="qualified" type="xs:string" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
     </xs:complexType>
   </xs:element>
-  
-  <xs:attributeGroup name="attlist.race">
-    <xs:attribute name="raceCode" form="qualified" type="xs:string"/>
-    <xs:attribute name="raceCodeId" form="qualified" type="xs:string"/>
-  </xs:attributeGroup>
   
   <xs:element name="sex" type="xs:string"/>
   
-  <xs:element name="birthday" type="xs:string"/>
+  <xs:element name="birthday" type="xs:date"/>
   
   <xs:element name="personName" >
     <xs:complexType>

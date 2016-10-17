@@ -18,15 +18,16 @@ image::mmlpi.jpg[]
 
 
 .エレメント一覧表
+[options="header"]
 |=====
-| |Elements|Attribute|Datatypes|Occurence|TableId
+| |Elements|Attribute|Data types|Occurence|TableId
 |M10.|mmlPi:PatientModule| | | |
 |M10.1.|mmlPi:uniqueInfo| | | |
 |M10.1.1.|mmlPi:masterId| | | |
-|M10.1.1.1.|mmlCm:Id| |string| |
+|M10.1.1.1.|mmlCm:Id| | | |
 |M10.1.2.|mmlPi:otherId| | |*|
 | | |mmlPi:type|string|#REQUIRED|MML0009
-|M10.1.2.1.|mmlCm:Id| |string| |
+|M10.1.2.1.|mmlCm:Id| | | |
 |M10.2.|mmlPi:personName| | | |
 |M10.2.1.|mmlNm:Name| | |+|
 |M10.3.|mmlPi:birthday| |date| |
@@ -73,6 +74,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．その他の ID が複数ある場合． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlPi:type|string|#REQUIRED|MML0009|その他のIDの種類
@@ -109,6 +111,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】string +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlPi:subtype|string|#IMPLIED|第2国籍コード．ISO 3166 A3コード使用．
@@ -176,6 +179,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】Boolean +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|説明
 |mmlPi:date|date/dateTime|#IMPLIED|死亡日時．データ型はdateもしくはdateTimeのどちらかとする．

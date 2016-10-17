@@ -16,73 +16,72 @@ image::mmlsm3.jpg[]
 
 ==== namespaces 宣言
 本モジュールのnamespaces宣言は，以下とする．
-
- xmlns:mmlSm= "http://www.medxml.net/MML/v4/ContentModule/Summaryr/1.0"
-
+[source, xml]
+xmlns:mmlSm= "http://www.medxml.net/MML/v4/ContentModule/Summaryr/1.0"
 
 .エレメント一覧表
 |=====
-| |Elements|Attribute|Datatypes|Occurence|Table
-|1.|mmlSm:SummaryModule| | | |
-|1.1.|mmlSm:serviceHistory| | | |
+| |Elements|Attribute|Data types|Occurence|Table
+|M18.|mmlSm:SummaryModule| | | |
+|M18.1.|mmlSm:serviceHistory| | | |
 | | |mmlSm:start|date|#IMPLIED|
 | | |mmlSm:end|date|#IMPLIED|
-|1.1.1.|mmlSm:outPatient| | |?|
-|1.1.1.1.|mmlSm:outPatientItem| | |*|
-|1.1.1.1.1.|mmlSm:date| |date| |
-|1.1.1.1.2.|mmlSm:outPatientCondition| |string|?|
+|M18.1.1.|mmlSm:outPatient| | |?|
+|M18.1.1.1.|mmlSm:outPatientItem| | |*|
+|M18.1.1.1.1.|mmlSm:date| |date| |
+|M18.1.1.1.2.|mmlSm:outPatientCondition| |string|?|
 | | |mmlSm:first|boolean|#IMPLIED|
 | | |mmlSm:emergency|boolean|#IMPLIED|
-|1.1.1.1.3.|mmlSm:staffs| | |?|
-|1.1.1.1.3.1.|mmlSm:staffInfo| | |+|
-|1.1.1.1.3.1.1.|mmlPsi:PersonalizedInfo| | | |
-|1.1.1.1.3.1.2.|mmlCi:creatorLicense| | |+|
-|1.1.2.|mmlSm:inPatient| | |?|
-|1.1.2.1.|mmlSm:inPatientItem| | |*|
-|1.1.2.1.1.|mmlSm:admission| | | |
-|1.1.2.1.1.1.|mmlSm:date| |date| |
-|1.1.2.1.1.2.|mmlSm:admissionCondition| |string|?|
+|M18.1.1.1.3.|mmlSm:staffs| | |?|
+|M18.1.1.1.3.1.|mmlSm:staffInfo| | |+|
+|M18.1.1.1.3.1.1.|mmlPsi:PersonalizedInfo| | | |
+|M18.1.1.1.3.1.2.|mmlCi:creatorLicense| | |+|
+|M18.1.2.|mmlSm:inPatient| | |?|
+|M18.1.2.1.|mmlSm:inPatientItem| | |*|
+|M18.1.2.1.1.|mmlSm:admission| | | |
+|M18.1.2.1.1.1.|mmlSm:date| |date| |
+|M18.1.2.1.1.2.|mmlSm:admissionCondition| |string|?|
 | | |mmlSm:emergency|boolean|#IMPLIED|
-|1.1.2.1.1.3.|mmlSm:referFrom| | |?|
-|1.1.2.1.1.3.1.|mmlPsi:PersonalizedInfo| | | |
-|1.1.2.1.2.|mmlSm:discharge| | | |
-|1.1.2.1.2.1.|mmlSm:date| |date| |
-|1.1.2.1.2.2.|mmlSm:dischargeCondition| |string|?|
+|M18.1.2.1.1.3.|mmlSm:referFrom| | |?|
+|M18.1.2.1.1.3.1.|mmlPsi:PersonalizedInfo| | | |
+|M18.1.2.1.2.|mmlSm:discharge| | | |
+|M18.1.2.1.2.1.|mmlSm:date| |date| |
+|M18.1.2.1.2.2.|mmlSm:dischargeCondition| |string|?|
 | | |mmlSm:outcome|string|#IMPLIED|MML0016
-|1.1.2.1.2.3.|mmlSm:referTo| | |?|
-|1.1.2.1.2.3.1.|mmlPsi:PersonalizedInfo| | | |　
-|1.1.2.1.3.|mmlSm:staffs| | |?|
-|1.1.2.1.3.1.|mmlSm:staffInfo| | |+|
-|1.1.2.1.3.1.1.|mmlPsi:PersonalizedInfo| | | |
-|1.1.2.1.3.1.2.|mmlCi:creatorLicense| | |+|
-|1.2.|mmlRd:RegisteredDiagnosisModule| | |*|
-|1.3.|mmlSm:deathInfo| | |?|
+|M18.1.2.1.2.3.|mmlSm:referTo| | |?|
+|M18.1.2.1.2.3.1.|mmlPsi:PersonalizedInfo| | | |　
+|M18.1.2.1.3.|mmlSm:staffs| | |?|
+|M18.1.2.1.3.1.|mmlSm:staffInfo| | |+|
+|M18.1.2.1.3.1.1.|mmlPsi:PersonalizedInfo| | | |
+|M18.1.2.1.3.1.2.|mmlCi:creatorLicense| | |+|
+|M18.2.|mmlRd:RegisteredDiagnosisModule| | |*|
+|M18.3.|mmlSm:deathInfo| | |?|
 | | |mmlSm:date|date/dateTime|#IMPLIED|
 | | |mmlSm:autopsy|boolean|#IMPLIED|
-|1.4.|mmlSg:SurgeryModule| | |*|
-|1.5.|mmlSm:chiefComplaints| |string|?|
-|1.6.|mmlSm:patientProfile| |string|?|
-|1.7.|mmlSm:history| |string|?|
-|1.8.|mmlSm:physicalExam| |string|?|
-|1.8.1.|mmlCm:extRef| | |*|
-|1.9.|mmlSm:clinicalCourse| | |?|
-|1.9.1.|mmlSm:clinicalRecord| |string|+|
+|M18.4.|mmlSg:SurgeryModule| | |*|
+|M18.5.|mmlSm:chiefComplaints| |string|?|
+|M18.6.|mmlSm:patientProfile| |string|?|
+|M18.7.|mmlSm:history| |string|?|
+|M18.8.|mmlSm:physicalExam| |string|?|
+|M18.8.1.|mmlCm:extRef| | |*|
+|M18.9.|mmlSm:clinicalCourse| | |?|
+|M18.9.1.|mmlSm:clinicalRecord| |string|+|
 | | |mmlSm:date|date/dateTime|#IMPLIED|
-|1.9.1.1.|mmlCm:extRef| | |*|
-|1.9.1.2.|mmlSm:relatedDoc| |string|*|
+|M18.9.1.1.|mmlCm:extRef| | |*|
+|M18.9.1.2.|mmlSm:relatedDoc| |string|*|
 | | |mmlSm:relation|string|#IMPLIED|MML0008
-|1.10.|mmlSm:dischargeFindings| |string|?|
-|1.10.1.|mmlCm:extRef| | |*|
-|1.11.|mmlSm:medication| |string|?|
-|1.11.1.|mmlPs:PrescriptionModule| | |*|
-|1.11.2.|mmlCm:extRef| | |*|
-|1.12.|mmlSm:testResults| | |?|
-|1.12.1.|mmlSm:testResult| |string|+|
+|M18.10.|mmlSm:dischargeFindings| |string|?|
+|M18.10.1.|mmlCm:extRef| | |*|
+|M18.11.|mmlSm:medication| |string|?|
+|M18.11.1.|mmlPs:PrescriptionModule| | |*|
+|M18.11.2.|mmlCm:extRef| | |*|
+|M18.12.|mmlSm:testResults| | |?|
+|M18.12.1.|mmlSm:testResult| |string|+|
 | | |mmlSm:date|date/dateTime|#IMPLIED|
-|1.12.1.1.|mmlCm:extRef| | |*|
-|1.13.|mmlSm:plan| |string|?|
-|1.13.1.|mmlCm:extRef| | |*|
-|1.14.|mmlSm:remarks| |string|?|
+|M18.12.1.1.|mmlCm:extRef| | |*|
+|M18.13.|mmlSm:plan| |string|?|
+|M18.13.1.|mmlCm:extRef| | |*|
+|M18.14.|mmlSm:remarks| |string|?|
 |=====
 
 Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
@@ -96,7 +95,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 病名，手術は，外部参照やリンクではなく，mmlSm:SummaryModule 内に記載することができる．
 
 ===== 構築法 2：
-外部参照やリンクを用いず，mmlSm:SummaryModule および関連モジュール (患者情報，病名，手術など) を，<paragraph> の繰り返しにより，1 つの MML インスタンスとしてまとめることができる．この場合，extractPolicy ( MML ヘッダー モジュール scopePeriod 内にあり) に summary と記載し，全体としてサマリー情報であることを明確にしておく．
+外部参照やリンクを用いず，mmlSm:SummaryModule および関連モジュール (患者情報，病名，手術など) を，MmlModuleItem の繰り返しにより， 1 つの MML インスタンスとしてまとめることができる．この場合，extractPolicy ( MML ヘッダー モジュール scopePeriod 内にあり) に summary と記載し，全体としてサマリー情報であることを明確にしておく．
 
 ===== 構築法 3：
 MML の groupId による文書間関連付け機能を用いる．すなわち，mmlSm:SummaryModule を含む関連モジュール (他に患者情報，病名，手術など) の groupId に同一の uid を記載する．1 つの MML インスタンスとしてまとめる必要はない．groupId の属性 groupClass に該当する文書詳細種別を記載する．
@@ -104,10 +103,10 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
 構築法 3 が最も推奨される．構築法 1 により，mmlSm:SummaryModule 内に記載された病名や手術の情報は，検索，再利用の対象となりにくいこと，構築法 2 では，モジュール単位での管理が難しいことなどの理由による．構築法 3 では，病名や手術を独立したモジュールとして扱っているために，検索や再利用の対象としやすく，groupId により，モジュール単位で情報を管理していても，関連付けを失うことがない．
 
 ==== エレメント解説
-===== mmlSm:SummaryModule
+===== M18. mmlSm:SummaryModule
 【内容】臨床経過サマリー情報
 
-===== mmlSm:serviceHistory
+===== M18.1. mmlSm:serviceHistory
 【内容】期間情報．本モジュールは，対象を必ずしも一回の入院に限定していない．複数入院，複数外来，および両者の組み合わせを対象とすることもできる． +
 【省略】不可 +
 【属性】
@@ -119,31 +118,31 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
 通常は，start，end (docInfo モジュールの confirmDate の属性) と同じ値をとる．
 
 【例】
-
- <mmlSm:serviceHistory mmlSm:start = "1999-08-25" mmlSm:end = "1999-08-31">
+[source, xml]
+<mmlSm:serviceHistory mmlSm:start="1999-08-25" mmlSm:end="1999-08-31">
 
 【例】一年間のサマリー
+[source, xml]
+<mmlSm:serviceHistory mmlSm:start="1998-01-01" mmlSm:end="1998-12-31">
 
- <mmlSm:serviceHistory mmlSm:start = "1998-01-01" mmlSm:end = "1998-12-31">
-
-===== mmlSm:outPatient
+===== M18.1.1. mmlSm:outPatient
 【内容】外来受診歴情報 +
 【省略】省略可
 
-===== mmlSm:outPatientItem
+===== M18.1.1.1. mmlSm:outPatientItem
 【内容】個々の外来受診歴 +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．外来受診が複数あれば繰り返す．
 
-===== mmlSm:date
+===== M18.1.1.1.1. mmlSm:date
 【内容】外来受診日 +
 【データ型】date　書式：CCYY-MM-DD +
 【省略】不可 +
 【例】8月25日，外来受診
+[source, xml]
+<mmlSm:date>1999-08-25</mmlSm:date>
 
- <mmlSm:date>1999-08-25</mmlSm:date>
-
-===== mmlSm:outPatientCondition
+===== M18.1.1.1.2. mmlSm:outPatientCondition
 【内容】外来受診状態． +
 【データ型】string +
 【省略】省略可 +
@@ -154,52 +153,52 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
 |mmlSm:emergency|boolean|#IMPLIED|救急受診．true：救急，false：通常
 |=====
 【例】初診，緊急受診の場合
+[source, xml]
+<mmlSm:outPatientCondition mmlSm:first="true" mmlSm:emergency="true">
+  10A.M.the patient was put into the ambulance on a stretcher and driven to our hospital.
+</mmlSm:outPatientCondition>
 
- <mmlSm:outPatientCondition mmlSm:first = "true" mmlSm:emergency = "true">
-   10A.M.the patient was put into the ambulance on a stretcher and driven to our hospital.
- </mmlSm:outPatientCondition>
-
-===== mmlSm:staffs
+===== M18.1.1.1.3. mmlSm:staffs
 【内容】患者担当スタッフ情報 +
 【省略】省略可
 
-===== mmlSm:staffInfo
+===== M18.1.1.1.3.1. mmlSm:staffInfo
 【内容】外来担当スタッフ． +
 【省略】不可 +
 【繰り返し設定】繰り返しあり．担当スタッフが複数いれば繰り返す．
 
-===== mmlPsi:PersonalizedInfo
+===== M18.1.1.1.3.1.1. mmlPsi:PersonalizedInfo
 【内容】個人情報．構造はMML共通形式参照． +
 【省略】不可
 
-===== mmlCi:creatorLicense
+===== M18.1.1.1.3.1.2. mmlCi:creatorLicense
 【内容】スタッフの資格 +
 【データ型】string +
 【省略】不可 +
 【繰り返し設定】繰り返しあり．資格が複数ある場合に繰り返す．
 
-===== mmlSm:inPatient
-【内容】入院暦情報 +
+===== M18.1.2. mmlSm:inPatient
+【内容】入院歴情報 +
 【省略】不可
 
-===== mmlSm:inPatientItem
+===== M18.1.2.1. mmlSm:inPatientItem
 【内容】個々の入院暦．繰り返しにより，複数入院，一入院における転棟，転科を記載可能． +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．入院が複数あれば繰り返す．
 
-===== mlSm:admission
+===== M18.1.2.1.1. mlSm:admission
 【内容】入院 +
 【省略】不可
 
-===== mmlSm:date
+===== M18.1.2.1.1.1. mmlSm:date
 【内容】入院 (転入) 日 +
 【データ型】date 書式：CCYY-MM-DD +
 【省略】不可 +
 【例】1999 年 8 月 27 日，入院
+[source, xml]
+<mmlSm:date>1999-8-27</mmlSm:date>
 
- <mmlSm:date>1999-8-27</mmlSm:date>
-
-===== mmlSm:admissionCondition
+===== M18.1.2.1.1.2. mmlSm:admissionCondition
 【内容】入院時状態 +
 【データ型】string +
 【省略】省略可 +
@@ -209,61 +208,62 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
 |mmlSm:emergency|boolean|#IMPLIED|緊急入院．true：緊急入院，false：通常
 |=====
 【例】救急車にて緊急入院
+[source, xml]
+<mmlSm:admissionCondition mmlSm:emergency="true">
+  Emergency admission by ambulance
+</mmlSm:admissionCondition>
 
- <mmlSm:admissionCondition mmlSm:emergency = "true">
-   Emergency admission by ambulance
- </mmlSm:admissionCondition>
-
-===== mmlSm:referFrom
+===== M18.1.2.1.1.3. mmlSm:referFrom
 【内容】紹介元情報 +
 【省略】省略可
 
-===== mmlPsi:PersonalizedInfo
+===== M18.1.2.1.1.3.1. mmlPsi:PersonalizedInfo
 【内容】構造はMML共通形式参照． +
 【省略】不可 +
 【例】新世紀医科大学内科小野洋子医師からの紹介
-
- <mmlSm:referFrom>
-   <mmlPsi:PersonalizedInfo>
-     <mmlCm:Id mmlCm:type="facility" mmlCm:tableId="MML0024">
-       23234567
-     </mmlCm:Id>
-     <mmlPsi:personName>
-       <mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025">
-         <mmlNm:family>Ono</mmlNm:family>
-         <mmlNm:given>Yoko</mmlNm:given>
-         <mmlNm:degree>M.D.</mmlNm:degree>
-       </mmlNm:Name>
-     </mmlPsi:personName>
-     <mmlFc:Facility>
-       <mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025">
-         New Millenium Medical College Hospital</mmlFc:name>
-       <mmlCm:Id mmlCm:type="insurance" mmlCm:tableId="MML0027">
-         801.006.3
-       </mmlCm:Id>
-     </mmlFc:Facility>
-     <mmlDp:Department>
-       <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">
+[source, xml]
+<mmlSm:referFrom>
+  <mmlPsi:PersonalizedInfo>
+    <mmlCm:Id mmlCm:type="facility" mmlCm:tableId="MML0024">
+      23234567
+    </mmlCm:Id>
+    <mmlPsi:personName>
+      <mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025">
+        <mmlNm:family>Ono</mmlNm:family>
+        <mmlNm:given>Yoko</mmlNm:given>
+        <mmlNm:degree>M.D.</mmlNm:degree>
+      </mmlNm:Name>
+    </mmlPsi:personName>
+    <mmlFc:Facility>
+      <mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025">
+         New Millenium Medical College Hospital
+      </mmlFc:name>
+      <mmlCm:Id mmlCm:type="insurance" mmlCm:tableId="MML0027">
+        801.006.3
+      </mmlCm:Id>
+    </mmlFc:Facility>
+    <mmlDp:Department>
+      <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">
          Internal medicine
-       </mmlDp:name>
-       <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">01</mmlCm:Id>
-     </mmlDp:Department>
-   </mmlPsi:PersonalizedInfo>
- </mmlSm:referFrom>
+      </mmlDp:name>
+      <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">01</mmlCm:Id>
+    </mmlDp:Department>
+  </mmlPsi:PersonalizedInfo>
+</mmlSm:referFrom>
 
-===== mmlSm:discharge
+===== M18.1.2.1.2. mmlSm:discharge
 【内容】退院 +
 【省略】不可
 
-===== mmlSm:date
+===== M18.1.2.1.2.1. mmlSm:date
 【内容】退院 (転出) 日 +
 【データ型】date 書式：CCYY-MM-DD +
 【省略】不可 +
 【例】1999 年 8 月 31 日，退院
+[source, xml]
+<mmlSm:date>1999-08-31</mmlSm:date>
 
- <mmlSm:date>1999-08-31</mmlSm:date>
-
-===== mmlSm:dischargeCondition
+===== M18.1.2.1.2.2. mmlSm:dischargeCondition
 【内容】退院時状態 +
 【データ型】string +
 【省略】省略可 +
@@ -273,97 +273,98 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
 |mmlSm:outcome|string|#IMPLIED|MML0016|退院時転帰
 |=====
 【例】術後4日目に慢性期病院へ転院
+[source, xml]
+<mmlSm:dischargeCondition mmlSm:outcome="transferChronic">
+  4 P.O.D, the patient was transferred to the chronic hospital.
+</mmlSm:dischargeCondition>
 
- <mmlSm:dischargeCondition mmlSm:outcome="transferChronic">
-   4 P.O.D, the patient was transferred to the chronic hospital.
- </mmlSm:dischargeCondition>
-
-===== mmlSm:referTo
+===== M18.1.2.1.3. mmlSm:referTo
 【内容】紹介先情報 +
 【省略】不可
 
-===== mmlPsi:PersonalizedInfo
+===== M18.1.2.1.3.1. mmlPsi:PersonalizedInfo
 【内容】構造は MML 共通形式参照． +
 【省略】不可 +
 【例】新世紀平成病院，循環器科の田中富士子医師へ紹介
+[source, xml]
+<mmlSm:referTo>
+  <mmlPsi:PersonalizedInfo>
+    <mmlCm:Id mmlCm:type="facility" mmlCm:tableId="MML0024">
+      55234567
+    </mmlCm:Id>
+    <mmlPsi:personName>
+      <mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025">
+        <mmlNm:family>Tanaka</mmlNm:family>
+        <mmlNm:given>Fujiko</mmlNm:given>
+        <mmlNm:degree>M.D.</mmlNm:degree>
+      </mmlNm:Name>
+    </mmlPsi:personName>
+    <mmlFc:Facility>
+      <mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025">
+        New Millenium Heisei Hospital
+      </mmlFc:name>
+      <mmlCm:Id mmlCm:type="insurance" mmlCm:tableId="MML0027">
+        2354678
+      </mmlCm:Id>
+    </mmlFc:Facility>
+    <mmlDp:Department>
+      <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">
+        Cardiology
+      </mmlDp:name>
+      <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">08</mmlCm:Id>
+    </mmlDp:Department>
+  </mmlPsi:PersonalizedInfo>
+</mmlSm:referTo>
 
- <mmlSm:referTo>
-   <mmlPsi:PersonalizedInfo>
-     <mmlCm:Id mmlCm:type="facility" mmlCm:tableId="MML0024">
-       55234567</mmlCm:Id>
-     <mmlPsi:personName>
-       <mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025">
-         <mmlNm:family>Tanaka</mmlNm:family>
-         <mmlNm:given>Fujiko</mmlNm:given>
-         <mmlNm:degree>M.D.</mmlNm:degree>
-       </mmlNm:Name>
-     </mmlPsi:personName>
-     <mmlFc:Facility>
-       <mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025">
-         New Millenium Heisei Hospital
-       </mmlFc:name>
-       <mmlCm:Id mmlCm:type="insurance" mmlCm:tableId="MML0027">
-         2354678
-       </mmlCm:Id>
-     </mmlFc:Facility>
-     <mmlDp:Department>
-       <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">
-         Cardiology
-       </mmlDp:name>
-       <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">08</mmlCm:Id>
-     </mmlDp:Department>
-   </mmlPsi:PersonalizedInfo>
- </mmlSm:referTo>
-
-===== mmlSm:staffs
+===== M18.1.2.3. mmlSm:staffs
 【内容】患者担当スタッフ情報 +
 【省略】省略可
 
-===== mmlSm:staffInfo
+===== M18.1.2.3.1. mmlSm:staffInfo
 【内容】入院担当スタッフ． +
 【省略】不可 +
 【繰り返し設定】繰り返しあり．担当スタッフを複数記載する場合に繰り返す．
 
-===== mmlPsi:PersonalizedInfo
+===== M18.1.2.3.1.1. mmlPsi:PersonalizedInfo
 【内容】構造は MML 共通形式参照． +
 【省略】不可
 
-===== mmlCi:creatorLicense
+===== M18.1.2.3.1.2. mmlCi:creatorLicense
 【内容】スタッフの資格 +
 【データ型】string +
 【省略】不可 +
 【繰り返し設定】繰り返しあり．資格が複数ある場合に繰り返す． +
 【例】入院時の主治医が新世紀医科大学心臓外科の荒木賢二医師の場合
+[source, xml]
+<mmlSm:staffInfo>
+  <mmlPsi:PersonalizedInfo>
+    <mmlCm:Id mmlCm:type="facility" mmlCm:tableId="MML0024">
+      23456789
+    </mmlCm:Id>
+    <mmlPsi:personName>
+      <mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025">
+        <mmlNm:family>Araki</mmlNm:family>
+        <mmlNm:given>Kenji</mmlNm:given>
+        <mmlNm:degree>M.D.</mmlNm:degree>
+      </mmlNm:Name>
+    </mmlPsi:personName>
+    <mmlFc:Facility>
+      <mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025">
+        New Millenium Medical College Hospital
+      </mmlFc:name>
+      <mmlCm:Id mmlCm:type="insurance" mmlCm:tableId="MML0027">801.006.3</mmlCm:Id>
+    </mmlFc:Facility>
+    <mmlDp:Department>
+      <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">
+        Cardiovascular surgery
+      </mmlDp:name>
+      <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">16</mmlCm:Id>
+    </mmlDp:Department>
+  </mmlPsi:PersonalizedInfo>
+  <mmlCi:creatorLicense mmlCi:tableId="MML0026">doctor</mmlCi:creatorLicense>
+</mmlSm:staffInfo>
 
- <mmlSm:staffInfo>
-   <mmlPsi:PersonalizedInfo>
-     <mmlCm:Id mmlCm:type="facility" mmlCm:tableId="MML0024">
-       23456789
-     </mmlCm:Id>
-     <mmlPsi:personName>
-       <mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025">
-         <mmlNm:family>Araki</mmlNm:family>
-         <mmlNm:given>Kenji</mmlNm:given>
-         <mmlNm:degree>M.D.</mmlNm:degree>
-       </mmlNm:Name>
-     </mmlPsi:personName>
-     <mmlFc:Facility>
-       <mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025">
-         New Millenium Medical College Hospital
-       </mmlFc:name>
-       <mmlCm:Id mmlCm:type="insurance" mmlCm:tableId="MML0027">801.006.3</mmlCm:Id>
-     </mmlFc:Facility>
-     <mmlDp:Department>
-       <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">
-         Cardiovascular surgery
-       </mmlDp:name>
-       <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">16</mmlCm:Id>
-     </mmlDp:Department>
-   </mmlPsi:PersonalizedInfo>
-   <mmlCi:creatorLicense mmlCi:tableId="MML0026">doctor</mmlCi:creatorLicense>
- </mmlSm:staffInfo>
-
-===== mmlRd:RegisteredDiagnosisModule
+===== M18.2. mmlRd:RegisteredDiagnosisModule
 【内容】サマリーにおける診断履歴情報．構造は上記参照．
 
 前述の運用を参照すること．構築法 1 の場合に，本エレメントを用いる．構築法 2 および 3 では，本エレメントは省略される．
@@ -371,7 +372,7 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．診断名が複数あれば繰り返す．
 
-===== mmlSm:deathInfo
+===== M18.3. mmlSm:deathInfo
 【内容】死亡関連情報 +
 【データ型】string +
 【省略】省略可 +
@@ -382,12 +383,12 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
 |mmlSm:autopsy|boolean|#IMPLIED|剖検の有無．true：剖検あり，false：なし
 |=====
 【例】1999 年 8 月 31，胃癌にて死亡．剖検あり．
+[source, xml]
+<mmlSm:deathInfo mmlSm:date="1999-08-31" mmlSm:autopsy="true">
+  The patient died of gastric cancer.
+</mmlSm:deathInfo>
 
- <mmlSm:deathInfo mmlSm:date="1999-08-31" mmlSm:autopsy="true">
-   The patient died of gastric cancer.
- </mmlSm:deathInfo>
-
-===== mmlSg:SurgeryModule
+===== M18.4. mmlSg:SurgeryModule
 【内容】サマリーにおける手術記録情報．構造は上記参照．
 
 前述の運用を参照すること．構築法 1 の場合に，本エレメントを用いる．構築法 2 および 3 では，本エレメントは省略される．
@@ -395,59 +396,59 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．複数手術を施行した場合は繰り返す．
 
-===== mmlSm:chiefComplaints
+===== M18.5. mmlSm:chiefComplaints
 【内容】主訴 +
 【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可 +
 【例】
+[source, xml]
+<mmlSm:chiefComplaints>Severe chest pain</mmlSm:chiefComplaints>
 
- <mmlSm:chiefComplaints>Severe chest pain</mmlSm:chiefComplaints>
-
-===== mmlSm:patientProfile
+===== M18.6. mmlSm:patientProfile
 【内容】患者プロフィール +
 【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可 +
 【例】
+[source, xml]
+<mmlSm:patientProfile>
+  The patient is a 40-year-old married forester.
+</mmlSm:patientProfile>
 
- <mmlSm:patientProfile>
-   The patient is a 40-year-old married forester.
- </mmlSm:patientProfile>
-
-==== mmlSm:history
+==== M18.7. mmlSm:history
 【内容】入院までの経過． +
 【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可 +
 【例】
+[source, xml]
+<mmlSm:history>
+  On a background of good health, the patient noted the onset of chest pain and dyspnea on Aug 25,1999. At 10 A.M., he was put into the ambulance on a stretcher and driven to our hospital
+  On arrival, the symptoms subsided and he went home without any medication. Two days ago (Aug 27), he felt intractable chest pain and was referred to the department of cardiovascular surgery under the diagnosis of unstable angina pectoris.
+</mmlSm:history>
 
- <mmlSm:history>
-   On a background of good health, the patient noted the onset of chest pain and dyspnea on Aug 25,1999. At 10 A.M., he was put into the ambulance on a stretcher and driven to our hospital
-   On arrival, the symptoms subsided and he went home without any medication. Two days ago (Aug 27), he felt intractable chest pain and was referred to the department of cardiovascular surgery under the diagnosis of unstable angina pectoris.
- </mmlSm:history>
-
-===== mmlSm:physicalExam
+===== M18.8. mmlSm:physicalExam
 【内容】入院時理学所見． +
 【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可 +
 【例】
+[source, xml]
+<mmlSm:physicalExam>
+  Physical findings were essentially normal except for the blood pressure which was 160/100. Heart sounds were clear and rhythm was regular without audible murmurs or friction sounds.
+</mmlSm:physicalExam>
 
- <mmlSm:physicalExam>
-   Physical findings were essentially normal except for the blood pressure which was 160/100. Heart sounds were clear and rhythm was regular without audible murmurs or friction sounds.
- </mmlSm:physicalExam>
-
-===== mmlCm:extRef
+===== M18.8.1. mmlCm:extRef
 【内容】構造はMML共通形式 (外部参照形式) 参照． +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．外部参照が複数あれば，数だけ繰り返す．
 
-===== mmlSm:clinicalCourse
+===== M18.9. mmlSm:clinicalCourse
 【内容】経過および治療 +
 【省略】省略可
 
-===== mmlSm:clinicalRecord
+===== M18.9.1. mmlSm:clinicalRecord
 【内容】経過記録．mmlCm:extRef と mmlSm:relatedDoc の混在可能． +
 【データ型】string +
 【省略】不可 +
@@ -459,12 +460,12 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
 |mmlSm:date|date/dateTime|#IMPLIED|イベント発生日時
 |=====
 
-===== mmlCm:extRef
+===== M18.9.1.1. mmlCm:extRef
 【内容】構造は MML 共通形式 (外部参照形式) 参照． +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．外部参照が複数あれば，数だけ繰り返す．
 
-===== mmlSm:relatedDoc
+===== M18.9.1.2. mmlSm:relatedDoc
 【内容】本経過記録に関連する MML文書のMmlModuleItemのuidを記載する． +
 【データ型】string +
 【省略】省略可 +
@@ -475,38 +476,38 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
 |mmlSm:relatedDoc|string|#IMPLIED|MML0008|関連の種別
 |=====
 【例】
+[source, xml]
+<mmlSm:clinicalCourse>
+  <mmlSm:clinicalRecord mmlSm:date="1999-08-27">
+    Emergency coronary angiography was carried out.
+    <mmlCm:extRef mmlCm:contentType="image/jpeg"
+      mmlCm:medicalRole="angioGraphy "
+      mmlCm:title="Preoperative coronary angiography"
+      mmlCm:href="patient001/surgicalFigure003.jpg"/>
+    Three vessels (LAD, #9, #12) were involved.
+    ＜mmlSm:relatedDoc mmlSm:relation=" detail"＞
+      11D1AC5400A0C94A814796045F768ED5
+    ＜/mmlSm:relatedDoc＞
+  </mmlSm:clinicalRecord>
+</mmlSm:clinicalCourse>
 
- <mmlSm:clinicalCourse>
-   <mmlSm:clinicalRecord mmlSm:date="1999-08-27">
-     Emergency coronary angiography was carried out.
-     <mmlCm:extRef mmlCm:contentType="image/jpeg"
-       mmlCm:medicalRole="angioGraphy "
-       mmlCm:title = "Preoperative coronary angiography"
-       mmlCm:href = "patient001/surgicalFigure003.jpg"/>
-     Three vessels (LAD, #9, #12) were involved.
-     ＜mmlSm:relatedDoc mmlSm:relation=" detail"＞
-       11D1AC5400A0C94A814796045F768ED5
-     ＜/mmlSm:relatedDoc＞
-   </mmlSm:clinicalRecord>
- </mmlSm:clinicalCourse>
-
-===== mmlSm:dischargeFindings
+===== M18.10 mmlSm:dischargeFindings
 【内容】退院時所見．mmlCm:extRef との混在可能． +
 【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlCm:extRef
+===== M18.10.1. mmlCm:extRef
 【内容】構造は MML 共通形式 (外部参照形式) 参照． +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．外部参照が複数あれば，数だけ繰り返す． +
 【例】
+[source, xml]
+<mmlSm:dischargeFindings>
+  Symptoms free, no wound infection.
+</mmlSm:dischargeFindings>
 
- <mmlSm:dischargeFindings>
-   Symptoms free, no wound infection.
- </mmlSm:dischargeFindings>
-
-===== mmlSm:medication
+===== M18.11. mmlSm:medication
 【内容】退院時処方．mmlPs:PrescriptionModule、mmlCm:extRef との混在可能． +
 【データ型】string +
 【省略】省略可 +
@@ -516,8 +517,8 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
 【内容】構造はコンテンツモジュールmmlPs:PrescriptionModule参照 +
 【省略】省略可 +
 【例】
-
- <mmlSm:medication>
+[source, xml]
+<mmlSm:medication>
   Prescription on discharge
   <mmlPs:PrescriptionModule>
     <mmlPs:medication>
@@ -534,83 +535,80 @@ MML の groupId による文書間関連付け機能を用いる．すなわち�
       <mmlPs:instruction>内服 1回 朝食前</mmlPs:instruction>
     </mmlPs:medication>
   </mmlPs:PrescriptionModule>
- </mmlSm:medication>
+</mmlSm:medication>
 
-
-===== mmlCm:extRef
+===== M18.11.2. mmlCm:extRef
 【内容】構造はMML共通形式 (外部参照形式) 参照． +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．外部参照が複数あれば，数だけ繰り返す +
 【例】
+[source, xml]
+<mmlSm:medication>
+  Prescription on discharge
+  <mmlCm:extRef
+    mmlCm:contentType="APPLICATION/HL72.3-HL7ER2.3"
+    mmlCm:medicalRole="prescription"
+    mmlCm:title="Prescription on discharge"
+    mmlCm:href="patient1234/prescription003.HL7"/>
+</mmlSm:medication>
 
- <mmlSm:medication>
-   Prescription on discharge
-   <mmlCm:extRef
-     mmlCm:contentType="APPLICATION/HL72.3-HL7ER2.3"
-     mmlCm:medicalRole="prescription"
-     mmlCm:title="Prescription on discharge"
-     mmlCm:href="patient1234/prescription003.HL7"/>
- </mmlSm:medication>
-
-===== mmlSm:testResults
+===== M18.12. mmlSm:testResults
 【内容】退院時検査結果． +
 【省略】省略可
 
-===== mmlSm:testResult
+===== M18.12.1. mmlSm:testResult
 【内容】個々の検査結果．mmlCm:extRef との混在可能． +
 【データ型】string +
 【省略】不可 +
 【繰り返し設定】繰り返しあり．検査が複数あれば繰り返す． +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlCm:extRef
+===== M18.12.1.1. mmlCm:extRef
 【内容】構造はMML共通形式 (外部参照形式) 参照． +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．外部参照が複数あれば，数だけ繰り返す +
 【例】
+[source, xml]
+<mmlSm:testResults>
+  <mmlSm:testResult mmlSm:date=" 1999-08-31">
+    Labo findings on discharge
+    <mmlCm:extRef mmlCm:contentType="APPLICATION/HL72.3-HL7ER2.3"
+      mmlCm:medicalRole="laboratoryTest"
+      mmlCm:title = "Blood chemistry data on discharge"
+      mmlCm:href = "patient1234/prescription004.HL7"/>
+  </mmlSm:testResult>
+  <mmlSm:testResult mmlSm:date=" 1999-08-31">
+    ECG on discharge. No ST change and new Q wave was observed.
+    <mmlCm:extRef mmlCm:contentType="image/gif"
+      mmlCm:medicalRole="ecg"
+      mmlCm:title="ECG on discharge"
+      mmlCm:href="patient1234/exam004.gif"/>
+  </mmlSm:testResult>
+</mmlSm:testResults>
 
- <mmlSm:testResults>
-   <mmlSm:testResult mmlSm:date=" 1999-08-31">
-     Labo findings on discharge
-     <mmlCm:extRef mmlCm:contentType="APPLICATION/HL72.3-HL7ER2.3"
-       mmlCm:medicalRole="laboratoryTest"
-       mmlCm:title = "Blood chemistry data on discharge"
-       mmlCm:href = "patient1234/prescription004.HL7"/>
-   </mmlSm:testResult>
-   <mmlSm:testResult mmlSm:date=" 1999-08-31">
-     ECG on discharge. No ST change and new Q wave was observed.
-     <mmlCm:extRef mmlCm:contentType="image/gif"
-       mmlCm:medicalRole="ecg"
-       mmlCm:title="ECG on discharge"
-       mmlCm:href="patient1234/exam004.gif"/>
-   </mmlSm:testResult>
- </mmlSm:testResults>
-
-====== mmlSm:plan
+====== M18.13. mmlSm:plan
 【内容】退院後治療方針．mmlCm:extRef との混在可能． +
 【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-===== mmlCm:extRef
+===== M18.13.1. mmlCm:extRef
 【内容】構造は MML 共通形式 (外部参照形式) 参照． +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．外部参照が複数あれば，数だけ繰り返す +
 【例】
+[source, xml]
+<mmlSm:plan>
+  Rehabilitation program and wound care will continue in the chronic hospital.
+</mmlSm:plan>
 
- <mmlSm:plan>
-   Rehabilitation program and wound care will continue in the chronic hospital.
- </mmlSm:plan>
-
-===== mmlSm:remarks
+===== M18.14. mmlSm:remarks
 【内容】患者に関する留意事項 +
 【データ型】string +
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可 +
 【例】
 [source, xml]
----
- <mmlSm:remarks>
-   Patient education: good. Appointment in outpatient department in 2 weeks.
- </mmlSm:remarks>
----
+<mmlSm:remarks>
+  Patient education: good. Appointment in outpatient department in 2 weeks.
+</mmlSm:remarks>

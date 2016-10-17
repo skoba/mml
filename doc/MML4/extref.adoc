@@ -1,7 +1,8 @@
 === 外部参照形式
 .エレメント一覧表
+[options="header"]
 |=====
-| |Elements|Attribute|Datatypes|Occurrence|Table id
+| |Elements|Attribute|Data types|Occurrence|Table id
 |M4.|mmlCm:extRef| | | |
 | | |mmlCm:contentType|string|#IMPLIED|
 | | |mmlCm:medicalRole|string|#IMPLIED|
@@ -17,6 +18,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 ===== M4. mmlCm:extRef(外部参照形式)
 【内容】外部参照を表現する共通形式． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlCm:contentType|string|#IMPLIED|外部参照情報の種類コード
