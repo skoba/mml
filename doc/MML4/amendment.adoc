@@ -13,6 +13,12 @@
 
 MML ver 4を2016年2月8日に公開して以来、下記のような修正が行われた。
 
+==== Version表記
+Mmlのversion属性が"4.0"から"4.1"に変更された。
+
+  -<xs:attribute name="version" default="4.1" type="xs:string"/>
+  +<xs:attribute name="version" default="4.1" type="xs:string"/>
+
 ==== 章・節番号、エレメント番号
 
 MML共通形式、MMLコンテンツモジュールの各エレメントに対する番号と章番号が混在していた。わかりやすくするために各エレメントの先頭にMをつけ、共通形式、コンテンツモジュールに連番を振った。
@@ -31,7 +37,6 @@ MML共通形式、MMLコンテンツモジュールの各エレメントに対�
 
   【内容】薬剤名称
  +【データ型】string
-
 
 ==== MML Header, docInfoのnamespace宣言
 
@@ -123,6 +128,7 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
 ==== 処方箋、注射モジュールの薬剤コードエレメント
 
 　処方箋、注射記録モジュールとも薬剤コードの所属するコード体型を記録するsystem属性が存在するが、そのネームスペースが欠落していたのでそれぞれのネームスペースを付与した
+
 .修正前
 
  system
@@ -132,11 +138,6 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
  mmlPs:system
  mmlInj:system
 
-==== 処方箋モジュールの1日量処方表記
-処方箋モジュールの書式は1回量表記がベースとなっているが、システム上、止むを得ない場合に一日総量をdoseに記載し、frequencyPerDayに1として、用法指示に分割指示を記載することも許容することとした。
-
-==== 処方箋、注射モジュールの薬剤コード体系設定
-処方箋モジュール、注射モジュールで使用する薬剤コード体系をMML0037テーブルにまとめた。
 
 ==== 注射記録モジュールの投与開始日時、投与終了日時
 
@@ -192,10 +193,10 @@ xsdの書式で型定義やoccurrence定義が不十分であったり、冗長�
 MMLの規約として、日付はCCYY-MM-DDのISO8601形式で記載することとしているため、date型で指定するのと同様にインスタンスに記載されるが、明示的に型を指定することによりデータのバリデーションを行うことができるためスキーマの修正を行った。
 
 .patient.xsd
--  <xs:element name="birthday" type="xs:string"/>
-+  <xs:element name="birthday" type="xs:date"/>
+ -<xs:element name="birthday" type="xs:string"/>
+ +<xs:element name="birthday" type="xs:date"/>
 
- * attributeの付け替えなど
+===== attributeの付け替えなど
 
 DTDからXML schemaにはほぼ自動変換したものを使用していたが、冗長であったり定義の並びが離れていて分かりづらかったりしたところを修正した。
 
