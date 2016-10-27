@@ -1,0 +1,63 @@
+:sectnums: y
+:sectnumlevels: 8
+:imagesdir: ./figures
+
+=== Diagnosis record information module
+
+This module was designed to record diagnosis, and has two structures to describe disease diagnosis by sequential expression of accessory words and disease, or structured hierarchy.
+
+.Structure of the elements
+image::mmlrd.jpg[]
+
+==== namespace declaration
+Namespaces declaration of this module is the following:
+[source, xml]
+xmlns:mmlRd= "http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
+
+.Table of the elements
+[options="header"]
+|=====
+| |Elements|Attribute|Data types|Occurence|TableId
+|M12.|mmlRd:RegisteredDiagnosisModule| | | |
+|M12.1.|mmlRd:diagnosis| |string| |
+| | |mmlRd:code|string|#IMPLIED|
+| | |mmlRd:system|string|#IMPLIED|
+|M12.2.|mmlRd:diagnosisContents| | |?|
+|M12.2.1.|mmlRd:dxItem| | |+|
+|M12.2.2.|mmlRd:name| |string| |
+| | |mmlRd:code|string|#IMPLIED|
+| | |mmlRd:system|string|#IMPLIED|
+|M12.3.|mmlRd:categories| | |?|
+|M12.3.1.|mmlRd:category| |string|+|optional
+| | |mmlRd:tableId|string|#REQUIRED|
+|M12.4.|mmlRd:startDate| |date|?|
+|M12.5.|mmlRd:endDate| |date|?|
+|M12.6.|mmlRd:outcome| |string|?|MML0016
+|M12.7.|mmlRd:firstEncounterDate| |date|?|
+|M12.8.|mmlRd:relatedHealthInsurance| | |?|
+| | |mmlRd:uid|string|#IMPLIED|
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: more than 1, *: more than 0 +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+==== Elements in details
+===== M12. mmlRd:RegisteredDiagnosisModule
+[horizontal]
+Description:: diagnosis records. One module intance records only one disease. If there are multiple diseases to be recorded, multiple module instances should be generated. The expression for diseases should be chosen from the two ways, unstructured sequence of accessory words and disease(mmlRd:diagnosis), or structured hierarchy of disease expressions(mmlRd:diagnosisContents).
+
+===== M12.1. mmlRd:diagnosis
+[horizontal]
+Description:: the entire name of disease to be recorded with accessory words.
+Data type:: string.
+Occurrence:: 1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlRd:code|string|#IMPLIED| |Code of diseases
+|mmlRd:system|string|#IMPLIED| |Coding system
+|=====
+
+.Example: colon carcinoid (ICD10 C189-.006)
+[source, xml]
+<mmlRd:diagnosis mmlRd:code="C189-.006" mmlRd:system="ICD10">colon carcinoid</mmlRd:diagnosis>
