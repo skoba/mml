@@ -8,7 +8,7 @@
 :imagesdir: ./figures
 :linkcss:
 
-=== 保険情報モジュール
+=== 健康保険情報モジュール
 .エレメント構造図
 image::mmlhi.jpg[]
 
