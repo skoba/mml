@@ -264,7 +264,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【内容】麻酔を除く手術スタッフの情報 +
 【省略】省略可
 
-===== M17.4.1. mmlSg:staff
+===== M17.1.4.1. mmlSg:staff
 【内容】繰り返しのためのエレメント +
 【省略】不可 +
 【繰り返し設定】繰り返しあり．スタッフの数だけ繰り返す． +
@@ -275,7 +275,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlSg:staffClass|string|#IMPLIED|MML0022|手術スタッフ区分
 |mmlSg:superiority|integer|#IMPLIED| |序列
 |=====
-序列とは，「第 1」助手，「第 2」助手などの順位のことである．整数で表示する．+
+序列とは，「第 1」助手，「第 2」助手などの順位のことである．整数で表示する． +
 【例】第 1 助手
 [source, xml]
 <mmlSg:staff mmlSg:superiority="1" mmlSg:staffClass="assistant">

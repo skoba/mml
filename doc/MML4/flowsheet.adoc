@@ -161,7 +161,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== M23.3.2. mmlFs:intakeVolume
 【内容】摂取した食べ物・飲み物の量。 +
-【データ型】decimal+
+【データ型】decimal +
 【省略】省略可
 
 ===== M23.3.3. mmlFs:intakeUnit
