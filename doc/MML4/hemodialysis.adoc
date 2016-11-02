@@ -1589,6 +1589,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【属性】
 [options="header"]
 |===
+|属性名|データ型|省略|説明
 |mmlHd:code|string|#IMPLIED|観察項目ID
 |mmlHd:tableId|string|#IMPLIED|観察項目コードテーブル
 hdObservationTable01
@@ -1812,6 +1813,7 @@ hdObservationTable01
 【データ型】string +
 【省略】省略可 +
 【属性】
+[options="header"]
 |===
 |属性名|データ型|省略|説明
 |mmlHd:code|string|#IMPLIED|検査ID
