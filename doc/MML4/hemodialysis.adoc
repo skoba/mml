@@ -1178,7 +1178,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|mmlHd:unit|string|【デフォルト】"ml/min"|ml/min
+|mmlHd:unit|string|#REQUIRED|Default: ml/min
 |===
 
 ===== M26.1.5.2.10.2. mmlHd:timeHdStart
@@ -1186,6 +1186,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】dateTime +
 【省略】省略可 +
 【属性】
+[options="header"]
 |===
 |属性名|データ型|省略|説明
 |mmlHd:timeDirection|string|#REQUIRED|時間方向 +
