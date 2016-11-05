@@ -417,7 +417,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|baStatus|string|#IMPLIED|ブラッドアクセス状態 +
+|mmlHd:baStatus|string|#IMPLIED|ブラッドアクセス状態 +
 良: active,不良: inactive
 |===
 
