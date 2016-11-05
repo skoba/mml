@@ -237,36 +237,37 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】dateTime +
 【省略】省略可
 
-===== M23.4.8. mmlFs:boMemo
+===== M23.4.9. mmlFs:boMemo
 【内容】排泄物に関するコメント、メモ。便秘3日目、出血は収束傾向など。 +
 【データ型】string +
 【省略】省略可
 
-===== M23.4.9. mmlFs:boFrequency
+===== M23.4.10. mmlFs:boFrequency
 【内容】一定時間内の排泄回数を表現する親エレメント。 +
+【省略】省略可 +
 【繰り返し】0回以上の繰り返しあり
 
-===== M23.4.10. mmlFs:bofTimes
+===== M23.4.10.1. mmlFs:bofTimes
 【内容】一定期間内に観察された排泄回数。 +
 【データ型】decimal +
 【省略】省略可
 
-===== M23.4.10.1. mmlFs:bofPeriodStartTime
+===== M23.4.10.2. mmlFs:bofPeriodStartTime
 【内容】観察を開始した時間。 +
 【データ型】dateTime +
 【省略】省略可
 
-===== M23.4.10.2. mmlFs:bofPeriodEndTime
+===== M23.4.10.3. mmlFs:bofPeriodEndTime
 【内容】観察を終了した時間。 +
 【データ型】dateTime +
 【省略】省略可
 
-===== M23.4.10.3 mmlFs:bofMemo
+===== M23.4.10.4. mmlFs:bofMemo
 【内容】数値化されない頻度表現。頻回、乏尿など。 +
 【データ型】string +
 【省略】省略可
 
-===== M23.4.10.4. mmlFs:fsMemo
+===== M23.5. mmlFs:boMemo
 【内容】体温表コメント、メモ。その他の体温表に記載する内容。 +
 【データ型】string +
 【省略】省略可
