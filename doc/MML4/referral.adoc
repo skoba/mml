@@ -58,7 +58,7 @@ xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
 [options="header"]
 |===
 | |Elements|Attribute|Data types|Occurrence|TableId
-|M21|mmmRe:ReferralModule| | | |
+|M21|mmlRe:ReferralModule| | | |
 |M21.1.|mmlPi:PatientModule| | | |
 |M21.2.|mmlRe:occupation| |string|?|
 |M21.3.|mmlRe:referFrom| | | |

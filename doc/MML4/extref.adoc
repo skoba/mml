@@ -21,10 +21,10 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
-|mmlCm:contentType|string|#IMPLIED|外部参照情報の種類コード
-|mmlCm:medicalRole|string|#IMPLIED|外部参照情報の詳細種別
-|mmlCm:title|string|#IMPLIED|タイトル
-|mmlCm:href|string|#REQUIRED|外部参照情報の所在
+|mmlCm:contentType|string|#IMPLIED| |外部参照情報の種類コード
+|mmlCm:medicalRole|string|#IMPLIED| |外部参照情報の詳細種別
+|mmlCm:title|string|#IMPLIED| |タイトル
+|mmlCm:href|string|#REQUIRED| |外部参照情報の所在
 |=====
 画像や心電図波形などバイナリデータについては，(1) HL7 や DICOM などの規格が存在する，(2) バイナリデータ形式がデータ交換上効率がよい，(3) 独立したデータファイルで管理されることが多い，などの理由から，これらは MMLインスタンスから独立したデータファイルとし，MMLからそれらを外部参照する方式を強く推奨する．MMLインスタンスにこれらのデータを直接埋め込む方法は，十分に検討されていないので本規格書では外部参照する方式とする．
 
