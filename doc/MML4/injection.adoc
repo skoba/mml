@@ -45,7 +45,7 @@
 |M25.1.1.|mmlInj:medicine| | | |
 |M25.1.1.1.|mmlInj:name| |string| |
 |M25.1.1.2.|mmlInj:code| |string|*|
-| | |mmlInj:system|string| |
+| | |mmlInj:system|string|#REQUIRED|
 |M25.1.2.|mmlInj:dose| |decimal| |
 |M25.1.3.|mmlInj:doseUnit| |string| |
 |M25.1.4.|mmlInj:startDateTime| |dateTime|?|
@@ -84,12 +84,13 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 ===== M25.1.1.2. mmlInj:code
 【内容】薬剤コード +
 【データ型】string +
+【省略】可 +
 【繰り返し】0回以上 +
 【属性】
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|mmlInj:system|string|不可| |用いたコード体系の名称を記載。MML0037参照
+|mmlInj:system|string|#REQUIRED| |用いたコード体系の名称を記載。MML0037参照
 |===
 
 ===== M25.1.2. mmlInj:dose
