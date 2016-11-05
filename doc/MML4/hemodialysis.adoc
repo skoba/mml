@@ -396,8 +396,8 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|code|string|#IMPLIED|疾患コード
-|system|string|#REQUIRED|疾患コード体系名
+|mmlHd:code|string|#IMPLIED|疾患コード
+|mmlHd:system|string|#REQUIRED|疾患コード体系名
 |===
 
 ===== M26.1.4.1.2. mmlHd:HdIntroDate
@@ -444,8 +444,8 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|code|string|#IMPLIED|ブラッドアクセスID
-|tableId|string|#REQUIRED|テーブルID
+|mmlHd:code|string|#IMPLIED|ブラッドアクセスID
+|mmlHd:tableId|string|#REQUIRED|テーブルID
 |===
 【例】
 [source, xml]
