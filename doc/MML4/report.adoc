@@ -67,7 +67,7 @@ xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
 |M20.1.5.4.|mmlRp:client| |string|?|
 | | |mmlRp:clientCode|string|#IMPLIED|ユーザー指定
 | | |mmlRp:clientCodeId|string|#IMPLIED|
-|M20.1.6.|mmlRp:perfom| | | |
+|M20.1.6.|mmlRp:perform| | | |
 |M20.1.6.1.|mmlRp:pFacility| |string| |
 | | |mmlRp:facilityCode|string|#REQUIRED|
 | | |mmlRp:facilityCodeId|string|#REQUIRED|MML0027
