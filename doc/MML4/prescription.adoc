@@ -61,12 +61,13 @@ confirmDate
 |M24.2.6.|mmlPs:duration| |duration|?|
 |M24.2.7.|mmlPs:instruction| |string|?|
 |M24.2.8.|mmlPs:PRN| |boolean|?|
-|M24.2.9.|mmlPs:route| |string|?|
-|M24.2.10.|mmlPs:form| |string|?|
-|M24.2.11.|mmlPs:batchNo| |decimal|?|
-|M24.2.12.|mmlPs:brandSubstitutionPermitted| |boolean|?|
-|M24.2.13.|mmlPs:longTerm| |boolean|?|
-|M24.2.14.|mmlPs:additionalInstruction| |string|?|
+|M24.2.9.|mmlPs:repititions| |decimal|?|
+|M24.2.10.|mmlPs:route| |string|?|
+|M24.2.11.|mmlPs:form| |string|?|
+|M24.2.12.|mmlPs:batchNo| |decimal|?|
+|M24.2.13.|mmlPs:brandSubstitutionPermitted| |boolean|?|
+|M24.2.14.|mmlPs:longTerm| |boolean|?|
+|M24.2.15.|mmlPs:additionalInstruction| |string|?|
 |M24.3.|mmlPs:narcoticPrescriptionLicenseNumber| |string|?|
 |M24.4.|mmlPs:comment| |string|?|
 |===
