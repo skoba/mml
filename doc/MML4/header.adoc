@@ -43,6 +43,7 @@ MML Ver 4のMmlHeader 内のタグはすべて，xmlns:mml ="http://www.medxml.n
 【内容】MML 本文全体の対象期間 +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |start|date|#IMPLIED| |開始日
