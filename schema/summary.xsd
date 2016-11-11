@@ -300,7 +300,6 @@
           <xs:attribute name="relation" use="optional" type="xs:string" form="qualified"/>          
         </xs:extension>
       </xs:simpleContent>
-      <xs:attribute name="relation" use="optional" type="xs:string" form="qualified"/>
     </xs:complexType>
   </xs:element> 
 </xs:schema>

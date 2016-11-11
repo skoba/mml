@@ -61,3 +61,62 @@ Attributes::
 .Example: colon carcinoid (ICD10 C189-.006)
 [source, xml]
 <mmlRd:diagnosis mmlRd:code="C189-.006" mmlRd:system="ICD10">colon carcinoid</mmlRd:diagnosis>
+
+===== M12.2. mmlRd:diagnosisContents
+[horizontal]
+Description:: structured diagnosis with main disease name and accessory words. This style or M12.1 style must be chosen to express diagnosis.
+Occurrences:: 0..1
+
+===== M12.2.1. mmlRd:dxItem
+[horizontal]
+Description:: parent element to store repeated items.
+Occurrences:: 1..*
+
+===== M12.2.2. mmlRd:name
+[horizontal]
+Description::  Name for disease element
+Data type:: string
+Occurrences:: 1
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlRd:code|string|#IMPLIED|Diagnosis code
+|mmlRd:system|string#IMPLIED|Diagnosis code system
+|=====
+.Example: Structured expression for "paroxysmal atrial fibrillation" with "paroxysmal" and "atrial fibrillation".
+[source, xml]
+<mmlRd:diagnosisContents>
+  <mmlRd:dxItem >
+    <mmlRd:name mmlRd:code=" I48--.004" mmlRd:system="ICD10">
+      atrial fibrillation
+    </mmlRd:name>
+  </mmlRd:dxItem>
+  <mmlRd:dxItem >
+    <mmlRd:name>paroxysmal</mmlRd:name>
+  </mmlRd:dxItem>
+</mmlRd:diagnosisContents>
+
+===== M12.3. mmlRd:categories
+[horizontal]
+Description:: diagnosis categories
+Occurrences:: 0..1
+
+===== M12.3.1. mmlRd:category
+[horizontal]
+Description:: name of diagnosis category. Tables are applicable from MML0012 to MML0015. Concrete usage of category should be defined by uses.
+Occurrences:: 1..*
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlRd:tableId|string|#REQUIRED| |category type system
+|=====
+.Example: The diagnosis is the main disease name, academic diagnosis, pathological diagnosis, and definitive diagnosis.
+[source, xml]
+<mmlRd:categories>
+  <mmlRd:category mmlRd:tableId="MML0012">mainDiagnosis</mmlRd:category>
+  <mmlRd:category mmlRd:tableId="MML0013">academicDiagnosis</mmlRd:category>
+  <mmlRd:category mmlRd:tableId="MML0014">pathologicalDiagnosis</mmlRd:category>
+  <mmlRd:category mmlRd:tableId="MML0015">confirmedDiagnosis</mmlRd:category>
+</mmlRd:categories>

@@ -193,7 +193,7 @@
   <xs:element name="referenceInfo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlCm:extRef"/>
+        <xs:element ref="mmlCm:extRef" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>   
   </xs:element>
