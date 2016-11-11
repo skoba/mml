@@ -57,11 +57,11 @@ confirmDate
 |M24.2.2.|mmlPs:dose| |decimal| |
 |M24.2.3.|mmlPs:doseUnit| |string| |
 |M24.2.4.|mmlPs:frequencyPerDay| |decimal|?|
-|M24.2.5.|mmlPs:startDate| |date|?|
+|M24.2.5.|mmlPs:startDate| |date| |
 |M24.2.6.|mmlPs:duration| |duration|?|
 |M24.2.7.|mmlPs:instruction| |string|?|
 |M24.2.8.|mmlPs:PRN| |boolean|?|
-|M24.2.9.|mmlPs:repititions| |decimal|?|
+|M24.2.9.|mmlPs:repetitions| |decimal|?|
 |M24.2.10.|mmlPs:route| |string|?|
 |M24.2.11.|mmlPs:form| |string|?|
 |M24.2.12.|mmlPs:batchNo| |decimal|?|
@@ -130,7 +130,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 ===== M24.2.5. mmlPs:startDate
 【内容】服薬開始日 +
 【データ型】date +
-【省略】可 +
+【省略】不可 +
 【説明】内服開始日
 
 ===== M24.2.6. mmlPs:duration
