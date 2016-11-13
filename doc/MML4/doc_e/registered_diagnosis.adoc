@@ -120,3 +120,21 @@ Attributes::
   <mmlRd:category mmlRd:tableId="MML0014">pathologicalDiagnosis</mmlRd:category>
   <mmlRd:category mmlRd:tableId="MML0015">confirmedDiagnosis</mmlRd:category>
 </mmlRd:categories>
+
+===== M12.4. mmlRd:startDate
+[horizontal]
+Description:: Date for start recording disease.
+Data type:: date, ISO8601 format. CCYY-MM-DD
+Occurrence:: 0..1
+
+===== M12.5. mmlRd:endDate
+[horizontal]
+Description:: Date for end recording disease.
+Data type:: date, ISO8601 format. CCYY-MM-DD
+Occurrence:: 0..1
+
+===== M12.6. mmlRd:outcome
+[horizontal]
+Description:: Outcome, ref MML0016 table.
+Data type:: string
+Occurrence:: 0..1
