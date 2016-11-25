@@ -56,7 +56,7 @@ confirmDate
 | | |mmlPs:system|string|#REQUIRED|
 |M24.2.2.|mmlPs:dose| |decimal| |
 |M24.2.3.|mmlPs:doseUnit| |string| |
-|M24.2.4.|mmlPs:frequencyPerDay| |decimal|?|
+|M24.2.4.|mmlPs:frequencyPerDay| |integer|?|
 |M24.2.5.|mmlPs:startDate| |date| |
 |M24.2.6.|mmlPs:duration| |duration|?|
 |M24.2.7.|mmlPs:instruction| |string|?|
@@ -123,7 +123,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== M24.2.4. mmlPs:frequencyPerDay
 【内容】一日の内服回数 +
-【データ型】decimal +
+【データ型】integer +
 【省略】可 +
 【説明】総量のみが記載される外用剤などの場合には省略可
 
