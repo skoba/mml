@@ -245,10 +245,16 @@ DTDからXML schemaにはほぼ自動変換したものを使用していたが�
   </xs:complexType>
 </xs:element>
 
-======
+====== mmlPs:frequencyPerDay
+4.1.1の解説文書ではdecimal, スキーマはstringであったが、ともにintegerに修正
+
+====== mmlPs:batchNo
+4.1.1の解説文書ではdecimal, スキーマはintegerであった。スキーマに合わせて解説文書をintegerに修正
+
+===== サンプルインスタンスの追加
 
 
-===== 誤字、表現の修正
+====== 誤字、表現の修正
 
 数多くの誤字の修正および表現の修正を行った。(下記参照)
 

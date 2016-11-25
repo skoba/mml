@@ -64,7 +64,7 @@ confirmDate
 |M24.2.9.|mmlPs:repetitions| |decimal|?|
 |M24.2.10.|mmlPs:route| |string|?|
 |M24.2.11.|mmlPs:form| |string|?|
-|M24.2.12.|mmlPs:batchNo| |decimal|?|
+|M24.2.12.|mmlPs:batchNo| |integer|?|
 |M24.2.13.|mmlPs:brandSubstitutionPermitted| |boolean|?|
 |M24.2.14.|mmlPs:longTerm| |boolean|?|
 |M24.2.15.|mmlPs:additionalInstruction| |string|?|
@@ -171,7 +171,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== M24.2.12. mmlPs:batchNo
 【内容】処方番号 +
-【データ型】decimal +
+【データ型】integer +
 【省略】可 +
 【説明】処方番号を記載する。これにより用法が共通する薬剤をまとめて一つの処方単位とすることができる。
 
