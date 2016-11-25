@@ -17,7 +17,7 @@ image::mmlsm3.jpg[]
 ==== namespaces 宣言
 本モジュールのnamespaces宣言は，以下とする．
 [source, xml]
-xmlns:mmlSm= "http://www.medxml.net/MML/v4/ContentModule/Summaryr/1.0"
+xmlns:mmlSm= "http://www.medxml.net/MML/v4/ContentModule/Summary/1.0"
 
 .エレメント一覧表
 |=====
