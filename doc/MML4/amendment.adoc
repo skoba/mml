@@ -185,7 +185,7 @@ xsdの書式で型定義やoccurrence定義が不十分であったり、冗長�
 -    </xs:attribute>
 +          <xs:attribute name="emergency" type="xs:boolean" use="optional" form="qualified"/>
 
-サマリー情報にあるemergency属性, dethinfoエレメントなどに上記の変更を行った。
+サマリー情報にあるemergency属性, deathInfoエレメントなどに上記の変更を行った。
 
 ===== 文字列型からdate型へ
 
