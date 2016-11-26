@@ -18,8 +18,8 @@
 
 ==== namespace宣言
 このモジュールのnamespaceは以下のように宣言する。
-
- xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
+[source, xml]
+xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
 
 ==== 文書ヘッダー情報 (docInfo) のモジュール個別仕様
 ===== docInfo
