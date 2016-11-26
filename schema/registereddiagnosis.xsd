@@ -89,7 +89,7 @@
   <xs:element name="startDate" type="xs:date"/>
   <xs:element name="endDate" type="xs:date"/>
   <xs:element name="outcome" type="xs:string"/>
-  <xs:element name="firstEncounterDate" type="xs:string"/>
+  <xs:element name="firstEncounterDate" type="xs:date"/>
   <xs:element name="relatedHealthInsurance">
     <xs:complexType>
       <xs:simpleContent>
