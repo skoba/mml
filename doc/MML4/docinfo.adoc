@@ -24,7 +24,7 @@ docInfoはOverviewで解説したとおり、各MmlModuleItemの先頭に記載�
 |=======
 |属性名|データ型|省略|使用テーブル|説明
 |contentModuleType|string|#IMPLIED|MML0005|文書の種類コード
-|moduleVersion|uri|#IMPLIED| |使用するモジュールのXMLスキーマのURIを記載
+|moduleVersion|string|#IMPLIED| |使用するモジュールのXMLスキーマのURIを記載
 |=======
 
 ==== securityLevel
@@ -242,8 +242,8 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 |属性名|データ型|省略|使用テーブル|説明
 |start|dateTime|#IMPLIED| |時系列情報場合の開始日時．
 |end|dateTime|#IMPLIED| |時系列情報場合の終了日時．
-|firstConfirmDate|dateTime| |#IMPLIED|修正が発生した場合の，初回確定日時
-|eventDate|dateTime| |#IMPLIED|実際に記載された診療イベントが発生した日時
+|firstConfirmDate|dateTime|#IMPLIED| |修正が発生した場合の，初回確定日時
+|eventDate|dateTime|#IMPLIED| |実際に記載された診療イベントが発生した日時
 |=====
 
 ==== mmlCi:CreatorInfo
