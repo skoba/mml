@@ -2,7 +2,7 @@
 <mmlInj:InjectionModule
   xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0/injection.xsd">
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0 http://www.medxml.net/MML/v4/ContentModule/Injection/1.0/injection.xsd">
   <mmlInj:medication>
     <mmlInj:medicine>
       <mmlInj:name>ラクテック 500ml</mmlInj:name>
