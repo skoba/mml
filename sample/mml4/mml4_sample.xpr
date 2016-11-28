@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="17.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="mml4_sample.xpr">
+        <file name="mml4_sample1.xml"/>
+        <file name="mmlad_structured_sample.xml"/>
+        <file name="mmlad_unstructured_sample.xml"/>
+        <file name="mmlbc_sample.xml"/>
+        <file name="mmlci_sample.xml"/>
+        <file name="mmlcm_department_id_sample.xml"/>
+        <file name="mmlcm_extref_sample.xml"/>
+        <file name="mmlcm_facility_id_sample.xml"/>
+        <file name="mmlcm_personal_id_sample.xml"/>
+        <file name="mmlcm_personal_id_with_facility_sample.xml"/>
+        <file name="mmldp_sample.xml"/>
+        <file name="mmlfc_sample.xml"/>
+        <file name="mmlfcl_sample.xml"/>
+        <file name="mmlhi_sample.xml"/>
+        <file name="mmlinj_sample.xml"/>
+        <file name="mmllb_sample.xml"/>
+        <file name="mmlls_sample.xml"/>
+        <file name="mmlnm_structured_sample.xml"/>
+        <file name="mmlnm_unstructured_sample.xml"/>
+        <file name="mmlpc_sample.xml"/>
+        <file name="mmlph_structured_sample.xml"/>
+        <file name="mmlph_unstructured_sample.xml"/>
+        <file name="mmlpi_sample.xml"/>
+        <file name="mmlps_sample.xml"/>
+        <file name="mmlpsi_sample.xml"/>
+        <file name="mmlrd_sample.xml"/>
+        <file name="mmlsg_sample.xml"/>
+        <file name="mmlsm_sample.xml"/>
+    </projectTree>
+</project>
