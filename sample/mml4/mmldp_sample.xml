@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mmlDp:Department
   xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0"
-  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0">
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0 file://../../schema/department.xsd
+		      http://www.medxml.net/MML/v4/SharedComponent/Common/1.0 file://../../schema/common.xsd">
   <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">
     Cardiovascular　Surgery
   </mmlDp:name>

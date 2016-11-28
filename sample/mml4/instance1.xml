@@ -6,7 +6,7 @@
  xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
  xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1 file:/C:/Users/skoba/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/GitHub/mml/schema/healthinsurance.xsd" xmlns:mmlHi="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1" mmlHi:countryType="ISL">
+ xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1 file:/../..//mml/schema/healthinsurance.xsd" xmlns:mmlHi="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1" mmlHi:countryType="ISL">
     <insuranceClass mmlHi:ClassCode="ClassCode1" mmlHi:tableId="tableId1">
     </insuranceClass>
     <insuranceNumber>insuranceNumber0</insuranceNumber>

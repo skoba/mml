@@ -12,7 +12,7 @@ class SampleValidator
   end
 
   def sample_file(sample)
-    File.join SAMPLE_LOCATION, sample
+    Nokogiri::XML(File.read(File.join SAMPLE_LOCATION, sample))
   end
 
   def schema_file
