@@ -13,5 +13,13 @@ describe 'mmlCm:Common' do
     example 'Department ID' do
       expect(validator).to be_valid 'mmlcm_department_id_sample.xml'
     end
+
+    example 'extRef' do
+      expect(validator).to be_valid 'mmlcm_extref_sample.xml'
+    end
+
+    example 'Facility ID' do
+      expect(validator).to be_valid 'mmlcm_facility_id_sample.xml'
+    end
   end
 end
