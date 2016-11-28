@@ -4,6 +4,10 @@ describe 'mmlCm:Common' do
   describe 'mmlCm:Id' do
     example 'personal ID without facility' do
       expect(validator).to be_valid 'mmlcm_personal_id_sample.xml'
-    end   
+    end
+
+    example 'personal_id with facility' do
+      expect(validator).to be_valid 'mmlcm_personal_id_with_facility_sample.xml'
+    end
   end
 end
