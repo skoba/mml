@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mmlHi:HealthInsuranceModule
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1 file:/../../mml/schema/healthinsurance.xsd"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1 ../../mml/schema/healthinsurance.xsd"
   xmlns:mmlHi="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
   mmlHi:countryType="JPN">
   <mmlHi:insuranceClass mmlHi:ClassCode="10" mmlHi:tableId="MMC0002">国７</mmlHi:insuranceClass>

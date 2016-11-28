@@ -2,7 +2,7 @@
 <mmlPs:PrescriptionModule
   xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0/prescription.xsd">
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0 ../../schema/prescription.xsd">
 
   <mmlPs:issuedTo>external</mmlPs:issuedTo>
 	<mmlPs:medication>
@@ -36,7 +36,7 @@
 	<mmlPs:medication>
 	  <mmlPs:medicine>
 			<mmlPs:name>マーズレンＳ顆粒</mmlPs:name>
-			<mmlPs:code system="YJ">612160027</mmlPs:code>
+			<mmlPs:code mmlPs:system="YJ">612160027</mmlPs:code>
 		</mmlPs:medicine>
 		<mmlPs:dose>0.5</mmlPs:dose>
 		<mmlPs:doseUnit>g</mmlPs:doseUnit>
