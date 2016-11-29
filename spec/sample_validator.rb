@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 class SampleValidator
   def initialize(schema)
     @schema = schema

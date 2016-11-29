@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 class MMLSchemaValidator
   def initialize(schema)
     @schema_file = File.read schema
