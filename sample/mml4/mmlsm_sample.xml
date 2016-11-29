@@ -17,7 +17,7 @@
     <mmlSm:inPatient>
       <mmlSm:inPatientItem>
         <mmlSm:admission>
-          <mmlSm:date>2015-8-27</mmlSm:date>
+          <mmlSm:date>2015-08-27</mmlSm:date>
           <mmlSm:admissionCondition mmlSm:emergency = "true">
             Emergency admission by ambulance
           </mmlSm:admissionCondition>
@@ -126,7 +126,7 @@
     Physical findings were essentially normal except for the blood pressure which was 160/100. Heart sounds were clear and rhythm was regular without audible murmurs or friction sounds.
   </mmlSm:physicalExam>
   <mmlSm:clinicalCourse>
-    <mmlSm:clinicalRecord mmlSm:date="1999-08-27">
+    <mmlSm:clinicalRecord mmlSm:date="1999-08-27T00:00:00">
       Emergency coronary angiography was carried out.
       <mmlCm:extRef mmlCm:contentType="image/jpeg"
         mmlCm:medicalRole="angioGraphy "
@@ -148,7 +148,7 @@
         <mmlPs:batchNo>1</mmlPs:batchNo>
         <mmlPs:medicine>
           <mmlPs:name>プレドニゾロン錠 5mg</mmlPs:name>
-          <mmlPs:code system="YJ">61222033</mmlPs:code>
+          <mmlPs:code mmlPs:system="YJ">61222033</mmlPs:code>
         </mmlPs:medicine>
         <mmlPs:dose>4</mmlPs:dose>
         <mmlPs:doseUnit>錠</mmlPs:doseUnit>
@@ -160,14 +160,14 @@
     </mmlPs:PrescriptionModule>
   </mmlSm:medication>
   <mmlSm:testResults>
-    <mmlSm:testResult mmlSm:date=" 1999-08-31">
+    <mmlSm:testResult mmlSm:date="1999-08-31T00:00:00">
       Labo findings on discharge
       <mmlCm:extRef mmlCm:contentType="APPLICATION/HL72.3-HL7ER2.3"
         mmlCm:medicalRole="laboratoryTest"
         mmlCm:title = "Blood chemistry data on discharge"
         mmlCm:href = "patient1234/prescription004.HL7"/>
     </mmlSm:testResult>
-    <mmlSm:testResult mmlSm:date=" 1999-08-31">
+    <mmlSm:testResult mmlSm:date="1999-08-31T00:00:00">
       ECG on discharge. No ST change and new Q wave was observed.
       <mmlCm:extRef mmlCm:contentType="image/gif"
         mmlCm:medicalRole="ecg"
