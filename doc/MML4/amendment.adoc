@@ -40,20 +40,15 @@ MML共通形式、MMLコンテンツモジュールの各エレメントに対�
   【内容】薬剤名称
  +【データ型】string
 
-<<<<<<< HEAD
-==== MML Header, docInfoのnamespace宣言
-=======
 
 ===== MML Header, docInfoのnamespace宣言
->>>>>>> origin/4.1
-
 以下のようにnamespace宣言をしていた。
-
+[source, xml]
  xmlns:mml ="http://www.medxml.net/MML/v4"
  xmlns="http://www.medxml.net/MML/v4"
 
 下記のようにbaseを間に挟むように改めた。
-
+[source, xml]
  xmlns:mml ="http://www.medxml.net/MML/v4/base/1.0"
  xmlns="http://www.medxml.net/MML/v4/base/1.0"
 
