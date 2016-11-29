@@ -7,13 +7,13 @@
   xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0/surgery.xsd">
+  xsi:schemaLocation="../../schema/surgery.xsd">
 
   <mmlSg:surgeryItem>
     <mmlSg:surgicalInfo mmlSg:type="elective">
       <mmlSg:date>2015-09-05</mmlSg:date>
-      <mmlSg:startTime>09:18</mmlSg:startTime>
-      <mmlSg:duration>P3H20M</mmlSg:duration>
+      <mmlSg:startTime>09:18:15</mmlSg:startTime>
+      <mmlSg:duration>PT3H20M</mmlSg:duration>
       <mmlSg:surgicalDepartment>
         <mmlDp:Department>
           <mmlDp:name mmlDp:repCode = "A" mmlDp:tableId = "MML0025">

@@ -313,7 +313,7 @@
     <mmlLb:item>
       <mmlLb:itemName mmlLb:itCode="950" mmlLb:itCodeId="KRTKC">HCV</mmlLb:itemName>
       <mmlLb:value>インセイ</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="N"/>
+      <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
     </mmlLb:item>
     <mmlLb:item>
       <mmlLb:itemName mmlLb:itCode="954" mmlLb:itCodeId="KRTKC">HCVCI</mmlLb:itemName>
@@ -323,7 +323,7 @@
     <mmlLb:item>
       <mmlLb:itemName mmlLb:itCode="913" mmlLb:itCodeId="KRTKC">HBsAg</mmlLb:itemName>
       <mmlLb:value>インセイ</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="N"/>
+      <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
     </mmlLb:item>
     <mmlLb:item>
       <mmlLb:itemName mmlLb:itCode="914" mmlLb:itCodeId="KRTKC">sAgCI</mmlLb:itemName>
@@ -333,7 +333,7 @@
     <mmlLb:item>
       <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
       <mmlLb:value>ヨウセイ</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="N"/>
+      <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
     </mmlLb:item>
     <mmlLb:item>
       <mmlLb:itemName mmlLb:itCode="916" mmlLb:itCodeId="KRTKC">mIUml</mmlLb:itemName>
@@ -343,7 +343,7 @@
     <mmlLb:item>
       <mmlLb:itemName mmlLb:itCode="921" mmlLb:itCodeId="KRTKC">HBcAb</mmlLb:itemName>
       <mmlLb:value>ヨウセイ</mmlLb:value>
-      <mmlLb:numValue mmlLb:out="N"/>
+      <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
     </mmlLb:item>
     <mmlLb:item>
       <mmlLb:itemName mmlLb:itCode="922" mmlLb:itCodeId="KRTKC">cAb%I</mmlLb:itemName>

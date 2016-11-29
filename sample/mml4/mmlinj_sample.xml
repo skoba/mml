@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mmlInj:InjectionModule
   xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0/injection.xsd">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <mmlInj:medication>
     <mmlInj:medicine>
       <mmlInj:name>ラクテック 500ml</mmlInj:name>
-      <mmlInj:code system="YJ">12304155</mmlInj:code>
+      <mmlInj:code mmlInj:system="YJ">12304155</mmlInj:code>
     </mmlInj:medicine>
     <mmlInj:dose>500</mmlInj:dose>
     <mmlInj:doseUnit>ml</mmlInj:doseUnit>
@@ -21,7 +20,7 @@
   <mmlInj:medication>
     <mmlInj:medicine>
       <mmlInj:name>ビタメジン静注用</mmlInj:name>
-      <mmlInj:code system="YJ">553300555</mmlInj:code>
+      <mmlInj:code mmlInj:system="YJ">553300555</mmlInj:code>
     </mmlInj:medicine>
     <mmlInj:dose>1</mmlInj:dose>
     <mmlInj:doseUnit>V</mmlInj:doseUnit>
@@ -30,7 +29,7 @@
   <mmlInj:medication>
     <mmlInj:medicine>
       <mmlInj:name>セファメジンα 2g キット</mmlInj:name>
-      <mmlInj:code system="YJ">14433344</mmlInj:code>
+      <mmlInj:code mmlInj:system="YJ">14433344</mmlInj:code>
     </mmlInj:medicine>
     <mmlInj:dose>1</mmlInj:dose>
     <mmlInj:doseUnit>V</mmlInj:doseUnit>

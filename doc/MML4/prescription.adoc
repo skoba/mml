@@ -56,17 +56,18 @@ confirmDate
 | | |mmlPs:system|string|#REQUIRED|
 |M24.2.2.|mmlPs:dose| |decimal| |
 |M24.2.3.|mmlPs:doseUnit| |string| |
-|M24.2.4.|mmlPs:frequencyPerDay| |decimal| |
-|M24.2.5.|mmlPs:startDate| |date|?|
+|M24.2.4.|mmlPs:frequencyPerDay| |integer|?|
+|M24.2.5.|mmlPs:startDate| |date| |
 |M24.2.6.|mmlPs:duration| |duration|?|
 |M24.2.7.|mmlPs:instruction| |string|?|
 |M24.2.8.|mmlPs:PRN| |boolean|?|
-|M24.2.9.|mmlPs:route| |string|?|
-|M24.2.10.|mmlPs:form| |string|?|
-|M24.2.11.|mmlPs:batchNo| |decimal|?|
-|M24.2.12.|mmlPs:brandSubstitutionPermitted| |boolean|?|
-|M24.2.13.|mmlPs:longTerm| |boolean|?|
-|M24.2.14.|mmlPs:additionalInstruction| |string|?|
+|M24.2.9.|mmlPs:repetitions| |decimal|?|
+|M24.2.10.|mmlPs:route| |string|?|
+|M24.2.11.|mmlPs:form| |string|?|
+|M24.2.12.|mmlPs:batchNo| |integer|?|
+|M24.2.13.|mmlPs:brandSubstitutionPermitted| |boolean|?|
+|M24.2.14.|mmlPs:longTerm| |boolean|?|
+|M24.2.15.|mmlPs:additionalInstruction| |string|?|
 |M24.3.|mmlPs:narcoticPrescriptionLicenseNumber| |string|?|
 |M24.4.|mmlPs:comment| |string|?|
 |===
@@ -101,12 +102,13 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 ===== M24.2.1.2. mmlPs:code
 【内容】薬剤コード +
 【データ型】string +
+【省略】不可 +
 【繰り返し】0回以上 +
 【属性】
 [options="header"]
 |===
 |属性名|データ型|省略|使用テーブル|説明
-|mmlPs:system|string|不可| |用いた薬剤コード体系を記載する。MML0037参照
+|mmlPs:system|string|#REQUIRED| |用いた薬剤コード体系を記載する。MML0037参照
 |===
 
 ===== M24.2.2. mmlPs:dose
@@ -121,14 +123,14 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== M24.2.4. mmlPs:frequencyPerDay
 【内容】一日の内服回数 +
-【データ型】decimal +
+【データ型】integer +
 【省略】可 +
 【説明】総量のみが記載される外用剤などの場合には省略可
 
 ===== M24.2.5. mmlPs:startDate
 【内容】服薬開始日 +
 【データ型】date +
-【省略】可 +
+【省略】不可 +
 【説明】内服開始日
 
 ===== M24.2.6. mmlPs:duration
@@ -169,7 +171,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== M24.2.12. mmlPs:batchNo
 【内容】処方番号 +
-【データ型】decimal +
+【データ型】integer +
 【省略】可 +
 【説明】処方番号を記載する。これにより用法が共通する薬剤をまとめて一つの処方単位とすることができる。
 

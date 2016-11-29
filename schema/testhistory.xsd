@@ -8,7 +8,8 @@
   xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0">
   
-  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0/common.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0" schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0/name.xsd" />
   
   <xs:element name="TestModule">
     <xs:complexType>
@@ -227,7 +228,7 @@
   
   <xs:element name="value" type="xs:string"/>
   
-  <xs:element name="numValue">
+  <xs:element name="numValue" nillable="true">
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">

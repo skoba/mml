@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/skoba/mml.svg?branch=master)](https://travis-ci.org/skoba/mml)
+
 MML
 ===
 
@@ -32,6 +34,7 @@ Contributors (alphabetical order)
 * Masahiro KYUSHIMA (Okinawa Chubu Hospital)
 * Kazushi MINAGAWA (Life Sciences Computing Corporation) 
 * Masanobu MITANI (Chitose Institute of Science and Technology)
+* Masami OGATA(Stellaplace, Inc.)
 * Katsuhiro OHASHI (Ohashi OBST/GYNE Clinic)
 * Shigehisa OMATSU (Dualcanum, Inc.)
 * Shigeru SAITO (Shonan Kamakura General Hospital)

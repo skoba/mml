@@ -41,7 +41,7 @@ image::mmlhd.png[]
 [options="header"]
 |===
 | |Elements|Attribute|Data types|Occurrence|Table id
-|M26.|MmlHd:HemoDialysisModule| | | |
+|M26.|mmlHd:HemoDialysisModule| | | |
 | | |mmlHd:version|string|#REQUIRED|
 | | |mmlHd:createDate|dateTime|#REQUIRED|
 |M26.1.|mmlHd:HemoDialysis| | |*|
@@ -56,7 +56,7 @@ image::mmlhd.png[]
 |M26.1.4.1.2.|mmlHd:HdIntroDate| |date|?|
 |M26.1.4.1.3.|mmlFc:Facility| | | |
 |M26.1.4.2.|mmlHd:BloodAccess| | |*|
-| | |mmHd:baStatus|string|#IMPLIED|
+| | |mmlHd:baStatus|string|#IMPLIED|
 |M26.1.4.2.1.|mmlHd:dateMade| |date|?|
 |M26.1.4.2.2.|mmlHd:dateFirstUse| |date|?|
 |M26.1.4.2.3.|mmlHd:dateEnd| |date|?|
@@ -117,7 +117,7 @@ image::mmlhd.png[]
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |M26.1.5.1.1.10.|mmlHd:dialysateTemp| | |*|
 |M26.1.5.1.1.10.1.|mmlHd:dialysateTempValue| |decimal| |
-| | |mmlHd:unit|string| |Default: "C"
+| | |mmlHd:unit|string|#REQUIRED|Default: "C"
 |M26.1.5.1.1.10.2.|mmlHd:timeHdStart| |dateTime|?|
 | | |mmlHd:timeDirection|string|#REQUIRED|
 |M26.1.5.1.1.10.3.|mmlHd:timeHdEnd| |dateTime|?|
@@ -267,7 +267,7 @@ image::mmlhd.png[]
 |M26.1.6.1.5.|mmlHd:totalUF| |decimal|?|
 | | |mmlHd:unit|string|#REQUIRED|Default: "kg"
 |M26.1.6.1.6.|mmlHd:weightCorrection| |decimal|?|
-| | |mmlHd:unit|string|#REQUIRED|Deault: "kg"
+| | |mmlHd:unit|string|#REQUIRED|Default: "kg"
 |M26.1.6.1.6.1.|mmlHd:note| |string|?|
 |M26.1.6.1.7.|mmlHd:dialyser| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
@@ -345,11 +345,7 @@ image::mmlhd.png[]
 |M26.1.7.1.3.2.|mmlHd:testResult| |string|?|
 | | |mmlHd:unit|string|#IMPLIED|
 |M26.1.7.1.3.3.|mmlHd:note| |string|?|
-|M26.1.7.1.3.4.|mmlHd:extRef| | |*|
-| | |mmlHd:contentType|string|#IMPLIED|
-| | |mmlHd:medicalRole|string|#IMPLIED|
-| | |mmlHd:title|string|#IMPLIED|
-| | |mmlHd:href|string|#IMPLIED|
+|M26.1.7.1.3.4.|mmlCm:extRef| | |*|
 |M26.2.|mmlHd:HeMX| | |*|
 |M26.2.1.|mmlCm:extRef| | | |
 |===
@@ -400,8 +396,8 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|code|string|#IMPLIED|疾患コード
-|system|string|#REQUIRED|疾患コード体系名
+|mmlHd:code|string|#IMPLIED|疾患コード
+|mmlHd:system|string|#REQUIRED|疾患コード体系名
 |===
 
 ===== M26.1.4.1.2. mmlHd:HdIntroDate
@@ -416,12 +412,12 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 ===== M26.1.4.2. mmlHd:BloodAccess
 【内容】ブラッドアクセス +
 【省略】省略可 +
-【繰り返し設定】繰り返しあり。表記法が複数あれば繰り返す。
+【繰り返し設定】繰り返しあり。表記法が複数あれば繰り返す。 +
 【属性】
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|baStatus|string|#IMPLIED|ブラッドアクセス状態 +
+|mmlHd:baStatus|string|#IMPLIED|ブラッドアクセス状態 +
 良: active,不良: inactive
 |===
 
@@ -448,8 +444,8 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|code|string|#IMPLIED|ブラッドアクセスID
-|tableId|string|#REQUIRED|テーブルID
+|mmlHd:code|string|#IMPLIED|ブラッドアクセスID
+|mmlHd:tableId|string|#REQUIRED|テーブルID
 |===
 【例】
 [source, xml]
@@ -484,7 +480,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== M26.1.5.1.1.1.1. mmlHd:weekday
 【内容】オーダ適用曜日 +
-【データ型】string(ISO8601のWeekDay)+
+【データ型】string(ISO8601のWeekDay) +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり
 
@@ -1110,9 +1106,9 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |===
 
 ===== M26.1.5.2.8. mmlHd:dialyser
-【内容】ダイアライザー名称
-【データ型】String
-【省略】省略可
+【内容】ダイアライザー名称 +
+【データ型】String +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
@@ -1178,7 +1174,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|mmlHd:unit|string|【デフォルト】"ml/min"|ml/min
+|mmlHd:unit|string|#REQUIRED|Default: ml/min
 |===
 
 ===== M26.1.5.2.10.2. mmlHd:timeHdStart
@@ -1186,6 +1182,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】dateTime +
 【省略】省略可 +
 【属性】
+[options="header"]
 |===
 |属性名|データ型|省略|説明
 |mmlHd:timeDirection|string|#REQUIRED|時間方向 +
@@ -1430,7 +1427,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |===
 
 ===== M26.1.6.1.3. mmlHd:preWeight
-【内容】 透析前体重
+【内容】 透析前体重 +
 【データ型】decimal +
 【省略】省略可 +
 【属性】
@@ -1589,6 +1586,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【属性】
 [options="header"]
 |===
+|属性名|データ型|省略|説明
 |mmlHd:code|string|#IMPLIED|観察項目ID
 |mmlHd:tableId|string|#IMPLIED|観察項目コードテーブル
 hdObservationTable01
@@ -1803,7 +1801,7 @@ hdObservationTable01
 |===
 
 ===== M26.1.7.1.3. mmlHd:testItemGroup
-【内容】 検査項目グループ _
+【内容】 検査項目グループ +
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
 
@@ -1812,6 +1810,7 @@ hdObservationTable01
 【データ型】string +
 【省略】省略可 +
 【属性】
+[options="header"]
 |===
 |属性名|データ型|省略|説明
 |mmlHd:code|string|#IMPLIED|検査ID

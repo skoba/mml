@@ -69,7 +69,7 @@
  
   <xs:element name="dose" type="xs:decimal"/>
   <xs:element name="doseUnit" type="xs:string"/>
-  <xs:element name="frequencyPerDay" type="xs:string"/>
+  <xs:element name="frequencyPerDay" type="xs:integer"/>
   <xs:element name="startDate" type="xs:date"/>
   <xs:element name="duration" type="xs:duration"/>
   <xs:element name="instruction" type="xs:string"/>

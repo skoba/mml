@@ -20,10 +20,11 @@ docInfoはOverviewで解説したとおり、各MmlModuleItemの先頭に記載�
 【内容】個々の文書のヘッダー情報 +
 【省略】通常は省略不可だが，モジュールを指定したクエリや，クエリの返答で該当するモジュールがなかった場合のみ省略可． +
 【属性】文書ヘッダーの参照だけで，使用したモジュールの種別とバージョンが分かるように属性を設定する．
+[options="header"]
 |=======
 |属性名|データ型|省略|使用テーブル|説明
 |contentModuleType|string|#IMPLIED|MML0005|文書の種類コード
-|moduleVersion|uri|#IMPLIED| |使用するモジュールのXMLスキーマのURIを記載
+|moduleVersion|string|#IMPLIED| |使用するモジュールのXMLスキーマのURIを記載
 |=======
 
 ==== securityLevel
@@ -37,6 +38,7 @@ docInfoはOverviewで解説したとおり、各MmlModuleItemの先頭に記載�
 
 複数の accessRight エレメントが存在する場合は，accessRight エレメント同士は "OR" 条件となる．1 つの accessRight エレメント直下に，施設，診療科，職種，個人の内 2 つ以上が存在するときは，"AND" 条件となる．この AND 条件を満たすものが実在しない場合には，アクセス権は認められない． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |permit|string|#REQUIRED|MML0034|参照の権利． +
@@ -62,6 +64,7 @@ MML では，削除可能文書に対して，削除要求が出されたとき�
 【省略】不可 +
 【繰り返し設定】繰り返しあり．アクセス権を設定する施設の数だけ繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlSc:facilityCode|string|#REQUIRED|MML0035|施設アクセス権定義
@@ -89,6 +92,7 @@ mmlSc:facilityId，mmlSc:facilityIdType に対象施設を記載する．
 【省略】不可 +
 【繰り返し設定】繰り返しあり．アクセス権を設定する診療科の数だけ繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlSc:departmentCode|string|#REQUIRED|MML0028|診療科コード
@@ -104,6 +108,7 @@ mmlSc:facilityId，mmlSc:facilityIdType に対象施設を記載する．
 【省略】不可 +
 【繰り返し設定】繰り返しあり．アクセス権を設定する職種の数だけ繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlSc:licenseCode|string|#REQUIRED|MML0026|職種コード
@@ -120,6 +125,7 @@ mmlSc:facilityId，mmlSc:facilityIdType に対象施設を記載する．
 【省略】不可 +
 【繰り返し設定】繰り返しあり．アクセス権を設定する個人の数だけ繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |mmlSc:personCode|string|#REQUIRED|MML0036|個人アクセス権定義
@@ -181,6 +187,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 【データ型】string +
 【省略】不可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |generationPurpose|string|#IMPLIED|MML0007|文書詳細種別
@@ -204,6 +211,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．親文書が複数の場合に繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |relation|string|#IMPLIED|MML0008|関連の種別
@@ -218,6 +226,7 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 【省略】省略可 +
 【繰り返し設定】繰り返しあり．複数のグループに属する場合に繰り返す． +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |groupClass|string|#IMPLIED|MML0007| モジュールグループの種別
@@ -228,12 +237,13 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 【データ型】dateTime ISO8610形式書式：CCYY-MM-DDThh:mm:ss +
 【省略】不可 +
 【属性】時系列情報が 1 文書となっている場合は，次の属性で開始日時と終了日時を記載する． scopePeriod が MML 文書全体の対象期間であるのに対し，こちらは，1 つの MmlModuleItemの期間を表していることに注意．
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |start|dateTime|#IMPLIED| |時系列情報場合の開始日時．
 |end|dateTime|#IMPLIED| |時系列情報場合の終了日時．
-|firstConfirmDate|dateTime| |#IMPLIED|修正が発生した場合の，初回確定日時
-|eventDate|dateTime| |#IMPLIED|実際に記載された診療イベントが発生した日時
+|firstConfirmDate|dateTime|#IMPLIED| |修正が発生した場合の，初回確定日時
+|eventDate|dateTime|#IMPLIED| |実際に記載された診療イベントが発生した日時
 |=====
 
 ==== mmlCi:CreatorInfo

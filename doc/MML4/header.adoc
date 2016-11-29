@@ -12,7 +12,7 @@
 == MmlHeader 形式詳説
 === MmlHeader に関して
 
-MML Ver 4のMmlHeader 内のタグはすべて，xmlns:mml ="http://www.medxml.net/MML/v4/base/1.0/" の Namespace に属す．(ここでは，xmlns="http://www.medxml.net/MML/v4/base/1.0" とデフォルト化したものとして記述することとする)
+MML Ver 4のMmlHeader 内のタグはすべて，xmlns:mml ="http://www.medxml.net/MML/v4/base/1.0" の Namespace に属す．(ここでは，xmlns="http://www.medxml.net/MML/v4/base/1.0" とデフォルト化したものとして記述することとする)
 
 ==== MmlHeader
 【内容】ヘッダー情報
@@ -43,6 +43,7 @@ MML Ver 4のMmlHeader 内のタグはすべて，xmlns:mml ="http://www.medxml.n
 【内容】MML 本文全体の対象期間 +
 【省略】省略可 +
 【属性】
+[options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |start|date|#IMPLIED| |開始日

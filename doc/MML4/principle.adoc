@@ -71,9 +71,9 @@ MmlHeader および docInfo構造モジュール::
 体温表モジュール::
 	xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"
 処方箋モジュール::
-	xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
+	xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
 注射記録モジュール::
-	xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
+	xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
 透析モジュール::
 	xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
 

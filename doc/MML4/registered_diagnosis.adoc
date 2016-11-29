@@ -112,7 +112,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |=====
 |属性名|データ型|省略|説明
-|mmlRd:tableId|string#REQUIRED|分類の種類コード．
+|mmlRd:tableId|string|#REQUIRED|分類の種類コード．
 |=====
 【例】当該診断名が，主病名かつ学術診断名かつ病理診断名かつ確定診断である場合．
 [source, xml]

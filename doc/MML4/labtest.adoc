@@ -259,8 +259,8 @@ final 最終報告
 【繰り返し設定】繰り返しあり．原則として検体材料が複数あれば，数だけ繰り返す．
 
 ===== M19.2.1. mmlLb:specimen
-【内容】検体情報
-【省略】不可 +
+【内容】検体情報 +
+【省略】不可
 
 ===== M19.2.1.1. mmlLb:specimenName
 【内容】検体材料 +
@@ -289,7 +289,7 @@ final 最終報告
 |=====
 
 ===== M19.2.1.3. mmlLb:spcMemoF
-【内容】検体フリーコメント
+【内容】検体フリーコメント +
 【データ型】string +
 【省略】省略可 +
 
@@ -317,12 +317,12 @@ final 最終報告
 |=====
 
 ===== M19.2.2.2. mmlLb:value
-【内容】値．表示用の文字列の値．必須とする．
+【内容】値．表示用の文字列の値．必須とする． +
 【データ型】string +
 【省略】不可 +
 
 ===== M19.2.2.3. mmlLb:numValue
-【内容】値 (数値) ．数値データの場合のみ設定． +
+【内容】値 (数値) ．数値データを記録する。 +
 【データ型】decimal +
 【省略】省略可 +
 【属性】
@@ -338,6 +338,30 @@ N 基準値範囲内 +
 L 下限値未満 +
 A 異常
 |=====
+[NOTE]
+====
+DTDではnil(空白)が許されていたが、decimal型としたことで空白の値を取ることが原則許されなくなった。Ver 3までは、下記のようにnumValueとしては空欄でもデータが異常値であることを示すことができていた。
+[source, xml]
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
+      <mmlLb:value>ヨウセイ</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
+    </mmlLb:item>
+
+このような表現を許すようにnumValueにnillable属性をとることとした。
+[source, xml]
+  <xs:element name="numValue" nillable="true">
+
+しかしながら、インスタンスにはnilであることを明示的に記入する必要がある。
+[source, xml]
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
+      <mmlLb:value>ヨウセイ</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
+    </mmlLb:item>
+
+====
+
 
 ===== M19.2.2.4. mmlLb:unit
 【内容】単位 +
@@ -352,7 +376,7 @@ A 異常
 |=====
 
 ===== M19.2.2.5. mmlLb:referenceInfo
-【内容】外部参照情報
+【内容】外部参照情報 +
 【省略】省略可 +
 
 ===== M19.2.2.5.1.  mmlCm:extRef

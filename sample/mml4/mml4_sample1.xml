@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Mml version="4.0" createDate="2015-09-05T20:28:45"
+<Mml version="4.1.2" createDate="2016-11-28T19:52:45"
   xmlns="http://www.medxml.net/MML/v4/base/1.0"
   xmlns:mml="http://www.medxml.net/MML/v4/base/1.0"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
@@ -19,7 +19,6 @@
   xmlns:mmlPc="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0" 
   xmlns:mmlRd="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0"
   xmlns:mmlSg="http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"
-  xmlns:mmlSm="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0" 
   xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
   xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
   xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
@@ -28,6 +27,7 @@
   xmlns:claim="http://www.medxml.net/claim/claimModule/2.1" xmlns:claimA="http://www.medxml.net/claim/claimAmountModule/2.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.medxml.net/MML/v4/base/1.0/mml.xsd ">
+  <!-- xmlns:mmlSm="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0" -->
   <MmlHeader>
     <mmlCi:CreatorInfo>
       <mmlPsi:PersonalizedInfo>
@@ -160,7 +160,7 @@
                       <mmlPs:batchNo>1</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>プレドニゾロン錠 5mg</mmlPs:name>
-                        <mmlPs:code system="YJ">61222033</mmlPs:code>
+                        <mmlPs:code mmlPs:system="YJ">61222033</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>3</mmlPs:dose>
                       <mmlPs:doseUnit>錠</mmlPs:doseUnit>
@@ -174,7 +174,7 @@
                       <mmlPs:batchNo>2</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>プレドニゾロン錠 5mg</mmlPs:name>
-                        <mmlPs:code system="YJ">61222033</mmlPs:code>
+                        <mmlPs:code mmlPs:system="YJ">61222033</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>2</mmlPs:dose>
                       <mmlPs:doseUnit>錠</mmlPs:doseUnit>
@@ -188,7 +188,7 @@
                       <mmlPs:batchNo>3</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>アルファロールカプセル（１μｇ）</mmlPs:name>
-                        <mmlPs:code system="YJ">61222044</mmlPs:code>
+                        <mmlPs:code mmlPs:system="YJ">61222044</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>1</mmlPs:dose>
                       <mmlPs:doseUnit>C</mmlPs:doseUnit>
@@ -202,7 +202,7 @@
                       <mmlPs:batchNo>4</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>セルベックスカプセル（５０㎎）</mmlPs:name>
-                        <mmlPs:code system="YJ">61222085</mmlPs:code>
+                        <mmlPs:code mmlPs:system="YJ">61222085</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>3</mmlPs:dose>
                       <mmlPs:doseUnit>C</mmlPs:doseUnit>
@@ -216,7 +216,7 @@
                       <mmlPs:batchNo>5</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>パナルジン錠（１００㎎）</mmlPs:name>
-                        <mmlPs:code system="YJ">61222085</mmlPs:code>
+                        <mmlPs:code mmlPs:system="YJ">61222085</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>2</mmlPs:dose>
                       <mmlPs:doseUnit>錠</mmlPs:doseUnit>
@@ -230,7 +230,7 @@
                       <mmlPs:batchNo>5</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>アゼプチン錠（１㎎）</mmlPs:name>
-                        <mmlPs:code system="YJ">334422085</mmlPs:code>
+                        <mmlPs:code mmlPs:system="YJ">334422085</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>2</mmlPs:dose>
                       <mmlPs:doseUnit>錠</mmlPs:doseUnit>
@@ -244,7 +244,7 @@
                       <mmlPs:batchNo>5</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>メプチン錠（５０μｇ）</mmlPs:name>
-                        <mmlPs:code system="YJ">6122333344</mmlPs:code>
+                        <mmlPs:code mmlPs:system="YJ">6122333344</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>2</mmlPs:dose>
                       <mmlPs:doseUnit>錠</mmlPs:doseUnit>
@@ -258,7 +258,7 @@
                       <mmlPs:batchNo>5</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>タガメット錠（２００㎎）</mmlPs:name>
-                        <mmlPs:code system="YJ">61222043</mmlPs:code>
+                        <mmlPs:code mmlPs:system="YJ">61222043</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>2</mmlPs:dose>
                       <mmlPs:doseUnit>錠</mmlPs:doseUnit>
@@ -272,7 +272,7 @@
                       <mmlPs:batchNo>6</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>ビソルボン錠（４㎎）</mmlPs:name>
-                        <mmlPs:code system="YJ">61222043</mmlPs:code>
+                        <mmlPs:code mmlPs:system="YJ">61222043</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>2</mmlPs:dose>
                       <mmlPs:doseUnit>錠</mmlPs:doseUnit>
@@ -286,7 +286,7 @@
                       <mmlPs:batchNo>7</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>マーロックス懸濁内服用(1.2ｇ/包)</mmlPs:name>
-                        <mmlPs:code system="YJ">124455553</mmlPs:code>
+                        <mmlPs:code  mmlPs:system="YJ">124455553</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>3</mmlPs:dose>
                       <mmlPs:doseUnit>包</mmlPs:doseUnit>
@@ -300,7 +300,7 @@
                       <mmlPs:batchNo>8</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>ツムラ葛根湯エキス顆粒〔１〕</mmlPs:name>
-                        <mmlPs:code system="YJ">124455553</mmlPs:code>
+                        <mmlPs:code mmlPs:system="YJ">124455553</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>3</mmlPs:dose>
                       <mmlPs:doseUnit>包</mmlPs:doseUnit>

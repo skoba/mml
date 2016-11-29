@@ -12,7 +12,7 @@ xmlns:mmlHi= "http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
 
 .List of elements
 |=====
-| |Elements|Attribute|Datatypes|Occurence|TableId
+| |Elements|Attribute|Data types|Occurence|Table Id
 |M11.|mmlHi:HealthInsuranceModule| | | |
 | | |mmlHi:countryType|string|#IMPLIED|
 |M11.1.|mmlHi:insuranceClass| |string|?|
