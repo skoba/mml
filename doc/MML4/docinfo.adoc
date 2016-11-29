@@ -165,22 +165,22 @@ mmlSc:personId，mmlSc:personIdType に対象者を記載する．
 
 .記載者施設に無期限の全ての権利と，患者 (患者太郎) に 2001 年 10 月 1 日から 2001 年 12 月 31 日まで参照の権利を与える場合
 [source, xml]
-<securityLevel>
-  <accessRight permit="all">
+<mmlSc:securityLevel>
+  <mmlSc:accessRight permit="all">
     <mmlSc:facility>
       <mmlSc:facilityName mmlSc:facilityCode="creator" mmlSc:tableId="MML0035">
         記載者施設
       </mmlSc:facilityName>
     </mmlSc:facility>
   </accessRight>
-  <accessRight permit="read" startDate="2001-10-01" endDate="2001-12-31">
+  <mmlSc:accessRight permit="read" startDate="2001-10-01" endDate="2001-12-31">
     <mmlSc:person>
       <mmlSc:personName mmlSc:personCode="patient" mmlSc:tableId="MML0036" mmlSc:personId="4500001234" mmlSc:personIdType="dolphinUserid_2001-10-03">
         患者太郎
       </mmlSc:personName>
     </mmlSc:person>
-  </accessRight>
-</securityLevel>
+  </mmlSc:accessRight>
+</mmlSc:securityLevel>
 
 ==== title
 【内容】文書タイトル +
