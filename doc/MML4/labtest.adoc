@@ -322,7 +322,7 @@ final 最終報告
 【省略】不可 +
 
 ===== M19.2.2.3. mmlLb:numValue
-【内容】値 (数値) ．数値データの場合のみ設定． +
+【内容】値 (数値) ．数値データを記録する。 +
 【データ型】decimal +
 【省略】省略可 +
 【属性】
@@ -338,6 +338,30 @@ N 基準値範囲内 +
 L 下限値未満 +
 A 異常
 |=====
+[NOTE]
+====
+DTDではnil(空白)が許されていたが、decimal型としたことで空白の値を取ることが原則許されなくなった。Ver 3までは、下記のようにnumValueとしては空欄でもデータが異常値であることを示すことができていた。
+[source, xml]
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
+      <mmlLb:value>ヨウセイ</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
+    </mmlLb:item>
+
+このような表現を許すようにnumValueにnillable属性をとることとした。
+[source, xml]
+  <xs:element name="numValue" nillable="true">
+
+しかしながら、インスタンスにはnilであることを明示的に記入する必要がある。
+[source, xml]
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
+      <mmlLb:value>ヨウセイ</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
+    </mmlLb:item>
+
+====
+
 
 ===== M19.2.2.4. mmlLb:unit
 【内容】単位 +

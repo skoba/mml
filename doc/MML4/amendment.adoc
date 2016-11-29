@@ -255,8 +255,55 @@ uri型がXML Schema仕様にないため、string型に変更した。
 ====== mmlPs:batchNo
 4.1.1の解説文書ではdecimal, スキーマはintegerであった。スキーマに合わせて解説文書をintegerに修正
 
+====== mmlSm:clinicalRecord, mmlSm:deathInfo, mmlSm:testResult
+属性情報のmmlSm:dateがdate/dateTimeとDTDの曖昧さを許容していた。XML Schemaでは型定義が厳密であることから、dateTime型に統一することとした。
+
+====== mmlLb:numValue
+DTDではnil(空白)が許されていたが、decimal型としたことで空白の値を取ることが原則許されなくなった。Ver 3までは、下記のようにnumValueとしては空欄でもデータが異常値であることを示すことができていた。
+[source, xml]
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
+      <mmlLb:value>ヨウセイ</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
+    </mmlLb:item>
+
+このような表現を許すようにnumValueにnillable属性をとることとした。
+[source, xml]
+  <xs:element name="numValue" nillable="true">
+
+しかしながら、インスタンスにはnilであることを明示的に記入する必要がある。
+[source, xml]
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
+      <mmlLb:value>ヨウセイ</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
+    </mmlLb:item>
+
+====== mmlRd:categoryの修正
+categoryに文字列を記入することができなくなっていたため下記のように修正を行った。
+
+[source, xml]
+  <xs:element name="category">
+    <xs:complexType>
+      <xs:simpleContent>
+	<xs:extension base="xs:string">
+	  <xs:attributeGroup ref="mmlRd:attlist.mmlRd.category"/>
+	</xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+
 ===== サンプルインスタンスの追加
 
+===== チェックプログラムの追加
+
+Rubyでスキーマ、インスタンスの整合性を取るチェックプログラムを作成した。以下の手順でチェックプログラムを操作できる。
+
+[source, shell]
+% git clone git@github.com:skoba/mml.git
+% bundle install
+% rake
 
 ====== 誤字、表現の修正
 
