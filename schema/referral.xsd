@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************** -->
 <!-- 紹介状情報 -->
-<!-- ReferralModule XSD Version 4.0 -->
+<!-- ReferralModule XSD Version 4.1 -->
 <!-- *************************************************** -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0" 
   xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"

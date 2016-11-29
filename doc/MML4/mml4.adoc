@@ -58,6 +58,8 @@ include::overview.adoc[]
 
 include::principle.adoc[]
 
+include::basement.adoc[]
+
 include::common_components.adoc[]
 
 include::header.adoc[]

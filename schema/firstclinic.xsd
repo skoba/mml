@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************** -->
 <!-- 初診時特有情報 -->
-<!-- FirstClinicModule XSD Version 4.0 -->
+<!-- FirstClinicModule XSD Version 4.1 -->
 <!-- *************************************************** -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0" 
   xmlns:mmlFcl="http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"

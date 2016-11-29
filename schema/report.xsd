@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************** -->
 <!-- 報告書情報 -->
-<!-- ReportModule XSD Version 4.0 -->
+<!-- ReportModule XSD Version 4.1 -->
 <!-- *************************************************** -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- *************************************************** -->
 <!-- 基礎的診療情報 -->
-<!-- BaseClinicModule XSD Version 4.0 -->
+<!-- BaseClinicModule XSD Version 4.1 -->
 <!-- *************************************************** -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     elementFormDefault="qualified"

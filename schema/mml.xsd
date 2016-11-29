@@ -111,13 +111,9 @@
         <xs:element minOccurs="0" ref="mml:docInfo"/>
         <xs:element minOccurs="0" ref="mml:content"/>
       </xs:sequence>
-      <xs:attributeGroup ref="mml:attlist.MmlModuleItem"/>
+      <xs:attribute name="type" type="xs:string" use="optional"/>
     </xs:complexType>
   </xs:element>
-  
-  <xs:attributeGroup name="attlist.MmlModuleItem">
-    <xs:attribute name="type"/>
-  </xs:attributeGroup>
 
   <xs:element name="docInfo">
     <xs:complexType>
