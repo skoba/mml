@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlVs:VitalSignModule
+  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
+  xmlns:mmlPi="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0 ../../schema/vitalsign.xsd">
+  <mmlVs:item>
+    <mmlVs:itemName>Systolic blood pressure</mmlVs:itemName>
+    <mmlVs:numValue>120</mmlVs:numValue>
+    <mmlVs:unit>mmHg</mmlVs:unit>
+  </mmlVs:item>
+  <mmlVs:item>
+    <mmlVs:itemName>Diastolic blood pressure</mmlVs:itemName>
+    <mmlVs:numValue>80</mmlVs:numValue>
+    <mmlVs:unit>mmHg</mmlVs:unit>
+  </mmlVs:item>
+  <mmlVs:item>
+    <mmlVs:itemName>Pulse rate</mmlVs:itemName>
+    <mmlVs:numValue>60</mmlVs:numValue>
+    <mmlVs:unit>/min</mmlVs:unit>
+  </mmlVs:item>
+  <mmlVs:item>
+    <mmlVs:itemName>Body temperature</mmlVs:itemName>
+    <mmlVs:numValue>36</mmlVs:numValue>
+    <mmlVs:unit>centigrade</mmlVs:unit>
+  </mmlVs:item>
+  <mmlVs:observedTime>2016-12-01T12:24:47</mmlVs:observedTime>
+</mmlVs:VitalSignModule>

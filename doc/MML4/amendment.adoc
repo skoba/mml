@@ -227,6 +227,9 @@ DTDからXML schemaにはほぼ自動変換したものを使用していたが�
 
 ===== スキーマに関わる修正
 
+====== MmlのcreateDate属性
+MML Ver 2.3ではdate型、MML ver 3ではdateTime型でとされていた。Ver 3.xを引き継ぐこととし、
+
 ====== docInfo, moduleVersion属性
 uri型がXML Schema仕様にないため、string型に変更した。
 
