@@ -24,10 +24,7 @@
   xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
   xmlns:mmlSc="http://www.medxml.net/MML/v4/SharedComponent/Security/1.0"
   xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
-  xmlns:claim="http://www.medxml.net/claim/claimModule/2.1" xmlns:claimA="http://www.medxml.net/claim/claimAmountModule/2.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/base/1.0/mml.xsd ">
-  <!-- xmlns:mmlSm="http://www.medxml.net/MML/v4/ContentModule/Summary/1.0" -->
+  xmlns:claim="http://www.medxml.net/claim/claimModule/2.1" xmlns:claimA="http://www.medxml.net/claim/claimAmountModule/2.1">
   <MmlHeader>
     <mmlCi:CreatorInfo>
       <mmlPsi:PersonalizedInfo>
@@ -104,7 +101,7 @@
         <docId>
           <uid>JPN999999900009AC1F1B696FE337200202081013220003</uid>
           <parentId relation="oldEdition">JPN999999900009AC1F1B696FE337200202081013220002</parentId></docId>
-        <confirmDate>2015-05-13</confirmDate>
+        <confirmDate>2015-05-13T19:32:33</confirmDate>
         <mmlCi:CreatorInfo>
           <mmlPsi:PersonalizedInfo>
             <mmlCm:Id mmlCm:type="facility" mmlCm:tableId="JPN999999900009">41603232</mmlCm:Id>
@@ -314,7 +311,7 @@
                       <mmlPs:batchNo>9</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>レニベース錠（５㎎）</mmlPs:name>
-                        <mmlPs:code system="YJ">3345455553</mmlPs:code>
+                        <mmlPs:code mmlPs:system="YJ">3345455553</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>1</mmlPs:dose>
                       <mmlPs:doseUnit>錠</mmlPs:doseUnit>
@@ -328,7 +325,7 @@
                       <mmlPs:batchNo>10</mmlPs:batchNo>
                       <mmlPs:medicine>
                         <mmlPs:name>ハルシオン錠（０．２５㎎）</mmlPs:name>
-                        <mmlPs:code system="YJ">33222255553</mmlPs:code>
+                        <mmlPs:code mmlPs:system="YJ">33222255553</mmlPs:code>
                       </mmlPs:medicine>
                       <mmlPs:dose>1</mmlPs:dose>
                       <mmlPs:doseUnit>錠</mmlPs:doseUnit>
