@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlSc:securityLevel
+  xmlns:mmlSc="http://www.medxml.net/MML/v4/SharedComponent/Security/1.0">
+  <mmlSc:accessRight permit="all" startDate="2016-10-01" endDate="2016-12-31">
+    <mmlSc:facility>
+      <mmlSc:facilityName mmlSc:facilityCode="individual" mmlSc:tableId="MML0035" mmlSc:facilityId="JPN453010100003" mmlSc:facilityIdType="JMARI">
+        宮崎医科大学附属病院
+      </mmlSc:facilityName>
+    </mmlSc:facility>
+  </mmlSc:accessRight>
+</mmlSc:securityLevel>

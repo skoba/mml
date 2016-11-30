@@ -8,8 +8,8 @@
   xmlns:mmlHi="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1"
   xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0">
   
-  <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1" schemaLocation="healthinsurance.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0" schemaLocation="department.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1" schemaLocation="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1/healthinsurance.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0" schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0/department.xsd" />
   
   <xs:element name="ClaimModule">
     <xs:complexType>

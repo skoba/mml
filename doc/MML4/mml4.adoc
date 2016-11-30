@@ -9,7 +9,7 @@
 :linkcss:
 :pdf-page-size: a4
 :doctype: book
-= MML 4.1
+= MML 4.1.2
 
 [[introduction]]
 == はじめに
@@ -62,8 +62,8 @@ include::basement.adoc[]
 
 include::common_components.adoc[]
 
-include::header.adoc[]
+// include::header.adoc[]
 
-include::docinfo.adoc[]
+// include::docinfo.adoc[]
 
 include::content_modules.adoc[]
