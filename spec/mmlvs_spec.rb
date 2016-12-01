@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe 'mmlPs:VitalSignModule' do
-  let(:validator) { SampleValidator.new 'vitalsign.xsd' }
+describe 'mmlFs:FlowsheetModule' do
+  let(:validator) { SampleValidator.new 'flowsheet.xsd' }
 
   example 'sample instance validation' do
-    expect(validator).to be_valid 'mmlvs_sample.xml'
+    expect(validator).to be_valid 'mmlfs_sample.xml'
   end
 end

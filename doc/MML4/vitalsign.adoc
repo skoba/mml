@@ -170,7 +170,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ===== M22.4.3. mmlVs:bodyLocation
 【内容】バイタルサインを測定した身体の部位。右上腕、左下腿など。 +
-【省略】string +
+【データ型】string +
 【省略】省略可能
 
 ===== M22.4.4. mmlVs:position

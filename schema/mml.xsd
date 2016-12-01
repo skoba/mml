@@ -85,7 +85,6 @@
       <xs:sequence>
         <xs:element ref="mmlCi:CreatorInfo"/>
         <xs:element ref="mml:masterId"/>
-        <xs:element ref="mml:toc"/>
         <xs:element ref="mml:scopePeriod" minOccurs="0"/>
         <xs:element ref="mml:encryptInfo" minOccurs="0"/>
       </xs:sequence>
