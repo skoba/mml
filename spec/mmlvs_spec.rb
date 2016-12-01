@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 describe 'mmlPs:VitalSignModule' do
   let(:validator) { SampleValidator.new 'vitalsign.xsd' }
 
