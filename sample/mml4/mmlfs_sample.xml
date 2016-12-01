@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlFs:FlowSheetModule
+    xmlns:mmlFs="http://www.medxml.net/MML/v4/ContentModule/FlowSheet/1.0"
+    xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+    xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+    xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
+    xmlns:mmlPi="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0">
+  <mmlFs:context>
+    <mmlFs:facility mmlFs:facilityCode="JPN432101234567" mmlFs:facilityCodeId="JMARI">
+      EHR医科大学
+    </mmlFs:facility>
+    <mmlFs:department mmlFs:depCode="1" mmlFs:depCodeId="MML0028">
+      第5内科
+    </mmlFs:department>
+    <mmlFs:ward mmlFs:wardCode="4" mmlFs:wardCodeId="MML0028">
+      介護病棟
+    </mmlFs:ward>
+    <mmlFs:observer mmlFs:obsCode="007" mmlFs:obsCodeId="local">
+      看護師A
+    </mmlFs:observer>
+  </mmlFs:context>
+  <mmlVs:VitalSignModule>
+    <mmlVs:item>
+      <mmlVs:itemName>Systolic blood pressure</mmlVs:itemName>
+      <mmlVs:numValue>120</mmlVs:numValue>
+      <mmlVs:unit>mmHg</mmlVs:unit>
+    </mmlVs:item>
+    <mmlVs:item>
+      <mmlVs:itemName>Diastolic blood pressure</mmlVs:itemName>
+      <mmlVs:numValue>80</mmlVs:numValue>
+      <mmlVs:unit>mmHg</mmlVs:unit>
+    </mmlVs:item>
+    <mmlVs:item>
+      <mmlVs:itemName>Pulse rate</mmlVs:itemName>
+      <mmlVs:numValue>60</mmlVs:numValue>
+      <mmlVs:unit>/min</mmlVs:unit>
+    </mmlVs:item>
+    <mmlVs:item>
+      <mmlVs:itemName>Body temperature</mmlVs:itemName>
+      <mmlVs:numValue>36</mmlVs:numValue>
+      <mmlVs:unit>centigrade</mmlVs:unit>
+    </mmlVs:item>
+    <mmlVs:observedTime>2016-12-01T08:32:47</mmlVs:observedTime>
+  </mmlVs:VitalSignModule>
+  <mmlVs:VitalSignModule>
+    <mmlVs:item>
+      <mmlVs:itemName>Systolic blood pressure</mmlVs:itemName>
+      <mmlVs:numValue>132</mmlVs:numValue>
+      <mmlVs:unit>mmHg</mmlVs:unit>
+    </mmlVs:item>
+    <mmlVs:item>
+      <mmlVs:itemName>Diastolic blood pressure</mmlVs:itemName>
+      <mmlVs:numValue>72</mmlVs:numValue>
+      <mmlVs:unit>mmHg</mmlVs:unit>
+    </mmlVs:item>
+    <mmlVs:item>
+      <mmlVs:itemName>Pulse rate</mmlVs:itemName>
+      <mmlVs:numValue>64</mmlVs:numValue>
+      <mmlVs:unit>/min</mmlVs:unit>
+    </mmlVs:item>
+    <mmlVs:item>
+      <mmlVs:itemName>Body temperature</mmlVs:itemName>
+      <mmlVs:numValue>36.2</mmlVs:numValue>
+      <mmlVs:unit>centigrade</mmlVs:unit>
+    </mmlVs:item>
+    <mmlVs:item>
+      <mmlVs:itemName>SpO2</mmlVs:itemName>
+      <mmlVs:numValue>97</mmlVs:numValue>
+      <mmlVs:unit>%</mmlVs:unit>
+    </mmlVs:item>
+    <mmlVs:observedTime>2016-12-01T19:21:39</mmlVs:observedTime>
+  </mmlVs:VitalSignModule>
+  <mmlFs:intake>
+    <mmlFs:intakeType>朝食(主)</mmlFs:intakeType>
+    <mmlFs:intakeVolume>10</mmlFs:intakeVolume>
+    <mmlFs:intakeUnit>/10</mmlFs:intakeUnit>
+  </mmlFs:intake>
+  <mmlFs:intake>
+    <mmlFs:intakeType>朝食(副)</mmlFs:intakeType>
+    <mmlFs:intakeVolume>8</mmlFs:intakeVolume>
+    <mmlFs:intakeUnit>/10</mmlFs:intakeUnit>
+  </mmlFs:intake>
+  <mmlFs:intake>
+    <mmlFs:intakeType>経管栄養剤</mmlFs:intakeType>
+    <mmlFs:intakeVolume>200</mmlFs:intakeVolume>
+    <mmlFs:intakeUnit>ml</mmlFs:intakeUnit>
+    <mmlFs:intakePathway>胃瘻</mmlFs:intakePathway>
+    <mmlFs:intakeStartTime>2016-12-01T15:30:11</mmlFs:intakeStartTime>
+    <mmlFs:intakeEndTime>2016-12-01T16:04:13</mmlFs:intakeEndTime>
+  </mmlFs:intake>
+  <mmlFs:bodilyOutput>
+    <mmlFs:boType>urine</mmlFs:boType>
+    <mmlFs:boVolume>1736</mmlFs:boVolume>
+    <mmlFs:boUnit>ml</mmlFs:boUnit>
+    <mmlFs:boFrequency>
+      <mmlFs:bofTimes>5</mmlFs:bofTimes>
+      <mmlFs:bofPeriodStartTime>2016-12-01T09:00:00</mmlFs:bofPeriodStartTime>
+      <mmlFs:bofPeriodEndTime>2016-12-01T21:00:00</mmlFs:bofPeriodEndTime>
+    </mmlFs:boFrequency>
+  </mmlFs:bodilyOutput>
+  <mmlFs:bodilyOutput>
+    <mmlFs:boType>feces</mmlFs:boType>
+    <mmlFs:boVolume>345</mmlFs:boVolume>
+    <mmlFs:boUnit>g</mmlFs:boUnit>
+    <mmlFs:boFrequency>
+      <mmlFs:bofTimes>1</mmlFs:bofTimes>
+      <mmlFs:bofPeriodStartTime>2016-12-01T09:00:00</mmlFs:bofPeriodStartTime>
+      <mmlFs:bofPeriodEndTime>2016-12-02T09:00:00</mmlFs:bofPeriodEndTime>
+    </mmlFs:boFrequency>
+    <mmlFs:boMemo>褐色調</mmlFs:boMemo>
+  </mmlFs:bodilyOutput>
+  <mmlFs:bodilyOutput>
+    <mmlFs:boType>bile</mmlFs:boType>
+    <mmlFs:boVolume>80</mmlFs:boVolume>
+    <mmlFs:boUnit>ml</mmlFs:boUnit>
+    <mmlFs:boPathway>ドレーン</mmlFs:boPathway>
+    <mmlFs:boStartTime>2016-12-01T10:30:00</mmlFs:boStartTime>
+    <mmlFs:boEndTime>2016-12-01T12:12:00</mmlFs:boEndTime>    
+  </mmlFs:bodilyOutput>
+</mmlFs:FlowSheetModule>
+
