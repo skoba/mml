@@ -9,7 +9,7 @@
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
   xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0">
 
-  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0/common.xsd"/>
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd"/>
   
   <xs:element name="Department">
     <xs:complexType>

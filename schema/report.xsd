@@ -9,7 +9,7 @@
   xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0">
 
-  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0/common.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
 
   <xs:element name="ReportModule">
     <xs:complexType>

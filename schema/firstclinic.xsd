@@ -9,8 +9,8 @@
   xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0" schemaLocation="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0/registereddiagnosis.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0" schemaLocation="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0/facility.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0" schemaLocation="registereddiagnosis.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0" schemaLocation="facility.xsd" />
   
   <xs:element name="FirstClinicModule">
     <xs:complexType>

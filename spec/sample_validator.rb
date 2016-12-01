@@ -6,7 +6,7 @@ class SampleValidator
   end
 
   def schema
-    Nokogiri::XML::Schema(File.read(schema_file))
+    Nokogiri::XML::Schema(File.open(schema_file))
   end
 
   def valid?(sample)
@@ -14,7 +14,7 @@ class SampleValidator
   end
 
   def sample_file(sample)
-    Nokogiri::XML(File.read(File.join SAMPLE_LOCATION, sample))
+    Nokogiri::XML(File.open(File.join SAMPLE_LOCATION, sample))
   end
 
   def schema_file

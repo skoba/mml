@@ -17,7 +17,7 @@ class MMLSchemaValidator
 
   def well_formed?
     begin
-      Nokogiri::XML(@schema) {|config| config.strict.nonet }
+      Nokogiri::XML(@schema) {|config| config.strict }
       true
     rescue Nokogiri::XML::SyntaxError => e
       puts "#{@schema} is mal-formed. #{e}"

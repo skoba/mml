@@ -5,7 +5,7 @@
   xmlns:mmlVs="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0">
 
   <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0"
-    schemaLocation="http://www.medxml.net/MML/v4/ContentModule/VitalSign/1.0/vitalsign.xsd"/>
+    schemaLocation="vitalsign.xsd"/>
 
   <xs:element name="FlowSheetModule">
     <xs:complexType>
