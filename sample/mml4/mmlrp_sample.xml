@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlRp:ReportModule
+    xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0">
+  <mmlRp:information>
+  </mmlRp:information>
+  <mmlRp:reportBody>
+  </mmlRp:reportBody>
+</mmlRp:ReportModule>

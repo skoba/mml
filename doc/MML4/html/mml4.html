@@ -461,13 +461,19 @@ mmlInj:system</pre>
 <div class="sect4">
 <h5 id="_スキーマに関わる修正">2.1.4.1. スキーマに関わる修正</h5>
 <div class="sect5">
-<h6 id="_docinfo_moduleversion属性">2.1.4.1.1. docInfo, moduleVersion属性</h6>
+<h6 id="_mmlのcreatedate属性">2.1.4.1.1. MmlのcreateDate属性</h6>
+<div class="paragraph">
+<p>MML Ver 2.3ではdate型、MML ver 3ではdateTime型でとされていた。Ver 3.xを引き継ぐこととし、</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_docinfo_moduleversion属性">2.1.4.1.2. docInfo, moduleVersion属性</h6>
 <div class="paragraph">
 <p>uri型がXML Schema仕様にないため、string型に変更した。</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlsm_attrlistの属性としてrelationおよびrelateddocの定義が誤って定義されていた">2.1.4.1.2. mmlSm:attrListの属性としてrelationおよびrelatedDocの定義が誤って定義されていた。</h6>
+<h6 id="_mmlsm_attrlistの属性としてrelationおよびrelateddocの定義が誤って定義されていた">2.1.4.1.3. mmlSm:attrListの属性としてrelationおよびrelatedDocの定義が誤って定義されていた。</h6>
 <div class="paragraph">
 <p>下記のように修正を行った。</p>
 </div>
@@ -484,7 +490,7 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlsg_referenceinfo">2.1.4.1.3. mmlSg:referenceInfo</h6>
+<h6 id="_mmlsg_referenceinfo">2.1.4.1.4. mmlSg:referenceInfo</h6>
 <div class="paragraph">
 <p>ドキュメントおよびVer 3.0のDTDでは1回以上の繰り返しとなっていたため下記のように修正した。</p>
 </div>
@@ -502,25 +508,25 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlps_frequencyperday">2.1.4.1.4. mmlPs:frequencyPerDay</h6>
+<h6 id="_mmlps_frequencyperday">2.1.4.1.5. mmlPs:frequencyPerDay</h6>
 <div class="paragraph">
 <p>4.1.1の解説文書ではdecimal, スキーマはstringであったが、ともにintegerに修正</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlps_batchno">2.1.4.1.5. mmlPs:batchNo</h6>
+<h6 id="_mmlps_batchno">2.1.4.1.6. mmlPs:batchNo</h6>
 <div class="paragraph">
 <p>4.1.1の解説文書ではdecimal, スキーマはintegerであった。スキーマに合わせて解説文書をintegerに修正</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlsm_clinicalrecord_mmlsm_deathinfo_mmlsm_testresult">2.1.4.1.6. mmlSm:clinicalRecord, mmlSm:deathInfo, mmlSm:testResult</h6>
+<h6 id="_mmlsm_clinicalrecord_mmlsm_deathinfo_mmlsm_testresult">2.1.4.1.7. mmlSm:clinicalRecord, mmlSm:deathInfo, mmlSm:testResult</h6>
 <div class="paragraph">
 <p>属性情報のmmlSm:dateがdate/dateTimeとDTDの曖昧さを許容していた。XML Schemaでは型定義が厳密であることから、dateTime型に統一することとした。</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmllb_numvalue">2.1.4.1.7. mmlLb:numValue</h6>
+<h6 id="_mmllb_numvalue">2.1.4.1.8. mmlLb:numValue</h6>
 <div class="paragraph">
 <p>DTDではnil(空白)が許されていたが、decimal型としたことで空白の値を取ることが原則許されなくなった。Ver 3までは、下記のようにnumValueとしては空欄でもデータが異常値であることを示すことができていた。</p>
 </div>
@@ -555,7 +561,7 @@ mmlInj:system</pre>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlrd_categoryの修正">2.1.4.1.8. mmlRd:categoryの修正</h6>
+<h6 id="_mmlrd_categoryの修正">2.1.4.1.9. mmlRd:categoryの修正</h6>
 <div class="paragraph">
 <p>categoryに文字列を記入することができなくなっていたため下記のように修正を行った。</p>
 </div>
@@ -2299,10 +2305,10 @@ xs:token
 <div class="sect4">
 <h5 id="_m0_1_3_1_tocitem">7.1.2.6. M0.1.3.1. tocItem</h5>
 <div class="paragraph">
-<p>【内容】本MML文書で使われている全てのDTDをリストアップする．<br>
+<p>【内容】本MML文書で使われている全てのモジュールをリストアップする．<br>
 【データ型】string<br>
 【省略】不可<br>
-【繰り返し設定】繰り返しあり．使用したDTDの種類だけ繰り返す．</p>
+【繰り返し設定】繰り返しあり．使用したのスキーマの種類だけ繰り返す．</p>
 </div>
 </div>
 <div class="sect4">
@@ -15545,7 +15551,7 @@ final 最終報告</p></td>
 <h5 id="_m22_4_3_mmlvs_bodylocation">9.13.2.17. M22.4.3. mmlVs:bodyLocation</h5>
 <div class="paragraph">
 <p>【内容】バイタルサインを測定した身体の部位。右上腕、左下腿など。<br>
-【省略】string<br>
+【データ型】string<br>
 【省略】省略可能</p>
 </div>
 </div>
