@@ -1,0 +1,98 @@
+<mmlRe:ReferralModule
+  xmlns:mmlPi= "http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
+  xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
+  xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+  xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+  xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
+  xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0"
+  xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+  xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0"
+  xmlns:mmlPsi= "http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0">
+  <mmlPi:PatientModule>
+    <mmlPi:uniqueInfo>
+      <mmlPi:masterId>
+	<mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10"
+		  mmlCm:checkDigit = "5" mmlCm:tableId = "MML0024">
+	  12345
+	</mmlCm:Id>
+      </mmlPi:masterId>
+    </mmlPi:uniqueInfo>
+    <mmlPi:personName>
+      <mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025">
+	<mmlNm:family>Araki</mmlNm:family>
+	<mmlNm:given>Kenji</mmlNm:given>
+	<mmlNm:degree>M.D.</mmlNm:degree>
+      </mmlNm:Name>      
+    </mmlPi:personName>
+    <mmlPi:birthday>1958-10-21</mmlPi:birthday>
+    <mmlPi:sex>male</mmlPi:sex>
+  </mmlPi:PatientModule>
+  <mmlRe:referFrom>
+    <mmlPsi:PersonalizedInfo>  
+      <mmlCm:Id mmlCm:type = "facility" mmlCm:checkDigitSchema = "M10"
+		mmlCm:checkDigit = "5" mmlCm:tableId = "MML0024">
+	12345
+      </mmlCm:Id>
+      <mmlPsi:personName>
+	<mmlNm:Name mmlNm:repCode = "A" mmlNm:tableId = "MML0025">
+	  <mmlNm:family>Araki</mmlNm:family>
+	  <mmlNm:given>Kenji</mmlNm:given>
+	  <mmlNm:degree>M.D.</mmlNm:degree>
+	</mmlNm:Name>
+      </mmlPsi:personName>
+      <mmlFc:Facility>
+	<mmlFc:name mmlFc:repCode = "A" mmlFc:tableId="MML0025">
+	  New Millenium Medical College Hospital
+	</mmlFc:name>
+	<mmlCm:Id mmlCm:type = "insurance"
+		  mmlCm:tableId = "MML0027">12345</mmlCm:Id>
+      </mmlFc:Facility>
+      <mmlDp:Department>
+	<mmlDp:name mmlDp:repCode = "A" mmlDp:tableId = "MML0025">
+	  Cardiovascular Surgery
+	</mmlDp:name>
+	<mmlCm:Id mmlCm:type = "medical" mmlCm:tableId = "MML0029">16</mmlCm:Id>
+      </mmlDp:Department>
+      <mmlPsi:addresses>
+	<mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "business"
+		       mmlAd:tableId = "MML0025">
+	  <mmlAd:full>
+            5200 Kihara, Kiyotake-cho, Miyazaki-gun, Miyazaki-prefecture
+	  </mmlAd:full>
+      <mmlAd:zip>889-1692</mmlAd:zip>
+      <mmlAd:countryCode>JPN</mmlAd:countryCode>
+	</mmlAd:Address>
+      </mmlPsi:addresses>
+      <mmlPsi:emailAddresses>
+	<mmlCm:email>araki@post.medxml.net</mmlCm:email>
+      </mmlPsi:emailAddresses>
+      <mmlPsi:phones>
+	<mmlPh:Phone mmlPh:telEquipType = "PH">
+	  <mmlPh:area>0985</mmlPh:area>
+	  <mmlPh:city>85</mmlPh:city>
+	  <mmlPh:number>1500</mmlPh:number>
+	  <mmlPh:extension>2067</mmlPh:extension>
+	  <mmlPh:country>81</mmlPh:country>
+	  <mmlPh:memo>daytime</mmlPh:memo>
+	</mmlPh:Phone>
+      </mmlPsi:phones>
+    </mmlPsi:PersonalizedInfo>
+  </mmlRe:referFrom>
+  <mmlRe:title>受診願い</mmlRe:title>
+  <mmlRe:chiefComplaints>全身倦怠感</mmlRe:chiefComplaints>
+  <mmlRe:presentIllness>
+    検診にて白血球異常値を指摘され二次検診目的にて当院受診。精査の結果、急性骨髄性白血病と診断された。
+  </mmlRe:presentIllness>
+  <mmlRe:referPurpose>
+    精査の上、加療をお願いします。
+  </mmlRe:referPurpose>
+  <mmlRe:referToFacility>
+    <mmlFc:Facility>
+      <mmlFc:name mmlFc:repCode = "A" mmlFc:tableId="MML0025">
+	京都医科大学
+      </mmlFc:name>
+      <mmlCm:Id mmlCm:type = "insurance"
+		mmlCm:tableId = "MML0027">67890</mmlCm:Id>
+    </mmlFc:Facility>
+  </mmlRe:referToFacility>
+</mmlRe:ReferralModule>
