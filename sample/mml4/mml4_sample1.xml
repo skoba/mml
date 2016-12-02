@@ -61,30 +61,6 @@
     <masterId>
       <mmlCm:Id mmlCm:type="facility" mmlCm:tableId="JPN999999900009">0000469905</mmlCm:Id>
     </masterId>
-    <toc>
-      <tocItem>http://www.w3.org/1999/xhtml</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Common/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Name/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Department/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Address/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/CreatorInfo/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/SharedComponent/Security/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/ContentModule/Summary/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/ContentModule/test/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/ContentModule/report/1.0</tocItem>
-      <tocItem>http://www.medxml.net/MML/v4/ContentModule/Referral/1.0</tocItem>
-    </toc>
   </MmlHeader>
   <MmlBody>
     <MmlModuleItem>

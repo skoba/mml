@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mmlRp:ReportModule
-    xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0">
-  <mmlRp:information>
+    xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
+    xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0">
+  <mmlRp:information mmlRp:performTime="2016-12-01T20:08:49" mmlRp:reportTime="2016-12-02T20:08:49">
+    <mmlRp:reportStatus mmlRp:statusCode="final" mmlRp:statusCodeId="mmlLb0001">最終報告</mmlRp:reportStatus>
+    <mmlRp:testClass mmlRp:testClassCode="ctscan" mmlRp:testClassCodeId="MML0033">CT スキャン</mmlRp:testClass>
+    <mmlRp:organ>腹部</mmlRp:organ>
+    <mmlRp:consultFrom>
+      <mmlRp:conFacility mmlRp:facilityCode="1.2.840.114319.5.1000.1.26.1" mmlRp:facilityCodeId="OID">シルク病院</mmlRp:conFacility>
+      <mmlRp:client mmlRp:clientCode="201605" mmlRp:clientCodeId="1.2.840.114319.5.1000.1.26.1">青山 慶二</mmlRp:client>
+  </mmlRp:consultFrom>
+  <mmlRp:perform>
+    <mmlRp:pFacility mmlRp:facilityCode="1.2.840.114319.5.1000.1.26.1" mmlRp:facilityCodeId="OID">シルク病院</mmlRp:pFacility>
+    <mmlRp:performer mmlRp:performerCode="301604" mmlRp:performerCodeId="1.2.840.114319.5.1000.1.26.1">菊池 誠也</mmlRp:performer>
+  </mmlRp:perform>
   </mmlRp:information>
   <mmlRp:reportBody>
+    <mmlRp:chiefComplaints>特になし HCC</mmlRp:chiefComplaints>
+    <mmlRp:testPurpose>（CT精査）治療後の評価をお願いします。平成14年3月28日にs5,s8にSMANCS注入を施行。4月8日、19日、6月22日、7月2日 RFA 施行。viableな病変の存在を確認。7月17日 CTガイド下PEIT施行。8月1日、8月16日 TACE 施行。</mmlRp:testPurpose>
+    <mmlRp:testDx>HCC, post TACE</mmlRp:testDx>
+    <mmlRp:testNotes>肝前区域にTACE後のlipiodol集積を認めます。治療後のvaibilityの有無については治療後の変化に伴うabnormal enhance やlipiodol集積もあり評価困難ですが、一部結節状のソマリもあり残存ありそうです。follow評価下さい。明らかなnew lesionは指摘できません。腹水はありません。<mmlCm:extRef mmlCm:contentType="imge/jpeg" mmlCm:medicalRole="ctScan" mmlCm:title="plain" mmlCm:href="mmlRp_1.2.840.114319.5.1000.1.26.1_0800_77e167cc-4795-4357-b37e-8c6b0d96cf21_00.jpg"/>
+      <mmlCm:extRef mmlCm:contentType="imge/jpeg" mmlCm:medicalRole="ctScan" mmlCm:title="plain" mmlCm:href="mmlRp_1.2.840.114319.5.1000.1.26.1_0800_77e167cc-4795-4357-b37e-8c6b0d96cf21_01.jpg"/>
+    </mmlRp:testNotes>
   </mmlRp:reportBody>
 </mmlRp:ReportModule>
