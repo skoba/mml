@@ -19,7 +19,7 @@ image::mml_structure.png[]
 
 === MML headerブロック
 
-MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)、toc(Table of Contents)情報で構成される。SAXパーサではこのtoc情報を見ることで、MML bodyブロックに記載されるコンテンツモジュールの内容を認識し、それに応じて条件分岐させることができる。
+MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)情報で構成される。
 
 === MML bodyブロック
 MML bodyブロックは複数のitemブロック（MmlModuleItem)で構成されており、各itemブロックにはヘッダ情報（docInfo)とその内容を表すコンテンツモジュール(content)が配置される。

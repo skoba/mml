@@ -9,16 +9,69 @@
 :linkcss:
 
 == MML基本構造
-MMLの基本構造は以下のように定義されている。
 
-=== MML基本構造解説
+MMLはheader部分とbody部分の2つのブロックで構成される(Figure 1)。Header部分にはすべてのMMLインスタンスに共通の情報が定義されており、Body部分には個別のユースケースに対応したコンテンツモジュールが組み込まれるようになっている。
 
-==== namespace宣言
+.MMLの構造
+image::mml_structure.png[]
+
+=== MML headerブロック
+
+MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)情報で構成される。
+
+=== MML bodyブロック
+MML bodyブロックは複数のitemブロック（MmlModuleItem)で構成されており、各itemブロックにはヘッダ情報（docInfo)とその内容を表すコンテンツモジュール(content)が配置される。
+
+docInfoには、記載日、記載者、文書種別、タイトル、文書ID、親文書ID、グループID、アクセス権、外部参照リストが記載されている。
+
+contentには下記のモジュールのいずれか一つが格納される。
+
+docInfoには、記載日、記載者、文書種別、タイトル、文書ID、親文書ID、グループID、アクセス権、外部参照リストが記載されている。
+
+各itemブロックには下記のモジュールのいずれか一つが格納される。
+
+* 患者情報
+* 保険情報
+* 診断履歴情報
+* 生活習慣情報
+* 基礎的診療情報
+* 初診時特有情報
+* 経過記録情報
+* 手術記録情報
+* 臨床サマリー情報
+* 検歴情報
+* 報告書情報
+* 紹介状
+* バイタルサイン
+* 体温表
+* 処方箋
+* 注射記録
+* 透析
+
+=== MML共通形式
+
+複数のモジュールで共通して利用される情報モデルは以下のMML共通形式としてまとめられている。
+
+* 住所表現形式
+* 電話番号表現形式
+* Id形式
+* 外部参照形式
+* 人名表現形式
+* 施設情報形式
+* 個人情報形式
+* 作成者情報形式
+
+ただし、これらの形式を組み込んだ上位モジュールの違いにより使用するテーブルが異なることがあるため、実装の際には各モジュールの解説で確認しなければならない。
+
+
+=== namespace宣言
 MML基本構造のnamespaces宣言は，以下とする．
 [source, xml]
 xmlns:mml="http://www.medxml.net/MML/v4/base"
 
 ここでは、便宜的に、Namespace Prefixとして「mml」を用いる．アプリケーションはこのNamespace Prefixを使うことを推奨する．このドキュメント内では，MML基本構造はこのネームスペースをデフォルトとして定義したものとして記述する．
+
+=== MML基本構造解説
 
 .エレメント一覧表
 [options="header"]
@@ -60,15 +113,13 @@ xmlns:mml="http://www.medxml.net/MML/v4/base"
 |M0.1.1.|mmlCi:creatorInfo| | | |
 |M0.1.2.|masterId| | | |
 |M0.1.2.1.|mmlCm:Id| |string| |
-|M0.1.3.|toc| | | |
-|M0.1.3.1.|tocItem| |string| |
-|M0.1.4.|scopePeriod| | |?|
+|M0.1.3.|scopePeriod| | |?|
 | | |start|date|#IMPLIED|
 | | |end|date|#IMPLIED|
 | | |hasOtherInfo|boolean|#IMPLIED|
 | | |isExtract|boolean|#IMPLIED|
 | | |extractPolicy|string|#IMPLIED|
-|M0.1.5.|encryptInfo| |string|?|
+|M0.1.4.|encryptInfo| |string|?|
 |M0.2.|MmlBody| | | |
 |M0.2.1.|MmlModuleItem| | |+|
 | | |type|string|#IMPLIED|MML0005
@@ -167,10 +218,11 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 　
 
-===== M0.1. MmlHeader
+==== M0.1. MmlHeader
 【内容】ヘッダ情報 +
+MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)情報で構成される。
 
-====== M0.1.1. mmlCi:CreatorInfo
+===== M0.1.1. mmlCi:CreatorInfo
 【内容】生成者識別情報．構造はMML共通形式（作成者情報形式）参照． +
 【省略】不可
 
@@ -184,17 +236,8 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】string +
 【省略】不可
 
-===== M0.1.3. toc
-【内容】table of contet ．header内の「toc」のチェックをシステムで行うことでbodyを見なくてもどのようなデータが入っているかを認識することができる． +
-【省略】不可
 
-===== M0.1.3.1. tocItem
-【内容】本MML文書で使われている全てのモジュールをリストアップする． +
-【データ型】string +
-【省略】不可 +
-【繰り返し設定】繰り返しあり．使用したのスキーマの種類だけ繰り返す．
-
-===== M0.1.4. scopePeriod
+===== M0.1.3. scopePeriod
 【内容】MML本文全体の対象期間 +
 【省略】省略可 +
 【属性】
@@ -209,7 +252,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |=====
 startとendで示されるMML全体の対象期間に対して，送信側の施設に，対象期間外の患者診療情報があれば，hasOtherInfoの値をtrueとする．また，送信側施設の対象期間内のすべての患者情報をMMLインスタンスに記載しておれば，isExtractの値をfalseに，何からの抽出を行っておれば，trueにする．さらに，抽出を行っている場合は，抽出の基準をextractPolicyに記載する．これらは，MMLインスタンスを受け取った側が，患者情報のすべてを受け取っているのか，一部分を受け取っているのかを明確にするためのものである．一部を受け取っているにもかかわらず，すべてを受け取っていると誤解した場合には，診療行為に重大な過ちが生じる可能性があるからである．
 
-===== M0.1.5. encryptInfo
+===== M0.1.4. encryptInfo
 【内容】電子署名などの暗号化情報．記載方法を特に定めない．基本方針の「アクセス権と暗号化」を参照． +
 【データ型】string +
 【省略】省略可

@@ -54,11 +54,12 @@ include::amendment.adoc[]
 
 include::references.adoc[]
 
-include::overview.adoc[]
-
 include::principle.adoc[]
 
 include::basement.adoc[]
+
+// include::overview.adoc[]
+
 
 include::common_components.adoc[]
 
