@@ -4,8 +4,7 @@
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
   xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.medxml.net/MML/v4/ContentModule/ProgressCourse/1.0/progresscourse.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <mmlPc:structuredExpression>
     <mmlPc:problemItem>
       <mmlPc:subjective>
@@ -46,7 +45,7 @@
             <mmlPs:medication>
               <mmlPs:medicine>
                 <mmlPs:name>プレドニゾロン錠 5mg</mmlPs:name>
-                <mmlPs:code system="YJ">61222033</mmlPs:code>
+                <mmlPs:code mmlPs:system="YJ">61222033</mmlPs:code>
               </mmlPs:medicine>
               <mmlPs:dose>4</mmlPs:dose>
               <mmlPs:doseUnit>錠</mmlPs:doseUnit>
@@ -60,7 +59,7 @@
             <mmlPs:medication>
               <mmlPs:medicine>
                 <mmlPs:name>プレドニゾロン錠 5mg</mmlPs:name>
-                <mmlPs:code system="YJ">61222033</mmlPs:code>
+                <mmlPs:code mmlPs:system="YJ">61222033</mmlPs:code>
               </mmlPs:medicine>
               <mmlPs:dose>2</mmlPs:dose>
               <mmlPs:doseUnit>錠</mmlPs:doseUnit>
@@ -74,7 +73,7 @@
             <mmlPs:medication>
               <mmlPs:medicine>
                 <mmlPs:name>メトリジン錠２ｍｇ</mmlPs:name>
-                <mmlPs:code system="YJ">612160027</mmlPs:code>
+                <mmlPs:code mmlPs:system="YJ">612160027</mmlPs:code>
               </mmlPs:medicine>
               <mmlPs:dose>1</mmlPs:dose>
               <mmlPs:doseUnit>錠</mmlPs:doseUnit>
@@ -88,7 +87,7 @@
             <mmlPs:medication>
               <mmlPs:medicine>
                 <mmlPs:name>マーズレンＳ顆粒</mmlPs:name>
-                <mmlPs:code system="YJ">612160027</mmlPs:code>
+                <mmlPs:code mmlPs:system="YJ">612160027</mmlPs:code>
               </mmlPs:medicine>
               <mmlPs:dose>0.5</mmlPs:dose>
               <mmlPs:doseUnit>g</mmlPs:doseUnit>
@@ -102,7 +101,7 @@
             <mmlPs:medication>
               <mmlPs:medicine>
                 <mmlPs:name>ジクロフェナクnaゲル</mmlPs:name>
-                <mmlPs:code system="YJ">612320261"</mmlPs:code>
+                <mmlPs:code mmlPs:system="YJ">612320261"</mmlPs:code>
               </mmlPs:medicine>
               <mmlPs:dose>50</mmlPs:dose>
               <mmlPs:doseUnit>g</mmlPs:doseUnit>

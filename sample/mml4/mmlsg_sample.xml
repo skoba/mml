@@ -7,7 +7,7 @@
   xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="../../schema/surgery.xsd">
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <mmlSg:surgeryItem>
     <mmlSg:surgicalInfo mmlSg:type="elective">
@@ -101,6 +101,10 @@
         </mmlSg:staffInfo>
       </mmlSg:staff>
     </mmlSg:anesthesiologists>
+    <mmlSg:operativeNotes>
+      胸骨正中切開し、心膜切開後に直視下にて左冠状動脈に対してバイパス術を施行した。<xhtml:br/>
+      補助循環は使用せず。
+    </mmlSg:operativeNotes>
     <mmlSg:referenceInfo>
       <mmlCm:extRef mmlCm:contentType = "image/gif" mmlCm:medicalRole = " surgicalFigure " mmlCm:title = "Fig1. Skin incision" mmlCm:href = "patient001/surgicalFigure001.gif"/>
     </mmlSg:referenceInfo>
