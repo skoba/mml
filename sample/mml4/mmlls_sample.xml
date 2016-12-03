@@ -6,6 +6,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <mmlLs:occupation>Doctor</mmlLs:occupation>
   <mmlLs:tobacco>None</mmlLs:tobacco>
-  <mmlLs:alcohol>Beer 350ml/day</mmlLs:alcohol>
+  <mmlLs:alcohol>Beer 350ml/day<xhtml:br/>日本酒3合/日</mmlLs:alcohol>
   <mmlLs:other>walking</mmlLs:other>
 </mmlLs:LifestyleModule>

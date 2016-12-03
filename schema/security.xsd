@@ -113,7 +113,7 @@
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="tableId">
+    <xs:attribute name="tableId" form="qualified">
       <xs:simpleType>
         <xs:restriction base="xs:string">
           <xs:enumeration value="MML0036"/>
