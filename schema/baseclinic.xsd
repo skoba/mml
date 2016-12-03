@@ -9,6 +9,8 @@
   xmlns:mmlBc="http://www.medxml.net/MML/v4/ContentModule/BaseClinic/1.0"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd"/>
+  
   <xs:element name="BaseClinicModule">
     <xs:complexType>
       <xs:sequence>
@@ -44,7 +46,14 @@
   
   <xs:element name="identifiedDate" type="xs:string"/>
   
-  <xs:element name="memo" type="xs:string"/>
+  <xs:element name="memo">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
   
   <xs:element name="bloodtype">
     <xs:complexType>
@@ -83,7 +92,13 @@
   
   <xs:element name="typeJudgement" type="xs:string"/>
   
-  <xs:element name="description" type="xs:string"/>
+  <xs:element name="description">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   
   <xs:element name="infection">
     <xs:complexType>
