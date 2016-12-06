@@ -216,7 +216,6 @@
     <xs:complexType mixed="true">
       <xs:sequence>
         <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>    
@@ -225,7 +224,6 @@
     <xs:complexType mixed="true">
       <xs:sequence>
         <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -235,7 +233,6 @@
     <xs:complexType mixed="true">
       <xs:sequence>
         <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>

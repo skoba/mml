@@ -12,4 +12,8 @@ describe 'MML' do
   example 'sample3 instance validation' do
     expect(validator).to be_valid 'mml4_sample3.xml'
   end
+
+  example 'sample3 instance validation' do
+    expect(validator).to be_valid 'mml4_sample4.xml'
+  end
 end
