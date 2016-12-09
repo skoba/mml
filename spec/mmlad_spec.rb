@@ -5,7 +5,13 @@ describe 'mmlAd:Address' do
     expect(validator).to be_valid 'mmlad_structured_sample.xml'
   end
 
-  example 'mmlad_unstructured_sample validation' do
-    expect(validator).to be_valid 'mmlad_unstructured_sample.xml'
+  context 'unstructured form' do
+    example 'mmlad_unstructured_sample validation' do
+      expect(validator).to be_valid 'mmlad_unstructured_sample.xml'
+    end    
   end
+
+  # context 'creator should choice one' do
+  #   it 'should raise error when error
+  # end
 end
