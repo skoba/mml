@@ -18,10 +18,10 @@
             <xs:element ref="mmlPh:city" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="mmlPh:number" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="mmlPh:extension" minOccurs="0" maxOccurs="1"/>
-            <xs:element ref="mmlPh:country" minOccurs="0" maxOccurs="1"/>
-            <xs:element ref="mmlPh:memo"  minOccurs="0" maxOccurs="1"/>
           </xs:sequence>          
         </xs:choice>
+        <xs:element ref="mmlPh:country" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPh:memo"  minOccurs="0" maxOccurs="1"/>
       </xs:sequence>
       <xs:attributeGroup ref="mmlPh:attlist.Phone"/>
     </xs:complexType>
