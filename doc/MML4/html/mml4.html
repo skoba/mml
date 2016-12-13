@@ -2462,12 +2462,15 @@ MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)情報で
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">permit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">参照の権利 ．<br>
-true：あり，<br>
-false：なし</p></td>
+none：すべてのアクセスを不許可<br>
+read：参照を許可<br>
+write：参照，修正を許可<br>
+delete：参照，削除を許可<br>
+all：参照，修正，削除を許可<br></p></td>
 </tr>
 </tbody>
 </table>
