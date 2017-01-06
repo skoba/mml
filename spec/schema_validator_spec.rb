@@ -9,7 +9,7 @@ describe 'MML schema validator' do
     end
   end
 
-  example 'xsd files should be validates as XML schema' do
+  example 'xsd files should be validated as XML schema' do
     Dir[XSD_FILES].each do |schema|
       validator = MMLSchemaValidator.new(File.open schema)
       expect(validator).to be_valid
