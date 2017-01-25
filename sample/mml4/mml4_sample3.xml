@@ -26,7 +26,6 @@
      xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
      xmlns:mmlSc="http://www.medxml.net/MML/v4/SharedComponent/Security/1.0"
      xmlns:claim="http://www.medxml.net/claim/claimModule/2.1"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xmlns:claimA="http://www.medxml.net/claim/claimAmountModule/2.1">
   <MmlHeader>
     <mmlCi:CreatorInfo>

@@ -9,26 +9,26 @@
 :linkcss:
 :pdf-page-size: a4
 :doctype: book
-= MML 4.0
+= MML 4.1.2
 
 [[introduction]]
 == Introduction
 
-MML has been developed from 1995 as a standard for the exchange of medical data. The initial version used SGML, and XML format was adopted from version 2. Modules have been developed for the use cases in the clinical field, and related tables have been prepared. In 2004, it was harmonized with the HL7 CDA rel 1 format as an effort at improving interoperability with international standards.
+MML has been developed from 1995 as a standard for the exchange of medical data. The first version used SGML as a formalism, and XML was adopted from the second version. Clinical information modules have been developed to express use cases in clinical domain, and related tables have been . In 2004, MML was harmonized with the HL7 CDA rel 1 format as an attempt at improving interoperability with international standards and pulished as MML version 3.
 
-Beginning from 2007, research has been conducted for harmonizing MML with the ISO13606 standard that is expected to be the next-generation EHR standard. Based on the results of this research, a vital signs module and a flowsheet module were designed in 2013, and a prescription module and injection module were released in 2015.
+Beginning from 2007, we have researched harmonizing with MML with the ISO13606 standard that is expected to be the next-generation EHR standard. Based on this rearch, vital signs module and flowsheet module were designed in 2013, and a prescription module and injection module were published in 2015.
 
-In addition to these results, we decided to release MML version 4 including the hemodialysis module, which was developed by a hemodialysis SIG, and changed the schema definition language from DTD to  W3C XML Schema 1.1.
+In addition to these achievements, we decided to release MML version 4 including the hemodialysis module, which was developed by a hemodialysis SIG, and changed the schema definition language from DTD to  W3C XML Schema 1.1.
 
-NOTE: This document and the XML schema were officially approved as MML version 4 standard on the board, but they are still in the development phase, updates are inevitable.
+NOTE: This document and the XML schema were officially approved as MML version 4 standard on the board, but they are still in the bug fix phase, updates are inevitable.
 
 [[update_policy]]
-== Updating policy for MML 4.0 release
+== Updating policy for MML version 4 release
 As described above, the largest change in this revision is adopting W3C XML Schema 1.1. This change intended to improve convenience for developers to implement this MML standard, because XML Schema can strictly define the data types and data structures, and a broad range of related tools are available.
 
 Moreover it was decided to simplify the structure by eliminating the HL7 CDA-related tags that had become redundant. However it was decided to keep the same namespace and tag names, and to keep the XPath structure that is semantically equivalent in order to reduce the costs involved with the version upgrade.
 
-Shift JIS was the official character code up to Ver. 3, however we adopted UTF-8 in Ver. 4. This improves convenience of implementation as well as interoperabiltiy with other standards.
+Shift JIS was the official character encoding up to Ver. 3, but we adopted UTF-8 in Ver. 4. This improves convenience of implementation as well as interoperabiltiy with other standards.
 
 It was also decided to officially add the following modules which had previously been published as Plan B.
 
