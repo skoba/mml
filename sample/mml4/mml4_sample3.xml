@@ -2,6 +2,7 @@
 <Mml version="4.1.2"
      createDate="2016-12-04T19:41:11"
      xmlns:xhtml="http://www.w3.org/1999/xhtml"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
      xmlns="http://www.medxml.net/MML/v4/base/1.0"
      xmlns:mml="http://www.medxml.net/MML/v4/base/1.0"
      xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
