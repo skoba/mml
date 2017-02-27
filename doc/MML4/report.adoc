@@ -253,7 +253,7 @@ final 最終報告
 ===== M20.1.6.4. mmlRp:performer
 【内容】実施者 +
 【データ型】string +
-【省略】省略可 +
+【省略】省略不可 +
 【属性】
 [options="header"]
 |===
