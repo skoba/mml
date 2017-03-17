@@ -1,0 +1,39 @@
+=== <%= title %>
+
+.<%= title %>エレメント構造図
+
+image::
+
+.<%= title %>エレメント一覧表
+[options="header"]
+|=====
+| |Element|Attribute|Data types|Occurence|TableId
+<% elements.each do |element|  %>
+|<%= element.num %>|<%= element.name %>|<%= element.datatype %>|<%= element.occurrence %>|
+  <% element.attributes.each do |attribute| %>
+| | |<%= attribute.name %>|<%= attribute.datatype %>|<%= attribute.occurrence %>|
+  <% end %>
+|=====
+<% end %>
+Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== エレメント解説
+
+<% elements.each do |element| %>
+===== <%= element.num %> <%= element.name %>
+
+[horizontal]
+内容::
+データ型::
+多重度::
+属性::
+[options="header"]
+|======
+|属性名|データ型|多重度|使用テーブル|説明
+  <% element.attributes.each do |attribute| %>
+|<%= attribute.name %>|<%= attribute.datatype %>|<%= attribute.occurrence %>| |
+  <% end %>
+|======
+<% end %>
