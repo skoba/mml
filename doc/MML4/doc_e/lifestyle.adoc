@@ -1,0 +1,42 @@
+:sectnums: y
+:sectnumlevels: 8
+:imagesdir: figures
+
+=== Lifestyle information module
+.Structure of the elements
+image::mmlls.jpg[]
+
+==== namespace declaration
+Namespaces declaration of this module is the following:
+[source, xml]
+xmlns:mmlLs= "http://www.medxml.net/MML/v4/ContentModule/Lifestyle/1.0"
+
+.Table of the elements
+[options="header"]
+|=====
+| |Elements|Attribute|Data types|Occurence|TableId
+|M13.|mmlLs:LifestyleModule| | | |
+|M13.1.|mmlLs:occupation| |string| |
+|M13.2.|mmlLs:tobacco| |string| |
+|M13.3.|mmlLs:alcohol| |string| |
+|M13.4.|mmlLs:other| |string|?|
+|=====
+
+Occurrences; blank: 1, ?: 0 or 1, +: more than 1, *: more than 0 +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+==== Elements in details
+
+===== M13 mmlLs:LifestyleModule
+
+[horizontal]
+Description:: Lifestyle and life history information
+
+===== M13.1 mmlLs:occupation
+
+Description:: occupation
+Data type:: string.
+Occurrence:: 1.
+Document layout:: XHTML
+
+===== M13.2
