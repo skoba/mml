@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mml>
+  <container>
+    <name>Report</name>
+    <schemaVersion>5.0.0a</schemaVersion>
+    <language>ja</language>
+    <composers>
+      <party>
+	<category>Facility</category>
+	<identifiers>
+	  <identity>
+	    <name>京都大学EHR推進センター</name>
+	    <code>1.23.43.501.222</code>
+	    <codeSystem>OID</codeSystem>
+	  </identity>
+	</identifiers>
+	<contacts>
+	  <name>Address</name>
+	  <details>
+	  </details>
+	</contacts>
+      </party>
+    </composers>
+    <context>
+      <startTime>2017-03-27T11:30:32</startTime>
+      <documentId>a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11</documentId>
+      <updatedTime>2017-03-28T12:40:30</updatedTime>
+      <documentVersion>1</documentVersion>
+      <status>initial</status>
+      <permissions>all</permissions>
+      <use>primary</use>
+      <signature>4760271533c2866579dde347ad28dd79e4aad933</signature>
+    </context>
+    <contents>
+    </contents>
+  </container>
+</mml>
