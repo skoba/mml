@@ -28,15 +28,33 @@ Occurrences; blank: 1, ?: 0 or 1, +: more than 1, *: more than 0 +
 ==== Elements in details
 
 ===== M13 mmlLs:LifestyleModule
-
 [horizontal]
-Description:: Lifestyle and life history information
+Description:: Lifestyle and life history information.
 
 ===== M13.1 mmlLs:occupation
-
+[horizontal]
 Description:: occupation
 Data type:: string.
 Occurrence:: 1.
 Document layout:: XHTML
 
-===== M13.2
+===== M13.2. mmlLs:tobacco
+[horizontal]
+Description:: history of tobacco use.
+Data type:: string.
+Occurrence:: 1.
+Document layout:: XHTML
+
+===== M13.3. mmlLs:alcohol
+[horizontal]
+Description:: history of alcohol consumption.
+Data type:: string.
+Occurrence:: 1.
+Document layout:: XHTML
+
+===== M13.4. other
+[horizontal]
+Description:: Other lifestyles. Religion, sports, excersizes, and etc.
+Data type:: string.
+Occurrence:: 1.
+Document layout:: XHTML
