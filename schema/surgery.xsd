@@ -192,7 +192,7 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="anesthesiaDuration" type="xs:string"/>
+  <xs:element name="anesthesiaDuration" type="xs:duration"/>
   <xs:element name="operativeNotes">
     <xs:complexType mixed="true">
       <xs:sequence>

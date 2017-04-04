@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-	   targetNamespace="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  targetNamespace="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
   xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
   xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
   xmlns:mmlPi="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
@@ -16,8 +18,8 @@
   <xs:element name="HemoDialysisModule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="mmlHd:HemoDialysis"/>
-        <xs:element ref="mmlHd:HeMX"/>
+        <xs:element ref="mmlHd:HemoDialysis" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="mmlHd:HeMX" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
       <xs:attribute name="version" type="xs:string" use="required" form="qualified"/>
       <xs:attribute name="createDate" type="xs:dateTime" use="required" form="qualified"/>
@@ -680,7 +682,7 @@
   <xs:element name="HeMX">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="1" maxOccurs="1" ref="mmlCm:extRef"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
