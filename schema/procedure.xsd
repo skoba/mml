@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:mmlPr="http://www.medxml.net/MML/v4/ContentModule/Procedure/0.1"
+    targetNamespace="http://www.medxml.net/MML/v4/ContentModule/Procedure/0.1">
+
+    <xs:element name="ProcedureModule">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="mmlPr:procedureName"/>
+                <xs:element ref="mmlPr:urgency"/>
+                <xs:element ref="mmlPr:description"/>
+                <xs:element ref="mmlPr:outcome"/>                
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="procedureName">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="code" type="xs:string" form="qualified" use="optional"/>
+                    <xs:attribute name="system" type="xs:string" form="qualified" use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="description" type="xs:string"/>
+    <xs:element name="outcome" type="xs:string"/>
+    <xs:element name="urgency" type="xs:string"/>
+</xs:schema>
