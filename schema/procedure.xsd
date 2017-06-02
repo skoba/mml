@@ -8,6 +8,8 @@
             <xs:sequence>
                 <xs:element ref="mmlPr:procedureName"/>
                 <xs:element ref="mmlPr:urgency"/>
+                <xs:element ref="mmlPr:Requester"/>
+                <xs:element ref="mmlPr:Performer"/>
                 <xs:element ref="mmlPr:description"/>
                 <xs:element ref="mmlPr:outcome"/>                
             </xs:sequence>
@@ -23,7 +25,14 @@
             </xs:simpleContent>
         </xs:complexType>
     </xs:element>
+    <xs:element name="urgency" type="xs:string"/>
+    <xs:element name="Requester">
+        <xs:complexType>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Performer">
+        
+    </xs:element>
     <xs:element name="description" type="xs:string"/>
     <xs:element name="outcome" type="xs:string"/>
-    <xs:element name="urgency" type="xs:string"/>
 </xs:schema>
