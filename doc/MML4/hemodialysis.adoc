@@ -352,7 +352,7 @@ image::mmlhd.png[]
 Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== M26. mmlHd:HemoDialysysModule
+===== M26. mmlHd:HemoDialysisModule
 【内容】透析モジュール +
 【属性】
 [options="header"]

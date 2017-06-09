@@ -111,6 +111,7 @@
         <file name="personalizedinfo.xsd"/>
         <file name="phone.xsd"/>
         <file name="prescription.xsd"/>
+        <file name="procedure.xsd"/>
         <file name="progresscourse.xsd"/>
         <file name="referral.xsd"/>
         <file name="registereddiagnosis.xsd"/>
