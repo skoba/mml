@@ -75,6 +75,7 @@
                 <xs:enumeration value="insurance"/>
                 <xs:enumeration value="monbusho"/>
                 <xs:enumeration value="JMARI"/>
+                <xs:enumeration value="OID"/>
               </xs:restriction>
             </xs:simpleType>
           </xs:attribute>
@@ -232,8 +233,8 @@
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">
-          <xs:attribute name="up" type="xs:decimal" use="optional" form="qualified"/>
-          <xs:attribute name="low" type="xs:decimal" use="optional" form="qualified"/>
+          <xs:attribute name="up" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="low" type="xs:string" use="optional" form="qualified"/>
           <xs:attribute name="normal" type="xs:string" use="optional" form="qualified"/>
           <xs:attribute name="out" type="xs:string" use="optional" form="qualified"/>
         </xs:extension>

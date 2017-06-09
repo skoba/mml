@@ -139,7 +139,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】省略可 +
 【文書のレイアウト】XHTML 使用可
 
-【例】
+.【例】
 [source, xml]
 <mmlBc:other>
   <mmlBc:typeName>MNS blood type</mmlBc:typeName>

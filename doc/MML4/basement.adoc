@@ -295,9 +295,12 @@ startとendで示されるMML全体の対象期間に対して，送信側の施
 [options="header"]
 |=====
 |属性名|データ型|省略|使用テーブル|説明
-|permit|boolean|#REQUIRED| |参照の権利 ． +
-true：あり， +
-false：なし
+|permit|string|#REQUIRED| |参照の権利 ． +
+none：すべてのアクセスを不許可 +
+read：参照を許可 +
+write：参照，修正を許可 +
+delete：参照，削除を許可 +
+all：参照，修正，削除を許可 +
 |=====
 
 参照を許可しないことを明示的に示したい場合には，permit属性にnoneを設定する．

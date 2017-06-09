@@ -212,11 +212,31 @@
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="chiefComplaints" type="xs:string"/>
+  <xs:element name="chiefComplaints">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>    
   
-  <xs:element name="patientProfile" type="xs:string"/>
+  <xs:element name="patientProfile">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
   
-  <xs:element name="history" type="xs:string"/>
+  <xs:element name="history">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
   
   <xs:element name="physicalExam">
     <xs:complexType mixed="true">
@@ -258,6 +278,7 @@
     <xs:complexType mixed="true">
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="1" ref="mmlPs:PrescriptionModule"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
     </xs:complexType>
@@ -274,6 +295,7 @@
   <xs:element name="testResult">
     <xs:complexType mixed="true">
       <xs:sequence>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlSm:relatedDoc"/>
       </xs:sequence>

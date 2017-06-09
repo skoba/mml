@@ -24,7 +24,8 @@
   xmlns:mmlRe="http://www.medxml.net/MML/v4/ContentModule/Referral/1.0"
   xmlns:mmlSc="http://www.medxml.net/MML/v4/SharedComponent/Security/1.0"
   xmlns:mmlPs="http://www.medxml.net/MML/v4/ContentModule/Prescription/1.0"
-  xmlns:claim="http://www.medxml.net/claim/claimModule/2.1" xmlns:claimA="http://www.medxml.net/claim/claimAmountModule/2.1">
+  xmlns:claim="http://www.medxml.net/claim/claimModule/2.1"
+  xmlns:claimA="http://www.medxml.net/claim/claimAmountModule/2.1">
   <MmlHeader>
     <mmlCi:CreatorInfo>
       <mmlPsi:PersonalizedInfo>

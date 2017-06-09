@@ -46,7 +46,7 @@
     </mmlFcl:pastHistoryItem>
     <mmlFcl:pastHistoryItem>
       <mmlFcl:timeExpression>5 years ago (1994)</mmlFcl:timeExpression>
-      <mmlFcl:eventExpression>hypertension</mmlFcl:eventExpression>
+      <mmlFcl:eventExpression>hypertension<xhtml:br/>diabetes 30years</mmlFcl:eventExpression>
     </mmlFcl:pastHistoryItem>
   </mmlFcl:pastHistory>
   <mmlFcl:chiefComplaints>頭痛</mmlFcl:chiefComplaints>

@@ -49,7 +49,7 @@ Description:: diagnosis records. One module intance records only one disease. If
 [horizontal]
 Description:: the entire name of disease to be recorded with accessory words.
 Data type:: string.
-Occurrence:: 1.
+Occurrence:: 1..1
 Attributes::
 [options="header"]
 |=====
@@ -76,7 +76,7 @@ Occurrences:: 1..*
 [horizontal]
 Description::  Name for disease element
 Data type:: string
-Occurrences:: 1
+Occurrences:: 1..1
 Attributes::
 [options="header"]
 |=====

@@ -83,6 +83,7 @@
           <xs:enumeration value="insurance"/>
           <xs:enumeration value="monbusho"/>
           <xs:enumeration value="JMARI"/>
+          <xs:enumeration value="OID"/>
         </xs:restriction>
       </xs:simpleType>    
     </xs:attribute>
@@ -113,7 +114,7 @@
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="tableId">
+    <xs:attribute name="tableId" form="qualified">
       <xs:simpleType>
         <xs:restriction base="xs:string">
           <xs:enumeration value="MML0036"/>

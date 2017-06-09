@@ -210,7 +210,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
       <mmlPs:batchNo>1</mmlPs:batchNo>
       <mmlPs:medicine>
         <mmlPs:name>プレドニゾロン錠 5mg</mmlPs:name>
-        <mmlPs:code system="YJ">61222033</mmlPs:code>
+        <mmlPs:code mmlPs:system="YJ">61222033</mmlPs:code>
       </mmlPs:medicine>
       <mmlPs:dose>4</mmlPs:dose>
       <mmlPs:doseUnit>錠</mmlPs:doseUnit>

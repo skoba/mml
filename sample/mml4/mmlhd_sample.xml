@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlHd:HemoDialysisModule
+    mmlHd:version="4.1.2"
+    mmlHd:createDate="2017-02-17T16:12:56+09:00"
+    xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mmlPi= "http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0"
+    xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+    xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+    xmlns:mmlFc ="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
+    xmlns:mmlAd="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0"
+    xmlns:mmlPh="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0">
+  <mmlHd:HemoDialysis>
+    <mmlFc:Facility>
+      <mmlFc:name mmlFc:repCode="A" mmlFc:tableId="MML0025">ABC Hospital</mmlFc:name>
+    </mmlFc:Facility>
+    <mmlPi:PatientModule>
+      <mmlPi:uniqueInfo>
+	<mmlPi:masterId>
+	  <mmlCm:Id mmlCm:type="facility" mmlCm:tableId = "MML0024">00229</mmlCm:Id>
+	</mmlPi:masterId>
+      </mmlPi:uniqueInfo>
+      <mmlPi:personName>
+	<mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025">
+	  <mmlNm:fullname>Mobara Tarou</mmlNm:fullname>
+	</mmlNm:Name>
+      </mmlPi:personName>
+      <mmlPi:birthday>1959-03-12</mmlPi:birthday>
+      <mmlPi:sex>male</mmlPi:sex>
+      <mmlPi:nationality>JPN</mmlPi:nationality>
+      <mmlPi:marital>married</mmlPi:marital>
+      <mmlPi:addresses>
+	<mmlAd:Address mmlAd:repCode = "A" mmlAd:addressClass = "home" mmlAd:tableId = "MML0025">
+	  <mmlAd:full>114-1 Oshiba, Mobara-city, Chiba-prefecture</mmlAd:full>
+	  <mmlAd:zip>297-0033</mmlAd:zip>
+	  <mmlAd:countryCode>JPN</mmlAd:countryCode>	
+	</mmlAd:Address>
+      </mmlPi:addresses>
+      <mmlPi:emailAddresses>
+	<mmlCm:email>aaaaa@bbb.com</mmlCm:email>
+      </mmlPi:emailAddresses>
+      <mmlPi:phones>
+	<mmlPh:Phone mmlPh:telEquipType="PH">
+	  <mmlPh:full>012-3456-7890</mmlPh:full>
+	</mmlPh:Phone>
+      </mmlPi:phones>
+    </mmlPi:PatientModule>
+    
+    <mmlHd:HDOrderSection>
+      <mmlHd:hdOrders mmlHd:orderStatus="active" mmlHd:dateOrdered="2017-02-17" mmlHd:dateEffective="2017-02-17">
+      <mmlHd:orderGroups>
+	<mmlHd:effectiveDays>
+	  <mmlHd:weekday>1</mmlHd:weekday>
+	  <mmlHd:weekday>3</mmlHd:weekday>
+	  <mmlHd:weekday>5</mmlHd:weekday>
+	</mmlHd:effectiveDays>
+	<mmlHd:timeShift mmlHd:code="03" mmlHd:tableId="hdTimeShiftTable01">準夜帯</mmlHd:timeShift>
+	<mmlHd:hdMethod>
+	  <mmlHd:hdMethodName mmlHd:code="01" mmlHd:tableId="hdMethodTable01">血液透析</mmlHd:hdMethodName>
+	  <mmlHd:timeHdStart mmlHd:timeDirection="after">PT0H0M0S</mmlHd:timeHdStart>
+	  <mmlHd:timeHdEnd mmlHd:timeDirection="after">PT4H0M0S</mmlHd:timeHdEnd>
+	</mmlHd:hdMethod>
+	<mmlHd:dryWeight mmlHd:unit="kg">60.0</mmlHd:dryWeight>
+	<mmlHd:weightCorrection mmlHd:unit="kg" mmlHd:cnote="食事量">0.50</mmlHd:weightCorrection>
+	<mmlHd:bloodFlow>
+	  <mmlHd:flowRate mmlHd:unit="mL/min">200</mmlHd:flowRate>
+	  <mmlHd:timeHdStart mmlHd:timeDirection="after">PT0H0M0S</mmlHd:timeHdStart>
+	  <mmlHd:timeHdEnd mmlHd:timeDirection="after">PT4H0M0S</mmlHd:timeHdEnd>
+	</mmlHd:bloodFlow>
+	<mmlHd:dialyser mmlHd:code="4987488802035" mmlHd:type="JANコード" mmlHd:membraneArea="2.0" mmlHd:unit="m2">RENAK PS-2.3</mmlHd:dialyser>
+	<mmlHd:dialysate>
+	  <mmlHd:dialysateName mmlHd:code="3410523D2033" mmlHd:type="YJコード" mmlHd:modification="Ca=2.5mEq/L">キンダリー透析剤3E</mmlHd:dialysateName>
+	  <mmlHd:timeHdStart mmlHd:timeDirection="after">PT0H0M0S</mmlHd:timeHdStart>
+	  <mmlHd:timeHdEnd mmlHd:timeDirection="after">PT4H0M0S</mmlHd:timeHdEnd>
+	</mmlHd:dialysate>
+	<mmlHd:dialysateFlow>
+	  <mmlHd:flowRate mmlHd:unit="mL/min">200</mmlHd:flowRate>
+	  <mmlHd:timeHdStart mmlHd:timeDirection="after">PT0H0M0S</mmlHd:timeHdStart>
+	  <mmlHd:timeHdEnd mmlHd:timeDirection="after">PT4H0M0S</mmlHd:timeHdEnd>
+	</mmlHd:dialysateFlow>
+	<mmlHd:dialysateTemp>
+	  <mmlHd:dialysateTempValue mmlHd:unit="C">36.5</mmlHd:dialysateTempValue>
+	  <mmlHd:timeHdStart mmlHd:timeDirection="after">PT0H0M0S</mmlHd:timeHdStart>
+	  <mmlHd:timeHdEnd mmlHd:timeDirection="after">PT4H0M0S</mmlHd:timeHdEnd>
+	</mmlHd:dialysateTemp>
+	<mmlHd:needle mmlHd:code="4543527236393" mmlHd:type="JANコード" mmlHd:position="AV側">Happycath NEO 16G</mmlHd:needle>
+	<mmlHd:medication>
+	  <mmlHd:drugName mmlHd:code="2190022F1024" mmlHd:type="YJコード">リズミック錠10mg</mmlHd:drugName>
+	  <mmlHd:dose mmlHd:unit="mg">10</mmlHd:dose>
+	  <mmlHd:timeHd mmlHd:timeDirection="after">PT0H0M0S</mmlHd:timeHd>
+	  <mmlHd:note> 透析開始時に服用</mmlHd:note>
+	</mmlHd:medication>
+ 	<mmlHd:injection>
+	  <mmlHd:drugName mmlHd:code="3334402P2052" mmlHd:type="YJコード">ヘパリンNa透析用250単位/mLシリンジ20mL「ニプロ」</mmlHd:drugName>
+	  <mmlHd:dose mmlHd:unit="unit/h">600</mmlHd:dose>
+	  <mmlHd:timeHdStart mmlHd:timeDirection="after">PT0H0M0S</mmlHd:timeHdStart>
+	  <mmlHd:timeHdEnd mmlHd:timeDirection="after">PT4H0M0S</mmlHd:timeHdEnd>
+	  <mmlHd:routeName mmlHd:code="dica" mmlHd:tableId="hdInjectionRouteTable01">動脈側回路内点滴注射</mmlHd:routeName>
+	</mmlHd:injection>
+      </mmlHd:orderGroups>
+      </mmlHd:hdOrders>
+    </mmlHd:HDOrderSection>
+  </mmlHd:HemoDialysis>
+</mmlHd:HemoDialysisModule>
+
+								

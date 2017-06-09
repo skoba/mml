@@ -220,7 +220,10 @@ DTDからXML schemaにはほぼ自動変換したものを使用していたが�
 
 ===== スキーマに関わる修正
 ====== MmlHeaderのtoc, tocItemの削除
-以前から必要性については疑問視されてきていた。SAX系のパーサでは有用とされるが、現行のXMLテンプレートシステムとの相性の悪さや現在主流のXMLパーサでは単に読み飛ばされるだけであるためハイスすることとした。
+以前から必要性については疑問視されてきていた。SAX系のパーサでは有用とされるが、現行のXMLテンプレートシステムとの相性の悪さや現在主流のXMLパーサでは単に読み飛ばされるだけであるため廃止することとした。
+
+======= XHTML記述の追加
+XHTML使用可とされているエレメントで、XHTMLが使用できなくなっていたのを修正した。
 
 ====== MmlのcreateDate属性
 MML Ver 2.3ではdate型、MML ver 3ではdateTime型でとされていた。Ver 3.xを引き継ぐこととし、
@@ -296,6 +299,11 @@ categoryに文字列を記入することができなくなっていたため下
       </xs:simpleContent>
     </xs:complexType>
   </xs:element>
+
+====== mmlSc:personNameのtableId属性
+qualified指定がされていなかったため、namespace指定が落ちていた。追加して他の属性との整合性をとった。
+[source, xml]
+<xs:attribute name="tableId" form="qualified">
 
 
 ===== サンプルインスタンスの追加

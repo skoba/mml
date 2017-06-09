@@ -49,11 +49,11 @@ image::mmlhd.png[]
 |M26.1.2.|mmlPi:PatientModule| | | |
 |M26.1.3.|mmlHd:note| |string|?|
 |M26.1.4.|mmlHd:HDHistorySection| | |?|
-|M26.1.4.1.|mmlHd:HdIntroduction| | |*|
+|M26.1.4.1.|mmlHd:hdIntroduction| | |*|
 |M26.1.4.1.1.|mmlHd:hdDiagnosis| |string|?|
 | | |mmlHd:code|string|#IMPLIED|
 | | |mmlHd:system|string|#REQUIRED|
-|M26.1.4.1.2.|mmlHd:HdIntroDate| |date|?|
+|M26.1.4.1.2.|mmlHd:hdIntroDate| |date|?|
 |M26.1.4.1.3.|mmlFc:Facility| | | |
 |M26.1.4.2.|mmlHd:BloodAccess| | |*|
 | | |mmlHd:baStatus|string|#IMPLIED|
@@ -352,7 +352,7 @@ image::mmlhd.png[]
 Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== M26. mmlHd:HemoDialysysModule
+===== M26. mmlHd:HemoDialysisModule
 【内容】透析モジュール +
 【属性】
 [options="header"]
@@ -384,7 +384,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【内容】透析履歴 +
 【省略】省略可
 
-===== M26.1.4.1. mmlHd:HdIntroduction
+===== M26.1.4.1. mmlHd:hdIntroduction
 【内容】透析導入情報 +
 【省略】省略可 +
 【繰り返し設定】あり。表記法が複数あれば繰り返す。
@@ -400,7 +400,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlHd:system|string|#REQUIRED|疾患コード体系名
 |===
 
-===== M26.1.4.1.2. mmlHd:HdIntroDate
+===== M26.1.4.1.2. mmlHd:hdIntroDate
 【内容】透析導入日 +
 【データ型】date +
 【省略】省略可

@@ -451,7 +451,11 @@ mmlInj:system</pre>
 <div class="sect5">
 <h6 id="_mmlheaderのtoc_tocitemの削除">2.1.4.1.1. MmlHeaderのtoc, tocItemの削除</h6>
 <div class="paragraph">
-<p>以前から必要性については疑問視されてきていた。SAX系のパーサでは有用とされるが、現行のXMLテンプレートシステムとの相性の悪さや現在主流のXMLパーサでは単に読み飛ばされるだけであるためハイスすることとした。</p>
+<p>以前から必要性については疑問視されてきていた。SAX系のパーサでは有用とされるが、現行のXMLテンプレートシステムとの相性の悪さや現在主流のXMLパーサでは単に読み飛ばされるだけであるため廃止することとした。</p>
+</div>
+<div class="paragraph">
+<p>======= XHTML記述の追加
+XHTML使用可とされているエレメントで、XHTMLが使用できなくなっていたのを修正した。</p>
 </div>
 </div>
 <div class="sect5">
@@ -570,6 +574,17 @@ mmlInj:system</pre>
       &lt;/xs:simpleContent&gt;
     &lt;/xs:complexType&gt;
   &lt;/xs:element&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_mmlsc_personnameのtableid属性">2.1.4.1.11. mmlSc:personNameのtableId属性</h6>
+<div class="paragraph">
+<p>qualified指定がされていなかったため、namespace指定が落ちていた。追加して他の属性との整合性をとった。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;xs:attribute name="tableId" form="qualified"&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -2447,12 +2462,15 @@ MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)情報で
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">permit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">参照の権利 ．<br>
-true：あり，<br>
-false：なし</p></td>
+none：すべてのアクセスを不許可<br>
+read：参照を許可<br>
+write：参照，修正を許可<br>
+delete：参照，削除を許可<br>
+all：参照，修正，削除を許可<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -5448,24 +5466,14 @@ individual
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date/dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">死亡日時．データ型はdateもしくはdateTimeのどちらかとする．</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">死亡日時．データ型はdateTimeとする</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>【例】1999 年 9 月 1 日に死亡</p>
-</div>
 <div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlPi:death mmlPi:date="1999-09-01"&gt;true&lt;/mmlPi:death&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>【例】1999 年 9 月 1 日 6 時 15 分に死亡</p>
-</div>
-<div class="listingblock">
+<div class="title">【例】1999 年 9 月 1 日 6 時 15 分に死亡</div>
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlPi:death mmlPi:date="1999-09-01T06:15"&gt;true&lt;/mmlPi:death&gt;</code></pre>
 </div>
@@ -6393,7 +6401,7 @@ individual
 </div>
 </div>
 <div class="sect4">
-<h5 id="_m11_13_1_5_mmlhi_expiredate">8.2.2.41. M11.13.1.5. mmlHi:expireDate</h5>
+<h5 id="_m11_13_1_5_mmlhi_expireddate">8.2.2.41. M11.13.1.5. mmlHi:expiredDate</h5>
 <div class="paragraph">
 <p>【内容】有効期限<br>
 【データ型】date<br>
@@ -7415,10 +7423,8 @@ individual
 【省略】省略可<br>
 【文書のレイアウト】XHTML 使用可</p>
 </div>
-<div class="paragraph">
-<p>【例】</p>
-</div>
 <div class="listingblock">
+<div class="title">【例】</div>
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlBc:other&gt;
   &lt;mmlBc:typeName&gt;MNS blood type&lt;/mmlBc:typeName&gt;
@@ -11390,7 +11396,7 @@ individual
       &lt;mmlPs:batchNo&gt;1&lt;/mmlPs:batchNo&gt;
       &lt;mmlPs:medicine&gt;
         &lt;mmlPs:name&gt;プレドニゾロン錠 5mg&lt;/mmlPs:name&gt;
-        &lt;mmlPs:code system="YJ"&gt;61222033&lt;/mmlPs:code&gt;
+        &lt;mmlPs:code mmlPs:system="YJ"&gt;61222033&lt;/mmlPs:code&gt;
       &lt;/mmlPs:medicine&gt;
       &lt;mmlPs:dose&gt;4&lt;/mmlPs:dose&gt;
       &lt;mmlPs:doseUnit&gt;錠&lt;/mmlPs:doseUnit&gt;
@@ -14128,7 +14134,7 @@ final 最終報告</p></td>
 <div class="paragraph">
 <p>【内容】実施者<br>
 【データ型】string<br>
-【省略】省略可<br>
+【省略】省略不可<br>
 【属性】</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
@@ -14855,7 +14861,7 @@ final 最終報告</p></td>
       &lt;mmlPs:batchNo&gt;1&lt;/mmlPs:batchNo&gt;
       &lt;mmlPs:medicine&gt;
         &lt;mmlPs:name&gt;プレドニゾロン錠 5mg&lt;/mmlPs:name&gt;
-        &lt;mmlPs:code system="YJ"&gt;61222033&lt;/mmlPs:code&gt;
+        &lt;mmlPs:code mmlPs:system="YJ"&gt;61222033&lt;/mmlPs:code&gt;
       &lt;/mmlPs:medicine&gt;
       &lt;mmlPs:dose&gt;4&lt;/mmlPs:dose&gt;
       &lt;mmlPs:doseUnit&gt;錠&lt;/mmlPs:doseUnit&gt;
@@ -16719,7 +16725,7 @@ confirmDate
 <h5 id="_m24_2_6_mmlps_duration">8.15.3.11. M24.2.6. mmlPs:duration</h5>
 <div class="paragraph">
 <p>【内容】服薬期間（日数）<br>
-【データ型】decimal<br>
+【データ型】duration<br>
 【省略】可<br>
 【説明】総量のみが記載される外用剤などの場合には省略可</p>
 </div>
@@ -17373,7 +17379,7 @@ confirmDate
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M26.1.4.1.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:HdIntroduction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:hdIntroduction</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
@@ -17405,7 +17411,7 @@ confirmDate
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M26.1.4.1.2.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:HdIntroDate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlHd:hdIntroDate</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
@@ -19773,7 +19779,7 @@ confirmDate
 <div class="sect3">
 <h4 id="_エレメント解説_27">8.17.4. エレメント解説</h4>
 <div class="sect4">
-<h5 id="_m26_mmlhd_hemodialysysmodule">8.17.4.1. M26. mmlHd:HemoDialysysModule</h5>
+<h5 id="_m26_mmlhd_hemodialysismodule">8.17.4.1. M26. mmlHd:HemoDialysisModule</h5>
 <div class="paragraph">
 <p>【内容】透析モジュール<br>
 【属性】</p>
@@ -19847,7 +19853,7 @@ confirmDate
 </div>
 </div>
 <div class="sect4">
-<h5 id="_m26_1_4_1_mmlhd_hdintroduction">8.17.4.7. M26.1.4.1. mmlHd:HdIntroduction</h5>
+<h5 id="_m26_1_4_1_mmlhd_hdintroduction">8.17.4.7. M26.1.4.1. mmlHd:hdIntroduction</h5>
 <div class="paragraph">
 <p>【内容】透析導入情報<br>
 【省略】省略可<br>
@@ -19893,7 +19899,7 @@ confirmDate
 </table>
 </div>
 <div class="sect4">
-<h5 id="_m26_1_4_1_2_mmlhd_hdintrodate">8.17.4.9. M26.1.4.1.2. mmlHd:HdIntroDate</h5>
+<h5 id="_m26_1_4_1_2_mmlhd_hdintrodate">8.17.4.9. M26.1.4.1.2. mmlHd:hdIntroDate</h5>
 <div class="paragraph">
 <p>【内容】透析導入日<br>
 【データ型】date<br>
@@ -23959,7 +23965,7 @@ hdObservationTable01</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-12-02 21:45:28 JST
+Last updated 2016-12-02 23:17:44 JST
 </div>
 </div>
 </body>

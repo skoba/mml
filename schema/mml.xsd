@@ -86,7 +86,7 @@
       <xs:sequence>
         <xs:element ref="mmlCi:CreatorInfo"/>
         <xs:element ref="mml:masterId"/>
-        <!-- <xs:element ref="mml:toc"/> -->
+        <xs:element minOccurs="0" maxOccurs="1" ref="mml:toc"/>
         <xs:element ref="mml:scopePeriod" minOccurs="0"/>
         <xs:element ref="mml:encryptInfo" minOccurs="0"/>
       </xs:sequence>
@@ -215,15 +215,15 @@
     </xs:complexType>
   </xs:element> 
   
-  <!-- <xs:element name="toc"> -->
-  <!--   <xs:complexType> -->
-  <!--     <xs:sequence> -->
-  <!--       <xs:element maxOccurs="unbounded" ref="mml:tocItem"/> -->
-  <!--     </xs:sequence> -->
-  <!--   </xs:complexType> -->
-  <!-- </xs:element> -->
+  <xs:element name="toc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="mml:tocItem"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   
-  <!-- <xs:element name="tocItem" type="xs:string"/> -->
+  <xs:element name="tocItem" type="xs:string"/>
   
   <xs:element name="extRefs">
     <xs:complexType>

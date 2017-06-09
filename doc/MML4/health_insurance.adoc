@@ -331,7 +331,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【データ型】date +
 【省略】不可
 
-===== M11.13.1.5. mmlHi:expireDate
+===== M11.13.1.5. mmlHi:expiredDate
 【内容】有効期限 +
 【データ型】date +
 【省略】不可

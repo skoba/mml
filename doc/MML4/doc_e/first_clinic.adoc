@@ -1,0 +1,324 @@
+===  Initial-consultation-specific information module
+.The structure of elements
+image::mmlfcl.jpg[]
+
+==== Namespaces declaration
+The namespaces declaration statement of this module is the following:
+[source, xml]
+xmlns:mmlFcl= "http://www.medxml.net/MML/v4/ContentModule/FirstClinic/1.0"
+
+
+.Table of the elements
+[options="header"]
+|=====
+| |Elements|Attribute|Data types|Occurence|TableId
+|M15.|mmlFcl:FirstClinicModule| | | |
+|M15.1.|mmlFcl:familyHistory| | |?|
+|M15.1.1.|mmlFcl:familyHistoryItem| | |+|
+|M15.1.1.1.|mmlFcl:relation| |string| |MML0020
+|M15.1.1.2.|mmlRd:RegisteredDiagnosisModule| | | |
+|M15.1.1.3.|mmlFcl:age| |duration|?|
+|M15.1.1.4.|mmlFcl:memo| |string|?|
+|M15.2.|mmlFcl:childhood| | |?|
+|M15.2.1.|mmlFcl:birthInfo| | |?|
+|M15.2.1.1.|mmlFc:Facility| | |?|
+|M15.2.1.2.|mmlFcl:deliveryWeeks| |string|?|
+|M15.2.1.3.|mmlFcl:deliveryMethod| |string|?|
+|M15.2.1.4.|mmlFcl:bodyWeight| |decimal|?|
+| | |mmlFcl:unit|string|#REQUIRED|
+|M15.2.1.5.|mmlFcl:bodyHeight| |decimal|?|
+| | |mmlFcl:unit|string|#REQUIRED|
+|M15.2.1.6.|mmlFcl:chestCircumference| |decimal|?|
+| | |mmlFcl:unit|string|#REQUIRED|
+|M15.2.1.7.|mmlFcl:headCircumference| |decimal|?|
+| | |mmlFcl:unit|string|#REQUIRED|
+|M15.2.1.8.|mmlFcl:memo| |string|?|
+|M15.2.2.|mmlFcl:vaccination| | |?|
+|M15.2.2.1.|mmlFcl:vaccinationItem| | |+|
+|M15.2.2.1.1.|mmlFcl:vaccine| |string| |
+|M15.2.2.1.2.|mmlFcl:injected| |boolean| |
+|M15.2.2.1.3.|mmlFcl:age| |duration|?|
+|M15.2.2.1.4.|mmlFcl:memo| |string|?|
+|M15.3.|mlFcl:pastHistory| | |?|
+|M15.3.1.|mmlFcl:freeNotes| |string| |
+|M15.3.2.|mmlFcl:pastHistoryItem| | |*|
+|M15.3.2.1.|mmlFcl:timeExpression| |string|	|
+|M15.3.2.2.|mmlFcl:eventExpression| |string|*|
+|M15.4.|mmlFcl:chiefComplaints| |string|?|
+|M15.5.|mmlFcl:presentIllnessNotes| |string|?|
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: more than 1, *: more than 0 +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+====  Elements in details
+===== M15. mmlFcl:FirstClinicModule
+[horizontal]
+Description:: Initial consultation information module
+
+===== M15.1. mmlFcl:familyHistory
+[horizontal]
+Description:: Family history information
+Occurrence:: 0..1
+
+===== M15.1.1. mmlFcl:familyHistoryItem
+[horizontal]
+Description:: Element to involve multiple items, repeatable as the number of records for family histories.
+Occurrence:: 1..*
+
+===== M15.1.1.1. mmlFcl:relation
+[horizontal]
+Description::  Relation code. Refer to table MML0020.
+Occurrence:: 1..1
+
+.Example Mother in law. (If the relation is 'in-law', 'InLaw' should be added to the end.)
+[source, xml]
+<mmlFcl:relation>motherInLaw</mmlFcl:relation>
+
+===== M15.1.1.1.2. mmlRd:RegisteredDiagnosisModule
+[horizontal]
+Description::  Diagnosis information. The structure should refer to the MML Registered Diagnosis module.
+Occurrence:: 1..1
+
+.Example died of gastric cancer at August 25th, 1989.
+[source, xml]
+<mmlRd:RegisteredDiagnosisModule>
+  <mmlRd:diagnosis mmlRd:code="C169-.007" mmlRd:system="ICD10">gastric cancer</mmlRd:diagnosis>
+  <mmlRd:endDate>1989-08-25</mmlRd:endDate>
+  <mmlRd:outcome>died</mmlRd:outcome>
+</mmlRd:RegisteredDiagnosisModule>
+
+===== M15.1.1.3. mmlFcl:age
+[horizontal]
+Description:: the age of the family at onset of disease.
+Data type:: duration(ISO 8601): PnYnMnWnDTnHnMnS. PnY is usual form, except for infants.
+Occurrence:: 0..1
+
+.Example 40 years old.
+[source, xml]
+<mmlFcl:age>P40Y</mmlFcl:age>
+
+.Example 1 years and 3 months of age.
+[source, xml]
+<mmlFcl:age>P1Y3M</mmlFcl:age>
+
+.Example 3 months of age.
+[source, xml]
+<mmlFcl:age>P3M</mmlFcl:age>
+
+===== M15.1.1.4. mmlFcl:memo
+[horizontal]
+Description:: memo.
+Data type:: string
+Occurrence:: 0..1
+Layout:: XHTML available
+
+===== M15.2. mmlFcl:childhood
+[horizontal]
+Description:: history in childhood
+Occurrence:: 0..1
+
+===== M15.2.1. mmlFcl:birthInfo
+[horizontal]
+Description:: history information around birth
+Occurrence:: 0..1
+
+===== M15.2.1.1. mmlFc:Facility
+[horizontal]
+Description:: facility of birth, refer to mmlFc:Facility in shared components.
+Occurrence:: 0..1
+
+===== M15.2.1.2. mmlFcl:deliveryWeeks
+[horizontal]
+Description:: Age of weeks of delivery.
+Data type:: string. the format is PnW, like ISO8601.
+Occurrence:: 0..1
+
+.Example Deliverly at 40 weeks
+[source, xml]
+<mmlFcl:deliveryWeeks>P40W</mmlFcl:deliveryWeeks>
+
+===== M15.2.1.3. mmlFcl:deliveryMethod
+[horizontal]
+Description:: Delivery method. Format is not specified.
+Data type:: string.
+Occurrence:: 0..1
+
+.Example Cesarean section
+[source, xml]
+<mmlFcl:deliveryMethod>cesarean section</mmlFcl:deliveryMethod>
+
+===== M15.2.1.4. mmlFcl:bodyWeight
+[horizontal]
+Description:: body weight at birth.
+Data type:: decimal.
+Occurrence:: 0..1
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlFcl:unit|string|#REQUIRED|Unit. g or kg.
+|=====
+【例】3270g
+[source, xml]
+ <mmlFcl:bodyWeight mmlFcl:unit="g">3270</mmlFcl:bodyWeight>
+
+===== M15.2.1.5 mmlFcl:bodyHeight
+[horizontal]
+Description:: body height at birth.
+Data type:: decimal.
+Occurrence:: 0..1
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlFcl:unit|string|#REQUIRED|unit．cm or m.
+|=====
+
+===== M15.2.1.6. mmlFcl:chestCircumference
+[horizontal]
+Description:: chest circumference at birth.
+Data type:: decimal.
+Occurrence:: 0..1
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlFcl:unit|string|#REQUIRED|unit．cm
+|=====
+
+===== M15.2.1.7. mmlFcl:headCircumference
+[horizontal]
+Description:: head circumference at birth.
+Data type:: decimal.
+Occurrence:: 0..1
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlFcl:unit|string|#REQUIRED|unit．cm
+|=====
+
+===== M15.2.1.8. mmlFcl:memo
+[horizontal]
+Description:: memo at birth.
+Data type:: string.
+Occurrence:: 0..1
+Layout:: XHTML available
+
+===== M15.2.2. mmlFcl:vaccination
+[horizontal]
+Description:: vaccination information.
+Occurrence:: 0..1
+
+===== M15.2.2.1. mmlFcl:vaccinationItem
+===== M15.1.1. mmlFcl:familyHistoryItem
+[horizontal]
+Description:: Element to involve multiple items, repeatable as the number of records of vaccination.
+Occurrence:: 1..*
+
+===== M15.2.2.1.1. mmlFcl:vaccine
+[horizontal]
+Description:: name of vaccine.
+Data type:: string.
+Occurrence:: 1..1
+
+===== M15.2.2.1.2. mmlFcl:injected
+[horizontal]
+Description:: vaccination status. true: vaccinated, false: not vaccinated.
+Data type:: boolean.
+Occurrence:: 1..1
+
+===== M15.2.2.1.3. mmlFcl:age
+[horizontal]
+Description:: age at vaccinated.
+Data type:: duration. ISO8601 format(PnYnMnWnDTnHnMnS; PnYnM as usual)
+Occurrence:: 0..1
+
+===== M15.2.2.1.4. mmlFcl:memo
+[horizontal]
+Description:: memo around vaccination.
+Data type:: string
+Occurrence:: 0..1
+Layout:: XHTML available
+.Example vaccinated polio twice, at 6 months of age,  and 1 year and 6 months of age.
+[source, xml]
+<mmlFcl:vaccination>
+  <mmlFcl:vaccinationItem>
+    <mmlFcl:vaccine>polio</mmlFcl:vaccine>
+    <mmlFcl:injected>true</mmlFcl:injected>
+    <mmlFcl:age>P6M</mmlFcl:age>
+    <mmlFcl:memo>first administration</mmlFcl:memo>
+  </mmlFcl:vaccinationItem>
+  <mmlFcl:vaccinationItem>
+    <mmlFcl:vaccine>polio</mmlFcl:vaccine>
+    <mmlFcl:injected>true</mmlFcl:injected>
+    <mmlFcl:age>P1Y6M</mmlFcl:age>
+    <mmlFcl:memo>second administration</mmlFcl:memo>
+  </mmlFcl:vaccinationItem>
+</mmlFcl:vaccination>
+
+===== M15.3.  mmlFcl:pastHistory
+[horizontal]
+Description:: past history. choice one of two, free format description(mmlFcl:freeNotes) or events with time line of history.
+Occurrence:: 0..1
+
+===== M15.3.1. mmlFcl:freeNotes
+[horizontal]
+Description:: free text expression for past history.
+Data type:: string
+Occurrence:: 0..1
+Layout:: XHTML available
+
+===== M15.3.2. mmlFcl:pastHistoryItem
+[horizontal]
+Description:: element to involve multiple items, repeatable as the number of episodes of past history.
+Occurrence:: 0..1
+
+===== M15.2.1. mmlFcl:timeExpression
+[horizontal]
+Description:: free text expression for the time of the event.
+Data type:: string
+Occurrence:: 1..1
+
+===== M15.2.2. mmlFcl:eventExpression
+[horizontal]
+Description:: free text expression for the event, repeatable as the number of event descriptions at the time.
+Data type:: string
+Occurrence:: 0..*
+Layout:: XHTML available
+.Example free text expression of past history.
+[source, xml]
+<mmlFcl:pastHistory>
+  <mmlFcl:freeNotes>
+     Appendectomy (6 years old), hypertension (5 years ago)
+  </mmlFcl:freeNotes>
+</mmlFcl:pastHistory>
+
+.Example structured expression of past history, events at the time.
+[source, xml]
+<mmlFcl:pastHistory>
+  <mmlFcl:pastHistoryItem>
+    <mmlFcl:timeExpression>6 years old</mmlFcl:timeExpression>
+    <mmlFcl:eventExpression>appendectomy</mmlFcl:eventExpression>
+  </mmlFcl:pastHistoryItem>
+  <mmlFcl:pastHistoryItem>
+    <mmlFcl:timeExpression>
+      5 years ago (1994)
+    </mmlFcl:timeExpression>
+    <mmlFcl:eventExpression>hypertension</mmlFcl:eventExpression>
+  </mmlFcl:pastHistoryItem>
+</mmlFcl:pastHistory>
+
+===== M15.4. mmlFcl:chiefComplaints
+[horizontal]
+Description:: chief complaints
+Data type:: string
+Occurrence:: 0..1
+Layout:: XHTML available.
+
+===== M15.5. mmlFcl:presentIllnessNotes
+[horizontal]
+Description:: notes of present illness by free text expression.
+Data type:: string
+Occurrence:: 0..1
+Layout:: XHTML available.
