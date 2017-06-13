@@ -1,38 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:mmlPr="http://www.medxml.net/MML/v4/ContentModule/Procedure/0.1"
-    targetNamespace="http://www.medxml.net/MML/v4/ContentModule/Procedure/0.1">
+	   xmlns:mmlPr="http://www.medxml.net/MML/v4/ContentModule/Procedure/0.1"
+	   xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0"
+	   xmlns:mmlPsi="http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0"
+	   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+	   targetNamespace="http://www.medxml.net/MML/v4/ContentModule/Procedure/0.1">
 
-    <xs:element name="ProcedureModule">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="mmlPr:procedureName"/>
-                <xs:element ref="mmlPr:urgency"/>
-                <xs:element ref="mmlPr:Requester"/>
-                <xs:element ref="mmlPr:Performer"/>
-                <xs:element ref="mmlPr:description"/>
-                <xs:element ref="mmlPr:outcome"/>                
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="procedureName">
-        <xs:complexType>
-            <xs:simpleContent>
-                <xs:extension base="xs:string">
-                    <xs:attribute name="code" type="xs:string" form="qualified" use="optional"/>
-                    <xs:attribute name="system" type="xs:string" form="qualified" use="optional"/>
-                </xs:extension>
-            </xs:simpleContent>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="urgency" type="xs:string"/>
-    <xs:element name="Requester">
-        <xs:complexType>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="Performer">
-        
-    </xs:element>
-    <xs:element name="description" type="xs:string"/>
-    <xs:element name="outcome" type="xs:string"/>
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0" schemaLocation="name.xsd"/>
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0" schemaLocation="department.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0" schemaLocation="personalizedinfo.xsd" />
+  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
+
+  <xs:element name="ProcedureModule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="mmlPr:procedureName" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="mmlPr:urgency" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="mmlPr:serviceUnit" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="mmlPr:performedNumber" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="mmlPr:startDateTime" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="mmlPr:endDateTime" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="mmlPr:duration" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="mmlPr:bodySite" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="mmlPr:method" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPr:requester" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPr:performer" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="mmlPr:reason" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPr:description" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="mmlPr:outcome" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="mmlPr:complication" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="mmlPr:comment" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="procedureName">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="code" type="xs:string" form="qualified" use="optional"/>
+          <xs:attribute name="system" type="xs:string" form="qualified" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="urgency" type="xs:boolean"/>
+
+  <xs:element name="serviceUnit">
+    <xs:complexType>
+      <xs:simpleContent>
+	<xs:extension base="xs:decimal">
+	  <xs:attribute name="unit" type="xs:string" form="qualified" use="required"/>
+	</xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="performedNumber" type="xs:integer"/>
+  <xs:element name="startDateTime" type="xs:dateTime"/>
+  <xs:element name="endDateTime" type="xs:dateTime"/>
+  <xs:element name="duration" type="xs:duration"/>
+  <xs:element name="bodySite" type="xs:string"/>
+  <xs:element name="method" type="xs:string"/>
+  <xs:element name="requester">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="mmlDp:Department" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="mmlPsi:PersonalizedInfo" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="performer">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="mmlDp:Department"/>
+	<xs:element ref="mmlPsi:PersonalizedInfo"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="reason" type="xs:string"/>
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="outcome" type="xs:string"/>
+  <xs:element name="complication" type="xs:string"/>
+  <xs:element name="comment" type="xs:string"/>
 </xs:schema>

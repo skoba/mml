@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mmlPr:ProcedureModule
+    xmlns:mmlPr="http://www.medxml.net/MML/v4/ContentModule/Procedure/0.1"
+    xmlns:mmlDp="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0"
+    xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0"
+    xmlns:mmlPsi="http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0"
+    xmlns:mmlNm="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <mmlPr:procedureName>胸腔穿刺</mmlPr:procedureName>
+  <mmlPr:urgency>false</mmlPr:urgency>
+  <mmlPr:serviceUnit mmlPr:unit="ml">2000</mmlPr:serviceUnit>
+  <mmlPr:performedNumber>1</mmlPr:performedNumber>
+  <mmlPr:startDateTime>2017-06-13T15:33:44</mmlPr:startDateTime>
+  <mmlPr:endDateTime>2017-06-13T16:55:22</mmlPr:endDateTime>
+  <mmlPr:duration>PT1H22M</mmlPr:duration>
+  <mmlPr:bodySite>右第7肋間、腋窩中線上</mmlPr:bodySite>
+  <mmlPr:method>エコーガイド下にて20G留置心にて穿刺、廃液</mmlPr:method>
+  <mmlPr:requester>
+    <mmlDp:Department>
+      <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">
+            Hematology/oncology center
+      </mmlDp:name>
+          <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">16</mmlCm:Id>
+    </mmlDp:Department>
+    <mmlPsi:PersonalizedInfo>
+      <mmlCm:Id mmlCm:type="facility" mmlCm:checkDigitSchema="M10"
+		mmlCm:checkDigit="5" mmlCm:tableId="MML0024">54321</mmlCm:Id>
+      <mmlPsi:personName>
+        <mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025">
+          <mmlNm:family>小林</mmlNm:family>
+          <mmlNm:given>慎治</mmlNm:given>
+          <mmlNm:degree>M.D.</mmlNm:degree>
+        </mmlNm:Name>
+      </mmlPsi:personName>
+    </mmlPsi:PersonalizedInfo>
+  </mmlPr:requester>
+  <mmlPr:performer>
+    <mmlDp:Department>
+      <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">
+	外来処置室
+      </mmlDp:name>
+      <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">32</mmlCm:Id>
+    </mmlDp:Department>
+    <mmlPsi:PersonalizedInfo>
+      <mmlCm:Id mmlCm:type="facility" mmlCm:checkDigitSchema="M10"
+		mmlCm:checkDigit="5" mmlCm:tableId="MML0024">12345</mmlCm:Id>
+      <mmlPsi:personName>
+        <mmlNm:Name mmlNm:repCode="A" mmlNm:tableId="MML0025">
+          <mmlNm:family>七条</mmlNm:family>
+          <mmlNm:given>花子</mmlNm:given>
+          <mmlNm:degree>Nurse</mmlNm:degree>
+        </mmlNm:Name>
+      </mmlPsi:personName>
+    </mmlPsi:PersonalizedInfo>
+  </mmlPr:performer>
+  <mmlPr:reason>右胸水貯留</mmlPr:reason>
+  <mmlPr:description>胸水貯留のため、試験穿刺および2000ml排液を行った。胸水は血性であった。</mmlPr:description>
+  <mmlPr:outcome>軽快</mmlPr:outcome>
+  <mmlPr:complication>1度の迷走神経反射</mmlPr:complication>
+  <mmlPr:comment>金曜日に2度めの穿刺、排液予定</mmlPr:comment>
+</mmlPr:ProcedureModule>
