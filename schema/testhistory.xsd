@@ -240,7 +240,7 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="numValue" nillable="true">
+  <xs:element name="numValue">
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">

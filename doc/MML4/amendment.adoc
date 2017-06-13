@@ -19,7 +19,7 @@ Mmlのversion属性のdefaultが"4.0"から"4.1"に変更された。
   -<xs:attribute name="version" default="4.0" type="xs:string"/>
   +<xs:attribute name="version" default="4.1.2" type="xs:string"/>
 
-==== MML Ver. 4.0 -> 4.1.1 修正履歴
+==== MML Ver. 4.0 -> 4.2.0 修正履歴
 
 ===== 章・節番号、エレメント番号
 
@@ -214,10 +214,6 @@ DTDからXML schemaにはほぼ自動変換したものを使用していたが�
  +【省略】省略可
 
 
-==== 4.1.1 -> 4.1.2への修正履歴
-
-4.1.1リリース後からも修正要求があり、下記のような修正を行った。
-
 ===== スキーマに関わる修正
 ====== MmlHeaderのtoc, tocItemの削除
 以前から必要性については疑問視されてきていた。SAX系のパーサでは有用とされるが、現行のXMLテンプレートシステムとの相性の悪さや現在主流のXMLパーサでは単に読み飛ばされるだけであるため廃止することとした。
@@ -265,8 +261,8 @@ uri型がXML Schema仕様にないため、string型に変更した。
 ====== mmlSm:clinicalRecord, mmlSm:deathInfo, mmlSm:testResult
 属性情報のmmlSm:dateがdate/dateTimeとDTDの曖昧さを許容していた。XML Schemaでは型定義が厳密であることから、dateTime型に統一することとした。
 
-====== mmlLb:numValue
-DTDではnil(空白)が許されていたが、decimal型としたことで空白の値を取ることが原則許されなくなった。Ver 3までは、下記のようにnumValueとしては空欄でもデータが異常値であることを示すことができていた。
+====== mmlLb:numValue, mmlLb:value
+Ver 3のDTDの定義では、下記のようにnumValueとしては空欄でもデータが異常値であることを示すことができていた。
 [source, xml]
     <mmlLb:item>
       <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
@@ -274,16 +270,25 @@ DTDではnil(空白)が許されていたが、decimal型としたことで空�
       <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
     </mmlLb:item>
 
-このような表現を許すようにnumValueにnillable属性をとることとした。
+DTDではnil(空白)が許されていたが、mmlLb:numValueをdecimal型としたことで空白の値を取ることが原則許されなくなった。
+
+このような表現を許すようにVersion 4.1.2ではnumValueにnillable属性をとることした。
 [source, xml]
   <xs:element name="numValue" nillable="true">
 
-しかしながら、インスタンスにはnilであることを明示的に記入する必要がある。
+この場合、インスタンスにはnilであることを明示的に記入する必要がある。
 [source, xml]
     <mmlLb:item>
       <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
       <mmlLb:value>ヨウセイ</mmlLb:value>
       <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
+    </mmlLb:item>
+
+表記が冗長になること、本来valueの属性であるべきことから4.2.0以降では、valueの属性にnumValueと同じくmmlLb:out, mmlLb:up, mmlLb:low, mmlLb:normalの属性をもたせることとした。
+[source, xml]
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
+      <mmlLb:value mmlLb:out="N">ヨウセイ</mmlLb:value>
     </mmlLb:item>
 
 ====== mmlRd:categoryの修正
@@ -305,9 +310,14 @@ qualified指定がされていなかったため、namespace指定が落ちて�
 [source, xml]
 <xs:attribute name="tableId" form="qualified">
 
+====== 処置モジュールの追加
+汎用処置モジュールの追加を行った。詳細はモジュール解説を参照。
+
+====== 透析モジュールの分割
+透析モジュールは透析履歴モジュール、透析オーダーモジュール、透析実施記録モジュールに3分割することとした。詳細はモジュール解説を参照。
 
 ===== サンプルインスタンスの追加
-バイタルサインモジュール、体温表モジュール、報告書モジュールの追加を行った。
+バイタルサインモジュール、体温表モジュール、報告書モジュール、透析モジュール、処置モジュールのサンプルを追加した。
 
 
 ===== チェックプログラムの追加
@@ -316,6 +326,7 @@ Rubyでスキーマ、インスタンスの整合性を取るチェックプロ�
 
 [source, shell]
 % git clone git@github.com:skoba/mml.git
+% cd mml
 % bundle install
 % rake
 

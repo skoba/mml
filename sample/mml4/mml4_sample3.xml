@@ -122,7 +122,7 @@
 	    <mmlLb:item>
 	      <mmlLb:itemName mmlLb:itCode="0301" mmlLb:itCodeId="miyazaki06">ＣＲＰ　　　　　　　</mmlLb:itemName>
 	      <mmlLb:value>0.1</mmlLb:value>
-	      <mmlLb:numValue mmlLb:up="0.4" mmlLb:low="0.0" mmlLb:out="N" xsi:nil="true"/>
+	      <mmlLb:numValue mmlLb:up="0.4" mmlLb:low="0.0" mmlLb:out="N">0.1</mmlLb:numValue>
 	      <mmlLb:unit mmlLb:uCode="05" mmlLb:uCodeId="miyazaki07">MG/DL</mmlLb:unit>
 	    </mmlLb:item>
 	  </mmlLb:laboTest>

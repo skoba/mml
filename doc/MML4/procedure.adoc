@@ -1,0 +1,35 @@
+=== 汎用処置モジュール
+.エレメント構造図
+
+* TBD
+
+==== namespaces宣言
+本モジュールのnamespaces宣言は，以下とする．
+[source, xml]
+xmlns:mmlSg= "http://www.medxml.net/MML/v4/ContentModule/Procedure/0.1"
+
+.エレメント一覧表
+|=====
+| |Elements|Attribute|Data types|Occurence|TableId
+|M27.|mmlPr:ProcedureModule| | | |
+|M27.1.|mmlPr:procedureName| |string |?|
+|M27.2.|mmlPr:urgency| |boolean|?|
+|M27.3.|mmlPr:serviceUnit| |decimal|?|
+|M27.4.|mmlPr:performedNumber| |integer|?|
+|M27.5.|mmlPr:startdateTime| |dateTime|?|
+|M27.6.|mmlPr:endDatetime| |dateTime| |
+|M27.7.|mmlPr:duration| |duration| |
+|M27.8.|mmlPr:bodySite| |string| |
+|M27.9.|mmlPr:method| |string| |
+|M27.10.|mmlPr:requester| | | |
+|M27.11.|mmlPr:performer| | | |
+|M27.12.|mmlPr:reason| |string| |
+|M27.13.|mmlPr:description| |string| |
+|M27.14.|mmlPr:outcome| |string| |
+|M27.15.|mmlPr:complication| |string| |
+|M27.16.|mmlPr:comment| |string|?|
+|===
+Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現 #REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== エレメント解説
+
