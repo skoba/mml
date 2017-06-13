@@ -312,7 +312,7 @@
     </mmlLb:item>
     <mmlLb:item>
       <mmlLb:itemName mmlLb:itCode="950" mmlLb:itCodeId="KRTKC">HCV</mmlLb:itemName>
-      <mmlLb:value>インセイ</mmlLb:value>
+      <mmlLb:value mmlLb:out="N">インセイ</mmlLb:value>
       <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
     </mmlLb:item>
     <mmlLb:item>
