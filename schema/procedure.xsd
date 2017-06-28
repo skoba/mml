@@ -16,7 +16,7 @@
       <xs:sequence>
         <xs:element ref="mmlPr:procedureName" minOccurs="1" maxOccurs="1"/>
         <xs:element ref="mmlPr:urgency" minOccurs="0" maxOccurs="1"/>
-	<xs:element ref="mmlPr:serviceUnit" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="mmlPr:service" minOccurs="0" maxOccurs="1"/>
 	<xs:element ref="mmlPr:performedNumber" minOccurs="0" maxOccurs="1"/>
 	<xs:element ref="mmlPr:startDateTime" minOccurs="0" maxOccurs="1"/>
 	<xs:element ref="mmlPr:endDateTime" minOccurs="0" maxOccurs="1"/>
@@ -47,7 +47,7 @@
 
   <xs:element name="urgency" type="xs:boolean"/>
 
-  <xs:element name="serviceUnit">
+  <xs:element name="service">
     <xs:complexType>
       <xs:simpleContent>
 	<xs:extension base="xs:decimal">

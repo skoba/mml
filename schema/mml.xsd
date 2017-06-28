@@ -94,7 +94,7 @@
   </xs:element>
   
   <xs:attributeGroup name="attlist.Mml">
-    <xs:attribute name="version" default="4.1.2" type="xs:string"/>
+    <xs:attribute name="version" default="4.2.0" type="xs:string"/>
     <xs:attribute name="createDate" type="xs:dateTime" use="required"/>
   </xs:attributeGroup>
   

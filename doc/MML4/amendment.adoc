@@ -14,10 +14,10 @@
 MML ver 4を2016年2月8日に公開して以来、下記のような修正が行われた。
 
 ==== Version表記
-Mmlのversion属性のdefaultが"4.0"から"4.1"に変更された。
+Mmlのversion属性のdefaultが"4.0"から"4.2"に変更された。
 
   -<xs:attribute name="version" default="4.0" type="xs:string"/>
-  +<xs:attribute name="version" default="4.1.2" type="xs:string"/>
+  +<xs:attribute name="version" default="4.2.0" type="xs:string"/>
 
 ==== MML Ver. 4.0 -> 4.2.0 修正履歴
 
