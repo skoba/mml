@@ -9,13 +9,13 @@
 
   <mmlPr:procedureName>胸腔穿刺</mmlPr:procedureName>
   <mmlPr:urgency>false</mmlPr:urgency>
-  <mmlPr:serviceUnit mmlPr:unit="ml">2000</mmlPr:serviceUnit>
+  <mmlPr:service mmlPr:unit="ml">2000</mmlPr:service>
   <mmlPr:performedNumber>1</mmlPr:performedNumber>
   <mmlPr:startDateTime>2017-06-13T15:33:44</mmlPr:startDateTime>
   <mmlPr:endDateTime>2017-06-13T16:55:22</mmlPr:endDateTime>
   <mmlPr:duration>PT1H22M</mmlPr:duration>
   <mmlPr:bodySite>右第7肋間、腋窩中線上</mmlPr:bodySite>
-  <mmlPr:method>エコーガイド下にて20G留置心にて穿刺、廃液</mmlPr:method>
+  <mmlPr:method>エコーガイド下にて20G留置針にて穿刺、廃液</mmlPr:method>
   <mmlPr:requester>
     <mmlDp:Department>
       <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">

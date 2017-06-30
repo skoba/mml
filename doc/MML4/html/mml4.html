@@ -72,6 +72,7 @@
 <li><a href="#_処方箋モジュール">8.15. 処方箋モジュール</a></li>
 <li><a href="#_注射記録モジュール">8.16. 注射記録モジュール</a></li>
 <li><a href="#_透析モジュール">8.17. 透析モジュール</a></li>
+<li><a href="#_汎用処置モジュール">8.18. 汎用処置モジュール</a></li>
 </ul>
 </li>
 </ul>
@@ -150,7 +151,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mml_ver_4_0_4_1_1_修正履歴">2.1.2. MML Ver. 4.0 &#8594; 4.1.1 修正履歴</h4>
+<h4 id="_mml_ver_4_0_4_2_0_修正履歴">2.1.2. MML Ver. 4.0 &#8594; 4.2.0 修正履歴</h4>
 <div class="sect4">
 <h5 id="_章_節番号_エレメント番号">2.1.2.1. 章・節番号、エレメント番号</h5>
 <div class="paragraph">
@@ -440,16 +441,10 @@ mmlInj:system</pre>
 </div>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_4_1_1_4_1_2への修正履歴">2.1.4. 4.1.1 &#8594; 4.1.2への修正履歴</h4>
-<div class="paragraph">
-<p>4.1.1リリース後からも修正要求があり、下記のような修正を行った。</p>
-</div>
 <div class="sect4">
-<h5 id="_スキーマに関わる修正">2.1.4.1. スキーマに関わる修正</h5>
+<h5 id="_スキーマに関わる修正">2.1.3.10. スキーマに関わる修正</h5>
 <div class="sect5">
-<h6 id="_mmlheaderのtoc_tocitemの削除">2.1.4.1.1. MmlHeaderのtoc, tocItemの削除</h6>
+<h6 id="_mmlheaderのtoc_tocitemの削除">2.1.3.10.1. MmlHeaderのtoc, tocItemの削除</h6>
 <div class="paragraph">
 <p>以前から必要性については疑問視されてきていた。SAX系のパーサでは有用とされるが、現行のXMLテンプレートシステムとの相性の悪さや現在主流のXMLパーサでは単に読み飛ばされるだけであるため廃止することとした。</p>
 </div>
@@ -459,19 +454,19 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlのcreatedate属性">2.1.4.1.2. MmlのcreateDate属性</h6>
+<h6 id="_mmlのcreatedate属性">2.1.3.10.2. MmlのcreateDate属性</h6>
 <div class="paragraph">
 <p>MML Ver 2.3ではdate型、MML ver 3ではdateTime型でとされていた。Ver 3.xを引き継ぐこととし、</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_docinfo_moduleversion属性">2.1.4.1.3. docInfo, moduleVersion属性</h6>
+<h6 id="_docinfo_moduleversion属性">2.1.3.10.3. docInfo, moduleVersion属性</h6>
 <div class="paragraph">
 <p>uri型がXML Schema仕様にないため、string型に変更した。</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlsm_attrlistの属性としてrelationおよびrelateddocの定義が誤って定義されていた">2.1.4.1.4. mmlSm:attrListの属性としてrelationおよびrelatedDocの定義が誤って定義されていた。</h6>
+<h6 id="_mmlsm_attrlistの属性としてrelationおよびrelateddocの定義が誤って定義されていた">2.1.3.10.4. mmlSm:attrListの属性としてrelationおよびrelatedDocの定義が誤って定義されていた。</h6>
 <div class="paragraph">
 <p>下記のように修正を行った。</p>
 </div>
@@ -488,7 +483,7 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlsg_referenceinfo">2.1.4.1.5. mmlSg:referenceInfo</h6>
+<h6 id="_mmlsg_referenceinfo">2.1.3.10.5. mmlSg:referenceInfo</h6>
 <div class="paragraph">
 <p>ドキュメントおよびVer 3.0のDTDでは1回以上の繰り返しとなっていたため下記のように修正した。</p>
 </div>
@@ -506,27 +501,27 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlps_frequencyperday">2.1.4.1.6. mmlPs:frequencyPerDay</h6>
+<h6 id="_mmlps_frequencyperday">2.1.3.10.6. mmlPs:frequencyPerDay</h6>
 <div class="paragraph">
 <p>4.1.1の解説文書ではdecimal, スキーマはstringであったが、ともにintegerに修正</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlps_batchno">2.1.4.1.7. mmlPs:batchNo</h6>
+<h6 id="_mmlps_batchno">2.1.3.10.7. mmlPs:batchNo</h6>
 <div class="paragraph">
 <p>4.1.1の解説文書ではdecimal, スキーマはintegerであった。スキーマに合わせて解説文書をintegerに修正</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlsm_clinicalrecord_mmlsm_deathinfo_mmlsm_testresult">2.1.4.1.8. mmlSm:clinicalRecord, mmlSm:deathInfo, mmlSm:testResult</h6>
+<h6 id="_mmlsm_clinicalrecord_mmlsm_deathinfo_mmlsm_testresult">2.1.3.10.8. mmlSm:clinicalRecord, mmlSm:deathInfo, mmlSm:testResult</h6>
 <div class="paragraph">
 <p>属性情報のmmlSm:dateがdate/dateTimeとDTDの曖昧さを許容していた。XML Schemaでは型定義が厳密であることから、dateTime型に統一することとした。</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmllb_numvalue">2.1.4.1.9. mmlLb:numValue</h6>
+<h6 id="_mmllb_numvalue_mmllb_value">2.1.3.10.9. mmlLb:numValue, mmlLb:value</h6>
 <div class="paragraph">
-<p>DTDではnil(空白)が許されていたが、decimal型としたことで空白の値を取ることが原則許されなくなった。Ver 3までは、下記のようにnumValueとしては空欄でもデータが異常値であることを示すことができていた。</p>
+<p>Ver 3のDTDの定義では、下記のようにnumValueとしては空欄でもデータが異常値であることを示すことができていた。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -538,7 +533,10 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 </div>
 </div>
 <div class="paragraph">
-<p>このような表現を許すようにnumValueにnillable属性をとることとした。</p>
+<p>DTDではnil(空白)が許されていたが、mmlLb:numValueをdecimal型としたことで空白の値を取ることが原則許されなくなった。</p>
+</div>
+<div class="paragraph">
+<p>このような表現を許すようにVersion 4.1.2ではnumValueにnillable属性をとることした。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -546,7 +544,7 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 </div>
 </div>
 <div class="paragraph">
-<p>しかしながら、インスタンスにはnilであることを明示的に記入する必要がある。</p>
+<p>この場合、インスタンスにはnilであることを明示的に記入する必要がある。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -557,9 +555,20 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
     &lt;/mmlLb:item&gt;</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>表記が冗長になること、本来valueの属性であるべきことから4.2.0以降では、valueの属性にnumValueと同じくmmlLb:out, mmlLb:up, mmlLb:low, mmlLb:normalの属性をもたせることとした。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">    &lt;mmlLb:item&gt;
+      &lt;mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC"&gt;HBsAb&lt;/mmlLb:itemName&gt;
+      &lt;mmlLb:value mmlLb:out="N"&gt;ヨウセイ&lt;/mmlLb:value&gt;
+    &lt;/mmlLb:item&gt;</code></pre>
+</div>
+</div>
 </div>
 <div class="sect5">
-<h6 id="_mmlrd_categoryの修正">2.1.4.1.10. mmlRd:categoryの修正</h6>
+<h6 id="_mmlrd_categoryの修正">2.1.3.10.10. mmlRd:categoryの修正</h6>
 <div class="paragraph">
 <p>categoryに文字列を記入することができなくなっていたため下記のように修正を行った。</p>
 </div>
@@ -578,7 +587,7 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 </div>
 </div>
 <div class="sect5">
-<h6 id="_mmlsc_personnameのtableid属性">2.1.4.1.11. mmlSc:personNameのtableId属性</h6>
+<h6 id="_mmlsc_personnameのtableid属性">2.1.3.10.11. mmlSc:personNameのtableId属性</h6>
 <div class="paragraph">
 <p>qualified指定がされていなかったため、namespace指定が落ちていた。追加して他の属性との整合性をとった。</p>
 </div>
@@ -588,27 +597,40 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 </div>
 </div>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_サンプルインスタンスの追加">2.1.4.2. サンプルインスタンスの追加</h5>
+<div class="sect5">
+<h6 id="_処置モジュールの追加">2.1.3.10.12. 処置モジュールの追加</h6>
 <div class="paragraph">
-<p>バイタルサインモジュール、体温表モジュール、報告書モジュールの追加を行った。</p>
+<p>汎用処置モジュールの追加を行った。詳細はモジュール解説を参照。</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_透析モジュールの分割">2.1.3.10.13. 透析モジュールの分割</h6>
+<div class="paragraph">
+<p>透析モジュールは透析履歴モジュール、透析オーダーモジュール、透析実施記録モジュールに3分割することとした。詳細はモジュール解説を参照。</p>
+</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_チェックプログラムの追加">2.1.4.3. チェックプログラムの追加</h5>
+<h5 id="_サンプルインスタンスの追加">2.1.3.11. サンプルインスタンスの追加</h5>
+<div class="paragraph">
+<p>バイタルサインモジュール、体温表モジュール、報告書モジュール、透析モジュール、処置モジュールのサンプルを追加した。</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_チェックプログラムの追加">2.1.3.12. チェックプログラムの追加</h5>
 <div class="paragraph">
 <p>Rubyでスキーマ、インスタンスの整合性を取るチェックプログラムを作成した。以下の手順でチェックプログラムを操作できる。</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-shell" data-lang="shell">% git clone git@github.com:skoba/mml.git
+% cd mml
 % bundle install
 % rake</code></pre>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_誤字_表現の修正_2">2.1.4.3.1. 誤字、表現の修正</h6>
+<h6 id="_誤字_表現の修正_2">2.1.3.12.1. 誤字、表現の修正</h6>
 <div class="paragraph">
 <p>数多くの誤字の修正および表現の修正を行った。(下記参照)</p>
 </div>
@@ -12078,6 +12100,38 @@ individual
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:up</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:normal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:out</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb0002</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">M19.2.2.3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:numValue</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -12882,10 +12936,63 @@ final 最終報告</p></td>
 <div class="sect4">
 <h5 id="_m19_2_2_2_mmllb_value">8.10.4.19. M19.2.2.2. mmlLb:value</h5>
 <div class="paragraph">
-<p>【内容】値．表示用の文字列の値．必須とする．<br>
+<p>【内容】値．表示用の文字列の値．必須とする．, +, +/-のような半定量的データもこの項目で扱うこととし、上限、加減、正常値、異常値フラグも属性として記録される。<br>
 【データ型】string<br>
-【省略】不可<br></p>
+【省略】不可<br>
+【属性】</p>
 </div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">属性名</th>
+<th class="tableblock halign-left valign-top">データ型</th>
+<th class="tableblock halign-left valign-top">省略</th>
+<th class="tableblock halign-left valign-top">使用テーブル</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:up</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">上限値</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">下限値</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:normal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">文字列で示す基準値．例："陰性"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb:out</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlLb0002</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">異常値フラグ<br>
+H 上限値越え<br>
+N 基準値範囲内<br>
+L 下限値未満<br>
+A 異常</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
 <h5 id="_m19_2_2_3_mmllb_numvalue">8.10.4.20. M19.2.2.3. mmlLb:numValue</h5>
@@ -14331,7 +14438,7 @@ final 最終報告</p></td>
 <div class="sect3">
 <h4 id="_はじめに">8.12.1. はじめに</h4>
 <div class="paragraph">
-<p>紹介状モジュール (Referral Module) は，mmlRe:ReferralModule で表される．このモジュールに含まれるエレメントはあまり構造化せずにフラットな形となっている。</p>
+<p>紹介状は，mmlRe:ReferralModule で表される．このモジュールに含まれるエレメントはあまり構造化せずにフラットな形となっている。</p>
 </div>
 </div>
 <div class="sect3">
@@ -14854,7 +14961,7 @@ final 最終報告</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlSm:medication&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlRe:medication&gt;
   Prescription on discharge
   &lt;mmlPs:PrescriptionModule&gt;
     &lt;mmlPs:medication&gt;
@@ -14871,7 +14978,7 @@ final 最終報告</p></td>
       &lt;mmlPs:instruction&gt;内服 1回 朝食前&lt;/mmlPs:instruction&gt;
     &lt;/mmlPs:medication&gt;
   &lt;/mmlPs:PrescriptionModule&gt;
-&lt;/mmlSm:medication&gt;</code></pre>
+&lt;/mmlRe:medication&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -23957,6 +24064,956 @@ hdObservationTable01</p></td>
 </li>
 </ol>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_汎用処置モジュール">8.18. 汎用処置モジュール</h3>
+<div class="sect3">
+<h4 id="_目的と対象_6">8.18.1. 目的と対象</h4>
+<div class="paragraph">
+<p>汎用処置モジュール(Procedure Module)は、mmlPr:ProcedureModuleで表現する。外科手術を除く処置一般については、これまでMMLでは構造化されずに一部CLAIMの構造を流用することで対応されていた。しかしながら、処置に関する情報は診療記録において重要な要素であるため、規格化することとした。
+.エレメント構造図</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>TBD</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_namespaces宣言">8.18.2. namespaces宣言</h4>
+<div class="paragraph">
+<p>本モジュールのnamespaces宣言は，以下とする．</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">xmlns:mmlPr="http://www.medxml.net/MML/v4/ContentModule/Procedure/0.1"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_文書ヘッダー情報_docinfo_のモジュール個別仕様_7">8.18.3. 文書ヘッダー情報(docInfo)のモジュール個別仕様</h4>
+<div class="sect4">
+<h5 id="_docinfo_8">8.18.3.1. docInfo</h5>
+<div class="paragraph">
+<p>属性contentModuleTypeにMML0005テーブルから「procedure」を入力すること。</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_title_8">8.18.3.2. title</h5>
+<div class="paragraph">
+<p>処置の内容を示すタイトルを入力すること。属性であるgenerationPurposeにはMML0007テーブルから「procedure」と記録すること。</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_confirmdate_7">8.18.3.3. confirmDate</h5>
+<div class="paragraph">
+<p>処置モジュールを利用してインスタンスを作成した日である。</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mmlci_creatorinfo_8">8.18.3.4. mmlCi:CreatorInfo</h5>
+<div class="paragraph">
+<p>処置モジュールにおける文書作成者は、その処置について記載したものであり必ずしも処置を実施したものではない。処置の実施者はmmlPr:performerに記載される。</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_extrefs_4">8.18.3.5. extRefs</h5>
+<div class="paragraph">
+<p>処置モジュールにはmmlCm:extRefエレメントが存在しないため、記載されない。</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_content_4">8.18.3.6. content</h5>
+<div class="paragraph">
+<p>一つの content に一つだけ処置モジュールを記載する。</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 29. エレメント一覧表</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Occurence</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TableId</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:ProcedureModule</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:procedureName</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:system</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:urgency</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:service</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:performedNumber</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:startDateTime</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:endDatetime</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:duration</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.8.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:bodySite</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.9.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:method</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.10.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:requester</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.10.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlDp:Department</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.10.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPsi:PersonalizedInfo</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.11.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:performer</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.11.1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlDp:Department</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.11.2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPsi:PersonalizedInfo</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.12.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:reason</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.13.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:description</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.14.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:outcome</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.15.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:complication</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M27.16.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:comment</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現</p>
+</div>
+<div class="paragraph">
+<p>#REQUIRED:必須属性，#IMPLIED:省略可能属性</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_エレメント解説_28">8.18.4. エレメント解説</h4>
+<div class="sect4">
+<h5 id="_m27_mmlpr_proceduremodule">8.18.4.1. M27. mmlPr:ProcedureModule</h5>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置モジュール</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>不可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_m27_1_mmlpr_procedurename">8.18.4.2. M27.1. mmlPr:procedureName</h5>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置名称。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>string</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>不可</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+属性
+</td>
+<td class="hdlist2">
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">属性名</th>
+<th class="tableblock halign-left valign-top">データ型</th>
+<th class="tableblock halign-left valign-top">省略</th>
+<th class="tableblock halign-left valign-top">使用テーブル</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">処置コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:system</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">コード体系</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_m27_2_mmlpr_urgency">8.18.4.3. M27.2. mmlPr:urgency</h5>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置の緊急性。緊急性のある処置は、trueとし、緊急性のない処置はfalseと記録される。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>boolean</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_m27_3_mmlpr_service">8.18.4.4. M27.3. mmlPr:service</h5>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置単位。処置には「創傷処置100cm2」や「大血管リハビリテーション3単位」など、サービスに関しての量的表現を伴うものがある。このエレメントにはこのような処置の量的表現を扱う。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>decimal</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+属性
+</td>
+<td class="hdlist2">
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">属性名</th>
+<th class="tableblock halign-left valign-top">データ型</th>
+<th class="tableblock halign-left valign-top">省略</th>
+<th class="tableblock halign-left valign-top">使用テーブル</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPr:unit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#REQUIRED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">処置単位</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="title">例 胸腔穿刺し、胸水を2000ml廃液した場合の記録。「胸腔穿刺・排液」はmmlPr:nameに記載される。</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;mmlPr:name&gt;胸腔穿刺・排液&lt;/mmlPr:name&gt;
+&lt;mmlPr:service mmlPr:unit="ml"&gt;2000&lt;/mmlPr:service&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_4_mmlpr_performednumber">8.18.5. M27.4. mmlPr:performedNumber</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置を実施した回数を記録する。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>integer</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_5_mmlpr_startdatetime">8.18.6. M27.5. mmlPr:startDateTime</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置を開始した日時を記録する。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>ISO8601形式のdataTime型(YYYY-MM-DDTHH:MM:SS)で記録される。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_6_mmlpr_enddatetime">8.18.7. M27.6. mmlPr:endDateTime</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置が終了した日時を記録する。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>ISO8601形式のdataTime型(YYYY-MM-DDTHH:MM:SS)で記録される。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_7_mmlpr_duration">8.18.8. M27.7. mmlPr:duration</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置に要した時間を記録する</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>ISO8601形式のduration型(P[n]Y[n]M[n]DT[n]H[n]M[n]S)で記録される。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_8_mmlpr_bodysite">8.18.9. M27.8. mmlPr:bodySite</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置を施した身体部位を記載する。コード化は特に求めない。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>string</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_9_mmlpr_method">8.18.10. M27.9. mmlPr:method</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置を実施した方法。コード化は特に求めない。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>string</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_10_mmlpr_requesteor">8.18.11. M27.10. mmlPr:requesteor</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置を要求した部門、医療従事者について記載する親エレメント</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_10_1_mmldp_department">8.18.12. M27.10.1. mmlDp:Department</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置を要求した部門。構造はMML共通形式mmlDp:Department参照。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_10_2_mmlpsi_personalizedinfo">8.18.13. M27.10.2. mmlPsi:PersonalizedInfo</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置を要求した医療従事者。構造はMML共通形式mmlPsi:PersonalizedInfoを参照。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_11_mmlpr_performer">8.18.14. M27.11. mmlPr:performer</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置を実施した部門、医療従事者について記載する親エレメント</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_11_1_mmldp_department">8.18.15. M27.11.1. mmlDp:Department</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置を実施した部門。構造はMML共通形式mmlDp:Department参照。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_11_2_mmlpsi_personalizedinfo">8.18.16. M27.11.2. mmlPsi:PersonalizedInfo</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置を実施した医療従事者。構造はMML共通形式mmlPsi:PersonalizedInfoを参照。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_12_mmlpr_reason">8.18.17. M27.12. mmlPr:reason</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置を実施した理由。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>string</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_13_mmlpr_description">8.18.18. M27.13. mmlPr:description</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置内容についての記録。実施した手順や状況などが記載される。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>string</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_14_mmlpr_outcome">8.18.19. M27.14. mmlPr:outcome</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置内容の結果、アウトカム。特にコード化は行わない。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>string</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_15_mmlpr_complication">8.18.20. M27.15. mmlPr:complication</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置による合併症情報。特にコード化は行わず、合併症の情報を記述する。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>string</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_m27_16_mmlpr_comment">8.18.21. M27.16. mmlPr:comment</h4>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+内容
+</td>
+<td class="hdlist2">
+<p>処置についてのコメント、申し送り事項などを記載する。</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+データ型
+</td>
+<td class="hdlist2">
+<p>string</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+省略
+</td>
+<td class="hdlist2">
+<p>可</p>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

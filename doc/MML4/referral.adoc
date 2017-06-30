@@ -10,7 +10,7 @@
 
 === 紹介状モジュール
 ==== はじめに
-紹介状モジュール (Referral Module) は，mmlRe:ReferralModule で表される．このモジュールに含まれるエレメントはあまり構造化せずにフラットな形となっている。
+紹介状は，mmlRe:ReferralModule で表される．このモジュールに含まれるエレメントはあまり構造化せずにフラットな形となっている。
 
 ==== 概要
 紹介状モジュール (Referral Module) は，紹介状をもとにした病診連携のためのデータ交換の仕様である．紹介状とは、患者の病歴や治療経過などを簡潔にまとめて、治療を引き継ぐために記載されるものであり各医療機関で発行されるものであるが、保険診療上は「診療情報提供書」として定められた様式を満たすもののみが「診療情報提供料」を算定できることとなっている。この紹介状モジュールは保険診療上の診療情報提供書の様式で求められている項目を網羅している。
@@ -203,7 +203,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 【省略】省略可 +
 【例】
 [source, xml]
-<mmlSm:medication>
+<mmlRe:medication>
   Prescription on discharge
   <mmlPs:PrescriptionModule>
     <mmlPs:medication>
@@ -220,7 +220,7 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
       <mmlPs:instruction>内服 1回 朝食前</mmlPs:instruction>
     </mmlPs:medication>
   </mmlPs:PrescriptionModule>
-</mmlSm:medication>
+</mmlRe:medication>
 
 ===== M21.13.2. mmlInj:InjectionModule
 【内容】構造はコンテンツモジュールmmlInj:InjectionModule参照 +

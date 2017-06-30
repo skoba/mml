@@ -227,9 +227,20 @@
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="value" type="xs:string"/>
-  
-  <xs:element name="numValue" nillable="true">
+  <xs:element name="value">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="up" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="low" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="normal" type="xs:string" use="optional" form="qualified"/>
+          <xs:attribute name="out" type="xs:string" use="optional" form="qualified"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="numValue">
     <xs:complexType>
       <xs:simpleContent>
         <xs:extension base="xs:decimal">

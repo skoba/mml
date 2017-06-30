@@ -1,0 +1,210 @@
+=== 汎用処置モジュール
+
+==== 目的と対象
+汎用処置モジュール(Procedure Module)は、mmlPr:ProcedureModuleで表現する。外科手術を除く処置一般については、これまでMMLでは構造化されずに一部CLAIMの構造を流用することで対応されていた。しかしながら、処置に関する情報は診療記録において重要な要素であるため、規格化することとした。
+//
+.エレメント構造図
+
+* TBD
+//
+
+==== namespaces宣言
+本モジュールのnamespaces宣言は，以下とする．
+[source, xml]
+xmlns:mmlPr="http://www.medxml.net/MML/v4/ContentModule/Procedure/0.1"
+
+==== 文書ヘッダー情報(docInfo)のモジュール個別仕様
+===== docInfo
+属性contentModuleTypeにMML0005テーブルから「procedure」を入力すること。
+
+===== title
+処置の内容を示すタイトルを入力すること。属性であるgenerationPurposeにはMML0007テーブルから「procedure」と記録すること。
+
+===== confirmDate
+処置モジュールを利用してインスタンスを作成した日である。
+
+===== mmlCi:CreatorInfo
+処置モジュールにおける文書作成者は、その処置について記載したものであり必ずしも処置を実施したものではない。処置の実施者はmmlPr:performerに記載される。
+
+===== extRefs
+処置モジュールにはmmlCm:extRefエレメントが存在しないため、記載されない。
+
+===== content
+一つの content に一つだけ処置モジュールを記載する。
+
+.エレメント一覧表
+|=====
+| |Elements|Attribute|Data types|Occurence|TableId
+|M27.|mmlPr:ProcedureModule| | | |
+|M27.1.|mmlPr:procedureName| |string | |
+| | |mmlPr:code|string|?|
+| | |mmlPr:system|string|?|
+|M27.2.|mmlPr:urgency| |boolean|?|
+|M27.3.|mmlPr:service| |decimal|?|
+| | | unit|string|#REQUIRED|
+|M27.4.|mmlPr:performedNumber| |integer|?|
+|M27.5.|mmlPr:startDateTime| |dateTime|?|
+|M27.6.|mmlPr:endDatetime| |dateTime|?|
+|M27.7.|mmlPr:duration| |duration|?|
+|M27.8.|mmlPr:bodySite| |string|?|
+|M27.9.|mmlPr:method| |string|?|
+|M27.10.|mmlPr:requester| | |?|
+|M27.10.1.|mmlDp:Department| | |?|
+|M27.10.2.|mmlPsi:PersonalizedInfo| | |?|
+|M27.11.|mmlPr:performer| | |?|
+|M27.11.1.|mmlDp:Department| | |?|
+|M27.11.2.|mmlPsi:PersonalizedInfo| | |?|
+|M27.12.|mmlPr:reason| |string|?|
+|M27.13.|mmlPr:description| |string|?|
+|M27.14.|mmlPr:outcome| |string|?|
+|M27.15.|mmlPr:complication| |string|?|
+|M27.16.|mmlPr:comment| |string|?|
+|=====
+
+Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== エレメント解説
+===== M27. mmlPr:ProcedureModule
+[horizontal]
+内容:: 処置モジュール
+省略:: 不可
+
+===== M27.1. mmlPr:procedureName
+[horizontal]
+内容:: 処置名称。
+データ型:: string
+省略:: 不可
+属性::
+
+[options="header"]
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlPr:code|string|#IMPLIED| |処置コード
+|mmlPr:system|string|#IMPLIED| |コード体系
+|=====
+
+
+===== M27.2. mmlPr:urgency
+[horizontal]
+内容:: 処置の緊急性。緊急性のある処置は、trueとし、緊急性のない処置はfalseと記録される。
+データ型:: boolean
+省略:: 可
+
+===== M27.3. mmlPr:service
+[horizontal]
+内容:: 処置単位。処置には「創傷処置100cm2」や「大血管リハビリテーション3単位」など、サービスに関しての量的表現を伴うものがある。このエレメントにはこのような処置の量的表現を扱う。
+データ型:: decimal
+省略:: 可
+属性::
+
+[options="header"]
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlPr:unit|string|#REQUIRED| |処置単位
+|=====
+
+.例 胸腔穿刺し、胸水を2000ml廃液した場合の記録。「胸腔穿刺・排液」はmmlPr:nameに記載される。
+[source, xml]
+<mmlPr:name>胸腔穿刺・排液</mmlPr:name>
+<mmlPr:service mmlPr:unit="ml">2000</mmlPr:service>
+
+==== M27.4. mmlPr:performedNumber
+[horizontal]
+内容:: 処置を実施した回数を記録する。
+データ型:: integer
+省略:: 可
+
+==== M27.5. mmlPr:startDateTime
+[horizontal]
+内容:: 処置を開始した日時を記録する。
+データ型:: ISO8601形式のdataTime型(YYYY-MM-DDTHH:MM:SS)で記録される。
+省略:: 可
+
+==== M27.6. mmlPr:endDateTime
+[horizontal]
+内容:: 処置が終了した日時を記録する。
+データ型:: ISO8601形式のdataTime型(YYYY-MM-DDTHH:MM:SS)で記録される。
+省略:: 可
+
+==== M27.7. mmlPr:duration
+[horizontal]
+内容:: 処置に要した時間を記録する
+データ型:: ISO8601形式のduration型(P[n]Y[n]M[n]DT[n]H[n]M[n]S)で記録される。
+省略:: 可
+
+==== M27.8. mmlPr:bodySite
+[horizontal]
+内容:: 処置を施した身体部位を記載する。コード化は特に求めない。
+データ型:: string
+省略:: 可
+
+
+==== M27.9. mmlPr:method
+[horizontal]
+内容:: 処置を実施した方法。コード化は特に求めない。
+データ型:: string
+省略:: 可
+
+==== M27.10. mmlPr:requesteor
+[horizontal]
+内容:: 処置を要求した部門、医療従事者について記載する親エレメント
+
+==== M27.10.1. mmlDp:Department
+[horizontal]
+内容:: 処置を要求した部門。構造はMML共通形式mmlDp:Department参照。
+省略:: 可
+
+==== M27.10.2. mmlPsi:PersonalizedInfo
+[horizontal]
+内容:: 処置を要求した医療従事者。構造はMML共通形式mmlPsi:PersonalizedInfoを参照。
+省略:: 可
+
+==== M27.11. mmlPr:performer
+[horizontal]
+内容:: 処置を実施した部門、医療従事者について記載する親エレメント
+
+==== M27.11.1. mmlDp:Department
+[horizontal]
+内容:: 処置を実施した部門。構造はMML共通形式mmlDp:Department参照。
+省略:: 可
+
+==== M27.11.2. mmlPsi:PersonalizedInfo
+[horizontal]
+内容:: 処置を実施した医療従事者。構造はMML共通形式mmlPsi:PersonalizedInfoを参照。
+省略:: 可
+
+==== M27.12. mmlPr:reason
+[horizontal]
+内容:: 処置を実施した理由。
+データ型:: string
+省略:: 可
+
+==== M27.13. mmlPr:description
+[horizontal]
+内容:: 処置内容についての記録。実施した手順や状況などが記載される。
+データ型:: string
+省略:: 可
+
+==== M27.14. mmlPr:outcome
+[horizontal]
+内容:: 処置内容の結果、アウトカム。特にコード化は行わない。
+データ型:: string
+省略:: 可
+
+==== M27.15. mmlPr:complication
+[horizontal]
+内容:: 処置による合併症情報。特にコード化は行わず、合併症の情報を記述する。
+データ型:: string
+省略:: 可
+
+==== M27.16. mmlPr:comment
+[horizontal]
+内容:: 処置についてのコメント、申し送り事項などを記載する。
+データ型:: string
+省略:: 可
+
+
+
+
