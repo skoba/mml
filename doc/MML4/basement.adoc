@@ -47,6 +47,7 @@ docInfoには、記載日、記載者、文書種別、タイトル、文書ID�
 * 処方箋
 * 注射記録
 * 透析
+* 汎用処置
 
 === MML共通形式
 
@@ -107,6 +108,8 @@ xmlns:mml="http://www.medxml.net/MML/v4/base"
 | | |xmlns:mmlFs|string|#FIXED|
 | | |xmlns:mmlPs|string|#FIXED|
 | | |xmlns:mmlInj|string|#FIXED|
+| | |xmlns:mmlHd|string|#FIXED|
+| | |xmlns:mmlPr|string|#FIXED|
 | | |xmlns:claim|string|#FIXED|
 | | |xmlns:claimA|string|#FIXED|
 |M0.1.|MmlHeader| | | |
@@ -210,6 +213,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |xmlns:mmlPs|string|#FIXED|使用した処方箋モジュールスキーマのURIを記載
 |xmlns:mmlInj|string|#FIXED|使用した注射情報モジュールスキーマのURIを記載
 |xmlns:mmlHd|string|#FIXED|使用した透析モジュールスキーマのURIを記載
+|xmlns:mmlPr|string|#FIXED|使用した汎用処置モジュールスキーマのURIを記載
 |xmlns:claim|string|#FIXED|使用した予約請求モジュールスキーマのURIを記載
 |xmlns:claimA|string|#FIXED|使用した点数金額モジュールスキーマのURIを記載
 |=====
