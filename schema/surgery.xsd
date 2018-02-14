@@ -11,10 +11,6 @@
   xmlns:mmlCm="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0">
   
   <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd"/>
-  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0" schemaLocation="name.xsd"/>
-  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0" schemaLocation="address.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0" schemaLocation="phone.xsd" />
-  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0" schemaLocation="facility.xsd"/>
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Department/1.0" schemaLocation="department.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/RegisteredDiagnosis/1.0" schemaLocation="registereddiagnosis.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/PersonalizedInfo/1.0" schemaLocation="personalizedinfo.xsd" />

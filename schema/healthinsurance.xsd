@@ -12,7 +12,6 @@
   xmlns:mmlFc="http://www.medxml.net/MML/v4/SharedComponent/Facility/1.0"
   xmlns:mmlHi="http://www.medxml.net/MML/v4/ContentModule/HealthInsurance/1.1">
   
-  <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Name/1.0" schemaLocation="name.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Address/1.0" schemaLocation="address.xsd" />
   <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Phone/1.0" schemaLocation="phone.xsd" />
