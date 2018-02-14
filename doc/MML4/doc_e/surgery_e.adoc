@@ -1,0 +1,377 @@
+=== Surgical operation information module
+.Structure of the elements
+image::mmlsg.jpg[]
+
+==== namespaces declaration
+The following is the namespaces of this module.
+[source, xml]
+xmlns:mmlSg= "http://www.medxml.net/MML/v4/ContentModule/Surgery/1.0"
+
+.List of the elements
+[options="header"]
+|=====
+| |Elements|Attribute|Data types|Occurence|TableId
+|M17.|mmlSg:SurgeryModule| | | |
+|M17.1.|mmlSg:surgeryItem| | |+|
+|M17.1.1.|mmlSg:surgicalInfo| | | |
+| | |mmlSg:type|string|#IMPLIED|MML0021
+|M17.1.1.1.|mmlSg:date| |date| |
+|M17.1.1.2.|mmlSg:startTime| |time|?|
+|M17.1.1.3.|mmlSg:duration| |duration|?|
+|M17.1.1.4.|mmlSg:surgicalDepartment| | |?|
+|M17.1.1.4.1.|mmlDp:Department| | |+|
+|M17.1.1.5.|mmlSg:patientDepartment| | |?|
+|M17.1.1.5.1.|mmlDp:Department| | |+|　
+|M17.1.2.|mmlSg:surgicalDiagnosis| | | |
+|M17.1.2.1.|mmlRd:RegisteredDiagnosisModule| | |+|
+|M17.1.3.|mmlSg:surgicalProcedure| | | |
+|M17.1.3.1.|mmlSg:procedureItem| | |+|
+|M17.1.3.1.1.|mmlSg:operation| |string| |
+| | |mmlSg:code|string|#IMPLIED|
+| | |mmlSg:system|string|#IMPLIED|
+|M17.1.3.1.2.|mmlSg:operationElement| | |?|
+|M17.1.3.1.2.1.|mmlSg:operationElementItem| | |+|
+|M17.1.3.1.2.1.1.|mmlSg:title| |string| |
+| | |mmlSg:code|string|#IMPLIED|
+| | |mmlSg:system|string|#IMPLIED|
+|M17.1.3.1.3.|mmlSg:procedureMemo| |string|?|
+|M17.1.4.|mmlSg:surgicalStaffs| | |?|
+|M17.1.4.1.|mmlSg:staff| | |+|
+| | |mmlSg:staffClass|string|#IMPLIED|MML0022
+| | |mmlSg:superiority|integer|#IMPLIED|
+|M17.1.4.1.1.|mmlSg:staffInfo| | | |
+|M17.1.4.1.1.1.|mmlPsi:PersonalizedInfo| | |+|
+|M17.1.5.|mmlSg:anesthesiaProcedure| | |?|
+|M17.1.5.1.|mmlSg:title| |string|+|
+| | |mmlSg:code|string|#IMPLIED|
+| | |mmlSg:system|string|#IMPLIED|
+|M17.1.6.|mmlSg:anesthesiologists| | |?|
+|M17.1.6.1.|mmlSg:staff| | |*|
+| | |mmlSg:staffClass|string|#IMPLIED|MML0023
+| | |mmlSg:superiority|integer|#IMPLIED|
+|M17.1.6.1.1.|mmlSg:staffInfo| | | |
+|M17.1.6.1.1.1.|mmlPsi:PersonalizedInfo| | |+|
+|M17.1.7.|mmlSg:anesthesiaDuration| |duration|?|
+|M17.1.8.|mmlSg:operativeNotes| |string|?|
+|M17.1.9.|mmlSg:referenceInfo| | |?|
+|M17.1.9.1.|mmlCm:extRef| | |+|
+|M17.1.10.|mmlSg:memo| |string|?|
+|=====
+Occurrences; blank: 1, ?: 0 or 1, +: more than 1, *: more than 0 +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+==== Elements in detail
+===== M17. mmlSg:SurgeryModule
+Description:: Surgical operation record. It should be carefully remarked to granularity and occurrences. If operations were performed at different date or different series, each operation should be recorded to each MmlModuleItem as the number of operations. A series of operation that performed in at almost the same time should be recorded to a set of mmlSg:surgeryItem.
+
+===== M17.1. mmlSg:surgeryItem
+Description:: An element to record each operation of a series of surgical operations.
+Occurrence:: 1..*. Repeatable as the number of operations.(For example, lung lobectomy and replacement of aortic aneurysm to artificial blood vessel graft were recorded to each mmlSg:surgeryItem, if they are operated sequentially as a series of operations.)
+
+===== M17.1.1. mmlSg:surgicalInfo
+Description:: Header information of surgical operation.
+Occurrence:: 1..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlSg:type|string|#IMPLIED|MML0021|code of operation type
+|=====
+
+.Example in case of an elective operation.
+[source, xml]
+<mmlSg:surgicalInfo mmlSg:type="elective">
+
+===== M17.1.1.1. mmlSg:date
+Description:: Date of operation
+Data type:: date, CCYY-MM-DD format
+Occurrence:: 1..1
+
+===== M17.1.1.2. mmlSg:startTime
+Description:: Time of the operation started.
+Data type:: time, hh:mm:ss format, abbreviated to hh:mm as usual.
+Occurrence:: 0..1.
+.Example
+[source, xml]
+<mmlSg:startTime>08:30</mmlSg:startTime>
+
+===== M17.1.1.3. mmlSg:duration
+Description:: Duration of operation.
+Data type:: duration, PnYnMnDTnHnMnS, PTnHnM as usual.
+Occurrence:: 0..1.
+.Example 5 hours and 25 minutes.
+[source, xml]
+<mmlSg:duration>PT5H25M</mmlSg:duration>
+
+===== M17.1.1.4. mmlSg:surgicalDepartment
+Description:: The record of the department that performed the surgical operation.
+Occurrence:: 0..1.
+
+===== M17.1.1.4.1. mmlDp:Department
+Description:: The department that performed the operation. ref to mmlDp:Department.
+Occurrence:: 1..*.
+
+===== M17.1.1.5. mmlSg:patientDepartment
+Description:: The department where the patient stayed before operation. In some cases, surgical department is not charged to pre-operative care, this item is ready to record the department.
+Occurrence:: 0..1.
+
+===== M17.1.1.5.1. mmlDp:Department
+Description:: The department where the patient stayed before the operation.
+Occurrence:: 1..*.
+
+Example. Patient stayed a department of internal medicine(ID 01).
+[source, xml]
+<mmlDp:Department>
+  <mmlDp:name mmlDp:repCode="A" mmlDp:tableId="MML0025">
+    Internal medicine
+  </mmlDp:name>
+  <mmlCm:Id mmlCm:type="medical" mmlCm:tableId="MML0029">01</mmlCm:Id>
+</mmlDp:Department>
+
+===== M17.1.2. mmlSg:surgicalDiagnosis
+Description:: Surgical diagnosis. With regards to specialty of surgery, surgical diagnostic items can be separated from other records by mmlRd:RegisteredDiagnosisModule, such asn cancer staging, performance status etc.
+The structure of this item should be refered to mmlRd:RegisteredDiagnosisModule
+Occurrence:: 1..1.
+
+===== M17.1.2.1. mmlRd:RegisteredDiagnosisModule
+Description:: refer to mmlRd:RegisteredDiagnosisModule
+Occurrence:: 1..*. repeatable as the number of diagnosis.
+
+.Example Lung cancer, right upper lobe
+[source, xml]
+<mmlSg:surgicalDiagnosis>
+  <mmlRd:RegisteredDiagnosisModule>
+    <mmlRd:diagnosisContents>
+      <mmlRd:dxItem >
+        <mmlRd:name mmlRd:code="C349-.007" mmlRd:system="ICD10">
+          Lung cancer
+        </mmlRd:name>
+      </mmlRd:dxItem>
+      <mmlRd:dxItem>
+        <mmlRd:name>right</mmlRd:name>
+      </mmlRd:dxItem>
+      <mmlRd:dxItem>
+        <mmlRd:name>upper lobe</mmlRd:name>
+      </mmlRd:dxItem>
+    </mmlRd:diagnosisContents>
+    <mmlRd:categories>
+      <mmlRd:category mmlRd:tableId="MML0012">mainDiagnosis</mmlRd:category>
+      <mmlRd:category mmlRd:tableId="MML0013">academicDiagnosis</mmlRd:category>
+      <mmlRd:category mmlRd:tableId="MML0014">operativeDiagnosis</mmlRd:category>
+      <mmlRd:category mmlRd:tableId="MML0015">confirmedDiagnosis</mmlRd:category>
+    </mmlRd:categories>
+  </mmlRd:RegisteredDiagnosisModule>
+</mmlSg:surgicalDiagnosis>
+
+===== M17.1.3. mmlSg:surgicalProcedure
+Description:: Surgical procedure, operation method.
+Occurrence:: 1..1.
+
+===== M17.1.3.1. mmlSg:procedureItem
+Description:: element to describe procedure or methods. Each item has to describe entire procedure with modifiers in one sentence, or structured form.
+Occurrence:: 1..*. repeatable if the surgical operation had multiple procedures(for example, coronary artery bypass and cardiopulmonary bypass)
+
+===== M17.1.3.1.1. mmlSg:operation
+Description:: a procedure of operation by unstructured format with modifiers.
+Data type:: string
+Occurrence:: choice of this or structured format, mmlSg:operationElement.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlSg:code|string|#IMPLIED|Pr code
+|mmlSg:system|string|#IMPLIED|Procedure code system
+|=====
+
+.Example Coronary artery bypass and cardio-pulmonary bypass
+[source, xml]
+ <mmlSg:surgicalProcedure>
+   <mmlSg:procedureItem>
+     <mmlSg:operation>coronary artery bypass grafting</mmlSg:operation>
+   </mmlSg:procedureItem>
+   <mmlSg:procedureItem>
+     <mmlSg:operation>cardio-pulmonary bypass</mmlSg:operation>
+ </mmlSg:procedureItem>
+</mmlSg:surgicalProcedure>
+
+===== M17.1.3.1.2. mmlSg:operationElement
+Description:: Structured expression for surgical operation
+Occurrence:: Choice of this element or mmlSg:operation
+
+.Example Structured expression for "right mastectomy".
+[source, xml]
+<mmlSg:operationElement>
+  <mmlSg:operationElementItem>
+    <mmlSg:title>right</mmlSg:title>
+  </mmlSg:operationElementItem>
+  <mmlSg:operationElementItem>
+    <mmlSg:title>mastectomy</mmlSg:title>
+  </mmlSg:operationElementItem>
+</mmlSg:operationElement>
+
+.Example Structured expression for "3 vessels coronary bypass".
+[source, xml]
+<mmlSg:operationElement>
+  <mmlSg:operationElementItem>
+    <mmlSg:title> coronary artery bypass grafting </mmlSg:title>
+  </mmlSg:operationElementItem>
+  <mmlSg:operationElementItem>
+    <mmlSg:title>3 vessels (LIMA to LAD, SVGs to #9, #12) </mmlSg:title>
+  </mmlSg:operationElementItem>
+</mmlSg:operationElement>
+
+
+===== M17.1.3.1.2.1. mmlSg:operationElementItem
+Description:: element to record multiple items.
+Occurrences:: 1..*. repeatable as the number of items.
+
+===== M17.1.3.1.2.1.1. mmlSg:title
+Description:: title of operation, structured format.
+Data type:: string
+Occurrence:: 1..1
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlSg:code|string|#IMPLIED|Operation code
+|mmlSg:system|string|#IMPLIED|Operation code system
+|=====
+
+===== M17.1.3.1.3. mmlSg:procedureMemo
+Description:: additional memo for surugical procedure
+Data type:: string
+Occurrence:: 0..1.
+
+.Example Cronary artery bypass grafting to 3 vessels, and cardio-pulmonary bypass, retrograde blood cardioplegia, without blood transfusion.
+[source, xml]
+<mmlSg:surgicalProcedure>
+  <mmlSg:procedureItem>
+    <mmlSg:operationElement>
+      <mmlSg:operationElementItem>
+        <mmlSg:title> coronary artery bypass grafting </mmlSg:title>
+      </mmlSg:operationElementItem>
+      <mmlSg:operationElementItem>
+        <mmlSg:title>3 vessels (LIMA to LAD, SVGs to #9, #12) </mmlSg:title>
+      </mmlSg:operationElementItem>
+    </mmlSg:operationElement>
+  </mmlSg:procedureItem>
+  <mmlSg:procedureItem>
+    <mmlSg:operationElement>
+      <mmlSg:operationElementItem>
+        <mmlSg:title> cardio-pulmonary bypass</mmlSg:title>
+      </mmlSg:operationElementItem>
+      <mmlSg:operationElementItem>
+        <mmlSg:title> retrograde blood cardioplegia</mmlSg:title>
+      </mmlSg:operationElementItem>
+    </mmlSg:operationElement>
+    <mmlSg:procedureMemo>no blood transfusion </mmlSg:procedureMemo>
+  </mmlSg:procedureItem>
+</mmlSg:surgicalProcedure>
+
+===== M17.1.4. mmlSg:surgicalStaffs
+Description:: Staffs information, without anesthesiologists
+Occurrence:: 0..1
+
+===== M17.1.4.1. mmlSg:staff
+Description:: element to record multiple staffs.
+Occurrence:: 1..*. repeatable as the number of staffs.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlSg:staffClass|string|#IMPLIED|MML0022|Class of staff
+|mmlSg:superiority|integer|#IMPLIED| |order of staffs
+|=====
+superiority should be expressed by integer, which is the order of the operators, such as "the first" assistant, "the second", etc.
+.Example The first assistant
+[source, xml]
+<mmlSg:staff mmlSg:superiority="1" mmlSg:staffClass="assistant">
+
+===== M17.1.4.1.1. mmlSg:staffInfo
+Description:: the identifier of each staff.
+Occurrence:: 1..1.
+
+===== M17.1.4.1.1.1. mmlPsi:PersonalizedInfo
+Description:: Identifier of personal. refer to mmlPsi:PesonalizedInfo.
+Occurrence:: 1..*.
+
+===== M17.1.5. mmlSg:anesthesiaProcedure
+Description:: Anesthesia procedure name.
+Occurrence:: 0..1.
+
+===== M17.1.5.1. mmlSg:title
+Description:: Anesthesia procedure name
+Data type:: string
+Occurrence:: 1..*. repeatable as the number of performed anesthesia.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlSg:code|string|#IMPLIED|anesthesia procedure
+|mmlSg:system|string|#IMPLIED|anesthesia procedure coding system
+|=====
+
+.Example General anesthesia, tracheal intubation, and G+OEthrane
+[source, xml]
+<mmlSg:anesthesiaProcedure>
+  <mmlSg:title>general anesthesia</mmlSg:title>
+  <mmlSg:title>tracheal intubation </mmlSg:title>
+  <mmlSg:title>G+O+Ethrane</mmlSg:title>
+</mmlSg:anesthesiaProcedure>
+
+===== M17.1.6. mmlSg:anesthesiologists
+Description:: Anesthesiologists information
+Occurrences:: 1..1.
+
+===== M17.1.6.1. mmlSg:staff
+Description:: anesthesiologist
+Occurrences:: 0..*
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlSg:staffClass|string|#IMPLIED|MML0023|Class of anesthesiologist
+|mmlSg:superiority|integer|#IMPLIED| |order of responsibility
+|=====
+
+===== M17.1.6.1.1. mmlSg:staffInfo
+Description:: Identifier to anesthesiologist
+Occurrences:: 1..1
+
+
+===== M17.1.6.1.1.1. mmlPsi:PersonalizedInfo
+Description:: Personal identifier. refer to mmlPsi:PersonalizedInfo参照
+Occurrences:: 1..*.
+
+===== M17.1.7. mmlSg:anesthesiaDuration
+Description:: Duration of anesthesia.
+Data type:: ISO8601 Duration format: PnYnMnDTnHnMnS, PTnHnM as usual.
+Occurrences:: 0..1.
+
+.Example 6 hours and 25 minutes.
+[source, xml]
+<mmlSg:anesthesiaDuration>PT6H25M</mmlSg:anesthesiaDuration>
+
+===== M17.1.8. mmlSg:operativeNotes
+Description:: free text expression for operation record.
+Data type:: string
+Occurrences:: 0..1.
+Layout:: XHTML available.
+
+===== M17.1.9. mmlSg:referenceInfo
+Description:: external references for figure or photos to record operation.
+Occurrences:: 0..1.
+
+===== M17.1.9.1. mmlCm:extRef
+Description:: refer to mmlCm:extRef(extenal reference).
+Occurrence:: 1..1.
+
+.Example Operation record figure(Figure 1. Skin incision)
+[source, xml]
+<mmlSg:referenceInfo>
+  <mmlCm:extRef mmlCm:contentType="image/gif" mmlCm:medicalRole="surgicalFigure" mmlCm:title="Fig1. Skin incision" mmlCm:href="patient001/surgicalFigure001.gif"/>
+</mmlSg:referenceInfo>
+
+===== M17.1.10 mmlSg:memo
+Description:: Additional memo to operation record
+Data type:: string.
+Occurrences:: 0..1.

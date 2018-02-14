@@ -56,7 +56,7 @@ Occurrence:: 1..*
 
 ===== M14.1.1.1. mmlBc:factor
 [horizontal]
-Description:: a risk factor(allergen) that causes allergy.
+Description:: a risk factor that causes allergy.
 Data type:: string
 Occurrence:: 1..1
 
@@ -68,27 +68,27 @@ Occurrence:: 0..1
 
 ===== M14.1.1.3. mmlBc:identifiedDate
 [horizontal]
-Description:: The date when the allergy was identified. This description can address not only the absolute point of date, but also the broad expression for obscure record.
+Description:: the date of allergy was identified. Free text format is available that allows to describe "in infant" or "about twenty years ago".
 Data type:: string
 Occurrence:: 0..1
 
 ===== M14.1.1.4. mmlBc:memo
 [horizontal]
-Description:: Memo related to allergy. Details for uncovered with the items before.
+Description:: Allergy memo to describe information other than in the item before.
 Data type:: string
 Occurrence:: 0..1
-Layouts: XHML applicable.
+Layout:: XHTML available.
 
-.Example A patient has mild allergy with crab from about 20 years ago, but no reaction to shrimp.
+.Example mild allergy to crab from 20 years ago, but no allergy to shrimp
 [source, xml]
 <mmlBc:allergyItem>
   <mmlBc:factor>crab</mmlBc:factor>
   <mmlBc:severity>mild</mmlBc:severity>
-  <mmlBc:identifiedDate>since almost 20 years ago</mmlBc:identifiedDate>
-  <mmlBc:memo>no reaction to shrimp</mmlBc:memo>
+  <mmlBc:identifiedDate>from almost 20 years ago</mmlBc:identifiedDate>
+  <mmlBc:memo>no allergy to shrimp</mmlBc:memo>
 </mmlBc:allergyItem>
 
-.Example no particular description about allergy
+.Example nothing to be described for allergy
 [source, xml]
 <mmlBc:allergyItem>
   <mmlBc:factor>nothing</mmlBc:factor>
@@ -97,49 +97,48 @@ Layouts: XHML applicable.
 
 ===== M14.2.  mmlBc:bloodtype
 [horizontal]
-Description:: Blood type information
-Occurrence:: 0..1
+Description:: Blood type information.
+Occurrence:: 0..1.
 
 ===== M14.2.1. mmlBc:abo
 [horizontal]
-Description:: ABO blood typing. Ref to table MML0018.
+Description:: ABO typing. Refer to MML0018 table.
 Data type:: string
-Occurrence:: 1..1
+Occurrence:: 1..1.
 
 ===== M14.2.2. mmlBc:rh
 [horizontal]
-Description:: Rho(D) blood typing. Ref to MML0019.
+Description:: Rho(D) typing. ref to MML0019 table.
 Data type:: string
-Occurrence:: 0..1
+Occurrence:: 0..1.
 
 ===== M14.2.3. mmlBc:others
 [horizontal]
-Description:: Other blood type information
-Occurrence:: 0..1
+Description:: Other blood typing.
+Occurrence:: 0..1.
 
 ===== M14.2.3.1. mmlBc:other
 [horizontal]
-Description:: Other blood typing, repeatable as the numbers of other blood types.
+Description:: Other blood typing
 Occurrence:: 0..*
 
 ===== M14.2.3.1.1. mmlBc:typeName
 [horizontal]
-Description:: Name of blood typing
+Description:: name of blood typing.
 Data type:: string
-Occurrence:: 1..1
+Occurrence:: 1..1.
 
 ===== M14.2.3.1.2. mmlBc:typeJudgement
 [horizontal]
-Description:: Judgement of blood typing
+Description:: Judgement of blood typing.
 Data type:: string
-Occurrence:: 1..1
+Occurrence:: 1..1.
 
 ===== M14.2.3.1.3. mmlBc:description
 [horizontal]
-Description:: Remarks on blood typing
+Description:: remarks for blood typing
 Data type:: string
-Occurrence:: 0..1
-Layout:: XHTML available
+Layout:: XHTML available.
 
 .Example
 [source, xml]
@@ -151,42 +150,42 @@ Layout:: XHTML available
 
 ===== M14.2.4. mmlBc:memo
 [horizontal]
-Description:: Remarks to blood typing
+Description:: Memorandum for blood typing
 Data type:: string
-Occurrence:: 0..1
-Layout:: XHTML available
+Occurrence:: 0..1.
+Layout:: XHTML available.
 
 ===== M14.3. mmlBc:infection
 [horizontal]
-Description:: Infectious disease information
+Description:: Information about infectious agents.
 Occurrence:: 0..1
 
 ===== M14.3.1. mmlBc:infectionItem
 [horizontal]
-Description:: Element for each infectious entity, repeatable as number of infection.
-Occurrence:: 0..*
+Description:: Element for each infection information.
+Occurrence:: 1..*.
 
 ===== M14.3.1.1. mmlBc:factor
 [horizontal]
-Description:: Name of infectious entity.
+Description:: name .of infective factor.
 Data type:: string
-Occurrence:: 1..1
+Occurrence:: 1..1.
 
 ===== M14.3.1.2. mmlBc:examValue
 [horizontal]
-Description:: Test result of infectious entity.
-Data type:: string
+Description:: Examination result value
+Data type:: string.
 Occurrence:: 1..1
 
 ===== M14.3.1.3. mmlBc:identifiedDate
 [horizontal]
-Description:: Identified date of infection, not formatted for ambiguous description such as "two years ago".
-Data type:: string
+Description:: identified data of infective factor.
+Data type:: string.
 Occurrence:: 0..1
 
 ===== M14.3.1.4. mmlBc:memo
 [horizontal]
-Description:: Memo for the infectious factor.
-Data type:: string
-Occurrence:: 0..1
+Description:: memo for infective factor
+Data type:: string.
+Occurrence:: 0..1.
 Layout:: XHTML available
