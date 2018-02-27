@@ -173,36 +173,40 @@ Data type:: string.
 Occurrence:: 1..*. repeatable as the number of licenses.
 
 ===== M18.1.2. mmlSm:inPatient
-【内容】入院歴情報 +
-【省略】不可
+[horizontal]
+Description:: History of admission.
+Occurrence:: 1..1.
 
 ===== M18.1.2.1. mmlSm:inPatientItem
-【内容】個々の入院暦．繰り返しにより，複数入院，一入院における転棟，転科を記載可能． +
-【省略】省略可 +
-【繰り返し設定】繰り返しあり．入院が複数あれば繰り返す．
+[horizontal]
+Description:: each event of admission. Series of this items are capable to describe multiple admission, or ward/department changes in one admission.
+Occurrence::  0..*.
 
 ===== M18.1.2.1.1. mlSm:admission
-【内容】入院 +
-【省略】不可
+[horizontal]
+Description:: Admission
+Occurrence:: 1..1.
 
 ===== M18.1.2.1.1.1. mmlSm:date
-【内容】入院 (転入) 日 +
-【データ型】date 書式：CCYY-MM-DD +
-【省略】不可 +
-【例】1999 年 8 月 27 日，入院
+[horizontal]
+Description:: date of admission.
+Data type:: date format(ISO8601), CCYY-MM-DD.
+Occurrence:: 1..1.
+.Example admitted on 27 August, 2017
 [source, xml]
-<mmlSm:date>1999-8-27</mmlSm:date>
+<mmlSm:date>2017-8-27</mmlSm:date>
 
 ===== M18.1.2.1.1.2. mmlSm:admissionCondition
-【内容】入院時状態 +
-【データ型】string +
-【省略】省略可 +
-【属性】
+[horizontal]
+Description:: the condition at admission.
+Data type:: string.
+Occurrence:: 0..1.
+Attributes::
 |=====
-|属性名|データ型|省略|説明
-|mmlSm:emergency|boolean|#IMPLIED|緊急入院．true：緊急入院，false：通常
+|Name|Data type|Occurrence|Description
+|mmlSm:emergency|boolean|#IMPLIED|Emergency admission: true, usual admission: false
 |=====
-【例】救急車にて緊急入院
+.Example emergency admission by ambulance car.
 [source, xml]
 <mmlSm:admissionCondition mmlSm:emergency="true">
   Emergency admission by ambulance
