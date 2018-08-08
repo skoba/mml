@@ -1,0 +1,11 @@
+// Template of Module description
+=== [Module name]
+
+.エレメント構造図
+image::.jpg[]
+
+.エレメント一覧表
+[options="header"]
+|=====
+| |Element|Attribute|Data types|Occurence|TableId
+|=====

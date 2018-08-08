@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.5">
-<title>MML 4.1.2</title>
+<meta name="generator" content="Asciidoctor 1.5.6.2">
+<title>MML 4.2.0</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body class="book toc2 toc-right">
 <div id="header">
-<h1>MML 4.1.2</h1>
+<h1>MML 4.2.0</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -141,12 +141,12 @@
 <div class="sect3">
 <h4 id="_version表記">2.1.1. Version表記</h4>
 <div class="paragraph">
-<p>Mmlのversion属性のdefaultが"4.0"から"4.1"に変更された。</p>
+<p>Mmlのversion属性のdefaultが"4.0"から"4.2"に変更された。</p>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>-&lt;xs:attribute name="version" default="4.0" type="xs:string"/&gt;
-+&lt;xs:attribute name="version" default="4.1.2" type="xs:string"/&gt;</pre>
++&lt;xs:attribute name="version" default="4.2.0" type="xs:string"/&gt;</pre>
 </div>
 </div>
 </div>
@@ -256,8 +256,9 @@
  + &lt;xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlRd:RegisteredDiagnosisModule"/&gt;</code></pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_手術記録モジュール内のエレメントのoccurrence">2.1.3.1. 手術記録モジュール内のエレメントのoccurrence</h5>
+</div>
+<div class="sect3">
+<h4 id="_手術記録モジュール内のエレメントのoccurrence">2.1.4. 手術記録モジュール内のエレメントのoccurrence</h4>
 <div class="paragraph">
 <p>手術記録モジュールの解説文書に記載されているエレメントのoccurrenceとスキーマに記載されているoccurrenceが一部異なっていた。調査の結果、MML ver 2, ver 3でも同様に文書とDTDにずれが見られた。検討の結果、DTD、スキーマに文書を合わせることとした。</p>
 </div>
@@ -288,8 +289,8 @@ M17.1.6.1.1.1. mmlPsi:PersonalizedInfo +</pre>
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_処方箋モジュールのmmlps_repetitionsエレメント追加">2.1.3.2. 処方箋モジュールのmmlPs:repetitionsエレメント追加</h5>
+<div class="sect3">
+<h4 id="_処方箋モジュールのmmlps_repetitionsエレメント追加">2.1.5. 処方箋モジュールのmmlPs:repetitionsエレメント追加</h4>
 <div class="paragraph">
 <p>処方箋モジュールで頓用処方の総回数を記載する項目がなかったため追加した。
 下記のように追加した</p>
@@ -304,12 +305,10 @@ M17.1.6.1.1.1. mmlPsi:PersonalizedInfo +</pre>
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_処方箋_注射モジュールの薬剤コードエレメント">2.1.3.3. 処方箋、注射モジュールの薬剤コードエレメント</h5>
-<div class="literalblock">
-<div class="content">
-<pre>　処方箋、注射記録モジュールとも薬剤コードの所属するコード体型を記録するsystem属性が存在するが、そのネームスペースが欠落していたのでそれぞれのネームスペースを付与した</pre>
-</div>
+<div class="sect3">
+<h4 id="_処方箋_注射モジュールの薬剤コードエレメント">2.1.6. 処方箋、注射モジュールの薬剤コードエレメント</h4>
+<div class="paragraph">
+<p>　処方箋、注射記録モジュールとも薬剤コードの所属するコード体型を記録するsystem属性が存在するが、そのネームスペースが欠落していたのでそれぞれのネームスペースを付与した</p>
 </div>
 <div class="literalblock">
 <div class="title">修正前</div>
@@ -325,20 +324,20 @@ mmlInj:system</pre>
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_処方箋モジュールの1日量処方表記">2.1.3.4. 処方箋モジュールの1日量処方表記</h5>
+<div class="sect3">
+<h4 id="_処方箋モジュールの1日量処方表記">2.1.7. 処方箋モジュールの1日量処方表記</h4>
 <div class="paragraph">
 <p>処方箋モジュールの書式は1回量表記がベースとなっているが、システム上、止むを得ない場合に一日総量をdoseに記載し、frequencyPerDayに1として、用法指示に分割指示を記載することも許容することとした。</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_処方箋_注射モジュールの薬剤コード体系設定">2.1.3.5. 処方箋、注射モジュールの薬剤コード体系設定</h5>
+<div class="sect3">
+<h4 id="_処方箋_注射モジュールの薬剤コード体系設定">2.1.8. 処方箋、注射モジュールの薬剤コード体系設定</h4>
 <div class="paragraph">
 <p>処方箋モジュール、注射モジュールで使用する薬剤コード体系をMML0037テーブルにまとめた。</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_注射記録モジュールの投与開始日時_投与終了日時">2.1.3.6. 注射記録モジュールの投与開始日時、投与終了日時</h5>
+<div class="sect3">
+<h4 id="_注射記録モジュールの投与開始日時_投与終了日時">2.1.9. 注射記録モジュールの投与開始日時、投与終了日時</h4>
 <div class="paragraph">
 <p>注射では投与開始日ではなく、投与開始日時が記録されるため記述部分でデータ型がdateとなっていたのをdateTime型に修正した。(スキーマに変更なし)</p>
 </div>
@@ -363,13 +362,13 @@ mmlInj:system</pre>
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_xmlスキーマのリファクタリング">2.1.3.7. XMLスキーマのリファクタリング。</h5>
+<div class="sect3">
+<h4 id="_xmlスキーマのリファクタリング">2.1.10. XMLスキーマのリファクタリング。</h4>
 <div class="paragraph">
 <p>xsdの書式で型定義やoccurrence定義が不十分であったり、冗長であったところを修正した。XMLスキーマとして暗黙的に指定されている型やoccurrenceについても明示的に記載することとした。</p>
 </div>
-<div class="sect5">
-<h6 id="_occurrenceの明示_基礎的診療情報モジュール">2.1.3.7.1. occurrenceの明示(基礎的診療情報モジュール）</h6>
+<div class="sect4">
+<h5 id="_occurrenceの明示_基礎的診療情報モジュール">2.1.10.1. occurrenceの明示(基礎的診療情報モジュール）</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml">-        &lt;xs:element minOccurs="0" ref="mmlBc:allergy"/&gt;
@@ -381,8 +380,8 @@ mmlInj:system</pre>
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_文字列型からboolean型へ">2.1.3.7.2. 文字列型からboolean型へ</h6>
+<div class="sect4">
+<h5 id="_文字列型からboolean型へ">2.1.10.2. 文字列型からboolean型へ</h5>
 <div class="paragraph">
 <p>文字列（トークン）型で"true"あるいは"false"と制限をかける制約とboolean型を指定することで、インスタンス内に記載されるデータに差はないが、boolean型として明示的に定義するほうが冗長さも回避できる。</p>
 </div>
@@ -404,8 +403,8 @@ mmlInj:system</pre>
 <p>サマリー情報にあるemergency属性, deathInfoエレメントなどに上記の変更を行った。</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_文字列型からdate型へ">2.1.3.7.3. 文字列型からdate型へ</h6>
+<div class="sect4">
+<h5 id="_文字列型からdate型へ">2.1.10.3. 文字列型からdate型へ</h5>
 <div class="paragraph">
 <p>MMLの規約として、日付はCCYY-MM-DDのISO8601形式で記載することとしているため、date型で指定するのと同様にインスタンスに記載されるが、明示的に型を指定することによりデータのバリデーションを行うことができるためスキーマの修正を行った。</p>
 </div>
@@ -417,15 +416,14 @@ mmlInj:system</pre>
 </div>
 </div>
 </div>
-</div>
 <div class="sect4">
-<h5 id="_attributeの付け替えなど">2.1.3.8. attributeの付け替えなど</h5>
+<h5 id="_attributeの付け替えなど">2.1.10.4. attributeの付け替えなど</h5>
 <div class="paragraph">
 <p>DTDからXML schemaにはほぼ自動変換したものを使用していたが、冗長であったり定義の並びが離れていて分かりづらかったりしたところを修正した。</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_誤字_表現の修正">2.1.3.9. 誤字、表現の修正</h5>
+<h5 id="_誤字_表現の修正">2.1.10.5. 誤字、表現の修正</h5>
 <div class="paragraph">
 <p>その他誤字の修正、表現の修正を多数行った</p>
 </div>
@@ -441,32 +439,35 @@ mmlInj:system</pre>
 </div>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_スキーマに関わる修正">2.1.11. スキーマに関わる修正</h4>
 <div class="sect4">
-<h5 id="_スキーマに関わる修正">2.1.3.10. スキーマに関わる修正</h5>
-<div class="sect5">
-<h6 id="_mmlheaderのtoc_tocitemの削除">2.1.3.10.1. MmlHeaderのtoc, tocItemの削除</h6>
+<h5 id="_mmlheaderのtoc_tocitemの削除">2.1.11.1. MmlHeaderのtoc, tocItemの削除</h5>
 <div class="paragraph">
 <p>以前から必要性については疑問視されてきていた。SAX系のパーサでは有用とされるが、現行のXMLテンプレートシステムとの相性の悪さや現在主流のXMLパーサでは単に読み飛ばされるだけであるため廃止することとした。</p>
 </div>
+</div>
+<div class="sect4">
+<h5 id="_xhtml記述の追加">2.1.11.2. XHTML記述の追加</h5>
 <div class="paragraph">
-<p>======= XHTML記述の追加
-XHTML使用可とされているエレメントで、XHTMLが使用できなくなっていたのを修正した。</p>
+<p>XHTML使用可とされているエレメントで、XHTMLが使用できなくなっていたのを修正した。</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_mmlのcreatedate属性">2.1.3.10.2. MmlのcreateDate属性</h6>
+<div class="sect4">
+<h5 id="_mmlのcreatedate属性">2.1.11.3. MmlのcreateDate属性</h5>
 <div class="paragraph">
 <p>MML Ver 2.3ではdate型、MML ver 3ではdateTime型でとされていた。Ver 3.xを引き継ぐこととし、</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_docinfo_moduleversion属性">2.1.3.10.3. docInfo, moduleVersion属性</h6>
+<div class="sect4">
+<h5 id="_docinfo_moduleversion属性">2.1.11.4. docInfo, moduleVersion属性</h5>
 <div class="paragraph">
 <p>uri型がXML Schema仕様にないため、string型に変更した。</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_mmlsm_attrlistの属性としてrelationおよびrelateddocの定義が誤って定義されていた">2.1.3.10.4. mmlSm:attrListの属性としてrelationおよびrelatedDocの定義が誤って定義されていた。</h6>
+<div class="sect4">
+<h5 id="_mmlsm_attrlistの属性としてrelationおよびrelateddocの定義が誤って定義されていた">2.1.11.5. mmlSm:attrListの属性としてrelationおよびrelatedDocの定義が誤って定義されていた。</h5>
 <div class="paragraph">
 <p>下記のように修正を行った。</p>
 </div>
@@ -482,8 +483,8 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_mmlsg_referenceinfo">2.1.3.10.5. mmlSg:referenceInfo</h6>
+<div class="sect4">
+<h5 id="_mmlsg_referenceinfo">2.1.11.6. mmlSg:referenceInfo</h5>
 <div class="paragraph">
 <p>ドキュメントおよびVer 3.0のDTDでは1回以上の繰り返しとなっていたため下記のように修正した。</p>
 </div>
@@ -500,26 +501,26 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_mmlps_frequencyperday">2.1.3.10.6. mmlPs:frequencyPerDay</h6>
+<div class="sect4">
+<h5 id="_mmlps_frequencyperday">2.1.11.7. mmlPs:frequencyPerDay</h5>
 <div class="paragraph">
 <p>4.1.1の解説文書ではdecimal, スキーマはstringであったが、ともにintegerに修正</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_mmlps_batchno">2.1.3.10.7. mmlPs:batchNo</h6>
+<div class="sect4">
+<h5 id="_mmlps_batchno">2.1.11.8. mmlPs:batchNo</h5>
 <div class="paragraph">
 <p>4.1.1の解説文書ではdecimal, スキーマはintegerであった。スキーマに合わせて解説文書をintegerに修正</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_mmlsm_clinicalrecord_mmlsm_deathinfo_mmlsm_testresult">2.1.3.10.8. mmlSm:clinicalRecord, mmlSm:deathInfo, mmlSm:testResult</h6>
+<div class="sect4">
+<h5 id="_mmlsm_clinicalrecord_mmlsm_deathinfo_mmlsm_testresult">2.1.11.9. mmlSm:clinicalRecord, mmlSm:deathInfo, mmlSm:testResult</h5>
 <div class="paragraph">
 <p>属性情報のmmlSm:dateがdate/dateTimeとDTDの曖昧さを許容していた。XML Schemaでは型定義が厳密であることから、dateTime型に統一することとした。</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_mmllb_numvalue_mmllb_value">2.1.3.10.9. mmlLb:numValue, mmlLb:value</h6>
+<div class="sect4">
+<h5 id="_mmllb_numvalue_mmllb_value">2.1.11.10. mmlLb:numValue, mmlLb:value</h5>
 <div class="paragraph">
 <p>Ver 3のDTDの定義では、下記のようにnumValueとしては空欄でもデータが異常値であることを示すことができていた。</p>
 </div>
@@ -567,8 +568,8 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_mmlrd_categoryの修正">2.1.3.10.10. mmlRd:categoryの修正</h6>
+<div class="sect4">
+<h5 id="_mmlrd_categoryの修正">2.1.11.11. mmlRd:categoryの修正</h5>
 <div class="paragraph">
 <p>categoryに文字列を記入することができなくなっていたため下記のように修正を行った。</p>
 </div>
@@ -586,8 +587,8 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_mmlsc_personnameのtableid属性">2.1.3.10.11. mmlSc:personNameのtableId属性</h6>
+<div class="sect4">
+<h5 id="_mmlsc_personnameのtableid属性">2.1.11.12. mmlSc:personNameのtableId属性</h5>
 <div class="paragraph">
 <p>qualified指定がされていなかったため、namespace指定が落ちていた。追加して他の属性との整合性をとった。</p>
 </div>
@@ -597,27 +598,27 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_処置モジュールの追加">2.1.3.10.12. 処置モジュールの追加</h6>
+</div>
+<div class="sect3">
+<h4 id="_処置モジュールの追加">2.1.12. 処置モジュールの追加</h4>
 <div class="paragraph">
 <p>汎用処置モジュールの追加を行った。詳細はモジュール解説を参照。</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_透析モジュールの分割">2.1.3.10.13. 透析モジュールの分割</h6>
+<div class="sect3">
+<h4 id="_透析モジュールの分割">2.1.13. 透析モジュールの分割</h4>
 <div class="paragraph">
-<p>透析モジュールは透析履歴モジュール、透析オーダーモジュール、透析実施記録モジュールに3分割することとした。詳細はモジュール解説を参照。</p>
+<p>透析モジュールは透析履歴モジュール、透析オーダーモジュール、透析実施記録モジュールに3分割する方針であったが、このリリースでは盛り込めなかった。</p>
 </div>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_サンプルインスタンスの追加">2.1.3.11. サンプルインスタンスの追加</h5>
+<div class="sect3">
+<h4 id="_サンプルインスタンスの追加">2.1.14. サンプルインスタンスの追加</h4>
 <div class="paragraph">
-<p>バイタルサインモジュール、体温表モジュール、報告書モジュール、透析モジュール、処置モジュールのサンプルを追加した。</p>
+<p>バイタルサインモジュール、体温表モジュール、報告書モジュール、透析モジュール、汎用処置モジュールのサンプルを追加した。</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_チェックプログラムの追加">2.1.3.12. チェックプログラムの追加</h5>
+<div class="sect3">
+<h4 id="_チェックプログラムの追加">2.1.15. チェックプログラムの追加</h4>
 <div class="paragraph">
 <p>Rubyでスキーマ、インスタンスの整合性を取るチェックプログラムを作成した。以下の手順でチェックプログラムを操作できる。</p>
 </div>
@@ -629,15 +630,14 @@ XHTML使用可とされているエレメントで、XHTMLが使用できなく�
 % rake</code></pre>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_誤字_表現の修正_2">2.1.3.12.1. 誤字、表現の修正</h6>
+</div>
+<div class="sect3">
+<h4 id="_誤字_表現の修正_2">2.1.16. 誤字、表現の修正</h4>
 <div class="paragraph">
 <p>数多くの誤字の修正および表現の修正を行った。(下記参照)</p>
 </div>
 <div class="paragraph">
 <p><a href="https://github.com/skoba/mml/issues?q=is%3Aclosed+milestone%3A%224.1.2+release%22" class="bare">https://github.com/skoba/mml/issues?q=is%3Aclosed+milestone%3A%224.1.2+release%22</a></p>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -836,6 +836,10 @@ Release 1.0, 2000</p>
 <dt class="hdlist1">透析モジュール</dt>
 <dd>
 <p>xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"</p>
+</dd>
+<dt class="hdlist1">汎用処置モジュール</dt>
+<dd>
+<p>xmlns:mmlPr="http://www.medxml.net/MML/v4/ContentModule/Procedure/1.0"</p>
 </dd>
 </dl>
 </div>
@@ -1250,6 +1254,9 @@ xs:token
 <li>
 <p>透析</p>
 </li>
+<li>
+<p>汎用処置</p>
+</li>
 </ul>
 </div>
 </div>
@@ -1563,6 +1570,22 @@ xs:token
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlInj</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#FIXED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlHd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#FIXED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlPr</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#FIXED</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2252,6 +2275,12 @@ xs:token
 <td class="tableblock halign-left valign-top"><p class="tableblock">使用した透析モジュールスキーマのURIを記載</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:mmlPr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#FIXED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用した汎用処置モジュールスキーマのURIを記載</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xmlns:claim</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#FIXED</p></td>
@@ -2268,10 +2297,8 @@ xs:token
 <div class="paragraph">
 <p>インスタンス全体に適用されるnamespaces宣言は，MMLルートタグ（MML基本構造M0.Mml）の属性とする．一つのMMLインスタンスが，同種でかつ，異なるバージョンのモジュールを含んでいるときは，モジュールのnamespaces宣言は，それぞれのモジュールのルートタグの属性とする．</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>　</pre>
-</div>
+<div class="paragraph">
+<p>　</p>
 </div>
 </div>
 </div>
@@ -4942,10 +4969,8 @@ individual
 <div class="sect1">
 <h2 id="_mmlコンテンツ_モジュール詳説">8. MMLコンテンツ モジュール詳説</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>　MMLではユースケースに応じて下記のモジュールを設計した。各モジュールを1文書単位としてMmlModuleItemに記載することとしている。詳細は各ドキュメントおよびスキーマを参照すること。</pre>
-</div>
+<div class="paragraph">
+<p>　MMLではユースケースに応じて下記のモジュールを設計した。各モジュールを1文書単位としてMmlModuleItemに記載することとしている。詳細は各ドキュメントおよびスキーマを参照すること。</p>
 </div>
 <div class="sect2">
 <h3 id="_患者情報モジュール">8.1. 患者情報モジュール</h3>
@@ -25022,7 +25047,7 @@ hdObservationTable01</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-12-02 23:17:44 JST
+Last updated 2018-08-08 19:34:14 JST
 </div>
 </div>
 </body>
