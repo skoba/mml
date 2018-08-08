@@ -76,6 +76,8 @@ MmlHeader および docInfo構造モジュール::
 	xmlns:mmlInj="http://www.medxml.net/MML/v4/ContentModule/Injection/1.0"
 透析モジュール::
 	xmlns:mmlHd="http://www.medxml.net/MML/v4/ContentModule/Hemodialysis/1.0"
+汎用処置モジュール::
+	xmlns:mmlPr="http://www.medxml.net/MML/v4/ContentModule/Procedure/1.0"
 
 === MMLにおける各種のデータ定義
 

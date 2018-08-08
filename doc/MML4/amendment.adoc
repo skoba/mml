@@ -83,7 +83,7 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
  - <xs:element minOccurs="0" ref="mmlRd:RegisteredDiagnosisModule"/>
  + <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlRd:RegisteredDiagnosisModule"/>
 
-===== 手術記録モジュール内のエレメントのoccurrence
+==== 手術記録モジュール内のエレメントのoccurrence
 
 手術記録モジュールの解説文書に記載されているエレメントのoccurrenceとスキーマに記載されているoccurrenceが一部異なっていた。調査の結果、MML ver 2, ver 3でも同様に文書とDTDにずれが見られた。検討の結果、DTD、スキーマに文書を合わせることとした。
 
@@ -109,7 +109,7 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
  M17.1.6.1.1. mmlSg:staffInfo
  M17.1.6.1.1.1. mmlPsi:PersonalizedInfo +
 
-===== 処方箋モジュールのmmlPs:repetitionsエレメント追加
+==== 処方箋モジュールのmmlPs:repetitionsエレメント追加
 
 処方箋モジュールで頓用処方の総回数を記載する項目がなかったため追加した。
 下記のように追加した
@@ -120,7 +120,7 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
  【省略】可 +
  【説明】頓用処方や外用処方の場合など、薬剤が繰り返される回数。
 
-===== 処方箋、注射モジュールの薬剤コードエレメント
+==== 処方箋、注射モジュールの薬剤コードエレメント
 
 　処方箋、注射記録モジュールとも薬剤コードの所属するコード体型を記録するsystem属性が存在するが、そのネームスペースが欠落していたのでそれぞれのネームスペースを付与した
 
@@ -133,13 +133,13 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
  mmlPs:system
  mmlInj:system
 
-===== 処方箋モジュールの1日量処方表記
+==== 処方箋モジュールの1日量処方表記
 処方箋モジュールの書式は1回量表記がベースとなっているが、システム上、止むを得ない場合に一日総量をdoseに記載し、frequencyPerDayに1として、用法指示に分割指示を記載することも許容することとした。
 
-===== 処方箋、注射モジュールの薬剤コード体系設定
+==== 処方箋、注射モジュールの薬剤コード体系設定
 処方箋モジュール、注射モジュールで使用する薬剤コード体系をMML0037テーブルにまとめた。
 
-===== 注射記録モジュールの投与開始日時、投与終了日時
+==== 注射記録モジュールの投与開始日時、投与終了日時
 
 注射では投与開始日ではなく、投与開始日時が記録されるため記述部分でデータ型がdateとなっていたのをdateTime型に修正した。(スキーマに変更なし)
 
@@ -157,11 +157,11 @@ P32Wといった、ISO8601のduration表記に準じたPnWで表現すること�
   【省略】可 +
  -【データ型】date +
 
-===== XMLスキーマのリファクタリング。
+==== XMLスキーマのリファクタリング。
 
 xsdの書式で型定義やoccurrence定義が不十分であったり、冗長であったところを修正した。XMLスキーマとして暗黙的に指定されている型やoccurrenceについても明示的に記載することとした。
 
-======  occurrenceの明示(基礎的診療情報モジュール）
+=====  occurrenceの明示(基礎的診療情報モジュール）
 
 [source, xml]
 -        <xs:element minOccurs="0" ref="mmlBc:allergy"/>
@@ -171,7 +171,7 @@ xsdの書式で型定義やoccurrence定義が不十分であったり、冗長�
 +        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:bloodtype"/>
 +        <xs:element minOccurs="0" maxOccurs="1" ref="mmlBc:infection"/>
 
-====== 文字列型からboolean型へ
+===== 文字列型からboolean型へ
 文字列（トークン）型で"true"あるいは"false"と制限をかける制約とboolean型を指定することで、インスタンス内に記載されるデータに差はないが、boolean型として明示的に定義するほうが冗長さも回避できる。
 
 .summary.xsd
@@ -188,7 +188,7 @@ xsdの書式で型定義やoccurrence定義が不十分であったり、冗長�
 
 サマリー情報にあるemergency属性, deathInfoエレメントなどに上記の変更を行った。
 
-====== 文字列型からdate型へ
+===== 文字列型からdate型へ
 
 MMLの規約として、日付はCCYY-MM-DDのISO8601形式で記載することとしているため、date型で指定するのと同様にインスタンスに記載されるが、明示的に型を指定することによりデータのバリデーションを行うことができるためスキーマの修正を行った。
 
@@ -214,21 +214,21 @@ DTDからXML schemaにはほぼ自動変換したものを使用していたが�
  +【省略】省略可
 
 
-===== スキーマに関わる修正
-====== MmlHeaderのtoc, tocItemの削除
+==== スキーマに関わる修正
+===== MmlHeaderのtoc, tocItemの削除
 以前から必要性については疑問視されてきていた。SAX系のパーサでは有用とされるが、現行のXMLテンプレートシステムとの相性の悪さや現在主流のXMLパーサでは単に読み飛ばされるだけであるため廃止することとした。
 
-======= XHTML記述の追加
+===== XHTML記述の追加
 XHTML使用可とされているエレメントで、XHTMLが使用できなくなっていたのを修正した。
 
-====== MmlのcreateDate属性
+===== MmlのcreateDate属性
 MML Ver 2.3ではdate型、MML ver 3ではdateTime型でとされていた。Ver 3.xを引き継ぐこととし、
 
-====== docInfo, moduleVersion属性
+===== docInfo, moduleVersion属性
 uri型がXML Schema仕様にないため、string型に変更した。
 
 
-====== mmlSm:attrListの属性としてrelationおよびrelatedDocの定義が誤って定義されていた。
+===== mmlSm:attrListの属性としてrelationおよびrelatedDocの定義が誤って定義されていた。
 下記のように修正を行った。
 [source, xml]
 <xs:attribute name="relation" use="optional" type="xs:string" form="qualified"/>
@@ -239,7 +239,7 @@ uri型がXML Schema仕様にないため、string型に変更した。
 </xs:element>
 </xs:schema>
 
-====== mmlSg:referenceInfo
+===== mmlSg:referenceInfo
 ドキュメントおよびVer 3.0のDTDでは1回以上の繰り返しとなっていたため下記のように修正した。
 
 [source, xml]
@@ -252,16 +252,16 @@ uri型がXML Schema仕様にないため、string型に変更した。
   </xs:complexType>
 </xs:element>
 
-====== mmlPs:frequencyPerDay
+===== mmlPs:frequencyPerDay
 4.1.1の解説文書ではdecimal, スキーマはstringであったが、ともにintegerに修正
 
-====== mmlPs:batchNo
+===== mmlPs:batchNo
 4.1.1の解説文書ではdecimal, スキーマはintegerであった。スキーマに合わせて解説文書をintegerに修正
 
-====== mmlSm:clinicalRecord, mmlSm:deathInfo, mmlSm:testResult
+===== mmlSm:clinicalRecord, mmlSm:deathInfo, mmlSm:testResult
 属性情報のmmlSm:dateがdate/dateTimeとDTDの曖昧さを許容していた。XML Schemaでは型定義が厳密であることから、dateTime型に統一することとした。
 
-====== mmlLb:numValue, mmlLb:value
+===== mmlLb:numValue, mmlLb:value
 Ver 3のDTDの定義では、下記のようにnumValueとしては空欄でもデータが異常値であることを示すことができていた。
 [source, xml]
     <mmlLb:item>
@@ -291,7 +291,7 @@ DTDではnil(空白)が許されていたが、mmlLb:numValueをdecimal型とし
       <mmlLb:value mmlLb:out="N">ヨウセイ</mmlLb:value>
     </mmlLb:item>
 
-====== mmlRd:categoryの修正
+===== mmlRd:categoryの修正
 categoryに文字列を記入することができなくなっていたため下記のように修正を行った。
 
 [source, xml]
@@ -305,22 +305,22 @@ categoryに文字列を記入することができなくなっていたため下
     </xs:complexType>
   </xs:element>
 
-====== mmlSc:personNameのtableId属性
+===== mmlSc:personNameのtableId属性
 qualified指定がされていなかったため、namespace指定が落ちていた。追加して他の属性との整合性をとった。
 [source, xml]
 <xs:attribute name="tableId" form="qualified">
 
-====== 処置モジュールの追加
+==== 処置モジュールの追加
 汎用処置モジュールの追加を行った。詳細はモジュール解説を参照。
 
-====== 透析モジュールの分割
-透析モジュールは透析履歴モジュール、透析オーダーモジュール、透析実施記録モジュールに3分割することとした。詳細はモジュール解説を参照。
+==== 透析モジュールの分割
+透析モジュールは透析履歴モジュール、透析オーダーモジュール、透析実施記録モジュールに3分割する方針であったが、このリリースでは盛り込めなかった。
 
-===== サンプルインスタンスの追加
-バイタルサインモジュール、体温表モジュール、報告書モジュール、透析モジュール、処置モジュールのサンプルを追加した。
+==== サンプルインスタンスの追加
+バイタルサインモジュール、体温表モジュール、報告書モジュール、透析モジュール、汎用処置モジュールのサンプルを追加した。
 
 
-===== チェックプログラムの追加
+==== チェックプログラムの追加
 
 Rubyでスキーマ、インスタンスの整合性を取るチェックプログラムを作成した。以下の手順でチェックプログラムを操作できる。
 
@@ -330,7 +330,7 @@ Rubyでスキーマ、インスタンスの整合性を取るチェックプロ�
 % bundle install
 % rake
 
-====== 誤字、表現の修正
+==== 誤字、表現の修正
 
 数多くの誤字の修正および表現の修正を行った。(下記参照)
 

@@ -9,7 +9,7 @@
 :linkcss:
 :pdf-page-size: a4
 :doctype: book
-= MML 4.1.2
+= MML 4.2.0
 
 [[introduction]]
 == はじめに
