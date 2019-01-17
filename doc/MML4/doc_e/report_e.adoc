@@ -326,10 +326,10 @@ Attributes::
 |Name|Data type|Occurrence|Table|Description
 |mmlRp:tmCodeName|string|#IMPLIED|name of test comment|
 |mmlRp:tmCode|string|#IMPLIED|use specified|
-|mmlRp:tmCodeId|string|#IMPLIED| |specified table name
+|mmlRp:tmCodeId|string|#IMPLIED| |specified 851table name
 |===
 
 ===== M20.2.6. mmlRp:testMemoF
-【内容】検査フリーコメント +
-【データ型】string +
-【省略】省略可 +
+[horizontal]
+Description:: Free style comment to the test.
+Data type:: String.
