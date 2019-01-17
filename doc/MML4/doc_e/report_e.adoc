@@ -1,0 +1,335 @@
+=== Report information module
+
+==== namespaces declaration.
+The namespaces declaration of this module is the following:
+[source, xml]
+xmlns:mmlRp="http://www.medxml.net/MML/v4/ContentModule/report/1.0"
+
+==== The specification of docInfo header in this module.
+===== docInfo
+The contentModuletype attribute should be "report" in MML005 table.
+
+===== title
+The title should be described the content for this report.
+The generationPurpose attribute should be chosen appropriately from "report", "reportRadiology", or "reportPathology" in MML007 tabe.
+
+===== confirmDate
+This is the date when the module was generated, so the mmlRp:reportTime should be coorinated with this item.
+
+===== mmlCi:CreatorInfo
+This creator of this mosule is not supposed to be the person who ordered the laboratory test, but the person who wrote this module.
+
+===== extRefs
+This item describes external references by mmlCm:extref in mmlRp:ReportModule, repeats as the number of external references.
+
+===== content
+Each content has each mmlRp:ReportModule.
+
+.Table of Elements
+[options="header"]
+|===
+| |Elements|Attribute|Data types|Occurrence|TableId
+|M20.|mmlRp:ReportModule| | | |
+|M20.1.|mmlRp:information| | | |
+| | |mmlRp:performTime|dateTime|#REQUIRED|
+| | |mmlRp:reportTime|dateTime|#REQUIRED|
+|M20.1.1.|mmlRp:reportStatus| |string| |
+| | |mmlRp:statusCode|string|#REQUIRED|mmlLb0001
+| | |mmlRp:statusCodeId|string|#REQUIRED|
+|M20.1.2.|mmlRp:testClass| |string| |
+| | |mmlRp:testClassCode|string|#REQUIRED|MML0033
+| | |mmlRp:testClassCodeId|string|#REQUIRED|
+|M20.1.3.|mmlRp:testSubclass| |string|?|
+| | |mmlRp:testSubclassCode|string|#IMPLIED|user designation
+| | |mmlRp:testSubclassCodeId|string|#IMPLIED|
+|M20.1.4.|mmlRp:organ| |string|?|
+|M20.1.5.|mmlRp:consultFrom| | |?|
+|M20.1.5.1.|mmlRp:conFacility| |string|?|
+| | |mmlRp:facilityCode|string|#IMPLIED|
+| | |mmlRp:facilityCodeId|string|#IMPLIED|MML0027
+|M20.1.5.2.|mmlRp:conDepartment| |string|?|
+| | |mmlRp:depCode|string|#IMPLIED|MML0028
+| | |mmlRp:depCodeId|string|#IMPLIED|
+|M20.1.5.3.|mmlRp:conWard| |string|?|
+| | |mmlRp:wardCode|string|#IMPLIED|user designation
+| | |mmlRp:wardCodeId|string|#IMPLIED|
+|M20.1.5.4.|mmlRp:client| |string|?|
+| | |mmlRp:clientCode|string|#IMPLIED|user designation
+| | |mmlRp:clientCodeId|string|#IMPLIED|
+|M20.1.6.|mmlRp:perform| | | |
+|M20.1.6.1.|mmlRp:pFacility| |string| |
+| | |mmlRp:facilityCode|string|#REQUIRED|
+| | |mmlRp:facilityCodeId|string|#REQUIRED|MML0027
+|M20.1.6.2.|mmlRp:pDepartment| |string|?|
+| | |mmlRp:depCode|string|#IMPLIED|MML0028
+| | |mmlRp:depCodeId|string|#IMPLIED|
+|M20.1.6.3.|mmlRp:pWard| |string|?|
+| | |mmlRp:wardCode|string|#IMPLIED|user designation
+| | |mmlRp:wardCodeId|string|#IMPLIED|
+|M20.1.6.4.|mmlRp:performer| |string| |
+| | |mmlRp:performerCode|string|#REQUIRED|user designation
+| | |mmlRp:performerCodeId|string|#REQUIRED|
+|M20.1.6.5.|mmlRp:supervisor| |string|?|
+| | |mmlRp:supervisorCode|string|#IMPLIED|user designation
+| | |mmlRp:supervisorCodeId|string|#IMPLIED|
+|M20.2.|mmlRp:reportBody| | | |
+|M20.2.1.|mmlRp:chiefComplaints| |string|?|
+|M20.2.2.|mmlRp:testPurpose| |string|?|
+|M20.2.3.|mmlRp:testDx| |string|?|
+|M20.2.4.|mmlRp:testNotes| |string|?|
+|M20.2.4.1.|mmlCm:extRef| | |*|
+|M20.2.5.|mmlRp:testMemo| |string|*|
+| | |mmlRp:tmCodeName|string|#IMPLIED|
+| | |mmlRp:tmCode|string|#IMPLIED|user designation
+| | |mmlRp:tmCodeId|string|#IMPLIED|
+|M20.2.6.|mmlRp:testMemoF| |string|?|
+|===
+
+Occurrences; blank: 1, ?: 0 or 1, +: more than 1, *: more than 0 +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+
+==== Elements in details
+===== M20. mmlRp:ReportModule
+[horizontal]
+Description:: Report information module
+
+===== M20.1. mmlRp:information
+[horizontal]
+Descrption:: Header information of this report.
+Occurrence:: 1..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:performTime|dateTime|#REQUIRED| |the date of test performed.
+|mmlRp:reportTime|dateTime|#REQUIRED| |the date of test reported.
+|===
+
+===== M20.1.1. mmlRp:reportStatus
+[horizontal]
+Description:: the status of the report.
+Data type:: string.
+Occurrence:: 1..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:statusCode|string|#REQUIRED|mmlLb0001|mid (in procedure) +
+final (final report)
+|mmlRp:statusCodeId|string|#REQUIRED| |mmlLb0001 should be.
+|===
+
+===== M20.1.2. mmlRp:testClass
+[horizontal]
+Description::: Classification of report.
+Data type:: string
+Occurence:: 1..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:testClassCode|string|#REQUIRED|MML0033|report type code
+|mmlRp:testClassCodeId|string|#REQUIRED| |MML0033
+|===
+
+===== M20.1.3.mmlRp:testSubclass
+[horizontal]
+Description:: Detailed classification of the report. This element is subclass of the testClass element.
+Data type:: string.
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:testSubclassCode|string|#IMPLIED|user determined|
+|mmlRp:testSubclassCodeId|string|#IMPLIED| |used table name
+|===
+
+===== M20.1.4. mmlRp:organ
+[horizontal]
+Description:: Organ, targeted to this test. Code system is not available.
+Data type:: string
+
+===== M20.1.5. mmlRp:consultFrom
+[horizontal]
+Description:: the information about the person, requested the test.
+Occurrence:: 0..1.
+
+===== M20.1.5.1. mmlRp:conFacility
+[horizontal]
+Description:: the facility, that test ordered.
+Data type:: string.
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:facilityCode|string|#IMPLIED|MML0027|Facility code
+|mmlRp:facilityCodeId|string|#IMPLIED| |MML0027 is supposed.
+|===
+
+===== M20.1.5.2. mmlRp:conDepartment
+[horizontal]
+Description:: department, ordered test or consultation.
+Data type:: string.
+Occurence:: 0..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:depCode|string|#IMPLIED|MML0028|
+|mmlRp:depCodeId|string|#IMPLIED| |MML0028 should be assigned
+|===
+
+===== M20.1.5.3. mmlRp:conWard
+[horizontal]
+Description:: the ward, that the test requested from.
+Data type:: string.
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:wardCode|string|#IMPLIED|user specified|
+|mmlRp:wardCodeId|string|#IMPLIED| |Table name, specified by user
+|===
+
+===== M20.1.5.4. mmlRp:client
+[horizontal]
+Description:: the person, who ordered the test.
+Data type:: string.
+Occurence:: 0..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:clientCode|string|#IMPLIED|user specified|
+|mmlRp:clientCodeId|string|#IMPLIED| |Table name, specified by user.
+|===
+
+===== M20.1.6. mmlRp:perform
+[horizontal]
+Description:: Professional information that performed the test.
+Occurrence:: 1..1.
+
+===== M20.1.6.1. mmlRp:pFacility
+[horizontal]
+Description:: the facility, that performed the test.
+Data type:: string.
+Occurrence:: 1..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:facilityCode|string|#REQUIRED| |
+|mmlRp:facilityCodeId|string|#REQUIRED|MML0027|
+|===
+
+===== M20.1.6.2. mmlRp:pDepartment
+[horizontal]
+Description:: the department, that performed the test.
+Data type:: string.
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:depCode|string|#IMPLIED|MML0028|
+|mmlRp:depCodeId|string|#IMPLIED| |MML0028 should be assigned.
+|===
+
+===== M20.1.6.3. mmlRp:pWard
+[horizontal]
+Description:: the ward, that performed the test.
+Data type:: string.
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:wardCode|string|#IMPLIED|User specified|
+|mmlRp:wardCodeId|string|#IMPLIED| |Specified table name.
+|===
+
+===== M20.1.6.4. mmlRp:performer
+[horizontal]
+Description:: The person who performed the test.
+Data type:: string.
+Occurrence:: 1..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:performerCode|string|#REQUIRED|User specified|
+|mmlRp:performerCodeId|string|#REQUIRED| |Specified table name
+|===
+
+===== M20.1.6.5. mmlRp:supervisor
+[horizontal]
+Description:: the supervisor of this test.
+Data type:: string.
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:supervisorCode|string|#IMPLIED|User specified|
+|mmlRp:supervisorCodeId|string|#IMPLIED| |Specified table name
+|===
+
+===== M20.2. mmlRp:reportBody
+[horizontal]
+Description:: The body element of this report information.
+Occurrence:: 1..1.
+
+===== M20.2.1. mmlRp:chiefComplaints
+[horizontal]
+Description:: Chief complaints.
+Data type:: String.
+Occurrence:: 0..1.
+Layout:: XHTML available.
+
+===== M20.2.2. mmlRp:testPurpose
+[horizontal]
+Description:: The purpose of the test.
+Data type:: String.
+Occurrence:: 0..1.
+Layout:: XHTML available.
+
+===== M20.2.3. mmlRp:testDx
+[horizontal]
+Description:: The diagnosis by test. This element describe diagnosis by text (XHTML available). If structured information is required to describe diagnosis, you can generate mmlRd modules as the number you require, and make bind between document by groupId.
+Data type:: string.
+Occurrence:: 0..1.
+Layout:: XHTML available.
+
+===== M20.2.4. mmlRp:testNotes
+[horizontal]
+Descrption:: The findings of the test, mixed expression with mmlCm:extRef is approvable.
+Data type:: string.
+Lay out:: XHTML available.
+
+===== M20.2.4.1. mmlCm:extRef
+[horizontal]
+Description:: This element is to point external references, such as figures, or graphs. Refer to mmlCm:extRef.
+Occurrence:: 0..*. repeatable as the number of external files.
+
+===== M20.2.5. mmlRp:testMemo
+[horizontal]
+Description:: comments for the test.
+Data type:: String.
+Occurrence:: 0..*.
+Attributes::
+[options="header"]
+|===
+|Name|Data type|Occurrence|Table|Description
+|mmlRp:tmCodeName|string|#IMPLIED|name of test comment|
+|mmlRp:tmCode|string|#IMPLIED|use specified|
+|mmlRp:tmCodeId|string|#IMPLIED| |specified table name
+|===
+
+===== M20.2.6. mmlRp:testMemoF
+【内容】検査フリーコメント +
+【データ型】string +
+【省略】省略可 +

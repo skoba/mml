@@ -1,0 +1,439 @@
+:Author: Shinji KOBAYASHI
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:numberd:
+:sectnums:
+:imagesdir: ./figures
+:linkcss:
+
+=== Laboratory test information module
+
+==== Scope and purpose
+This MML module conveys results of laboratory tests. Each module has a series of test results described on a oder sheet of a laboratory test. The scope of this module is labratory tests for laboratory examinations for specimens, including endocrinological tolerance test, urinary sediments. Bacterial examination, histopathocogical examination or cytological tests are not in the scope.
+
+==== namespaces declaration.
+The namespaces declaration is the following.
+[source, xml]
+xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
+
+==== Header information(docInfo) for this module.
+
+===== docInfo
+The contentModuleType attribute should be "test" on MML0005 table.
+
+===== title
+The title for this module is not necessary, but this attribute is mandatory. Therefore, some title should be assigned. The name of laboratory set might be supposed.
+
+The attribute, generationPurpose should be "reportTest" on MML0007 table.
+
+===== confirmDate
+This confirmDate is when the module was created at, and must be coordinated with the reported date in the content of this module.
+
+===== mmlCi:CreatorInfo
+The creator of this test history module is the representative of the facility that performed tests. Therefore, the facility and the technician in this module should be coordinated to the creator.
+
+===== extRefs
+This element describes mmlCm:extRef in this mmlLb:TestModule instance, repeated as the number of external references.
+
+
+===== content
+Each content incorporates one mmlLb:TestModule.
+
+.Table of Elements
+[options="header"]
+|=====
+| |Elements|Attribute|Data types|Occurrence|TableId
+|M19.|mmlLb:TestModule| | | |
+|M19.1.|mmlLb:information| | | |
+| | |mmlLb:registId|string|#REQUIRED|
+| | |mmlLb:sampleTime|dateTime|#IMPLIED|
+| | |mmlLb:registTime|dateTime|#REQUIRED|
+| | |mmlLb:reportTime|dateTime|#REQUIRED|
+|M19.1.1.|mmlLb:reportStatus| |string| |
+| | |mmlLb:statusCode|string|#REQUIRED|mmlLb0001
+| | |mmlLb:statusCodeId|string|#REQUIRED|
+|M19.1.2.|mmlLb:set| |string|?|
+| | |mmlLb:setCode|string|#IMPLIED|Determined by user
+| | |mmlLb:setCodeId|string|#IMPLIED|
+|M19.1.3.|mmlLb:facility| |string| |
+| | |mmlLb:facilityCode|string|#REQUIRED|
+| | |mmlLb:facilityCodeId|string|#REQUIRED|MML0027
+|M19.1.4.|mmlLb:department| |string|?|
+| | |mmlLb:depCode|string|#IMPLIED|MML0028
+| | |mmlLb:depCodeId|string|#IMPLIED|
+|M19.1.5.|mmlLb:ward| |string|?|
+| | |mmlLb:wardCode|string|#IMPLIED|Determined by user
+| | |mmlLb:wardCodeId|string|#IMPLIED|
+|M19.1.6.|mmlLb:client| |string|?|
+| | |mmlLb:clientCode|string|#IMPLIED|Determined by user
+| | |mmlLb:clientCodeId|string|#IMPLIED|
+|M19.1.7.|mmlLb:laboratoryCenter| |string| |
+| | |mmlLb:centerCode|string|#REQUIRED|Determined by user
+| | |mmlLb:centerCodeId|string|#REQUIRED|
+|M19.1.8.|mmlLb:technician| |string|?|
+| | |mmlLb:techCode|string|#IMPLIED|Determined by user
+| | |mmlLb:techCodeId|string|#IMPLIED|
+|M19.1.9.|mmlLb:repMemo| |string|*|
+| | |mmlLb:repCodeName|string|#IMPLIED|
+| | |mmlLb:repCode|string|#IMPLIED|Determined by user
+| | |mmlLb:repCodeId|string|#IMPLIED|
+|M19.1.10.|mmlLb:repMemoF| |string|?|
+|M19.2.|mmlLb:laboTest| | |+|
+|M19.2.1.|mmlLb:specimen| | | |
+|M19.2.1.1.|mmlLb:specimenName| |string| |
+| | |mmlLb:spCode|string|#REQUIRED|Determined by user
+| | |mmlLb:spCodeId|string|#REQUIRED|
+|M19.2.1.2.|mmlLb:spcMemo| |string|*|
+| | |mmlLb:smCodeName|string|#IMPLIED|
+| | |mmlLb:smCode|string|#IMPLIED|Determined by user
+| | |mmlLb:smCodeId|string|#IMPLIED|
+|M19.2.1.3.|mmlLb:spcMemoF| |string|?|
+|M19.2.2.|mmlLb:item| | |+|
+|M19.2.2.1.|mmlLb:itemName| |string| |
+| | |mmlLb:itCode|string|#REQUIRED|Determined by user
+| | |mmlLb:itCodeId|string|#REQUIRED|
+| | |mmlLb:Acode|string|#IMPLIED|JLAC10
+| | |mmlLb:Icode|string|#IMPLIED|JLAC10
+| | |mmlLb:Scode|string|#IMPLIED|JLAC10
+| | |mmlLb:Mcode|string|#IMPLIED|LAC10
+| | |mmlLb:Rcode|string|#IMPLIED|JLAC10
+|M19.2.2.2.|mmlLb:value| |string| |
+| | |mmlLb:up|decimal|#IMPLIED|
+| | |mmlLb:low|decimal|#IMPLIED|
+| | |mmlLb:normal|string|#IMPLIED|
+| | |mmlLb:out|string|#IMPLIED|mmlLb0002
+|M19.2.2.3.|mmlLb:numValue| |decimal|?|
+| | |mmlLb:up|decimal|#IMPLIED|
+| | |mmlLb:low|decimal|#IMPLIED|
+| | |mmlLb:normal|string|#IMPLIED|
+| | |mmlLb:out|string|#IMPLIED|mmlLb0002
+|M19.2.2.4.|mmlLb:unit| |string|?|
+| | |mmlLb:uCode|string|#IMPLIED|Determined by users
+| | |mmlLb:uCodeId|string|#IMPLIED|
+|M19.2.2.5.|mmlLb:referenceInfo| | |?|
+|M19.2.2.5.1.|mmlCm:extRef| | |*|
+|M19.2.2.6.|mmlLb:itemMemo| |string|*|
+| | |mmlLb:imCodeName|string|#IMPLIED|
+| | |mmlLb:imCode|string|#IMPLIED|determined by users
+| | |mmlLb:imCodeId|string|#IMPLIED|
+|M19.2.2.7.|mmlLb:itemMemoF| |string|?|
+|=====
+
+Occurrences; blank: 1, ?: 0 or 1, +: more than 1, *: more than 0 +
+#REQUIRED: mandatory attribute, #IMPLIED: optional attribute
+
+==== Elements in details.
+===== M19. mmlLb:TestModule
+[horizontal]
+Description:: Laboratory test history module.
+
+===== M19.1. mmlLb:information
+[horizontal]
+Description:: header information of test histories.
+Occurrence:: 1..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:registId|string|#REQUIRED|order identifier. Intermittent report and final report from the same test order must have same order identifier.
+|mmlLb:sampleTime|dateTime|#IMPLIED|date time when the specimen was sampled.
+|mmlLb:registTime|dateTime|#REQUIRED|date time when the specimen accepted to the laboratory.
+|mmlLb:reportTime|dateTime|#REQUIRED|date time when the test result was reported.
+|=====
+
+===== M19.1.1. mmlLb:reportStatus
+[horizontal]
+Description:: status of report.
+Data type:: string
+Occurrence:: 1..1
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlLb:statusCode|string|#REQUIRED|mmlLb0001, mid: intermittent report
+final: the final report
+|mmlLb:statusCodeId|string|#REQUIRED| |mmlLb0001 should be assigned
+|=====
+
+===== M19.1.2. mmlLb:set
+[horizontal]
+Description:: name of the test set.
+Data type:: string.
+Occurence:: 0..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:setCode|string|#IMPLIED|determined by users
+|mmlLb:setCodeId|string|#IMPLIED| |table name that assigned
+|=====
+
+===== M19.1.3. mmlLb:facility
+[horizontal]
+Description:: facility that ordered tests.
+Data type:: string.
+Occurrence:: 1..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:facilityCode|string|#REQUIRED|
+|mmlLb:facilityCodeId|string|#REQUIRED|MML0027|coding system that used for facility
+|=====
+
+====== M19.1.4. mmlLb:department
+[horizontal]
+Description:: department that ordered tests.
+Data type:: string.
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:depCode|string|#IMPLIED|MML0028
+|mmlLb:depCodeId|string|#IMPLIED|MML0028 should be assigned
+|=====
+
+===== M19.1.5. mmlLb:ward
+[horizontal]
+Description:: ward that ordered tests.
+Data type:: string.
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:wardCode|string|#IMPLIED|determined by user|
+|mmlLb:wardCodeId|string|#IMPLIED| |used table name
+|=====
+
+===== M19.1.n6. mmlLb:client
+[horizontal]
+Description:: the client who ordered tests
+Data type:: string.
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlLb:clientCode|string|#IMPLIED|determined by user|
+|mmlLb:clientCodeId|string|#IMPLIED| |used table name.
+|=====
+
+===== M19.1.7. mmlLb:laboratoryCenter
+[horizontal]
+Description:: the laboratory that performed the tests.
+Data type:: string.
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Description
+|mmlLb:centerCode|string|#REQUIRED|determined by user
+|mmlLb:centerCodeId|string|#REQUIRED|used table name.
+|=====
+
+===== M19.1.8. mmlLb:technician
+[horizontal]
+Description:: technician that performed tests.
+Data type:: string
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:techCode|string|#IMPLIED|determined by user
+|mmlLb:techCodeId|string|#IMPLIED|used coding system
+|=====
+
+===== M19.1.9. mmlLb:repMemo
+[horizontal]
+Description:: memorandum for this report.
+Data type:: string
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:repCodeName|string|#IMPLIED| |
+|mmlLb:repCode|string|#IMPLIED|determined by user|
+|mmlLb:repCodeId|string|#IMPLIED| |used table name
+|=====
+
+===== M19.1.10. mmlLb:repMemoF
+[horizontal]
+Description:: free formatted memorandum for this report.
+Data type:: string
+Occurrence:: 0..1.
+
+===== M19.2. mmlLb:laboTest
+[horizontal]
+Description:: free formatted memorandum for this report.
+Occurrence:: 0..*. repeatable as the number of specimens.
+
+===== M19.2.1. mmlLb:specimen
+[horizontal]
+Description:: specimen information.
+Occurrence:: 1..1.
+
+
+===== M19.2.1.1. mmlLb:specimenName
+[horizontal]
+Description:: name of specimen.
+Data type:: string.
+Occurrence:: 1..1.
+Attributes:::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:spCode|string|#REQUIRED|ユーザー指定|
+|mmlLb:spCodeId|string|#REQUIRED| |用いたテーブル名を入力
+|=====
+
+===== M19.2.1.2. mmlLb:spcMemo
+[horizontal]
+Description:: memorandum about specimen.
+Data type:: string
+Occurrence:: 0..*. repeatable as the number of commeents.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:smCodeName|string|#IMPLIED| |
+|mmlLb:smCode|string|#IMPLIED|determined by user|
+|mmlLb:smCodeId|string|#IMPLIED| |used table name
+|=====
+
+===== M19.2.1.3. mmlLb:spcMemoF
+[horizontal]
+Descrption:: Free formatted memorandum about specimen.
+Data type:: string.
+Occurrence:: 0..1.
+
+===== M19.2.2. mmlLb:item
+[horizontal]
+Description:: test information item.
+Occurrence:: 0..*, repeatable as the number of items.
+
+===== M19.2.2.1. mmlLb:itemName
+[horizontal]
+Descripiotn:: test item name.
+Data type:: string.
+Occurrence:: 1..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:itCode|string|#REQUIRED|determined by user|facility local code.
+|mmlLb:itCodeId|string|#REQUIRED| |coding system by facility.
+|mmlLb:Acode|string|#IMPLIED|JLAC10|Analyte code of JLAC10.
+|mmlLb:Icode|string|#IMPLIED|JLAC10|Identification code of JLAC10.
+|mmlLb:Scode|string|#IMPLIED|JLAC10|Specimen code of JLAC10.
+|mmlLb:Mcode|string|#IMPLIED|JLAC10|Measurement code of JLAC10.
+|mmlLb:Rcode|string|#IMPLIED|JLAC10|Result identification code of JLAC10.
+|=====
+
+===== M19.2.2.2. mmlLb:value
+[horizontal]
+Descrption:: value of test result. This item is used to display the test result, includes semi-quantity data, such as +, ++, and +/0. The attributes are settled to the upper/lower limits, and normal/abnormal flags.
+Data type:: string.
+Occurrence:: 1..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:up|decimal|#IMPLIED| |upper limit
+|mmlLb:low|decimal|#IMPLIED| |lower limit
+|mmlLb:normal|string|#IMPLIED| |String expression of normal value. For example: "Negative"
+|mmlLb:out|string|#IMPLIED|mmlLb0002|Abnormal value flag. +
+H: Over upper limit. +
+N: Within normal limit +
+L: Under lower limit +
+A: Abnormal.
+|=====
+
+===== M19.2.2.3. mmlLb:numValue
+[horizontal]
+Descrption:: Value(numerical) to record the test results by numerical numbers.
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:up|decimal|#IMPLIED| |Upper limit value
+|mmlLb:low|decimal|#IMPLIED| |Lower limit value
+|mmlLb:normal|string|#IMPLIED| |Normal value by test expression. Example: "Negarive".
+|mmlLb:out|string|#IMPLIED|mmlLb0002|Abnormal value flag. +
+H: Over upper limit. +
+N: Within normal limit +
+L: Under lower limit +
+A: Abnormal.
+|=====
+[NOTE]
+====
+Before version 3, the DTD allowed nil(blank) value in mmlLb:numValue, but the XML Schemal of MML4 does not allow nil value by decimal type. So MML3 allowed the following expression for abnormal results.
+[source, xml]
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
+      <mmlLb:value>Positive</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N" />
+    </mmlLb:item>
+
+To keep backward compatibility, nillable attributes was settled to allow the following expression.
+[source, xml]
+  <xs:element name="numValue" nillable="true">
+
+However, instance should designate "nil" value explicitely.
+[source, xml]
+    <mmlLb:item>
+      <mmlLb:itemName mmlLb:itCode="915" mmlLb:itCodeId="KRTKC">HBsAb</mmlLb:itemName>
+      <mmlLb:value>Positive</mmlLb:value>
+      <mmlLb:numValue mmlLb:out="N" xsi:nil="true"/>
+    </mmlLb:item>
+
+====
+
+===== M19.2.2.4. mmlLb:unit
+[horizontal]
+Description:: unit.
+Datatype:: string.
+Occurrence:: 0..1.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:uCode|string|#IMPLIED|Determined by user|
+|mmlLb:uCodeId|string|#IMPLIED| |Table name
+|=====
+
+===== M19.2.2.5. mmlLb:referenceInfo
+[horizontal]
+Description:: external reference information.
+Occurrence:: 0..1.
+
+===== M19.2.2.5.1.  mmlCm:extRef
+[horizontal]
+Description:: external reference for figure, graph etc. The structure should be refered to mmlCm:extRef.
+Occurence:: 0..*, repeatable as the number of external references.
+
+===== M19.2.2.6. mmlLb:itemMemo
+[horizontal]
+Description:: Memorundum for the item.
+Data type:: string.
+Occurrence:: 0..*, repetable as the number of memoramdums.
+Attributes::
+[options="header"]
+|=====
+|Name|Data type|Occurrence|Table|Description
+|mmlLb:imCodeName|string|#IMPLIED| |Name of item code
+|mmlLb:imCode|string|#IMPLIED|Determined by user
+|mmlLb:imCodeId|string|#IMPLIED| |Table name
+|=====
+
+===== M19.2.2.7. mmlLb:itemMemoF
+[horizontal]
+Description:: Memorandum for the item by free text style.
+Data type:: string
+Occurrence:: 0..1.
