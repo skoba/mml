@@ -99,6 +99,10 @@ xmlns:mmlLb="http://www.medxml.net/MML/v4/ContentModule/test/1.0"
 | | |mmlLb:Mcode|string|#IMPLIED|LAC10
 | | |mmlLb:Rcode|string|#IMPLIED|JLAC10
 |M19.2.2.2.|mmlLb:value| |string| |
+| | |mmlLb:up|decimal|#IMPLIED|
+| | |mmlLb:low|decimal|#IMPLIED|
+| | |mmlLb:normal|string|#IMPLIED|
+| | |mmlLb:out|string|#IMPLIED|mmlLb0002
 |M19.2.2.3.|mmlLb:numValue| |decimal|?|
 | | |mmlLb:up|decimal|#IMPLIED|
 | | |mmlLb:low|decimal|#IMPLIED|
@@ -317,9 +321,22 @@ final 最終報告
 |=====
 
 ===== M19.2.2.2. mmlLb:value
-【内容】値．表示用の文字列の値．必須とする． +
+【内容】値．表示用の文字列の値．必須とする．+, ++, +/-のような半定量的データもこの項目で扱うこととし、上限、加減、正常値、異常値フラグも属性として記録される。 +
 【データ型】string +
 【省略】不可 +
+【属性】
+[options="header"]
+|=====
+|属性名|データ型|省略|使用テーブル|説明
+|mmlLb:up|decimal|#IMPLIED| |上限値
+|mmlLb:low|decimal|#IMPLIED| |下限値
+|mmlLb:normal|string|#IMPLIED| |文字列で示す基準値．例："陰性"
+|mmlLb:out|string|#IMPLIED|mmlLb0002|異常値フラグ +
+H 上限値超え +
+N 基準値範囲内 +
+L 下限値未満 +
+A 異常
+|=====
 
 ===== M19.2.2.3. mmlLb:numValue
 【内容】値 (数値) ．数値データを記録する。 +
@@ -333,7 +350,7 @@ final 最終報告
 |mmlLb:low|decimal|#IMPLIED| |下限値
 |mmlLb:normal|string|#IMPLIED| |文字列で示す基準値．例："陰性"
 |mmlLb:out|string|#IMPLIED|mmlLb0002|異常値フラグ +
-H 上限値越え +
+H 上限値超え +
 N 基準値範囲内 +
 L 下限値未満 +
 A 異常
