@@ -332,7 +332,7 @@ final 最終報告
 |mmlLb:low|decimal|#IMPLIED| |下限値
 |mmlLb:normal|string|#IMPLIED| |文字列で示す基準値．例："陰性"
 |mmlLb:out|string|#IMPLIED|mmlLb0002|異常値フラグ +
-H 上限値越え +
+H 上限値超え +
 N 基準値範囲内 +
 L 下限値未満 +
 A 異常
@@ -350,7 +350,7 @@ A 異常
 |mmlLb:low|decimal|#IMPLIED| |下限値
 |mmlLb:normal|string|#IMPLIED| |文字列で示す基準値．例："陰性"
 |mmlLb:out|string|#IMPLIED|mmlLb0002|異常値フラグ +
-H 上限値越え +
+H 上限値超え +
 N 基準値範囲内 +
 L 下限値未満 +
 A 異常
