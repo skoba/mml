@@ -44,14 +44,12 @@ It is the date when the referral module instance was created.
 The creator on the referral module is the author of the referral. The actual writer (mmlCi:CreatorInfo) is possible to differ from the person referred (mmlRe:referFrom).
 
 ===== extRefs
-
-紹介状モジュール内の mmlCm:extRef エレメントを記載する．記載されている外部リンク情報の数だけ繰り返す．
+This element contains mmlCm:extRef in this mmlRe:ReferralModule, is repeatable as the number of outer links.
 
 ===== content
+Each content has one referral module.
 
-一つの content に一つだけ紹介状モジュールを入れる．
-
-.エレメント一覧表
+.List of the elements.
 [options="header"]
 |===
 | |Elements|Attribute|Data types|Occurrence|TableId
@@ -87,118 +85,141 @@ The creator on the referral module is the author of the referral. The actual wri
 |M21.17.1.|mmlPsi:PersonalizedInfo| | | |
 |M21.18.|mmlRe:referToUnknownName| |string|?|
 |===
-Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+Occurrences; blank: 1, ?: 0 or 1, +: more than 1, *: more than 0 +
+  #REQUIRED: mandatory attribute, #IMPLIED: optional attribute
 
-#REQUIRED:必須属性，#IMPLIED:省略可能属性
-
-==== エレメント解説
+==== Elements in details
 ===== M21. mmlRe:ReferralModule
-【内容】紹介状モジュール．同一医師の一回に行う紹介状作成行為を一つのモジュールに収める． +
-【省略】不可
+[horizontal]
+Description:: Referral module. Each instance of this module contains single referral letter by the doctor.
+Occurrence:: 1..1.
 
 ===== M21.1. mmlPi:PatientModule
-【内容】患者情報．氏名，生年月日，住所，電話番号等の患者情報．構造は MML モジュール (患者情報モジュール) 参照． +
-【省略】不可
+[horizontal]
+Description:: Patient information module, which contains name, address, telecoms, etc. Further information is available in mmlPi:PatientModule description.
+Occurrence:: 1..1.
 
 ===== M21.2. mmlRe:occupation
-【内容】職業． +
-【省略】省略可 +
-【データ型】string +
-【文書のレイアウト】XHTML 使用可
+[horizontal]
+Description:: Occupation.
+Occurrence:: 0..1.
+Data type:: string.
+Layout:: XHTML available.
 
 ===== M21.3. mmlRe:referFrom
-【内容】紹介者情報を入れる親エレメント． +
-【省略】不可
+[horizontal]
+Description:: Parent element to include the information of referrer.
+Occurrence:: 1..1.
 
 ===== M21.3.1. mmlPsi:PersonalizedInfo
-【内容】紹介者．構造はMML共通形式 (個人情報形式) mmlPsi:PersonalizedInfo を参照． +
-【省略】不可
+[horizontal]
+Descrption:: The person who refer patient to, the schema was mmlPsi:PersonalizedInfo.
+Occurence:: 1..1.
 
 ===== M21.4. mmlRe:title
-【内容】タイトル．紹介状，診療情報提供書など． +
-【データ型】string +
-【省略】不可
+[horizontal]
+Description:: title of this instance, such as "Referral", or others.
+Data type:: string.
+Occurence:: 1..1.
 
 ==== M21.5. mmlRe:greeting
-【内容】挨拶文． +
-【データ型】string +
-【省略】省略可 +
-【文書のレイアウト】XHTML 使用可 +
-【例】
+[horizontal]
+Description:: the greeting of this referral letter.
+Data type:: string.
+Occurrence::  0..1.
+Layout:: XHTML available.
+
+.Example
 [source, xml]
 <mmlRe:greeting>
-謹啓 平素は患者の診療について種々ご配慮頂きまして有難うございます。<xhtml:br/>
-さて，下記の患者をご紹介申し上げます。<xhtml:br/>
-ご繁忙のところ恐縮に存じますが，よろしくご高診賜りますよう，お願い申し上げます。
+To whom it may concern,<xhtml:br/>
+Mr Yoshihara is a xx years old male, who had injured his left leg.
+...
+Yours sincerely,
+Shinji Kobayashi
 </mmlRe:greeting>
 
 ===== M21.6. mmlRe:chiefComplaints
-【内容】主訴 +
-【データ型】string +
-【省略】不可 +
-【文書のレイアウト】XHTML 使用可
+[horizontal]
+Description:: Chief complaints.
+Deta types:: string.
+Occurrence:: 1..1.
+Layout:: XHTML available.
 
 ===== M21.7. mmlRe:clinicalDiagnosis
-【内容】病名．このエレメントでは，特に構造化せず，XHTMLを用いて記載する．構造化が必要なときは，別個に診断履歴モジュールを作成し，紹介状モジュールと groupId を用いて束ねる． +
-【データ型】string +
-【省略】省略可 +
-【文書のレイアウト】XHTML 使用可
+[horizontal]
+Description:: This element include unstructured diagnosis layouted by XHTML. If the diagnosis should be structured, mmlRd:RegisteredDiganosis module is available and the instance should be bundled by the same groupId.
+Data type:: string.
+Occurrence:: 0..1.
+Layout:: XHTML available.
 
 ===== M21.8. mmlRe:pastHistory
-【内容】既往歴．テキストとmmlCm:extRef の混在可 +
-【データ型】string +
-【省略】可 +
-【文書のレイアウト】XHTML 使用可
+[horizontal]
+Description:: past history. mixed expression is allowable with mmlCm:extRef and text.
+Data type:: string.
+Occurrence:: 0..1.
+Layout:: XHTML available.
 
 ===== M21.8.1. mmlCm:extRef
-【内容】外部参照図，グラフなどを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
-【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す． +
+[horizontal]
+Description:: external reference for the figures, such as graph. The structure is mmlCm:extRef.
+Occurrence:: 0..*, repeatable as the nubmer of external reference files.
 
 ===== M21.9. mmlRe:familyHistory
-【内容】家族歴．テキストとmmlCm:extRefの混在可 +
-【データ型】string +
-【省略】省略可 +
-【文書のレイアウト】XHTML 使用可
+[horizontal]
+Description:: Family history, mixed expression is allowable with mmlCm:extRef and text.
+Data type:: string.
+Occurrence:: 0..1.
+Layout:: XHTML available.
 
 ===== M21.9.1. mmlCm:extRef
-【内容】外部参照図，表などを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
-【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す．
+[horizontal]
+Description:: external referential figures, or tables. mmlCm:extRef structure is available.
+Occurrence:: 0..*, repeatable as the number of external files to refer.
 
 ===== M21.10. mmlRe:presentIllness
-【内容】症状経過．テキストとmmlCm:extRefの混在可 +
-【データ型】string +
-【省略】不可 +
-【文書のレイアウト】XHTML 使用可
+[horizontal]
+Description:: Present illness, mixed expression is allowable with mmlCm:extRef and text.
+Data type:: string.
+Occurrence: 1..1.
+Layout:: XHTML available.
 
 ===== M21.10.1. mmlCm:extRef
-【内容】外部参照図，表などを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
-【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す．
+[horizontal]
+Description:: figures for external references. mmlCm:extRef format is available.
+Occurence:: 0..*, repeatble as the number of files.
 
 ===== M21.11. mmlRe:testResults
-【内容】検査結果．テキストとmmlCm:extRefの混在可 +
-【データ型】string +
-【省略】省略可 +
-【文書のレイアウト】XHTML 使用可
+[horizontal]
+Description:: the results of the tests, mixed expression is allowable with mmlCm:extRef and text.
+Data type:: string.
+Occurrence:: 0..1.
+Layout:: XHTML available.
 
 ===== M21.11.1. mmlCm:extRef
-【内容】外部参照図，グラフ，表などを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
-【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す．
+[horizontal]
+Description:: external referential figures, or tables. mmlCm:extRef structure is available.
+Occurrence:: 0..*, repeatable as the number of external files to refer.
 
 ===== M21.12. mmlSm:clinicalCourse
-【内容】治療経過．構造は MML モジュール (臨床サマリーモジュール) のmmlSm:clinicalCourseを参照． +
-【データ型】string +
-【省略】省略可 +
+[horizontal]
+Description:: Clinical course. The structure should refer to mmlSm:clinicalCourse(Clinical Summary module).
+Data type:: string.
+Occurrence:: 0..1.
 
 ===== M21.13. mmlRe:medication
-【内容】現在の処方．テキストとmmlCm:extRefの混在可 +
-【データ型】string +
-【省略】省略可 +
-【文書のレイアウト】XHTML 使用可
+[horizontal]
+Description:: Active prescription. mixed expression is allowable with mmlCm:extRef and text.
+Data type:: string.
+Occurrence:: 0..1.
+Layout:: XHTML available.
 
 ===== M21.13.1. mmlPs:PrescriptionModule
-【内容】構造はコンテンツモジュールmmlPs:PrescriptionModule参照 +
-【省略】省略可 +
-【例】
+[horizontal]
+Description:: The scheme should be referred to mmlPs:PrescriptionModule.
+Occurrence:: 0..1.
+
+.Example
 [source, xml]
 <mmlRe:medication>
   Prescription on discharge
@@ -206,50 +227,57 @@ Occurrenceなし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
     <mmlPs:medication>
       <mmlPs:batchNo>1</mmlPs:batchNo>
       <mmlPs:medicine>
-        <mmlPs:name>プレドニゾロン錠 5mg</mmlPs:name>
+        <mmlPs:name>Predonizone Tablet(5mg</mmlPs:name>
         <mmlPs:code mmlPs:system="YJ">61222033</mmlPs:code>
       </mmlPs:medicine>
       <mmlPs:dose>4</mmlPs:dose>
-      <mmlPs:doseUnit>錠</mmlPs:doseUnit>
+      <mmlPs:doseUnit>Tab</mmlPs:doseUnit>
       <mmlPs:frequencyPerDay>1</mmlPs:frequencyPerDay>
       <mmlPs:startDate>2015-05-13</mmlPs:startDate>
       <mmlPs:duration>P14D</mmlPs:duration>
-      <mmlPs:instruction>内服 1回 朝食前</mmlPs:instruction>
+      <mmlPs:instruction>p.o. before breakfast.</mmlPs:instruction>
     </mmlPs:medication>
   </mmlPs:PrescriptionModule>
 </mmlRe:medication>
 
 ===== M21.13.2. mmlInj:InjectionModule
-【内容】構造はコンテンツモジュールmmlInj:InjectionModule参照 +
-【省略】省略可 +
+[horizontal]
+Description:: the schema should be referred to mmlInj::InjectionModule参照
+Occurrence:: 0..1.
 
-===== M21.13.3. mmlCm:extRef
-【内容】外部参照図，ファイル，表などを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
-【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す．
+===== M21.13.3. mmklupjlCm:extRef
+[horizontal]
+Description:: External references for files, tables, graphs, etc. The scheme should be refered to mmlCm:extRef.
+Occurence:: 0..*, repeatable as the number of external files.
 
 ===== M21.14. mmlRe:referPurpose
-【内容】紹介目的 +
-【データ型】string +
-【省略】不可 +
-【文書のレイアウト】XHTML 使用可
+[horizontal]
+Description:: the purpose to refer.
+Data type:: string
+Occurence:: 1..1.
+Layout:: XHTML available.
 
 ===== M21.15. mmlRe:remarks
-【内容】備考．テキストと mmlCm:extRef の混在可 +
-【データ型】string +
-【省略】省略可 +
-【文書のレイアウト】XHTML 使用可
+[horizontal]
+Descrption:: remarks, memorandum, mixed expression is allowebale with text and mmlCm:extRef.
+Data type:: string.
+Occurence:: 0..1.
+Layout:: XHTML avalable.
 
 ===== M21.15.1. mmlCm:extRef
-【内容】外部参照図，ファイル，表などを添付するときに，MML 共通形式 (外部参照形式) を用いる． +
-【繰り返し設定】繰り返しあり．外部参照ファイルが複数あれば，数だけ繰り返す． +
+[horizontal]
+Description:: External references for files, tables, graphs, etc. The scheme should be refered to mmlCm:extRef.
+Occurence:: 0..*, repeatable as the number of external files.
 
 ===== M21.16. mmlRe:referToFacility
-【内容】紹介先医療機関名．施設情報を入れる親エレメント +
-【省略】不可
+[horizontal]
+Description:: the parent element to include the facility information to be referred to.
+Occurence:: 1..1.
 
 ===== M21.16.1. mmlFc:Facility
-【内容】紹介先医療機関．構造はMML共通形式(施設情報形式)mmlFc:Facilityを利用する． +
-【省略】不可
+[horizontal]
+Description:: the facility to be referred to. THe schema should be follow the mmlFc:Facility.
+Occurrence:: 1..1.
 
 ===== M21.16.2. mmlDp:Department
 【内容】紹介先診療科．構造は MML 共通形式 (施設情報形式)mmlDp:Departmentを利用する． +
