@@ -242,37 +242,37 @@ Occurrence:: 0..1.
 
 ===== M21.13.2. mmlInj:InjectionModule
 [horizontal]
-Description:: the schema should be referred to mmlInj::InjectionModule参照
+Description:: the schema should be referred to mmlInj::InjectionModule.
 Occurrence:: 0..1.
 
 ===== M21.13.3. mmklupjlCm:extRef
 [horizontal]
 Description:: External references for files, tables, graphs, etc. The scheme should be refered to mmlCm:extRef.
-Occurence:: 0..*, repeatable as the number of external files.
+Occurrence:: 0..*, repeatable as the number of external files.
 
 ===== M21.14. mmlRe:referPurpose
 [horizontal]
 Description:: the purpose to refer.
 Data type:: string
-Occurence:: 1..1.
+Occurrence:: 1..1.
 Layout:: XHTML available.
 
 ===== M21.15. mmlRe:remarks
 [horizontal]
-Descrption:: remarks, memorandum, mixed expression is allowebale with text and mmlCm:extRef.
+Description:: remarks, memorandum, mixed expression is allowable with text and mmlCm:extRef.
 Data type:: string.
-Occurence:: 0..1.
+Occurrence:: 0..1.
 Layout:: XHTML avalable.
 
 ===== M21.15.1. mmlCm:extRef
 [horizontal]
-Description:: External references for files, tables, graphs, etc. The scheme should be refered to mmlCm:extRef.
-Occurence:: 0..*, repeatable as the number of external files.
+Description:: External references for files, tables, graphs, etc. The scheme should be referred to mmlCm:extRef.
+Occurrence:: 0..*, repeatable as the number of external files.
 
 ===== M21.16. mmlRe:referToFacility
 [horizontal]
 Description:: the parent element to include the facility information to be referred to.
-Occurence:: 1..1.
+Occurrence:: 1..1.
 
 ===== M21.16.1. mmlFc:Facility
 [horizontal]
@@ -280,18 +280,22 @@ Description:: the facility to be referred to. THe schema should be follow the mm
 Occurrence:: 1..1.
 
 ===== M21.16.2. mmlDp:Department
-【内容】紹介先診療科．構造は MML 共通形式 (施設情報形式)mmlDp:Departmentを利用する． +
-【省略】可
+[horizontal]
+Description:: the department to be referred to. The scheme should be referred to mmlDp:Department.
+Occurrence:: 0..1.
 
 ===== M21.17. mmlRe:referToPerson
-【内容】紹介先医師名．氏名情報を入れる親エレメント． +
-【省略】省略可
+[horizontal]
+Description::  the parent information to include the person to be referred.
+Occurrence:: 0..1.
 
 ===== M21.17.1. mmlPsi:PersonalizedInfo
-【内容】紹介先医師．構造はMML共通形式(個人情報形式)mmlPsi:PersonalizedInfoを利用する． +
-【省略】不可
+[horizontal]
+Description:: The personal information of the doctor to be referred to. Schema should be follow mmlPsi:PersonalizedInfo.
+Occurrence:: 1..1.
 
 ===== M21.18. mmlRe:referToUnknownName
-【内容】医師名を指定しない相手． +
-【データ型】string +
-【省略】省略可
+[horizontal]
+Description:: This element is used in case that the doctor to be reffered is not specified.
+Data type:: string.
+Occurrence:: 0..1.
