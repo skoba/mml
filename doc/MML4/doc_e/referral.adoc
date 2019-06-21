@@ -298,4 +298,4 @@ Occurrence:: 1..1.
 [horizontal]
 Description:: This element is used in case that the doctor to be reffered is not specified.
 Data type:: string.
-Occurrence:: 0..1.
+Occurrence:: 0..  1.
