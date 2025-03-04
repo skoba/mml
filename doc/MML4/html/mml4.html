@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.8">
+<meta name="generator" content="Asciidoctor 2.0.23">
 <title>MML 4.2.0</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
@@ -2382,7 +2382,7 @@ MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)情報で
 <td class="tableblock halign-left valign-top"><p class="tableblock">extractPolicy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MML0004</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">抽出基準、MML0004参照</p></td>
 </tr>
 </tbody>
 </table>
@@ -2472,6 +2472,13 @@ MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)情報で
 <td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MML0005</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">文書の種類コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">moduleVersion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用モジュールのスキーマのURIを記載．</p></td>
 </tr>
 </tbody>
 </table>
@@ -5219,6 +5226,14 @@ individual
 <td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlPi:date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 <div class="paragraph">
@@ -6821,6 +6836,12 @@ individual
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">疾患コード</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mmlRd:system</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#IMPLIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">疾患コード体系名</p></td>
 </tr>
 </tbody>
 </table>
@@ -25047,7 +25068,7 @@ hdObservationTable01</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-02-23 16:34:49 +0900
+Last updated 2018-08-08 19:50:21 +0900
 </div>
 </div>
 </body>

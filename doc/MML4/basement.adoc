@@ -252,7 +252,7 @@ MML headerはMML作成者情報(mmlCi:CreatorInfo)、患者ID(masterId)情報で
 |end|date|#IMPLIED|終了日
 |hasOtherInfo|boolean|#IMPLIED|"期間外情報の有無．true：あり，false：なし"
 |isExtract|boolean|#IMPLIED|"情報抽出の有無．true：あり，false：なし"
-|extractPolicy|string|#IMPLIED|MML0004|抽出のポリシー
+|extractPolicy|string|#IMPLIED|抽出基準、MML0004参照
 |=====
 startとendで示されるMML全体の対象期間に対して，送信側の施設に，対象期間外の患者診療情報があれば，hasOtherInfoの値をtrueとする．また，送信側施設の対象期間内のすべての患者情報をMMLインスタンスに記載しておれば，isExtractの値をfalseに，何からの抽出を行っておれば，trueにする．さらに，抽出を行っている場合は，抽出の基準をextractPolicyに記載する．これらは，MMLインスタンスを受け取った側が，患者情報のすべてを受け取っているのか，一部分を受け取っているのかを明確にするためのものである．一部を受け取っているにもかかわらず，すべてを受け取っていると誤解した場合には，診療行為に重大な過ちが生じる可能性があるからである．
 
@@ -284,7 +284,7 @@ startとendで示されるMML全体の対象期間に対して，送信側の施
 |=====
 |属性名|データ型|省略|使用テーブル|説明
 |contentModuleType|string|#IMPLIED|MML0005|文書の種類コード
-|moduleVersion|uri|#IMPLIED|使用モジュールのスキーマのURIを記載．
+|moduleVersion|uri|#IMPLIED||使用モジュールのスキーマのURIを記載．
 |=====
 
 ===== M0.2.1.1.1. mmlSc:securityLevel

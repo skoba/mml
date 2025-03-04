@@ -84,7 +84,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |=====
 |属性名|データ型|省略|説明
 |mmlRd:code|string|#IMPLIED|疾患コード
-|mmlRd:system|string#IMPLIED|疾患コード体系名
+|mmlRd:system|string|#IMPLIED|疾患コード体系名
 |=====
 【例】paroxysmal atrial fibrillation を paroxysmal と atrial fibrillation に分割記載．
 [source, xml]

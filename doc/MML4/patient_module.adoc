@@ -47,7 +47,7 @@ image::mmlpi.jpg[]
 |M10.11.|mmlPi:accountNumber| |string|?|
 |M10.12.|mmlPi:socialIdentification| |string|?|
 |M10.13.|mmlPi:death| |boolean|?|
-| | |mmlPi:date|dateTime|#IMPLIED
+| | |mmlPi:date|dateTime|#IMPLIED|
 |=====
 Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
 
