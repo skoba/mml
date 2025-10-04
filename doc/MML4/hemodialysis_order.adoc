@@ -1,0 +1,1482 @@
+:Author: Shinji KOBAYASHI, Takashi Suzuki
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:sectnums: y
+:sectnumlevels: 8
+:imagesdir: ./figures
+:linkcss:
+
+=== 透析指示情報モジュール（mmlHdo）エレメント解説
+==== namespace宣言
+このモジュールのnamespaceは以下のように宣言する。
+[source,xml]
+----
+xmlns:mmlHdo="http://www.medxml.net/MML/v4/ContentModule/HemodialysisOrder/1.0"
+----
+
+.エレメント一覧表
+|===
+| |Elements|Attribute|Data types|Occurrence|Table id
+|M28.|mmlHdo:HemoDialysysOrderModule| | | |
+| | |mmlHdo:version|string|#REQUIRED|
+| | |mmlHdo:createDate|dateTime|#REQUIRED|
+|M28.1.|mmlHdo:HemoDialysisOrder| | | |
+|M28.1.1.|mmlFc:Facility| | |?|
+|M28.1.2.|mmlHdo:note| |string|?|
+|M28.1.3.|mmlHdo:HDOrders| | |+|
+| | |mmlHdo:orderStatus|string|#REQUIRED|
+| | |mmlHdo:dateOrdered|date|#IMPLIED|
+| | |mmlHdo:dateEffective|date|#IMPLIED|
+|M28.1.3.1.|mmlHdo:orderGroups| | |+|
+|M28.1.3.1.1.|mmlHdo:effectiveDays| | |?|
+|M28.1.3.1.1.1.|mmlHdo:weekDay| |string(ISO8601のWeekDay)|*|
+|M28.1.3.1.2|mmlHdo:timeShift| |string|?|
+| | |mmlHdo:code|string|#IMPLIED|
+| | |mmlHdo:tableId|string|#IMPLIED|hdTimeShiftTable01
+|M28.1.3.1.3|mmlHdo:hdMethod| | |*|
+|M28.1.3.1.3.1.|mmlHdo:hdMethodName| |string| |
+| | |mmlHdo:code|string|#IMPLIED|
+| | |mmlHdo:tableId|string|#IMPLIED|hdMethodTable01
+|M28.1.3.1.3.2.|mmlHdo:timeHdStart| |duration|?|
+| | |mmlHdo:timeDirection|string|#REQUIRED|
+|M28.1.3.1.3.3.|mmlHdo:timeHdEnd| |duration|?|
+| | |mmlHdo:timeDirection|string|#REQUIRED|
+|M28.1.3.1.4|mmlHdo:dryWeight| |decimal|?|
+| | |mmlHdo:unit|string|#REQUIRED|Default："kg"
+|M28.1.3.1.5|mmlHdo:weightCorrection| |decimal|?|
+| | |mmlHdo:unit|string|#REQUIRED|Default："kg"
+| | |mmlHdo:cnote|string|#IMPLIED|
+|M28.1.3.1.6|mmlHdo:bloodFlow| | |*|
+|M28.1.3.1.6.1.|mmlHdo:bloodFlowRate| |decimal| |
+| | |mmlHdo:unit|string|#REQUIRED|Default：mL/min
+|M28.1.3.1.6.2.|mmlHdo:timeHdStart| |duration|?|
+| | |mmlHdo:timeDirection|string|#REQUIRED|
+|M28.1.3.1.6.3.|mmlHdo:timeHdEnd| |duration|?|
+| | |mmlHdo:timeDirection|string|#REQUIRED|
+|M28.1.3.1.7|mmlHdo:filter| |string|?|
+| | |mmlHdo:code|string|#IMPLIED|
+| | |mmlHdo:type|string|#IMPLIED|
+| | |mmlHdo:membraneArea|decimal|#IMPLIED|
+| | |mmlHdo:unit|string|#IMPLIED|Default："m2"
+|M28.1.3.1.8|mmlHdo:dialysate| | |*|
+|M28.1.3.1.8.1|mmlHdo:dialysateName| |string| |
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:type|string|#IMPLIED|
+| | |mmlHd:modification|string|#IMPLIED|
+|M28.1.3.1.8.2.|mmlHd:timeHdStart| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.3.1.8.3.|mmlHd:timeHdEnd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.3.1.9.|mmlHd:dialysateFlow| | |*|
+|M28.1.3.1.9.1.|mmlHd:dialysateFlowRate| |decimal| |
+| | |mmlHd:unit|string|#REQUIRED|Default: "ml/min"
+|M28.1.3.1.9.2.|mmlHd:timeHdStart| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.3.1.9.3.|mmlHd:timeHdEnd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.3.1.10.|mmlHd:dialysateTemp| | |*|
+|M28.1.3.1.10.1.|mmlHd:dialysateTempValue| |decimal| |
+| | |mmlHd:unit|string|#REQUIRED|Default: "C"
+|M28.1.3.1.10.2.|mmlHd:timeHdStart| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.3.1.10.3.|mmlHd:timeHdEnd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.3.1.11.|mmlHd:substitution| | |*|
+|M28.1.3.1.11.1.|mmlHd:substitutionValue| |decimal| |
+| | |mmlHd:unit|string|#REQUIRED|
+| | |mmlHd:dilution|string|#REQUIRED|
+|M28.1.3.1.11.2.|mmlHd:timeHdStart| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.3.1.11.3.|mmlHd:timeHdEnd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.3.1.12.|mmlHd:needle| |string|*|
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:type|string|#IMPLIED|
+| | |mmlHd:position|string|#IMPLIED|
+|M28.1.3.1.13.|mmlHd:medication| | |*|
+|M28.1.3.1.13.1.|mmlHd:drugName| |string|?|
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:type|string|#REQUIRED|
+|M28.1.3.1.13.2.|mmlHd:dose| |decimal|?|
+| | |mmlHd:unit|string|#IMPLIED|
+|M28.1.3.1.13.3.|mmlHd:timeHd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.3.1.13.4.|mmlHd:note| |string|?|
+|M28.1.3.1.14.|mmlHd:injection| | |*|
+|M28.1.3.1.14.1.|mmlHd:drugName| |string|?|
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:type|string|#REQUIRED|
+|M28.1.3.1.14.2.|mmlHd:dose| |decimal|?|
+| | |mmlHd:unit|string|#IMPLIED|
+|M28.1.3.1.14.3.|mmlHd:timeHdStart| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.3.1.14.4.|mmlHd:timeHdEnd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.3.1.14.5.|mmlHd:routeName| |string|?|
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:tableId|string|#REQUIRED|hdInjectionRouteTable01
+|M28.1.3.1.14.6.|mmlHd:note| |string|?|
+|M28.1.3.1.15.|mmlHd:note| |string|?|
+|M28.1.4.|mmlHd:hdDailyOrder| | |*|
+| | |mmlHd:orderDateTime|dateTime|#IMPLIED|
+| | |mmlHd:dateEffective|date|#IMPLIED|
+|M28.1.4.1.|mmlHd:timeShift| |string|?|
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:tableId|string|#REQUIRED|hdTimeShiftTable01
+|M28.1.4.2.|mmlHd:hdMethod| | |*|
+|M28.1.4.2.1.|mmlHd:hdMethodName| |string| |
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:tableId|string|#REQUIRED|
+|M28.1.4.2.2.|mmlHd:timeHdStart| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.2.3.|mmlHd:timeHdEnd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.3.|mmlHd:targetWeight| |decimal|?|
+| | |mmlHd:unit|string|#REQUIRED|Default: "kg"
+|M28.1.4.4|mmlHd:targetUF| |decimal|?|
+| | |mmlHd:unit|string|#REQUIRED|Default: "kg"
+|M28.1.4.5.|mmlHd:ufrPlan| | |*|
+|M28.1.4.5.1.|mmlHd:ufRate| |decimal| |
+| | |mmlHd:unit|string|#REQUIRED|Default: "kg/h"
+|M28.1.4.5.2.|mmlHd:timeHdStart| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.5.3.|mmlHd:timeHdEnd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.6.|mmlHd:weightCorrection| |decimal|?|
+| | |mmlHd:unit|string|#REQUIRED|Default: "kg"
+| | |mmlHd:cnote|string|#IMPLIED|
+|M28.1.4.7.|mmlHd:bloodFlow| | |*|
+|M28.1.4.7.1.|mmlHd:bloodFlowRate| |decimal| |
+| | |mmlHd:unit|string|#REQUIRED|"mL/min"
+|M28.1.4.7.2.|mmlHd:timeHdStart| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.7.3.|mmlHd:timeHdEnd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.8.|mmlHd:dialyser| |string|?|
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:type|string|#IMPLIED|
+| | |mmlHd:membraneArea|decimal|#IMPLIED|
+| | |mmlHd:unit|string|#REQUIRED|Default: "m2"
+|M28.1.4.9.|mmlHd:dialysate| | |*|
+|M28.1.4.9.1.|mmlHd:dialysateName| |string| |
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:type|string|#IMPLIED|
+| | |mmlHd:modification|string|#IMPLIED|
+|M28.1.4.9.2.|mmlHd:timeHdStart| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.9.3.|mmlHd:timeHdEnd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.10.|mmlHd:dialysateFlow| | |*|
+|M28.1.4.10.1.|mmlHd:dialysateFlowRate| |decimal| |
+| | |mmlHd:unit|string|#REQUIRED|Default: "mL/min"
+|M28.1.4.10.2.|mmlHd:timeHdStart| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.10.3.|mmlHd:timeHdEnd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.11.|mmlHd:dialysateTemp| | |*|
+|M28.1.4.11.1.|mmlHd:dialysateTempValue| |decimal| |
+| | |mmlHd:unit|string|#REQUIRED|Default: "C"
+|M28.1.4.11.2.|mmlHd:timeHdStart| |dateTime| |
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.11.3.|mmlHd:timeHdEnd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.12.|mmlHd:needle| |string|*|
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:type|string|#IMPLIED|
+| | |mmlHd:position|string|#IMPLIED|
+|M28.1.4.13.|mmlHd:medication| | |*|
+|M28.1.4.13.1.|mmlHd:drugName| |string|?|
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:type|string|#REQUIRED|
+|M28.1.4.13.2.|mmlHd:dose| |decimal|?|
+| | |mmlHd:unit|string|#IMPLIED|
+|M28.1.4.13.3.|mmlHd:timeHd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.13.4.|mmlHd:note| |string|?|
+|M28.1.4.14.|mmlHd:injection| | |*|
+|M28.1.4.14.1.|mmlHd:drugName| |string|?|
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:type|string|#REQUIRED|
+|M28.1.4.14.2.|mmlHd:dose| |decimal|?|
+| | |mmlHd:unit|string|#IMPLIED|
+|M28.1.4.14.3.|mmlHd:timeHdStart| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.14.4.|mmlHd:timeHdEnd| |dateTime|?|
+| | |mmlHd:timeDirection|string|#REQUIRED|
+|M28.1.4.14.5.|mmlHd:routeName| |string|?|
+| | |mmlHd:code|string|#IMPLIED|
+| | |mmlHd:tableId|string|#IMPLIED|hdInjectionRouteTable01
+|M28.1.4.14.6.|mmlHd:note| |string|?|
+|M28.1.4.15.|mmlHd:note| |string|?|
+|===
+Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== エレメント解説
+==== M28. mmlHdo:HemodialysysOrderModule
+【内容】透析指示情報モジュール． +
+本モジュールには患者情報を記載する要素名がないので，患者情報モジュール（mmlPi）
+を使用すること．
+
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:version|string|#REQUIRED|バージョン
+|mmlHdo:createDate|dateTime|#REQUIRED|作成日
+|===
+
+==== M28.1. mmlHdo:HemoDialysisHistory
+【内容】透析に関する履歴 +
+【省略】省略不可
+
+==== M28.1.1 mmlFc:Facility
+【内容】施設情報、構造はMML共通形式を参照．施設情報は本モジュールを作成した施設．+
+【省略】可．ただし，本モジュールに記載しない場合は「透析履歴情報モジュール」または「透析記録情報モジュール」のどちらかに記載すること．
+
+==== M28.1.2 mmlHdo:note
+【内容】備考 +
+【省略】省略可
+
+==== M28.1.3 mmlHdo:Orders
+【内容】オーダー単位 +
+【省略】省略不可 +
+【繰り返し設定】繰り返しあり +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:orderStatus|string|#REQUIRED|
+|mmlHdo:dateOrdered|date|#IMPLIED|オーダー発行日
+|mmlHdo:dateEffective|date|#IMPLIED|変更オーダー発効日
+|===
+
+==== M28.1.3.1 mmlHdo:orderGroups
+【内容】オーダーグループ +
+【繰り返し設定】繰り返しあり +
+【省略】省略不可
+
+
+==== M28.1.3.1.1 mmlHdo:effectiveDays
+【内容】実効曜日 +
+【省略】省略可 +
+
+==== M28.1.3.1.1.1 mmlHdo:weekDay
+【内容】オーダー適用曜日 +
+【データ型】string(ISO8601のWeekDay) +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり
+
+==== M28.1.3.1.2 mmlHdo:timeShift
+【内容】透析シフト名称 +
+【データ型】string +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:code|string|#IMPLIED|
+|mmlHdo:tableId|string|#IMPLIED|hdTimeShiftTable01
+|===
+
+【例】
+[source, xml]
+<mmlHdo:timeShift mmlHdo:code=“01” mmlHdo:tableId=“hdTimeShiftTable01”>午前帯</mmlHdo:timeShift>
+
+==== M28.1.3.1.3. mmlHdo:hdMethod
+【内容】血液浄化方法 +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+
+==== M28.1.3.1.3.1. mmlHdo:hdMethodName
+【内容】血液浄化方法名称 +
+【データ型】string +
+【省略】省略不可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:code|string|#IMPLIED|血液浄化コード
+|mmlHdo:tableId|string|#IMPLIED|テーブルID、hdMethodTable01
+|===
+
+【例】
+[source, xml]
+<mmlHdo:hdMethodName mmlHdo:code=“01” mmlHdo:tableId=“hdMethodTable01”>透析</mmlHdo:hdMethodName>
+
+==== M28.1.3.1.3.2. mmlHdo:timeHdStart
+【内容】開始時刻 +
+【データ型】duration, ISO 8610形式の期間型で記録する +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
+|===
+
+==== M28.1.3.1.3.3. mmlHdo:timeHdEnd
+【内容】終了時刻 +
+【データ型】duration, ISO 8601形式の期間型で記録する +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:timeHdEnd|string|#REQUIRED|時間方向、終了時刻前：before、終了時刻後：after
+|===
+
+【例】
+[source, xml]
+<mmlHdo:timeHdEnd mmlHdo:timeDirection=“after”>PT5H0M0S</mmlHdo:timeHdEnd>
+
+==== M28.1.3.1.4. mmlHdo:dryWeight
+【内容】ドライウェイト +
+【データ型】decimal +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:unit|string|#REQUIRED|単位、Default："kg"
+|===
+
+==== M28.1.3.1.5. mmlHdo:weightCorrection
+【内容】重量補正 +
+【データ型】decimal +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:unit|string|#REQUIRED|単位、Default："kg
+|mmlHdo:cnote|string|#IMPLIED|コメント
+|===
+
+==== M28.1.3.1.6. mmlHdo:bloodFlow
+【内容】血流量 +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+
+==== M28.1.3.1.6.1. mmlHdo:bloodFlowRate
+【内容】血流量値 +
+【データ型】decimal +
+【省略】省略不可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:unit|string|#REQUIRED|単位、Default：mL/min
+|===
+
+==== M28.1.3.1.6.2. mmlHdo:timeHdStart
+【内容】開始時刻 +
+【データ型】duration, ISO 8601形式の期間型で記録する +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
+|===
+
+==== M28.1.3.1.6.3. mmlHdo:timeHdEnd
+【内容】終了時刻 +
+【データ型】duration, ISO 8610形式の期間型で記録する +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:timeDirection|string|#REQUIRED|時間方向、終了時刻前：before、終了時刻後：after
+|===
+
+==== M28.1.3.1.7. mmlHdo:filter
+【内容】血液浄化器 +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:code|string|#IMPLIED|血液浄化器ID
+|mmlHdo:type|string|#IMPLIED|コードの種類。当面は製品コードを使用
+|mmlHdo:membraneArea|decimal|#IMPLIED|膜面積
+|mmlHdo:unit|string|#IMPLIED|単位、Default："m2"
+|===
+
+==== M28.1.3.1.8. mmlHdo:dialysate
+【内容】透析液 +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+
+==== M28.1.3.1.8.1. mmlHdo:dialysateName
+【内容】透析液名称 +
+【データ型】string +
+【省略】省略不可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:code|string|#IMPLIED|透析液ID
+|mmlHdo:type|string|#IMPLIED|コードの種類。当面は製品コードを使用
+|mmlHdo:modification|string|#IMPLIED|透析液調整
+|===
+
+==== M28.1.3.1.8.2. mmlHdo:timeHdStart
+【内容】開始時刻 +
+【データ型】duration, ISO 8610形式の期間型で記録する +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
+|===
+
+==== M28.1.3.1.8.3. mmlHdo:timeHdEnd
+【内容】終了時刻 +
+【データ型】duration, ISO 8610形式の期間型で記録する +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:timeDirection|string|#REQUIRED|時間方向、終了時刻前：before、終了時刻後：after
+|===
+
+==== M28.1.3.1.9. mmlHdo:dialysateFlow
+【内容】透析液流量 +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+
+==== M28.1.3.1.9.1. mmlHdo:dialysateFlowRate
+【内容】透析液流量数値 +
+【データ型】decimal +
+【省略】省略不可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:unit|string|#REQUIRED|単位、Default: "ml/min"
+|===
+
+==== M28.1.3.1.9.2. mmlHdo:timeHdStart
+【内容】開始時刻 +
+【データ型】duration, ISO 8610形式の期間型で記録する
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
+|===
+
+==== M28.1.3.1.9.3. mmlHdo:timeHdEnd
+【内容】終了時刻 +
+【データ型】duration, ISO 8610形式の期間型で記録する
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:timeDirection|string|#REQUIRED|時間方向、終了時刻前：before、終了時刻後：after
+|===
+
+==== M28.1.3.1.10. mmlHdo:dialysateTemp
+【内容】透析液温度 +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+
+==== M28.1.3.1.10.1. mmlHdo:dialysateTempValue
+【内容】透析液温度数値 +
+【データ型】decimal +
+【省略】省略不可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:unit|string|#REQUIRED|単位、Default: "C"
+|===
+
+==== M28.1.3.1.10.2. mmlHdo:timeHdStart
+【内容】開始時刻 +
+【データ型】duration, ISO 8610形式の期間型で記録する
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
+|===
+
+==== M28.1.3.10.3. mmlHdo:timeHdEnd
+【内容】終了時刻 +
+【データ型】duration, ISO 8610形式の期間型で記録する
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:timeDirection|string|#REQUIRED|時間方向、終了時刻前：before、終了時刻後：after
+|===
+
+
+
+
+　mmlHdh:hdIntroduction
+【内容】透析導入情報 +
+【省略】省略不可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+
+==== M28.1.3.1　mmlHdh:hdDiagnosis
+【内容】原疾患 +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdh:code|string|#IMPLIED|疾患コード
+|mmlHdh:system|string|#IMPLIED|疾患コード体系
+|===
+
+==== M28.1.3.2 mmlHdh:hdIntroDate
+【内容】透析導入日 +
+【データ型】date +
+【省略】省略可
+
+==== M28.1.3.3 mmlFc:Facility
+【内容】導入施設。構造はMML共通形式(mmlFc:Facility)を参照． +
+【省略】省略可
+
+==== M28.1.3.4 mmlHdh:vascularAccess
+【内容】バスキュラーアクセス +
+【省略】省略不可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す． +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdh:vaStatus|string|#IMPLIED|バスキュラーアクセス状態、良：active，不良： inactive 
+|===
+
+==== M28.1.4.1 mmlHdh:dateMade
+【内容】バスキュラーアクセス作成日 +
+【データ型】date +
+【省略】省略可
+
+==== M28.1.4.2 mmlHdh:dateFirstUse
+【内容】バスキュラーアクセス使用開始日 +
+【データ型】date +
+【省略】省略可
+
+==== M28.1.4.3 mmlHdh:dateEnd
+【内容】バスキュラーアクセス使用終了日 +
+【データ型】date +
+【省略】省略可
+
+==== M28.1.4.4 mmlHdh:location
+【内容】バスキュラーアクセス部位名、漢字を推奨。MMLテーブル『hdVaCodeTable01 HDバスキュラーアクセスコード』を使用．
+【データ型】string
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdh:code|string|#IMPLIED|
+|mmlHdh:tableId|string|#IMPLIED|hdVaCodeTable01
+|===
+
+【例】
+[source, xml]
+<mmlHdh:location mmlHdh:code=“0102” mmlHdh:tableId=hdVaCodeTable01>左前腕</mmlHdh:location>
+
+==== M28.1.4.5mmlHdh:note
+【内容】メモ +
+【データ型】string +
+【省略】省略可
+
+
+
+透析指示情報モジュール（mmlHdo）エレメント解説
+1．mmlHdo:HemoDialysysOrderModule
+【内容】透析指示情報モジュール．
+本モジュールには患者情報を記載する要素名がないので，患者情報モジュール（mmlPi）
+を使用すること．
+【属性】
+1.1　mmlHdo:HemoDialysisOrder
+【内容】透析に関する指示
+【省略】不可
+1.1.1 mmlFc:Facility
+【内容】施設情報、構造はMML共通形式を参照．施設情報は本モジュールを作成した施
+設．
+【省略】可．ただし，本モジュールに記載しない場合は「透析履歴情報モジュール」また
+は「透析記録情報モジュール」のどちらかに記載すること．
+1.1.2　mmlHdo:note
+【内容】備考
+【省略】可
+1.1.3　mmlHdo:HDOrders
+【内容】オーダー単位
+【省略】省略不可
+【繰り返し設定】繰り返しあり
+【属性】
+1.1.3.1　mmlHdo:orderGroups
+【内容】オーダーグループ
+属性名データ型省略説明
+mmlHdo:version string #REQUIRED バージョン
+mmlHdo:createDate dateTime #REQUIRED 作成日
+属性名データ型省略説明
+mmlHdo:orderStatus string #REQUIRED オーダー状態を識別する
+フラグ
+現行オーダー：active，
+変更オーダー：
+alteration
+mmlHdo:dateOrdered date #IMPLIED オーダー発行日
+mmlHdo:dateEffective date #IMPLIED 変更オーダー発効日
+【繰り返し設定】繰り返しあり
+【省略】不可
+1.1.3.1.1　mmlHdo:effectiveDays
+【内容】実効曜日
+【省略】省略可
+1.1.3.1.1.1　mmlHdo:weekDay
+【内容】オーダー適用曜日
+【データ型】string(ISO8601のWeekDay)
+【省略】省略可
+【繰り返し設定】繰り返しあり
+1.1.3.1.2　mmlHdo:timeShift
+【内容】透析シフト名称
+【データ型】string
+【省略】省略可
+【属性】
+【例】
+<mmlHdo:timeShift　mmlHdo:code=“01”　mmlHdo:tableId=“hdTimeShiftTable01”>午前帯
+</mmlHdo:timeShift>
+1.1.3.1.3　mmlHdo:hdMethod
+【内容】血液浄化方法
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記方法が複数あれば繰り返す．
+1.1.3.1.3.1　mmlHdo:hdMethodName
+【内容】血液浄化方法名称
+【データ型】string
+【省略】不可
+【属性】
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 時間帯コード
+mmlHdo:tableId string #IMPLIED hdTimeShiftTable01
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 血液浄化コード
+mmlHdo:tableId string #IMPLIED テーブルID
+【例】<mmlHdo:hdMethodName mmlHdo:code=“01”
+mmlHdo:tableId=“hdMethodTable01”>透析</mmlHdo:hdMethodName>
+1.1.3.1.3.2　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+【例】
+<mmlHdo:timeHdStart mmlHdo:timeDirection=“after">PT0H0M0S</mmlHdo:timeHdStart>
+1.1.3.1.3.3　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+【例】
+<mmlHdo:timeHdEnd mmlHdo:timeDirection="after">PT5H0M0S</mmlHdo:timeHdEnd>
+1.1.3.1.4　mmlHdo:dryWeight
+【内容】ドライウェイト
+【データ型】decimal
+【省略】省略可
+【属性】
+1.1.3.1.5　mmlHdo:weightCorrection
+【内容】重量補正
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeHdEnd string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED Default：”kg”
+【データ型】decimal
+【省略】省略可
+【属性】
+1.1.3.1.6　mmlHdo:bloodFlow
+【内容】血液流量
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す
+1.1.3.1.6.1　mmlHdo:bloodFlowRate
+【内容】血液流量値
+【データ型】decimal
+【省略】不可
+【属性】
+1.1.3.1.6.2　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.3.1.6.3　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED Default：”kg”
+mmlHdo:cnote string #IMPLIED コメント
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED Default：mL/min
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+1.1.3.1.7　mmlHdo:filter
+【内容】血液浄化器
+【データ型】string
+【省略】省略可
+【属性】
+1.1.3.1.8　mmlHdo:dialysate
+【内容】透析液
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.3.1.8.1　mmlHdo:dialysateName
+【内容】透析液名称
+【データ型】string
+【省略】省略不可
+【属性】
+1.1.3.1.8.2　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+mmlHdo:timeHdEnd string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 血液浄化器ID
+mmlHdo:type string #IMPLIED コードの種類，当面は製
+品コードを使用．
+mmlHdo:membraneAre
+a
+decimal #IMPLIED 膜面積
+mmlHdo:unit string #IMPLIED Default：”m2”
+属性名称データ型省略説明
+mmlHdo:code string #IMPLIED 透析液ID
+mmlHdo:type string #IMPLIED コードの種類．当面は薬
+価コードを使用．
+mmlHdo:modification string #IMPLIED 透析液調製
+1.1.3.1.8.3　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.3.1.9　mmlHdo:dialysateFlow
+【内容】透析液流量
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.3.1.9.1　mmlHdo:dialysateFlowRate
+【内容】透析液流量数値
+【データ型】decimal
+【省略】省略不可
+【属性】
+1.1.3.1.9.2　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+【省略】省略可
+【属性】
+1.1.3.1.9.3　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED Default：mL/min
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.3.1.10　mmlHdo:dialysateTemp
+【内容】透析液温度
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.3.1.10.1　mmlHdo:dialysateTempValue
+【内容】透析液温度数値
+【データ型】decimal
+【省略】省略不可
+【属性】
+1.1.3.1.10.2　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.3.1.10.3　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED Default：”C”
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+1.1.3.1.11　mmlHdo:substitution
+【内容】補充液
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.3.1.11.1　mmlHdo:substitutionName
+【内容】補充液名称
+【データ型】string
+【省略】省略不可
+【属性】
+1.1.3.1.11.2　mmlHdo:substitutionValue
+【内容】補充液量
+【データ型】decimal
+【省略】省略不可
+【属性】
+1.1.3.1.11.3　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名称データ型省略説明
+mmlHdo:code string #IMPLIED 補充液コード
+mmlHdo:type string #IMPLIED コードの種類．当面は薬
+価コードを使用．
+mmlHdo:modification string #IMPLIED 補充液調製
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED “ml/min” または
+“L/Session”
+mmlHdo:dilution string #REQUIRED “pre”,”post”,”intermitte
+nt”
+属性名データ型省略説明
+1.1.3.1.11.4　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.3.1.11.5　mmlHdo:intermittent
+【内容】間歇投与
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.3.1.11.5.1　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.3.1.11.5.2　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+【省略】省略可
+【属性】
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+1.1.3.1.11.5.3　mmlHdo:substitutionInterval
+【内容】投与間隔
+【データ型】string
+【省略】省略可
+【属性】
+1.1.3.1.11.5.4　mmlHdo:substitutionValue
+【内容】投与補充液量
+【データ型】string
+【省略】省略可
+【属性】
+1.1.3.1.11.5.5　mmlHdo:substitutionSpeed
+【内容】投与速度
+【データ型】string
+【省略】省略可
+【属性】
+1.1.3.1.12　mmlHdo:needle
+【内容】穿刺針名称
+【データ型】string
+【省略】省略可
+【属性】
+1.1.3.1.13　mmlHdo:medication
+【内容】投薬
+【省略】省略可
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED “min”
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED “mL”
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED “mL/min”
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED
+mmlHdo:type string #IMPLIED
+mmlHdo:position string #IMPLIED
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.3.1.13.1　mmlHdo:drugName
+【内容】薬剤名称
+【データ型】string
+【省略】省略可
+【属性】
+1.1.3.1.13.2　mmlHdo:dose
+【内容】1回量
+【データ型】decimal
+【省略】省略
+【属性】
+1.1.3.1.13.3　mmlHdo:timeHd
+【内容】投与時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.3.1.13.4　mmlHdo:note
+【内容】備考
+【データ型】string
+【省略】省略可
+1.1.3.1.14　mmlHdo:injection
+【内容】注射
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記表が複数あれば繰り返す．
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 内服薬ID
+mmlHdo:type string #IMPLIED
+コードの種類．当面は薬
+価コードを使用．
+属性名データ型省略説明
+mmlHdo:unit string #IMPLIED 単位
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED
+時間方向
+開始時刻前：before，
+終了時刻後：after
+1.1.3.1.14.1　mmlHdo:drugName
+【内容】注射薬名称
+【データ型】string
+【省略】省略可
+【属性】
+1.1.3.1.14.2　mmlHdo:dose
+【内容】1回量または投与速度
+【データ型】string
+【省略】省略可
+【属性】
+1.1.3.1.14.3　mmlHdo:timeHdStart
+【内容】投与開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.3.1.14.4　mmlHdo:timeHdEnd
+【内容】投与終了時刻
+【データ型】duration
+【省略】省略可
+【属性】
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 注射薬ID
+mmlHdo:type string #IMPLIED コードの種類．当面は薬
+価コードを使用．
+属性名データ型省略説明
+mmlHdo:unit string #IMPLIED 単位
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+1.1.3.1.14.5　mmlHdo:routeName
+【内容】投与経路名称
+【データ型】string
+【省略】省略可
+【属性】
+【例】
+<mmlHdo:routeName mmlHdo:code=“icv” mmlHdo:tableId=“hdInjectionRouteTable01”>静
+脈回路内注射</mmlHdo:routeName>
+1.1.3.1.14.6　mmlHdo:note
+【内容】備考
+【データ型】string
+【省略】省略可
+1.1.3.1.15　mmlHdo:note
+【内容】備考
+【データ型】string
+【省略】省略可
+1.1.4　mmlHdo:hdDailyOrder
+【内容】日々指示
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+【属性】
+1.1.4.1　mmlHdo:timeShift
+【内容】透析シフト名称
+【データ型】string
+【省略】省略可
+【属性】
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 投与経路ID
+mmlHdo:tableId string #IMPLIED
+hdInjectionRouteTable0
+1
+属性名データ型省略説明
+mmlHdo:orderDateTime dateTime #IMPLIED オーダーを発行した日時
+mmlHdo:dateEffective date #IMPLIED オーダー実行日
+属性名データ型省略説明
+【例】
+<mmlHdo:timeShift mmlHdo:code=“01” mmlHdo:tableId=“hdTimeShiftTable01”>午前帯</
+mmlHdo:timeShift>
+1.1.4.2　mmlHdo:hdMethod
+【内容】血液浄化方法
+【データ型】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.4.2.1　mmlHdo:hdMethodName
+【内容】血液浄化名称
+【データ型】string
+【省略】省略不可
+【属性】
+【例】
+< mmlHdo:hdMethodName mmlHdo:code=“01” mmlHdo:tableId=“hdMethodTable01”>透
+析</mmlHdo:hdMethodName>
+1.1.4.2.2　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.2.3　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+mmlHdo:code string #IMPLIED 時間帯コード
+mmlHdo:tableId string #IMPLIED hdTimeShiftTable01
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 血液浄化コード
+mmlHdo:tableId string #IMPLIED hdMethodTable01
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+【省略】省略可
+【属性】
+1.1.4.3　mmlHdo:targetWeight
+【内容】目標体重
+【データ型】decimal
+【省略】省略可
+【属性】
+1.1.4.4　mmlHdo:targetUF
+【内容】目標除水量
+【データ型】decimal
+【省略】省略可
+【属性】
+1.1.4.5　mmlHdo:ufrPlan
+【内容】除水速度設定
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.4.5.1　mmlHdo:ufRate
+【内容】除水速度
+【データ型】decimal
+【省略】省略不可
+【属性】
+1.1.4.5.2　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED Default：”kg”
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED Default：”kg”
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED Default：”kg/hr”
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.5.3　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】dataeTime
+【省略】省略可
+【属性】
+1.1.4.6　mmlHdo:weightCorrection
+【内容】重量補正
+【データ型】decimal
+【省略】省略可
+【属性】
+1.1.4.7　mmlHdo:bloodFlow
+【内容】血液流量
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.4.7.1　mmlHdo:bloodFlowRate
+【内容】血液流量数値
+【データ型】decimal
+【省略】省略不可
+【属性】
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED Default：”kg”
+mmlHdo:cnote string #IMPLIED
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED Default：”mL/min”
+1.1.4.7.2　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.7.3　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.8　mmlHdo:filter
+【内容】血液浄化器名称
+【データ型】string
+【省略】省略可
+【属性】
+1.1.4.9　mmlHdo:dialysate
+【内容】透析液
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 血液浄化器ID
+mmlHdo:type string #IMPLIED コードの種類，当面は製
+品コードを使用．
+mmlHdo:membraneA
+rea decimal #IMPLIED 膜面積
+mmlHdo:unit string #IMPLIED Default：”m2”
+1.1.4.9.1　mmlHdo:dialysateName
+【内容】透析液名称
+【データ型】string
+【省略】省略不可
+【属性】
+1.1.4.9.2　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.9.3　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.10　mmlHdo:dialysateFlow
+【内容】透析液流量
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 透析液ID
+mmlHdo:type string #IMPLIED コードの種類．当面は薬
+価コードを使用．
+mmlHdo:modification string #IMPLIED
+Ca=2.5mEq/Lなど透析
+液の調製するときに記
+載．
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+1.1.4.10.1　mmlHdo:dialysateFlowRate
+【内容】透析液流量数値
+【データ型】decimal
+【省略】省略不可
+【属性】
+1.1.4.10.2　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.10.3　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.11　mmlHdo:dialysateTemp
+【内容】透析液温度
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.4.11.1　mmlHdo:dialysateTempValue
+【内容】透析液温度数値
+【データ型】decimal
+【省略】省略不可
+【属性】
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED Default：”mL/min”
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+1.1.4.11.2　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.11.3　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.12　mmlHdo:substitution
+【内容】補充液
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.4.12.1　mmlHdo:substitutionName
+【内容】補充液名称
+【データ型】string
+【省略】省略不可
+【属性】
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED Default：”C”
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名称データ型省略説明
+mmlHdo:code string #IMPLIED 補充液コード
+mmlHdo:type string #IMPLIED コードの種類．当面は薬
+価コードを使用．
+1.1.4.12.2　mmlHdo:substitutionValue
+【内容】補充液量
+【データ型】decimal
+【省略】省略不可
+【属性】
+1.1.4.12.3　mmlHdo:timeHdStart
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.12.4　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.12.5　mmlHdo:intermittent
+【内容】間歇投与
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.4.12.5.1　mmlHdo:timeHdStart
+mmlHdo:modification string #IMPLIED 補充液調製
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED “ml/min” または
+“L/Session”
+mmlHdo:dilution string #REQUIRED “pre”,”post”,”intermitte
+nt”
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+【内容】開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.12.5.2　mmlHdo:timeHdEnd
+【内容】終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.12.5.3　mmlHdo:substitutionInterval
+【内容】投与間隔
+【データ型】string
+【省略】省略可
+【属性】
+1.1.4.12.5.4　mmlHdo:substitutionValue
+【内容】投与補充液量
+【データ型】string
+【省略】省略可
+【属性】
+1.1.4.12.5.5　mmlHdo:substitutionSpeed
+【内容】投与速度
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED “min”
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED “mL”
+【データ型】string
+【省略】省略可
+【属性】
+1.1.4.13　mmlHdo:needle
+【内容】穿刺針名称
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+【属性】
+1.1.4.14　mmlHdo:medication
+【内容】投薬
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.4.14.1　mmlHdo:drugName
+【内容】薬剤名称
+【データ型】string
+【省略】省略不可
+【属性】
+1.1.4.14.2　mmlHdo:dose
+【内容】1回量
+【データ型】decimal
+【省略】省略可
+【属性】
+属性名データ型省略説明
+mmlHdo:unit string #REQUIRED “mL/min”
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 穿刺針ID
+mmlHdo:type string #IMPLIED コードの種類．当面は製
+品番号を使用．
+mmlHdo:position string #IMPLIED 使用部位．
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 内服薬コード
+mmlHdo:type string #IMPLIED コードの種類．当面は薬
+価コードを使用．
+属性名データ型省略説明
+1.1.4.14.3　mmlHdo:timeHd
+【内容】投与時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.14.4　mmlHdo:note
+【内容】備考
+【データ型】string
+【省略】省略可
+1.1.4.15　mmlHdo:injection
+【内容】注射
+【省略】省略可
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+1.1.4.15.1　mmlHdo:drugName
+【内容】注射薬名称
+【データ型】string
+【省略】省略可
+【属性】
+1.1.4.15.2　mmlHdo:dose
+【内容】1回投与量または投与速度
+【データ型】decimal
+【省略】省略可
+【属性】
+mmlHdo:unit string #IMPLIED 単位
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 注射薬ID
+mmlHdo:type string #IMPLIED
+属性名データ型省略説明
+mmlHdo:unit string #IMPLIED 単位
+1.1.4.15.3　mmlHdo:timeHdStart
+【内容】投与開始時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.15.4　mmlHdo:timeHdEnd
+【内容】投与終了時刻
+【データ型】duration
+　ISO8601形式の期間型（P [n] Y [n] M [n] DT [n] H [n] M [n] S）で記録する．
+【省略】省略可
+【属性】
+1.1.4.15.5　mmlHdo:routeName
+【内容】投与経路名称
+【データ型】string
+【省略】省略可
+【属性】
+【例】
+< mmlHdo:routeName mmlHdo:code=“icv” mmlHdo:tableId=“hdInjectionRouteTable01”>
+静脈回路内注射</mmlHdo:routeName>
+1.1.4.15.6　mmlHdo:note
+【内容】備考
+【データ型】string
+【省略】省略可
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:timeDirection string #REQUIRED 時間方向
+開始時刻前：before，
+開始時刻後：after
+属性名データ型省略説明
+mmlHdo:code string #IMPLIED 投与経路ID
+mmlHdo:tableId string #IMPLIED hdInjectionRouteTable
+01
+1.1.4.16　mmlHdo:note
+【内容】備考
+【データ型】string
+【省略】省略可
