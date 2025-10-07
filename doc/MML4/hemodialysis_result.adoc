@@ -1,0 +1,153 @@
+:Author: Shinji KOBAYASHI, Takashi Suzuki
+:Email: skoba@moss.gr.jp
+:toc: right
+:toclevels: 2
+:pagenums:
+:sectnums: y
+:sectnumlevels: 8
+:imagesdir: ./figures
+:linkcss:
+
+=== 透析記録情報モジュール（mmlHdr）エレメント解説
+==== namespace宣言
+このモジュールのnamespaceは以下のように宣言する。
+[source,xml]
+----
+xmlns:mmlHdr="http://www.medxml.net/MML/v4/ContentModule/HemodialysisResult/1.0"
+----
+
+.エレメント一覧表
+|===
+| |Elements|Attribute|Data types|Occurrence|Table id
+|M29.|mmlHdr:HemodialysisResultModule| | | |
+| | |mmlHdr:version|string|#REQUIRED|
+| | |mmlHdr:createDate|dateTime|#REQUIRED|
+|M29.1.|mmlHdr:HemodialysisResult| | | |
+|M29.1.1.|mmlFc:Facility| | |?|
+|M29.1.2.|mmlHdr:note| |string|?|
+|M29.1.3.|mmlHdr:dailyHDRecord| | |+|
+| | |mmlHdr:calendarDate|date|#IMPLIED|
+| | |mmlHdr:serialNumber|string|#IMPLIED|
+|M29.1.3.1.|mmlHdr:hdMethod| |string|*|
+| | |mmlHdr:code|string|#IMPLIED|
+| | |mmlHdr:tableId|string|#REQUIRED|hdMethodTable01
+| | |mmlHdr:startDateTime|dateTime|#IMPLIED|
+| | |mmlHdr:endDateTime|dateTime|#IMPLIED|
+|M29.1.3.2.|mmlHdr:dryWeight| |decimal|?|
+| | |mmlHdr:unit|string|#REQUIRED|Default："kg"
+|M29.1.3.3.|mmlHdr:preWeight| |decimal|?|
+| | |mmlHdr:unit|string|#REQUIRED|Default："kg"
+|M29.1.3.4.|mmlHdr:postWeight| |decimal|?|
+| | |mmlHdr:unit|string|#REQUIRED|Default："kg"
+|M29.1.3.5.|mmlHdr:weightCorrection| |decimal|?|
+| | |mmlHdr:unit|string|#REQUIRED|Default："kg"
+| | |mmlHdr:cnote|string|#IMPLIED|
+|M29.1.3.6.|mmlHdr:totalUF| |decimal|?|
+| | |mmlHdr:unit|string|#REQUIRED|Default："L"
+|M29.1.3.7.|mmlHdr:totalSubstitution| |decimal|?|
+| | |mmlHdr:unit|string|#REQUIRED|Default："L"
+|M29.1.3.8.|mmlHdr:filter| |string|?|
+| | |mmlHdr:code|string|#IMPLIED|
+| | |mmlHdr:type|string|#IMPLIED|
+| | |mmlHdr:membraneArea|decimal|#IMPLIED|
+| | |mmlHdr:unit|string|#IMPLIED|Default："m2"
+|M29.1.3.9.|mmlHdr:dialysate| | |*|
+|M29.1.3.9.1.|mmlHdr:dialysateName| |string| |
+| | |mmlHdr:code|string|#IMPLIED|
+| | |mmlHdr:type|string|#IMPLIED|
+| | |mmlHdr:modification|string|#IMPLIED|
+|M29.1.3.9.2.|mmlHdr:timeHdStart| |dateTime|?|
+| | |mmlHdr:timeDirection|string|#REQUIRED|
+|M29.1.3.9.3.|mmlHdr:timeHdEnd| |dateTime|?|
+| | |mmlHdr:timeDirection|string|#REQUIRED|
+|M29.1.3.10.|mmlHdr:substitution| | |*|
+|M29.1.3.10.1.|mmlHdr:substitutionValue| |decimal| |
+| | |mmlHdr:unit|string|#REQUIRED|
+| | |mmlHdr:dilution|string|#REQUIRED|
+|M29.1.3.10.2.|substitutionValue| |decimal|?|
+| | |mmlHdr:unit|string|#REQUIRED|
+| | |mmlHdr:dilution|string|#REQUIRED|
+|M29.1.3.10.3.|mmlHdr:timeHdStart| |dateTime|?|
+| | |mmlHdr:timeDirection|string|#REQUIRED|
+|M29.1.3.10.4.|mmlHdr:timeHdEnd| |dateTime|?|
+| | |mmlHdr:timeDirection|string|#REQUIRED|
+|M29.1.3.10.5.|mmlHdr:intermittent| | |*|
+|M29.1.3.10.5.1.|mmlHdr:timeHdStart| |dateTime|?|
+| | |mmlHdr:timeDirection|string|#REQUIRED|
+|M29.1.3.10.5.2.|mmlHdr:timeHdEnd| |dateTime|?|
+| | |mmlHdr:timeDirection|string|#REQUIRED|
+|M29.1.3.10.5.3.|mmlHdr:substitutionInterVal| |duration|?|
+| | |mmlHdr:unit|string|#REQUIRED|
+|M29.1.3.10.5.4.|mmlHdr:substitutionValue| |decimal|?|
+| ||mmlHdr:unit|string|#REQUIRED|
+|M29.1.3.10.5.5.|mmlHdr:substitutionSpeed| |decimal|?|
+| ||mmlHdr:unit|string|#REQUIRED|
+|M29.1.3.11.|mmlHdr:needle| |string|*|
+| | |mmlHdr:code|string|#IMPLIED|
+| | |mmlHdr:type|string|#IMPLIED|
+| | |mmlHdr:position|string|#IMPLIED|
+|M29.1.3.12.|mmlHdr:hdMachine| |string|?|
+| | |mmlHdr:code|string|#IMPLIED|
+| | |mmlHdr:tableId|string|#IMPLIED|hdMachineTable
+|M29.1.3.13.|mmlHdr:observation| | |*|
+|M29.1.3.13.1.|mmlHdr:timeHd| |duration|?|
+| | |mmlHdr:timeDirection|string|#REQUIRED|
+|M29.1.3.13.2.|mmlHdr:observationItem| | |*|
+|M29.1.3.13.2.1.|mmlHdr:obItemName| |string| |
+| | |mmlHdr:code|string|#IMPLIED|
+| | |mmlHdr:tableId|string|#IMPLIED|hdObservationTable01
+|M29.1.3.13.2.2.|mmldr:value| |string| |
+| ||mmlHdr:code|string|#IMPLIED|
+| ||mmlHdr:tableId|string|#IMPLIED|hdObservationValueTable01
+|M29.1.3.13.3.|mmlHdr:staffName| |string|*|
+| | |mmlHdr:code|string|#IMPLIED|
+| | |mmlHdr:type|string|#IMPLIED|
+|M29.1.3.13.4.|mmlHdr:machineName| |string|*|
+| | |mmlHdr:code|string|#IMPLIED|
+| | |mmlHdr:tableId|string|#IMPLIED|hdMachineTable
+|M29.1.3.14.|mmlHdr:medication| | |*|
+|M29.1.3.14.1.|mmlHdr:drugName| |string|?|
+| | |mmlHdr:code|string|#IMPLIED|
+| | |mmlHdr:type|string|#IMPLIED|
+|M29.1.3.1.14.2.|mmlHdr:dose| |decimal|?|
+| | |mmlHdr:unit|string|#IMPLIED|
+|M29.1.3.1.14.3.|mmlHdr:timeHd| |duration|?|
+| | |mmlHdr:timeDirection|string|#REQUIRED|
+|M29.1.3.1.14.4.|mmlHdr:note| |string|?|
+|M29.1.3.1.15.|mmlHdr:injection| | |*|
+|M29.1.3.1.15.1.|mmlHdr:drugName| |string|?|
+| | |mmlHdr:code|string|#IMPLIED|
+| | |mmlHdr:type|string|#REQUIRED|
+|M29.1.3.1.15.2.|mmlHdr:dose| |decimal|?|
+| | |mmlHdr:unit|string|#IMPLIED|
+|M29.1.3.1.15.3.|mmlHdr:timeHdStart| |duration|?|
+| | |mmlHdr:timeDirection|string|#REQUIRED|
+|M29.1.3.1.15.4.|mmlHdr:timeHdEnd| |duration|?|
+| | |mmlHdr:timeDirection|string|#REQUIRED|
+|M29.1.3.1.15.5.|mmlHdr:routeName| |string|?|
+| | |mmlHdr:code|string|#IMPLIED|
+| | |mmlHdr:tableId|string|#REQUIRED|hdInjectionRouteTable01
+|M29.1.3.1.15.6.|mmlHdr:note| |string|?|
+|M29.1.3.1.16.|mmlHdr:note| |string|?|
+|===
+Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
+
+#REQUIRED:必須属性，#IMPLIED:省略可能属性
+
+==== エレメント解説
+==== M29. mmlHdr:HemodialysysResultModule
+【内容】透析記録情報モジュール． +
+本モジュールには患者情報を記載する要素名がないので，患者情報モジュール（mmlPi）
+を使用すること．
+
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:version|string|#REQUIRED|バージョン
+|mmlHdo:createDate|dateTime|#REQUIRED|作成日
+|===
+
+==== M28.1. mmlHdo:HemoDialysisHistory
+【内容】透析に関する履歴 +
+【省略】省略不可
