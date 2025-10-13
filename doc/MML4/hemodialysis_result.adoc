@@ -135,19 +135,527 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-==== M29. mmlHdr:HemodialysysResultModule
+===== M29. mmlHdr:HemodialysysResultModule
 【内容】透析記録情報モジュール． +
 本モジュールには患者情報を記載する要素名がないので，患者情報モジュール（mmlPi）
-を使用すること．
-
+を使用すること． +
 【属性】
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|mmlHdo:version|string|#REQUIRED|バージョン
-|mmlHdo:createDate|dateTime|#REQUIRED|作成日
+|mmlHdr:version|string|#REQUIRED|バージョン
+|mmlHdr:createDate|dateTime|#REQUIRED|作成日
 |===
 
-==== M28.1. mmlHdo:HemoDialysisHistory
-【内容】透析に関する履歴 +
+==== M29.1. mmlHdr:HemoDialysisResult
+【内容】透析に関する記録 +
 【省略】省略不可
+
+
+==== M29.1.1. mmlFc:Facility
+【内容】施設情報、構造はMML共通形式を参照。施設情報は本モジュールを作成した施設。
+【省略】可．ただし，本モジュールに記載しない場合は「透析履歴情報モジュール」また
+は「透析指示情報モジュール」のどちらかに記載すること．
+
+==== M29.1.2. mmlHdr:note
+【内容】備考 +
+【省略】可
+
+==== M29.1.3. mmlHdr:dailyHDRecord
+【内容】日次HD記録 +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:calendarDate|date|#IMPLIED|暦日付
+|mmlHdr:serialNumber|string|#IMPLIED|起算日は任意
+|===
+
+==== M29.1.3.1. mmlHdr:hdMethod
+【内容】血液浄化法名称 +
+【データ型】string +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:code|string|#IMPLIED|血液浄化法ID
+|mmlHdr:tableId|string|#REQUIRED|hdMethodTable01
+|mmlHdr:startDateTime|dateTime|#IMPLIED|透析開始日時
+|mmlHdr:endDateTime|dateTime|#IMPLIED|透析終了日時
+|===
+【例】
+[source,xml]
+----
+<mmlHdr:hdMethod mmlHdr:code="01" mmlHdr:tableId="hdMethodTable01" mmlHdr:startDateTime="2005-01-01T09:00:00" mmlHdr:endDateTime="2005-01-01T14:00:00">
+透析
+</mmlHdr:hdMethod>
+----
+
+===== M29.1.3.2. mmlHdr:dryWeight
+【内容】ドライウェイト +
+【データ型】decimal +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#REQUIRED|単位（Default："kg"）
+|===
+
+===== M29.1.3.3. mmlHdr:preWeight
+【内容】透析前体重 +
+【データ型】decimal +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#REQUIRED|Default："kg"
+|===
+
+===== M29.1.3.4. mmlHdr:postWeight
+【内容】透析後体重 +
+【データ型】decimal +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#REQUIRED|Default："kg"
+|===
+
+===== M29.1.3.5. mmlHdr:weightCorrection
+【内容】重量補正 +
+【データ型】decimal +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#REQUIRED|Default："kg"
+|mmlHdr:cnote|string|#IMPLIED|備考
+|===
+
+===== M29.1.3.6. mmlHdr:totalUF
+【内容】実施除水量 +
+【データ型】decimal +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#REQUIRED|Default："L"
+|===
+
+===== M29.1.3.7. mmlHdr:totalSubstitution
+【内容】実施補充液量 +
+【データ型】decimal +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#REQUIRED|Default："L"
+|===
+
+===== M29.1.3.8. mmlHdr:filter
+【内容】血液浄化器（フィルタ） +
+【データ型】string +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:code|string|#IMPLIED|フィルタID
+|mmlHdr:type|string|#IMPLIED|コード種類。当面は製品番号を使用   
+|mmlHdr:membraneArea|decimal|#IMPLIED|膜面積
+|mmlHdr:unit|string|#IMPLIED|Default："m2"
+|===
+
+===== M29.1.3.9. mmlHdr:dialysate
+【内容】透析液（繰り返し可） +
+【省略】可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+
+===== M29.1.3.9.1. mmlHdr:dialysateName
+【内容】透析液名称 +
+【データ型】string +
+【省略】不可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:code|string|#IMPLIED|
+|mmlHdr:type|string|#IMPLIED|
+|mmlHdr:modification|string|#IMPLIED|
+|===
+
+===== M29.1.3.9.2. timeHdStart
+【内容】開始時刻 +
+【データ型】duration, ISO 8610形式の期間型で記録する +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
+|===
+
+===== M29.1.3.9.3. timeHdEnd
+【内容】終了時刻 +
+【データ型】duration, ISO 8601形式の期間型で記録する +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:timeHdEnd|string|#REQUIRED|時間方向、終了時刻前：before、終了時刻後：after
+|===
+
+===== M29.1.3.10. mmlHdr:substitution
+【内容】補充液 +
+【省略】可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す． +
+
+===== M29.1.3.10.1. mmlHdr:substitutionName
+【内容】補充液名称 +
+【データ型】string +
+【省略】省略不可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:code|string|#IMPLIED|補充液コード
+|mmlHdr:type|string|#IMPLIED|コードの種類、当面は薬価コード使用
+|mmlHdr:modification|string|#IMPLIED|補充液調製
+|===
+
+===== M29.1.3.10.2. mmlHdr:substitutionValue
+【内容】補充液量 +
+【データ型】decimal +
+【省略】省略不可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#IMPLIED|"ml/min"または"L/Session"
+|mmlHdr:dilution|string|#IMPLIED|"pre","post","intermittent"
+|===
+
+===== M29.1.3.10.3. timeHdStart
+【内容】開始時刻 +
+【データ型】duration, ISO 8610形式の期間型で記録する +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
+|===
+
+===== M29.1.3.10.4. timeHdEnd
+【内容】終了時刻 +
+【データ型】duration, ISO 8601形式の期間型で記録する +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdo:timeHdEnd|string|#REQUIRED|時間方向、終了時刻前：before、終了時刻後：after
+|===
+
+
+===== M29.1.3.10.5. mmlHdr:intermittent
+【内容】間歇投与 +
+【省略】可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す． +
+
+====== M29.1.3.10.5.1. mmlHdr:timeHdStart
+【内容】開始時刻 +
+【データ型】dateTime +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
+|===
+
+====== M29.1.3.10.5.2. mmlHdr:timeHdEnd
+【内容】終了時刻 +
+【データ型】dateTime +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:timeDirection|string|#REQUIRED|時間方向、終了時刻前：before、終了時刻後：after
+|===
+
+====== M29.1.3.10.5.3. mmlHdr:substitutionInterval
+【内容】投与間隔 +
+【データ型】duration +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#REQUIRED|単位、Default: "min"
+|===
+
+====== M29.1.3.10.5.4. mmlHdr:substitutionValue
+【内容】投与補充液量 +
+【データ型】decimal +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#REQUIRED|単位、Default: "mL"
+|===
+
+====== M29.1.3.10.5.5. mmlHdr:substitutionSpeed
+【内容】投与速度 +
+【データ型】decimal +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#REQUIRED|単位、Default: "mL/min"
+|===
+
+===== M29.1.3.11. mmlHdr:needle
+【内容】穿刺針情報 +
+【データ型】string +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す． +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:code|string|#IMPLIED|穿刺針ID
+|mmlHdr:type|string|#IMPLIED|コードの種類．当面は製品番号を使用．
+|mmlHdr:position|string|#IMPLIED|使用部位
+|===
+
+===== M29.1.3.12. mmlHdr:hdMachine
+【内容】機器名 +
+【データ型】string +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:code|string|#IMPLIED|機器ID
+|mmlHdr:tableId|string|#IMPLIED|機器識別コードテーブル．施設毎に設定．hdMachineTable
+|===
+
+===== M29.1.3.13. mmlHdr:observation
+【内容】観察記録 +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す． +
+
+====== M29.1.3.13.1. mmlHdr:timeHd
+【内容】人工腎臓開始時刻からの経過時間 +
+【データ型】duration. ISO8601形式で記録する． +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:timeDirection|string|#REQUIRED|開始方向、開始時刻前：before、開始時刻後：after
+|===
+
+====== M29.1.3.13.2. mmlHdr:observationItem
+【内容】観察項目 +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+
+====== M29.1.3.13.2.1. mmlHdr:obItemName
+【内容】観察項目名 +
+【データ型】string +
+【省略】省略不可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:code|string|#IMPLIED|観察項目ID
+|mmlHdr:tableId|string|#IMPLIED|観察項目テーブル hdObservationTable01
+|===
+【例】
+[source,xml]
+----
+<mmlHdr:obItemName mmlHdr:code="sBP" mmlHdr:tableId="hdObservationTable01">
+収縮期血圧
+</mmlHdr:obItemName>
+----
+
+====== M29.1.3.13.2.2. mmlHdr:value
+【内容】観察値 +
+【データ型】string +
+【省略】可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#IMPLIED|単位
+|===
+
+====== M29.1.3.13.3. mmlHdr:staffName
+【内容】観察スタッフ名 +
+【データ型】string +
+【省略】可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す． +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:code|string|#IMPLIED|スタッフID
+|mmlHdr:type|string|#IMPLIED|IDタイプ
+|===
+
+====== M29.1.3.13.4. mmlHdr:machineName
+【内容】機器名 +
+【データ型】string +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す． +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:code|string|#IMPLIED|機器ID
+|mmlHdr:tableId|string|#IMPLIED|機器識別コードテーブル。施設毎に設定。hdMachineTable
+|===
+
+====== M29.1.3.13.5. mmlHdr:note
+【内容】備考 +
+【データ型】string +
+【省略】省略可
+
+
+===== M29.1.3.14. mmlHdr:medication
+【内容】内服薬（繰り返し可） +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す．
+
+===== M29.1.3.14.1. mmlHdr:drugName
+【内容】内服薬名称 +
+【データ型】string +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:code|string|#IMPLIED|内服薬ID
+|mmlHdr:type|string|#IMPLIED|コードの種類当面は薬価コードを使用
+|===
+
+===== M29.1.3.14.2. mmlHdr:dose
+【内容】1回量 +
+【データ型】decimal +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#IMPLIED|単位
+|===
+
+====== M29.1.3.14.3. mmlHdr:timeHd
+【内容】投与時刻 +
+【データ型】duration. ISO8601形式で記録する． +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
+|===
+
+====== M29.1.3.14.4. mmlHdr:note
+【内容】備考 +
+【データ型】string +
+【省略】省略可
+
+===== M29.1.3.15. mmlHdr:injection
+【内容】注射 +
+【省略】省略可 +
+【繰り返し設定】繰り返しあり．表記法が複数あれば繰り返す． +
+
+===== M29.1.3.15.1. mmlHdr:drugName
+【内容】注射薬名称 +
+【データ型】string +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:code|string|#IMPLIED|注射薬ID
+|mmlHdr:type|string|#IMPLIED|コードの種類当面は薬価コードを使用
+|===
+
+===== M29.1.3.15.2. mmlHdr:dose
+【内容】1回投与量または投与速度 +
+【データ型】decimal +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:unit|string|#IMPLIED|単位
+|===
+
+====== M29.1.3.15.3. mmlHdr:timeHdStart
+【内容】投与開始時刻 +
+【データ型】duration. ISO8601形式で記録する． +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
+|===
+
+====== M29.1.3.15.4. mmlHdr:timeHdEnd
+【内容】投与終了時刻 +
+【データ型】duration. ISO8601形式で記録する． +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
+|===
+
+====== M29.1.3.15.5. mmlHdr:routeName
+【内容】投与経路名称 +
+【データ型】string +
+【省略】省略可 +
+【属性】
+[options="header"]
+|===
+|属性名|データ型|省略|説明
+|mmlHdr:code|string|#IMPLIED|
+|mmlHdr:tableId|string|#IMPLIED|テーブルID、Default: hdInjectionRouteTable01
+|===
+【例】
+[source,xml]
+----
+<mmlHdr:routeName mmlHdr:code="icv" mmlHdr:tableId="hdInjectionRouteTable01">
+静脈回路内注射
+</mmlHdr:routeName>
+----
+
+
+====== M29.1.3.15.6. mmlHdr:note
+【内容】備考 +
+【データ型】string +
+【省略】省略可
+
+
+===== M29.1.3.16. mmlHdr:note
+【内容】備考 +
+【データ型】string +
+【省略】省略可
