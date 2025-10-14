@@ -68,7 +68,7 @@
 	<xs:complexType>
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
-				<xs:attribute name="unit" type="xs:string" use="required" default="kg" form="qualified"/>
+				<xs:attribute name="unit" type="xs:string" use="required" form="qualified"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -77,7 +77,7 @@
 	<xs:complexType>
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
-				<xs:attribute name="unit" type="xs:string" use="required" default="kg" form="qualified"/>
+				<xs:attribute name="unit" type="xs:string" use="required" form="qualified"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -86,7 +86,7 @@
 	<xs:complexType>
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
-				<xs:attribute name="unit" type="xs:string" use="required" default="kg" form="qualified"/>
+				<xs:attribute name="unit" type="xs:string" use="required" form="qualified"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -95,7 +95,7 @@
 	<xs:complexType>
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
-				<xs:attribute name="unit" type="xs:string" use="required" default="kg" form="qualified"/>
+				<xs:attribute name="unit" type="xs:string" use="required" form="qualified"/>
 				<xs:attribute name="cnote" type="xs:string" use="optional" form="qualified"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -105,7 +105,7 @@
 	<xs:complexType>
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
-				<xs:attribute name="unit" type="xs:string" use="required" default="L" form="qualified"/>
+				<xs:attribute name="unit" type="xs:string" use="required" form="qualified"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -114,7 +114,7 @@
 	<xs:complexType>
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
-				<xs:attribute name="unit" type="xs:string" use="required" default="L" form="qualified"/>
+				<xs:attribute name="unit" type="xs:string" use="required" form="qualified"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
