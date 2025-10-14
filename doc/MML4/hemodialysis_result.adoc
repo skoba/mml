@@ -22,7 +22,7 @@ xmlns:mmlHdr="http://www.medxml.net/MML/v4/ContentModule/HemodialysisResult/1.0"
 |M29.|mmlHdr:HemodialysisResultModule| | | |
 | | |mmlHdr:version|string|#REQUIRED|
 | | |mmlHdr:createDate|dateTime|#REQUIRED|
-|M29.1.|mmlHdr:HemodialysisResult| | | |
+|M29.1.|mmlHdr:HDResult| | | |
 |M29.1.1.|mmlFc:Facility| | |?|
 |M29.1.2.|mmlHdr:note| |string|?|
 |M29.1.3.|mmlHdr:dailyHDRecord| | |+|
@@ -56,31 +56,32 @@ xmlns:mmlHdr="http://www.medxml.net/MML/v4/ContentModule/HemodialysisResult/1.0"
 | | |mmlHdr:code|string|#IMPLIED|
 | | |mmlHdr:type|string|#IMPLIED|
 | | |mmlHdr:modification|string|#IMPLIED|
-|M29.1.3.9.2.|mmlHdr:timeHdStart| |dateTime|?|
+|M29.1.3.9.2.|mmlHdr:timeHdStart| |duration|?|
 | | |mmlHdr:timeDirection|string|#REQUIRED|
-|M29.1.3.9.3.|mmlHdr:timeHdEnd| |dateTime|?|
+|M29.1.3.9.3.|mmlHdr:timeHdEnd| |duration|?|
 | | |mmlHdr:timeDirection|string|#REQUIRED|
 |M29.1.3.10.|mmlHdr:substitution| | |*|
-|M29.1.3.10.1.|mmlHdr:substitutionValue| |decimal| |
+|M29.1.3.10.1.|mmlHdr:substitutionName| |string| |
+| | |mmlHdr:code|string|#IMPLIED|
+| | |mmlHdr:type|string|#IMPLIED|
+| | |mmlHdr:modification|string|#IMPLIED|
+|M29.1.3.10.2.|mmlHdr:substitutionValue| |decimal| |
 | | |mmlHdr:unit|string|#REQUIRED|
 | | |mmlHdr:dilution|string|#REQUIRED|
-|M29.1.3.10.2.|substitutionValue| |decimal|?|
-| | |mmlHdr:unit|string|#REQUIRED|
-| | |mmlHdr:dilution|string|#REQUIRED|
-|M29.1.3.10.3.|mmlHdr:timeHdStart| |dateTime|?|
+|M29.1.3.10.3.|mmlHdr:timeHdStart| |duration|?|
 | | |mmlHdr:timeDirection|string|#REQUIRED|
-|M29.1.3.10.4.|mmlHdr:timeHdEnd| |dateTime|?|
+|M29.1.3.10.4.|mmlHdr:timeHdEnd| |duration|?|
 | | |mmlHdr:timeDirection|string|#REQUIRED|
 |M29.1.3.10.5.|mmlHdr:intermittent| | |*|
-|M29.1.3.10.5.1.|mmlHdr:timeHdStart| |dateTime|?|
+|M29.1.3.10.5.1.|mmlHdr:timeHdStart| |duration|?|
 | | |mmlHdr:timeDirection|string|#REQUIRED|
-|M29.1.3.10.5.2.|mmlHdr:timeHdEnd| |dateTime|?|
+|M29.1.3.10.5.2.|mmlHdr:timeHdEnd| |duration|?|
 | | |mmlHdr:timeDirection|string|#REQUIRED|
-|M29.1.3.10.5.3.|mmlHdr:substitutionInterVal| |duration|?|
+|M29.1.3.10.5.3.|mmlHdr:substitutionInterval| |string|?|
 | | |mmlHdr:unit|string|#REQUIRED|
 |M29.1.3.10.5.4.|mmlHdr:substitutionValue| |decimal|?|
 | ||mmlHdr:unit|string|#REQUIRED|
-|M29.1.3.10.5.5.|mmlHdr:substitutionSpeed| |decimal|?|
+|M29.1.3.10.5.5.|mmlHdr:substitutionSpeed| |string|?|
 | ||mmlHdr:unit|string|#REQUIRED|
 |M29.1.3.11.|mmlHdr:needle| |string|*|
 | | |mmlHdr:code|string|#IMPLIED|
@@ -96,46 +97,46 @@ xmlns:mmlHdr="http://www.medxml.net/MML/v4/ContentModule/HemodialysisResult/1.0"
 |M29.1.3.13.2.1.|mmlHdr:obItemName| |string| |
 | | |mmlHdr:code|string|#IMPLIED|
 | | |mmlHdr:tableId|string|#IMPLIED|hdObservationTable01
-|M29.1.3.13.2.2.|mmldr:value| |string| |
-| ||mmlHdr:code|string|#IMPLIED|
-| ||mmlHdr:tableId|string|#IMPLIED|hdObservationValueTable01
+|M29.1.3.13.2.2.|mmlHdr:value| |string|?|
+| ||mmlHdr:unit|string|#IMPLIED|
 |M29.1.3.13.3.|mmlHdr:staffName| |string|*|
 | | |mmlHdr:code|string|#IMPLIED|
 | | |mmlHdr:type|string|#IMPLIED|
 |M29.1.3.13.4.|mmlHdr:machineName| |string|*|
 | | |mmlHdr:code|string|#IMPLIED|
 | | |mmlHdr:tableId|string|#IMPLIED|hdMachineTable
+|M29.1.3.13.5.|mmlHdr:note| |string|?|
 |M29.1.3.14.|mmlHdr:medication| | |*|
 |M29.1.3.14.1.|mmlHdr:drugName| |string|?|
 | | |mmlHdr:code|string|#IMPLIED|
 | | |mmlHdr:type|string|#IMPLIED|
-|M29.1.3.1.14.2.|mmlHdr:dose| |decimal|?|
+|M29.1.3.14.2.|mmlHdr:dose| |decimal|?|
 | | |mmlHdr:unit|string|#IMPLIED|
-|M29.1.3.1.14.3.|mmlHdr:timeHd| |duration|?|
+|M29.1.3.14.3.|mmlHdr:timeHd| |duration|?|
 | | |mmlHdr:timeDirection|string|#REQUIRED|
-|M29.1.3.1.14.4.|mmlHdr:note| |string|?|
-|M29.1.3.1.15.|mmlHdr:injection| | |*|
-|M29.1.3.1.15.1.|mmlHdr:drugName| |string|?|
+|M29.1.3.14.4.|mmlHdr:note| |string|?|
+|M29.1.3.15.|mmlHdr:injection| | |*|
+|M29.1.3.15.1.|mmlHdr:drugName| |string|?|
 | | |mmlHdr:code|string|#IMPLIED|
-| | |mmlHdr:type|string|#REQUIRED|
-|M29.1.3.1.15.2.|mmlHdr:dose| |decimal|?|
+| | |mmlHdr:type|string|#IMPLIED|
+|M29.1.3.15.2.|mmlHdr:dose| |decimal|?|
 | | |mmlHdr:unit|string|#IMPLIED|
-|M29.1.3.1.15.3.|mmlHdr:timeHdStart| |duration|?|
+|M29.1.3.15.3.|mmlHdr:timeHdStart| |duration|?|
 | | |mmlHdr:timeDirection|string|#REQUIRED|
-|M29.1.3.1.15.4.|mmlHdr:timeHdEnd| |duration|?|
+|M29.1.3.15.4.|mmlHdr:timeHdEnd| |duration|?|
 | | |mmlHdr:timeDirection|string|#REQUIRED|
-|M29.1.3.1.15.5.|mmlHdr:routeName| |string|?|
+|M29.1.3.15.5.|mmlHdr:routeName| |string|?|
 | | |mmlHdr:code|string|#IMPLIED|
-| | |mmlHdr:tableId|string|#REQUIRED|hdInjectionRouteTable01
-|M29.1.3.1.15.6.|mmlHdr:note| |string|?|
-|M29.1.3.1.16.|mmlHdr:note| |string|?|
+| | |mmlHdr:tableId|string|#IMPLIED|hdInjectionRouteTable01
+|M29.1.3.15.6.|mmlHdr:note| |string|?|
+|M29.1.3.16.|mmlHdr:note| |string|?|
 |===
 Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1回以上出現，*： 0 回以上出現
 
 #REQUIRED:必須属性，#IMPLIED:省略可能属性
 
 ==== エレメント解説
-===== M29. mmlHdr:HemodialysysResultModule
+===== M29. mmlHdr:HemodialysisResultModule
 【内容】透析記録情報モジュール． +
 本モジュールには患者情報を記載する要素名がないので，患者情報モジュール（mmlPi）
 を使用すること． +
@@ -147,7 +148,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlHdr:createDate|dateTime|#REQUIRED|作成日
 |===
 
-==== M29.1. mmlHdr:HemoDialysisResult
+==== M29.1. mmlHdr:HDResult
 【内容】透析に関する記録 +
 【省略】省略不可
 
@@ -293,9 +294,10 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlHdr:modification|string|#IMPLIED|
 |===
 
-===== M29.1.3.9.2. timeHdStart
+===== M29.1.3.9.2. mmlHdr:timeHdStart
 【内容】開始時刻 +
-【データ型】duration, ISO 8610形式の期間型で記録する +
+【データ型】duration, ISO 8601形式の期間型で記録する +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
@@ -303,7 +305,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlHdr:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
 |===
 
-===== M29.1.3.9.3. timeHdEnd
+===== M29.1.3.9.3. mmlHdr:timeHdEnd
 【内容】終了時刻 +
 【データ型】duration, ISO 8601形式の期間型で記録する +
 【省略】省略可 +
@@ -311,7 +313,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|mmlHdo:timeHdEnd|string|#REQUIRED|時間方向、終了時刻前：before、終了時刻後：after
+|mmlHdr:timeDirection|string|#REQUIRED|時間方向、終了時刻前：before、終了時刻後：after
 |===
 
 ===== M29.1.3.10. mmlHdr:substitution
@@ -344,9 +346,10 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlHdr:dilution|string|#IMPLIED|"pre","post","intermittent"
 |===
 
-===== M29.1.3.10.3. timeHdStart
+===== M29.1.3.10.3. mmlHdr:timeHdStart
 【内容】開始時刻 +
-【データ型】duration, ISO 8610形式の期間型で記録する +
+【データ型】duration, ISO 8601形式の期間型で記録する +
+【省略】省略可 +
 【属性】
 [options="header"]
 |===
@@ -354,7 +357,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlHdr:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
 |===
 
-===== M29.1.3.10.4. timeHdEnd
+===== M29.1.3.10.4. mmlHdr:timeHdEnd
 【内容】終了時刻 +
 【データ型】duration, ISO 8601形式の期間型で記録する +
 【省略】省略可 +
@@ -362,7 +365,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 [options="header"]
 |===
 |属性名|データ型|省略|説明
-|mmlHdo:timeHdEnd|string|#REQUIRED|時間方向、終了時刻前：before、終了時刻後：after
+|mmlHdr:timeDirection|string|#REQUIRED|時間方向、終了時刻前：before、終了時刻後：after
 |===
 
 
@@ -373,7 +376,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ====== M29.1.3.10.5.1. mmlHdr:timeHdStart
 【内容】開始時刻 +
-【データ型】dateTime +
+【データ型】duration, ISO 8601形式の期間型で記録する +
 【省略】可 +
 【属性】
 [options="header"]
@@ -384,7 +387,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ====== M29.1.3.10.5.2. mmlHdr:timeHdEnd
 【内容】終了時刻 +
-【データ型】dateTime +
+【データ型】duration, ISO 8601形式の期間型で記録する +
 【省略】可 +
 【属性】
 [options="header"]
@@ -395,7 +398,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ====== M29.1.3.10.5.3. mmlHdr:substitutionInterval
 【内容】投与間隔 +
-【データ型】duration +
+【データ型】string +
 【省略】可 +
 【属性】
 [options="header"]
@@ -417,7 +420,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 
 ====== M29.1.3.10.5.5. mmlHdr:substitutionSpeed
 【内容】投与速度 +
-【データ型】decimal +
+【データ型】string +
 【省略】可 +
 【属性】
 [options="header"]
@@ -563,7 +566,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlHdr:unit|string|#IMPLIED|単位
 |===
 
-====== M29.1.3.14.3. mmlHdr:timeHd
+===== M29.1.3.14.3. mmlHdr:timeHd
 【内容】投与時刻 +
 【データ型】duration. ISO8601形式で記録する． +
 【省略】省略可 +
@@ -574,7 +577,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlHdr:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
 |===
 
-====== M29.1.3.14.4. mmlHdr:note
+===== M29.1.3.14.4. mmlHdr:note
 【内容】備考 +
 【データ型】string +
 【省略】省略可
@@ -607,7 +610,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlHdr:unit|string|#IMPLIED|単位
 |===
 
-====== M29.1.3.15.3. mmlHdr:timeHdStart
+===== M29.1.3.15.3. mmlHdr:timeHdStart
 【内容】投与開始時刻 +
 【データ型】duration. ISO8601形式で記録する． +
 【省略】省略可 +
@@ -618,7 +621,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlHdr:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
 |===
 
-====== M29.1.3.15.4. mmlHdr:timeHdEnd
+===== M29.1.3.15.4. mmlHdr:timeHdEnd
 【内容】投与終了時刻 +
 【データ型】duration. ISO8601形式で記録する． +
 【省略】省略可 +
@@ -629,7 +632,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 |mmlHdr:timeDirection|string|#REQUIRED|時間方向、開始時刻前：before、開始時刻後：after
 |===
 
-====== M29.1.3.15.5. mmlHdr:routeName
+===== M29.1.3.15.5. mmlHdr:routeName
 【内容】投与経路名称 +
 【データ型】string +
 【省略】省略可 +
@@ -649,7 +652,7 @@ Occurrence なし：必ず1回出現，?： 0回もしくは1回出現，+： 1�
 ----
 
 
-====== M29.1.3.15.6. mmlHdr:note
+===== M29.1.3.15.6. mmlHdr:note
 【内容】備考 +
 【データ型】string +
 【省略】省略可
