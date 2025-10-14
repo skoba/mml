@@ -9,7 +9,7 @@
 <xs:import namespace="http://www.medxml.net/MML/v4/ContentModule/PatientInfo/1.0" schemaLocation="patientinfo.xsd"/>
 <xs:import namespace="http://www.medxml.net/MML/v4/SharedComponent/Common/1.0" schemaLocation="common.xsd"/>
 
-<xs:element name="HemoDialysysOrderModule">
+<xs:element name="HemodialysisOrderModule">
 	<xs:complexType>
 		<xs:sequence>
 			<xs:element minOccurs="1" maxOccurs="1" ref="mmlHdo:HemoDialysisOrder"/>
