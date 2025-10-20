@@ -117,7 +117,7 @@
 	<xs:complexType>
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
-				<xs:attribute name="unit" type="xs:string" use="required" default="kg"/>
+				<xs:attribute name="unit" type="xs:string" use="required"/><!-- default="kg" -->
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -126,7 +126,7 @@
 	<xs:complexType>
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
-				<xs:attribute name="unit" type="xs:string" use="required" default="kg"/>
+				<xs:attribute name="unit" type="xs:string" use="required"/><!-- default="kg" -->
 				<xs:attribute name="cnote" type="xs:string" use="optional"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -145,7 +145,7 @@
 	<xs:complexType>
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
-				<xs:attribute name="unit" type="xs:string" use="required" default="ml/min"/>
+				<xs:attribute name="unit" type="xs:string" use="required"/><!-- default="ml/min" -->
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -377,7 +377,7 @@
 	<xs:complexType>
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
-				<xs:attribute name="unit" type="xs:string" default="kg" use="required"/>
+				<xs:attribute name="unit" type="xs:string" use="required"/><!-- default="kg" -->
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -387,7 +387,7 @@
 	<xs:complexType>
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
-				<xs:attribute name="unit" type="xs:string" default="kg" use="required"/>
+				<xs:attribute name="unit" type="xs:string" use="required"/><!-- default="kg" -->
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>

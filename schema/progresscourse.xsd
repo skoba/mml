@@ -27,7 +27,7 @@
   <xs:element name="FreeExpression">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
     </xs:complexType>
@@ -56,7 +56,7 @@
   <xs:element name="problem">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
       <xs:attributeGroup ref="mmlPc:attlist.problem"/>
     </xs:complexType>
@@ -69,7 +69,7 @@
   <xs:element name="freeNotes">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>             
     </xs:complexType>
   </xs:element>
@@ -97,7 +97,7 @@
   <xs:element name="eventExpression">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>             
     </xs:complexType>
   </xs:element>
@@ -116,7 +116,7 @@
   <xs:element name="objectiveNotes">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>             
     </xs:complexType>
   </xs:element>  
@@ -147,7 +147,7 @@
   <xs:element name="interpretation">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>       
     </xs:complexType>
   </xs:element>
@@ -163,7 +163,7 @@
   <xs:element name="testResult" >
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
     </xs:complexType>
@@ -172,7 +172,7 @@
   <xs:element name="rxRecord" >
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlPs:PrescriptionModule"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlInj:InjectionModule"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
@@ -184,7 +184,7 @@
     <xs:complexType mixed="true">
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -200,7 +200,7 @@
   <xs:element name="assessmentItem">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>             
     </xs:complexType>
   </xs:element>
@@ -220,7 +220,7 @@
     <xs:complexType mixed="true">
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -228,7 +228,7 @@
   <xs:element name="rxOrder">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlPs:PrescriptionModule"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
@@ -238,7 +238,7 @@
   <xs:element name="txOrder">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="mmlCm:extRef"/>
       </xs:sequence>
     </xs:complexType>
@@ -247,7 +247,7 @@
   <xs:element name="planNotes">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>

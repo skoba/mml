@@ -23,28 +23,28 @@
   <xs:element name="occupation">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="tobacco">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="alcohol">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="other">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>

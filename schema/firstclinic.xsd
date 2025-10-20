@@ -51,7 +51,7 @@
   <xs:element name="memo">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -170,7 +170,7 @@
   <xs:element name="eventExpression">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -178,7 +178,7 @@
   <xs:element name="chiefComplaints">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -186,7 +186,7 @@
   <xs:element name="presentIllnessNotes">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -195,7 +195,7 @@
   <xs:element name="freeNotes">
     <xs:complexType mixed="true">
       <xs:sequence>
-        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:any namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
